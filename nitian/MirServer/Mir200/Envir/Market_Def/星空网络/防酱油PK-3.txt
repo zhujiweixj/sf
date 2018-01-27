@@ -1,0 +1,56 @@
+(@buy @sell @repair @s_repair )
+[@main]
+┈┈┈┈┈┈┈<[大号PK专用地图]/SCOLOR=251><[防止裸奔号打酱油]/SCOLOR=253>┈┈┈┈┈┈\  \
+　　　　　　　　　　　<进入条件需满足/SCOLOR=250>\
+　　　　　　　<≮战士≯/SCOLOR=250>需要攻击力达到450点以上\
+　　　　　　　<≮法师≯/SCOLOR=250>需要魔法力达到400点以上\
+　　　　　　　<≮道士≯/SCOLOR=250>需要道术力达到400点以上\
+<所有玩家注意：所有拣装备的小号一律永久封号处理，请珍惜自己号>\ \
+┈┈┈┈┈┈┈<[大号PK专用地图]/SCOLOR=251>┈┈┈┈┈<进入PK点击/@PK点击>┈┈┈┈┈┈\  \
+
+[@PK点击]
+请一定正确选择自己的职业，才能进入地图！\  \
+　　　　　　　<战士点击进入...../@战士>\  \
+
+　　　　　　　<法师点击进入...../@魔法师>\  \
+
+　　　　　　　<道士点击进入...../@道士>\  \
+
+
+
+
+[@战士]
+#IF
+CHECKDC > 10 > 449
+#ACT
+mapmove PKjydt 8 11
+give 回城卷 1
+GuildNoticeMsg 242 227  【%s】进入了PK专用地图!!!!!!!!!!!!!!!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你攻击力不够450！
+
+
+
+[@魔法师]
+#IF
+CHECKMC > 9 > 399
+#ACT
+mapmove PKjydt 8 11
+give 回城卷 1
+GuildNoticeMsg 242 227  【%s】进入了PK专用地图!!!!!!!!!!!!!!!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你魔法力不够400！
+
+
+[@道士]
+#IF
+CHECKSC > 10 > 399
+#ACT
+mapmove PKjydt 8 11
+give 回城卷 1
+GuildNoticeMsg 242 227  【%s】进入了PK专用地图!!!!!!!!!!!!!!!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你道力不够400！

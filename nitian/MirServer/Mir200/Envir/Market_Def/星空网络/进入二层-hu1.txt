@@ -1,0 +1,12 @@
+[@main]
+#IF
+CHECKLEVELEX < 100
+#ACT
+SetOnTimer 3 1
+MAPMOVE hu2 98 98
+give 回城卷
+SENDMSG 0 玩家 [%s]进入了◢新人天堂二层◣潜修去了，此图边打怪边获得每秒{20万经验}
+BREAK
+#elseact
+MESSAGEBOX 你等级超过100级了，不再是新手了,所以不能进去掺和了。
+;-b--b--Q -Q---156 598018---

@@ -1,0 +1,26 @@
+[@GBatVar]
+{
+#Act
+ClearNameList ..\QuestDiary\Ecom\Log\BatInn.txt 
+ClearNameList ..\QuestDiary\Ecom\Log\BatBnn.txt
+ClearNameList ..\QuestDiary\Ecom\Log\BatNu.txt 
+ClearNameList ..\QuestDiary\Ecom\Log\BatRes.txt  
+
+ClearNameList ..\QuestDiary\Ecom\HVarSave.txt
+Var String Global bBanName 
+Var integer Global bBancap
+Var integer Global bTime  
+Var integer Global bRvar  
+Var integer Global bInn
+Var integer Global bPb
+Var integer Global bPs
+Var integer Global bsPb
+Var integer Global bsPs 
+Var integer Global bNu1  
+Var integer Global bNu2 
+Var integer Global bNu3
+Var integer Global bNuG 
+Var integer Global bRes 
+Var String Global bResStr  
+CALCVAR GLOBAL bBanName = нч
+}

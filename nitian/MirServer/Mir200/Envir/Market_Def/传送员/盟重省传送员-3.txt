@@ -1,0 +1,569 @@
+[@main]
+#IF
+#SAY
+╔┄╗╔┄-┄-┄[版本特色:极品+55,散人好混]┄┄┄┄╗<◆/SCOLOR=253><◆/SCOLOR=253>\
+┆<★/SCOLOR=253>┆┆ <比奇大城/@bwmove>   <银杏山谷/@gnmove>   <新手小村/@bdmove>   <白日天门/@wwmove> ┆<谨防/@pianren>\
+┆<苍/@cymove>┆┆ <盟重土城/@jhmove>   <封魔神谷/@fmmove>   <毒蛇山谷/@dsmove>   <苍月海岛/@cymove> ┆<受骗/@pianren>\
+┆<月/@cymove>┆╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄-┄┄╣<★/SCOLOR=253><★/SCOLOR=253>\
+┆<摆/@cymove>┆┆ <尸 王 殿/@尸王殿> ┆<王者禁地/@sykj> <Img:11:0><元宝圣地/@进入ybzd><Img:11:0> <沙藏宝阁/@沙藏宝阁> ┆<★/SCOLOR=253><★/SCOLOR=253>\
+┆<滩/@cymove>┆╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄-┄┄╣<玩家/@zzzd>\
+┆<★/SCOLOR=253>┆┆ <祖玛七层/@祖玛七层> ┆<幻境七层/@幻境七层> <Img:11:0><新手天堂/@进入44><Img:11:0> <六新衣服/@六新衣服> ┆<命令/@zzzd>\
+┆<★>┆╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄-┄┄╣<★★>\
+┆<★/SCOLOR=253>┆┆ <神威魔域/@神威魔域> ┆<昊天宫殿/@昊天宫殿> <Img:11:0><轩辕神殿/@轩辕神殿><Img:11:0> <恶魔广场/@恶魔广场> ┆<★★>\
+╚┄╝╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄---╝<◆/SCOLOR=253><◆/SCOLOR=253>\  
+
+[@恶魔广场]
+<此地图为半开放式地图，里面底层有两个BOSS，你懂的/AUTOCOLOR=168,250,70,253>\ \
+<此地图是取得神一样装备必须去的地图，欢迎加入/AUTOCOLOR=168,250,70,253>\ \
+<每天的/AUTOCOLOR=168,250,70,253><0:15,4:15,8:15,12:15,16:15,22:30><开启才能进入/AUTOCOLOR=168,250,70,253>\  \
+<恶魔广场神殿BOSS地图坐标分别为：/AUTOCOLOR=168,250,70,253><(84:14)和(162:27)>\  \
+
+<我要进入恶魔广场/@恶魔广场001>               <没开门，我返回/@main>
+
+[@恶魔广场001]
+#IF
+EQUAL G134 1
+#ACT
+MAPMOVE EMGC01 79 28
+SENDMSG 0 玩家【<$USERNAME>】进入了恶魔广场，想要顶级装备的赶紧加入！
+SendCenterMsg 180 251 玩家【<$USERNAME>】进入了恶魔广场，想要顶级装备的赶紧加入.. 1
+break
+#ELSEACT
+MESSAGEBOX 还没有开启！每天的0:15,4:15,8:15,12:15,16:15,22:30开启才能进入
+
+
+[@神威魔域]
+<怪物名字：><神威天魔(第二层地图每隔一个小时刷新一只神威天魔)/AUTOCOLOR=245>\ \
+<怪爆物品：><爆本服所有装备和各种石头以及各种+25，+35,+45等爆/AUTOCOLOR=250>\ \
+<BOSS几分钟刷：><60分钟刷新一次，小怪也爆装备卷轴而且经验好高哦/AUTOCOLOR=70>\   \
+<地图层数：><两层/AUTOCOLOR=253>\  \
+
+<进入神威地图....../@神威魔域A>
+
+[@神威魔域A]
+#if
+#act
+mapmove shenwei1 29 11
+SENDMSG 0 玩家【<$USERNAME>】进入了神威魔域，想要顶级装备的赶紧加入！
+SendCenterMsg 180 251 玩家【<$USERNAME>】进入了神威魔域，想要顶级装备的赶紧加入.. 1
+break
+
+[@昊天宫殿]
+<怪物名字：><昊天魔君(第二层地图每隔一个小时刷新一只昊天魔君)/AUTOCOLOR=245>\ \
+<怪爆物品：><爆本服所有装备和各种石头以及各种+25，+35,+45等爆/AUTOCOLOR=250>\ \
+<BOSS几分钟刷：><60分钟刷新一次，小怪也爆装备卷轴而且经验好高哦/AUTOCOLOR=70>\   \
+<地图层数：><两层/AUTOCOLOR=253>\  \
+<进入昊天宫殿....../@昊天宫殿A>
+
+[@昊天宫殿A]
+#if
+#act
+mapmove haotian01 74 74
+SENDMSG 0 玩家【<$USERNAME>】进入了昊天魔宫，想要顶级装备的赶紧加入！
+SendCenterMsg 180 251 玩家【<$USERNAME>】进入了昊天魔宫，想要顶级装备的赶紧加入.. 1
+break
+
+[@轩辕神殿]
+<怪物名字：><轩辕教主(第三层地图每隔一个小时刷新一只轩辕教主)/AUTOCOLOR=245>\ \
+<怪爆物品：><爆本服所有装备和各种石头以及各种+25，+35,+45等爆/AUTOCOLOR=250>\ \
+<BOSS几分钟刷：><60分钟刷新一次，小怪也爆装备卷轴而且经验好高哦/AUTOCOLOR=70>\   \
+<地图层数：><三层/AUTOCOLOR=253>\  \
+<进入轩辕神殿....../@轩辕神殿A>
+
+[@轩辕神殿A]
+#if
+#act
+mapmove xuanyuan1 15 71
+SENDMSG 0 玩家【<$USERNAME>】进入了轩辕神殿，想要顶级装备的赶紧加入！
+SendCenterMsg 180 251 玩家【<$USERNAME>】进入了轩辕神殿，想要顶级装备的赶紧加入.. 1
+break
+
+[@进入ybzd]
+#IF
+#ACT
+MAPMOVE G004 
+give 回城卷
+GuildNoticeMsg 151 0  玩家[%s]进入了◢▄元宝圣地▄◣里面狂暴元宝和装备！赶紧进吧！
+BREAK
+#elseact
+
+[@进入44]
+#IF
+CHECKLEVELEX < 100
+#ACT
+SetOnTimer 3 1
+MAPMOVE hu1 81 83
+give 回城卷
+SENDMSG 0 玩家 [%s]进入了◢▄▄▄新人天堂▄▄▄◣边打怪边获得每秒{10万经验}
+BREAK
+#elseact
+MESSAGEBOX 你等级超过100级了，不再是新手了,所以不能进去掺和了。
+
+
+[@zzzd]
+#CALL [\\游戏触发\命令服务.txt] @命令
+
+[@cymove]
+#IF 
+#ACT
+MOV M80 122
+mapmove 5 140 338
+break 
+
+[@yhao]
+#IF
+#ACT
+give 回城卷 1
+mapmove  B102a 9 10
+
+
+[@erhao]
+#IF
+#ACT
+give 回城卷 1
+mapmove  B103a 9 10  
+
+[@shanhao]
+#IF
+#ACT
+give 回城卷 1
+mapmove  B104a 9 10
+
+
+[@shengyuk]
+#if
+checkgold 200000
+#act
+take 金币 200000
+goto @xh11
+#elseact
+messagebox 需要20万金币用来支付我们的服务费用!
+
+[@xh11]
+#IF
+#ACT
+give 回城卷 1
+mapmove B101  9  10 
+
+[@bqkqmove]
+#IF
+#ACT
+give 回城卷 1
+mapmove 0 659 218
+SENDMSG 7 提示：发现不能挖矿，请小退上线即可！
+SENDMSG 7 提示：发现不能挖矿，请小退上线即可！
+break
+[@cYdxmove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove 12  89 13
+break
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@Swsdmove]
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove Q004 10 10
+break
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@wmsmmove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D021 71 69
+break
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+
+
+[@Fmommove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove 4  56 66
+break
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+
+[@zmsmmove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove 0157 17 17
+break
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+
+[@zdsmmove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D710 27 20
+break
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+
+
+[@cYSDmove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove 12 90 14
+break
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+goto @ddwy
+break
+
+
+[@hydkmove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove H001 73 67
+break
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+
+
+
+[@gmdxmove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove 5 544 131
+break
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+
+
+[@smdxmove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove 5 522 615
+break
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+
+[@nmsmmove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove 5 658 463
+give 回城卷 1
+break
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+
+[@dldxmove]
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove 3 142 92
+break 
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+
+;======会员传送======
+
+[@sykj]
+#IF
+#ACT
+mapmove h105 163 23
+give 回城卷 1
+
+
+[@抉择之地]
+#IF
+#ACT
+mapmove D1004 171 88
+give 回城卷 1
+
+
+[@幻境七层]
+#IF
+#ACT
+mapmove H007 161 172
+give 回城卷 1
+
+
+[@尸王殿]
+#IF
+#ACT
+mapmove Q004 17 12
+give 回城卷 1
+
+[@生死之间]
+#IF
+#ACT
+mapmove D613 9 51
+give 回城卷 1
+
+
+[@沃玛三层]
+#IF
+#ACT
+mapmove D023 52 366
+give 回城卷 1
+
+
+[@石墓阵]
+#IF
+#ACT
+mapmove D715 83 81
+give 回城卷 1
+
+
+[@祖玛七层]
+#IF
+#ACT
+mapmove D5071 8 10
+give 回城卷 1
+
+
+[@牛魔六层]
+#IF
+#ACT
+mapmove D2078  253 256
+give 回城卷 1
+
+[@霸者大厅]
+#IF
+#ACT
+mapmove D2008 84 85
+give 回城卷 1
+
+
+[@沙藏宝阁]
+#IF
+#ACT
+mapmove H201 13 103
+give 回城卷 1
+
+
+[@牛魔五层]
+#IF
+#ACT
+mapmove D2076 94 130
+give 回城卷 1
+
+[@牛魔五层]
+#IF
+#ACT
+mapmove D2076 94 130
+give 回城卷 1
+
+[@六新衣服]
+你想传送到哪里？\\
+　　　　※ <钳虫巢穴/@钳虫巢穴> ※ <堕落坟场/@堕落坟场> ※ <死亡神殿/@死亡神殿> ※\ \
+　　　　※ <深渊魔域/@深渊魔域> ※ <地狱烈焰/@地狱烈焰> ※ <困惑殿堂/@困惑殿堂> ※\ \
+　　　　<返回/@会员服务>
+
+
+[@困惑殿堂]
+#IF
+#ACT
+give 回城卷 1
+mapmove r001 55 94
+
+
+[@钳虫巢穴]
+#IF
+#ACT
+give 回城卷 1
+mapmove 11 343 325
+
+
+[@地狱烈焰]
+#IF
+#ACT
+give 回城卷 1
+mapmove 0 428 474
+
+
+[@堕落坟场]
+#IF
+#ACT
+give 回城卷 1
+mapmove 1 320 56
+
+
+[@死亡神殿]
+#IF
+#ACT
+give 回城卷 1
+mapmove 4 205 218
+
+
+[@深渊魔域]
+#IF
+#ACT
+give 回城卷 1
+mapmove 1 215 312
+
+
+;======普通传送======
+
+
+
+[@yzadmove]
+#IF 
+#ACT
+mapmove H201 107 179
+break 
+
+
+[@sbkmove]
+#IF 
+#ACT
+mapmove 3 706 407
+break 
+
+[@jhmove]
+#IF 
+#ACT
+mapmove 3 333 333
+break 
+
+[@bwmove]
+#IF 
+#ACT
+mapmove 0 333 268 
+break 
+
+
+[@cymove]
+#IF 
+#ACT
+mapmove 5 140 338
+break 
+  
+
+[@fmmove]
+#IF 
+#ACT
+mapmove 4 241 202
+break 
+
+[@wwmove]
+#IF 
+#ACT
+mapmove 11 177 324
+break 
+
+[@bdmove]
+#IF 
+#ACT
+mapmove 0 288 615
+break 
+
+[@gnmove]
+#IF 
+#ACT
+mapmove 0 634 612
+break 
+
+[@dsmove]
+#IF 
+#ACT
+mapmove 2 503 483
+break 
+[@jysc]
+#IF 
+#ACT
+mapmove 5 140 338
+break 
+[@dsmove]
+#IF 
+#ACT
+mapmove 2 503 483
+break 
+
+[@pianren]
+韩诚数据友情提示：请所有玩家保管好自己的ID和密码，不要轻易告\
+诉任何人；在每次下线前最好将自己的物品放在仓库，并加以密码保\
+护；本服务器绝对公平，只设立一个在线二级管理员!!如果有玩家的\
+物品一旦丢失，寻找会很麻烦，所以请大家格外小心！本服务器在此\
+特公布现在骗子常用的几种伎俩，希望能够帮助大家，\ \
+<宣传骗子/@xuan>        <假名骗子/@jia>        <冒充骗子/@mao> \
+<木马骗子/@mu>        <感情骗子/@gan>        <返回首页/@MAIN> \
+——————————————————————————————\
+[@xuan]
+每个新私服开机时都会有人在安全喊“新开私服，上线就送装备”等\
+等，有很多都是假的，即使是真的，你想想上线就送装备的私服会不\
+垃圾吗？但是更可恶的是有些人喊的目的是为了窃取帐号和密码；因\
+为很多玩家都喜欢在每个私服都使用同样的帐号和密码，那些骗子正\
+是利用这点开了个空私服，只要你在空私服里输入了帐号和密码，他\
+马上就过来盗走你在本服务器的人物和装备，所以请大家务必注意！\
+——————————————————————————————\
+                                     <返回/@pianren> \
+[@jia]
+每个玩家在游戏里都有自己的朋友，爱人，甚至行会掌门和门人，有\
+些骗子就利用这种关系在你朋友的名字后面加个空格，或者改变字符\
+等方式，很难分辨真伪，然后就来向你借装备，或者直接借用你的人\
+物号，请大家在难辩真伪的情况下务必问问对方的姓氏等等！\
+——————————————————————————————\
+                                     <返回/@pianren> \
+[@mao]
+这是最常见的骗子伎俩，这些骗子一般会说你中了本服务器的大奖，\
+请说出你的帐号和密码，本服务器会赠送你装备等等！零五数据再次\
+申明，为了做到绝对公平给所有的玩家一个洁净的游戏空间，游戏管\
+理员只会在玩家购买装备时才会上线，并且管理员密人说话是<红色>字\
+体!!!其它的一概为假冒管理员!!!请大家互相转告！\
+——————————————————————————————\
+                                     <返回/@pianren> \
+[@mu]
+这是一种黑客常用的伎俩，他向你QQ发一个文件，只要你一打开就\
+中了木马，这个木马及其厉害！你一旦打开了这个木马文件，他就可\
+以看见你在电脑上的一切操作，甚至可以任意修改和删除你电脑上的\
+内容；不仅如此，即使你没玩传奇游戏，零五数据也友情提示所有玩\
+家：当今网络漏洞很多，在家上网的朋友最好安装专业的杀毒和防木\
+马软件，平时多学习网络知识，韩诚数据愿意成为每位玩家的免费技\
+术咨询热线！\
+——————————————————————————————\
+                                     <返回/@pianren> \
+[@gan]
+感情型骗子应该说是最可恶的了，和你在游戏里称兄道弟，山盟海誓\
+的，只要你把装备借给他，狐狸尾巴一下就露出来了我想很多玩家都\
+遇到过吧？我们提倡网上交友，这也正是网络的魅力之一，但是请大\
+家千万要察亮眼睛，零五数据祝所有的玩家在游戏以外的现实生活中\
+也能学会辨别是非黑白！\
+——————————————————————————————\
+                                     <返回/@pianren> \

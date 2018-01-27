@@ -1,0 +1,5253 @@
+(@@sendmsg @storage @getback @@InPutString @@InPutInteger @StartMyShop @buy @sell @storage @getback @repair @s_repair @makedrug @@offlinemsg @BuyShopItem  @getnextpage @getPreviouspage)
+
+[@MapEventWalks3]
+#if
+CHECKGUILDAURAEPOINT < 1501
+CheckGuildMember <$GUILDNAME> 
+#act
+SetOnTimer 13 1
+GuildNoticeMsg 254 0 【全服通告】行会积分中心已经被行会『<$GUILDNAME>』占领.每秒获得1点积分
+GuildNoticeMsg 254 0 【全服通告】行会积分中心已经被行会『<$GUILDNAME>』占领.每秒获得1点积分
+GuildNoticeMsg 254 0 【全服通告】行会积分中心已经被行会『<$GUILDNAME>』占领.每秒获得1点积分
+sendcentermsg 241 250  【全服通告】行会积分中心已经被行会『<$GUILDNAME>』的成员『<%s>』霸占了快干掉他！
+sendcentermsg 241 250  【全服通告】行会积分中心已经被行会『<$GUILDNAME>』的成员『<%s>』霸占了快干掉他！
+sendcentermsg 241 250  【全服通告】行会积分中心已经被行会『<$GUILDNAME>』的成员『<%s>』霸占了快干掉他！
+GMEXECUTE 表情 0
+break
+
+
+
+
+[@OnKillMob]
+#IF
+CheckLevelEx > 0
+#ACT
+CALCVAR HUMAN 杀怪数量 + 1
+SAVEVAR HUMAN 杀怪数量 ..\QuestDiary\防脱机脚本\杀怪数量.txt
+#IF
+CHECKVAR HUMAN 杀怪数量 = 100
+#ACT
+CALCVAR HUMAN 杀怪数量 = 0
+SAVEVAR HUMAN 杀怪数量 ..\QuestDiary\防脱机脚本\杀怪数量.txt
+CALCVAR HUMAN 错误数量 + 1
+SAVEVAR HUMAN 错误数量 ..\QuestDiary\防脱机脚本\错误数量.txt
+#CALL [\防脱机脚本\防脱机脚本.txt] @防止脱机
+BREAK
+
+
+[@PlayReconnection]
+#IF
+#ACT
+goto @赋予变量
+
+[@PlayOffLine]
+#IF
+#ACT
+goto @赋予变量
+
+#IF
+CheckHumInRange 3 314 344 3 
+#ACT
+break
+
+#IF
+INSAFEZONE
+CHECKONLINEPLAYCOUNT < 300 
+#ACT
+OFFLINEPLAY 30000 100 
+break
+
+[@赋予变量]
+#IF
+#ACT
+GetUserItemName 1 21
+goto @刷神器检测
+
+
+[@刷神器检测]
+#IF
+EQUAL S21 上古神器[战]
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+seticon 0 0
+goto @刷怪战
+
+#IF
+EQUAL S21 上古神器[道]
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+seticon 0 0
+goto @刷怪道
+
+#IF
+EQUAL S21 上古神器[法]
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+seticon 0 0
+goto @刷怪法
+
+#IF
+checkitem 上古神器[战] 1
+#ACT
+goto @刷怪战
+
+#IF
+checkitem 上古神器[道] 1
+#ACT
+goto @刷怪道
+
+#IF
+checkitem 上古神器[法] 1
+#ACT
+goto @刷怪法
+
+[@刷怪战]
+#if
+EQUAL A51 
+#ACT
+break
+
+#if
+CheckMapSameMonCount sg1 上古教主-战 < 1
+#ACT
+Param1 sg1
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-战 1 1
+MOV A51 
+MOV G61 0
+SendCenterMsg 251 233 提示：[上古神器-战]拥有者[%s]已经离线，BOSS重新出现在神器地图！ 1
+GuildNoticeMsg 251 233 提示：[上古神器-战]拥有者[%s]已经离线，BOSS重新出现在神器地图！ 1
+GMEXECUTE 开始提问 @上古邀请战
+break
+
+[@刷怪道]
+#if
+EQUAL A52 
+#ACT
+break
+
+#if
+CheckMapSameMonCount sg2 上古教主-道 < 1
+#ACT
+Param1 sg2
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-道 1 1
+MOV A52 
+MOV G62 
+SendCenterMsg 251 233 提示：[上古神器-道]拥有者[%s]已经离线，BOSS重新出现在神器地图！ 1
+GuildNoticeMsg 251 233 提示：[上古神器-道]拥有者[%s]已经离线，BOSS重新出现在神器地图！ 1
+GMEXECUTE 开始提问 @上古邀请道
+break
+
+[@刷怪法]
+#if
+EQUAL A53 
+#ACT
+break
+
+#if
+CheckMapSameMonCount sg3 上古教主-法 < 1
+#ACT
+Param1 sg3
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-法 1 1
+MOV A53 
+MOV G63 
+SendCenterMsg 251 233 提示：[上古神器-法]拥有者[%s]已经离线，BOSS重新出现在神器地图！ 1
+GuildNoticeMsg 251 233 提示：[上古神器-法]拥有者[%s]已经离线，BOSS重新出现在神器地图！ 1
+GMEXECUTE 开始提问 @上古邀请法
+break
+
+[@KillSlave]
+#IF
+CheckKillSlaveName 一级镖车
+#ACT
+gamegold + 50000
+SendCenterMsg 251 0 玩家[<$USERNAME>]劫镖成功，摧毁“一级镖车”获得5万元宝奖励！ 1
+SendMsg 6 劫镖成功，摧毁“一级镖车”获得5万元宝奖励！
+break
+
+#IF
+CheckKillSlaveName 二级镖车
+#ACT
+gamegold + 150000
+SendCenterMsg 251 0 玩家[<$USERNAME>]劫镖成功，摧毁“二级镖车”获得15万元宝奖励！ 1
+SendMsg 6 劫镖成功，摧毁“二级镖车”获得15万元宝奖励！
+break
+
+#IF
+CheckKillSlaveName 三级镖车
+#ACT
+gamegold + 300000
+SendCenterMsg 251 0 玩家[<$USERNAME>]劫镖成功，摧毁“三级镖车”获得30万元宝奖励！ 1
+SendMsg 6 劫镖成功，摧毁“三级镖车”获得30万元宝奖励！
+break
+
+[@PlayDie]
+#IF
+CHECKLEVELEX > 0
+check [95] 1
+IsOnMap daluandou
+#ACT
+SET [95] 0
+MOV S3 <$KILLER>
+S3.GameGold + 200000
+GuildNoticeMsg 56 255 系统：『<$KILLER>』在★群雄·大乱斗★地图里.轻松斩杀了[<$USERNAME>]并获得了20万元宝,看来[乱斗ＰＫ王]的称号指日可待了!
+
+
+#IF
+#ACT
+goto @赋予变量
+
+#IF
+KILLBYHUM
+#ACT
+set [167] 0
+goto @被人杀
+goto @被人杀01
+#ELSEACT
+goto @被怪杀
+break
+
+
+[@KillPlay]
+
+[@被人杀]
+#if
+checknamelist ..\QuestDiary\小谢制作\逆天之怒名单.txt
+#ACT
+sendmsg 1 [<$KILLER>杀死<$USERNAME>获得250万元宝奖励] 
+SENDMSG 6 [提示：您被<$KILLER>杀死了] 
+MOV S10 <$KILLER>
+S10.GAMEGOLD + 2500000
+MOV S10
+goto @ige0
+break
+
+[@ige0]
+#if
+#act
+delnamelist ..\QuestDiary\小谢制作\逆天之怒名单.txt
+GuildNoticeMsg 250 0 [新闻联播]:[<$USERNAME>]瘫倒在%m(%x:%y)哀哭到：哎呀，我一老处男你也想强暴啊，同性恋变态啊...
+break
+
+[@被人杀01]
+#IF
+#ACT
+GuildNoticeMsg 255 0 ぐ：可怜【<$USERNAME>】在【%m(%x:%y)】受到【<$KILLER>】的疯狂揉虐吐血身亡！
+break
+
+[@被怪杀]
+#IF
+RANDOM 3
+#ACT
+GuildNoticeMsg 255 0 ぐ：可怜的【<$USERNAME>】在【%m(%x:%y)】被怪物【<$MONKILLER>】残忍的分尸了！
+break
+
+
+[@PlayLevelUp]
+;-----------------------战士-------------------------
+
+
+#if
+CHECKLEVELEX > 170
+#act
+CHANGELEVEL = 170
+break
+
+
+
+
+#if
+CHECKLEVELEX = 170
+#act
+give 终极面巾 1
+SENDMSG 7 恭喜你升级到170，系统奖励你终极面巾！
+break
+
+#if
+CHECKLEVELEX = 165
+#act
+give 仙龙爪 1
+SENDMSG 7 恭喜你升级到165，系统奖励你仙龙爪！
+break
+
+
+
+#if
+CHECKLEVELEX = 163
+#act
+give ☆盘古守护☆ 1
+SENDMSG 7 恭喜你升级到163，系统奖励你☆盘古守护☆！
+break
+
+
+
+#if
+checkjob warrior
+CHECKLEVELEX = 7
+#act
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+GAMEGOLD + 5000
+SENDMSG 7 恭喜你升级，系统奖励你5000元宝！
+break
+
+;-----------------------方士-------------------------
+#if
+checkjob taoist
+checklevelex = 7
+#act
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 困魔咒 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+ADDSKILL 气功波 3
+give 护身符 5
+give 灰色药粉(中量) 1
+give 黄色药粉(中量) 1
+GAMEGOLD + 5000
+SENDMSG 7 恭喜你升级，系统奖励你5000元宝！
+break
+
+;-----------------------法师-------------------------
+#if
+checkjob wizard
+checklevelex = 7
+#act
+ADDSKILL 火球术 3
+ADDSKILL 大火球 3
+ADDSKILL 地狱火 3
+ADDSKILL 雷电术 3
+ADDSKILL 爆裂火焰 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+GAMEGOLD + 5000
+SENDMSG 7 恭喜你升级，系统奖励你5000元宝！
+break
+
+;====================================================
+
+#if
+checkjob warrior
+gender Woman
+checklevelex = 15
+#act
+give 八荒 1
+AutoTakeOnItem 八荒 1
+take 乌木剑 1
+give 轻型盔甲(女) 1
+AutoTakeOnItem 轻型盔甲(女) 0
+take 布衣(女) 1
+break
+
+#if
+gender man
+checkjob warrior
+checklevelex = 15
+#act
+give 八荒 1
+AutoTakeOnItem 八荒 1
+take 乌木剑 1
+give 轻型盔甲(男) 1
+AutoTakeOnItem 轻型盔甲(男) 0
+take 布衣(男) 1
+break
+
+#if
+checkjob taoist
+gender Woman
+checklevelex = 15
+#act
+give 半月 1
+AutoTakeOnItem 半月 1
+take 乌木剑 1
+give 轻型盔甲(女) 1
+AutoTakeOnItem 轻型盔甲(女) 0
+take 布衣(女) 1
+break
+
+#if
+checkjob taoist
+gender man
+checklevelex = 15
+#act
+give 半月 1
+AutoTakeOnItem 半月 1
+take 乌木剑 1
+give 轻型盔甲(男) 1
+AutoTakeOnItem 轻型盔甲(男) 0
+take 布衣(男) 1
+break
+
+#if
+checkjob wizard
+gender Woman
+checklevelex = 15
+#act
+give 海魂 1
+AutoTakeOnItem 海魂 1
+take 乌木剑 1
+give 轻型盔甲(女) 1
+AutoTakeOnItem 轻型盔甲(女) 0
+take 布衣(女) 1
+break
+
+
+#if
+checkjob wizard
+gender man
+checklevelex = 15
+#act
+give 海魂 1
+AutoTakeOnItem 海魂 1
+take 乌木剑 1
+give 轻型盔甲(男) 1
+AutoTakeOnItem 轻型盔甲(男) 0
+take 布衣(男) 1
+break
+;--------------------------------------------------------------
+#if
+checkjob warrior
+gender Woman
+checklevelex = 22
+#act
+give 裁决之杖<新手> 1
+AutoTakeOnItem 裁决之杖<新手> 1
+take 八荒 1
+give 重盔甲(女) 1
+AutoTakeOnItem  重盔甲(女) 0
+take 轻型盔甲(女) 1
+give 骑士手镯<新手> 2
+AutoTakeOnItem  骑士手镯<新手> 5
+AutoTakeOnItem  骑士手镯<新手> 6
+give 力量戒指<新手> 2
+AutoTakeOnItem  力量戒指<新手> 7
+AutoTakeOnItem  力量戒指<新手> 8
+give 绿色项链<新手> 1
+AutoTakeOnItem  绿色项链<新手> 3
+give 黑铁头盔<新手> 1
+AutoTakeOnItem  黑铁头盔<新手> 4
+give 盟重传送石 1
+give 随机传送石 1
+
+mapmove 3 324 336
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+break
+
+#if
+gender man
+checkjob warrior
+checklevelex = 22
+#act
+give 裁决之杖<新手> 1
+AutoTakeOnItem 裁决之杖<新手> 1
+take 八荒 1
+give 重盔甲(男) 1
+AutoTakeOnItem 重盔甲(男) 0
+take 轻型盔甲(男) 1
+give 骑士手镯<新手> 2
+AutoTakeOnItem  骑士手镯<新手> 5
+AutoTakeOnItem  骑士手镯<新手> 6
+give 力量戒指<新手> 2
+AutoTakeOnItem  力量戒指<新手> 7
+AutoTakeOnItem  力量戒指<新手> 8
+give 绿色项链<新手> 1
+AutoTakeOnItem  绿色项链<新手> 3
+give 黑铁头盔<新手> 1
+AutoTakeOnItem  黑铁头盔<新手> 4
+give 盟重传送石 1
+give 随机传送石 1
+mapmove 3 324 336
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+break
+
+#if
+checkjob taoist
+gender Woman
+checklevelex = 22
+#act
+give 无极棍<新手> 1
+AutoTakeOnItem 无极棍<新手> 1
+take 半月 1
+give 灵魂战衣(女) 1
+AutoTakeOnItem 灵魂战衣(女) 0
+take 轻型盔甲(女) 1
+give 三眼手镯<新手> 2
+AutoTakeOnItem  三眼手镯<新手> 5
+AutoTakeOnItem  三眼手镯<新手> 6
+give 泰坦戒指<新手> 2
+AutoTakeOnItem  泰坦戒指<新手> 7
+AutoTakeOnItem  泰坦戒指<新手> 8
+give 灵魂项链<新手> 1
+AutoTakeOnItem  灵魂项链<新手> 3
+give 记忆头盔<新手> 1
+AutoTakeOnItem  记忆头盔<新手> 4
+give 盟重传送石 1
+give 随机传送石 1
+mapmove 3 324 336
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+break
+
+#if
+checkjob taoist
+gender man
+checklevelex = 22
+#act
+give 无极棍<新手> 1
+AutoTakeOnItem 无极棍<新手> 1
+take 半月 1
+give 灵魂战衣(男) 1
+AutoTakeOnItem 灵魂战衣(男) 0
+take 轻型盔甲(男) 1
+give 三眼手镯<新手> 2
+AutoTakeOnItem  三眼手镯<新手> 5
+AutoTakeOnItem  三眼手镯<新手> 6
+give 泰坦戒指<新手> 2
+AutoTakeOnItem  泰坦戒指<新手> 7
+AutoTakeOnItem  泰坦戒指<新手> 8
+give 灵魂项链<新手> 1
+AutoTakeOnItem  灵魂项链<新手> 3
+give 记忆头盔<新手> 1
+AutoTakeOnItem  记忆头盔<新手> 4
+give 盟重传送石 1
+give 随机传送石 1
+mapmove 3 324 336
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+break
+
+#if
+checkjob wizard
+gender Woman
+checklevelex = 22
+#act
+give 血饮<新手> 1
+AutoTakeOnItem 血饮<新手> 1
+take 海魂 1
+give 魔法长袍(女) 1
+AutoTakeOnItem 魔法长袍(女) 0
+take 轻型盔甲(女) 1
+give 龙之手镯<新手> 2
+AutoTakeOnItem  龙之手镯<新手> 5
+AutoTakeOnItem  龙之手镯<新手> 6
+give 紫碧螺<新手> 2
+AutoTakeOnItem  紫碧螺<新手> 7
+AutoTakeOnItem  紫碧螺<新手> 8
+give 恶魔铃铛<新手> 1
+AutoTakeOnItem  恶魔铃铛<新手> 3
+give 道士头盔<新手> 1
+AutoTakeOnItem  道士头盔<新手> 4
+give 盟重传送石 1
+give 随机传送石 1
+mapmove 3 324 336
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+break
+
+
+#if
+checkjob wizard
+gender man
+checklevelex = 22
+#act
+give 血饮<新手> 1
+AutoTakeOnItem 血饮<新手> 1
+take 海魂 1
+give 魔法长袍(男) 1
+AutoTakeOnItem 魔法长袍(男) 0
+take 轻型盔甲(男) 1
+give 龙之手镯<新手> 2
+AutoTakeOnItem  龙之手镯<新手> 5
+AutoTakeOnItem  龙之手镯<新手> 6
+give 紫碧螺<新手> 2
+AutoTakeOnItem  紫碧螺<新手> 7
+AutoTakeOnItem  紫碧螺<新手> 8
+give 恶魔铃铛<新手> 1
+AutoTakeOnItem  恶魔铃铛<新手> 3
+give 道士头盔<新手> 1
+AutoTakeOnItem  道士头盔<新手> 4
+give 盟重传送石 1
+give 随机传送石 1
+mapmove 3 324 336
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+SENDMSG 7 新区回馈，免费领取+25套，详细查看盟重免费领取+25套NPC
+break
+
+
+#if
+CHECKLEVELEX = 2
+#act
+SendCenterMsg 254 0 本版在1.76基础上精心修订，极品0-30，散人好混 0
+break
+
+#if
+CHECKLEVELEX = 5
+#act
+SendCenterMsg 254 0 服务器长期稳定，游戏公平！ 0
+break
+#if
+CHECKLEVELEX = 6
+#act
+SendCenterMsg 254 0 新人起步7级系统赠送5000元宝，可直接进入元宝地图进行寻宝之路！ 0
+#if
+CHECKLEVELEX = 10
+#act
+SendCenterMsg 254 0 祖玛、赤月装备均可随地回收，一个200元宝以上，元宝疯赚 0
+break
+#if
+CHECKLEVELEX = 17
+#act
+SendCenterMsg 254 0 减去升级繁琐，玩家打到元宝回收后进入泡点升级 0
+break
+
+#if
+CHECKLEVELEX = 19
+#act
+SendCenterMsg 254 0 本服新增地图，详细查看传送员，新增下午一个小时双倍砍猪活动 0
+break
+
+#IF
+CHECKLEVELEX > 74
+#ACT
+GMEXECUTE 解除禁言 self 
+SENDMSG [提示]：恭喜你升到75级，你现在可以说话了。
+BREAK 
+
+;====================================================
+
+[@StdModeFunc50]
+
+#IF
+equal D90 1
+#ACT
+MOV D90 0
+SENDMSG 6 [提示]聚宝盒关闭成功，自动吃元宝/自动回收功能关闭
+SENDMSG 6 [提示]如想再次开启该功能，请双击使用聚宝盒
+break
+
+#IF
+equal S50 
+#ACT
+MOV S50 ×
+
+#IF
+equal S51 
+#ACT
+MOV S51 ×
+
+#IF
+equal D90 0
+#SAY
+　　　　　　　　　　　　严重警告！\
+<----------------------------------------------------------/SCOLOR=253>\
+开启后，每3秒自动吃元宝卷，赤月以下自动回收{(无论是否极品)/SCOLOR=250}\
+您可以设置是否回收高级装备，开启前先将您的{极品装备存入仓库/SCOLOR=250}\
+<----------------------------------------------------------/SCOLOR=253>\
+　　　　{贵族装备暂时不开启自动回收，请手动操作！/SCOLOR=243}\
+　　　　　　是否自动回收{精品/SCOLOR=242}：[ <$STR(S50)> ]　<开关/@回收精品>\
+;　　　　　　是否自动回收{贵族/SCOLOR=252}：[ <$STR(S51)> ]　<开关/@回收贵族>\
+　\
+<√ 同意/@同意聚宝盒>　　{请注意：操作失误造成的损失自负！/SCOLOR=250}　　<× 拒绝/@exit>
+#ACT
+break
+
+[@回收精品]
+#IF
+equal S50 ×
+#ACT
+MOV S50 √
+GOTO @StdModeFunc50
+break
+
+#IF
+equal S50 √
+#ACT
+MOV S50 ×
+GOTO @StdModeFunc50
+break
+
+[@回收贵族]
+#IF
+equal S51 ×
+#ACT
+MOV S51 √
+GOTO @StdModeFunc50
+break
+
+#IF
+equal S51 √
+#ACT
+MOV S51 ×
+GOTO @StdModeFunc50
+break
+
+;#SAY
+;　\
+;　　　　　　　　　　　严重警告！\
+;<----------------------------------------------------------/SCOLOR=253>\
+;本功能开启后，背包内<祖玛以上/SCOLOR=250>装备，无论属性<全部会被回收/SCOLOR=250>！\
+;如果点击同意，表示你已经知悉以上内容，所有损失与本服无关。\
+;<----------------------------------------------------------/SCOLOR=253>\
+;　　说明：{每3秒自动吃元宝卷，自动回收装备，打元宝必备/SCOLOR=243}\
+;　　提示：{点击“同意”前，请先将您的贵重装备/SCOLOR=243}{存入仓库/SCOLOR=250}\
+;　　　<拒绝/@exit>　　<拒绝/@exit>　　<拒绝/@exit>　　<拒绝/@exit>　　<同意/@同意聚宝盒>　　<拒绝/@exit>
+
+
+
+[@同意聚宝盒]
+#IF
+CHECKLEVELEX < 101
+#ACT
+MESSAGEBOX [抱歉]本功能为100级以上专属福利，您目前只有<$LEVEL>级，快努力升级吧！
+break
+
+#IF
+equal D90 0
+#ACT
+MOV D90 1
+SENDMSG 6 [提示]聚宝盒启动成功，每3秒自动吃元宝/自动回收开启
+SENDMSG 6 [提示]如想关闭该功能，请再次使用或小退再后进入游戏
+close
+break
+
+
+
+[@cymove66]
+#IF 
+#ACT
+mapmove 5 140 338
+break 
+
+[@StdModeFunc80]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 5
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷5点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷5 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+[@StdModeFunc81]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 10
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷10点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷10 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+
+[@StdModeFunc82]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 15
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷15点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷15 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+
+[@StdModeFunc35]
+#IF
+ChecKLevelEx < 85
+#ACT
+give 四级魔法盾
+SENDMSG 6 提示：此技能需要85级才可以学习.你的等级不足以修炼此技能!
+BREAK
+
+#IF
+CheckJob wizard
+#ACT
+SkillLevel 魔法盾 = 4
+GuildNoticeMsg 167 251 恭喜玩家【%s】<四><级><魔><法><盾>修炼成功~
+GuildNoticeMsg 167 251 恭喜玩家【%s】<四><级><魔><法><盾>修炼成功~
+#ELSEACT
+give 四级魔法盾
+SENDMSG 6 提示：本技能为法师专用!
+BREAK
+
+
+[@StdModeFunc44]
+#IF
+ChecKLevelEx < 85
+#ACT
+give 四级烈火剑法
+SENDMSG 6 提示：此技能需要85级才可以学习.你的等级不足以修炼此技能!
+BREAK
+
+#IF
+CheckJob warrior
+#ACT
+SkillLevel 烈火剑法 = 4
+GuildNoticeMsg 167 251 恭喜玩家【%s】<四><级><烈><火><剑><法>修炼成功~
+GuildNoticeMsg 167 251 恭喜玩家【%s】<四><级><烈><火><剑><法>修炼成功~
+#ELSEACT
+give 四级烈火剑法
+SENDMSG 6 提示：本技能为战士专用!
+BREAK
+
+
+
+[@StdModeFunc45]
+#IF
+ChecKLevelEx < 85
+#ACT
+give 四级灵魂火符
+SENDMSG 6 提示：此技能需要85级才可以学习.你的等级不足以修炼此技能!
+BREAK
+
+#IF
+CheckJob taoist
+#ACT
+SkillLevel 灵魂火符 = 4
+GuildNoticeMsg 167 251 恭喜玩家【%s】<四><级><灵><魂><火><符>修炼成功~
+GuildNoticeMsg 167 251 恭喜玩家【%s】<四><级><灵><魂><火><符>修炼成功~
+#ELSEACT
+give 四级灵魂火符
+SENDMSG 6 提示：本技能为道士专用!
+BREAK
+
+
+[@StdModeFunc1]
+#IF
+CHECKNAMELIST ..\QuestDiary\变量数据\被通缉的.txt
+#act
+GIVE 红名清洗卡 1
+MessageBox 抱歉！你只能通过土城诅咒他人NPC进行清理，谢谢！
+#ELSEACT
+  CHANGEPKPOINT = 0
+SENDMSG 5 你的PK点数已经清除
+close
+
+
+[@StdModeFunc2]
+#IF
+#ACT
+mapmove Fama1 84 70
+SENDMSG 5 本地图总共四层.爆率2倍.
+close
+
+[@StdModeFunc4]
+#IF
+#ACT
+MAPMOVE 3 330 330
+
+[@StdModeFunc5]
+#IF
+#ACT
+MAPMOVE 0 333 268
+
+[@StdModeFunc6]
+#IF
+#ACT
+MAPMOVE 5 140 338
+
+[@StdModeFunc7]
+#IF
+#ACT
+MAPMOVE 4 241 202
+
+[@StdModeFunc8]
+#IF
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 %s，你的发型已经改变了...
+
+[@StdModeFunc9]
+#IF
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 %s，你的发型已经恢复了...
+
+;=========================================================================
+
+[@StdModeFunc51]
+#act
+GAMEGOLD + 500000
+SENDMSG 7 提示:元宝增加500000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc52]
+#act
+GAMEGOLD + 1000000
+SENDMSG 7 提示:元宝增加1000000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc13]
+#act
+GAMEGOLD + 5000000
+SENDMSG 7 提示:元宝增加5000000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc17]
+#act
+GAMEGOLD + 10000000
+SENDMSG 7 提示:元宝增加10000000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc3]
+#act
+GAMEGOLD + 20000000
+SENDMSG 7 提示:元宝增加20000000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc14]
+#act
+GAMEGOLD + 20
+SENDMSG 7 提示:元宝增加20个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc15]
+#act
+GAMEGOLD + 50
+SENDMSG 7 提示:元宝增加50个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc16]
+#act
+GAMEGOLD + 100
+SENDMSG 7 提示:元宝增加100个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc31]
+#act
+GAMEGOLD + 500
+SENDMSG 7 提示:元宝增加500个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc131]
+#act
+GAMEGOLD + 1000
+SENDMSG 7 提示:元宝增加1000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc132]
+#act
+GAMEGOLD + 2000
+SENDMSG 7 提示:元宝增加2000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc133]
+#act
+GAMEGOLD + 10000
+SENDMSG 7 提示:元宝增加10000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc134]
+#act
+GAMEGOLD + 50000
+SENDMSG 7 提示:元宝增加50000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc135]
+#act
+GAMEGOLD + 100000
+SENDMSG 7 提示:元宝增加100000个.您当前的元宝为：<$GAMEGOLD>个
+
+[@StdModeFunc32]
+#IF
+#ACT
+GAMEDIAMOND + 1
+SENDMSG 6 %s，你金刚石数量增加1颗，现存金刚石数量:<$GAMEDIAMOND>颗。
+
+
+
+[@StdModeFunc36]
+#IF
+#ACT
+GAMEDIAMOND + 50
+SENDMSG 6 %s，你金刚石数量增加50颗，现存金刚石数量:<$GAMEDIAMOND>颗。
+
+[@StdModeFunc37]
+#IF
+#ACT
+GAMEDIAMOND + 100
+SENDMSG 6 %s，你金刚石数量增加100颗，现存金刚石数量:<$GAMEDIAMOND>颗。
+
+[@StdModeFunc38]
+#IF
+#ACT
+GAMEDIAMOND + 200
+SENDMSG 6 %s，你金刚石数量增加200颗，现存金刚石数量:<$GAMEDIAMOND>颗。
+
+[@StdModeFunc39]
+#IF
+#ACT
+GAMEDIAMOND + 500
+SENDMSG 6 %s，你金刚石数量增加500颗，现存金刚石数量:<$GAMEDIAMOND>颗。
+
+[@StdModeFunc34]
+#IF
+	CheckBagSize	7
+#ACT
+give 疗伤药包 7
+#ELSEACT
+GIVE 疗伤大礼包 1
+SENDMSG 7 请留出7个空格
+
+[@StdModeFunc101]
+#IF
+	CheckBagSize	6
+#ACT
+give 强效疗伤药 6
+#ELSEACT
+GIVE 强效疗伤(包) 1
+SENDMSG 7 请留出6个空格
+
+[@StdModeFunc102]
+#IF
+	CheckBagSize	6
+#ACT
+give 超级疗伤药 6
+#ELSEACT
+GIVE 超级疗伤(包) 1
+SENDMSG 7 请留出6个空格
+
+[@StdModeFunc103]
+#IF
+	CheckBagSize	6
+#ACT
+give 圣品疗伤药 6
+#ELSEACT
+GIVE 圣品疗伤(包) 1
+SENDMSG 7 请留出6个空格
+
+
+[@StdModeFunc18]
+移动仓库为您提供以下服务功能:\ \ \
+<存放物品/@storage>\ \
+<取回物品/@getback>\
+[@storage]
+需要保管什么东西?\ \
+<返回上页/@StdModeFunc18>
+[@getback]
+请看目录决定找什么东西.\ \
+<仓库首页/@getPreviouspage><仓库尾页/@getnextpage> \ \
+<返回上页/@StdModeFunc18>
+
+
+[@StdModeFunc19]
+#IF
+#ACT
+Gmexecute showeffect 78
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc20]
+#IF
+#ACT
+Gmexecute showeffect 79
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc21]
+#IF
+#ACT
+Gmexecute showeffect 80
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc22]
+#IF
+#ACT
+Gmexecute showeffect 81
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc23]
+#IF
+#ACT
+Gmexecute showeffect 82
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc24]
+#IF
+#ACT
+Gmexecute showeffect 83
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc25]
+#IF
+#ACT
+Gmexecute showeffect 84
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc57]
+#IF
+  small M3 60
+#Act
+  INC M3 2
+  Gmexecute showeffect 78
+  Gmexecute showeffect 79
+  Gmexecute showeffect 80
+  DelayCall 2000 @庆典蛋糕1
+SENDMSG 0 <$USERNAME>在:%m%x:%y处燃放庆典蛋糕、大家快去欣赏哦。
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@StdModeFunc137]
+#IF
+checkgold > 24999999
+#ACT
+give 金币 998000
+#ELSEACT
+GIVE 金条 1
+SENDMSG 7 你的金币超过上限！~~！
+
+[@StdModeFunc47]
+#IF
+random 3
+#ACT
+Gmexecute showeffect 78
+Gmexecute showeffect 79
+Gmexecute showeffect 80
+Gmexecute showeffect 81
+Gmexecute showeffect 82
+Gmexecute showeffect 83
+Gmexecute showeffect 84
+SENDMSG 1 [%s]在[%M:%x:%y]燃放了<九珠连环炮>烟花!绚丽无比!
+break
+
+
+#IF
+random 2
+#ACT
+Gmexecute showeffect 78
+Gmexecute showeffect 79
+Gmexecute showeffect 80
+Gmexecute showeffect 81
+Gmexecute showeffect 82
+Gmexecute showeffect 83
+Gmexecute showeffect 84
+SENDMSG 1 [%s]在[%M:%x:%y]燃放了<九珠连环炮>烟花!绚丽无比! 
+break 
+
+
+
+#IF
+random 1
+#ACT
+Gmexecute showeffect 78
+Gmexecute showeffect 79
+Gmexecute showeffect 80
+Gmexecute showeffect 81
+Gmexecute showeffect 82
+Gmexecute showeffect 83
+Gmexecute showeffect 84
+SENDMSG 1 [%s]在[%M:%x:%y]燃放了<九珠连环炮>烟花!绚丽无比!
+break 
+
+[@StdModeFunc211]
+#act
+#CALL [\\购买装备\精品套.txt] @精品
+
+
+
+[@StdModeFunc110]
+#if
+CHECKNAMELIST ..\QuestDiary\功能设置\会员名单.txt
+#act
+GIVE 贵族会员卡 1
+MeSSageBox 你不要紧吧，你已经是会员了，还加入？
+#ELSEACT
+addnamelist ..\QuestDiary\功能设置\会员名单.txt
+MeSSageBox 恭喜你成为贵族会员，请用@会员享受此功能
+GuildNoticeMsg 255 245 恭喜『<$USERNAME>』成为贵族会员，更多会员功能等着他哦!用@会员试试功能
+GuildNoticeMsg 255 245 恭喜『<$USERNAME>』成为贵族会员，更多会员功能等着他哦!用@会员试试功能
+SendCenterMsg 180 251 恭喜『<$USERNAME>』成为贵族会员,如果你也想成为贵族会员，那就去商铺购买贵族会员卡吧!.. 1
+break
+
+
+
+
+
+[@StdModeFunc30]
+#IF
+checknamelist ..\QuestDiary\banbenku\会员名单.txt
+#ACT
+MessageBox 你已经是金钻★贵族了.无需再次加入!
+CLOSE
+#ELSEACT
+addnamelist ..\QuestDiary\banbenku\会员名单.txt
+messagebox 恭喜您成为本服金钻贵族，您将享受更多的功能！\输入[@服务]就可以随时随地享受金钻功能！
+sendcentermsg 0 223 [<$username>已经加入本服金钻贵族一员]
+break
+
+[@StdModeFunc207]
+#IF
+CHECKLEVELex < 130 
+#ACT
+CHANGEEXP + 50000000
+SENDCENTERMSG 0 223 [<$username>]吃了一包5000W经验卷. 1 5
+#elseact
+MESSAGEBOX 130级以后无法使用经验卷!
+give 5000W经验卷 1
+break
+
+[@StdModeFunc98]
+#IF
+CheckHeroCount < 2
+#ACT
+RecallSelf 10
+SENDCENTERMSG 0 223 [<$username>]使用心魔卷轴成功召唤一个心魔一起作战. 1 5
+#ELSEACT
+give 心魔卷轴 1
+MESSAGEBOX 您已经有一个心魔了，同时只能召唤一个！
+
+[@StdModeFunc90]
+#IF
+#ACT
+MESSAGEBOX 确认兑换前请保证背包至少[2格空位]，暂不兑换请点击取消按钮！\  @兑换随机25 @取消
+give +25装备[随机] 1
+
+[@StdModeFunc91]
+#IF
+#ACT
+MESSAGEBOX 确认兑换前请保证背包至少[2格空位]，暂不兑换请点击取消按钮！\  @兑换随机45 @取消
+give +45装备[随机] 1
+
+[@StdModeFunc92]
+#IF
+#ACT
+MESSAGEBOX 确认兑换前请保证背包至少[2格空位]，暂不兑换请点击取消按钮！\  @兑换终极武器 @取消
+give 终极武器[随机] 1
+
+[@StdModeFunc93]
+#IF
+#ACT
+MESSAGEBOX 确认兑换前请保证背包至少[2格空位]，暂不兑换请点击取消按钮！\  @兑换随机+15 @取消
+give *+15装备[随机] 1
+
+[@StdModeFunc94]
+#IF
+#ACT
+MESSAGEBOX 确认兑换前请保证背包至少[2格空位]，暂不兑换请点击取消按钮！\  @兑换随机+35 @取消
+give *+35装备[随机] 1
+
+[@StdModeFunc95]
+#IF
+#ACT
+MESSAGEBOX 确认兑换前请保证背包至少[2格空位]，暂不兑换请点击取消按钮！\  @兑换随机+25 @取消
+give *+25装备[随机] 1
+
+[@StdModeFunc96]
+#IF
+#ACT
+MESSAGEBOX 确认兑换前请保证背包至少[2格空位]，暂不兑换请点击取消按钮！\  @兑换随机+45 @取消
+give *+45装备[随机] 1
+
+[@兑换随机+15]
+#IF
+checkitem *+15装备[随机] 1
+#act
+take *+15装备[随机] 1
+#CALL [\\充值抽奖\爆15装备.txt] @15装备
+
+[@兑换随机+35]
+#IF
+checkitem *+35装备[随机] 1
+#act
+take *+35装备[随机] 1
+#CALL [\\充值抽奖\爆35装备.txt] @35装备
+
+[@兑换随机+25]
+#IF
+checkitem *+25装备[随机] 1
+#act
+take *+25装备[随机] 1
+#CALL [\\充值抽奖\爆25装备.txt] @25装备
+
+[@兑换随机+45]
+#IF
+checkitem *+45装备[随机] 1
+#act
+take *+45装备[随机] 1
+#CALL [\\充值抽奖\爆45装备.txt] @45装备
+
+[@兑换随机25]
+#IF
+checkitem +25装备[随机] 1
+#act
+take +25装备[随机] 1
+#CALL [\\充值抽奖\25装备.txt] @25装备
+
+[@兑换随机45]
+#IF
+checkitem +45装备[随机] 1
+#act
+take +45装备[随机] 1
+#CALL [\\充值抽奖\45装备.txt] @45装备
+
+[@兑换终极武器]
+#IF
+checkitem 终极武器[随机] 1
+#act
+take 终极武器[随机] 1
+#CALL [\\充值抽奖\终极武器.txt] @终极武器
+
+[@StdModeFunc97]
+#IF
+CHECKVAR HUMAN 入门装备时限 > 0
+#ACT
+SENDMSG 5 抱歉，你还需要[<$HUMAN(入门装备时限)>]分钟才可以打开此礼包！
+give 入门套装[赠] 1
+break
+
+#IF
+gender man
+checkjob warrior
+#ACT
+MESSAGEBOX 警告：领取前必须取下身上所有装备，否则装备丢失后果自负！\你当前性别为：男，职业：战士，是否确定领取[+15男战]套装？\  @男战入门套装 @取消1
+break
+
+#IF
+gender Woman
+checkjob warrior
+#ACT
+MESSAGEBOX 警告：领取前必须取下身上所有装备，否则装备丢失后果自负！\你当前性别为：女，职业：战士，是否确定领取[+15女战]套装？\  @女战入门套装 @取消1
+break
+
+#IF
+gender man
+checkjob Taoist
+#ACT
+MESSAGEBOX 警告：领取前必须取下身上所有装备，否则装备丢失后果自负！\你当前性别为：男，职业：道士，是否确定领取[+15男道]套装？\  @男道入门套装 @取消1
+break
+
+#IF
+gender Woman
+checkjob Taoist
+#ACT
+MESSAGEBOX 警告：领取前必须取下身上所有装备，否则装备丢失后果自负！\你当前性别为：女，职业：道士，是否确定领取[+15女道]套装？\  @女道入门套装 @取消1
+break
+
+#IF
+gender man
+checkjob Wizard
+#ACT
+MESSAGEBOX 警告：领取前必须取下身上所有装备，否则装备丢失后果自负！\你当前性别为：男，职业：法士，是否确定领取[+15男法]套装？\  @男法入门套装 @取消1
+break
+
+#IF
+gender Woman
+checkjob Wizard
+#ACT
+MESSAGEBOX 警告：领取前必须取下身上所有装备，否则装备丢失后果自负！\你当前性别为：女，职业：法士，是否确定领取[+15女法]套装？\  @女法入门套装 @取消1
+break
+
+
+
+[@男战入门套装]
+#if
+CHECKUSEITEM 0
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 1
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 2
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 3
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 4
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 5
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 6
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 7
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+
+#IF
+#act
+give 屠龙<入门> 1
+AutoTakeOnItem 屠龙<入门> 1
+give 天魔神甲<入门> 1
+AutoTakeOnItem 天魔神甲<入门> 0
+give 圣战戒指<入门> 1
+AutoTakeOnItem 圣战戒指<入门> 7
+give 圣战戒指<入门> 1
+AutoTakeOnItem 圣战戒指<入门> 8
+give 圣战手镯<入门> 1
+AutoTakeOnItem 圣战手镯<入门> 5
+give 圣战手镯<入门> 1
+AutoTakeOnItem 圣战手镯<入门> 6
+give 圣战项链<入门> 1
+AutoTakeOnItem 圣战项链<入门> 3
+give 圣战头盔<入门> 1
+AutoTakeOnItem 圣战头盔<入门> 4
+SendCenterMsg 254 0 [%s]在线30分钟，成功领取了一套+15极品战士组合装！ 1
+SENDMSG 0 [%s]在线30分钟，成功领取了一套+15极品战士组合装！
+GmexEcute 改属性 0 2 15
+GmexEcute 改属性 1 0 15
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 2 15
+GmexEcute 改属性 3 2 15
+GmexEcute 改属性 5 2 15
+GmexEcute 改属性 6 2 15
+GmexEcute 改属性 7 2 15
+GmexEcute 改属性 8 2 15
+messagebox 1.恭喜你兑换成功，请小退重新登陆！\2.入门装备只作为起步装备，无法加星升级！
+SENDMSG 7 恭喜你兑换成功，请小退后重新登陆！
+
+[@女战入门套装]
+#if
+CHECKUSEITEM 0
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 1
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 2
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 3
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 4
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 5
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 6
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 7
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#IF
+#act
+give 屠龙<入门> 1
+AutoTakeOnItem 屠龙<入门> 1
+give 圣战宝甲<入门> 1
+AutoTakeOnItem 圣战宝甲<入门> 0
+give 圣战戒指<入门> 1
+AutoTakeOnItem 圣战戒指<入门> 7
+give 圣战戒指<入门> 1
+AutoTakeOnItem 圣战戒指<入门> 8
+give 圣战手镯<入门> 1
+AutoTakeOnItem 圣战手镯<入门> 5
+give 圣战手镯<入门> 1
+AutoTakeOnItem 圣战手镯<入门> 6
+give 圣战项链<入门> 1
+AutoTakeOnItem 圣战项链<入门> 3
+give 圣战头盔<入门> 1
+AutoTakeOnItem 圣战头盔<入门> 4
+SendCenterMsg 254 0 [%s]在线30分钟，成功领取了一套+15极品战士组合装！ 1
+SENDMSG 0 [%s]在线30分钟，成功领取了一套+15极品战士组合装！
+GmexEcute 改属性 0 2 15
+GmexEcute 改属性 1 0 15
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 2 15
+GmexEcute 改属性 3 2 15
+GmexEcute 改属性 5 2 15
+GmexEcute 改属性 6 2 15
+GmexEcute 改属性 7 2 15
+GmexEcute 改属性 8 2 15
+messagebox 1.恭喜你兑换成功，请小退重新登陆！\2.入门装备只作为起步装备，无法加星升级！
+SENDMSG 7 恭喜你兑换成功，请小退后重新登陆！
+
+[@男道入门套装]
+#if
+CHECKUSEITEM 0
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 1
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 2
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 3
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 4
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 5
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 6
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 7
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#IF
+#act
+give 逍遥扇<入门> 1
+AutoTakeOnItem 逍遥扇<入门> 1
+give 天尊道袍<入门> 1
+AutoTakeOnItem 天尊道袍<入门> 0
+give 天尊戒指<入门> 1
+AutoTakeOnItem 天尊戒指<入门> 7
+give 天尊戒指<入门> 1
+AutoTakeOnItem 天尊戒指<入门> 8
+give 天尊手镯<入门> 1
+AutoTakeOnItem 天尊手镯<入门> 5
+give 天尊手镯<入门> 1
+AutoTakeOnItem 天尊手镯<入门> 6
+give 天尊项链<入门> 1
+AutoTakeOnItem 天尊项链<入门> 3
+give 天尊头盔<入门> 1
+AutoTakeOnItem 天尊头盔<入门> 4
+SendCenterMsg 254 0 [%s]在线30分钟，成功领取了一套+15极品道士组合装！ 1
+SENDMSG 0 [%s]在线30分钟，成功领取了一套+15极品道士组合装！
+GmexEcute 改属性 0 4 15
+GmexEcute 改属性 1 2 15
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 4 15
+GmexEcute 改属性 3 4 15
+GmexEcute 改属性 5 4 15
+GmexEcute 改属性 6 4 15
+GmexEcute 改属性 7 4 15
+GmexEcute 改属性 8 4 15
+messagebox 1.恭喜你兑换成功，请小退重新登陆！\2.入门装备只作为起步装备，无法加星升级！
+SENDMSG 7 恭喜你兑换成功，请小退后重新登陆！
+
+[@女道入门套装]
+#if
+CHECKUSEITEM 0
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 1
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 2
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 3
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 4
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 5
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 6
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 7
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#IF
+#act
+give 逍遥扇<入门> 1
+AutoTakeOnItem 逍遥扇<入门> 1
+give 天师长袍<入门> 1
+AutoTakeOnItem 天师长袍<入门> 0
+give 天尊戒指<入门> 1
+AutoTakeOnItem 天尊戒指<入门> 7
+give 天尊戒指<入门> 1
+AutoTakeOnItem 天尊戒指<入门> 8
+give 天尊手镯<入门> 1
+AutoTakeOnItem 天尊手镯<入门> 5
+give 天尊手镯<入门> 1
+AutoTakeOnItem 天尊手镯<入门> 6
+give 天尊项链<入门> 1
+AutoTakeOnItem 天尊项链<入门> 3
+give 天尊头盔<入门> 1
+AutoTakeOnItem 天尊头盔<入门> 4
+SendCenterMsg 254 0 [%s]在线30分钟，成功领取了一套+15极品道士组合装！ 1
+SENDMSG 0 [%s]在线30分钟，成功领取了一套+15极品道士组合装！
+GmexEcute 改属性 0 4 15
+GmexEcute 改属性 1 2 15
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 4 15
+GmexEcute 改属性 3 4 15
+GmexEcute 改属性 5 4 15
+GmexEcute 改属性 6 4 15
+GmexEcute 改属性 7 4 15
+GmexEcute 改属性 8 4 15
+messagebox 1.恭喜你兑换成功，请小退重新登陆！\2.入门装备只作为起步装备，无法加星升级！
+SENDMSG 7 恭喜你兑换成功，请小退后重新登陆！
+
+[@男法入门套装]
+#if
+CHECKUSEITEM 0
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 1
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 2
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 3
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 4
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 5
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 6
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 7
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#IF
+#act
+give 嗜魂法杖<入门> 1
+AutoTakeOnItem 嗜魂法杖<入门> 1
+give 法神披风<入门> 1
+AutoTakeOnItem 法神披风<入门> 0
+give 法神戒指<入门> 1
+AutoTakeOnItem 法神戒指<入门> 7
+give 法神戒指<入门> 1
+AutoTakeOnItem 法神戒指<入门> 8
+give 法神手镯<入门> 1
+AutoTakeOnItem 法神手镯<入门> 5
+give 法神手镯<入门> 1
+AutoTakeOnItem 法神手镯<入门> 6
+give 法神项链<入门> 1
+AutoTakeOnItem 法神项链<入门> 3
+give 法神头盔<入门> 1
+AutoTakeOnItem 法神头盔<入门> 4
+SendCenterMsg 254 0 [%s]在线30分钟，成功领取了一套+15极品道士组合装！ 1
+SENDMSG 0 [%s]在线30分钟，成功领取了一套+15极品道士组合装！
+GmexEcute 改属性 0 3 15
+GmexEcute 改属性 1 1 15
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 3 15
+GmexEcute 改属性 3 3 15
+GmexEcute 改属性 5 3 15
+GmexEcute 改属性 6 3 15
+GmexEcute 改属性 7 3 15
+GmexEcute 改属性 8 3 15
+messagebox 1.恭喜你兑换成功，请小退重新登陆！\2.入门装备只作为起步装备，无法加星升级！
+SENDMSG 7 恭喜你兑换成功，请小退后重新登陆！
+
+[@女法入门套装]
+#if
+CHECKUSEITEM 0
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 1
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 2
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 3
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 4
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 5
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 6
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#if
+CHECKUSEITEM 7
+#ACT
+give 入门套装[赠] 1
+messagebox 为防止漏洞，请先将身上所有装备取下！
+break
+
+#IF
+#act
+give 嗜魂法杖<入门> 1
+AutoTakeOnItem 嗜魂法杖<入门> 1
+give 霓裳羽衣<入门> 1
+AutoTakeOnItem 霓裳羽衣<入门> 0
+give 法神戒指<入门> 1
+AutoTakeOnItem 法神戒指<入门> 7
+give 法神戒指<入门> 1
+AutoTakeOnItem 法神戒指<入门> 8
+give 法神手镯<入门> 1
+AutoTakeOnItem 法神手镯<入门> 5
+give 法神手镯<入门> 1
+AutoTakeOnItem 法神手镯<入门> 6
+give 法神项链<入门> 1
+AutoTakeOnItem 法神项链<入门> 3
+give 法神头盔<入门> 1
+AutoTakeOnItem 法神头盔<入门> 4
+SendCenterMsg 254 0 [%s]在线30分钟，成功领取了一套+15极品道士组合装！ 1
+SENDMSG 0 [%s]在线30分钟，成功领取了一套+15极品道士组合装！
+GmexEcute 改属性 0 3 15
+GmexEcute 改属性 1 1 15
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 3 15
+GmexEcute 改属性 3 3 15
+GmexEcute 改属性 5 3 15
+GmexEcute 改属性 6 3 15
+GmexEcute 改属性 7 3 15
+GmexEcute 改属性 8 3 15
+messagebox 1.恭喜你兑换成功，请小退重新登陆！\2.入门装备只作为起步装备，无法加星升级！
+SENDMSG 7 恭喜你兑换成功，请小退后重新登陆！
+
+[@取消1]
+#IF
+#ACT
+give 入门套装[赠]
+
+[@兑换随机25]
+#IF
+checkitem +25装备[随机] 1
+#act
+take +25装备[随机] 1
+#CALL [\\充值抽奖\25装备.txt] @25装备
+
+[@兑换随机45]
+#IF
+checkitem +45装备[随机] 1
+#act
+take +45装备[随机] 1
+#CALL [\\充值抽奖\45装备.txt] @45装备
+
+[@兑换终极武器]
+#IF
+checkitem 终极武器[随机] 1
+#act
+take 终极武器[随机] 1
+#CALL [\\充值抽奖\终极武器.txt] @终极武器
+
+[@UserCmd1]
+#IF
+#ACT
+#CALL [\\服务\游戏帮助.txt] @游戏帮助
+
+[@UserCmd7]
+#IF
+#ACT
+#CALL [\\服务\装备回收.txt] @回收
+
+[@StdModeFunc142]
+#IF
+#ACT
+GIVE 护身符(大) 6
+break
+
+[@StdModeFunc111]
+#IF
+#ACT
+SET [177] 1
+BREAK
+SENDMSG 7 恭喜你坐标记录成功！
+
+[@StdModeFunc143]
+#IF
+#ACT
+GIVE 金条 5
+break
+
+
+[@StdModeFunc150]
+#IF
+ISADMIN
+#act
+#CALL [\\服务\后台管理.txt] @管理
+#ELSEACT 
+MESSAGEBOX 你是GM吗？怎么连GM的权限都没有呢？
+
+[@StdModeFunc203]
+#IF
+#ACT
+give 玛雅四贵宾卡 1
+#SAY
+　\ \
+<贵宾房间①/@guibin1>　　　<贵宾房间②/@guibin2>　　　<贵宾房间③/@guibin3>\ \
+<贵宾房间④/@guibin4>　　　<贵宾房间⑤/@guibin5>\
+
+
+[@StdModeFunc60]
+#IF
+#ACT
+ChangeHearMsgColor 65000 221
+MESSAGEBOX 您已经拥有了至尊绿色字体！
+
+[@StdModeFunc61]
+#IF
+#ACT
+ChangeHearMsgColor 65000 241
+MESSAGEBOX 您已经拥有了至尊紫色字体！
+
+[@StdModeFunc62]
+#IF
+#ACT
+ChangeHearMsgColor 65000 69
+MESSAGEBOX 您已经拥有了至尊橙色字体！
+
+[@StdModeFunc63]
+#IF
+#ACT
+ChangeHearMsgColor 65000 180
+MESSAGEBOX 您已经拥有了至尊蓝色字体！
+
+[@guibin5]
+#IF
+#ACT
+GOTO @TIAOZHANNEgg
+BREAK
+
+[@TIAOZHANNEgg]
+#IF
+checkitem 玛雅四贵宾卡 1
+CHECKMAPHUMANCOUNT TG5 = 0
+#act
+take 玛雅四贵宾卡 1
+CLEARMAPMON TG5
+MOV S5 TG5
+goto @SHdsaqwessa
+MAP TG5
+BREAK
+
+#IF
+#act
+messagebox 您没有玛雅四贵宾卡！\　\或当前地图已满员，请稍后进入。。。
+BREAK
+[@SHdsaqwessa]
+#IF
+#ACT
+Param1 <$STR(S5)>
+Param2 18
+Param3 13
+MonGen 	 赤月恶魔 1 1
+break
+
+[@guibin4]
+#IF
+#ACT
+GOTO @TIAOZHANNEty1
+BREAK
+
+[@TIAOZHANNEty1]
+#IF
+checkitem 玛雅四贵宾卡 1
+CHECKMAPHUMANCOUNT TG4 = 0
+#act
+take 玛雅四贵宾卡 1
+CLEARMAPMON TG4
+MOV S4 TG4
+goto @SHdsaqwett56
+MAP TG4
+BREAK
+
+#IF
+#act
+messagebox 您没有玛雅四贵宾卡！\　\或当前地图已满员，请稍后进入。。。
+BREAK
+[@SHdsaqwett56]
+#IF
+#ACT
+Param1 <$STR(S4)>
+Param2 18
+Param3 13
+MonGen 	 赤月恶魔 1 1
+break
+
+[@guibin3]
+#IF
+#ACT
+GOTO @TIAOZHANNEr33
+BREAK
+
+[@TIAOZHANNEr33]
+#IF
+checkitem 玛雅四贵宾卡 1
+CHECKMAPHUMANCOUNT TG3 = 0
+#act
+take 玛雅四贵宾卡 1
+CLEARMAPMON TG3
+MOV S3 TG3
+goto @SHdsaqwett1
+MAP TG3
+BREAK
+
+#IF
+#act
+messagebox 您没有玛雅四贵宾卡！\　\或当前地图已满员，请稍后进入。。。
+BREAK
+[@SHdsaqwett1]
+#IF
+#ACT
+Param1 <$STR(S3)>
+Param2 18
+Param3 13
+MonGen 	 赤月恶魔 1 1
+break
+
+[@guibin2]
+#IF
+#ACT
+GOTO @TIAOZHANNEE1
+BREAK
+
+[@TIAOZHANNEE1]
+#IF
+checkitem 玛雅四贵宾卡 1
+CHECKMAPHUMANCOUNT TG2 = 0
+#act
+take 玛雅四贵宾卡 1
+CLEARMAPMON TG2
+MOV S2 TG2
+goto @SHdsaqwee1
+MAP TG2
+BREAK
+
+#IF
+#act
+messagebox 您没有玛雅四贵宾卡！\　\或当前地图已满员，请稍后进入。。。
+BREAK
+[@SHdsaqwee1]
+#IF
+#ACT
+Param1 <$STR(S2)>
+Param2 18
+Param3 13
+MonGen 	 赤月恶魔 1 1
+break
+
+[@guibin1]
+#IF
+#ACT
+GOTO @TIAOZHANNE
+BREAK
+
+[@TIAOZHANNE]
+#IF
+checkitem 玛雅四贵宾卡 1
+CHECKMAPHUMANCOUNT TG1 = 0
+#act
+take 玛雅四贵宾卡 1
+CLEARMAPMON TG1
+MOV S1 TG1
+goto @SHdsaqwe
+MAP TG1
+BREAK
+
+#IF
+#act
+messagebox 您没有玛雅四贵宾卡！\　\或当前地图已满员，请稍后进入。。。
+BREAK
+[@SHdsaqwe]
+#IF
+#ACT
+Param1 <$STR(S1)>
+Param2 18
+Param3 13
+MonGen 	 赤月恶魔 1 1
+break
+
+[@StdModeFunc42]
+#IF
+CHECKITEMADDVALUE 1 3 < 10
+#ACT
+UPGRADEITEMEX 1 3 0 1 0
+SENDMSG 6 你的武器获得祝福.！！ 
+#ELSEACT
+SendMsg 5 武器幸运已经+10了，无法再次使用！
+GIVE 超级祝福油  
+
+
+;[@StdModeFunc183]  ;X代表物品触发的值
+;#if
+;#act
+;POWERRATE 150 1800             ;150 是1.5倍  600是 600秒
+;Gmexecute TestStatus 3 1800 0    ;这句是变色
+;#elseact
+;Gmexecute TestStatus 3 0 0     ;这句是把颜色变回来了.
+
+
+
+[@StdModeFunc208]
+#IF
+CHECKLEVELex < 130 
+#ACT
+CHANGEEXP + 100000000
+SENDCENTERMSG 0 223 [<$username>]吃了一包⒈亿经验卷. 1 5
+#elseact
+MESSAGEBOX 130级以后无法使用经验卷!
+give 1亿经验卷 1
+break
+
+[@StdModeFunc209]
+#IF
+#ACT
+mapmove BOSS1
+give 回城卷 1
+SENDCENTERMSG 0 223 【%s】使用BOSS卷前往【BOSS之路】凶悍怪物携带大量宝藏等着挖掘! 1 5
+
+[@MUZHUANG]
+#if
+CheckInMapRange 3 335 335 5
+#act
+break
+
+#IF
+#ACT
+GetUserItemName 1 41
+goto @砍猪判断
+
+[@砍猪判断]
+#IF
+checklevelex < 160
+CHECKHITMONNAME 经验黑野猪
+#ACT
+CHANGEEXP + 50000
+;gamegold + 1
+;SENDMSG 6 提示：元宝+1
+
+#IF
+EQUAL S41 6倍屠猪刀
+checklevelex > 159
+CHECKHITMONNAME 经验黑野猪
+#ACT
+CHANGEEXP + 6000
+Repairall
+
+
+#IF
+EQUAL S41 6倍屠猪刀
+checklevelex < 160
+CHECKHITMONNAME 经验黑野猪
+#ACT
+CHANGEEXP + 300000
+;gamegold + 3
+Repairall
+;SENDMSG 6 提示：元宝+3
+
+#IF
+EQUAL S41 3倍屠猪刀
+checklevelex < 160
+CHECKHITMONNAME 经验黑野猪
+#ACT
+CHANGEEXP + 150000
+;gamegold + 3
+Repairall
+;SENDMSG 6 提示：元宝+3
+
+;#IF
+;checklevelex > 159
+;CHECKHITMONNAME 经验黑野猪
+;#ACT
+;CHANGEEXP + 8888
+;gamegold + 1
+;SENDMSG 6 提示：元宝+1
+
+
+
+
+
+#IF
+EQUAL S41 6倍屠猪刀
+checklevelex > 159
+CHECKHITMONNAME 经验白野猪
+#ACT
+CHANGEEXP + 10000
+;gamegold + 3
+Repairall
+;SENDMSG 6 提示：元宝+3
+
+
+#IF
+EQUAL S41 6倍屠猪刀
+checklevelex < 160
+CHECKHITMONNAME 经验白野猪
+#ACT
+CHANGEEXP + 600000
+;gamegold + 10
+Repairall
+;SENDMSG 6 提示：元宝+10
+
+#IF
+EQUAL S41 3倍屠猪刀
+checklevelex < 160
+CHECKHITMONNAME 经验白野猪
+#ACT
+CHANGEEXP + 300000
+;gamegold + 10
+Repairall
+;SENDMSG 6 提示：元宝+10
+
+#IF
+EQUAL S41 6倍屠猪刀
+checklevelex > 159
+CHECKHITMONNAME 经验红野猪
+CHECKOFGUILD <$STR(A110)>
+#ACT
+CHANGEEXP + 10000
+;gamegold + 3
+Repairall
+;SENDMSG 6 提示：元宝+3
+
+
+
+#IF
+EQUAL S41 6倍屠猪刀
+checklevelex < 160
+CHECKHITMONNAME 经验红野猪
+CHECKOFGUILD <$STR(A110)>
+#ACT
+CHANGEEXP + 700000
+;gamegold + 20
+Repairall
+;SENDMSG 6 提示：元宝+20
+
+#IF
+EQUAL S41 3倍屠猪刀
+checklevelex < 160
+CHECKHITMONNAME 经验红野猪
+CHECKOFGUILD <$STR(A110)>
+#ACT
+CHANGEEXP + 350000
+;gamegold + 10
+Repairall
+;SENDMSG 6 提示：元宝+20
+
+
+
+#IF
+checklevelex > 159
+CHECKHITMONNAME 经验白野猪
+#ACT
+CHANGEEXP + 8000
+;gamegold + 1
+;SENDMSG 6 提示：元宝+1
+
+
+#IF
+checklevelex < 160
+CHECKHITMONNAME 经验白野猪
+#ACT
+CHANGEEXP + 100000
+;gamegold + 5
+;SENDMSG 6 提示：元宝+5
+
+#IF
+checklevelex > 159
+CHECKHITMONNAME 经验红野猪
+CHECKOFGUILD <$STR(A110)>
+#ACT
+CHANGEEXP + 10000
+;gamegold + 1
+;SENDMSG 6 提示：元宝+1
+
+
+#IF
+checklevelex < 160
+CHECKHITMONNAME 经验红野猪
+CHECKOFGUILD <$STR(A110)>
+#ACT
+CHANGEEXP + 200000
+;gamegold + 10
+;SENDMSG 6 提示：元宝+10
+
+
+
+
+[@MapEventWalks1]
+#if
+CheckRangeHumCount 3 357 335 0 < 2
+#act
+SetOnTimer 12 1
+SENDMSG 1 ┏━━━━━━━━━━━━━━━━┓
+SENDMSG 1 ┃★★★勇士占领了药店中心点★★★┃
+SENDMSG 1 ┗━━━━━━━━━━━━━━━━┛
+SENDMSG 1  占领人:<%s> 每秒增加元宝100,经验40W!
+#ELSEACT
+SendMsg 5 此地只能站一人，您不会获得经验！
+SendMsg 5 此地只能站一人，您不会获得经验！
+SendMsg 5 此地只能站一人，您不会获得经验！
+break
+
+[@TAKEON0]
+#IF
+ISONMAP xm1
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+#ACT
+GetUserItemName 0 10
+GetUserItemName 1 11
+goto @检测技能
+
+
+[@TAKEON1]
+#IF
+ISONMAP xm1
+#act
+
+mapmove 3 330 330
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+CheckLuckPoint > 9
+#ACT
+GMexecute TestStatus 3 65535
+SendMsg 0 全服警戒:%s全身幸运+10的触发人物最佳状态,各位小心此人物危险. 
+
+#IF
+#ACT
+GetUserItemName 0 10
+GetUserItemName 1 11
+goto @检测技能
+
+
+
+
+[@TAKEON3]
+#IF
+ISONMAP xm1
+#act
+
+mapmove 3 330 330
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+#ACT
+GOTO @TAKEON1
+BREAK
+
+
+#IF
+ISONMAP xm1
+#act
+
+mapmove 3 330 330
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+[@TAKEON5]
+#IF
+ISONMAP xm1
+#act
+
+mapmove 3 330 330
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+[@TAKEON6]
+#IF
+ISONMAP xm1
+#act
+
+mapmove 3 330 330
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+[@TAKEON7]
+#IF
+ISONMAP xm1
+#act
+
+mapmove 3 330 330
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+[@LeaveGroup]
+#IF
+EQUAL M76 166
+#ACT
+Gmexecute NPC
+
+[@TAKEON8]
+#IF
+ISONMAP xm1
+#act
+
+mapmove 3 330 330
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+[@TAKEON9]
+#IF
+ISONMAP xm1
+#act
+
+mapmove 3 330 330
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+[@TAKEON10]
+#IF
+ISONMAP xm1
+#act
+
+mapmove 3 330 330
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+[@TAKEON11]
+#IF
+ISONMAP xm1
+#act
+
+mapmove 3 330 330
+
+#IF
+ISONMAP xm2
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm3
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm4
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm5
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm6
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm7
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm8
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm9
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+#IF
+ISONMAP xm10
+#act
+mapmove 3 330 330
+MESSAGEBOX 防止作弊，禁止在本地图穿戴任何装备！
+
+[@TAKEON12]
+#IF
+CHECK [205] 1
+#ACT
+TakeEx 12
+MeSSageBox 您暂时不能使用该物品！
+
+[@TAKEOFF0]
+#IF
+CHECKSKILL 倚天辟地 > 0
+#ACT
+MOV S10 
+MOV S11 
+DELSKILL 倚天辟地
+SENDMSG 5 提示：【倚天辟地】技能已消失！
+
+[@TAKEOFF1]
+#IF
+CheckLuckPoint > 9
+#ELSEACT
+GMexecute TestStatus 3 0
+GMexecute TestStatus 4 0
+
+#IF
+CHECKSKILL 倚天辟地 > 0
+#ACT
+MOV S10 
+MOV S11 
+DELSKILL 倚天辟地
+SENDMSG 5 提示：【倚天辟地】技能已消失！
+
+[@TAKEOFF3]
+#ACT
+GOTO @TAKEOFF1
+BREAK
+
+
+[@检测技能]
+#IF
+EQUAL S11 上古神器[战]
+#ACT
+seticon 0 35 -30 0
+SENDMSG 0 [%s]装备了上古神器[战]，大家小心此人物极度危险！
+
+#IF
+EQUAL S11 上古神器[道]
+#ACT
+seticon 0 35 -30 0
+SENDMSG 0 [%s]装备了上古神器[道]，大家小心此人物极度危险！
+
+#IF
+EQUAL S11 上古神器[法]
+#ACT
+seticon 0 35 -30 0
+SENDMSG 0 [%s]装备了上古神器[法]，大家小心此人物极度危险！
+
+
+
+#IF
+CHECKSKILL 倚天辟地 > 0
+#ACT
+BREAK
+
+#IF
+EQUAL S10 逆天圣战甲[圣]
+EQUAL S11 逆天神斩[圣]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+#IF
+EQUAL S10 逆天圣战袍[圣]
+EQUAL S11 逆天神斩[圣]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+#IF
+EQUAL S10 断魂法神甲[圣]
+EQUAL S11 断魂神杖[圣]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+#IF
+EQUAL S10 断魂法神袍[圣]
+EQUAL S11 断魂神杖[圣]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+#IF
+EQUAL S10 荣耀天尊甲[圣]
+EQUAL S11 荣耀神扇[圣]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+#IF
+EQUAL S10 荣耀天尊袍[圣]
+EQUAL S11 荣耀神扇[圣]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+
+#IF
+EQUAL S10 屠魔战甲[圣]
+EQUAL S11 屠魔神剑[圣]
+#ACT
+ADDSKILL  倚天辟地 3
+POWERRATE 130 65535
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+SENDMSG 0 恭喜玩家『<$USERNAME>』触发1.3倍攻击，此人极度危险，大家提高警惕了!
+BREAK
+
+#IF
+EQUAL S10 屠魔战衣[圣]
+EQUAL S11 屠魔神剑[圣]
+#ACT
+ADDSKILL  倚天辟地 3
+POWERRATE 130 65535
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+SENDMSG 0 恭喜玩家『<$USERNAME>』触发1.3倍攻击，此人极度危险，大家提高警惕了!
+BREAK
+
+#IF
+EQUAL S10 屠魔战甲[魔]
+EQUAL S11 屠魔神剑[魔]
+#ACT
+ADDSKILL  倚天辟地 3
+POWERRATE 130 65535
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+SENDMSG 0 恭喜玩家『<$USERNAME>』触发1.3倍魔法，此人极度危险，大家提高警惕了!
+BREAK
+
+#IF
+EQUAL S10 屠魔战衣[魔]
+EQUAL S11 屠魔神剑[魔]
+#ACT
+ADDSKILL  倚天辟地 3
+POWERRATE 130 65535
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+SENDMSG 0 恭喜玩家『<$USERNAME>』触发1.3倍魔法，此人极度危险，大家提高警惕了!
+BREAK
+
+#IF
+EQUAL S10 屠魔战甲[道]
+EQUAL S11 屠魔神剑[道]
+#ACT
+ADDSKILL  倚天辟地 3
+POWERRATE 130 65535
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+SENDMSG 0 恭喜玩家『<$USERNAME>』触发1.3倍道术，此人极度危险，大家提高警惕了!
+BREAK
+
+#IF
+EQUAL S10 屠魔战衣[道]
+EQUAL S11 屠魔神剑[道]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+POWERRATE 130 65535
+SENDMSG 0 恭喜玩家『<$USERNAME>』触发1.3倍道术，此人极度危险，大家提高警惕了!
+BREAK
+
+#IF
+EQUAL S10 盘古战甲[战]
+EQUAL S11 盘古开天[战]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+#IF
+EQUAL S10 盘古宝甲[战]
+EQUAL S11 盘古开天[战]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+#IF
+EQUAL S10 盘古战甲[魔]
+EQUAL S11 盘古魔剑[魔]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+#IF
+EQUAL S10 盘古宝甲[魔]
+EQUAL S11 盘古魔剑[魔]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+#IF
+EQUAL S10 盘古战甲[道]
+EQUAL S11 盘古神剑[道]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+#IF
+EQUAL S10 盘古宝甲[道]
+EQUAL S11 盘古神剑[道]
+#ACT
+ADDSKILL  倚天辟地 3
+SENDMSG 5 提示：<$STR(S10)>+<$STR(S11)>触发【倚天辟地】技能！
+BREAK
+
+[@StdModeFunc108]
+#CALL [\清风制作\抽奖.txt] @抽奖
+
+[@压镖超时]
+#ACT
+GETCALLMOB 一级镖车
+KILLCALLMOB 一级镖车 1
+GETCALLMOB 二级镖车
+KILLCALLMOB 二级镖车 1
+GETCALLMOB 三级镖车
+KILLCALLMOB 三级镖车 1
+SendCenterMsg 251 0 非常遗憾，此次压镖任务失败，请再接再厉！ 0 10
+BREAK
+
+[@停止倒计时]
+#IF
+#ACT
+BREAK
+
+[@丢宝盒]
+#ACT
+SetIcon 0 0
+GuildNoticeMsg 56 151 【夺宝奇兵】：★活动宝盒★掉落在:[%M]地图：[%x:%y]!
+GuildNoticeMsg 56 151 ╔──────────────────────────────╗
+GuildNoticeMsg 56 151 │　　　　　夺宝奇兵活动详情见土城:[活动大使]NPC！　　　　　　│
+GuildNoticeMsg 56 151 │　　　　　　　守护宝盒[10分钟]即可得到宝物！　　　　　　　　│
+GuildNoticeMsg 56 151 ╚──────────────────────────────╝
+SendCenterMsg 222 0 【夺宝奇兵】：很遗憾，宝盒已掉落！ 5 1 @掉落
+Break
+
+[@丢超盒]
+#ACT
+SetIcon 0 0
+GuildNoticeMsg 56 151 【超级夺宝】：★超级宝盒★掉落在:[%M地图]：[%x:%y]!
+GuildNoticeMsg 56 151 ╔──────────────────────────────╗
+GuildNoticeMsg 56 151 │　　　　　夺宝奇兵活动详情见土城:[活动大使]NPC！　　　　　　│
+GuildNoticeMsg 56 151 │　　　　奖品：500万元宝,守护宝盒[10分钟]即可得到大奖！　　　│
+GuildNoticeMsg 56 151 ╚──────────────────────────────╝
+SendCenterMsg 222 0 【超级夺宝】：很遗憾，宝盒已掉落！ 5 1 @掉落
+Break
+
+
+[@拣宝盒]
+#Act
+SetIcon 0 50 -35 -3
+SendCenterMsg 222 0 【夺宝奇兵】：你已获得★活动宝盒★，将在[%d]后自动打开，请勿掉落！ 0 600 @打开宝盒
+GuildNoticeMsg 56 151 【夺宝奇兵】：『<$USERNAME>』在[%M,%X,%Y]拣到★活动宝盒★！
+GuildNoticeMsg 56 151 【夺宝奇兵】：守护宝盒10分钟即可得到宝物！
+
+
+[@拣超盒]
+#Act
+SetIcon 0 50 -35 -3
+SendCenterMsg 222 0 【超级夺宝】：你已获得★超级宝盒★，将在[%d]后自动打开，请勿掉落！ 0 600 @打开超盒
+GuildNoticeMsg 56 151 【超级夺宝】：『<$USERNAME>』在[%M,%X,%Y]拣到★超级宝盒★！
+GuildNoticeMsg 56 151 【超级夺宝】：守护宝盒10分钟即可得到宝物！
+
+
+[@打开宝盒]
+#IF
+checkitem ★活动宝盒★ 1
+#ACT
+take ★活动宝盒★ 5
+GetRandomText .\QuestDiary\新加活动\夺宝奇兵.txt S10
+gamegold + 1000000
+GIVE <$STR(S10)> 1
+SendCenterMsg 222 0 【夺宝奇兵】：恭喜『<$USERNAME>』获得夺宝奇兵活动奖品：100万元宝+【<$STR(S10)>】！ 1
+GuildNoticeMsg 56 151 【夺宝奇兵】：恭喜『<$USERNAME>』获得夺宝奇兵活动奖品：100万元宝+【<$STR(S10)>】！
+GuildNoticeMsg 56 151 【夺宝奇兵】：恭喜『<$USERNAME>』获得夺宝奇兵活动奖品：100万元宝+【<$STR(S10)>】！
+AddTextList .\QuestDiary\新加活动\夺宝记录.txt 【<$DATETIME>】【<$SERVERNAME>】玩家：<$USERNAME>等级：<$LEVEL>奖品：100万元宝+<$STR(S10)>
+MESSAGEBOX 恭喜你获得了【夺宝奇兵】奖品：100万元宝+【<$STR(S10)>】！
+SetIcon 0 0
+mapmove 3 330 330
+Break
+
+
+[@打开超盒]
+#IF
+checkitem ★超级宝盒★ 1
+#ACT
+take ★超级宝盒★ 5
+gamegold + 5000000
+SendCenterMsg 222 0 【超级夺宝】：恭喜『<$USERNAME>』获得新区超级夺宝活动奖品：【500万元宝】！ 1
+GuildNoticeMsg 56 151 【超级夺宝】：恭喜『<$USERNAME>』获得新区超级夺宝活动奖品：【500万元宝】！
+GuildNoticeMsg 56 151 【超级夺宝】：恭喜『<$USERNAME>』获得新区超级夺宝活动奖品：【500万元宝】！
+AddTextList .\QuestDiary\新加活动\夺宝记录.txt 【<$DATETIME>】【<$SERVERNAME>】玩家：<$USERNAME> 等级<$LEVEL>奖品：500万元宝！
+MESSAGEBOX 恭喜你获得了【夺宝奇兵】奖品：500万元宝！
+SetIcon 0 0
+mapmove 3 330 330
+Break
+
+
+[@掉落]
+#Act
+BREAK
+
+[@MagSelfFunc31]
+#IF
+#ACT
+mov N2 1
+
+[@男战衣服]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 0 2 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 0 2 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+give 逆天圣战甲[圣] 1
+AutoTakeOnItem 逆天圣战甲[圣] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战甲[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战甲[圣]”！ 1
+MESSAGEBOX 兑换成功，逆天圣战甲[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@女战衣服]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 0 2 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 0 2 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+give 逆天圣战袍[圣] 1
+AutoTakeOnItem 逆天圣战袍[圣] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战袍[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战袍[圣]”！ 1
+MESSAGEBOX 兑换成功，逆天圣战袍[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@战武器]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 1 0 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 1 0 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+give 逆天神斩[圣] 1
+AutoTakeOnItem 逆天神斩[圣] 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天神斩[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天神斩[圣]”！ 1
+MESSAGEBOX 兑换成功，逆天神斩[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@战勋章]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 2 2 < 20
+#ACT
+MESSAGEBOX +20以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 2 2 > 19
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 2 0 100 0 1
+give 逆天圣战章[圣] 1
+AutoTakeOnItem 逆天圣战章[圣] 2
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战章[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战章[圣]”！ 1
+MESSAGEBOX 兑换成功，逆天圣战章[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@战项链]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 3 2 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 3 2 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 3 0 100 0 1
+give 逆天圣战链[圣] 1
+AutoTakeOnItem 逆天圣战链[圣] 3
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战链[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战链[圣]”！ 1
+MESSAGEBOX 兑换成功，逆天圣战链[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@战头盔]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 4 2 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 4 2 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 4 0 100 0 1
+give 逆天圣战盔[圣] 1
+AutoTakeOnItem 逆天圣战盔[圣] 4
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战盔[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战盔[圣]”！ 1
+MESSAGEBOX 兑换成功，逆天圣战盔[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@战手镯右]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 5 2 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 5 2 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 5 0 100 0 1
+give 逆天圣战镯[圣] 1
+AutoTakeOnItem 逆天圣战镯[圣] 5
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战镯[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战镯[圣]”！ 1
+MESSAGEBOX 兑换成功，逆天圣战镯[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@战手镯左]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 6 2 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 6 2 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 6 0 100 0 1
+give 逆天圣战镯[圣] 1
+AutoTakeOnItem 逆天圣战镯[圣] 6
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战镯[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战镯[圣]”！ 1
+MESSAGEBOX 兑换成功，逆天圣战镯[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@战戒指右]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 7 2 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 7 2 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 7 0 100 0 1
+give 逆天圣战戒[圣] 1
+AutoTakeOnItem 逆天圣战戒[圣] 7
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战戒[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战戒[圣]”！ 1
+MESSAGEBOX 兑换成功，逆天圣战戒[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@战戒指左]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 8 2 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 8 2 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 8 0 100 0 1
+give 逆天圣战戒[圣] 1
+AutoTakeOnItem 逆天圣战戒[圣] 8
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战戒[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“逆天圣战戒[圣]”！ 1
+MESSAGEBOX 兑换成功，逆天圣战戒[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@男法衣服]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 0 3 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 0 3 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+give 断魂法神甲[圣] 1
+AutoTakeOnItem 断魂法神甲[圣] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神甲[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神甲[圣]”！ 1
+MESSAGEBOX 兑换成功，断魂法神甲[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@女法衣服]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 0 3 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 0 3 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+give 断魂法神袍[圣] 1
+AutoTakeOnItem 断魂法神袍[圣] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神袍[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神袍[圣]”！ 1
+MESSAGEBOX 兑换成功，断魂法神袍[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@法武器]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 1 1 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 1 1 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+give 断魂神杖[圣] 1
+AutoTakeOnItem 断魂神杖[圣] 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂神杖[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂神杖[圣]”！ 1
+MESSAGEBOX 兑换成功，断魂神杖[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@法勋章]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 2 3 < 20
+#ACT
+MESSAGEBOX +20以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 2 3 > 19
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 2 0 100 0 1
+give 断魂法神章[圣] 1
+AutoTakeOnItem 断魂法神章[圣] 2
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神章[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神章[圣]”！ 1
+MESSAGEBOX 兑换成功，断魂法神章[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@法项链]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 3 3 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 3 3 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 3 0 100 0 1
+give 断魂法神链[圣] 1
+AutoTakeOnItem 断魂法神链[圣] 3
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神链[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神链[圣]”！ 1
+MESSAGEBOX 兑换成功，断魂法神链[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@法头盔]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 4 3 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 4 3 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 4 0 100 0 1
+give 断魂法神盔[圣] 1
+AutoTakeOnItem 断魂法神盔[圣] 4
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神盔[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神盔[圣]”！ 1
+MESSAGEBOX 兑换成功，断魂法神盔[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@法手镯右]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 5 3 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 5 3 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 5 0 100 0 1
+give 断魂法神镯[圣] 1
+AutoTakeOnItem 断魂法神镯[圣] 5
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神镯[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神镯[圣]”！ 1
+MESSAGEBOX 兑换成功，断魂法神镯[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@法手镯左]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 6 3 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 6 3 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 6 0 100 0 1
+give 断魂法神镯[圣] 1
+AutoTakeOnItem 断魂法神镯[圣] 6
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神镯[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神镯[圣]”！ 1
+MESSAGEBOX 兑换成功，断魂法神镯[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@法戒指右]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 7 3 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 7 3 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 7 0 100 0 1
+give 断魂法神戒[圣] 1
+AutoTakeOnItem 断魂法神戒[圣] 7
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神戒[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神戒[圣]”！ 1
+MESSAGEBOX 兑换成功，断魂法神戒[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@法戒指左]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 8 3 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 8 3 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 8 0 100 0 1
+give 断魂法神戒[圣] 1
+AutoTakeOnItem 断魂法神戒[圣] 8
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神戒[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“断魂法神戒[圣]”！ 1
+MESSAGEBOX 兑换成功，断魂法神戒[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@男道衣服]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 0 4 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 0 4 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+give 荣耀天尊甲[圣] 1
+AutoTakeOnItem 荣耀天尊甲[圣] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊甲[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊甲[圣]”！ 1
+MESSAGEBOX 兑换成功，荣耀天尊甲[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@女道衣服]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 0 4 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 0 4 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+give 荣耀天尊袍[圣] 1
+AutoTakeOnItem 荣耀天尊袍[圣] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊袍[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊袍[圣]”！ 1
+MESSAGEBOX 兑换成功，荣耀天尊袍[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@道武器]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 1 2 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 1 2 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+give 荣耀神扇[圣] 1
+AutoTakeOnItem 荣耀神扇[圣] 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀神扇[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀神扇[圣]”！ 1
+MESSAGEBOX 兑换成功，荣耀神扇[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@道勋章]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 2 4 < 20
+#ACT
+MESSAGEBOX +25以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 2 4 > 19
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 2 0 100 0 1
+give 荣耀天尊章[圣] 1
+AutoTakeOnItem 荣耀天尊章[圣] 2
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊章[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊章[圣]”！ 1
+MESSAGEBOX 兑换成功，荣耀天尊章[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@道项链]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 3 4 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 3 4 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 3 0 100 0 1
+give 荣耀天尊链[圣] 1
+AutoTakeOnItem 荣耀天尊链[圣] 3
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊链[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊链[圣]”！ 1
+MESSAGEBOX 兑换成功，荣耀天尊链[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@道头盔]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 4 4 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 4 4 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 4 0 100 0 1
+give 荣耀天尊盔[圣] 1
+AutoTakeOnItem 荣耀天尊盔[圣] 4
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊盔[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊盔[圣]”！ 1
+MESSAGEBOX 兑换成功，荣耀天尊盔[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@道手镯右]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 5 4 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 5 4 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 5 0 100 0 1
+give 荣耀天尊镯[圣] 1
+AutoTakeOnItem 荣耀天尊镯[圣] 5
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊镯[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊镯[圣]”！ 1
+MESSAGEBOX 兑换成功，荣耀天尊镯[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@道手镯左]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 6 4 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 6 4 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 6 0 100 0 1
+give 荣耀天尊镯[圣] 1
+AutoTakeOnItem 荣耀天尊镯[圣] 6
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊镯[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊镯[圣]”！ 1
+MESSAGEBOX 兑换成功，荣耀天尊镯[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+
+[@道戒指右]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 7 4 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 7 4 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 7 0 100 0 1
+give 荣耀天尊戒[圣] 1
+AutoTakeOnItem 荣耀天尊戒[圣] 7
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊戒[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊戒[圣]”！ 1
+MESSAGEBOX 兑换成功，荣耀天尊戒[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@道戒指左]
+#IF
+CheckHumBag <$USERNAME> < 1
+#ACT
+MESSAGEBOX 你的背包空位不足，请清理后再来兑换！
+break
+
+#IF
+CHECKITEMADDVALUE 8 4 < 55
+#ACT
+MESSAGEBOX +55以上极品才能兑换，看清楚兑换说明再来吧！
+break
+
+#IF
+CHECKITEMADDVALUE 8 4 > 54
+CheckHumBag <$USERNAME> > 0
+#ACT
+UPGRADEITEMEX 8 0 100 0 1
+give 荣耀天尊戒[圣] 1
+AutoTakeOnItem 荣耀天尊戒[圣] 8
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊戒[圣]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在逆天圣品NPC出兑换了“荣耀天尊戒[圣]”！ 1
+MESSAGEBOX 兑换成功，荣耀天尊戒[圣]已经自动装备！
+#ELSEACT
+MESSAGEBOX 操作失败，请先看清楚说明再来！
+
+[@上古神器战]
+#IF
+#ACT
+MOV A51 <$USERNAME>
+MOV G61 30
+CALCVAR HUMAN 神器时限 = 0
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+seticon 0 35 -30 0
+SendCenterMsg 251 233 玩家[%s]在[上古神器地图]抢到了上古神器[战]，准备好受虐吧！ 1
+
+[@上古神器道]
+#IF
+#ACT
+MOV A52 <$USERNAME>
+MOV G62 30
+CALCVAR HUMAN 神器时限 = 0
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+seticon 0 35 -30 0
+SendCenterMsg 251 233 玩家[%s]在[上古神器地图]抢到了上古神器[道]，准备好受虐吧！ 1
+
+[@上古神器法]
+#IF
+#ACT
+MOV A53 <$USERNAME>
+MOV G63 30
+CALCVAR HUMAN 神器时限 = 0
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+seticon 0 35 -30 0
+SendCenterMsg 251 233 玩家[%s]在[上古神器地图]抢到了上古神器[法]，准备好受虐吧！ 1
+
+[@行会猪位置]
+#IF
+#ACT
+MAPMOVE 3 330 330
+MESSAGEBOX 泥马，安全砍猪都想作弊...- -||
+
+[@行会猪位置1]
+#IF
+CheckRangeHumCount 3 313 343 0 > 1
+#ACT
+MAPMOVE 3 330 330
+MESSAGEBOX 泥马，安全砍猪都想作弊...- -||
+
+#IF
+CheckRangeHumCount 3 314 343 0 > 1
+#ACT
+MAPMOVE 3 330 330
+MESSAGEBOX 泥马，安全砍猪都想作弊...- -||
+
+#IF
+CheckRangeHumCount 3 315 343 0 > 1
+#ACT
+MAPMOVE 3 330 330
+MESSAGEBOX 泥马，安全砍猪都想作弊...- -||
+
+#IF
+CheckRangeHumCount 3 315 344 0 > 1
+#ACT
+MAPMOVE 3 330 330
+MESSAGEBOX 泥马，安全砍猪都想作弊...- -||
+
+#IF
+CheckRangeHumCount 3 315 345 0 > 1
+#ACT
+MAPMOVE 3 330 330
+MESSAGEBOX 泥马，安全砍猪都想作弊...- -||
+
+#IF
+CheckRangeHumCount 3 314 345 0 > 1
+#ACT
+MAPMOVE 3 330 330
+MESSAGEBOX 泥马，安全砍猪都想作弊...- -||
+
+#IF
+CheckRangeHumCount 3 313 345 0 > 1
+#ACT
+MAPMOVE 3 330 330
+MESSAGEBOX 泥马，安全砍猪都想作弊...- -||
+
+#IF
+CheckRangeHumCount 3 313 344 0 > 1
+#ACT
+MAPMOVE 3 330 330
+MESSAGEBOX 泥马，安全砍猪都想作弊...- -||
+
+[@StartMyShop]
+#if
+#act
+set [222] 1
+sendmsg 6 您已使用摆滩功能.禁止使用装备升级.小退即恢复!
+sendmsg 6 您已使用摆滩功能.禁止使用装备升级.小退即恢复!
+sendmsg 6 您已使用摆滩功能.禁止使用装备升级.小退即恢复!
+sendmsg 6 您已使用摆滩功能.禁止使用装备升级.小退即恢复!
+BREAK
+[@ItemUpgrade]
+#IF
+check [222] 1
+#act
+SetUpgradeFail
+messagebox  使用摆滩功能后禁止装备升级.小退即恢复!
+BREAK
+
+#IF
+IsOnMap 3
+#ACT
+MOV D10 1
+BREAK
+
+[@StdModeFunc180]
+#act
+give 修仙等级卷 1
+#SAY
+　　　　　　　　你已经够吓唬人的了还要提升等级？！\
+<我要提升等级说明如下：/SCOLOR=250>\
+<1.请点击自己相应的等级提升一次类推166→167→168→169→170/SCOLOR=253>\
+<2.封顶170可以免费领取一个终极面巾，属性加血2000其他属性看游戏/SCOLOR=253>\
+<2.提升到166需要2个修仙等级卷,167需要4个修仙等级卷，168需要6个修仙等级卷/SCOLOR=253>\
+<169需要8个修仙等级卷，170需要10个修仙等级卷/SCOLOR=253>\
+<我要升级到166/@sj166>  <我要升级到167/@sj167>  <我要升级到168/@sj168>  \ \
+<我要升级到169/@sj169>  <我要升级到170/@sj170>  <关闭对话/@exit>  
+
+[@sj166]
+#if
+checkitem 修仙等级卷 2
+#act
+goto @sj166a
+#ELSEACT
+MESSAGEBOX 需要有修仙等级卷2个和等级165才能继续提升等级！
+
+[@sj167]
+#if
+checkitem 修仙等级卷 4
+#act
+goto @sj167a
+#ELSEACT
+MESSAGEBOX 需要有修仙等级卷4个和等级166才能继续提升等级！
+
+[@sj168]
+#if
+checkitem 修仙等级卷 6
+#act
+goto @sj168a
+#ELSEACT
+MESSAGEBOX 需要有修仙等级卷6个和等级167才能继续提升等级！
+
+[@sj169]
+#if
+checkitem 修仙等级卷 8
+#act
+goto @sj169a
+#ELSEACT
+MESSAGEBOX 需要有修仙等级卷8个和等级168才能继续提升等级！
+
+[@sj170]
+#if
+checkitem 修仙等级卷 10
+#act
+goto @sj170a
+#ELSEACT
+MESSAGEBOX 需要有修仙等级卷10个和等级169才能继续提升等级！
+
+[@sj166a]
+#IF
+ChecKLevelEx > 164
+ChecKLevelEx < 166
+#ACT
+CHANGELEVEL + 1
+TAKE 修仙等级卷 2
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+close
+BREAK
+
+[@sj167a]
+#IF
+ChecKLevelEx > 165
+ChecKLevelEx < 167
+#ACT
+CHANGELEVEL + 1
+TAKE 修仙等级卷 4
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+close
+BREAK
+
+[@sj168a]
+#IF
+ChecKLevelEx > 166
+ChecKLevelEx < 168
+#ACT
+CHANGELEVEL + 1
+TAKE 修仙等级卷 6
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+close
+BREAK
+
+[@sj169a]
+#IF
+ChecKLevelEx > 167
+ChecKLevelEx < 169
+#ACT
+CHANGELEVEL + 1
+TAKE 修仙等级卷 8
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+close
+BREAK
+
+[@sj170a]
+#IF
+ChecKLevelEx > 168
+ChecKLevelEx < 170
+#ACT
+CHANGELEVEL + 1
+TAKE 修仙等级卷 10
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+SendMsg 5 玩家%s吃了修仙等级卷.等级提升1级.野蛮又可以撞死一堆人.
+close
+BREAK
+
+[@StdModeFunc80]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 5
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷5点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷5 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+[@StdModeFunc81]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 10
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷10点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷10 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+
+[@StdModeFunc82]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 15
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷15点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷15 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+[@StdModeFunc84]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 300
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷300点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷300 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+[@StdModeFunc85]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 500
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷500点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷500 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+[@StdModeFunc86]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 1000
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷1000点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷1000 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+[@StdModeFunc87]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 3000
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷3000点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷3000 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+[@StdModeFunc88]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 5000
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷5000点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷5000 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+[@StdModeFunc89]
+#IF
+HAVEGUILD
+#ACT
+GUILDBUILDPOINT + 10000
+GuildNoticeMsg 167 251 玩家【%s】使用行会积分卷10000点，【<$GUILDNAME>】行会积分增加！
+BREAK
+#elseact
+give 行会积分卷1W 1
+MessageBox 抱歉无法使用！您还没有加入行会！
+
+
+
+
+
+
+
+[@StdModeFunc109]
+#if
+random 50
+#act
+give 逆天圣战袍[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得逆天圣战袍[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：逆天圣战袍[圣]1个！
+break
+
+#if
+random 50
+#act
+give 逆天圣战甲[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得逆天圣战甲[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：逆天圣战甲[圣]1个！
+break
+
+#if
+random 40
+#act
+give 断魂法神袍[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得断魂法神袍[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：断魂法神袍[圣]1个！
+break
+
+#if
+random 40
+#act
+give 断魂法神甲[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得断魂法神甲[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：断魂法神甲[圣]1个！
+break
+
+#if
+random 30
+#act
+give 荣耀天尊袍[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得荣耀天尊袍[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：荣耀天尊袍[圣]1个！
+break
+
+#if
+random 30
+#act
+give 荣耀天尊甲[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得荣耀天尊甲[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：荣耀天尊甲[圣]1个！
+break
+
+#if
+random 10
+#act
+give 荣耀天尊戒[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得荣耀天尊戒[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：荣耀天尊戒[圣]1个！
+break
+
+#if
+random 5
+#act
+give 荣耀天尊链[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得荣耀天尊链[圣]1个！
+MessageBox 恭喜您获得：荣耀天尊链[圣]1个！
+break
+
+#if
+random 5
+#act
+give 荣耀天尊盔[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得荣耀天尊盔[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：荣耀天尊盔[圣]1个！
+break
+
+#if
+random 20
+#act
+give 断魂法神戒[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得断魂法神戒[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：断魂法神戒[圣]1个！
+break
+
+#if
+random 10
+#act
+give 断魂法神镯[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得断魂法神镯[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：断魂法神镯[圣]1个！
+break
+
+#if
+random 5
+#act
+give 断魂法神盔[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得断魂法神盔[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：断魂法神盔[圣]1个！
+break
+
+
+#if
+random 20
+#act
+give 逆天圣战链[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得逆天圣战链[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：逆天圣战链[圣]1个！
+break
+
+#if
+random 30
+#act
+give 逆天圣战镯[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得逆天圣战镯[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：逆天圣战镯[圣]1个！
+break
+
+#if
+random 25
+#act
+give 逆天圣战戒[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得逆天圣战戒[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：逆天圣战戒[圣]1个！
+break
+
+#if
+#act
+give 荣耀天尊盔[圣] 1
+GuildNoticeMsg 252 247 玩家[%S]通过“新区终极必爆活动”获得荣耀天尊盔[圣]1个！
+MessageBox 【新区终极必爆活动】恭喜您获得：荣耀天尊盔[圣]1个！
+break
+
+[@StdModeFunc55]
+#IF
+#ACT
+GAMEGIRD + 25
+SENDMSG 5 你有足够多的物品可以去领取六倍屠猪刀了！
+SENDMSG 5 你有足够多的物品可以去领取六倍屠猪刀了！
+Break
+
+[@TAKEON4]
+#If
+CHECKITEMTYPE 4 15
+#ELSEACT
+SendCenterMsg 255 0 请在1秒内尽快取下非法装备,重新登陆游戏即可. 0 10
+SENDMSG 5 请在1秒内尽快取下非法装备,重新登陆游戏即可!
+DelayCall 1 @RUNGATEDLQ非法装备踢下线_别跟我重名
+break
+
+
+#IF
+CHECKITEMTYPE 4 15
+#ELSEACT
+MessageBox 身上装备异常，别作弊了！
+KICK
+break
+
+[@TakeOn14]
+#If
+CHECKITEMTYPE 14 16
+#ELSEACT
+SendCenterMsg 255 0 请在1秒内尽快取下非法装备,重新登陆游戏即可. 0 10
+SENDMSG 5 请在1秒内尽快取下非法装备,重新登陆游戏即可!
+DelayCall 1 @RUNGATEDLQ非法装备踢下线_别跟我重名
+break
+
+
+#IF
+CHECKITEMTYPE 14 16
+#ELSEACT
+MessageBox 身上装备异常，别作弊了！
+KICK
+break
+
+[@StdModeFunc181]
+#if
+#say
+请注意以下内容：否则损失后果自负\
+请注意以下内容：否则损失后果自负\
+1、清空包裹任何物品(包括药品栏)，并且全身不佩戴任何装备,使用NPC清空\  \ 
+<我要兑换战士套/@zsnt01>    \  \
+<我要兑换法师套/@fsdh01>\
+
+
+[@fsdh01]
+#if
+#say
+记得一定要把身上和药品以及背包全部清空，使用NPC清空即可\   \
+
+<我要兑换男法师套/@nanduanhun47cha>  \
+<我要兑换女法师套/@nvduanhun47cha>  \
+
+
+[@nanduanhun47cha]
+#IF
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanduanhun47
+
+[@nanduanhun47]
+#if
+#act
+GMEXECUTE 解除禁言 self
+give 屠魔腰带[生命] 1
+GIVE 165级卷 1
+give 屠魔神靴[生命] 1
+GIVE 仙龙爪 1
+GIVE ☆盘古守护☆ 1
+GIVE 逆天指环 1
+gamegold + 120000000
+give 断魂神杖[圣] 1
+give 断魂法神甲[圣] 1
+give 断魂法神戒[圣] 2
+give 断魂法神镯[圣] 2
+give 断魂法神链[圣] 1
+give 断魂法神盔[圣] 1
+give 断魂法神章[圣] 1
+AutoTakeOnItem 断魂法神章[圣] 2
+AutoTakeOnItem 断魂法神镯[圣] 5
+AutoTakeOnItem 断魂法神镯[圣] 6
+AutoTakeOnItem 断魂法神戒[圣] 7
+AutoTakeOnItem 断魂法神戒[圣] 8
+AutoTakeOnItem 断魂法神链[圣] 3
+AutoTakeOnItem 断魂法神盔[圣] 4
+AutoTakeOnItem 断魂神杖[圣] 1
+AutoTakeOnItem 断魂法神甲[圣] 0
+GmexEcute 改属性 0 3 60
+GmexEcute 改属性 1 1 60
+GmexEcute 改属性 4 3 60
+GmexEcute 改属性 3 3 60
+GmexEcute 改属性 5 3 60
+GmexEcute 改属性 6 3 60
+GmexEcute 改属性 7 3 60
+GmexEcute 改属性 8 3 60
+RENEWLEVEL 1 0 0
+SETRANKLEVELNAME  %s\┏--★-----★----★--┓\☆　大　　富　　豪　☆\┗--★-----★----★--┛\
+ADDNAMELIST ..\QuestDiary\功能设置\七彩名称.txt
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+close
+
+[@nvduanhun47cha]
+#IF
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvduanhun47
+
+[@nvduanhun47]
+#if
+#act
+GMEXECUTE 解除禁言 self
+give 屠魔腰带[生命] 1
+give 屠魔神靴[生命] 1
+GIVE 仙龙爪 1
+GIVE 165级卷 1
+GIVE ☆盘古守护☆ 1
+GIVE 逆天指环 1
+gamegold + 120000000
+give 断魂神杖[圣] 1
+give 断魂法神袍[圣] 1
+give 断魂法神戒[圣] 2
+give 断魂法神镯[圣] 2
+give 断魂法神链[圣] 1
+give 断魂法神盔[圣] 1
+give 断魂法神章[圣] 1
+AutoTakeOnItem 断魂法神章[圣] 2
+AutoTakeOnItem 断魂法神镯[圣] 5
+AutoTakeOnItem 断魂法神镯[圣] 6
+AutoTakeOnItem 断魂法神戒[圣] 7
+AutoTakeOnItem 断魂法神戒[圣] 8
+AutoTakeOnItem 断魂法神链[圣] 3
+AutoTakeOnItem 断魂法神盔[圣] 4
+AutoTakeOnItem 断魂神杖[圣] 1
+AutoTakeOnItem 断魂法神袍[圣] 0
+GmexEcute 改属性 0 3 60
+GmexEcute 改属性 1 1 60
+GmexEcute 改属性 4 3 60
+GmexEcute 改属性 3 3 60
+GmexEcute 改属性 5 3 60
+GmexEcute 改属性 6 3 60
+GmexEcute 改属性 7 3 60
+GmexEcute 改属性 8 3 60
+RENEWLEVEL 1 0 0
+SETRANKLEVELNAME  %s\┏--★-----★----★--┓\☆　大　　富　　豪　☆\┗--★-----★----★--┛\
+ADDNAMELIST ..\QuestDiary\功能设置\七彩名称.txt
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+close
+
+
+
+
+[@zsnt01]
+#if
+#say
+记得一定要把身上和药品以及背包全部清空，使用NPC清空即可\   \
+
+<我要兑换男战士套/@nannitian47cha>  \
+<我要兑换女战士套/@nvnitian47cha>  \
+
+
+[@nannitian47cha]
+#IF
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nannitian47
+
+[@nannitian47]
+#if
+#act
+GMEXECUTE 解除禁言 self
+give 屠魔腰带[生命] 1
+give 屠魔神靴[生命] 1
+GIVE 仙龙爪 1
+GIVE 165级卷 1
+GIVE 逆天指环 1
+GIVE ☆盘古守护☆ 1
+gamegold + 120000000
+give 逆天神斩[圣] 1
+give 逆天圣战甲[圣] 1
+give 逆天圣战戒[圣] 2
+give 逆天圣战镯[圣] 2
+give 逆天圣战链[圣] 1
+give 逆天圣战盔[圣] 1
+give 逆天圣战章[圣] 1
+AutoTakeOnItem 逆天圣战章[圣] 2
+AutoTakeOnItem 逆天圣战镯[圣] 5
+AutoTakeOnItem 逆天圣战镯[圣] 6
+AutoTakeOnItem 逆天圣战戒[圣] 7
+AutoTakeOnItem 逆天圣战戒[圣] 8
+AutoTakeOnItem 逆天圣战链[圣] 3
+AutoTakeOnItem 逆天圣战盔[圣] 4
+AutoTakeOnItem 逆天神斩[圣] 1
+AutoTakeOnItem 逆天圣战甲[圣] 0
+GmexEcute 改属性 0 2 60
+GmexEcute 改属性 1 0 60
+GmexEcute 改属性 4 2 60
+GmexEcute 改属性 3 2 60
+GmexEcute 改属性 5 2 60
+GmexEcute 改属性 6 2 60
+GmexEcute 改属性 7 2 60
+GmexEcute 改属性 8 2 60
+SENDMSG 7 恭喜你兑换成功！
+RENEWLEVEL 1 0 0
+SETRANKLEVELNAME  %s\┏--★-----★----★--┓\☆　大　　富　　豪　☆\┗--★-----★----★--┛\
+ADDNAMELIST ..\QuestDiary\功能设置\七彩名称.txt
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+close
+
+[@nvnitian47cha]
+#IF
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvnitian47
+
+
+[@nvnitian47]
+#if
+#act
+GMEXECUTE 解除禁言 self
+GIVE 仙龙爪 1
+GIVE 165级卷 1
+GIVE ☆盘古守护☆ 1
+GIVE 逆天指环 1
+give 屠魔腰带[生命] 1
+give 屠魔神靴[生命] 1
+give 逆天神斩[圣] 1
+give 逆天圣战袍[圣] 1
+give 逆天圣战戒[圣] 2
+give 逆天圣战镯[圣] 2
+give 逆天圣战链[圣] 1
+give 逆天圣战盔[圣] 1
+give 逆天圣战章[圣] 1
+AutoTakeOnItem 逆天圣战章[圣] 2
+AutoTakeOnItem 逆天圣战镯[圣] 5
+AutoTakeOnItem 逆天圣战镯[圣] 6
+AutoTakeOnItem 逆天圣战戒[圣] 7
+AutoTakeOnItem 逆天圣战戒[圣] 8
+AutoTakeOnItem 逆天圣战链[圣] 3
+AutoTakeOnItem 逆天圣战盔[圣] 4
+AutoTakeOnItem 逆天神斩[圣] 1
+AutoTakeOnItem 逆天圣战袍[圣] 0
+GmexEcute 改属性 0 2 60
+GmexEcute 改属性 1 0 60
+GmexEcute 改属性 4 2 60
+GmexEcute 改属性 3 2 60
+GmexEcute 改属性 5 2 60
+GmexEcute 改属性 6 2 60
+GmexEcute 改属性 7 2 60
+GmexEcute 改属性 8 2 60
+SENDMSG 7 恭喜你兑换成功！
+RENEWLEVEL 1 0 0
+SETRANKLEVELNAME  %s\┏--★-----★----★--┓\☆　大　　富　　豪　☆\┗--★-----★----★--┛\
+ADDNAMELIST ..\QuestDiary\功能设置\七彩名称.txt
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+close
+
+[@StdModeFunc182]
+#if
+#say
+请注意以下内容：否则损失后果自负\
+请注意以下内容：否则损失后果自负\
+1、清空包裹任何物品(包括药品栏)，并且全身不佩戴任何装备,使用NPC清空\  \ 
+<我要兑换战士套/@zsnt01a>    \  \
+<我要兑换法师套/@fsdh01a>\
+
+
+[@fsdh01a]
+#if
+#say
+记得一定要把身上和药品以及背包全部清空，使用NPC清空即可\   \
+
+<我要兑换男法师套/@nanduanhun47chab>  \
+<我要兑换女法师套/@nvduanhun47chab>  \
+
+
+[@nanduanhun47chab]
+#IF
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanduanhun47b
+
+
+[@nanduanhun47b]
+#if
+#act
+GMEXECUTE 解除禁言 self
+GIVE 155级卷 1
+give 屠魔腰带[生命] 1
+give 屠魔神靴[生命] 1
+give 断魂神杖[圣] 1
+give 断魂法神甲[圣] 1
+give 断魂法神戒[圣] 2
+give 断魂法神镯[圣] 2
+give 断魂法神链[圣] 1
+give 断魂法神盔[圣] 1
+give 断魂法神章[圣] 1
+AutoTakeOnItem 断魂法神章[圣] 2
+AutoTakeOnItem 断魂法神镯[圣] 5
+AutoTakeOnItem 断魂法神镯[圣] 6
+AutoTakeOnItem 断魂法神戒[圣] 7
+AutoTakeOnItem 断魂法神戒[圣] 8
+AutoTakeOnItem 断魂法神链[圣] 3
+AutoTakeOnItem 断魂法神盔[圣] 4
+AutoTakeOnItem 断魂神杖[圣] 1
+AutoTakeOnItem 断魂法神甲[圣] 0
+GmexEcute 改属性 0 3 60
+GmexEcute 改属性 1 1 60
+GmexEcute 改属性 4 3 60
+GmexEcute 改属性 3 3 60
+GmexEcute 改属性 5 3 60
+GmexEcute 改属性 6 3 60
+GmexEcute 改属性 7 3 60
+GmexEcute 改属性 8 3 60
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+close
+
+[@nvduanhun47chab]
+#IF
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvduanhun47b
+
+
+[@nvduanhun47b]
+#if
+#act
+GMEXECUTE 解除禁言 self 
+GIVE 155级卷 1
+give 屠魔腰带[生命] 1
+give 屠魔神靴[生命] 1
+give 断魂神杖[圣] 1
+give 断魂法神袍[圣] 1
+give 断魂法神戒[圣] 2
+give 断魂法神镯[圣] 2
+give 断魂法神链[圣] 1
+give 断魂法神盔[圣] 1
+give 断魂法神章[圣] 1
+AutoTakeOnItem 断魂法神章[圣] 2
+AutoTakeOnItem 断魂法神镯[圣] 5
+AutoTakeOnItem 断魂法神镯[圣] 6
+AutoTakeOnItem 断魂法神戒[圣] 7
+AutoTakeOnItem 断魂法神戒[圣] 8
+AutoTakeOnItem 断魂法神链[圣] 3
+AutoTakeOnItem 断魂法神盔[圣] 4
+AutoTakeOnItem 断魂神杖[圣] 1
+AutoTakeOnItem 断魂法神袍[圣] 0
+GmexEcute 改属性 0 3 60
+GmexEcute 改属性 1 1 60
+GmexEcute 改属性 4 3 60
+GmexEcute 改属性 3 3 60
+GmexEcute 改属性 5 3 60
+GmexEcute 改属性 6 3 60
+GmexEcute 改属性 7 3 60
+GmexEcute 改属性 8 3 60
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+close
+
+
+
+
+[@zsnt01a]
+#if
+#say
+记得一定要把身上和药品以及背包全部清空，使用NPC清空即可\   \
+
+<我要兑换男战士套/@nannitian47chab>  \
+<我要兑换女战士套/@nvnitian47chab>  \
+
+
+[@nannitian47chab]
+#IF
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nannitian47b
+
+
+[@nannitian47b]
+#if
+#act
+GMEXECUTE 解除禁言 self
+GIVE 155级卷 1
+give 屠魔腰带[生命] 1
+give 屠魔神靴[生命] 1
+give 逆天神斩[圣] 1
+give 逆天圣战甲[圣] 1
+give 逆天圣战戒[圣] 2
+give 逆天圣战镯[圣] 2
+give 逆天圣战链[圣] 1
+give 逆天圣战盔[圣] 1
+give 逆天圣战章[圣] 1
+AutoTakeOnItem 逆天圣战章[圣] 2
+AutoTakeOnItem 逆天圣战镯[圣] 5
+AutoTakeOnItem 逆天圣战镯[圣] 6
+AutoTakeOnItem 逆天圣战戒[圣] 7
+AutoTakeOnItem 逆天圣战戒[圣] 8
+AutoTakeOnItem 逆天圣战链[圣] 3
+AutoTakeOnItem 逆天圣战盔[圣] 4
+AutoTakeOnItem 逆天神斩[圣] 1
+AutoTakeOnItem 逆天圣战甲[圣] 0
+GmexEcute 改属性 0 2 60
+GmexEcute 改属性 1 0 60
+GmexEcute 改属性 4 2 60
+GmexEcute 改属性 3 2 60
+GmexEcute 改属性 5 2 60
+GmexEcute 改属性 6 2 60
+GmexEcute 改属性 7 2 60
+GmexEcute 改属性 8 2 60
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+close
+
+[@nvnitian47chab]
+#IF
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvnitian47ab
+
+[@nvnitian47ab]
+#if
+#act
+GMEXECUTE 解除禁言 self
+GIVE 155级卷 1
+give 屠魔腰带[生命] 1
+give 屠魔神靴[生命] 1
+give 逆天神斩[圣] 1
+give 逆天圣战袍[圣] 1
+give 逆天圣战戒[圣] 2
+give 逆天圣战镯[圣] 2
+give 逆天圣战链[圣] 1
+give 逆天圣战盔[圣] 1
+give 逆天圣战章[圣] 1
+AutoTakeOnItem 逆天圣战章[圣] 2
+AutoTakeOnItem 逆天圣战镯[圣] 5
+AutoTakeOnItem 逆天圣战镯[圣] 6
+AutoTakeOnItem 逆天圣战戒[圣] 7
+AutoTakeOnItem 逆天圣战戒[圣] 8
+AutoTakeOnItem 逆天圣战链[圣] 3
+AutoTakeOnItem 逆天圣战盔[圣] 4
+AutoTakeOnItem 逆天神斩[圣] 1
+AutoTakeOnItem 逆天圣战袍[圣] 0
+GmexEcute 改属性 0 2 60
+GmexEcute 改属性 1 0 60
+GmexEcute 改属性 4 2 60
+GmexEcute 改属性 3 2 60
+GmexEcute 改属性 5 2 60
+GmexEcute 改属性 6 2 60
+GmexEcute 改属性 7 2 60
+GmexEcute 改属性 8 2 60
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+close
+
+[@StdModeFunc183]
+#if
+#act
+CHANGELEVEL = 165
+SENDMSG 7 恭喜你等级到165了！
+
+[@StdModeFunc184]
+#if
+#act
+CHANGELEVEL = 155
+SENDMSG 7 恭喜你等级到155了！
+
+
+[@StdModeFunc54]
+#if
+checkitem 8000万元宝 1
+#act
+take 8000万元宝 1
+GAMEGOLD + 80000000
+SendCenterMsg 254 0 祝贺《%s》存进瑞士银行的5000万元宝，一个小时的时间竟然得到8000万元宝！祝贺！ 1！ 1 4
+SENDMSG 0 《%s》长的太帅了竟然得到了8000万元宝！
+SENDMSG 0 《%s》长的太帅了竟然得到了8000万元宝！
+SENDMSG 0 《%s》长的太帅了竟然得到了8000万元宝！
+[@StdModeFunc56]
+#if
+checkitem 4500万元宝 1
+#act
+take 4500万元宝 1
+GAMEGOLD + 45000000
+SendCenterMsg 254 0 祝贺《%s》存进瑞士银行的3000万元宝，一个小时的时间竟然得到4500万元宝！祝贺！ 1！ 1 4
+SENDMSG 0 《%s》长的太帅了竟然得到了4500万元宝！
+SENDMSG 0 《%s》长的太帅了竟然得到了4500万元宝！
+SENDMSG 0 《%s》长的太帅了竟然得到了4500万元宝！！
+
+[@StdModeFunc100]
+#IF
+#ACT
+CREDITPOINT + 1
+[@RUNGATEDLQ非法装备踢下线_别跟我重名]
+#If
+#ACT
+SENDMSG 5 由于您佩戴了非法装备踢下线!
+KICK
+break
+

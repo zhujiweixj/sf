@@ -1,0 +1,26 @@
+[@刷新]
+{
+#IF
+#ACT
+GetRandomText .\QuestDiary\元宝捐款\第一排名.txt S21
+GetRandomText .\QuestDiary\元宝捐款\第二排名.txt S22
+GetRandomText .\QuestDiary\元宝捐款\第三排名.txt S23
+GetRandomText .\QuestDiary\元宝捐款\第四排名.txt S24
+GetRandomText .\QuestDiary\元宝捐款\第五排名.txt S25
+GetRandomText .\QuestDiary\元宝捐款\第一排名元宝数.txt S26
+GetRandomText .\QuestDiary\元宝捐款\第二排名元宝数.txt S27
+GetRandomText .\QuestDiary\元宝捐款\第三排名元宝数.txt S28
+GetRandomText .\QuestDiary\元宝捐款\第四排名元宝数.txt S29
+GetRandomText .\QuestDiary\元宝捐款\第五排名元宝数.txt S30
+MOV A200 <$STR(S21)>
+MOV A201 <$STR(S22)>
+MOV A202 <$STR(S23)>
+MOV A203 <$STR(S24)>
+MOV A204 <$STR(S25)>
+MOV G200 <$STR(S26)>
+MOV G201 <$STR(S27)>
+MOV G202 <$STR(S28)>
+MOV G203 <$STR(S29)>
+MOV G204 <$STR(S30)>
+BREAK
+}

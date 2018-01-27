@@ -1,0 +1,28 @@
+(@storage @getback @getnextpage @getPreviouspage @@InPutString @@InPutInteger )
+[@main]
+您好,我是下线保管员,为了您的仓库又<方便>又<安全>。\
+我为您提供以下仓库服务功能： \ 
+　\
+<存放物品/@storage>\ 
+　\
+<取回物品/@getback>\
+　\
+<离开/@exit> 
+<Img:123:1:2:9/@@InPutString55>
+[@storage]
+需要保管什么东西?\ \ 
+<返回/@main>
+
+[@getback]
+请看目录决定找什么东西.\ \ \  
+<返回/@main>
+
+
+[@getPreviouspage]
+#ACT
+goto @getback
+
+[@getnextpage]
+#ACT
+goto @getback
+;-b--b--Q -Q---156 598018---

@@ -1,0 +1,115 @@
+[@main]
+#IF
+#ACT
+Close
+;QQ8341963BigDialogBox
+#SAY
+<点燃魔灯，挑战★★逆天魔宫盛大泄密终极狂暴地图★★！/SCOLOR=254>\ 
+<盛大即将更新的地图，我们已经开放无需任何补丁，请更新盛大最新客户端/SCOLOR=254>\ 
+<游戏规则：/SCOLOR=249><三盏魔灯可以依次点亮,地图每5秒扣除95元宝/SCOLOR=254>\
+<怪物说明：/SCOLOR=249><BOSS绝对秒杀.怪物非常凶猛!慎入!/SCOLOR=254>\
+　　　　　第一盏灯<80%/SCOLOR=250>几率点亮--需<4W/SCOLOR=250>元宝\
+　　　　　第二盏灯<50%/SCOLOR=250>几率点亮--需<6W/SCOLOR=250>元宝\
+　　　　　第三盏灯<30%/SCOLOR=250>几率点亮--需<10W/SCOLOR=250>元宝\ 
+全部点亮后，★★逆天魔宫★★就会开放，地图中<装备狂爆/SCOLOR=253> \
+　　　　　 <★☆★/SCOLOR=242> <开始点灯/@开始点灯> <★☆★/SCOLOR=242>
+[@开始点灯]
+　<┏━━━━━┓/SCOLOR=250> <┏━━━━━┓/SCOLOR=250> <┏━━━━━┓/SCOLOR=250>\
+　<┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250>\
+　<┃/SCOLOR=250><│/SCOLOR=58>未点亮<│/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><│/SCOLOR=58>未点亮<│/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><│/SCOLOR=58>未点亮<│/SCOLOR=58><┃/SCOLOR=250>\
+　<┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250>\
+　<┗━━━━━┛/SCOLOR=250> <┗━━━━━┛/SCOLOR=250> <┗━━━━━┛/SCOLOR=250>\ \
+　　*<开始点灯/@第一盏>*\ \
+[@第一盏]
+#IF
+CheckGameGold > 39999
+RANDOM 3
+#ACT
+GameGold - 40000
+MESSAGEBOX 恭喜你点灯成功，请继续点亮下一盏灯吧！
+GuildNoticeMsg 251 5 玩家【%s】成功的点亮了①盏魔灯，希望他再接再励点燃第二盏魔灯的机会！
+goto @第一盏亮
+BREAK
+#IF
+CheckGameGold > 39999
+RANDOM 2
+#ACT
+GameGold - 40000
+MESSAGEBOX 恭喜你点灯成功，请继续点亮下一盏灯吧！
+GuildNoticeMsg 251 5 玩家【%s】成功的点亮了①盏魔灯，希望他再接再励点燃第二盏魔灯的机会！
+goto @第一盏亮
+BREAK
+#IF
+CheckGameGold > 39999
+#ACT
+GameGold - 40000
+MESSAGEBOX 非常负疚，由于你诚意不足，魔灯没有点亮！
+#elseact
+messagebox 操作失败：您的人品有标题题目，无法点灯！
+[@第一盏亮]
+　<┏━━━━━┓/SCOLOR=250> <┏━━━━━┓/SCOLOR=250> <┏━━━━━┓/SCOLOR=250>\
+　<┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250>\
+　<┃/SCOLOR=250><│/SCOLOR=58><已点亮/SCOLOR=254><│/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><│/SCOLOR=58>未点亮<│/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><│/SCOLOR=58>未点亮<│/SCOLOR=58><┃/SCOLOR=250>\
+　<┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250>\
+　<┗━━━━━┛/SCOLOR=250> <┗━━━━━┛/SCOLOR=250> <┗━━━━━┛/SCOLOR=250>\ \
+　*<已经点亮/SCOLOR=242>* *<开始点灯/@第二盏>*\ \
+[@第二盏]
+#IF
+CheckGameGold > 59999
+RANDOM 2
+#ACT
+GameGold - 60000
+MESSAGEBOX 恭喜你点灯成功，请继续点亮下一盏灯吧！
+GuildNoticeMsg 251 5 玩家【%s】成功的点亮了②盏魔灯，希望他再接再励点燃第三盏魔灯的机会！
+goto @第二盏亮
+BREAK
+#IF
+CheckGameGold > 59999
+#ACT
+GameGold - 60000
+MESSAGEBOX 非常负疚，由于你诚意不足，魔灯没有点亮！
+#elseact
+messagebox 操作失败：您的人品有标题题目，无法点灯！
+[@第二盏亮]
+　<┏━━━━━┓/SCOLOR=250> <┏━━━━━┓/SCOLOR=250> <┏━━━━━┓/SCOLOR=250>\
+　<┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250>\
+　<┃/SCOLOR=250><│/SCOLOR=58><已点亮/SCOLOR=254><│/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><│/SCOLOR=58><已点亮/SCOLOR=254><│/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><│/SCOLOR=58>未点亮<│/SCOLOR=58><┃/SCOLOR=250>\
+　<┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250>\
+　<┗━━━━━┛/SCOLOR=250> <┗━━━━━┛/SCOLOR=250> <┗━━━━━┛/SCOLOR=250>\ \
+　*<已经点亮/SCOLOR=242>* *<已经点亮/SCOLOR=242>* *<开始点灯/@第三盏>*\ \
+[@第三盏]
+#IF
+CheckGameGold > 99999
+RANDOM 3
+#ACT
+GameGold - 100000
+MESSAGEBOX 恭喜你点灯成功，请继续点亮下一盏灯吧！
+GuildNoticeMsg 251 5 玩家【%s】成功的点亮了③盏魔灯，获得了前往★★逆天魔宫盛大泄密终极狂暴地图★★”的机会！
+GuildNoticeMsg 251 5 玩家【%s】成功的点亮了③盏魔灯，获得了前往★★逆天魔宫盛大泄密终极狂暴地图★★”的机会！
+GuildNoticeMsg 251 5 玩家【%s】成功的点亮了③盏魔灯，获得了前往★★逆天魔宫盛大泄密终极狂暴地图★★”的机会！
+GuildNoticeMsg 251 5 玩家【%s】成功的点亮了③盏魔灯，获得了前往★★逆天魔宫盛大泄密终极狂暴地图★★”的机会！
+GuildNoticeMsg 251 5 玩家【%s】成功的点亮了③盏魔灯，获得了前往★★逆天魔宫盛大泄密终极狂暴地图★★”的机会！
+GuildNoticeMsg 251 5 玩家【%s】成功的点亮了③盏魔灯，获得了前往★★逆天魔宫盛大泄密终极狂暴地图★★”的机会！
+goto @第三盏亮
+BREAK
+#IF
+CheckGameGold > 99999
+#ACT
+GameGold - 100000
+MESSAGEBOX 非常负疚，由于你诚意不足，魔灯没有点亮！
+#elseact
+messagebox 操作失败：您的人品有标题题目，无法点灯！
+[@第三盏亮]
+　<┏━━━━━┓/SCOLOR=250> <┏━━━━━┓/SCOLOR=250> <┏━━━━━┓/SCOLOR=250>\
+　<┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╭———╮/SCOLOR=58><┃/SCOLOR=250>\
+　<┃/SCOLOR=250><│/SCOLOR=58><已点亮/SCOLOR=254><│/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><│/SCOLOR=58><已点亮/SCOLOR=254><│/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><│/SCOLOR=58><已点亮/SCOLOR=254><│/SCOLOR=58><┃/SCOLOR=250>\
+　<┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250> <┃/SCOLOR=250><╰———╯/SCOLOR=58><┃/SCOLOR=250>\
+　<┗━━━━━┛/SCOLOR=250> <┗━━━━━┛/SCOLOR=250> <┗━━━━━┛/SCOLOR=250>\ \
+　*<恭喜你全部点亮三盏魔灯，你可以传送：/SCOLOR=242>* *<★★逆天魔宫★★/@西天佛界>*\ \
+[@西天佛界]
+#IF
+#ACT
+Mapmove xunbao1
+give 回城卷
+SENDMSG 1  玩家[%s]进入了超级活动地图逆天魔宫，此地图可是暴装备的天堂喔，土右NPC上角进入！
+

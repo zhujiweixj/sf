@@ -1,0 +1,86 @@
+[@main]
+　\
+恩，是从兴隆镖局送过来的吧？\
+一路幸苦啦，我来点点看东西少了没！\
+稍等给你丰厚的报仇哦！嘿嘿\
+　\
+　\
+<完成任务/@完成任务>
+
+[@完成任务]
+#IF
+CHECKSLAVECOUNT < 1
+#ACT
+messagebox 你还没有接压镖任务，快去土城找“兴隆镖局”吧！
+break
+
+
+#if
+CheckSlaveInRange 一级镖车 5
+#act
+GETCALLMOB 一级镖车
+KILLCALLMOB 一级镖车 10
+CHANGEEXP + 100000000
+GameGold + 50000
+SendCenterMsg 251 0 %d压镖完成！ 5 0 @停止倒计时
+SendCenterMsg 146 0 【<$USERNAME>】的【一级镖车】押镖成功，获得一亿经验奖励！ 1
+break
+#SAY
+　\
+经验加1亿，50000元宝如数退还！\
+辛苦了，完成任务！
+　\
+　\
+　\
+　\
+<关　　闭/@exit>
+
+#if
+CheckSlaveInRange 二级镖车 5
+#act
+GETCALLMOB 二级镖车
+KILLCALLMOB 二级镖车 10
+CHANGEEXP + 300000000
+GameGold + 150000
+SendCenterMsg 251 0 %d压镖完成！ 5 0 @停止倒计时
+SendCenterMsg 146 0 【<$USERNAME>】的【二级镖车】押镖成功，获得三亿经验奖励！ 1
+break
+#SAY
+　\
+经验加3亿，150000元宝如数退还！\
+辛苦了，完成任务！
+　\
+　\
+　\
+　\
+<关　　闭/@exit>
+
+#if
+CheckSlaveInRange 三级镖车 5
+#act
+GETCALLMOB 三级镖车
+KILLCALLMOB 三级镖车 10
+CHANGEEXP + 500000000
+GameGold + 300000
+SendCenterMsg 251 0 %d压镖完成！ 5 0 @停止倒计时
+SendCenterMsg 146 0 【<$USERNAME>】的【三级镖车】押镖成功，获得五亿经验奖励！ 1
+break
+#SAY
+　\
+经验加5亿，300000元宝如数退还！\
+辛苦了，完成任务！
+　\
+　\
+　\
+　\
+<关　　闭/@exit>
+
+#elsesay
+　\
+　\
+还没有接受任务，或者镖车离你太远了(5格以内)\
+　\
+　\
+　\
+　\
+<关　　闭/@exit>

@@ -1,0 +1,245 @@
+[@main]
+#IF
+#ACT
+LOADVAR GLOBAL 开区天数 ..\QuestDiary\变量数据\系统变量.txt
+
+#IF
+CHECKVAR GLOBAL 开区天数 > 0
+hour 22 23
+#act
+messagebox 抱歉，每天22点-0点压镖系统维护（新区不受影响）！
+break
+
+
+#IF
+#ACT
+LOADVAR HUMAN 一级镖标示 ..\QuestDiary\变量数据\压镖次数.txt
+LOADVAR HUMAN 二级镖标示 ..\QuestDiary\变量数据\压镖次数.txt
+LOADVAR HUMAN 三级镖标示 ..\QuestDiary\变量数据\压镖次数.txt
+#ACT
+
+#IF
+CHECKVAR HUMAN 一级镖标示 = 0
+CHECKVAR HUMAN 二级镖标示 = 0
+CHECKVAR HUMAN 三级镖标示 = 0
+#SAY
+　\
+========================压镖规则==========================\
+1.每级镖车每天只能押<1次/SCOLOR=250>，且必须从一级镖开始（每级奖励各不同）\
+2.运镖过程中若镖车被毁，押金归<[摧毁镖车者]/SCOLOR=250>\
+3.运镖过程中若退出或被人杀害，则<任务失败，失去押金/SCOLOR=250>\
+4.押镖成功后<退还全部押金/SCOLOR=250>，失败则<失去押金/SCOLOR=250>\
+5.每天<22点到0点/SCOLOR=243>的2小时运镖系统维护不能压镖（新区不受影响）\
+　\
+　　[<一级镖车/@1j>]　[<二级镖车/@2j>]　[<三级镖车/@3j>]　[<关闭窗口/@exit>]
+
+#IF
+CHECKVAR HUMAN 一级镖标示 = 1
+CHECKVAR HUMAN 二级镖标示 = 0
+CHECKVAR HUMAN 三级镖标示 = 0
+#SAY
+　\
+========================压镖规则==========================\
+1.每级镖车每天只能押<1次/SCOLOR=250>，且必须从一级镖开始（每级奖励各不同）\
+2.运镖过程中若镖车被毁，押金归<[摧毁镖车者]/SCOLOR=250>\
+3.运镖过程中若退出或被人杀害，则<任务失败，失去押金/SCOLOR=250>\
+4.押镖成功后<退还全部押金/SCOLOR=250>，失败则<失去押金/SCOLOR=250>\
+5.每天<22点到0点/SCOLOR=243>的2小时运镖系统维护不能压镖（新区不受影响）\
+　\
+　　[一级镖车]　[<二级镖车/@2j>]　[<三级镖车/@3j>]　[<关闭窗口/@exit>]
+
+#IF
+CHECKVAR HUMAN 一级镖标示 = 1
+CHECKVAR HUMAN 二级镖标示 = 1
+CHECKVAR HUMAN 三级镖标示 = 0
+#SAY
+　\
+========================压镖规则==========================\
+1.每级镖车每天只能押<1次/SCOLOR=250>，且必须从一级镖开始（每级奖励各不同）\
+2.运镖过程中若镖车被毁，押金归<[摧毁镖车者]/SCOLOR=250>\
+3.运镖过程中若退出或被人杀害，则<任务失败，失去押金/SCOLOR=250>\
+4.押镖成功后<退还全部押金/SCOLOR=250>，失败则<失去押金/SCOLOR=250>\
+5.每天<22点到0点/SCOLOR=243>的2小时运镖系统维护不能压镖（新区不受影响）\
+　\
+　　[一级镖车]　[二级镖车]　[<三级镖车/@3j>]　[<关闭窗口/@exit>]
+
+#IF
+CHECKVAR HUMAN 一级镖标示 = 1
+CHECKVAR HUMAN 二级镖标示 = 1
+CHECKVAR HUMAN 三级镖标示 = 1
+#SAY
+　\
+========================压镖规则==========================\
+1.每级镖车每天只能押<1次/SCOLOR=250>，且必须从一级镖开始（每级奖励各不同）\
+2.运镖过程中若镖车被毁，押金归<[摧毁镖车者]/SCOLOR=250>\
+3.运镖过程中若退出或被人杀害，则<任务失败，失去押金/SCOLOR=250>\
+4.押镖成功后<退还全部押金/SCOLOR=250>，失败则<失去押金/SCOLOR=250>\
+5.每天<22点到0点/SCOLOR=243>的2小时运镖系统维护不能压镖（新区不受影响）\
+　<您今天的运镖任务已接完，请明天再来！(晚上0点以后即可)/SCOLOR=249>\
+　　[一级镖车]　[二级镖车]　[三级镖车]　[<关闭窗口/@exit>]
+
+
+[@1j]
+　\
+========================压镖规则==========================\
+任务：一级镖车\
+奖励：1亿经验\
+押金：5万元宝\
+限时：10分钟内\
+说明：将镖车压到土城书店门口“西门大官人”处完成任务\
+<提示：若你刚刚压镖失败，倒计时还在显示，请小退后再接！/SCOLOR=250>\
+　　　　　　　　　<接受任务/@1jgo>　<返　　回/@main>
+
+[@1jgo]
+#IF
+CHECKVAR HUMAN 一级镖标示 = 1
+#ACT
+messagebox 你已经压过一级镖了，请去完成更高级的运镖任务！
+break
+
+#IF
+CheckGameGold < 50000
+#ACT
+messagebox 同志...你连押金都不够啊，快去打点元宝再来吧！
+break
+
+#IF
+CheckJob Taoist
+CHECKSLAVECOUNT > 0
+#ACT
+messagebox 请先做完你手头的任务，再接新的任务！\道士请先收起你的神兽，接受任务后再召唤出！
+break
+
+#IF
+CHECKSLAVECOUNT > 0
+#ACT
+messagebox 请先做完你手头的任务，再接新的任务！
+break
+
+#IF
+#ACT
+GameGold - 50000
+CALCVAR HUMAN 一级镖标示 = 1
+SAVEVAR HUMAN 一级镖标示 ..\QuestDiary\变量数据\压镖次数.txt
+RECALLMOB 一级镖车
+SendCenterMsg 251 0 将镖车压到土城书店门口“西门大官人”处完成任务，剩余%d 0 600 @压镖超时
+SendCenterMsg 251 0 【<$USERNAME>】的【一级镖车】已经上路，有仇的快来报仇啊！ 1
+SendCenterMsg 251 0 【<$USERNAME>】的【一级镖车】已经上路，有仇的快来报仇啊！ 1
+close
+
+
+
+[@2j]
+　\
+========================压镖规则==========================\
+任务：二级镖车\
+奖励：3亿经验\
+押金：15万元宝\
+限时：10分钟内\
+说明：将镖车压到土城书店门口“西门大官人”处完成任务\
+<提示：若你刚刚压镖失败，倒计时还在显示，请小退后再接！/SCOLOR=250>\
+　　　　　　　　　<接受任务/@2jgo>　<返　　回/@main>
+
+[@2jgo]
+#IF
+CHECKVAR HUMAN 一级镖标示 = 0
+#ACT
+messagebox 你还没有压一级镖，不能接受二级镖任务！
+break
+
+#IF
+CHECKVAR HUMAN 二级镖标示 = 1
+#ACT
+messagebox 你已经压过二级镖了，请去完成更高级的运镖任务！
+break
+
+#IF
+CheckGameGold < 150000
+#ACT
+messagebox 同志...你连押金都不够啊，快去打点元宝再来吧！
+break
+
+#IF
+CheckJob Taoist
+CHECKSLAVECOUNT > 0
+#ACT
+messagebox 请先做完你手头的任务，再接新的任务！\道士请先收起你的神兽，接受任务后再召唤出！
+break
+
+#IF
+CHECKSLAVECOUNT > 0
+#ACT
+messagebox 请先做完你手头的任务，再接新的任务！
+break
+
+#IF
+#ACT
+GameGold - 150000
+CALCVAR HUMAN 二级镖标示 = 1
+SAVEVAR HUMAN 二级镖标示 ..\QuestDiary\变量数据\压镖次数.txt
+RECALLMOB 二级镖车
+SendCenterMsg 251 0 将镖车压到土城书店门口“西门大官人”处完成任务，剩余%d 0 600 @压镖超时
+SendCenterMsg 251 0 【<$USERNAME>】的【二级镖车】已经上路，有仇的快来报仇啊！ 1
+SendCenterMsg 251 0 【<$USERNAME>】的【二级镖车】已经上路，有仇的快来报仇啊！ 1
+close
+
+[@3j]
+　\
+========================压镖规则==========================\
+任务：三级镖车\
+奖励：5亿经验\
+押金：30万元宝\
+限时：10分钟内\
+说明：将镖车压到土城书店门口“西门大官人”处完成任务\
+<提示：若你刚刚压镖失败，倒计时还在显示，请小退后再接！/SCOLOR=250>\
+　　　　　　　　　<接受任务/@3jgo>　<返　　回/@main>
+
+[@3jgo]
+#IF
+CHECKVAR HUMAN 一级镖标示 = 0
+#ACT
+messagebox 你还没有压一级镖，不能接受三级镖任务！
+break
+
+#IF
+CHECKVAR HUMAN 二级镖标示 = 0
+#ACT
+messagebox 你还没有压二级镖，不能接受三级镖任务！
+break
+
+#IF
+CHECKVAR HUMAN 三级镖标示 = 1
+#ACT
+messagebox 你已经压过三级镖了，请明天再来！（晚上0点以后即可）
+break
+
+
+#IF
+CheckGameGold < 300000
+#ACT
+messagebox 同志...你连押金都不够啊，快去打点元宝再来吧！
+break
+
+#IF
+CheckJob Taoist
+CHECKSLAVECOUNT > 0
+#ACT
+messagebox 请先做完你手头的任务，再接新的任务！\【道士】请先收起你的神兽，接受任务后再召唤出！
+break
+
+#IF
+CHECKSLAVECOUNT > 0
+#ACT
+messagebox 请先做完你手头的任务，再接新的任务！
+break
+
+#IF
+#ACT
+GameGold - 300000
+CALCVAR HUMAN 三级镖标示 = 1
+SAVEVAR HUMAN 三级镖标示 ..\QuestDiary\变量数据\压镖次数.txt
+RECALLMOB 三级镖车
+SendCenterMsg 251 0 将镖车压到土城书店门口“西门大官人”处完成任务，剩余%d 0 600 @压镖超时
+SendCenterMsg 251 0 【<$USERNAME>】的【三级镖车】已经上路，有仇的快来报仇啊！ 1
+SendCenterMsg 251 0 【<$USERNAME>】的【三级镖车】已经上路，有仇的快来报仇啊！ 1
+close

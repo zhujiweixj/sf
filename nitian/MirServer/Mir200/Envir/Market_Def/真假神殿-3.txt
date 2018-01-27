@@ -1,0 +1,19 @@
+(@buy @sell @repair @s_repair )
+[@main]
+<亲.欢迎来到真假神殿本地图为最新更新活动地图...../SCOLOR=254>\  \
+<每天开放时间为每晚22点30-23点30/SCOLOR=250>\  \
+<说明：地图内的的所有玩家23点30分全部自动传回土城安全区/SCOLOR=253>\  \
+此地图为活动地图<爆率非常高>\  \
+　　　　　　　　　　　　　　　　<进入真假神殿..../@PK点击>　\
+
+
+[@PK点击]
+#IF
+EQUAL G198 1
+#ACT
+mapmove zjsd
+give 回城卷 1
+GuildNoticeMsg 245 225  【%s】进入真假神殿开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+SendCenterMsg 253 0 玩家【<$USERNAME>】进入真假神殿开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+#ELSEACT
+MESSAGEBOX 对不起，还没到开放的点就来找我了？

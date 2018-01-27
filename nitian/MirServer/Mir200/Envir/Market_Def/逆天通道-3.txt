@@ -1,0 +1,56 @@
+(@buy @sell @repair @s_repair )
+[@main]
+<亲.欢迎来到逆天通道/SCOLOR=250><本地图不限等级,满足以下条件方可进入...../SCOLOR=254>\ 
+<此地图爆:/SCOLOR=250><+贵族15.+贵族25.+贵族35.+贵族45.(盘古套装.属性超牛)/SCOLOR=253>\
+<触发1.2倍攻击/SCOLOR=253><BOSS怪物:/SCOLOR=250>昊天魔君  轩辕魔王   神威天魔/SCOLOR=251>\
+<盘古魔王[决战].水姣龙王[决战]以及各地图所有BOSS.../SCOLOR=251>\  
+　<建议组队进入,需满足以下，否则就算让你进去了也是送死/SCOLOR=250>\
+　　　<≮至尊之家≯/SCOLOR=250>需要支付20万元宝\
+
+　　　　　　　　　　　　　　　　　　　　　　<进入逆天通道..../@PK点击>　\
+
+[@PK点击]
+#IF
+CHECKGAMEGOLD > 199999
+#act
+GAMEGOLD - 200000
+#ACT
+mapmove nttd 284 277
+give 回城卷 1
+GuildNoticeMsg 245 225  【%s】进入逆天通道[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+SendCenterMsg 253 0 玩家【<$USERNAME>】进入逆天通道[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没20W元宝，否则进去也是送死！
+
+
+
+[@魔法师]
+#IF
+CHECKMC > 9 > 840
+CHECKGAMEGOLD > 999999
+#act
+GAMEGOLD - 1000000
+#ACT
+mapmove pgttd 25 40
+give 回城卷 1
+GuildNoticeMsg 245 225  【%s】进入逆天通道[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+SendCenterMsg 253 0 玩家【<$USERNAME>】进入逆天通道[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+break
+#ELSEACT
+MESSAGEBOX 对不起，你魔法力不够840，或者你没100W元宝，否则进去也是送死！
+
+
+[@道士]
+#IF
+CHECKSC > 10 > 830
+CHECKGAMEGOLD > 999999
+#act
+GAMEGOLD - 1000000
+#ACT
+mapmove pgttd 25 40
+give 回城卷 1
+GuildNoticeMsg 245 225  【%s】进入逆天通道[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+SendCenterMsg 253 0 玩家【<$USERNAME>】进入逆天通道[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+#ELSEACT
+MESSAGEBOX 对不起，你道力不够830，或者你没100W元宝，否则进去也是送死！

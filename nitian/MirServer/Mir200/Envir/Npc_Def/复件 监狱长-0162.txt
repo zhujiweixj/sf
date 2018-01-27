@@ -1,0 +1,39 @@
+[@main]
+#if
+CHECKNAMELIST ..\QuestDiary\游戏登陆\释放.txt
+#ACT
+delnamelist ..\QuestDiary\游戏登陆\开加速.txt
+delnamelist ..\QuestDiary\游戏登陆\刷喇叭.txt
+delnamelist ..\QuestDiary\游戏登陆\盗号.txt
+delnamelist ..\QuestDiary\游戏登陆\释放.txt
+mapmove 3 330 330
+messagebox  <$USERNAME>，这次出去后希望你好好做人，注意：出去后3分钟内\不要使用地牢逃脱卷、回城卷和瞬息移动技能，\否则将又回到监狱中来，我可不想再看见你了。
+close
+break
+#if
+CHECKNAMELIST ..\QuestDiary\游戏登陆\开加速.txt
+#ACT
+messagebox  <$USERNAME>，玛法巡逻官现在怀疑你使用变速工具，\现将你关押6小时后再作调查，这六小时内你不可以下线，\否则将重新计时，六小时过后联系管理员放你出来！\
+close
+break
+#if
+CHECKNAMELIST ..\QuestDiary\游戏登陆\刷喇叭.txt
+#ACT
+TakeEx 12
+Take 千里传音(大) 46
+Take 千里传音 46
+messagebox  <$USERNAME>，由于你恶意刷喇叭针对服务器公平性和辱骂管理\现将你关押6小时后再作处理，这六小时内你不可以下线，\否则将重新计时，六小时过后联系管理员放\你出来！\
+close
+break
+#if
+CHECKNAMELIST ..\QuestDiary\游戏登陆\盗号.txt
+#ACT
+TakeEx 12
+Take 千里传音(大) 46
+Take 千里传音 46
+messagebox  <$USERNAME>，玛法巡逻官现在怀疑你盗取他人帐号和装备\现将你关押3天后再作处理，这三天内你必须每天在线16小时，\否则将重新计时，三天过后联系管理员接受处理！\
+close
+break
+#ELSEACT
+close
+break

@@ -1,0 +1,222 @@
+
+#AutoRun NPC RUNONDAY 23:00 @贡献值
+
+#AutoRun NPC RUNONDAY 22:00 @争分夺秒
+
+#AutoRun NPC  SEC 1  @群雄大乱斗检测
+#AutoRun NPC  RUNONDAY 19:00  @群雄大乱斗开始
+#AutoRun NPC  RUNONDAY 19:30  @群雄大乱斗停止
+#AutoRun NPC  RUNONDAY 20:20  @群雄大乱斗结束
+
+#AutoRun NPC SEC 1 @B_Time
+#AutoRun NPC RUNONDAY 00:20 @刷恶魔广场怪
+#AutoRun NPC RUNONDAY 4:20 @刷恶魔广场怪
+#AutoRun NPC RUNONDAY 8:20 @刷恶魔广场怪
+#AutoRun NPC RUNONDAY 12:20 @刷恶魔广场怪
+#AutoRun NPC RUNONDAY 16:20 @刷恶魔广场怪
+#AutoRun NPC RUNONDAY 22:40 @刷恶魔广场怪
+;--------------------------------------
+#AutoRun NPC RUNONDAY 00:15 @开启恶魔广场
+#AutoRun NPC RUNONDAY 00:30 @关闭恶魔广场
+#AutoRun NPC RUNONDAY 4:15 @开启恶魔广场
+#AutoRun NPC RUNONDAY 4:30 @关闭恶魔广场
+#AutoRun NPC RUNONDAY 8:15 @开启恶魔广场
+#AutoRun NPC RUNONDAY 8:30 @关闭恶魔广场
+#AutoRun NPC RUNONDAY 12:15 @开启恶魔广场
+#AutoRun NPC RUNONDAY 12:30 @关闭恶魔广场
+#AutoRun NPC RUNONDAY 16:15 @开启恶魔广场
+#AutoRun NPC RUNONDAY 16:30 @关闭恶魔广场
+#AutoRun NPC RUNONDAY 22:30 @开启恶魔广场
+#AutoRun NPC RUNONDAY 22:45 @关闭恶魔广场
+;--------------------------------------
+;#AutoRun NPC RUNONDAY 15:00 @开启双倍砍猪
+;#AutoRun NPC RUNONDAY 16:00 @关闭双倍砍猪
+;--------------------------------------
+#AutoRun NPC MIN 1 @入门级装备
+;--------------------------------------
+#AutoRun NPC MIN 10 @白日门虎卫
+#AutoRun NPC MIN 30 @白日门鹰卫
+#AutoRun NPC MIN 3 @3分钟刷新
+;--------------------------------------
+#AutoRun NPC RUNONDAY 22:30 @刷真假神殿
+#AutoRun NPC RUNONDAY 23:30 @终止真假神殿
+#AutoRun NPC RUNONDAY 19:30 @刷终极1
+#AutoRun NPC RUNONDAY 23:00 @刷终极
+;#AutoRun NPC RUNONDAY 20:30 @逐日积分
+;--------------------------------------
+#AutoRun NPC SEC 3 @聚宝盒
+;--w*w*w.g*m*0*0*5.c*o*m---　
+;--------------------------------------
+#AutoRun NPC SEC 1 @擂台离线检测
+#AutoRun NPC SEC 1 @神器检测1
+#AutoRun NPC SEC 1 @神器检测2
+#AutoRun NPC SEC 1 @神器检测3
+#AutoRun NPC MIN 1 @神器检测
+#AutoRun NPC MIN 10 @神器BOSS
+;--------------------------------------
+#AutoRun NPC SEC 1 @坐庄游戏C
+#AutoRun NPC SEC 1 @坐庄游戏B
+#AutoRun NPC SEC 1 @坐庄游戏A
+;--------------------------------------
+#AutoRun NPC MIN 5 @极品发光
+;==============夺宝=====================
+#AutoRun NPC MIN 60 @记录小时
+#AutoRun NPC MIN 2 @刷新变量
+#AutoRun NPC MIN 2 @超级夺宝
+#AutoRun NPC MIN 2 @夺宝检测
+;#AutoRun NPC RUNONDAY 00:22 @随机爆终极
+;#AutoRun NPC RUNONDAY 00:42 @魔界指环
+#AutoRun NPC RUNONDAY 12:05 @夺宝奇兵
+#AutoRun NPC RUNONDAY 16:05 @夺宝奇兵
+#AutoRun NPC RUNONDAY 20:05 @夺宝奇兵
+#AutoRun NPC RUNONDAY 00:05 @夺宝奇兵
+
+#AutoRun NPC RUNONDAY 20:40 @刷兔子
+#AutoRun NPC RUNONDAY 16:40 @刷兔子
+#AutoRun NPC RUNONDAY 12:40 @刷兔子
+#AutoRun NPC RUNONDAY 08:40 @刷兔子
+#AutoRun NPC RUNONDAY 04:40 @刷兔子
+#AutoRun NPC RUNONDAY 00:40 @刷兔子
+
+;赌场脚本
+#AutoRun NPC SEC 1 @赌场
+#AutoRun NPC MIN 15 @赌场喊话
+;万年树妖
+#AutoRun NPC RUNONDAY 0:27 @树妖预告
+#AutoRun NPC RUNONDAY 0:30 @万年树妖
+#AutoRun NPC RUNONDAY 0:57 @树妖预告
+#AutoRun NPC RUNONDAY 1:00 @万年树妖
+#AutoRun NPC RUNONDAY 1:27 @树妖预告
+#AutoRun NPC RUNONDAY 1:30 @万年树妖
+#AutoRun NPC RUNONDAY 1:57 @树妖预告
+#AutoRun NPC RUNONDAY 2:00 @万年树妖
+#AutoRun NPC RUNONDAY 2:27 @树妖预告
+#AutoRun NPC RUNONDAY 2:30 @万年树妖
+#AutoRun NPC RUNONDAY 2:57 @树妖预告
+#AutoRun NPC RUNONDAY 3:00 @万年树妖
+#AutoRun NPC RUNONDAY 3:27 @树妖预告
+#AutoRun NPC RUNONDAY 3:30 @万年树妖
+#AutoRun NPC RUNONDAY 3:57 @树妖预告
+#AutoRun NPC RUNONDAY 4:00 @万年树妖
+#AutoRun NPC RUNONDAY 4:27 @树妖预告
+#AutoRun NPC RUNONDAY 4:30 @万年树妖
+#AutoRun NPC RUNONDAY 4:57 @树妖预告
+#AutoRun NPC RUNONDAY 5:00 @万年树妖
+#AutoRun NPC RUNONDAY 5:27 @树妖预告
+#AutoRun NPC RUNONDAY 5:30 @万年树妖
+#AutoRun NPC RUNONDAY 5:57 @树妖预告
+#AutoRun NPC RUNONDAY 6:00 @万年树妖
+#AutoRun NPC RUNONDAY 6:27 @树妖预告
+#AutoRun NPC RUNONDAY 6:30 @万年树妖
+#AutoRun NPC RUNONDAY 6:57 @树妖预告
+#AutoRun NPC RUNONDAY 7:00 @万年树妖
+#AutoRun NPC RUNONDAY 7:27 @树妖预告
+#AutoRun NPC RUNONDAY 7:30 @万年树妖
+#AutoRun NPC RUNONDAY 7:57 @树妖预告
+#AutoRun NPC RUNONDAY 8:00 @万年树妖
+#AutoRun NPC RUNONDAY 8:27 @树妖预告
+#AutoRun NPC RUNONDAY 8:30 @万年树妖
+#AutoRun NPC RUNONDAY 8:57 @树妖预告
+#AutoRun NPC RUNONDAY 9:00 @万年树妖
+#AutoRun NPC RUNONDAY 9:27 @树妖预告
+#AutoRun NPC RUNONDAY 9:30 @万年树妖
+#AutoRun NPC RUNONDAY 9:57 @树妖预告
+#AutoRun NPC RUNONDAY 10:00 @万年树妖
+#AutoRun NPC RUNONDAY 10:27 @树妖预告
+#AutoRun NPC RUNONDAY 10:30 @万年树妖
+#AutoRun NPC RUNONDAY 10:57 @树妖预告
+#AutoRun NPC RUNONDAY 11:00 @万年树妖
+#AutoRun NPC RUNONDAY 11:27 @树妖预告
+#AutoRun NPC RUNONDAY 11:30 @万年树妖
+#AutoRun NPC RUNONDAY 11:57 @树妖预告
+#AutoRun NPC RUNONDAY 12:00 @万年树妖
+#AutoRun NPC RUNONDAY 12:27 @树妖预告
+#AutoRun NPC RUNONDAY 12:30 @万年树妖
+#AutoRun NPC RUNONDAY 12:57 @树妖预告
+#AutoRun NPC RUNONDAY 13:00 @万年树妖
+#AutoRun NPC RUNONDAY 13:27 @树妖预告
+#AutoRun NPC RUNONDAY 13:30 @万年树妖
+#AutoRun NPC RUNONDAY 13:57 @树妖预告
+#AutoRun NPC RUNONDAY 14:00 @万年树妖
+#AutoRun NPC RUNONDAY 14:27 @树妖预告
+#AutoRun NPC RUNONDAY 14:30 @万年树妖
+#AutoRun NPC RUNONDAY 14:57 @树妖预告
+#AutoRun NPC RUNONDAY 15:00 @万年树妖
+#AutoRun NPC RUNONDAY 15:27 @树妖预告
+#AutoRun NPC RUNONDAY 15:30 @万年树妖
+#AutoRun NPC RUNONDAY 15:57 @树妖预告
+#AutoRun NPC RUNONDAY 16:00 @万年树妖
+#AutoRun NPC RUNONDAY 16:27 @树妖预告
+#AutoRun NPC RUNONDAY 16:30 @万年树妖
+#AutoRun NPC RUNONDAY 16:57 @树妖预告
+#AutoRun NPC RUNONDAY 17:00 @万年树妖
+#AutoRun NPC RUNONDAY 17:27 @树妖预告
+#AutoRun NPC RUNONDAY 17:30 @万年树妖
+#AutoRun NPC RUNONDAY 17:57 @树妖预告
+#AutoRun NPC RUNONDAY 18:00 @万年树妖
+#AutoRun NPC RUNONDAY 18:27 @树妖预告
+#AutoRun NPC RUNONDAY 18:30 @万年树妖
+#AutoRun NPC RUNONDAY 18:57 @树妖预告
+#AutoRun NPC RUNONDAY 19:00 @万年树妖
+#AutoRun NPC RUNONDAY 19:27 @树妖预告
+#AutoRun NPC RUNONDAY 19:30 @万年树妖
+#AutoRun NPC RUNONDAY 19:57 @树妖预告
+#AutoRun NPC RUNONDAY 20:00 @万年树妖
+#AutoRun NPC RUNONDAY 20:27 @树妖预告
+#AutoRun NPC RUNONDAY 20:30 @万年树妖
+#AutoRun NPC RUNONDAY 20:57 @树妖预告
+#AutoRun NPC RUNONDAY 21:00 @万年树妖
+#AutoRun NPC RUNONDAY 21:27 @树妖预告
+#AutoRun NPC RUNONDAY 21:30 @万年树妖
+#AutoRun NPC RUNONDAY 21:57 @树妖预告
+#AutoRun NPC RUNONDAY 22:00 @万年树妖
+#AutoRun NPC RUNONDAY 22:27 @树妖预告
+#AutoRun NPC RUNONDAY 22:30 @万年树妖
+#AutoRun NPC RUNONDAY 22:57 @树妖预告
+#AutoRun NPC RUNONDAY 23:00 @万年树妖
+#AutoRun NPC RUNONDAY 23:27 @树妖预告
+#AutoRun NPC RUNONDAY 23:30 @万年树妖
+#AutoRun NPC RUNONDAY 23:57 @树妖预告
+#AutoRun NPC RUNONDAY 0:00 @万年树妖
+#AutoRun NPC MIN 66 @阎王爷
+#AutoRun NPC MIN 10 @说话
+#AutoRun NPC MIN 11 @说说话
+#AutoRun NPC MIN 9 @再说话1
+#AutoRun NPC MIN 10 @再说话2
+#AutoRun NPC MIN 11 @再说话3
+;--w*w*w.g*m*0*0*5.c*o*m---　
+;——————————————————————————————————
+#AutoRun NPC RUNONDAY 23:59 @开区天数
+#AutoRun NPC RUNONDAY 22:00 @奖励开启
+#AutoRun NPC RUNONDAY 23:00 @奖励关闭
+#AutoRun NPC RUNONDAY 0:00 @清理沙奖励
+#AutoRun NPC RUNONDAY 22:01 @领取沙奖励
+;——————————————————————————————————
+#AutoRun NPC RUNONWEEK 7:19:31 @行会争霸
+#AutoRun NPC RUNONWEEK 6:19:31 @行会争霸
+#AutoRun NPC RUNONWEEK 5:19:31 @行会争霸
+#AutoRun NPC RUNONWEEK 4:19:31 @行会争霸
+#AutoRun NPC RUNONWEEK 3:19:31 @行会争霸
+#AutoRun NPC RUNONWEEK 2:19:31 @行会争霸
+#AutoRun NPC RUNONWEEK 1:19:31 @行会争霸
+#AutoRun NPC RUNONWEEK 7:19:41 @行会争霸
+#AutoRun NPC RUNONWEEK 6:19:41 @行会争霸
+#AutoRun NPC RUNONWEEK 5:19:41 @行会争霸
+#AutoRun NPC RUNONWEEK 4:19:41 @行会争霸
+#AutoRun NPC RUNONWEEK 3:19:41 @行会争霸
+#AutoRun NPC RUNONWEEK 2:19:41 @行会争霸
+#AutoRun NPC RUNONWEEK 1:19:41 @行会争霸
+#AutoRun NPC RUNONWEEK 7:19:51 @行会争霸
+#AutoRun NPC RUNONWEEK 6:19:51 @行会争霸
+#AutoRun NPC RUNONWEEK 5:19:51 @行会争霸
+#AutoRun NPC RUNONWEEK 4:19:51 @行会争霸
+#AutoRun NPC RUNONWEEK 3:19:51 @行会争霸
+#AutoRun NPC RUNONWEEK 2:19:51 @行会争霸
+#AutoRun NPC RUNONWEEK 1:19:51 @行会争霸
+;——————————————————————————————————
+#AutoRun NPC MIN 25 @公告1
+#AutoRun NPC MIN 7 @公告2
+#AutoRun NPC MIN 9 @公告3
+;——————————————————————————————————
+#AutoRun NPC MIN 30 @30分钟刷新
+;===========买马============

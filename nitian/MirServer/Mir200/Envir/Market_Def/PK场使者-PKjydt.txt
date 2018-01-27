@@ -1,0 +1,33 @@
+[@main]
+\
+             生死决斗场防小号进入，专为激情PK而打造！\
+<══════════════════════════════/SCOLOR=254>\
+说明：每30分钟自动刷出来[PK牛魔王]，也可使用元宝刷怪。收费五万元宝！\
+爆率：+45装备，+25装备，超级强化石，各种字等\
+<══════════════════════════════/SCOLOR=254>\
+               <运气好的话还可以爆出终极装备哦>\  \
+
+<使用5万元宝刷怪/@PK刷怪>             <返回盟重/@huitu>              <关闭窗口/@exit>
+
+
+
+[@PK刷怪]
+#IF
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+Param1 PKjydt
+Param2 26
+Param3 18
+MonGen PK牛魔王 1 5
+GuildNoticeMsg 255 22 [<$USERNAME>]在PK专用地图召唤出了PK牛魔王，要打劫的速度上了！
+SendCenterMsg 249 151 [<$USERNAME>]在PK专用地图召唤出了PK牛魔王，要打劫的速度上了！
+#elseact
+MESSAGEBOX 哥，你连5W元宝都没了还点我干啥？
+
+
+[@huitu]
+#if
+#act
+mapmove 3 330 330
+SENDMSG 7 你已经回到了盟重了。

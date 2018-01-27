@@ -1,0 +1,292 @@
+[@登陆脚本]
+{
+#IF
+ISNEWHUMAN
+#ACT
+give 入门套装[赠] 1
+give 金币 1000000
+CALCVAR HUMAN 入门装备时限 + 30
+SAVEVAR HUMAN 入门装备时限 ..\QuestDiary\变量数据\入门装备.txt
+SENDMSG 5 提示：恭喜您获得一套+15入门级装备，在线<$HUMAN(入门装备时限)>分钟才能打开礼包！
+SENDMSG 5 提示：恭喜您获得一套+15入门级装备，在线<$HUMAN(入门装备时限)>分钟才能打开礼包！
+;----此b--b 来 自  -W-w-w-g-m-0-0-5 -c-o-m - -　
+
+#IF
+ISNEWHUMAN
+ISADMIN
+#ACT
+mapmove 3 330 330
+GMEXECUTE 隐身
+GMEXECUTE 管理
+GMEXECUTE 无敌
+give 100000元宝 1
+give GM 1
+give 随机传送石 1
+MeSSageBox 当前为新区模式！
+BREAK
+
+#IF
+ISADMIN
+#ACT
+mapmove 3 330 330
+GMEXECUTE 隐身
+GMEXECUTE 管理
+GMEXECUTE 无敌
+BREAK
+
+#IF
+ISNEWHUMAN
+gender man
+#ACT
+take 木剑 1
+take 蜡烛 1
+take 金创药(小量) 1
+give 乌木剑 1
+give 万年雪霜包 5
+give 万年雪霜 10
+give 金条 1
+give 沃玛号角 1
+AutoTakeOnItem 乌木剑 1
+AutoTakeOnItem 布衣(男) 0
+MeSSageBox 在小退游戏隔壁的黄色字体<游戏指南>和<回收>看到了吗？点他试试！
+GuildNoticeMsg 251 249 ぐ：欢迎来自『<$IPLOCAL>』的新玩家『<$USERNAME>』进入<$SERVERNAME>!
+mapmove 0139
+setautogetexp       1              100            1                    0139
+;----此b--b 来 自  -W-w-w-g-m-0-0-5 -c-o-m - -　
+#IF
+ISNEWHUMAN
+gender Woman
+#ACT
+take 木剑 1
+take 蜡烛 1
+take 金创药(小量) 1
+give 乌木剑 1
+give 万年雪霜包 5
+give 万年雪霜 10
+give 金条 1
+give 沃玛号角 1
+AutoTakeOnItem 乌木剑 1
+AutoTakeOnItem 布衣(女) 0
+MeSSageBox 在小退游戏隔壁的黄色字体<游戏指南>和<回收>看到了吗？点他试试！
+GuildNoticeMsg 251 249 ぐ：欢迎来自『<$IPLOCAL>』的新玩家『<$USERNAME>』进入<$SERVERNAME>!
+mapmove 0139
+setautogetexp       1              100            1                    0139
+;----此b--b 来 自  -W-w-w-g-m-0-0-5 -c-o-m - -　
+#IF
+checkjob wizard
+#ACT
+Gmexecute TestStatus 11 1
+
+#IF
+CHECKNAMELIST ..\QuestDiary\游戏登陆\脱机挂机人物.txt
+#ACT
+SENDMSG 5 提示：你使用了脱机挂机外挂，现被系统禁止登陆！
+KICK
+BREAK
+
+#IF
+CHECKIPLIST ..\QuestDiary\游戏登陆\禁止登陆IP.txt
+#ACT
+SENDMSG 5 提示：你的IP已被禁止登陆!请联系管理员!
+KICK
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\游戏登陆\禁止登陆人物.txt
+#ACT
+SENDMSG 5 提示：%s，该人物已被禁止登陆！请联系管理员！
+KICK
+BREAK
+
+#IF
+CHECKACCOUNTLIST ..\QuestDiary\游戏登陆\禁止登陆帐号.txt
+#ACT
+SENDMSG 5 提示：%s，你的帐号已被禁止登陆!请联系管理员!
+KICK
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\游戏登陆\解封人物.txt
+#ACT
+DELNAMELIST ..\QuestDiary\游戏登陆\解封人物.txt
+SET [205] 0
+SET [206] 0
+SET [207] 0
+CREDITPOINT = 0
+MeSSageBox 人物已解封，请勿再开挂或捣乱！
+mapmove 3 333 333
+
+#IF
+CHECK [207] 1
+#ACT
+MeSSageBox 该人物因捣乱或屡次使用外挂已被系统禁止登陆！\如需解封请用其他帐号登陆，查看土(241，320)NPC“牢头”
+MeSSageBox 该人物因捣乱或屡次使用外挂已被系统禁止登陆！\如需解封请用其他帐号登陆，查看土(241，320)NPC“牢头”
+MeSSageBox 该人物因捣乱或屡次使用外挂已被系统禁止登陆！\如需解封请用其他帐号登陆，查看土(241，320)NPC“牢头”
+KICK
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\功能设置\永久封号.txt
+#ACT
+DELNAMELIST ..\QuestDiary\功能设置\永久封号.txt
+SET [207] 1
+MeSSageBox 该人物因捣乱或屡次使用外挂已被系统禁止登陆！\如需解封请用其他帐号登陆，查看土(241，320)NPC“牢头”
+MeSSageBox 该人物因捣乱或屡次使用外挂已被系统禁止登陆！\如需解封请用其他帐号登陆，查看土(241，320)NPC“牢头”
+MeSSageBox 该人物因捣乱或屡次使用外挂已被系统禁止登陆！\如需解封请用其他帐号登陆，查看土(241，320)NPC“牢头”
+KICK
+BREAK
+
+#IF
+CHECK [205] 0
+CHECK [206] 0
+CHECKNAMELIST ..\QuestDiary\功能设置\降一级.txt
+#ACT
+CREDITPOINT = 1200
+CHANGELEVEL - 5
+DELNAMELIST ..\QuestDiary\功能设置\降一级.txt
+SET [205] 1
+SET [206] 1
+TakeEx 12
+SENDMSG 5 提示：你因使用变态外挂或捣乱，现降5级并关小黑屋20小时，如再发现系统自动永久封号！
+SENDMSG 5 提示：你因使用变态外挂或捣乱，现降5级并关小黑屋20小时，如再发现系统自动永久封号！
+SENDMSG 5 提示：你因使用变态外挂或捣乱，现降5级并关小黑屋20小时，如再发现系统自动永久封号！
+
+#IF
+CHECK [205] 1
+#ACT
+GuildNoticeMsg 0  253 【<$USERNAME>】因使用变态外挂或捣乱，现【降5级并关小黑屋】反思20小时！请互相监督踊跃举报！
+GuildNoticeMsg 0  253 【<$USERNAME>】因使用变态外挂或捣乱，现【降5级并关小黑屋】反思20小时！请互相监督踊跃举报！
+GuildNoticeMsg 0  253 【<$USERNAME>】因使用变态外挂或捣乱，现【降5级并关小黑屋】反思20小时！请互相监督踊跃举报！
+GuildNoticeMsg 0  253 【<$USERNAME>】因使用变态外挂或捣乱，现【降5级并关小黑屋】反思20小时！请互相监督踊跃举报！
+GuildNoticeMsg 0  253 【<$USERNAME>】因使用变态外挂或捣乱，现【降5级并关小黑屋】反思20小时！请互相监督踊跃举报！
+GuildNoticeMsg 0  253 【<$USERNAME>】因使用变态外挂或捣乱，现【降5级并关小黑屋】反思20小时！请互相监督踊跃举报！
+GuildNoticeMsg 0  253 【<$USERNAME>】因使用变态外挂或捣乱，现【降5级并关小黑屋】反思20小时！请互相监督踊跃举报！
+GuildNoticeMsg 0  253 【<$USERNAME>】因使用变态外挂或捣乱，现【降5级并关小黑屋】反思20小时！请互相监督踊跃举报！
+GuildNoticeMsg 0  253 【<$USERNAME>】因使用变态外挂或捣乱，现【降5级并关小黑屋】反思20小时！请互相监督踊跃举报！
+SETRANKLEVELNAME  %s\状态:<首次关20小时>
+MeSSageBox 你因使用变态外挂，现关小黑屋反思20小时！\若再发现系统自动封号处理！
+mapmove dilao 13 15
+SetOnTimer 4 60
+SetOnTimer 14 1
+TakeEx 12
+
+#IF
+CHECK [206] 1
+CHECKNAMELIST ..\QuestDiary\功能设置\降一级.txt
+#ACT
+DELNAMELIST ..\QuestDiary\功能设置\降一级.txt
+SET [207] 1
+GuildNoticeMsg 0  253 【<$USERNAME>】因屡次使用外挂或捣乱，为维护游戏秩序，系统自动给予【永久封号处理】，请各位玩家珍惜帐号勿开挂！
+GuildNoticeMsg 0  253 【<$USERNAME>】因屡次使用外挂或捣乱，为维护游戏秩序，系统自动给予【永久封号处理】，请各位玩家珍惜帐号勿开挂！
+GuildNoticeMsg 0  253 【<$USERNAME>】因屡次使用外挂或捣乱，为维护游戏秩序，系统自动给予【永久封号处理】，请各位玩家珍惜帐号勿开挂！
+GuildNoticeMsg 0  253 【<$USERNAME>】因屡次使用外挂或捣乱，为维护游戏秩序，系统自动给予【永久封号处理】，请各位玩家珍惜帐号勿开挂！
+GuildNoticeMsg 0  253 【<$USERNAME>】因屡次使用外挂或捣乱，为维护游戏秩序，系统自动给予【永久封号处理】，请各位玩家珍惜帐号勿开挂！
+GuildNoticeMsg 0  253 【<$USERNAME>】因屡次使用外挂或捣乱，为维护游戏秩序，系统自动给予【永久封号处理】，请各位玩家珍惜帐号勿开挂！
+GuildNoticeMsg 0  253 【<$USERNAME>】因屡次使用外挂或捣乱，为维护游戏秩序，系统自动给予【永久封号处理】，请各位玩家珍惜帐号勿开挂！
+GuildNoticeMsg 0  253 【<$USERNAME>】因屡次使用外挂或捣乱，为维护游戏秩序，系统自动给予【永久封号处理】，请各位玩家珍惜帐号勿开挂！
+GuildNoticeMsg 0  253 【<$USERNAME>】因屡次使用外挂或捣乱，为维护游戏秩序，系统自动给予【永久封号处理】，请各位玩家珍惜帐号勿开挂！
+KICK
+BREAK
+
+
+
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\功能设置\会员名单.txt
+#ACT
+POWERRATE 110 65535
+SENDMSG 0 尊敬的贵族会员『<$USERNAME>』上线了，自动触发1.1倍攻击，此人极度危险，大家提高警惕了!
+SENDMSG 0 尊敬的贵族会员『<$USERNAME>』上线了，自动触发1.1倍攻击，此人极度危险，大家提高警惕了!
+SENDMSG 7 你的1.1倍攻击已经激活，如果和天下第一或者骰王攻击倍数重叠，以最高倍数攻击力为主！
+
+
+#IF
+CHECKLEVELEX < 56
+#ACT
+GMEXECUTE 禁言 self 10000
+SENDMSG 5 [提示]：你的等级低于56级，所以被禁言了，快去升级吧。
+GuildNoticeMsg 251 249 ぐ：欢迎来自『<$IPLOCAL>』的新玩家『<$USERNAME>』进入<$SERVERNAME>!
+
+#IF
+CHECKLEVELEX > 56
+#ACT
+GuildNoticeMsg 251 249 ぐ：来自『<$IPLOCAL>』的『<$USERNAME>』进入了<$SERVERNAME>!
+
+
+
+#IF
+CHECK [333] 0
+CHECKNAMELIST ..\QuestDiary\功能设置\七彩名称.txt
+#ACT
+DELNAMELIST ..\QuestDiary\功能设置\七彩名称.txt
+SET [333] 1
+
+
+#IF
+CHECK [333] 1
+#ACT
+SetIcon 0 39 -18 -6
+RENEWLEVEL 1 0 0
+PowerRate 110 60000
+
+SETRANKLEVELNAME  %s\┏--★-----★----★--┓\☆　大　　富　　豪　☆\┗--★-----★----★--┛\
+SENDMSG 6 [提示]：你是超级大富豪，你终生享受上限1.1倍攻击！
+SendCenterMsg 253 0 [公告]：☆超级大富豪☆[%s]进入游戏！ 1 10
+
+
+#IF
+IsCastleGuild 0
+CHECKLEVELEX > 125
+#ACT
+SetIcon 0 65534
+goto @jcdl2
+#ELSEACT
+goto @jcdl2
+
+
+[@jcdl2]
+#IF
+ISGUILDMASTER
+#ACT
+GuildNoticeMsg 251 0 ぐ提醒：所有行会人数限制最高在200人!  Self
+goto @jcdl3
+#ELSEACT
+goto @jcdl3
+[@jcdl3]
+#IF
+ISCASTLEMASTER
+gender man
+#ACT
+SENDMSG 0 玉树临风的沙巴克城主『<$USERNAME>』进入了<$SERVERNAME>!
+CHANGENAMECOLOR 253
+SetIcon 0 65535
+#ELSEACT
+goto @nvchengzhu
+[@nvchengzhu]
+#IF
+ISCASTLEMASTER
+#ACT
+SENDMSG 0 花容月貌的沙巴克城主『<$USERNAME>』进入了<$SERVERNAME>!
+CHANGENAMECOLOR 253
+SetIcon 0 65535
+#ELSEACT
+set [099] 0
+
+#if
+CHECKNAMELIST ..\QuestDiary\变量数据\被通缉的.txt
+#act
+seticon 0 38 -35 -5
+SETRANKLEVELNAME  %s\╔┄╗\★★★倒霉蛋★★★\╚┄╝
+
+#IF
+CHECKGAMEGOLD > 200000000
+#ACT
+ADDNAMELIST ..\QuestDiary\功能设置\异常元宝.txt
+BREAK
+
+
+
+
+
+}

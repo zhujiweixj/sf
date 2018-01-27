@@ -1,0 +1,1768 @@
+
+[@管理]
+{
+#if
+isadmin
+#say
+
+　　　　　　　　　　　<管理后台>　\
+---------------------------------------------------------\
+常用：<装备升级/@升级>　<装备淬炼/@淬炼>  <开区初始化/@初始化>  <清理背包和身上物品/@说明书>\  \
+外挂：<弹出警告/@警告>　<解除人物/@解除人物>　<关小黑屋/@加速降级>　<提示封号/@提示封号>　<不提示封/@不提示封号>　<封IP/@封IP>\  \
+封号：<赌场信息/@赌场信息>　<踢掉挂机/@踢掉挂机>　<跟踪玩家/@跟踪玩家> <转职属性清理/@转职属性清理> <法定日活动/@法定日活动>\  \
+        <清除行会积分/@行会1><初始化行会积分/@行会2>\\
+移动：<土城/@3>　<赌场/@CDDOU>　<地狱/@H204A>　<神泣/@sqfx>　<新手天堂/@hu1>　<地牢/@dilao>　<皇宫门口/@sbk>  <关闭/@exit>\\  \
+        
+#elseact
+messagebox 对不起!!!你不是管理员!!!快点闪开!!!!.
+
+
+
+
+[@行会1]
+#if
+#ACT
+MOV G110 0
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+[@法定日活动]
+#if
+#ACT
+Param1 3
+PARAM2 357
+PARAM3 343
+MonGen 活动BOSS 1 1
+SendCenterMsg 249 151  活动BOSS已出现在盟重(357:343)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  活动BOSS已出现在盟重(357:343)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  活动BOSS已出现在盟重(357:343)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  活动BOSS已出现在盟重(357:343)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  活动BOSS已出现在盟重(357:343)，请带上队伍将其击杀之！
+SENDMSG 0 【活动BOSS】：活动BOSS活动开始，打死活动BOSS必爆本服好东西!速度前往！！
+SENDMSG 0 【活动BOSS】：活动BOSS活动开始，打死活动BOSS必爆本服好东西!速度前往！！
+SENDMSG 0 【活动BOSS】：活动BOSS活动开始，打死活动BOSS必爆本服好东西!速度前往！！
+SENDMSG 0 【活动BOSS】：活动BOSS活动开始，打死活动BOSS必爆本服好东西!速度前往！！
+SENDMSG 0 【活动BOSS】：活动BOSS活动开始，打死活动BOSS必爆本服好东西!速度前往！！
+break
+
+
+
+
+
+[@huiyuanditu]
+#if
+#act
+mapmove guizuditu
+
+
+[@强化等级管理]
+
+　\
+==============强化等级管理！==============\ \
+　\
+1.输入玩家角色名称<重新强化等级一/@@InPutString89>　\
+1.输入玩家角色名称<重新强化等级二/@@InPutString90>　\
+1.输入玩家角色名称<重新强化等级三/@@InPutString91>　\
+　　　　　　<返回/@管理>\
+
+[@CallInPutString89]
+#IF
+S89.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S89.CHECKONLINE
+#ACT
+AddTextList .\QuestDiary\游戏登陆\清理等级强化一.txt <$STR(S89)>
+MessageBox 可以让玩家重新登陆游戏重新强化等级一了
+
+[@CallInPutString90]
+#IF
+S90.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S90.CHECKONLINE
+#ACT
+AddTextList .\QuestDiary\游戏登陆\清理等级强化二.txt <$STR(S90)>
+MessageBox 可以让玩家重新登陆游戏重新强化等级二了
+
+[@CallInPutString91]
+#IF
+S91.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S91.CHECKONLINE
+#ACT
+AddTextList .\QuestDiary\游戏登陆\清理等级强化三.txt <$STR(S91)>
+MessageBox 可以让玩家重新登陆游戏重新强化等级三了
+
+[@转职属性清理]
+　\
+==============转职属性清理！==============\ \
+　\
+1.输入玩家角色名称<转职属性清理/@@InPutString88>　\
+　　　　　　<返回/@管理>\
+
+[@CallInPutString88]
+#IF
+S88.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S88.CHECKONLINE
+#ACT
+AddTextList .\QuestDiary\游戏登陆\转职人物.txt <$STR(S88)>
+MessageBox 属性已经添加
+
+
+
+[@跟踪玩家]
+　\
+==============跟踪人物使用！==============\ \
+　\
+1.输入玩家角色名称<我要跟踪/@@InPutString83>　\
+　　　　　　<返回/@管理>\
+
+
+[@CALLInPutString83]
+#IF
+S83.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S83.CHECKONLINE
+#ACT
+GMEXECUTE G <$STR(S83)>
+  goto @管理
+
+
+
+
+
+[@解除人物]
+　\
+==============慎用，解封人物使用！==============\ \
+　\
+1.输入玩家角色名称<我要解封/@@InPutString82>　\
+　　　　　　<返回/@管理>\
+
+
+[@CALLInPutString82]
+#IF
+S82.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S82.CHECKONLINE
+#ACT
+AddTextLIST .\QuestDiary\游戏登陆\解封人物.txt <$STR(S82)>
+GMEXECUTE T <$STR(S82)>
+messagebox 该玩家已被T下线，重新登陆会自动解封！
+  goto @管理
+
+
+
+
+[@说明书]
+#IF
+#SAY
+你想清理包裹吗？如果你有什么<重要的东西>千万不要放\   \
+在背包里！要是被清除了我可不负责！\   \
+<清理包裹/@clearbagstar>  \   \
+<清理身上/@clearbagstar1>  \  \
+
+
+[@clearbagstar]
+#IF
+#ACT
+GmExeCute 清理垃圾 Self
+SENDMSG 7 !!!!!!已经帮忙清理完毕!!!!!!
+break
+[@clearbagstar1]
+将清理你身上穿带的装备，删除后无法恢复！！！\    \
+<清理身上/@clearbagstar2> \    \
+<返回/@说明书>
+
+[@clearbagstar2]
+#IF
+#ACT
+takew <$WEAPON> 1
+takew <$DRESS> 1 
+takew <$WEAPON> 1
+takew <$RIGHTHAND> 1
+takew <$HELMET> 1
+takew <$NECKLACE> 1
+takew <$RING_R> 2
+takew <$RING_L> 2
+takew <$ARMRING_R> 2
+takew <$ARMRING_L> 2
+takew <$BUJUK> 1
+takew <$BELT> 1
+takew <$BOOTS> 1
+takew <$CHARM> 1
+SENDMSG 7 !!!!!!已经帮忙清理完毕!!!!!!
+close
+
+
+
+[@初始化]
+#IF
+#act
+mov G5 0
+mov G6 0
+mov G7 0
+mov G8 0
+mov G9 0
+mov G10 0
+mov A0
+mov A1
+mov A2
+mov A3
+mov A4
+mov A5
+mov A6 暂无
+mov A7 暂无
+mov A8 0
+mov A10 暂无
+mov A11 暂无
+mov A12 0
+mov A14 暂无
+mov A15 暂无
+mov A16 0
+mov A18 暂无
+mov A19 暂无
+mov A20 0
+mov A22 暂无
+mov A23 暂无
+mov A24 0
+mov A26 暂无
+mov A27 暂无
+mov A28 0
+MOV A35 暂无\天下第一男战士
+MOV A36 暂无\天下第一女战士
+MOV A37 暂无\天下第一男法师
+MOV A38 暂无\天下第一女法师
+MOV A39 暂无\天下第一男道士
+MOV A40 暂无\天下第一女道士
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\男道士.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\女道士.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\男战士.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\女战士.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\男法师.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\女法师.txt
+CLEARNAMELIST ..\QuestDiary\变量数据\入门装备.txt
+CLEARNAMELIST ..\QuestDiary\变量数据\神兵时限.txt
+CLEARNAMELIST ..\QuestDiary\变量数据\神器时限.txt
+CLEARNAMELIST ..\QuestDiary\变量数据\骰王名单.txt
+CLEARNAMELIST ..\QuestDiary\变量数据\外挂系统.txt
+CLEARNAMELIST ..\QuestDiary\变量数据\系统变量.txt
+CLEARNAMELIST ..\QuestDiary\变量数据\心魔系统.txt
+CLEARNAMELIST ..\QuestDiary\变量数据\压镖次数.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第一排名.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第二排名.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第三排名.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第四排名.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第五排名.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第六排名.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第一排名元宝数.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第二排名元宝数.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第三排名元宝数.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第四排名元宝数.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第五排名元宝数.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\第六排名元宝数.txt
+CLEARNAMELIST ..\QuestDiary\元宝捐款\元宝捐款.txt
+CLEARNAMELIST ..\QuestDiary\游戏登陆\解封人物.txt
+CLEARNAMELIST ..\QuestDiary\功能设置\永久封号.txt
+CLEARNAMELIST ..\QuestDiary\功能设置\降一级.txt
+CLEARNAMELIST ..\QuestDiary\功能设置\七彩名称.txt
+ClearNameList ..\QuestDiary\变量数据\骰王名单.txt
+ClearNameList ..\QuestDiary\变量数据\被通缉的.txt
+ClearNameList ..\QuestDiary\功能设置\会员名单.txt
+#CALL [\数据文件\清空变量.txt] @清除AG变量
+SENDMSG 5 !!!!!!服务器数据已初始化,可以开区了!!!!!
+
+
+[@踢掉挂机]
+#SAY
+　\
+　\
+确定要踢掉所有挂机玩家吗？\
+<确定/@踢挂机go> <返回/@管理>
+
+
+[@踢挂机go]
+#if
+#ACT
+Gmexecute 开始提问 @踢挂机
+MESSAGEBOX 挂机玩家已经全部被踢下线！
+
+
+[@升级]
+1:请把你要升级的装备带在装备栏内!\
+2:成功率100%!直接增加70点属性点\
+\
+请选择你要升级的装备的类型:\  \
+
+<●勋章●/@勋章>  <●腰带●/@腰带>  <●靴子●/@靴子>  <●衣服●/@衣服>  <●武器●/@武器> \  \
+
+<●头盔●/@头盔> <●项链●/@项链> <●右手镯●/@右手镯> <●右戒指●/@右戒指> <●左手镯●/@左手镯> <●左戒指●/@左戒指>\  \
+<返回/@管理>\
+
+[@靴子]
+攻击: <点击升级/@靴子攻击> [强化靴子70点属性点]\ \
+魔法: <点击升级/@靴子魔法> [强化靴子70点属性点]\ \
+道术: <点击升级/@靴子道术> [强化靴子70点属性点]\ \
+<返回/@升级>
+
+[@靴子攻击]
+#if
+CHECKUSEITEM 11
+#ACT
+GmexEcute 改属性 11 2 70
+goto @靴子
+#ELSEACT
+MESSAGEBOX 你未穿靴子！
+[@靴子魔法]
+#if
+CHECKUSEITEM 11
+#ACT
+GmexEcute 改属性 11 3 70
+goto @靴子
+#ELSEACT
+MESSAGEBOX 你未穿靴子！
+[@靴子道术]
+#if
+CHECKUSEITEM 11
+#ACT
+GmexEcute 改属性 11 4 70
+goto @靴子
+#ELSEACT
+MESSAGEBOX 你未穿靴子！
+
+
+[@腰带]
+攻击: <点击升级/@腰带攻击> [强化腰带70点属性点]\ \
+魔法: <点击升级/@腰带魔法> [强化腰带70点属性点]\ \
+道术: <点击升级/@腰带道术> [强化腰带70点属性点]\ \
+<返回/@升级>
+
+[@腰带攻击]
+#if
+CHECKUSEITEM 10
+#ACT
+GmexEcute 改属性 10 2 70
+goto @腰带
+#ELSEACT
+MESSAGEBOX 你未穿腰带！
+[@腰带魔法]
+#if
+CHECKUSEITEM 10
+#ACT
+GmexEcute 改属性 10 3 70
+goto @腰带
+#ELSEACT
+MESSAGEBOX 你未穿腰带！
+[@腰带道术]
+#if
+CHECKUSEITEM 10
+#ACT
+GmexEcute 改属性 10 4 70
+goto @腰带
+#ELSEACT
+MESSAGEBOX 你未穿腰带！
+
+
+
+[@勋章]
+攻击: <点击升级/@勋章攻击> [强化勋章70点属性点]\ \
+魔法: <点击升级/@勋章魔法> [强化勋章70点属性点]\ \
+道术: <点击升级/@勋章道术> [强化勋章70点属性点]\ \
+<返回/@升级>
+
+[@勋章攻击]
+#if
+CHECKUSEITEM 2
+#ACT
+GmexEcute 改属性 2 2 70
+goto @勋章
+#ELSEACT
+MESSAGEBOX 你未穿勋章，必须带在右边！
+[@勋章魔法]
+#if
+CHECKUSEITEM 2
+#ACT
+GmexEcute 改属性 2 3 70
+goto @勋章
+#ELSEACT
+MESSAGEBOX 你未穿勋章，必须带在右边！
+[@勋章道术]
+#if
+CHECKUSEITEM 2
+#ACT
+GmexEcute 改属性 2 4 70
+goto @勋章
+#ELSEACT
+MESSAGEBOX 你未穿勋章，必须带在右边！
+
+[@右戒指]
+攻击: <点击升级/@右戒指攻击> [强化戒指70点属性点]\ \
+魔法: <点击升级/@右戒指魔法> [强化戒指70点属性点]\ \
+道术: <点击升级/@右戒指道术> [强化戒指70点属性点]\ \
+<返回/@升级>
+
+
+[@右戒指攻击]
+#if
+CHECKUSEITEM 7
+#ACT
+GmexEcute 改属性 7 2 70
+goto @戒指
+#ELSEACT
+MESSAGEBOX 你未穿戒指，必须带在右边！
+[@右戒指魔法]
+#if
+CHECKUSEITEM 7
+#ACT
+GmexEcute 改属性 7 3 70
+goto @戒指
+#ELSEACT
+MESSAGEBOX 你未穿戒指，必须带在右边！
+[@右戒指道术]
+#if
+CHECKUSEITEM 7
+#ACT
+GmexEcute 改属性 7 4 70
+goto @戒指
+#ELSEACT
+MESSAGEBOX 你未穿戒指，必须带在右边！
+
+[@左戒指]
+攻击: <点击升级/@左戒指攻击> [强化戒指70点属性点]\ \
+魔法: <点击升级/@左戒指魔法> [强化戒指70点属性点]\ \
+道术: <点击升级/@左戒指道术> [强化戒指70点属性点]\ \
+<返回/@升级>
+
+
+[@左戒指攻击]
+#if
+CHECKUSEITEM 8
+#ACT
+GmexEcute 改属性 8 2 70
+goto @戒指
+#ELSEACT
+MESSAGEBOX 你未穿戒指，必须带在左边！
+[@左戒指魔法]
+#if
+CHECKUSEITEM 8
+#ACT
+GmexEcute 改属性 8 3 70
+goto @戒指
+#ELSEACT
+MESSAGEBOX 你未穿戒指，必须带在左边！
+[@左戒指道术]
+#if
+CHECKUSEITEM 8
+#ACT
+GmexEcute 改属性 8 4 70
+goto @戒指
+#ELSEACT
+MESSAGEBOX 你未穿戒指，必须带在左边！
+
+[@左手镯]
+攻击:<点击升级/@左手镯攻击> [强化手镯70点属性点]\ \
+魔法:<点击升级/@左手镯魔法> [强化手镯70点属性点]\ \
+道术:<点击升级/@左手镯道术> [强化手镯70点属性点]\ \
+准确:<点击升级/@左手镯准确> [强化项链70点属性点]\ \ 
+敏捷:<点击升级/@左手镯敏捷> [强化项链70点属性点]   <返回/@升级>
+
+
+[@左手镯攻击]
+#if
+CHECKUSEITEM 6
+#ACT
+GmexEcute 改属性 6 2 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备，必须带在左边！！
+
+[@左手镯魔法]
+#if
+CHECKUSEITEM 6
+#ACT
+GmexEcute 改属性 6 3 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备，必须带在左边！！
+
+[@左手镯道术]
+#if
+CHECKUSEITEM 6
+#ACT
+GmexEcute 改属性 6 4 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备，必须带在左边！！
+
+
+[@左手镯准确]
+#IF
+CHECKUSEITEM 6
+#ACT
+GmexEcute 改属性 6 0 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备，必须带在左边！！
+
+[@左手镯敏捷]
+#IF
+CHECKUSEITEM 6
+#ACT
+GmexEcute 改属性 6 1 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备，必须带在左边！！
+
+
+
+[@右手镯]
+攻击:<点击升级/@右手镯攻击> [强化手镯70点属性点]\ \
+魔法:<点击升级/@右手镯魔法> [强化手镯70点属性点]\ \
+道术:<点击升级/@右手镯道术> [强化手镯70点属性点]\ \
+准确:<点击升级/@右手镯准确> [强化项链70点属性点]\ \ 
+敏捷:<点击升级/@右手镯敏捷> [强化项链70点属性点]   <返回/@升级>
+
+[@右手镯攻击]
+#if
+CHECKUSEITEM 5
+#ACT
+GmexEcute 改属性 5 2 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备，必须带在右边！！
+
+[@右手镯魔法]
+#if
+CHECKUSEITEM 5
+#ACT
+GmexEcute 改属性 5 3 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备，必须带在右边！！
+
+[@右手镯道术]
+#if
+CHECKUSEITEM 5
+#ACT
+GmexEcute 改属性 5 4 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备，必须带在右边！！
+
+
+[@右手镯准确]
+#IF
+CHECKUSEITEM 5
+#ACT
+GmexEcute 改属性 5 0 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备，必须带在右边！！
+
+[@右手镯敏捷]
+#IF
+CHECKUSEITEM 5
+#ACT
+GmexEcute 改属性 5 1 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备，必须带在右边！！
+
+ 
+
+[@项链]
+攻击:<点击升级/@项链攻击> [强化项链70点属性点]\ \
+魔法:<点击升级/@项链魔法> [强化项链70点属性点]\ \
+道术:<点击升级/@项链道术> [强化项链70点属性点]\ \
+准确:<点击升级/@项链准确> [强化项链70点属性点]\ \
+敏捷:<点击升级/@项链敏捷> [强化项链70点属性点]   <返回/@升级>
+
+
+ 
+
+[@项链道术]
+#IF
+CHECKUSEITEM 3
+#ACT
+GmexEcute 改属性 3 4 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@项链魔法]
+#IF
+CHECKUSEITEM 3
+#ACT
+GmexEcute 改属性 3 3 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@项链攻击]
+#IF
+CHECKUSEITEM 3
+#ACT
+GmexEcute 改属性 3 2 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+[@项链准确]
+#IF
+CHECKUSEITEM 3
+#ACT
+GmexEcute 改属性 3 0 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+[@项链敏捷]
+#IF
+CHECKUSEITEM 3
+#ACT
+GmexEcute 改属性 3 1 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+ 
+
+ 
+
+
+[@头盔]
+防御:<点击升级/@头盔防御> [强化头盔70点属性点]\ \
+魔御:<点击升级/@头盔魔御> [强化头盔70点属性点]\ \
+攻击:<点击升级/@头盔攻击> [强化头盔70点属性点]\ \
+魔法:<点击升级/@头盔魔法> [强化头盔70点属性点]\ \
+道术:<点击升级/@头盔道术> [强化头盔70点属性点]   <返回/@升级>\ \
+
+
+ 
+
+[@头盔道术]
+#IF
+CHECKUSEITEM 4
+#ACT
+GmexEcute 改属性 4 4 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@头盔魔法]
+#IF
+CHECKUSEITEM 4
+#ACT
+GmexEcute 改属性 4 3 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@头盔攻击]
+#IF
+CHECKUSEITEM 4
+#ACT
+GmexEcute 改属性 4 2 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@头盔魔御]
+#IF
+CHECKUSEITEM 4
+#ACT
+GmexEcute 改属性 4 1 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+[@头盔防御]
+#IF
+CHECKUSEITEM 4
+#ACT
+GmexEcute 改属性 4 0 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+ 
+
+ 
+
+
+[@武器]
+攻击:<点击升级/@武器攻击> [强化武器70点属性点]\  \
+魔法:<点击升级/@武器魔法> [强化武器70点属性点]\  \
+道术:<点击升级/@武器道术> [强化武器70点属性点]\  \
+<返回/@升级>
+
+ 
+
+[@武器道术]
+#IF
+CHECKUSEITEM 1
+#ACT
+GmexEcute 改属性 1 2 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@武器魔法]
+#IF
+CHECKUSEITEM 1
+#ACT
+GmexEcute 改属性 1 1 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@武器攻击]
+#IF
+CHECKUSEITEM 1
+#ACT
+GmexEcute 改属性 1 0 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+ 
+
+ 
+
+ 
+
+[@衣服]
+防御:<点击升级/@衣服防御> [强化衣服70点属性点]\  \
+魔御:<点击升级/@衣服魔御> [强化衣服70点属性点]\  \
+攻击:<点击升级/@衣服攻击> [强化衣服70点属性点]\  \
+魔法:<点击升级/@衣服魔法> [强化衣服70点属性点]\  \
+道术:<点击升级/@衣服道术> [强化衣服70点属性点]<返回/@升级>\\
+
+
+ 
+
+[@衣服道术]
+#IF
+CHECKUSEITEM 0
+#ACT
+GmexEcute 改属性 0 4 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@衣服魔法]
+#IF
+CHECKUSEITEM 0
+#ACT
+GmexEcute 改属性 0 3 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@衣服攻击]
+#IF
+CHECKUSEITEM 0
+#ACT
+GmexEcute 改属性 0 2 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@衣服魔御]
+#IF
+CHECKUSEITEM 0
+#ACT
+GmexEcute 改属性 0 1 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+[@衣服防御]
+#IF
+CHECKUSEITEM 0
+#ACT
+GmexEcute 改属性 0 0 70
+#ELSEACT
+MESSAGEBOX 你未穿的装备！
+
+
+[@淬炼]
+成功率100%，每次加一个点！\
+╔════╦════╦════╦════╦════╗\
+║ <武  器/@武器灵魂> ║ <盔  甲/@盔甲灵魂> ║ <头  盔/@头盔灵魂> ║ <勋  章/@勋章灵魂> ║ <宝  石/@宝石灵魂> ║\
+╠════╬════╬════╬════╬════╣\
+║ <左手镯/@左手镯灵魂> ║ <右手镯/@右手镯灵魂> ║ <左戒指/@左戒指灵魂> ║ <右戒指/@右戒指灵魂> ║ <项  链/@项链灵魂> ║\
+╠════╬════╬════╬════╩════╣\ 
+║ <腰  带/@腰带灵魂> ║ <护  符/@护符灵魂> ║ <靴  子/@靴子灵魂> ║     <返回/@管理>  ║\
+╚════╩════╩════╩═════════╝\ \
+
+[@武器灵魂]
+<致命一击/@武器致命>\
+<攻击伤害/@武器伤害>\
+<物理伤害减少/@武器物理减少>\
+<魔法伤害减少/@武器魔法减少>\
+<攻击反弹/@武器反弹>\
+<体质增加/@武器体质>\
+<返回/@淬炼>\
+
+[@武器致命]
+#IF
+#ACT
+SetNewItemValue 1 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@武器伤害]
+#IF
+#ACT
+SetNewItemValue 1 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@武器物理减少]
+#IF
+#ACT
+SetNewItemValue 1 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@武器魔法减少]
+#IF
+#ACT
+SetNewItemValue 1 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@武器反弹]
+#IF
+#ACT
+SetNewItemValue 1 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@武器体质]
+#IF
+#ACT
+SetNewItemValue 1 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+[@盔甲灵魂]
+<致命一击/@盔甲致命>\
+<攻击伤害/@盔甲伤害>\
+<物理伤害减少/@盔甲物理减少>\
+<魔法伤害减少/@盔甲魔法减少>\
+<攻击反弹/@盔甲反弹>\
+<体质增加/@盔甲体质>\
+<返回/@淬炼>\
+
+
+[@盔甲致命]
+#IF
+#ACT
+SetNewItemValue 0 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@盔甲伤害]
+#IF
+#ACT
+SetNewItemValue 0 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@盔甲物理减少]
+#IF
+#ACT
+SetNewItemValue 0 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@盔甲魔法减少]
+#IF
+#ACT
+SetNewItemValue 0 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@盔甲反弹]
+#IF
+#ACT
+SetNewItemValue 0 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@盔甲体质]
+#IF
+#ACT
+SetNewItemValue 0 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+
+[@头盔灵魂]
+<致命一击/@头盔致命>\
+<攻击伤害/@头盔伤害>\
+<物理伤害减少/@头盔物理减少>\
+<魔法伤害减少/@头盔魔法减少>\
+<攻击反弹/@头盔反弹>\
+<体质增加/@头盔体质>\
+<返回/@淬炼>\
+
+[@头盔致命]
+#IF
+#ACT
+SetNewItemValue 4 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@头盔伤害]
+#IF
+#ACT
+SetNewItemValue 4 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@头盔物理减少]
+#IF
+#ACT
+SetNewItemValue 4 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@头盔魔法减少]
+#IF
+#ACT
+SetNewItemValue 4 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@头盔反弹]
+#IF
+#ACT
+SetNewItemValue 4 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@头盔体质]
+#IF
+#ACT
+SetNewItemValue 4 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+
+[@勋章灵魂]
+<致命一击/@勋章致命>\
+<攻击伤害/@勋章伤害>\
+<物理伤害减少/@勋章物理减少>\
+<魔法伤害减少/@勋章魔法减少>\
+<攻击反弹/@勋章反弹>\
+<体质增加/@勋章体质>\
+<返回/@淬炼>\
+
+[@勋章致命]
+#IF
+#ACT
+SetNewItemValue 2 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@勋章伤害]
+#IF
+#ACT
+SetNewItemValue 2 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@勋章物理减少]
+#IF
+#ACT
+SetNewItemValue 2 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@勋章魔法减少]
+#IF
+#ACT
+SetNewItemValue 2 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@勋章反弹]
+#IF
+#ACT
+SetNewItemValue 2 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@勋章体质]
+#IF
+#ACT
+SetNewItemValue 2 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+
+[@宝石灵魂]
+<致命一击/@宝石致命>\
+<攻击伤害/@宝石伤害>\
+<物理伤害减少/@宝石物理减少>\
+<魔法伤害减少/@宝石魔法减少>\
+<攻击反弹/@宝石反弹>\
+<体质增加/@宝石体质>\
+<返回/@淬炼>\
+
+[@宝石致命]
+#IF
+#ACT
+SetNewItemValue 12 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@宝石伤害]
+#IF
+#ACT
+SetNewItemValue 12 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@宝石物理减少]
+#IF
+#ACT
+SetNewItemValue 12 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@宝石魔法减少]
+#IF
+#ACT
+SetNewItemValue 12 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@宝石反弹]
+#IF
+#ACT
+SetNewItemValue 12 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@宝石体质]
+#IF
+#ACT
+SetNewItemValue 12 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+
+[@左手镯灵魂]
+<致命一击/@左手镯致命>\
+<攻击伤害/@左手镯伤害>\
+<物理伤害减少/@左手镯物理减少>\
+<魔法伤害减少/@左手镯魔法减少>\
+<攻击反弹/@左手镯反弹>\
+<体质增加/@左手镯体质>\
+<返回/@淬炼>\
+
+[@左手镯致命]
+#IF
+#ACT
+SetNewItemValue 6 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@左手镯伤害]
+#IF
+#ACT
+SetNewItemValue 6 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@左手镯物理减少]
+#IF
+#ACT
+SetNewItemValue 6 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@左手镯魔法减少]
+#IF
+#ACT
+SetNewItemValue 6 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@左手镯反弹]
+#IF
+#ACT
+SetNewItemValue 6 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@左手镯体质]
+#IF
+#ACT
+SetNewItemValue 6 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+
+[@右手镯灵魂]
+<致命一击/@右手镯致命>\
+<攻击伤害/@右手镯伤害>\
+<物理伤害减少/@右手镯物理减少>\
+<魔法伤害减少/@右手镯魔法减少>\
+<攻击反弹/@右手镯反弹>\
+<体质增加/@右手镯体质>\
+<返回/@淬炼>\
+
+[@右手镯致命]
+#IF
+#ACT
+SetNewItemValue 5 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@右手镯伤害]
+#IF
+#ACT
+SetNewItemValue 5 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@右手镯物理减少]
+#IF
+#ACT
+SetNewItemValue 5 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@右手镯魔法减少]
+#IF
+#ACT
+SetNewItemValue 5 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@右手镯反弹]
+#IF
+#ACT
+SetNewItemValue 5 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@右手镯体质]
+#IF
+#ACT
+SetNewItemValue 5 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+
+[@左戒指灵魂]
+<致命一击/@左戒指致命>\
+<攻击伤害/@左戒指伤害>\
+<物理伤害减少/@左戒指物理减少>\
+<魔法伤害减少/@左戒指魔法减少>\
+<攻击反弹/@左戒指反弹>\
+<体质增加/@左戒指体质>\
+<返回/@淬炼>\
+
+[@左戒指致命]
+#IF
+#ACT
+SetNewItemValue 8 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@左戒指伤害]
+#IF
+#ACT
+SetNewItemValue 8 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@左戒指物理减少]
+#IF
+#ACT
+SetNewItemValue 8 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@左戒指魔法减少]
+#IF
+#ACT
+SetNewItemValue 8 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@左戒指反弹]
+#IF
+#ACT
+SetNewItemValue 8 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@左戒指体质]
+#IF
+#ACT
+SetNewItemValue 8 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+
+[@右戒指灵魂]
+<致命一击/@右戒指致命>\
+<攻击伤害/@右戒指伤害>\
+<物理伤害减少/@右戒指物理减少>\
+<魔法伤害减少/@右戒指魔法减少>\
+<攻击反弹/@右戒指反弹>\
+<体质增加/@右戒指体质>\
+<返回/@淬炼>\
+
+[@右戒指致命]
+#IF
+#ACT
+SetNewItemValue 7 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@右戒指伤害]
+#IF
+#ACT
+SetNewItemValue 7 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@右戒指物理减少]
+#IF
+#ACT
+SetNewItemValue 7 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@右戒指魔法减少]
+#IF
+#ACT
+SetNewItemValue 7 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@右戒指反弹]
+#IF
+#ACT
+SetNewItemValue 7 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@右戒指体质]
+#IF
+#ACT
+SetNewItemValue 7 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+[@项链灵魂]
+<致命一击/@项链致命>\
+<攻击伤害/@项链伤害>\
+<物理伤害减少/@项链物理减少>\
+<魔法伤害减少/@项链魔法减少>\
+<攻击反弹/@项链反弹>\
+<体质增加/@项链体质>\
+
+[@项链致命]
+#IF
+#ACT
+SetNewItemValue 3 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@项链伤害]
+#IF
+#ACT
+SetNewItemValue 3 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@项链物理减少]
+#IF
+#ACT
+SetNewItemValue 3 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@项链魔法减少]
+#IF
+#ACT
+SetNewItemValue 3 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@项链反弹]
+#IF
+#ACT
+SetNewItemValue 3 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@项链体质]
+#IF
+#ACT
+SetNewItemValue 3 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+
+[@腰带灵魂]
+<致命一击/@腰带致命>\
+<攻击伤害/@腰带伤害>\
+<物理伤害减少/@腰带物理减少>\
+<魔法伤害减少/@腰带魔法减少>\
+<攻击反弹/@腰带反弹>\
+<体质增加/@腰带体质>\
+<返回/@淬炼>\
+
+[@腰带致命]
+#IF
+#ACT
+SetNewItemValue 10 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@腰带伤害]
+#IF
+#ACT
+SetNewItemValue 10 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@腰带物理减少]
+#IF
+#ACT
+SetNewItemValue 10 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@腰带魔法减少]
+#IF
+#ACT
+SetNewItemValue 10 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@腰带反弹]
+#IF
+#ACT
+SetNewItemValue 10 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@腰带体质]
+#IF
+#ACT
+SetNewItemValue 10 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+
+[@护符灵魂]
+<致命一击/@护符致命>\
+<攻击伤害/@护符伤害>\
+<物理伤害减少/@护符物理减少>\
+<魔法伤害减少/@护符魔法减少>\
+<攻击反弹/@护符反弹>\
+<体质增加/@护符体质>\
+<返回/@淬炼>\
+
+[@护符致命]
+#IF
+#ACT
+SetNewItemValue 9 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@护符伤害]
+#IF
+#ACT
+SetNewItemValue 9 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@护符物理减少]
+#IF
+#ACT
+SetNewItemValue 9 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@护符魔法减少]
+#IF
+#ACT
+SetNewItemValue 9 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@护符反弹]
+#IF
+#ACT
+SetNewItemValue 9 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@护符体质]
+#IF
+#ACT
+SetNewItemValue 9 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+
+[@靴子灵魂]
+<致命一击/@靴子致命>\
+<攻击伤害/@靴子伤害>\
+<物理伤害减少/@靴子物理减少>\
+<魔法伤害减少/@靴子魔法减少>\
+<攻击反弹/@靴子反弹>\
+<体质增加/@靴子体质>\
+<返回/@淬炼>\
+
+[@靴子致命]
+#IF
+#ACT
+SetNewItemValue 11 0 + 1
+MESSAGEBOX 致命一击增加1%！
+
+[@靴子伤害]
+#IF
+#ACT
+SetNewItemValue 11 1 + 1
+MESSAGEBOX 攻击伤害增加1%！
+
+[@靴子物理减少]
+#IF
+#ACT
+SetNewItemValue 11 2 + 1
+MESSAGEBOX 物理伤害减少1%！
+
+[@靴子魔法减少]
+#IF
+#ACT
+SetNewItemValue 11 3 + 1
+MESSAGEBOX 魔法伤害减少1%！
+
+[@靴子反弹]
+#IF
+#ACT
+SetNewItemValue 11 4 + 1
+MESSAGEBOX 攻击伤害反弹增加1%！
+
+[@靴子体质]
+#IF
+#ACT
+SetNewItemValue 11 5 + 1
+MESSAGEBOX 人物体质增加1%！
+
+[@提示封号]
+　\
+==============慎用，全服提示封人物！==============\ \
+　\
+1.输入玩家角色名称<全服提示封人物/@@InPutString70>　\
+　　　　　　<返回/@管理>\
+
+[@CallInPutString70]
+#IF
+S70.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S70.CHECKONLINE
+#ACT
+AddTextList .\QuestDiary\功能设置\永久封号.txt <$STR(S70)>
+GMEXECUTE T <$STR(S70)>
+messagebox 该玩家已被T下线，并被永久禁止登陆！
+GuildNoticeMsg 0  253 【<$STR(S70)>】因使用变态外挂或捣乱，现给予【永久封号】处理！
+GuildNoticeMsg 0  253 【<$STR(S70)>】因使用变态外挂或捣乱，现给予【永久封号】处理！
+GuildNoticeMsg 0  253 【<$STR(S70)>】因使用变态外挂或捣乱，现给予【永久封号】处理！
+GuildNoticeMsg 0  253 【<$STR(S70)>】因使用变态外挂或捣乱，现给予【永久封号】处理！
+GuildNoticeMsg 0  253 【<$STR(S70)>】因使用变态外挂或捣乱，现给予【永久封号】处理！
+GuildNoticeMsg 0  253 【<$STR(S70)>】因使用变态外挂或捣乱，现给予【永久封号】处理！
+GuildNoticeMsg 0  253 【<$STR(S70)>】因使用变态外挂或捣乱，现给予【永久封号】处理！
+GuildNoticeMsg 0  253 【<$STR(S70)>】因使用变态外挂或捣乱，现给予【永久封号】处理！
+GuildNoticeMsg 0  253 【<$STR(S70)>】因使用变态外挂或捣乱，现给予【永久封号】处理！
+  goto @提示封号
+
+
+[@不提示封号]
+　\
+==============慎用，不提示封人物！==============\ \
+　\
+1.输入玩家角色名称<不提示封人物/@@InPutString79>　\
+　　　　　　<返回/@管理>\
+
+
+[@CallInPutString79]
+#IF
+S79.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S79.CHECKONLINE
+#ACT
+AddTextList .\QuestDiary\功能设置\永久封号.txt <$STR(S79)>
+GMEXECUTE T <$STR(S79)>
+messagebox 该玩家已被T下线，并被永久禁止登陆！
+  goto @不提示封号
+
+
+[@警告]
+　\
+==========慎用，玩家弹出警告框15分钟自动封号！==========\ \
+　\
+1.输入玩家角色名称<弹出警告框/@@InPutString85>　\
+　　　　　　<返回/@管理>\
+[@CallInPutString85]
+#IF
+S85.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S85.CHECKONLINE
+#ACT
+S85.CALCVAR HUMAN 外挂倒计时 = 900
+S85.SAVEVAR HUMAN 外挂倒计时 ..\QuestDiary\变量数据\外挂系统.txt
+S85.goto @开始警告
+S85.mapmove wg
+S85.AddTextList .\QuestDiary\功能设置\降一级.txt <$STR(S85)>
+goto @管理
+
+
+
+[@开始警告]
+#IF
+CHECKVAR HUMAN 外挂倒计时 > 0
+#ACT
+DelayCall 1000 @开始警告
+CALCVAR HUMAN 外挂倒计时 - 1
+SAVEVAR HUMAN 外挂倒计时 ..\QuestDiary\变量数据\外挂系统.txt
+#say
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　<X/@@InPutString86>\
+=========================<严重警告/SCOLOR=249>=========================\
+1. 你被检测到使用非法外挂或辅助，帐号重新上线后被封禁！\
+2. 如觉得自己被冤枉，请在[{15分钟内联系技术QQ发远程协助/SCOLOR=250}]解除！\
+3. 10分钟内未发远程协助者，本F绝不接受任何理由的解封申诉！\
+==========================================================\
+　　　　<警告：现在请勿下线或小退，否则帐号自动被封！/SCOLOR=249>\
+　　　　<警告：现在请勿下线或小退，否则帐号自动被封！/SCOLOR=250>\
+　　　　　　　<QQ：993860663(发远程协助)/@解封QQ>　剩余时间：{<$HUMAN(外挂倒计时)>/SCOLOR=250}秒\
+
+
+#IF
+CHECKVAR HUMAN 外挂倒计时 = 0
+#ACT
+kick
+#say
+　\
+=========================<严重警告/SCOLOR=249>=========================\
+　　　　　　<警告：时间到了，你已经被踢下线请重新登陆！/SCOLOR=250>\
+==========================================================\
+
+
+[@CallInPutString86]
+#IF
+S86.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S86.CHECKONLINE
+equal S86 ******
+#ACT
+Gmexecute 开始提问 @解封申请
+MOV A0 <$USERNAME>
+SENDMSG 5 已发送！
+SENDMSG 5 已发送！
+#ELSEACT
+messagebox 输入错误！
+
+
+
+
+[@解封QQ]
+#ACT
+OpenWebSite http://wpa.qq.com/msgrd?v=3&uin=993860663&site=qq&menu=yes
+
+
+[@加速降级]
+　\
+==============慎用，关小黑屋20时间为小时！==============\ \
+　\
+1.输入玩家角色名称<降3级+小黑屋20小时/@@InPutString81>　\
+　　　　　　<返回/@管理>\
+
+
+[@CallInPutString81]
+#IF
+S81.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S81.CHECKONLINE
+#ACT
+AddTextList .\QuestDiary\功能设置\降一级.txt <$STR(S81)>
+GMEXECUTE T <$STR(S81)>
+messagebox 该玩家已被T下线，重新登陆会降3级并送去小黑屋！
+GuildNoticeMsg 0  253 【<$STR(S81)>】因使用变态外挂或捣乱，现已被【强制下线】，重新上线后显示处理结果！
+GuildNoticeMsg 0  253 【<$STR(S81)>】因使用变态外挂或捣乱，现已被【强制下线】，重新上线后显示处理结果！
+GuildNoticeMsg 0  253 【<$STR(S81)>】因使用变态外挂或捣乱，现已被【强制下线】，重新上线后显示处理结果！
+GuildNoticeMsg 0  253 【<$STR(S81)>】因使用变态外挂或捣乱，现已被【强制下线】，重新上线后显示处理结果！
+GuildNoticeMsg 0  253 【<$STR(S81)>】因使用变态外挂或捣乱，现已被【强制下线】，重新上线后显示处理结果！
+GuildNoticeMsg 0  253 【<$STR(S81)>】因使用变态外挂或捣乱，现已被【强制下线】，重新上线后显示处理结果！
+GuildNoticeMsg 0  253 【<$STR(S81)>】因使用变态外挂或捣乱，现已被【强制下线】，重新上线后显示处理结果！
+GuildNoticeMsg 0  253 【<$STR(S81)>】因使用变态外挂或捣乱，现已被【强制下线】，重新上线后显示处理结果！
+GuildNoticeMsg 0  253 【<$STR(S81)>】因使用变态外挂或捣乱，现已被【强制下线】，重新上线后显示处理结果！
+  goto @管理
+
+[@CallInPutString89]
+#IF
+S89.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S89.CHECKONLINE
+CheckTextList .\QuestDiary\游戏登陆\禁止登陆人物.txt <$STR(S89)>
+#ACT
+GOTO @重复
+break
+#IF
+#ACT
+AddTextList .\QuestDiary\游戏登陆\禁止登陆人物.txt <$STR(S89)>
+GMEXECUTE T <$STR(S89)>
+messagebox 该角色已被加入禁止登陆列表，已经被踢下线！
+  goto @管理
+
+
+[@CallInPutString90]
+#IF
+S90.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S90.CHECKONLINE
+CheckTextList .\QuestDiary\游戏登陆\禁止登陆帐号.txt <$STR(S90)>
+#ACT
+GOTO @重复
+break
+#IF
+#ACT
+AddTextList .\QuestDiary\游戏登陆\禁止登陆帐号.txt <$STR(S90)>
+messagebox 该帐号已被加入禁止登陆列表！
+  goto @管理
+
+
+[@CallInPutString91]
+#IF
+S91.CHECKOFFLINE
+#ACT
+GOTO @管理
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S91.CHECKONLINE
+#ACT
+GMEXECUTE T <$STR(S91)>
+messagebox 成功！
+  goto @管理
+
+[@重复]
+#ACT
+messagebox 您输入的信息已存在，无需再提交！
+
+[@赌场信息]
+#IF
+#ACT
+MOV G100 <$STR(G74)>
+DEC G100 <$STR(G73)>
+#SAY
+　\
+　　　　盈亏：<$STR(G100)>(正数为赢，负数为亏)\
+　　　　收入：<$STR(G74)>\
+　　　　输出：<$STR(G73)>\
+　　　　统计：共<$STR(G75)>人参与\
+　　　　设置：<清空赌博数据/@清空赌博>\
+　\
+　　　　　　　　<刷新/@赌场信息> | <赌场开关/@开启赌城> | <返回/@管理>\
+
+[@开启赌城]
+#if
+equal G76 0
+#ACT
+#SAY
+　\
+赌城状况为：开启\ \
+<关闭赌城/@guanducn> | <返回/@赌场信息>
+#ELSESAY
+赌城状况为：关闭\ \
+<开启都城/@kaiducn> | <返回/@赌场信息>
+
+[@guanducn]
+#if
+ISADMIN
+#ACT
+mov G76 1
+#ACT
+SENDMSG 0 大富豪娱乐城已关闭，请各位玩家等待下次活动时间！
+SENDMSG 0 大富豪娱乐城已关闭，请各位玩家等待下次活动时间！
+SENDMSG 0 大富豪娱乐城已关闭，请各位玩家等待下次活动时间！
+SENDMSG 0 大富豪娱乐城已关闭，请各位玩家等待下次活动时间！
+SENDMSG 0 大富豪娱乐城已关闭，请各位玩家等待下次活动时间！
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@kaiducn]
+#if
+ISADMIN
+#ACT
+mov G76 0
+mov G77 60
+#ACT
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+
+[@清空赌博]
+#SAY
+　\
+此操作会清空赌博统计数据，确定操作吗？\
+　　　　　　　　<是/@确认清空> | <否/@赌场信息>
+
+[@确认清空]
+#IF
+#ACT
+MOV G73 0
+MOV G74 0
+MOV G100 0
+messagebox 赌场数据已被清空！
+GOTO @赌场信息
+
+
+[@3]
+#ACT
+GMEXECUTE GMMOVE 3 330 330
+
+[@CDDOU]
+#ACT
+GMEXECUTE GMMOVE CDDOU 6 10 
+
+[@H204A]
+#ACT
+GMEXECUTE MOVE H204A
+
+[@sqfx]
+#ACT
+GMEXECUTE GMMOVE sqfx 9 53
+
+[@hu1]
+#ACT
+GMEXECUTE MOVE hu1
+
+[@fuben3]
+#ACT
+GMEXECUTE MOVE fuben3
+
+[@fuben3a]
+#ACT
+GMEXECUTE MOVE fuben3a
+
+[@fuben4]
+#ACT
+GMEXECUTE MOVE fuben4
+
+[@fuben4a]
+#ACT
+GMEXECUTE MOVE fuben4a
+
+[@fuben4b]
+#ACT
+GMEXECUTE MOVE fuben4b
+
+[@GMXZZ]
+#ACT
+GMEXECUTE MOVE GMXZZ
+
+[@lt]
+#ACT
+MAPMOVE LT 13 18
+
+[@dilao]
+#ACT
+MAPMOVE dilao
+
+[@sbk]
+#ACT
+MAPMOVE 3 632 276
+}

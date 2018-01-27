@@ -1,0 +1,131 @@
+[@main]
+<拥有相应元宝可开启一下力量/AUTOCOLOR=81>    <当前元宝：/AUTOCOLOR=254>  <$GAMEGOLD>\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+<五行·土 力量/AUTOCOLOR=253>  <开启力量需要拥有20万元宝才可开启/AUTOCOLOR=150>  <开启土力量/@1>\
+<五行·火 力量/AUTOCOLOR=125>  <开启力量需要拥有40万元宝才可开启/AUTOCOLOR=150>  <开启土力量/@2>\
+<五行·水 力量/AUTOCOLOR=250>  <开启力量需要拥有60万元宝才可开启/AUTOCOLOR=150>  <开启土力量/@3>\
+<五行·木 力量/AUTOCOLOR=254>  <开启力量需要拥有80万元宝才可开启/AUTOCOLOR=150>  <开启土力量/@4>\
+<五行·金 力量/AUTOCOLOR=249>  <开启力量需要拥有100万元宝才可开启/AUTOCOLOR=150> <开启土力量/@5>\
+<━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253><查询力量属性/@查询><━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+<注：只要你身上有对应的元宝就可以用力量功能，下线或小腿属性还原！/AUTOCOLOR=249>\
+
+[@查询]
+<拥有相应元宝可开启一下力量/AUTOCOLOR=81>    <当前元宝：/AUTOCOLOR=254>  <$GAMEGOLD>\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+<五行·土 力量  属性： 攻魔道+20    HPMP+200    双防+20/AUTOCOLOR=253>  \
+<五行·火 力量  属性： 攻魔道+40    HPMP+400    双防+40/AUTOCOLOR=125>  \
+<五行·水 力量  属性： 攻魔道+60    HPMP+600    双防+60/AUTOCOLOR=250>  \
+<五行·木 力量  属性： 攻魔道+80    HPMP+800    双防+80/AUTOCOLOR=254> \
+<五行·金 力量  属性： 攻魔道+100   HPMP+1000   双防+100/AUTOCOLOR=249>  \
+<━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253><返回上一页/@main><━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+<注：只要你身上有对应的元宝就可以用力量功能，下线或小腿属性还原！/AUTOCOLOR=249>\
+
+[@1]
+#if
+CHECKGAMEGOLD > 199999
+equal s46 
+#ACT 
+mov s46 1
+GAMEGOLD - 200000
+ChangeHumAbility 1 + 20
+ChangeHumAbility 2 + 20
+ChangeHumAbility 3 + 20
+ChangeHumAbility 4 + 20
+ChangeHumAbility 6 + 20
+ChangeHumAbility 8 + 20
+ChangeHumAbility 10 + 20
+ChangeHumAbility 5 + 20
+ChangeHumAbility 7 + 20
+ChangeHumAbility 9 + 20
+ChangeModeEx 3 60000 200
+ChangeModeEx 4 60000 200
+#ELSESAY
+一次只能拥有一种神力，小腿后可重新领取！
+
+[@2]
+#if
+CHECKGAMEGOLD > 399999
+equal s46 
+#ACT 
+mov s46 1
+GAMEGOLD - 400000
+ChangeHumAbility 1 + 40
+ChangeHumAbility 2 + 40
+ChangeHumAbility 3 + 40
+ChangeHumAbility 4 + 40
+ChangeHumAbility 6 + 40
+ChangeHumAbility 8 + 40
+ChangeHumAbility 10 + 40
+ChangeHumAbility 5 + 40
+ChangeHumAbility 7 + 40
+ChangeHumAbility 9 + 40
+ChangeModeEx 3 60000 400
+ChangeModeEx 4 60000 400
+#ELSESAY
+一次只能拥有一种神力，小腿后可重新领取！
+
+[@3]
+#if
+CHECKGAMEGOLD > 599999
+equal s46 
+#ACT 
+mov s46 1
+GAMEGOLD - 600000
+ChangeHumAbility 1 + 60
+ChangeHumAbility 2 + 60
+ChangeHumAbility 3 + 60
+ChangeHumAbility 4 + 60
+ChangeHumAbility 6 + 60
+ChangeHumAbility 8 + 60
+ChangeHumAbility 10 + 60
+ChangeHumAbility 5 + 60
+ChangeHumAbility 7 + 60
+ChangeHumAbility 9 + 60
+ChangeModeEx 3 60000 600
+ChangeModeEx 4 60000 600
+#ELSESAY
+一次只能拥有一种神力，小腿后可重新领取！
+
+[@4]
+#if
+CHECKGAMEGOLD > 799999
+equal s46 
+#ACT 
+mov s46 1
+GAMEGOLD - 800000
+ChangeHumAbility 1 + 80
+ChangeHumAbility 2 + 80
+ChangeHumAbility 3 + 80
+ChangeHumAbility 4 + 80
+ChangeHumAbility 6 + 80
+ChangeHumAbility 8 + 80
+ChangeHumAbility 10 + 80
+ChangeHumAbility 5 + 80
+ChangeHumAbility 7 + 80
+ChangeHumAbility 9 + 80
+ChangeModeEx 3 60000 800
+ChangeModeEx 4 60000 800
+#ELSESAY
+一次只能拥有一种神力，小腿后可重新领取！
+
+[@5]
+#if
+CHECKGAMEGOLD > 999999
+equal s46 
+#ACT 
+mov s46 1
+GAMEGOLD - 1000000
+ChangeHumAbility 1 + 100
+ChangeHumAbility 2 + 100
+ChangeHumAbility 3 + 100
+ChangeHumAbility 4 + 100
+ChangeHumAbility 6 + 100
+ChangeHumAbility 8 + 100
+ChangeHumAbility 10 + 100
+ChangeHumAbility 5 + 100
+ChangeHumAbility 7 + 100
+ChangeHumAbility 9 + 100
+ChangeModeEx 3 60000 1000
+ChangeModeEx 4 60000 1000
+#ELSESAY
+一次只能拥有一种神力，小腿后可重新领取！

@@ -1,0 +1,3113 @@
+[@防止脱机]
+{
+#IF
+CheckLevelEx > 0
+#ACT
+MESSAGEBOX 现在开始防脱机提问,请60秒内回答,如多次不通过验证,永久封号处理.
+DelayCall 60000 @掉线处理
+#IF
+hour 01 01
+min 00 20
+#SAY
+我们目前国家总理是谁？\
+　\
+　\
+　\
+<A.李四/@game01>   <B.张山/@game02>   <C.李克强/@game03>   <D.普京/@game04> 
+
+
+#IF
+hour 01 01
+min 21 40
+#SAY
+周杰伦是做什么的？\
+　\
+　\
+　\
+<A.歌手和演员/@game05>   <B.骗子/@game06>   <C.小偷/@game07>   <D.老师/@game08>
+
+
+#IF
+hour 01 01
+min 41 60
+#SAY
+中国最大的名族是？\
+　\
+　\
+　\
+<A.苗族/@game09>   <B.回族/@game10>   <C.瑶族/@game11>   <D.汉族/@game12> 
+
+
+#IF
+hour 02 02
+min 00 20
+#SAY
+下列哪个城市属于我国\
+　\
+　\
+　\
+<A.东京/@game13>   <B.夏威夷/@game14>   <C.香港/@game15>   <D.首尔/@game16> 
+
+#IF
+hour 02 02
+min 21 40
+#SAY
+以下那个是四大名著\
+　\
+　\
+　\
+<A.鹿鼎记/@game17>   <B.西游记/@game18>   <C.史记/@game19>   <D.神雕侠侣/@game20> 
+
+
+#IF
+hour 02 02
+min 41 60
+#SAY
+亚洲110米栏跑的最快的是谁？\
+　\
+　\
+　\
+<A.刘翔/@game21>   <B.丁俊晖/@game22>   <C.易建联/@game23>   <D.姚明/@game24> 
+
+
+#IF
+hour 03 03
+min 00 20
+#SAY
+护身戒指什么职业佩戴最好\
+　\
+　\
+　\
+<A.道士/@game25>   <B.法师/@game26>   <C.刺客/@game27>   <D.战士/@game28> 
+
+
+#IF
+hour 03 03
+min 21 40
+#SAY
+怎么能最快的获得元宝\
+　\
+　\
+　\
+<A.找朋友要/@game29>   <B.打怪爆/@game30>   <C.网站充值/@game31>   <D.等待机会抢/@game32> 
+
+
+#IF
+hour 03 03
+min 41 60
+#SAY
+游戏中什么职业能释放烈火剑法\
+　\
+　\
+　\
+<A.战士/@game33>   <B.法师/@game34>   <C.道士/@game35>   <D.刺客/@game36> 
+
+#IF
+hour 04 04
+min 00 20
+#SAY
+今年是哪一年\
+　\
+　\
+　\
+<A.2016/@game37>   <B.2013/@game38>   <C.2014/@game39>   <D.2015/@game40> 
+
+#IF
+hour 04 04
+min 21 40
+#SAY
+以下技能是法师技能的是？\
+　\
+　\
+　\
+<A.治愈术/@game41>   <B.魔法盾/@game42>   <C.开天斩/@game43>   <D.灵魂火符/@game44> 
+
+
+#IF
+hour 04 04
+min 41 60
+#SAY
+以下那个是道士技能?\
+　\
+　\
+　\
+<A.灵魂火符/@game45>   <B.烈火剑法/@game46>   <C.魔法盾/@game47>   <D.刺杀剑法/@game48> 
+
+
+#IF
+hour 05 05
+min 00 20
+#SAY
+以下什么瓜不能吃\
+　\
+　\
+　\
+<A.西瓜/@game49>   <B.冬瓜/@game50>   <C.傻瓜/@game51>   <D.黄瓜/@game52> 
+
+
+#IF
+hour 05 05
+min 21 40
+#SAY
+选择下面面值最小的人民币\
+　\
+　\
+　\
+<A.100元/@game53>   <B.10元/@game54>   <C.50元/@game55>   <D.1元/@game56> 
+
+#IF
+hour 05 05
+min 41 60
+#SAY
+一年中那个月是只有28天的？\
+　\
+　\
+　\
+<A.7月/@game57>   <B.10月/@game58>   <C.5月/@game59>   <D.2月/@game60> 
+
+
+#IF
+hour 06 06
+min 00 20
+#SAY
+韦小宝娶了几个老婆？\
+　\
+　\
+　\
+<A.2个/@game61>   <B.7个/@game62>   <C.4个/@game63>   <D.5个/@game64> 
+
+#IF
+hour 06 06
+min 21 40
+#SAY
+元旦节是值的那天？\
+　\
+　\
+　\
+<A.1月1号/@game65>   <B.2月14号/@game66>   <C.12月25号/@game67>   <D.10月1号/@game68> 
+
+#IF
+hour 06 06
+min 41 60
+#SAY
+下面哪个技能是道士的魔法技能\
+　\
+　\
+　\
+<A.刺杀剑术/@game69>   <B.冰咆哮/@game70>   <C.野蛮冲撞/@game71>   <D.灵魂火符/@game72> 
+
+
+#IF
+hour 07 07
+min 00 20
+#SAY
+下面哪个怪物最厉害\
+　\
+　\
+　\
+<A.沃玛勇士/@game73>   <B.黑野猪/@game74>   <C.沃玛教主/@game75>   <D.祖玛弓箭手/@game76> 
+
+
+#IF
+hour 07 07
+min 21 40
+#SAY
+法师能够增强防御能力的是什么技能\
+　\
+　\
+　\
+<A.诱惑之光/@game77>   <B.魔法盾/@game78>   <C.抗拒火环/@game79>   <D.冰咆哮/@game80> 
+
+#IF
+hour 07 07
+min 41 60
+#SAY
+2加2加6等于几\
+　\
+　\
+　\
+<A.5/@game81>   <B.9/@game82>   <C.10/@game83>   <D.8/@game84> 
+
+#IF
+hour 08 08
+min 00 20
+#SAY
+3乘以4等于几\
+　\
+　\
+　\
+<A.10/@game85>   <B.12/@game86>   <C.14/@game87>   <D.8/@game88> 
+
+
+#IF
+hour 08 08
+min 21 40
+#SAY
+下面哪样东西是可以吃的\
+　\
+　\
+　\
+<A.玉米/@game89>   <B.刀/@game90>   <C.筷子/@game91>   <D.勺子/@game92> 
+
+
+#IF
+hour 08 08
+min 41 60
+#SAY
+下面哪样东西是可以喝的\
+　\
+　\
+　\
+<A.火箭/@game93>   <B.气球/@game94>   <C.排骨汤/@game95>   <D.风筝/@game96> 
+
+
+#IF
+hour 09 09
+min 00 20
+#SAY
+我国第一个总理是\
+　\
+　\
+　\
+<A.周恩来/@game97>   <B.李鹏/@game98>   <C.毛泽东/@game99>   <D.蒋介石/@game100> 
+
+
+#IF
+hour 09 09
+min 21 40
+#SAY
+什么戒指可以有复活属性？\
+　\
+　\
+　\
+<A.麻痹戒指/@game101>   <B.护身戒指/@game102>   <C.求婚戒指/@game103>   <D.复活戒指/@game104> 
+
+
+#IF
+hour 09 09
+min 41 60
+#SAY
+蓝最多的职业是\
+　\
+　\
+　\
+<A.战士/@game105>   <B.刺客/@game106>   <C.法师/@game107>   <D.道士/@game108> 
+
+#IF
+hour 10 10
+min 00 20
+#SAY
+游戏里的新人最早出现在哪个城市\
+　\
+　\
+　\
+<A.白日门/@game109>   <B.比奇省新手村/@game110>   <C.盟重省/@game111>   <D.苍月岛/@game112> 
+
+#IF
+hour 10 10
+min 21 40
+#SAY
+新人上线在哪个城市\
+　\
+　\
+　\
+<A.白日门/@game113>   <B.比奇省/@game114>   <C.封魔谷/@game115>   <D.苍月岛/@game116> 
+
+
+#IF
+hour 10 10
+min 41 60
+#SAY
+下面属于道士的装备是\
+　\
+　\
+　\
+<A.龙纹/@game117>   <B.裁决/@game118>   <C.骨玉/@game119>   <D.血饮/@game120> 
+
+
+#IF
+hour 11 11
+min 00 20
+#SAY
+下面属于衣服的装备是\
+　\
+　\
+　\
+<A.骑士手镯/@game121>   <B.魔法长袍(男)/@game122>   <C.力量戒指/@game123>   <D.天尊项链/@game124> 
+
+#IF
+hour 11 11
+min 21 40
+#SAY
+沃玛地图的BOSS叫什么\
+　\
+　\
+　\
+<A.沃玛卫士/@game125>   <B.沃玛雕像/@game126>   <C.沃玛勇士/@game127>   <D.沃玛教主/@game128> 
+
+
+
+
+#IF
+hour 11 11
+min 41 60
+#SAY
+猪洞的BOSS叫什么\
+　\
+　\
+　\
+<A.蜈蚣/@game129>   <B.白野猪/@game130>   <C.黑野猪/@game131>   <D.红野猪/@game132> 
+
+#IF
+hour 12 12
+min 00 20
+#SAY
+道士能够召唤宝宝的技能是\
+　\
+　\
+　\
+<A.基本剑法/@game133>   <B.攻杀剑术/@game134>   <C.召唤神兽/@game135>   <D.灵魂火符/@game136> 
+
+#IF
+hour 12 12
+min 21 41
+#SAY
+下面可以用来听歌的是\
+　\
+　\
+　\
+<A.MP4/@game137>   <B.铁/@game138>   <C.钢/@game139>   <D.板凳/@game140> 
+
+#IF
+hour 12 12
+min 41 60
+#SAY
+下面可以用来写字的是\
+　\
+　\
+　\
+<A.雷电/@game141>   <B.雨/@game142>   <C.风/@game143>   <D.圆珠笔/@game144> 
+
+#IF
+hour 13 13
+min 00 20
+#SAY
+下面哪个是电脑需要的配件\
+　\
+　\
+　\
+<A.鹅/@game145>   <B.鸭/@game146>   <C.鼠标/@game147>   <D.鸡/@game148> 
+
+
+#IF
+hour 13 13
+min 21 40
+#SAY
+下面速度最快的是\
+　\
+　\
+　\
+<A.汽车/@game149>   <B.火车/@game150>   <C.飞机/@game151>   <D.火箭/@game152> 
+
+
+
+#IF
+hour 13 13
+min 41 60
+#SAY
+下面速度最慢的是\
+　\
+　\
+　\
+<A.汽车/@game153>   <B.走路/@game154>   <C.摩托车/@game155>   <D.自行车/@game156> 
+
+
+#IF
+hour 14 14
+min 00 20
+#SAY
+下面最值钱的是\
+　\
+　\
+　\
+<A.房产/@game157>   <B.电脑/@game158>   <C.手机/@game159>   <D.风扇/@game160> 
+
+#IF
+hour 14 14
+min 21 40
+#SAY
+可以冬暖夏凉的家电是\
+　\
+　\
+　\
+<A.空调/@game161>   <B.音响/@game162>   <C.电视/@game163>   <D.风扇/@game164> 
+
+#IF
+hour 14 14
+min 41 60
+#SAY
+洗澡应该去什么地方\
+　\
+　\
+　\
+<A.KTV/@game165>   <B.澡堂/@game166>   <C.夜总会/@game167>   <D.饭店/@game168> 
+
+#IF
+hour 15 15
+min 00 20
+#SAY
+唱歌应该到哪？\
+　\
+　\
+　\
+<A.银行/@game169>   <B.澡堂/@game170>   <C.移动大厅/@game171>   <D.KTV/@game172> 
+
+
+#IF
+hour 15 15
+min 21 40
+#SAY
+存钱应该去哪里\
+　\
+　\
+　\
+<A.服装店/@game173>   <B.奶茶店/@game174>   <C.银行/@game175>   <D.中国移动/@game176> 
+
+
+#IF
+hour 15 15
+min 41 60
+#SAY
+办理移动电话要去那里？\
+　\
+　\
+　\
+<A.奶茶店/@game177>   <B.中国移动/@game178>   <C.电影院/@game179>   <D.警察局/@game180> 
+
+
+#IF
+hour 16 16
+min 00 20
+#SAY
+看电影去哪里？\
+　\
+　\
+　\
+<A.银行/@game181>   <B.电影院/@game182>   <C.家里/@game183>   <D.监狱/@game184> 
+
+
+#IF
+hour 16 16
+min 21 40
+#SAY
+电信员工在什么地方上班\
+　\
+　\
+　\
+<A.电信/@game185>   <B.家里/@game186>   <C.派出所/@game187>   <D.银行/@game188> 
+
+#IF
+hour 16 16
+min 41 60
+#SAY
+今年是哪一年？
+　\
+　\
+　\
+<A.2012/@game189>   <B.2016/@game190>   <C.2014/@game191>   <D.2015/@game192> 
+
+#IF
+hour 17 17
+min 00 20
+#say
+一般拿沙巴克是几点开始的？\
+　\
+　\
+　\
+<A.7点/@game193>   <B.8点/@game194>   <C.9点/@game195>   <D.10点/@game196> 
+
+#IF
+hour 17 17
+min 21 40
+#say
+烈火是什么职业的技能？\
+　\
+　\
+　\
+<A.法师/@game197>   <B.道士/@game198>   <C.战士/@game199>   <D.刺客/@game200> 
+
+#IF
+hour 17 17
+min 41 60
+#SAY
+祖玛神殿BOSS爆什么物品的？\
+　\
+　\
+　\
+<A.神器/@game201>   <B.裁决/@game202>   <C.开天/@game203>   <D.镇天/@game204> 
+
+#IF
+hour 18 18
+min 00 20
+#SAY
+地球是什么形状的\
+　\
+　\
+　\
+<A.方的/@game205>   <B.长的/@game206>   <C.圆的/@game207>   <D.尖的/@game208> 
+
+#IF
+hour 18 18
+min 21 40
+#say
+太阳是从哪边落下的\
+　\
+　\
+　\
+<A.东边/@game209>   <B.西边/@game210>   <C.南边/@game211>   <D.西边/@game212> 
+
+#IF
+hour 18 18
+min 41 60
+#SAY
+一年四季什么季节天气最热\
+　\
+　\
+　\
+<A.春天/@game281>   <B.3夏天/@game282>   <C.秋天/@game283>   <D.冬天/@game284> 
+
+#IF
+hour 19 19
+min 00 20
+#SAY
+下面最低温度是几度\
+　\
+　\
+　\
+<A.30度/@game277>   <B.70度/@game278>   <C.80度/@game279>   <D.0度/@game280> 
+
+
+
+#IF
+hour 19 19
+min 21 40
+#say
+小日本地图是什么形状的？\
+　\
+　\
+　\
+<A.蚯蚓形/@game213>   <B.公鸡形/@game214>   <C.乒乓形/@game215>   <D.圆形/@game216> 
+
+#IF
+hour 19 19
+min 41 60
+#say
+激光电影是什么职业的技能？\
+　\
+　\
+　\
+<A.道士/@game285>   <B.法师/@game286>   <C.战士/@game287>   <D.刺客/@game288> 
+
+
+#IF
+hour 20 20
+min 00 20
+#say
+下面是歌手的是？\
+　\
+　\
+　\
+<A.奥巴马/@game217>   <B.刘德华/@game218>   <C.普京/@game219>   <D.习近平/@game220> 
+
+#IF
+hour 20 20
+min 21 40
+#say
+你称呼你母亲叫什么\
+　\
+　\
+　\
+<A.爸爸/@game221>   <B.爷爷/@game222>   <C.妈妈/@game223>   <D.奶奶/@game224> 
+
+#IF
+hour 20 20
+min 41 60
+#say
+下面什么东西人能吃的\
+　\
+　\
+　\
+<A.飞机/@game225>   <B.鸭肉/@game226>   <C.大炮/@game227>   <D.火车/@game228> 
+
+#IF
+hour 21 21
+min 00 20
+#SAY
+下面哪个瓜不能吃\
+　\
+　\
+　\
+<A.西瓜/@game229>   <B.南瓜/@game230>   <C.冬瓜/@game231>   <D.傻瓜/@game232> 
+
+
+#IF
+hour 21 21
+min 20 40
+#SAY
+沸腾时冒出的“白气”是\
+　\
+　\
+　\
+<A.水蒸气/@game233>   <B.雪/@game234>   <C.泪水/@game235>   <D.汗水/@game236> 
+
+#IF
+hour 21 21
+min 41 60
+#SAY
+中国人的筷子是什么做的\
+　\
+　\
+　\
+<A.不知道/@game237>   <B.木头/@game238>   <C.石头/@game239>   <D.塑料/@game240> 
+
+
+#IF
+hour 22 22
+min 00 20
+#SAY
+一年之中一般什么季节最热？\
+　\
+　\
+　\
+<A.春天/@game241>   <B.冬天/@game242>   <C.秋天/@game243>   <D.夏天/@game244> 
+
+#IF
+hour 22 22
+min 21 40
+#SAY
+下面哪一种是醋类\
+　\
+　\
+　\
+<A.可乐/@game245>   <B.雪霜/@game246>   <C.白醋/@game247>   <D.疗伤药/@game248> 
+
+#IF
+hour 22 22
+min 40 60
+#SAY
+下面那种品牌车子是国产的\
+　\
+　\
+　\
+<A.奔驰/@game249>   <B.夏利/@game250>   <C.奇瑞/@game251>   <D.现代/@game252> 
+
+
+
+#IF
+hour 23 23
+min 00 20
+#SAY
+传奇中<灵魂火符>是什么职业的武器\
+　\
+　\
+　\
+<A.道士/@game253>   <B.法师/@game254>   <C.战士/@game255>   <D.不告诉你/@game256> 
+
+#IF
+hour 23 23
+min 21 40
+#SAY
+请选着下面什么蛋不能吃\
+　\
+　\
+　\
+<A.鹅蛋/@game257>   <B.鸭蛋/@game258>   <C.鸟蛋/@game259>   <D.傻蛋/@game260> 
+
+#IF
+hour 23 23
+min 41 60
+#SAY
+你老妈称呼你老爸-叫什么\
+　\
+　\
+　\
+<A.疯子/@game261>   <B.老公/@game262>   <C.傻子/@game263>   <D.小子/@game264> 
+
+#IF
+hour 00 00
+min 00 20
+#SAY
+孙悟空什么电视剧的人物\
+　\
+　\
+　\
+<A.西游记/@game265>   <B.红楼梦/@game266>   <C.水浒/@game267>   <D.机器猫/@game268> 
+
+
+#IF
+hour 00 00
+min 21 40
+#SAY
+游戏里面-灭天火-是什么职业的技能？\
+　\
+　\
+　\
+<A.法师/@game269>   <B.战士/@game270>   <C.骑士/@game271>   <D.道士/@game272> 
+
+
+#IF
+hour 00 00
+min 40 60
+#SAY
+下面哪一种是属于酒类\
+　\
+　\
+　\
+<A.可乐/@game273>   <B.雪碧/@game274>   <C.白酒/@game275>   <D.酱油/@game276> 
+
+
+[@game288]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game287]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game285]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game284]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game283]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game281]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game286]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game282]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game280]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game279]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game278]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game277]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game274]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game273]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game276]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game275]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game269]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game272]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game271]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game270]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game268]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game267]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game266]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game265]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game262]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game264]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game263]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+
+[@game261]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game259]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game258]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game257]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game260]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game253]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game256]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game255]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game254]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game252]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game250]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game249]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game251]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game247]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+
+[@game248]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game246]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game245]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game241]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game242]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game243]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game244]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game238]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+
+[@game233]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game240]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game239]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game237]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game236]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game235]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game234]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game231]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game230]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game229]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game232]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game226]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game228]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game227]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game225]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game224]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game222]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game221]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game223]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game218]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game220]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game219]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game217]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game216]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game215]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game214]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game212]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game213]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game211]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game210]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game209]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game208]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game206]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game205]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game207]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game202]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game204]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game203]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game201]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game197]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game198]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game200]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game199]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game194]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game196]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game195]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game193]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game01]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game02]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game03]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game04]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game07]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game06]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game05]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game08]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game09]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game10]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game12]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game11]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game13]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game14]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game15]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game16]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game17]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game19]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game18]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game20]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game22]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game23]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game21]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game24]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+
+[@game25]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game27]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game26]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game28]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game29]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game30]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game31]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game32]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+
+[@game34]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game35]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game33]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game36]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game38]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game37]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game40]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game39]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game41]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game43]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game42]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game44]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game46]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game47]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game48]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game45]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game51]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game49]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game50]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game52]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game53]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game54]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game55]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game56]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game60]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game57]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game58]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game59]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game61]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game63]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game64]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game62]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game65]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game66]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game67]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game68]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game69]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game70]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game71]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game72]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game73]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game74]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game76]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game75]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game78]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game77]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game79]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game80]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game81]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game82]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game84]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game83]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game86]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game85]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game87]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game88]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game90]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game91]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game92]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game89]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game95]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game93]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game94]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game96]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game98]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game99]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game100]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game97]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game104]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game103]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game102]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game101]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game105]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game106]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game108]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game107]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game110]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game109]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game111]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game112]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game113]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game115]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game116]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game114]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game117]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game118]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game119]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game120]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game121]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game123]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game124]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game122]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game128]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game125]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game126]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game127]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game129]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game131]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game132]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game130]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game135]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game133]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game134]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game136]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game138]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game139]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game140]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game137]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game144]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game141]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game142]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game143]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game145]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game146]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game147]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game148]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game152]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game151]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game150]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game149]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game154]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game155]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game156]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game153]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game158]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game159]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game157]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game160]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game162]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game163]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game164]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game161]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game166]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game167]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game168]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game165]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game169]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game170]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+
+[@game171]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game172]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game175]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game173]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game174]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game176]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game177]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game179]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game180]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game178]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game182]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+
+[@game181]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game183]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game184]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game184]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game186]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game187]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game188]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game185]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game192]
+#IF
+CHECKLEVELEX > 0
+#ACT
+set [400] 1
+GOTO @正式回收
+
+[@game189]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game190]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@game191]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - 100
+set [400] 0
+KICK
+
+[@掉线处理]
+#IF
+CHECKLEVELEX > 0
+#ACT
+KICK
+
+
+[@正式回收]
+#IF
+CHECKVAR HUMAN 错误数量 > 1
+#ACT
+CLEARDELAYGOTO
+CALCVAR HUMAN 错误数量 - 2
+SAVEVAR HUMAN 错误数量 ..\QuestDiary\防脱机脚本\错误数量.txt
+GOTO @回答完毕
+#ELSEACT
+CLEARDELAYGOTO
+CALCVAR HUMAN 错误数量 - 1
+SAVEVAR HUMAN 错误数量 ..\QuestDiary\防脱机脚本\错误数量.txt
+GOTO @回答完毕
+
+[@回答完毕]
+回答正确!
+#ACT
+DelayCall 1 @结束对话
+
+[@结束对话]
+#ACT
+CLOSE
+}

@@ -1,0 +1,99 @@
+[@main]
+#IF
+EQUAL A64 <$GUILDNAME>
+#SAY
+<【活动时间】/SCOLOR=243>每天<晚上23点/SCOLOR=250>准时举行,<活动持续2小时/SCOLOR=250>！ \
+<【活动规则】/SCOLOR=243>一、必须加入行会才能进入\
+
+二、占领中心点的行会,<每秒增加1点/SCOLOR=250>行会人气积分 \ 
+三、人气积分先达到<1500分/SCOLOR=250>的行会获胜(需占领25分钟) \ 
+四、活动结束时,没有行会达到1500分,则均无奖励 \ 
+<【活动奖励】/SCOLOR=243>获胜行会奖励<888万元宝>,由行会老大领取自由分配！ \ 
+<-----------------------------------------------------------/SCOLOR=230> \
+{上一届胜利行会：【<$STR(A64)>】/SCOLOR=250}  <获胜奖励:888万元宝/SCOLOR=250> {获胜时间:<$DATETIME>/SCOLOR=250}\
+　　　　    <进入地图/@jq> 　　  <领取奖励/@gs>     <关闭窗口/@exit>\
+<本活动合区后开放！新区不举行！！/SCOLOR=250>
+#ELSEACT
+MOV A64 暂无行会
+GOTO @MAIN1
+BREAK
+[@MAIN1]
+#IF
+#ACT
+#SAY
+<【活动时间】/SCOLOR=243>每天<晚上19点/SCOLOR=250>准时举行,<活动持续2小时/SCOLOR=250>！ \
+<【活动规则】/SCOLOR=243>一、必须加入行会才能进入\
+
+二、占领中心点的行会,<每秒增加1点/SCOLOR=250>行会人气积分 \ 
+三、人气积分先达到<1500分/SCOLOR=250>的行会获胜(需占领25分钟) \ 
+四、活动结束时,没有行会达到1500分,则均无奖励 \ 
+<【活动奖励】/SCOLOR=243>获胜行会奖励<888万元宝>,由行会老大领取自由分配！ \ 
+<-----------------------------------------------------------/SCOLOR=230> \
+{上一届胜利行会：【<$STR(A64)>】/SCOLOR=250}   <获胜奖励:888万元宝/SCOLOR=250>  {获胜时间:<$DATETIME>/SCOLOR=250}\
+
+　　　　     <进入地图/@jq> 　　  <领取奖励/@gs>     <关闭窗口/@exit>\
+<本活动合区后开放！新区不举行！！/SCOLOR=250>
+
+[@gs]
+#if
+ISGUILDMASTER
+CHECKGUILDAURAEPOINT > 1499
+#act
+GUILDAURAEPOINT - 20000
+GAMEGOLD + 8888888
+MOV A64 <$GUILDNAME>
+MOV G120 1
+SETOFFTIMER 13
+GuildNoticeMsg 250 6  恭喜『<$GUILDNAME>』行会一马当先胜出本次活动获得丰厚奖励８８８万元宝全体景仰！
+SendCenterMsg 250 6   恭喜『<$GUILDNAME>』行会一马当先胜出本次活动获得丰厚奖励８８８万元宝全体景仰！
+GuildNoticeMsg 250 6  恭喜『<$GUILDNAME>』行会一马当先胜出本次活动获得丰厚奖励８８８万元宝全体景仰！
+SendCenterMsg 250 6   恭喜『<$GUILDNAME>』行会一马当先胜出本次活动获得丰厚奖励８８８万元宝全体景仰！
+GuildNoticeMsg 250 6  恭喜『<$GUILDNAME>』行会一马当先胜出本次活动获得丰厚奖励８８８万元宝全体景仰！
+SendCenterMsg 250 6   恭喜『<$GUILDNAME>』行会一马当先胜出本次活动获得丰厚奖励８８８万元宝全体景仰！
+GuildNoticeMsg 250 6  恭喜『<$GUILDNAME>』行会一马当先胜出本次活动获得丰厚奖励８８８万元宝全体景仰！
+SendCenterMsg 250 6   恭喜『<$GUILDNAME>』行会一马当先胜出本次活动获得丰厚奖励８８８万元宝全体景仰！
+#ELSESAY
+你不是帮主...\
+你的行会积分点未达到1500...\
+或者你已经领取过了！！！\ \
+
+
+
+
+
+
+[@jq]
+#if
+EQUAL G120 1
+#act
+#SAY
+活动已结束明日再来！
+#elseact
+GOTO @JIQING1
+
+
+[@JIQING1]
+#if
+equal G121 1
+#act
+#SAY
+对不起 活动胜负已分出，请关注明日活动
+#elseact
+goto @jiqing2
+break
+
+[@jiqing2]
+#if
+HAVEGUILD
+hour 23 01
+min  00 00
+#act
+mapmove JIQING 21 27
+give 回城卷 1
+GuildNoticeMsg 250 6  玩家[%s]进入行会积分战地图参加活动，率先达到活动积分【1500】的行会将获得888万元宝大奖！
+SendCenterMsg 250 6  玩家[%s]进入行会积分战地图参加活动，率先达到活动积分【1500】的行会将获得888万元宝大奖！
+#ELSESAY
+你没有帮会...\
+请加入帮会再来找我...\
+还没到开放的时间...\
+

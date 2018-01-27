@@ -1,0 +1,69 @@
+(@buy @sell @repair @s_repair )
+[@main]
+<亲.欢迎来到至尊之家/SCOLOR=250><本地图不限等级,满足以下条件方可进入...../SCOLOR=254>\ 
+<此地图爆:/SCOLOR=250><+贵族15.+贵族25.+贵族35.+贵族45.(盘古套装.属性超牛)/SCOLOR=253>\
+<触发1.2倍攻击/SCOLOR=253><BOSS怪物:/SCOLOR=250><盘古将军[决战].斑头雁[决战].小矮人[决战]/SCOLOR=251>\
+<盘古魔王[决战].水姣龙王[决战]以及各地图所有BOSS.../SCOLOR=251>\  
+　<建议组队进入,需满足以下，否则就算让你进去了也是送死/SCOLOR=250>\
+　　　<≮战士≯/SCOLOR=250>需要支付100万元宝，攻击力达到980点以上\
+　　　<≮法师≯/SCOLOR=250>需要支付100万元宝，魔法力达到840点以上\
+　　　<≮道士≯/SCOLOR=250>需要支付100万元宝，道术力达到830点以上\  
+　　　　　　　　　　　　　　　　　　　　　　<进入至尊之家..../@PK点击>　\
+
+[@PK点击]
+请一定正确选择自己的职业，才能进入地图！\  \
+切记，需要攻击力980以上才可进入！<战士点击进入/@战士>\  \
+
+切记，需要法师840以上才可进入！<法师点击进入/@魔法师>\  \
+
+切记，需要道术830以上才可进入！<道士点击进入/@道士>\  \
+
+
+
+
+[@战士]
+#IF
+CHECKDC > 10 > 980
+CHECKGAMEGOLD > 999999
+#act
+GAMEGOLD - 1000000
+#ACT
+mapmove pgttd 25 40
+give 回城卷 1
+GuildNoticeMsg 245 225  【%s】进入至尊之家[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+SendCenterMsg 253 0 玩家【<$USERNAME>】进入至尊之家[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+break
+#ELSEACT
+MESSAGEBOX 对不起，你攻击力不够980，或者你没100W元宝，否则进去也是送死！
+
+
+
+[@魔法师]
+#IF
+CHECKMC > 9 > 840
+CHECKGAMEGOLD > 999999
+#act
+GAMEGOLD - 1000000
+#ACT
+mapmove pgttd 25 40
+give 回城卷 1
+GuildNoticeMsg 245 225  【%s】进入至尊之家[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+SendCenterMsg 253 0 玩家【<$USERNAME>】进入至尊之家[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+break
+#ELSEACT
+MESSAGEBOX 对不起，你魔法力不够840，或者你没100W元宝，否则进去也是送死！
+
+
+[@道士]
+#IF
+CHECKSC > 10 > 830
+CHECKGAMEGOLD > 999999
+#act
+GAMEGOLD - 1000000
+#ACT
+mapmove pgttd 25 40
+give 回城卷 1
+GuildNoticeMsg 245 225  【%s】进入至尊之家[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+SendCenterMsg 253 0 玩家【<$USERNAME>】进入至尊之家[决战]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+#ELSEACT
+MESSAGEBOX 对不起，你道力不够830，或者你没100W元宝，否则进去也是送死！

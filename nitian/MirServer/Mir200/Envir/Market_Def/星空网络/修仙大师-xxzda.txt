@@ -1,0 +1,187 @@
+[@main]
+#SAY
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+年轻人，欢迎你！我知道你很可大了，但还没有成仙，你想请我帮你\
+吧，我是强化大师，也兼职召唤师，我帮以帮你召唤魔王使者..召唤\
+<魔王使者>进入强化之道地图一次，自动刷新一只魔王。<召唤魔王使者/@刷怪>\
+打死了魔王使者,拿到了魔王灵药,请点击下面看看强化需要什么条件\
+我相信你能满足我给你提供的条件的,别说人吭,这是仙道,年轻人..\
+<━※/AUTOCOLOR=168,250,70,253><强化一级/@一级强化><━※/AUTOCOLOR=168,250,70,253><强化二级/@二级强化><━/AUTOCOLOR=168,250,70,253><强化三级/@三级强化><━/AUTOCOLOR=168,250,70,253><强化四级/@四级强化><━/AUTOCOLOR=168,250,70,253><强化五级/@五级强化><※━/AUTOCOLOR=168,250,70,253>\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+
+　　　　　　　　
+
+[@刷怪]
+#IF
+CHECKGAMEGOLD > 499999
+#ACT
+GAMEGOLD - 500000
+Param1 xxzda
+Param2 15
+Param3 15
+MonGen 魔王使者 1 5
+GuildNoticeMsg 255 22 [<$USERNAME>]--召唤出了魔王使者，要打劫的速度上了！
+#elseact
+MESSAGEBOX 哥，你连50W元宝都没了还点我干啥？
+
+
+[@一级强化]
+\  \
+需要等级160级，8个魔王灵药，再加1000万元宝方可\
+进入一级强化！\
+<我要强化/@1级强化>\  \
+
+
+[@1级强化]
+#IF
+CHECKGAMEGOLD > 9999999
+checkitem 魔王灵药 8
+CheckLevelEx > 159
+CheckLevelEx < 161
+#ACT
+GAMEGOLD - 10000000
+take 魔王灵药 8
+CHANGELEVEL + 1
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化一级，难道他是本F最牛B的人物★★★★★
+#ELSEACT
+MESSAGEBOX 您的元宝不足，没有魔王灵药或您还没到160级或您已经161级！
+
+
+
+[@二级强化]
+\  \
+需要等级161级，16个魔王灵药，再加1500万元宝方可\
+进入二级强化！\
+<我要强化/@2级强化>\  \
+
+
+[@2级强化]
+#IF
+CHECKGAMEGOLD > 14999999
+checkitem 魔王灵药 16
+CheckLevelEx > 160
+CheckLevelEx < 162
+#ACT
+GAMEGOLD - 15000000
+take 魔王灵药 16
+CHANGELEVEL + 1
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化二级，难道他是本F最牛B的人物★★★★★
+#ELSEACT
+MESSAGEBOX 您的元宝不足，没有魔王灵药或您还没到161级或您已经162级！
+
+
+[@三级强化]
+\  \
+需要等级162级，32个魔王灵药，再加2500万元宝方可\
+进入三级强化！\
+可得到物品：☆盘古守护☆ 一枚(等级成功自动获取)\
+<我要强化/@3级强化>\  \
+
+
+[@3级强化]
+#IF
+CHECKGAMEGOLD > 24999999
+checkitem 魔王灵药 32
+CheckLevelEx > 161
+CheckLevelEx < 163
+#ACT
+GAMEGOLD - 25000000
+take 魔王灵药 32
+CHANGELEVEL + 1
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化三级，难道他是本F最牛B的人物★★★★★
+#ELSEACT
+MESSAGEBOX 您的元宝不足，没有魔王灵药或您还没到162级或您已经163级！
+
+
+[@四级强化]
+\  \
+需要等级163级，64个魔王灵药，再加3000万元宝方可\
+进入四级强化！\
+<我要强化/@4级强化>\  \
+
+
+[@4级强化]
+#IF
+CHECKGAMEGOLD > 29999999
+checkitem 魔王灵药 64
+CheckLevelEx > 162
+CheckLevelEx < 164
+#ACT
+GAMEGOLD - 30000000
+take 魔王灵药 64
+CHANGELEVEL + 1
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化四级，难道他是本F最牛B的人物★★★★★
+#ELSEACT
+MESSAGEBOX 您的元宝不足，没有魔王灵药或您还没到163级或您已经164级！
+
+[@五级强化]
+\  \
+需要等级164级，128个魔王灵药，再加4000万元宝方可\
+进入五级强化！\
+可得到物品：仙龙爪 一个(等级成功自动获取)\
+<我要强化/@5级强化>\  \
+
+
+[@5级强化]
+#IF
+CHECKGAMEGOLD > 39999999
+checkitem 魔王灵药 128
+CheckLevelEx > 163
+CheckLevelEx < 165
+#ACT
+GAMEGOLD - 40000000
+take 魔王灵药 128
+CHANGELEVEL + 1
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+GuildNoticeMsg 245 0  ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化五级，难道他是本F最牛B的人物★★★★★
+#ELSEACT
+MESSAGEBOX 您的元宝不足，没有魔王灵药或您还没到164级或您已经165级！

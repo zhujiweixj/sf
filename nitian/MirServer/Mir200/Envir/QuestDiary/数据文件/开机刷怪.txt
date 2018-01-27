@@ -1,0 +1,28 @@
+[@开始刷怪]
+{
+#if
+CheckMapSameMonCount sg1 上古教主-战 < 1
+#ACT
+Param1 sg1
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-战 1 1
+
+#if
+CheckMapSameMonCount sg2 上古教主-道 < 1
+#ACT
+Param1 sg2
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-道 1 1
+
+
+#if
+CheckMapSameMonCount sg2 上古教主-法 < 1
+#ACT
+Param1 sg3
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-法 1 1
+
+}

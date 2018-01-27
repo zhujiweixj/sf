@@ -1,0 +1,37 @@
+
+[@main]
+我是沙巴克密使！我可以把你直接送到沙巴克皇宫中！\
+不过你必须满足我的要求，而我的要求嘛……\
+你的等级必须大于44噢，不算多吧？\ \
+<试试/@2>\
+<离开/@exit>\
+
+[@no]
+#if
+#act
+messagebox 本功能只在攻城期间开放！
+
+
+[@2]
+#if
+CHECKLEVELEX > 44
+#act
+goto @a1
+#elseact
+messagebox 攻城期间为防止外援,拒绝45以下的进入...
+
+
+[@a1]
+#if
+checkcastlewar 0
+#act
+goto @a2
+#elseact
+goto @no
+
+
+[@a2]
+#if
+#act
+mapmove 0150 
+break

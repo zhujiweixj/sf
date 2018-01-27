@@ -1,0 +1,111 @@
+[@main]
+#IF
+#ACT
+CloseBigDialogBox
+
+#IF
+ISADMIN
+#SAY
+<┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>  <　 ★★★★★/SCOLOR=249>本尊只奖励服务器<唯一/SCOLOR=250>的玩家<★★★★★/SCOLOR=249>　   <┃/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>  < 获得此封号的玩家可享受在线1.2倍攻击的,其他玩家可通/SCOLOR=243>   <┃/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>  <过骰子抢夺封号.不限制等级.职业.装备.所有玩家均可参加/SCOLOR=254>  <┃/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>  <30000元宝摇一次，当你摇出豹子的时候，即可获得1.2倍攻击/SCOLOR=250><┃/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>      　<摇骰字纯属运气,没事的玩家可以来试试手气/SCOLOR=243>     　　<┃/AUTOCOLOR=250,253,254,241>\
+<┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>　　　　　 　　◆◇◆<豪赌天下 战神骰王/@独霸天下>◆◇◆　　　　　　<┃/AUTOCOLOR=250,253,254,241>\
+<┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛/AUTOCOLOR=250,253,254,241>\
+　　　　　　　　　　收入：<$STR(G50)>元宝\
+　　　　　　　　　　
+
+#ELSESAY
+<┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>  <　 ★★★★★/SCOLOR=249>本尊只奖励服务器<唯一/SCOLOR=250>的玩家<★★★★★/SCOLOR=249>　   <┃/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>  < 获得此封号的玩家可享受在线1.2倍攻击的,其他玩家可通/SCOLOR=243>   <┃/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>  <过骰子抢夺封号.不限制等级.职业.装备.所有玩家均可参加/SCOLOR=254>  <┃/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>  <30000元宝摇一次，当你摇出豹子的时候，即可获得1.2倍攻击/SCOLOR=250><┃/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>      　<摇骰字纯属运气,没事的玩家可以来试试手气/SCOLOR=243>     　　<┃/AUTOCOLOR=250,253,254,241>\
+<┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫/AUTOCOLOR=250,253,254,241>\
+<┃/AUTOCOLOR=250,253,254,241>　　　　　 　　◆◇◆<豪赌天下 战神骰王/@独霸天下>◆◇◆　　　　　　<┃/AUTOCOLOR=250,253,254,241>\
+<┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛/AUTOCOLOR=250,253,254,241>\
+　　　　　　　　　　 
+
+
+[@独霸天下]
+<当前骰王/SCOLOR=254>：<[/SCOLOR=249><$STR(A46)><]/SCOLOR=249>\
+<当选时间/SCOLOR=254>：<[/SCOLOR=249><$STR(A47)><]/SCOLOR=249>\
+<玩家等级/SCOLOR=254>：<[/SCOLOR=249><$STR(A48)><]/SCOLOR=249>\ \
+ 
+
+　  　    ○<●/SCOLOR=253>○<●/SCOLOR=253>○<●/SCOLOR=253><开始扔骰子去/@开始扔骰子去><●/SCOLOR=253>○<●/SCOLOR=253>○<●/SCOLOR=253>○\ \
+ 
+<一、/SCOLOR=249><30000元宝/SCOLOR=250>可以扔一次骰子，扔到<豹子/SCOLOR=250>也就是三个数字一样就可\
+　  以<获得封号/SCOLOR=250>，之前的封号玩家就会<失去/SCOLOR=250>1.2倍攻击！\
+<二、/SCOLOR=249><此封号下线后效果保存，合区后不保留/SCOLOR=254>\
+ 
+
+[@开始扔骰子去]
+#IF
+EQUAL A46 <$USERNAME>
+#ACT
+MESSAGEBOX 您已经是无敌骰王了！
+break
+
+#IF
+CheckGameGold > 29999
+#ACT
+GameGold - 30000
+INC G50 30000
+GOTO @骰子活动
+break
+#ElseAct
+MESSAGEBOX 元宝不足30000个，无法扔骰子！
+break
+ 
+
+[@骰子活动]
+#IF
+#ACT
+MOVR N20 1 7
+MOVR N21 1 7
+MOVR N22 1 7
+MOV D0 <$STR(N20)>
+MOV D1 <$STR(N21)>
+MOV D2 <$STR(N22)>
+playdice 3 @检测点数
+break
+ 
+
+[@检测点数]
+#IF
+EQUAL N20 <$STR(N21)>
+EQUAL N20 <$STR(N22)>
+#ACT
+goto @取消封号
+SendCenterMsg 251 233 ◆◇◆玩家[%s]超越[<$STR(A46)>]成为新的战神骰王，获得1.2攻击的奖励和“战神骰王”封号◆◇◆ 1
+GuildNoticeMsg 251 233 ◆◇◆玩家[%s]超越[<$STR(A46)>]成为新的战神骰王，获得1.2攻击的奖励和“战神骰王”封号◆◇◆ 1
+MOV A46 <$USERNAME>
+MOV A47 <$DATETIME>
+MOV A48 <$LEVEL>
+ClearNameList ..\QuestDiary\变量数据\骰王名单.txt
+AddTextList .\QuestDiary\变量数据\骰王名单.txt <$USERNAME>
+seticon 0 34 -35 -5
+#CALL [\元宝捐款\元宝捐款奖励.txt] @奖励
+#CALL [\游戏登陆\封号检测.txt] @封号检测
+#CALL [\元宝捐款\爵位封号.txt] @爵位封号
+BREAK
+CLOSE
+#ELSEACT
+SENDMSG 5 豹子还没出哦，请再接再厉吧！
+
+[@取消封号]
+#ACT
+MOV S0 <$STR(A46)>
+S0.PowerRate 100 60000
+S0.seticon 0 0
+S0.SENDMSG 5 你的[战神骰王]封号已被[<$USERNAME>]取代！
+S0.SENDMSG 5 你的[战神骰王]封号已被[<$USERNAME>]取代！
+S0.SENDMSG 5 如果你有爵位封号，请小退重新登陆！你被迫T下线！！
+S0.SENDMSG 5 如果你有爵位封号，请小退重新登陆！你被迫T下线！！
+S0.SENDMSG 5 如果你有爵位封号，请小退重新登陆！你被迫T下线！！
+S0.SENDMSG 5 如果你有爵位封号，请小退重新登陆！你被迫T下线！！

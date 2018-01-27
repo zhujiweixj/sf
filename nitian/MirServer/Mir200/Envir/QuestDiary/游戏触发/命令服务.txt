@@ -1,0 +1,102 @@
+[@命令]
+{
+以下为常用的游戏命令列表: \ \
+「<玩家命令/@GameerCommand>」：查看玩家游戏中可用的命令\
+「<行会命令/@hhCommand>」：查看行会掌门游戏中可用的命令\
+「<特殊命令/@tsCommand>」：查看游戏中特殊的命令\
+「<仓库命令/@ckCommand>」：查看游戏中使用仓库的命令\ 
+「<远程回收>」：@回收\ \
+[@GameerCommand]
+「<查看时间/@Date>」       : @<$CMD_DATE>\
+「<禁止&允许私聊/@AllowMsg>」  : @<$CMD_ALLOWMSG>\
+「<禁止&允许群聊/@LetShout>」  : @<$CMD_LETSHOUT>\
+「<禁止&允许交易/@LetTrade>」  : @<$CMD_LETTRADE>\
+「<组队传送/@GroupCall>」       : @<$CMD_GROUPRECALLL>\
+「<禁止&允许组传送/@AllowGroupCall>」: @<$CMD_ALLOWGROUPCALL>\ \
+「<返回上页/@命令>」
+[@Date]
+游戏中输入：@<$CMD_DATE>  可显示当前日期及时间。\ \
+<返回/@GameerCommand>
+[@AllowMsg]
+游戏中输入：@<$CMD_ALLOWMSG>  可拒绝私聊，重复输入可转换为:允许私聊。\ \
+<返回/@GameerCommand>
+[@LetShout]
+游戏中输入：@<$CMD_LETSHOUT>  可拒绝群聊，重复输入可转换为:允许群聊。\ \
+<返回/@GameerCommand>
+[@LetTrade]
+游戏中输入：@<$CMD_LETTRADE>  可拒绝交易，重复输入可转换为:允许交易。\ \
+<返回/@GameerCommand>
+[@GroupCall]
+游戏中输入：@<$CMD_GROUPRECALLL>  可将已编组的玩家召换到身边来（组成\
+员必须打开天地合一功能，且组领导有记忆装备一套）。\ \
+<返回/@GameerCommand>
+[@AllowGroupCall]
+游戏中输入：@<$CMD_ALLOWGROUPCALL>  可打开天地合一功能，重复输入可:关\
+闭天地合一功能。\ \
+<返回/@GameerCommand>
+[@hhCommand]
+以下为行会相关游戏命令列表: \
+「<禁止&允许加入门派/@LetGuild>」: @<$CMD_LETGUILD>\
+「<退出门派/@EndGuild>」         : @<$CMD_ENDGUILD>\
+「<禁止&允许行会聊天/@BanGuildChat>」: @<$CMD_BANGUILDCHAT>\
+「<禁止&允许行会联盟/@AuthAlly>」: @<$CMD_AUTHALLY>\
+「<行会联盟/@Auth>」         : @<$CMD_AUTH>\
+「<取消行会联盟/@AuthCancel>」     : @<$CMD_AUTHCANCEL>\
+「<返回上页/@命令>」
+[@LetGuild]
+游戏中输入：@<$CMD_LETGUILD>  可打开加入门派功能，重复输入可：关闭\
+加入门派功能。\ \
+<返回/@hhCommand>
+[@EndGuild]
+游戏中输入：@<$CMD_ENDGUILD>  已加入行会的玩家将退出门派。\ \
+<返回/@hhCommand>
+[@BanGuildChat]
+游戏中输入：@<$CMD_BANGUILDCHAT>  将拒绝接收行会聊天信息，重复输\
+入可：允许接收行会聊天信息。\ \
+<返回/@hhCommand>
+[@AuthAlly]
+游戏中输入：@<$CMD_AUTHALLY>  将允许与对方行会联盟，重复输\
+入可：拒绝行会联盟。\ \
+<返回/@hhCommand>
+[@Auth]
+游戏中输入：@<$CMD_AUTH>  将与对方行会联盟。\ \
+<返回/@hhCommand>
+[@AuthCancel]
+游戏中输入：@<$CMD_AUTHCANCEL>  可取消行会的联盟。\ \
+<返回/@hhCommand>
+[@tsCommand]
+以下为特殊功能游戏命令列表: \
+「<传送戒指/@UserMove>」: @<$CMD_USERMOVE>\
+「<探测项链/@Searching>」: @<$CMD_SEARCHING>\
+@查询师徒　@传唤徒弟　@允许传唤徒弟\
+@查询伴侣　@传唤伴侣　@允许夫妻传唤\
+「<返回上页/@命令>」
+[@UserMove]
+可将玩家传送到地图指定的坐标，例：@<$CMD_USERMOVE> 330 330 \ \
+<返回/@tsCommand>
+[@Searching]
+@<$CMD_SEARCHING> +玩家名字 配合探测项链使用。\ \
+<返回/@tsCommand>
+[@ckCommand]
+为了保护您的装备物品不被盗，可启用仓库密码保护系统，锁定仓\
+库凭密码解锁后才可以取出仓库物品。\
+以下为仓库密码游戏命令列表:\
+「<设置密码/@StorageSetPassword>」: @<$CMD_STORAGESETPASSWORD>\
+「<修改密码/@StorageChgPassword>」: @<$CMD_STORAGECHGPASSWORD>\
+「<锁定仓库/@StorageLock>」: @<$CMD_STORAGELOCK>\
+「<解锁仓库/@StorageUnlock>」: @<$CMD_STORAGEUNLOCK>\
+「<返回上页/@命令>」
+[@StorageSetPassword]
+在游戏输入：@<$CMD_STORAGESETPASSWORD>  可为仓库设定一个4-7位数长的仓库密码，\
+设定后玩家必须开启仓库后方能从仓库取出装备。\ \
+<返回/@ckCommand>
+[@StorageChgPassword]
+在游戏输入：@<$CMD_STORAGECHGPASSWORD>  可更改仓库密码。\ \
+<返回/@ckCommand>
+[@StorageLock]
+在游戏输入：@<$CMD_STORAGELOCK>  可将仓库锁定，下次取装备时必须开启仓库。\ \
+<返回/@ckCommand>
+[@StorageUnlock]
+在游戏输入：@<$CMD_STORAGEUNLOCK>  输入正确密码后可将锁定的仓库开启。\ \
+<返回/@ckCommand>]
+}

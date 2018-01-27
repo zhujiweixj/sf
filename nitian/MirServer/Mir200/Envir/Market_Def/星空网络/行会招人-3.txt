@@ -1,0 +1,47 @@
+[@MAIN] 
+★━━━━★　　※ 行会{【<$STR(A130)>】}自助招人系统 ※ \ 
+┃行 ■ 竞┃　　╔┄┄┄┄┄┄┄┄┄╦┄┄┄┄┄┄┄┄┄╗\ 
+┃ ■板■ ┃　　┆    <加入该行会/@jrxh>    ┆     <参加竞价/@cyjj>     ┆\
+┃会 ■ 价┃　　╚┄┄┄┄┄┄┄┄┄╩┄┄┄┄┄┄┄┄┄╝\
+★━━━━★　　 ━━━━━━  <行会对战皇宫/@行会对战皇宫>  ━━━━━━\ 
+【最新竞得行会】：【<$STR(A130)>】\ 
+【竞价元宝数量】：{【<$STR(G130)>】}个\ 
+<支付比目前竞价元宝多1000个元宝,即可在竞价板上加入的是您行会./AUTOCOLOR=254>\ 
+[@cyjj] 
+#IF 
+HAVEGUILD 
+CHECKGAMEGOLD > <$STR(G130)> 
+#ACT 
+INC G130 1000 
+GAMEGOLD - <$STR(G130)> 
+mov A130 <$GUILDNAME> 
+mov G132 1 
+Messagebox [成功]：你在行会竞价板上花了【<$STR(G130)>】个元宝竞得。 
+SENDMSG 0 恭喜【<$USERNAME>】在行会竞价板为行会【<$STR(A130)>】招兵买马，大家赶快加入这个实力行会! 
+GOTO @MAIN 
+BREAK 
+#ELSEACT 
+Messagebox [失败]：你的元宝不足或者你没有行会 
+
+[@jrxh] 
+#IF 
+equal G132 1 
+#ACT 
+AddGuildMember <$STR(A130)> <$USERNAME> 
+Messagebox [成功]：恭喜【<$USERNAME>】加入了行会【<$STR(A130)>】。 
+BREAK 
+#ELSEACT 
+Messagebox [失败]：目前没有行会竞得行会竞价板 
+
+[@行会对战皇宫]
+#IF 
+HAVEGUILD 
+checkgold 20000
+#ACT 
+take 金币 20000
+MAPMOVE hhzb
+SENDMSG 0 玩家[%s],进入了行会对战地图,为行会做贡献,生的光荣 死的伟大啊!!~
+#ELSEACT
+MESSAGEBOX 对不起!你还没有加入行会!\或您的金币少于20000\无法进入行会对战地图!
+break
+

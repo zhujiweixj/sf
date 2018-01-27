@@ -1,0 +1,385 @@
+[@领取元宝]
+{
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\01.txt
+#ACT
+GAMEGOLD +  15000 
+delaccountlist ..\QuestDiary\锋锐充值\01.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买15000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\1.txt
+#ACT
+GAMEGOLD +  150000
+delaccountlist ..\QuestDiary\锋锐充值\1.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买150000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\10.txt
+#ACT
+GAMEGOLD +  1500000
+delaccountlist ..\QuestDiary\锋锐充值\10.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买1500000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\100.txt
+#ACT
+GAMEGOLD +  15000000
+delaccountlist ..\QuestDiary\锋锐充值\100.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买15000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\1000.txt
+#ACT
+GAMEGOLD +  150000000
+delaccountlist ..\QuestDiary\锋锐充值\1000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买150000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\10000.txt
+#ACT
+GAMEGOLD +  1500000000
+delaccountlist ..\QuestDiary\锋锐充值\10000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买1500000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\02.txt
+#ACT
+GAMEGOLD +  30000 
+delaccountlist ..\QuestDiary\锋锐充值\02.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买30000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\2.txt
+#ACT
+GAMEGOLD +  300000
+delaccountlist ..\QuestDiary\锋锐充值\2.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买300000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\20.txt
+#ACT
+GAMEGOLD +  3000000
+delaccountlist ..\QuestDiary\锋锐充值\20.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买3000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\200.txt
+#ACT
+GAMEGOLD +  30000000
+delaccountlist ..\QuestDiary\锋锐充值\200.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买30000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\2000.txt
+#ACT
+GAMEGOLD +  300000000
+delaccountlist ..\QuestDiary\锋锐充值\2000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买300000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\20000.txt
+#ACT
+GAMEGOLD +  3000000000
+delaccountlist ..\QuestDiary\锋锐充值\20000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买3000000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\03.txt
+#ACT
+GAMEGOLD +  45000 
+delaccountlist ..\QuestDiary\锋锐充值\03.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买45000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\3.txt
+#ACT
+GAMEGOLD +  450000
+delaccountlist ..\QuestDiary\锋锐充值\3.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买450000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\30.txt
+#ACT
+GAMEGOLD +  4500000
+delaccountlist ..\QuestDiary\锋锐充值\30.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买4500000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\300.txt
+#ACT
+GAMEGOLD +  45000000
+delaccountlist ..\QuestDiary\锋锐充值\300.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买45000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\3000.txt
+#ACT
+GAMEGOLD +  450000000
+delaccountlist ..\QuestDiary\锋锐充值\3000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买450000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\30000.txt
+#ACT
+GAMEGOLD +  4500000000
+delaccountlist ..\QuestDiary\锋锐充值\30000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买4500000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\04.txt
+#ACT
+GAMEGOLD +  60000 
+delaccountlist ..\QuestDiary\锋锐充值\04.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买60000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\4.txt
+#ACT
+GAMEGOLD +  600000
+delaccountlist ..\QuestDiary\锋锐充值\4.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买600000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\40.txt
+#ACT
+GAMEGOLD +  6000000
+delaccountlist ..\QuestDiary\锋锐充值\40.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买6000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\400.txt
+#ACT
+GAMEGOLD +  60000000
+delaccountlist ..\QuestDiary\锋锐充值\400.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买60000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\4000.txt
+#ACT
+GAMEGOLD +  600000000
+delaccountlist ..\QuestDiary\锋锐充值\4000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买600000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\40000.txt
+#ACT
+GAMEGOLD +  6000000000
+delaccountlist ..\QuestDiary\锋锐充值\40000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买6000000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\05.txt
+#ACT
+GAMEGOLD +  75000 
+delaccountlist ..\QuestDiary\锋锐充值\05.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买75000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\5.txt
+#ACT
+GAMEGOLD +  750000
+delaccountlist ..\QuestDiary\锋锐充值\5.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买750000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\50.txt
+#ACT
+GAMEGOLD +  7500000
+delaccountlist ..\QuestDiary\锋锐充值\50.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买7500000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\500.txt
+#ACT
+GAMEGOLD +  75000000
+delaccountlist ..\QuestDiary\锋锐充值\500.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买75000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\5000.txt
+#ACT
+GAMEGOLD +  750000000
+delaccountlist ..\QuestDiary\锋锐充值\5000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买750000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\50000.txt
+#ACT
+GAMEGOLD +  7500000000
+delaccountlist ..\QuestDiary\锋锐充值\50000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买7500000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\06.txt
+#ACT
+GAMEGOLD +  90000 
+delaccountlist ..\QuestDiary\锋锐充值\06.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买90000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\6.txt
+#ACT
+GAMEGOLD +  900000
+delaccountlist ..\QuestDiary\锋锐充值\6.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买900000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\60.txt
+#ACT
+GAMEGOLD +  9000000
+delaccountlist ..\QuestDiary\锋锐充值\60.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买9000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\600.txt
+#ACT
+GAMEGOLD +  90000000
+delaccountlist ..\QuestDiary\锋锐充值\600.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买90000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\6000.txt
+#ACT
+GAMEGOLD +  900000000
+delaccountlist ..\QuestDiary\锋锐充值\6000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买900000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\60000.txt
+#ACT
+GAMEGOLD +  9000000000
+delaccountlist ..\QuestDiary\锋锐充值\60000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买9000000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\07.txt
+#ACT
+GAMEGOLD +  105000 
+delaccountlist ..\QuestDiary\锋锐充值\07.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买105000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\7.txt
+#ACT
+GAMEGOLD +  1050000
+delaccountlist ..\QuestDiary\锋锐充值\7.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买1050000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\70.txt
+#ACT
+GAMEGOLD +  10500000
+delaccountlist ..\QuestDiary\锋锐充值\70.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买10500000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\700.txt
+#ACT
+GAMEGOLD +  105000000
+delaccountlist ..\QuestDiary\锋锐充值\700.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买105000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\7000.txt
+#ACT
+GAMEGOLD +  1050000000
+delaccountlist ..\QuestDiary\锋锐充值\7000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买1050000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\70000.txt
+#ACT
+GAMEGOLD +  10500000000
+delaccountlist ..\QuestDiary\锋锐充值\70000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买10500000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\08.txt
+#ACT
+GAMEGOLD +  120000 
+delaccountlist ..\QuestDiary\锋锐充值\08.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买120000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\8.txt
+#ACT
+GAMEGOLD +  1200000
+delaccountlist ..\QuestDiary\锋锐充值\8.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买1200000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\80.txt
+#ACT
+GAMEGOLD +  12000000
+delaccountlist ..\QuestDiary\锋锐充值\80.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买12000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\800.txt
+#ACT
+GAMEGOLD +  120000000
+delaccountlist ..\QuestDiary\锋锐充值\800.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买120000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\8000.txt
+#ACT
+GAMEGOLD +  1200000000
+delaccountlist ..\QuestDiary\锋锐充值\8000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买1200000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\80000.txt
+#ACT
+GAMEGOLD +  12000000000
+delaccountlist ..\QuestDiary\锋锐充值\80000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买12000000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\09.txt
+#ACT
+GAMEGOLD +  135000 
+delaccountlist ..\QuestDiary\锋锐充值\09.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买135000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\9.txt
+#ACT
+GAMEGOLD +  1350000
+delaccountlist ..\QuestDiary\锋锐充值\9.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买1350000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\90.txt
+#ACT
+GAMEGOLD +  13500000
+delaccountlist ..\QuestDiary\锋锐充值\90.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买13500000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\900.txt
+#ACT
+GAMEGOLD +  135000000
+delaccountlist ..\QuestDiary\锋锐充值\900.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买135000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\9000.txt
+#ACT
+GAMEGOLD +  1350000000
+delaccountlist ..\QuestDiary\锋锐充值\9000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买1350000000个元宝
+goto @领取元宝
+#IF
+checkaccountlist ..\QuestDiary\锋锐充值\90000.txt
+#ACT
+GAMEGOLD +  13500000000
+delaccountlist ..\QuestDiary\锋锐充值\90000.txt
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统，购买13500000000个元宝
+goto @领取元宝
+#ELSESAY
+您当前还没有充值或已领取成功,请查看自己的元宝数量!\
+<返回/@main>
+}
+

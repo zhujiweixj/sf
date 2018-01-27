@@ -1,0 +1,491 @@
+[@main]
+#IF
+EQUAL G470 1
+#SAY
+--------------------<免费领取+25极品套装/SCOLOR=250>--------------------\
+新区回馈，打满188个<新区送宝牌(注:可叠加)>，免费领取价值350万的+25贵族套装\
+【1.76屠魔中极品独家版本】只要肯花时间，散人秒老板不是梦!\
+-----------------------------------------------------------\
+<亲们注意了：该活动仅限新区，合区后不保留此数据，每人限1次/SCOLOR=250>\
+<亲们注意了：所有地图的怪物都爆此物品，不管大小怪哦/SCOLOR=253>\
+-----------------------------------------------------------\
+<如果你是非ＲＭＢ玩家，多花时间照样牛Ｘ！喜欢就支持本游戏哦亲！>\ 
+
+
+                                                                    
+#ELSEACT
+MOV G468 1000
+MOV G469 1000
+MOV G470 1
+MOV G471 1000
+MOV G472 1000
+MOV G473 1000
+MOV G474 1000
+MOV G475 1000
+MOV G476 1000
+MOV G477 1000
+MOV G478 1000
+MOV G479 1000
+MOV G485 1000
+MOV G486 1000
+MOV G487 1000
+MOV G488 1000
+MOV G490 1000
+MOV G491 1000
+MOV G492 1000
+MOV G493 1000
+MOV G494 1000
+MOV G495 1000
+MOV G496 1000
+MOV G497 1000
+MOV G498 1000
+MOV G499 1000
+goto @main
+
+
+
+[@zstl]
+<注意：身上不要穿任何装备，否则后果自负！！/SCOLOR=245>\  \
+<领取奖励/@83>男战士装备\
+<领取奖励/@84>女战士装备\
+<领取奖励/@85>男法师装备\
+<领取奖励/@86>女法师装备\
+<领取奖励/@87>男道师装备\
+<领取奖励/@88>女道师装备\
+
+[@83]
+#if
+CHECKLEVELEX > 60
+#act
+goto @83a
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@83a]
+#if
+check [471] 0
+#act
+goto @83b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@83b]
+#if
+CHECKLEVELEX > 60
+check [471] 0
+LARGE G471 0
+#act
+goto @83c
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@83c]
+#if
+CHECKLEVELEX > 60
+checkitem 新区送宝牌 188
+check [471] 0
+LARGE G471 0
+#act
+take 新区送宝牌 188
+give 贵族怒斩 1
+give 贵族天魔神甲 1
+give 贵族虹魔戒指 2
+give 贵族死神手套 2
+give 贵族记忆项链 1
+give 贵族圣战头盔 1
+give 贵族勋章[战] 1
+SendCenterMsg 254 0 [%s]参加新区奖励，成功兑换一套+25极品战士组合装！ 
+AutoTakeOnItem 贵族勋章[战] 2
+AutoTakeOnItem 贵族死神手套 5
+AutoTakeOnItem 贵族死神手套 6
+AutoTakeOnItem 贵族虹魔戒指 7
+AutoTakeOnItem 贵族虹魔戒指 8
+AutoTakeOnItem 贵族记忆项链 3
+AutoTakeOnItem 贵族圣战头盔 4
+AutoTakeOnItem 贵族怒斩 1
+AutoTakeOnItem 贵族天魔神甲 0
+GmexEcute 改属性 0 2 22
+GmexEcute 改属性 1 0 25
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 2 25
+GmexEcute 改属性 3 2 25
+GmexEcute 改属性 2 2 5
+GmexEcute 改属性 5 2 25
+GmexEcute 改属性 6 2 25
+GmexEcute 改属性 7 2 25
+GmexEcute 改属性 8 2 25
+DEC G471 1
+SET [471] 1
+GuildNoticeMsg 255 245 《%s》顺利打到新区送宝牌，新的骨灰玩家还在等什么？赶快加入！！
+close
+#elsesay
+请详细查看下你是否有188个新手送宝牌？或者你是否已经领取过了，一个ID只能领取一次\
+<离开/@exit>\
+
+[@84]
+#if
+CHECKLEVELEX > 60
+#act
+goto @84a
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@84a]
+#if
+check [475] 0
+#act
+goto @84b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@84b]
+#if
+CHECKLEVELEX > 60
+checkitem 新区送宝牌 188
+check [475] 0
+LARGE G475 0
+#act
+goto @84c
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@84c]
+#if
+CHECKLEVELEX > 60
+checkitem 新区送宝牌 188
+check [475] 0
+LARGE G475 0
+#act
+take 新区送宝牌 188
+give 贵族怒斩 1
+give 贵族圣战宝甲 1
+give 贵族虹魔戒指 2
+give 贵族死神手套 2
+give 贵族记忆项链 1
+give 贵族圣战头盔 1
+give 贵族勋章[战] 1
+SendCenterMsg 254 0 [%s]参加新区奖励，成功兑换一套+25极品战士组合装！ 
+AutoTakeOnItem 贵族勋章[战] 2
+AutoTakeOnItem 贵族死神手套 5
+AutoTakeOnItem 贵族死神手套 6
+AutoTakeOnItem 贵族虹魔戒指 7
+AutoTakeOnItem 贵族虹魔戒指 8
+AutoTakeOnItem 贵族记忆项链 3
+AutoTakeOnItem 贵族圣战头盔 4
+AutoTakeOnItem 贵族怒斩 1
+AutoTakeOnItem 贵族圣战宝甲 0
+GmexEcute 改属性 0 2 22
+GmexEcute 改属性 1 0 25
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 2 25
+GmexEcute 改属性 3 2 25
+GmexEcute 改属性 2 2 5
+GmexEcute 改属性 5 2 25
+GmexEcute 改属性 6 2 25
+GmexEcute 改属性 7 2 25
+GmexEcute 改属性 8 2 25
+DEC G475 1
+SET [475] 1
+GuildNoticeMsg 255 245 《%s》顺利打到新区送宝牌，新的骨灰玩家还在等什么？赶快加入！！
+close
+#elsesay
+请详细查看下你是否有188个新手送宝牌？或者你是否已经领取过了，一个ID只能领取一次\
+<离开/@exit>\
+
+
+[@85]
+#if
+CHECKLEVELEX > 60
+#act
+goto @85a
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@85a]
+#if
+check [478] 0
+#act
+goto @85b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@85b]
+#if
+CHECKLEVELEX > 60
+check [478] 0
+LARGE G478 0
+#act
+goto @85c
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@85c]
+#if
+CHECKLEVELEX > 60
+checkitem 新区送宝牌 188
+check [478] 0
+LARGE G478 0
+#act
+take 新区送宝牌 188
+give 贵族法神披风 1
+give 贵族法神戒指 2
+give 贵族魔血手镯 2
+give 贵族灯笼 1
+give 贵族法神头盔 1
+give 贵族勋章[法] 1
+SendCenterMsg 254 0 [%s]参加新区奖励，成功兑换一套+25极品法师组合装！ 
+AutoTakeOnItem 贵族勋章[法] 2
+AutoTakeOnItem 贵族魔血手镯 5
+AutoTakeOnItem 贵族魔血手镯 6
+AutoTakeOnItem 贵族法神戒指 7
+AutoTakeOnItem 贵族法神戒指 8
+AutoTakeOnItem 贵族灯笼 3
+AutoTakeOnItem 贵族法神头盔 4
+AutoTakeOnItem 贵族龙牙 1
+AutoTakeOnItem 贵族法神披风 0
+GmexEcute 改属性 0 3 22
+GmexEcute 改属性 1 1 25
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 3 25
+GmexEcute 改属性 3 3 25
+GmexEcute 改属性 2 3 5
+GmexEcute 改属性 5 3 25
+GmexEcute 改属性 6 3 25
+GmexEcute 改属性 7 3 25
+GmexEcute 改属性 8 3 25
+DEC G478 1
+SET [478] 1
+GuildNoticeMsg 255 245 《%s》顺利打到新区送宝牌，新的骨灰玩家还在等什么？赶快加入！！
+close
+#elsesay
+请详细查看下你是否有188个新手送宝牌？或者你是否已经领取过了，一个ID只能领取一次\
+<离开/@exit>\
+
+
+
+[@86]
+#if
+CHECKLEVELEX > 60
+#act
+goto @86a
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@86a]
+#if
+check [479] 0
+#act
+goto @86b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@86b]
+#if
+CHECKLEVELEX > 60
+check [479] 0
+LARGE G479 0
+#act
+goto @86c
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@86c]
+#if
+CHECKLEVELEX > 60
+checkitem 新区送宝牌 188
+check [479] 0
+LARGE G479 0
+#act
+take 新区送宝牌 188
+give 贵族龙牙 1
+give 贵族霓裳羽衣 1
+give 贵族法神戒指 2
+give 贵族魔血手镯 2
+give 贵族灯笼 1
+give 贵族法神头盔 1
+give 贵族勋章[法] 1
+SendCenterMsg 254 0 [%s]参加新区奖励，成功兑换一套+25极品法师组合装！ 
+AutoTakeOnItem 贵族勋章[法] 2
+AutoTakeOnItem 贵族魔血手镯 5
+AutoTakeOnItem 贵族魔血手镯 6
+AutoTakeOnItem 贵族法神戒指 7
+AutoTakeOnItem 贵族法神戒指 8
+AutoTakeOnItem 贵族灯笼 3
+AutoTakeOnItem 贵族法神头盔 4
+AutoTakeOnItem 贵族龙牙 1
+AutoTakeOnItem 贵族霓裳羽衣 0
+GmexEcute 改属性 0 3 22
+GmexEcute 改属性 1 1 25
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 3 25
+GmexEcute 改属性 3 3 25
+GmexEcute 改属性 2 3 5
+GmexEcute 改属性 5 3 25
+GmexEcute 改属性 6 3 25
+GmexEcute 改属性 7 3 25
+GmexEcute 改属性 8 3 25
+DEC G479 1
+SET [479] 1
+GuildNoticeMsg 255 245 《%s》顺利打到新区送宝牌，新的骨灰玩家还在等什么？赶快加入！！
+close
+#elsesay
+请详细查看下你是否有188个新手送宝牌？或者你是否已经领取过了，一个ID只能领取一次\
+<离开/@exit>\
+
+
+[@87]
+#if
+CHECKLEVELEX > 60
+#act
+goto @87a
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@87a]
+#if
+check [485] 0
+#act
+goto @87b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@87b]
+#if
+CHECKLEVELEX > 60
+check [485] 0
+LARGE G485 0
+#act
+goto @87c
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@87c]
+#if
+CHECKLEVELEX > 60
+checkitem 新区送宝牌 188
+check [485] 0
+LARGE G485 0
+#act
+take 新区送宝牌 188
+give 贵族霸者之刃 1
+give 贵族天尊道袍 1
+give 贵族天尊戒指 2
+give 贵族避邪手镯 2
+give 贵族白色虎齿 1
+give 贵族天尊头盔 1
+give 贵族勋章[道] 1
+SendCenterMsg 254 0 [%s]参加新区奖励，成功兑换一套+25极品道士组合装！ 
+AutoTakeOnItem 贵族勋章[道] 2
+AutoTakeOnItem 贵族避邪手镯 5
+AutoTakeOnItem 贵族避邪手镯 6
+AutoTakeOnItem 贵族天尊戒指 7
+AutoTakeOnItem 贵族天尊戒指 8
+AutoTakeOnItem 贵族白色虎齿 3
+AutoTakeOnItem 贵族天尊头盔 4
+AutoTakeOnItem 贵族霸者之刃 1
+AutoTakeOnItem 贵族天尊道袍 0
+GmexEcute 改属性 0 4 22
+GmexEcute 改属性 1 2 25
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 4 25
+GmexEcute 改属性 3 4 25
+GmexEcute 改属性 2 4 5
+GmexEcute 改属性 5 4 25
+GmexEcute 改属性 6 4 25
+GmexEcute 改属性 7 4 25
+GmexEcute 改属性 8 4 25
+DEC G485 1
+SET [485] 1
+GuildNoticeMsg 255 245 《%s》顺利打到新区送宝牌，新的骨灰玩家还在等什么？赶快加入！！
+close
+#elsesay
+请详细查看下你是否有188个新手送宝牌？或者你是否已经领取过了，一个ID只能领取一次\
+<离开/@exit>\
+
+
+[@88]
+#if
+CHECKLEVELEX > 60
+#act
+goto @88a
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@88a]
+#if
+check [486] 0
+#act
+goto @88b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@88b]
+#if
+CHECKLEVELEX > 60
+check [486] 0
+LARGE G486 0
+#act
+goto @88c
+#elsesay
+对不起，此奖励只限每个ID领取一次，请关注我们下一个新区吧。
+<离开/@exit>\
+[@88c]
+#if
+CHECKLEVELEX > 60
+checkitem 新区送宝牌 188
+check [486] 0
+LARGE G486 0
+#act
+take 新区送宝牌 188
+give 贵族霸者之刃 1
+give 贵族天师长袍 1
+give 贵族天尊戒指 2
+give 贵族避邪手镯 2
+give 贵族白色虎齿 1
+give 贵族天尊头盔 1
+give 贵族勋章[道] 1
+SendCenterMsg 254 0 [%s]参加新区奖励，成功兑换一套+25极品道士组合装！ 
+AutoTakeOnItem 贵族勋章[道] 2
+AutoTakeOnItem 贵族避邪手镯 5
+AutoTakeOnItem 贵族避邪手镯 6
+AutoTakeOnItem 贵族天尊戒指 7
+AutoTakeOnItem 贵族天尊戒指 8
+AutoTakeOnItem 贵族白色虎齿 3
+AutoTakeOnItem 贵族天尊头盔 4
+AutoTakeOnItem 贵族霸者之刃 1
+AutoTakeOnItem 贵族天师长袍 0
+GmexEcute 改属性 0 4 22
+GmexEcute 改属性 1 2 25
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 4 25
+GmexEcute 改属性 3 4 25
+GmexEcute 改属性 2 4 5
+GmexEcute 改属性 5 4 25
+GmexEcute 改属性 6 4 25
+GmexEcute 改属性 7 4 25
+GmexEcute 改属性 8 4 25
+DEC G486 1
+SET [486] 1
+GuildNoticeMsg 255 245 《%s》顺利打到新区送宝牌，新的骨灰玩家还在等什么？赶快加入！！
+close
+#elsesay
+请详细查看下你是否有188个新手送宝牌？或者你是否已经领取过了，一个ID只能领取一次\
+<离开/@exit>\

@@ -1,0 +1,8 @@
+[@main]
+#if
+CHECK [188] 1
+EQUAL M76 166
+#act
+;AddTextListEx <$STR(S12)> <$STR(S21)> 1
+#say
+此地图怪物还没清理完，不能进入下一层!!

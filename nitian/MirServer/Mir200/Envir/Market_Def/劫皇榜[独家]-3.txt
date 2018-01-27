@@ -1,0 +1,80 @@
+[@main]
+#if
+EQUAL G111 0
+#act
+MOV A11 <未开启/AUTOCOLOR=56>
+MOV A22 <暂无/AUTOCOLOR=254,168,191,100,250,70,245,253>
+MOV A33 00:00
+MOV A44 <暂无/AUTOCOLOR=254,168,191,100,250,70,245,253>
+MOV A55 0
+MOV A66 0
+goto @bang
+break
+#if
+EQUAL G111 1
+#act
+MOV A11 <已经结束/AUTOCOLOR=56>
+goto @bang
+break
+#if
+EQUAL G111 2
+#act
+MOV A11 <已开启/AUTOCOLOR=250>
+MOV A22 <暂无/AUTOCOLOR=254,168,191,100,250,70,245,253>
+MOV A33 00:00
+goto @bang
+break
+
+[@bang]
+近年法玛战争连连不断.装备缺乏.国王准备大量财宝奖赏劫榜勇士\
+<┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉/SCOLOR=69>\
+<规则说明:第一个上交物品的玩家获得奖励，每30分钟刷新皇榜!!/SCOLOR=254>\
+<┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉/SCOLOR=69>\
+\【皇榜奖励】<$str(A55)>元宝      <$str(A66)>经验\
+\【所需物品】<$str(A44)>   【皇榜状态】<$str(A11)> \
+\【劫 榜 人】【<$str(A22)>】<$str(A33)>劫榜!\
+<┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉/SCOLOR=69>\
+\　　　　<我要上交/@我要上交>（放错后果自负）       <『关闭对话』/@exit>\
+
+
+[@我要上交]
+#if
+EQUAL G111 1
+#act
+MESSAGEBOX 对不起！活动已结束，请等待皇榜重新刷新。
+break
+#if
+CHECKITEM <$str(A44)> 1
+#act
+goto @我要上交a
+break
+#ELSEact
+MESSAGEBOX 对不起！你背包没有"<$str(A44)>"
+
+[@我要上交a]
+#if
+EQUAL G111 0
+CHECKITEM <$str(A44)> 1
+#act
+MOV A22 {<$USERNAME>/AUTOCOLOR=254,168,191,100,250,70,245,253}
+MOV A33 <$DATETIME>
+MOV G111 1
+TAKE <$str(A44)> 1
+GAMEGOLD + <$str(A55)>
+CHANGEEXP + <$str(A66)>
+SendCenterMsg 222 0 【皇榜回收】玩家“%s”上交【<$str(A44)>】奖励<$str(A55)>元宝<$str(A66)>经验。
+goto @main
+break
+#if
+EQUAL G111 2
+CHECKITEM <$str(A44)> 1
+#act
+MOV A22 {<$USERNAME>/AUTOCOLOR=254,168,191,100,250,70,245,253}
+MOV A33 <$DATETIME>
+MOV G111 1
+TAKE <$str(A44)> 1
+GAMEGOLD + <$str(A55)>
+CHANGEEXP + <$str(A66)>
+SendCenterMsg 222 0 【皇榜回收】玩家“%s”上交【<$str(A44)>】成功劫榜..奖励<$str(A55)>元宝<$str(A66)>经验...
+goto @main
+break

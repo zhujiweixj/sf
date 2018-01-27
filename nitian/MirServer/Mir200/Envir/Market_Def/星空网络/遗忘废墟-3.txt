@@ -1,0 +1,110 @@
+[@main]
+年轻人,只要你包袱有100万金币,我就可以把你传送\
+到宝阁废墟,你想要去的话就准备好行军必备品后！\
+再来找我！\
+BOSS名称:烟花恶魔！\
+怪物暴率:<屠龙,嗜魂等终极武器赤月套装,40级重装,精品赤月等！>\
+进入条件:45级以上并且有100万金币！\ 　\
+
+<废墟⒈号房/@go1>    <废墟⒉号房/@go2>    <废墟⒊号房/@go3>    <废墟⒋号房/@go4>    \
+<废墟⒌号房/@go5>    <废墟⒍号房/@go6>    <废墟⒎号房/@go7>    <废墟⒏号房/@go8>    \
+
+
+
+[@go1]
+#if
+CHECKLEVELEX > 44
+checkgold 1000000
+#act
+take 金币 1000000
+mapmove 1hao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【宝阁废墟】大量宝藏等待挖掘！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您金币数量不够，或等级不足！！
+
+[@go2]
+#if
+CHECKLEVELEX > 44
+checkgold 1000000
+#act
+take 金币 1000000
+mapmove 2hao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【宝阁废墟】大量宝藏等待挖掘！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您金币数量不够，或等级不足！！
+
+[@go3]
+#if
+CHECKLEVELEX > 44
+checkgold 1000000
+#act
+take 金币 1000000
+mapmove 3hao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【宝阁废墟】大量宝藏等待挖掘！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您金币数量不够，或等级不足！！
+
+[@go4]
+#if
+CHECKLEVELEX > 44
+checkgold 1000000
+#act
+take 金币 1000000
+mapmove 4hao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【宝阁废墟】大量宝藏等待挖掘！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您金币数量不够，或等级不足！！
+
+
+[@go5]
+#if
+CHECKLEVELEX > 44
+checkgold 1000000
+#act
+take 金币 1000000
+mapmove 5hao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【宝阁废墟】大量宝藏等待挖掘！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您金币数量不够，或等级不足！！
+
+[@go6]
+#if
+CHECKLEVELEX > 44
+checkgold 1000000
+#act
+take 金币 1000000
+mapmove 6hao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【宝阁废墟】大量宝藏等待挖掘！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您金币数量不够，或等级不足！！
+
+[@go7]
+#if
+CHECKLEVELEX > 44
+checkgold 1000000
+#act
+take 金币 1000000
+mapmove 7hao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【宝阁废墟】大量宝藏等待挖掘！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您金币数量不够，或等级不足！！
+[@go8]
+#if
+CHECKLEVELEX > 44
+checkgold 1000000
+#act
+take 金币 1000000
+mapmove 8hao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【宝阁废墟】大量宝藏等待挖掘！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您金币数量不够，或等级不足！！
+
+;-b--b--Q -Q---156 598018---

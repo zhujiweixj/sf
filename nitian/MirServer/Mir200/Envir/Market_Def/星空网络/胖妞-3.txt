@@ -1,0 +1,616 @@
+(@@InPutInteger)
+[@MAIN]
+#If
+ISADMIN
+#Act
+MOV N47 2
+#SAY
+欢迎光临，这里是抢庄猜点赌场，你所拥有的元宝：【<$GAMEGOLD>】\
+庄家姓名：【<$STR(A34)>】　庄家本钱数：【<$STR(G29)>】\
+╔┈┈┈┈╗  　╔┈┈┈┈╗ 　 ╔┈┈┈┈╗　  ╔┈┈┈┈╗\
+┊<查看说明/@Help>┊　  ┊<开始抢庄/@@InPutInteger40>┊ 　 ┊<下注押大/@@InPutInteger41>┊ 　 ┊<下注押小/@@InPutInteger42>┊\
+╚┈┈┈┈╝　  ╚┈┈┈┈╝　  ╚┈┈┈┈╝　  ╚┈┈┈┈╝\
+押大总金额：【<$STR(G13)>】　　　　　　　　　　　剩余时间：<$STR(G15)>\
+押小总金额：【<$STR(G14)>】\
+你的下注情况：你下注【<$STR(N43)>】元宝押【<$STR(S33)>】　<控制点数/@控制点数>|<刷新/@MAIN>|<返回土城/@htc>\
+<提示：押大赢大，押小赢小，豹子通吃！本游戏系统不收取税金！！/SCOLOR=180>\
+#ELSEACT
+GOTO @MAIN_1
+
+[@控制点数]
+#IF
+SMALL G12 117
+#ACT
+#SAY
+  \ \
+<随机开出大/@开出大> | <随机开出小/@开出小> | <返回/@MAIN>
+
+
+[@开出大]
+#IF
+SMALL G12 118
+#ACT
+MOVR G220 20
+INC G220 1
+MOV G221 1
+GOTO @随机大
+#SAY
+  \ \
+已将点数控制为大！| <返回/@MAIN>
+
+[@开出小]
+#IF
+SMALL G12 118
+#ACT
+MOVR G220 20
+INC G220 1
+MOV G221 2
+GOTO @随机小
+#SAY
+  \ \
+已将点数控制为小！| <返回/@MAIN>
+
+
+[@随机大]
+#IF
+EQUAL G220 1
+#ACT
+MOV G42 4
+MOV G43 4
+MOV G44 3
+BREAK
+#IF
+EQUAL G220 2
+#ACT
+MOV G42 5
+MOV G43 4
+MOV G44 2
+BREAK
+#IF
+EQUAL G220 3
+#ACT
+MOV G42 3
+MOV G43 3
+MOV G44 6
+BREAK
+#IF
+EQUAL G220 4
+#ACT
+MOV G42 5
+MOV G43 3
+MOV G44 6
+BREAK
+#IF
+EQUAL G220 5
+#ACT
+MOV G42 6
+MOV G43 6
+MOV G44 2
+BREAK
+#IF
+EQUAL G220 6
+#ACT
+MOV G42 3
+MOV G43 2
+MOV G44 6
+BREAK
+#IF
+EQUAL G220 7
+#ACT
+MOV G42 3
+MOV G43 5
+MOV G44 4
+BREAK
+#IF
+EQUAL G220 8
+#ACT
+MOV G42 4
+MOV G43 5
+MOV G44 6
+BREAK
+#IF
+EQUAL G220 9
+#ACT
+MOV G42 5
+MOV G43 5
+MOV G44 2
+BREAK
+#IF
+EQUAL G220 10
+#ACT
+MOV G42 5
+MOV G43 6
+MOV G44 1
+BREAK
+#IF
+EQUAL G220 11
+#ACT
+MOV G42 5
+MOV G43 5
+MOV G44 6
+BREAK
+#IF
+EQUAL G220 12
+#ACT
+MOV G42 6
+MOV G43 3
+MOV G44 4
+BREAK
+#IF
+EQUAL G220 13
+#ACT
+MOV G42 4
+MOV G43 5
+MOV G44 6
+BREAK
+#IF
+EQUAL G220 14
+#ACT
+MOV G42 5
+MOV G43 3
+MOV G44 6
+BREAK
+#IF
+EQUAL G220 15
+#ACT
+MOV G42 6
+MOV G43 4
+MOV G44 5
+BREAK
+#IF
+EQUAL G220 16
+#ACT
+MOV G42 4
+MOV G43 4
+MOV G44 5
+BREAK
+#IF
+EQUAL G220 17
+#ACT
+MOV G42 4
+MOV G43 6
+MOV G44 1
+BREAK
+#IF
+EQUAL G220 18
+#ACT
+MOV G42 6
+MOV G43 3
+MOV G44 3
+BREAK
+#IF
+EQUAL G220 19
+#ACT
+MOV G42 3
+MOV G43 5
+MOV G44 6
+BREAK
+#IF
+EQUAL G220 20
+#ACT
+MOV G42 4
+MOV G43 4
+MOV G44 6
+BREAK
+
+[@随机小]
+#IF
+EQUAL G220 1
+#ACT
+MOV G42 1
+MOV G43 2
+MOV G44 3
+BREAK
+#IF
+EQUAL G220 2
+#ACT
+MOV G42 6
+MOV G43 1
+MOV G44 2
+BREAK
+#IF
+EQUAL G220 3
+#ACT
+MOV G42 3
+MOV G43 5
+MOV G44 1
+BREAK
+#IF
+EQUAL G220 4
+#ACT
+MOV G42 3
+MOV G43 4
+MOV G44 2
+BREAK
+#IF
+EQUAL G220 5
+#ACT
+MOV G42 5
+MOV G43 1
+MOV G44 1
+BREAK
+#IF
+EQUAL G220 6
+#ACT
+MOV G42 2
+MOV G43 1
+MOV G44 6
+BREAK
+#IF
+EQUAL G220 7
+#ACT
+MOV G42 3
+MOV G43 3
+MOV G44 1
+BREAK
+#IF
+EQUAL G220 8
+#ACT
+MOV G42 4
+MOV G43 2
+MOV G44 3
+BREAK
+#IF
+EQUAL G220 9
+#ACT
+MOV G42 2
+MOV G43 2
+MOV G44 5
+BREAK
+#IF
+EQUAL G220 10
+#ACT
+MOV G42 1
+MOV G43 4
+MOV G44 3
+BREAK
+#IF
+EQUAL G220 11
+#ACT
+MOV G42 3
+MOV G43 5
+MOV G44 2
+BREAK
+#IF
+EQUAL G220 12
+#ACT
+MOV G42 6
+MOV G43 2
+MOV G44 2
+BREAK
+#IF
+EQUAL G220 13
+#ACT
+MOV G42 5
+MOV G43 2
+MOV G44 1
+BREAK
+#IF
+EQUAL G220 14
+#ACT
+MOV G42 2
+MOV G43 5
+MOV G44 1
+BREAK
+#IF
+EQUAL G220 15
+#ACT
+MOV G42 6
+MOV G43 1
+MOV G44 3
+BREAK
+#IF
+EQUAL G220 16
+#ACT
+MOV G42 4
+MOV G43 1
+MOV G44 1
+BREAK
+#IF
+EQUAL G220 17
+#ACT
+MOV G42 1
+MOV G43 1
+MOV G44 2
+BREAK
+#IF
+EQUAL G220 18
+#ACT
+MOV G42 3
+MOV G43 1
+MOV G44 3
+BREAK
+#IF
+EQUAL G220 19
+#ACT
+MOV G42 3
+MOV G43 4
+MOV G44 1
+BREAK
+#IF
+EQUAL G220 10
+#ACT
+MOV G42 4
+MOV G43 2
+MOV G44 4
+BREAK
+
+
+[@MAIN_1]
+#Act
+MOV N47 2
+#SAY
+欢迎光临，这里是抢庄猜点赌场，你所拥有的元宝：【<$GAMEGOLD>】\
+庄家姓名：【<$STR(A34)>】　庄家本钱数：【<$STR(G29)>】\
+╔┈┈┈┈╗  　╔┈┈┈┈╗ 　 ╔┈┈┈┈╗　  ╔┈┈┈┈╗\
+┊<查看说明/@Help>┊　  ┊<开始抢庄/@@InPutInteger40>┊ 　 ┊<下注押大/@@InPutInteger41>┊ 　 ┊<下注押小/@@InPutInteger42>┊\
+╚┈┈┈┈╝　  ╚┈┈┈┈╝　  ╚┈┈┈┈╝　  ╚┈┈┈┈╝\
+押大总金额：【<$STR(G13)>】　　　　　　　　　　　剩余时间：<$STR(G15)>\
+押小总金额：【<$STR(G14)>】\
+你的下注情况：你下注【<$STR(N43)>】元宝押【<$STR(S33)>】　　<刷新/@MAIN_1>      <返回土城/@htc>\
+<提示：押大赢大，押小赢小，豹子通吃！本游戏系统不收取税金！！/SCOLOR=180>\
+[@@InPutInteger40]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger40
+[~InPutInteger40]
+#IF
+LARGE G12 60
+#ACT
+MESSAGEBOX [提示]：抢庄时间已经结束。请等待开局！
+MOV N40 0
+GOTO @MAIN
+BREAK
+#IF
+SMALL N40 100000
+#ACT
+MESSAGEBOX [提示]：请输入10000以上的数值！
+MOV N40 0
+GOTO @MAIN
+BREAK
+#IF
+LARGE N40 50000000
+#ACT
+MESSAGEBOX [提示]：请输入50000000以下的数值！
+MOV N40 0
+GOTO @MAIN
+BREAK
+#IF
+EQUAL A34 <$USERNAME>
+#ACT
+MOV N40 0
+MESSAGEBOX [提示]：你目前已经是庄家，无法重复坐庄。
+GOTO @MAIN
+BREAK
+#IF
+EQUAL N45 2
+#ACT
+MOV N40 0
+MESSAGEBOX [提示]：你已经下注押了大，无法坐庄！
+GOTO @MAIN
+BREAK
+#IF
+EQUAL N45 3
+#ACT
+MOV N40 0
+MESSAGEBOX [提示]：你已经下注押了小，无法坐庄！
+GOTO @MAIN
+BREAK
+#IF
+CHECKGAMEGOLD < <$STR(N40)>
+#ACT
+MESSAGEBOX [提示]：你身上的元宝不足。
+MOV N40 0
+GOTO @MAIN
+BREAK
+#IF
+LARGE N40 <$STR(G29)>
+#ACT
+GMEXECUTE 元宝 <$STR(A34)> + <$STR(G29)>
+GAMEGOLD - <$STR(N40)>
+MOV G29 <$STR(N40)>
+SendMSG 1 [赌庄胖妞]：玩家【%s】使用【<$STR(N40)>】个元宝坐庄。
+MOV A34 <$USERNAME>
+MOV N43 0
+MOV N44 1
+GOTO @MAIN
+MESSAGEBOX [提示]：使用【<$STR(N40)>】个元宝坐庄。
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你必须出多于【<$STR(G29)>】个元宝才能抢庄。
+MOV N40 0
+GOTO @MAIN
+BREAK
+
+[@@InPutInteger41]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger41
+[~InPutInteger41]
+#IF
+LARGE G12 120
+#ACT
+MESSAGEBOX [提示]：下注时间已经结束。请等待开局！
+MOV N41 0
+GOTO @MAIN
+BREAK
+#IF
+SMALL G12 61
+#ACT
+MESSAGEBOX [提示]：下注时间还没到，现在是抢庄时间。
+MOV N41 0
+GOTO @MAIN
+BREAK
+#IF
+SMALL N41 1
+#ACT
+MESSAGEBOX [提示]：请输入1以上的数值！
+MOV N41 0
+GOTO @MAIN
+BREAK
+#IF
+EQUAL A34 <$USERNAME>
+#ACT
+MOV N40 0
+MESSAGEBOX [提示]：你目前已经是庄家，无法下注。
+GOTO @MAIN
+BREAK
+#IF
+EQUAL N45 2
+#ACT
+MOV N41 0
+MESSAGEBOX [提示]：你已经下注押了大，无法重复下注！
+GOTO @MAIN
+BREAK
+#IF
+EQUAL N45 3
+#ACT
+MOV N41 0
+MESSAGEBOX [提示]：你已经下注押了小，无法重复下注！
+GOTO @MAIN
+BREAK
+#IF
+LARGE N41 <$STR(G16)>
+#ACT
+MOV N41 0
+MESSAGEBOX [提示]：对不起，庄家的本钱已达到上线不够赔了。\　　　　\目前你只可以下注【<$STR(G16)>】以下的元宝！
+GOTO @MAIN
+BREAK
+#IF
+EQUAL G18 1
+#ACT
+MOV N40 0
+MESSAGEBOX [提示]：请重新输入。
+GOTO @MAIN
+BREAK
+#IF
+CHECKGAMEGOLD > <$STR(N41)>
+#ACT
+MOV G18 1
+MOV N45 2
+MOV S33 大
+GAMEGOLD - <$STR(N41)>
+MOV N43 <$STR(N41)>
+INC G13 <$STR(N43)>
+MOV N44 1
+SendMSG 4 %s使用<$STR(N41)>个元宝下注押大。
+GOTO @MAIN
+MESSAGEBOX [提示]：使用【<$STR(N41)>】个元宝下注押大。
+MOV N41 0
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你身上的元宝不足。
+MOV N41 0
+GOTO @MAIN
+BREAK
+
+[@@InPutInteger42]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger42
+[~InPutInteger42]
+#IF
+LARGE G12 120
+#ACT
+MESSAGEBOX [提示]：下注时间已经结束。请等待开局！
+MOV N42 0
+GOTO @MAIN
+BREAK
+#IF
+SMALL G12 61
+#ACT
+MESSAGEBOX [提示]：下注时间还没到，现在是抢庄时间。
+MOV N42 0
+GOTO @MAIN
+BREAK
+#IF
+SMALL N42 1
+#ACT
+MESSAGEBOX [提示]：请输入1以上的数值！
+MOV N42 0
+GOTO @MAIN
+BREAK
+#IF
+EQUAL A34 <$USERNAME>
+#ACT
+MOV N40 0
+MESSAGEBOX [提示]：你目前已经是庄家，无法重复坐庄。
+GOTO @MAIN
+BREAK
+#IF
+EQUAL N45 2
+#ACT
+MOV N42 0
+MESSAGEBOX [提示]：你已经下注押了大，无法重复下注！
+GOTO @MAIN
+BREAK
+#IF
+EQUAL N45 3
+#ACT
+MOV N42 0
+MESSAGEBOX [提示]：你已经下注押了小，无法重复下注！
+GOTO @MAIN
+BREAK
+#IF
+LARGE N42 <$STR(G17)>
+#ACT
+MOV N42 0
+MESSAGEBOX [提示]：对不起，庄家的本钱已达到上线不够赔了。\　　　　\目前你只可以下注【<$STR(G17)>】以下的元宝！
+GOTO @MAIN
+BREAK
+#IF
+EQUAL G19 1
+#ACT
+MOV N40 0
+MESSAGEBOX [提示]：请重新输入。
+GOTO @MAIN
+BREAK
+#IF
+CHECKGAMEGOLD > <$STR(N42)>
+#ACT
+MOV G19 1
+MOV N45 3
+MOV S33 小
+GAMEGOLD - <$STR(N42)>
+MOV N43 <$STR(N42)>
+INC G14 <$STR(N43)>
+MOV N44 1
+SendMSG 4 %s使用<$STR(N42)>个元宝下注押小。
+GOTO @MAIN
+MESSAGEBOX [提示]：使用【<$STR(N42)>】个元宝下注押小。
+MOV N42 0
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你身上的元宝不足。
+MOV N42 0
+GOTO @MAIN
+BREAK
+
+[@Over]
+#IF
+#ACT
+MapMove 3 330 330
+BREAK
+
+[@htc]
+#IF
+#ACT
+mapmove 3 330 330
+break
+
+[@Help]
+猜点游戏规则：\
+(1)庄家坐庄后，其他玩家可下注，两分钟后三个骰子由庄家掷出，\
+骰子点数随机出现点数总和小于11代表小，点数总和大于10代表\
+大，三个点数相同代表豹子。\
+(2)押大赢大，押小赢小，豹子通吃！本游戏系统不收取税金。\
+(3)正在坐庄或已下注的玩家如下线将被视做弃权，损失下注元宝。\
+(4)玩家下注数不能超过庄家坐庄的元宝总和。\
+<返回/@MAIN>　　<离开/@EXIT>\
+[@IsInFilterList]
+#ACT
+MESSAGEBOX [错误]：输入数据中包含了非法字符，请重新编辑！
+

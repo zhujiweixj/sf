@@ -1,0 +1,30 @@
+{
+[@终极武器]
+#if
+random 3
+#act
+give 逆天神斩[圣] 1
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得<逆天神斩[圣]>1个！
+MessageBox 【充值★活动】恭喜您获得：<逆天神斩[圣]>1个！
+break
+
+#if
+random 3
+#act
+give 断魂神杖[圣] 1
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得<断魂神杖[圣]>1个！
+MessageBox 【充值★活动】恭喜您获得：<断魂神杖[圣]>1个！
+break
+
+#if
+random 3
+#act
+give 荣耀神扇[圣] 1
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得<荣耀神扇[圣]>1个！
+MessageBox 【充值★活动】恭喜您获得：<荣耀神扇[圣]>1个！
+break
+
+#if
+#act
+goto @终极武器
+}

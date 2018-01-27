@@ -1,0 +1,4663 @@
+[@main]
+<元宝/SCOLOR=250>可以<兑换装备/SCOLOR=58>，也可<恢复武器速度/SCOLOR=58>　<您有元宝/SCOLOR=250>：<$GAMEGOLD>个\　\
+<Img:11:0><兑换+45【套装】/@duihuanliebiao>　　 <Img:11:0><兑换+45【散件】/@sanjianduihuan>　\　
+<Img:11:0><兑换+25【散件】/@25sanjianduihuan>   <Img:11:0><恢复武器速度/@kaidkkss>  \
+<Img:11:0><【★清空背包物品★】/@说明书a>       <Img:11:0><【★6倍屠猪刀★】/@sssbzyd><Img:11:0>\
+
+<本服元宝狂爆，只要有耐心，装备就不会比RMB差！/SCOLOR=132>  <关闭窗口/@exit>\
+<元宝充值网银比例1：30W，具体查看充值NPC/SCOLOR=132>\　
+<100RMB送20RMB元宝，500RMB送200RMB元宝！充值网站自动赠送！多充多送~谢谢您的支持/SCOLOR=253>
+
+
+
+[@说明书a]
+#IF
+#SAY
+你想清理包裹吗？如果你有什么<重要的东西>千万不要放\   \
+在背包里！要是被清除了我可不负责！<切记把贵重物品存放仓库>\   \   \
+<清理包裹/@clearbagstara>  \   \
+
+
+[@clearbagstara]
+#IF
+#ACT
+GmExeCute 清理垃圾 Self
+SENDMSG 7 !!!!!!你的背包已经被清空!!!!!!
+SENDMSG 7 !!!!!!你的背包已经被清空!!!!!!
+SENDMSG 7 !!!!!!你的背包已经被清空!!!!!!
+break
+
+
+[@jingangshi2]
+　\　\
+金刚石通过以下两种方式获取\
+\
+<充值获取说明/@jingangshi3>\
+<怪物爆出说明/@jingangshi4>\　\
+<返回/@Main>
+
+[@kaidkkss]
+需要50W元宝恢复武器攻击速度!\　\
+
+<销毁武器减速度/@xiaohui1>一次性销毁全部减速度50W元宝\　\
+
+<返回/@Main>
+
+[@cjqhs]
+10个金刚石兑换一个超级强化石！\
+超级石头各大BOSS处也有爆，你确定要兑换吗？\　\
+<兑换1个/@换1个> | <兑换10个/@换10个>\　\
+<返回/@Main>
+
+[@换1个]
+#IF
+CHECKGAMEDIAMOND > 9
+CHECKBAGSIZE  1
+#ACT
+GAMEDIAMOND - 10
+GIVE 超级强化石 1
+SENDMSG 7 兑换成功!
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@换10个]
+#IF
+CHECKGAMEDIAMOND > 99
+CHECKBAGSIZE  10
+#ACT
+GAMEDIAMOND - 100
+GIVE 超级强化石 10
+SENDMSG 7 兑换成功!
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+
+[@kaidkkss1]
+#IF
+CHECKGAMEGOLD > 499999
+#ACT
+gamegold - 500000
+GmexEcute 改属性8 1 6 0
+SENDMSG 7 武器速度恢复正常。
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+
+[@jingangshi3]
+为了感谢大家对服务器的赞助和支持\
+元宝充值系统将自动奖励金刚石。\
+通过充值每领取10000元宝同时自动送金刚石1个。\
+比如网银充值10元，按照系统设置可以领取200000元宝\
+同时自动增加50W元宝。\
+点卡充值10元，按照系统设置可以领取150000元宝\
+同时自动增加金刚石15个。\
+短信充值2元，按照系统设置可以领取20000元宝\
+同时自动增加金刚石2个。\
+<返回/@Main>
+
+[@jingangshi4]
+\
+土药店每1小时自动刷新一只招财树\
+必爆金刚石1-5个\
+每次刷新系统将自动提示\
+终极地图各大BOSS处也会掉落\
+另外首次拿沙200金刚石\
+老区每日下午19点抢元宝活动，大量元宝等你拿\
+<返回/@Main>
+
+[@huishoujgs]
+金刚石回收可以换成元宝1:10000\
+<只可回收，不可购买。>\
+你确定要回收？\
+<回收金刚石50个/@huishoujj50>\
+<返回/@Main>
+
+[@huishoujj50]
+#IF
+CHECKGAMEDIAMOND > 49
+#ACT
+GAMEDIAMOND - 50
+gamegold + 500000
+SENDMSG 7 金刚石减少50个，元宝增加50万。
+break
+#ELSEACT
+messagebox 元宝数量不足
+
+[@jingangshi1]
+请选择以下你需要打捆的金刚石\
+<金刚石/@jj>\
+<金刚石10/@jj10>\
+<金刚石50/@jj50>\
+<金刚石100/@jj100>\
+<金刚石200/@jj200>\
+<金刚石500/@jj500>\
+双击金刚石即可自动解包\
+<返回/@Main>
+
+[@jj]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+give 金刚石
+break
+#ELSEACT
+messagebox 元宝数量不足
+
+[@jj10]
+#IF
+CHECKGAMEDIAMOND > 9
+#ACT
+GAMEDIAMOND - 10
+give 金刚石10
+break
+#ELSEACT
+messagebox 元宝数量不足
+
+[@jj50]
+#IF
+CHECKGAMEDIAMOND > 49
+#ACT
+GAMEDIAMOND - 50
+give 金刚石50
+break
+#ELSEACT
+messagebox 元宝数量不足
+
+[@jj100]
+#IF
+CHECKGAMEDIAMOND > 99
+#ACT
+GAMEDIAMOND - 100
+give 金刚石100
+break
+#ELSEACT
+messagebox 元宝数量不足
+
+[@jj200]
+#IF
+CHECKGAMEGOLD > 4999999
+#ACT
+gamegold - 5000000
+give 金刚石200
+break
+#ELSEACT
+messagebox 元宝数量不足
+
+[@jj500]
+#IF
+CHECKGAMEDIAMOND > 499
+#ACT
+GAMEDIAMOND - 500
+give 金刚石500
+break
+#ELSEACT
+messagebox 元宝数量不足
+
+
+[@duihuanliebiao]
+<★━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\
+　　<3500W元宝兑换极品+45战士/AUTOCOLOR=168,250,70,253>组合一套--<属性查看/@47hmshuxing>\
+　　<3500W元宝兑换极品+45法师/AUTOCOLOR=168,250,70,253>组合一套--<属性查看/@47mxshuxing>\
+　　<3500W元宝兑换极品+45道士/AUTOCOLOR=168,250,70,253>组合一套--<属性查看/@47zhshuxing>\
+<★━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\
+　　　　　　　╔┄┄┄┄╗　　╔┄┄┄┄╗\
+　　　　　　　┆<我要兑换/@duihuanmain1>┆　　┆  <返回/@main>  ┆\
+　　　　　　　╚┄┄┄┄╝　　╚┄┄┄┄╝\
+<★━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\
+
+[@duihuanmain1]
+请注意以下内容：否则损失后果自负\
+请注意以下内容：否则损失后果自负\
+请注意以下内容：否则损失后果自负\
+1、清空包裹任何物品(包括药品栏)，并且全身不佩戴任何装备\
+2、等级高于50，只领取本人所属职业、性别的装备\
+3、兑换领取装备过程中千万<不要下线>，领取成功之前千万<不要乱动>\\
+<我已经准备好了，下一步/@xxjiancha>\
+
+[@xxjiancha]
+#if
+CHECKBAGSIZE 46
+#act
+goto @xxjiancha1
+#elseact
+messagebox 为防止漏洞,请存放背包和身上佩带的所有物品.\注意：包括快捷药品栏
+
+[@xxjiancha1]
+#if
+CHECKUSEITEM 0
+#act
+messagebox 为防止漏洞,请存放背包和身上佩带的所有物品.\注意：包括快捷药品栏
+#elseact
+goto @xxjiancha2
+
+[@xxjiancha2]
+#if
+CHECKUSEITEM 1
+#act
+messagebox 为防止漏洞,请存放背包和身上佩带的所有物品.\注意：包括快捷药品栏
+#elseact
+goto @xxjiancha3
+
+[@xxjiancha3]
+#if
+CHECKUSEITEM 2
+#act
+messagebox 为防止漏洞,请存放背包和身上佩带的所有物品.\注意：包括快捷药品栏
+#elseact
+goto @xxjiancha4
+
+[@xxjiancha4]
+#if
+CHECKUSEITEM 3
+#act
+messagebox 为防止漏洞,请存放背包和身上佩带的所有物品.\注意：包括快捷药品栏
+#elseact
+goto @xxjiancha5
+
+[@xxjiancha5]
+#if
+CHECKUSEITEM 4
+#act
+messagebox 为防止漏洞,请存放背包和身上佩带的所有物品.\注意：包括快捷药品栏
+#elseact
+goto @xxjiancha6
+
+[@xxjiancha6]
+#if
+CHECKUSEITEM 5
+#act
+messagebox 为防止漏洞,请存放背包和身上佩带的所有物品.\注意：包括快捷药品栏
+#elseact
+goto @xxjiancha7
+
+[@xxjiancha7]
+#if
+CHECKUSEITEM 6
+#act
+messagebox 为防止漏洞,请存放背包和身上佩带的所有物品.\注意：包括快捷药品栏
+#elseact
+goto @xxjiancha8
+
+[@xxjiancha8]
+#if
+CHECKUSEITEM 7
+#act
+messagebox 为防止漏洞,请存放背包和身上佩带的所有物品.\注意：包括快捷药品栏
+#elseact
+goto @xxjiancha9
+
+[@xxjiancha9]
+#if
+CHECKUSEITEM 7
+#act
+messagebox 为防止漏洞,请存放背包和身上佩带的所有物品.\注意：包括快捷药品栏
+#elseact
+goto @duihuanmain
+
+[@duihuanmain]
+<★━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\
+<3500W元宝兑换极品+45战士组合套装/@47hongmo>\
+<3500W元宝兑换极品+45法师组合套装/@47moxue>\
+<3500W元宝兑换极品+45道士组合套装/@47daoshi>\
+<★━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\
+
+
+[@47hmshuxing]
+贵族怒斩攻击+47\
+贵族死神手镯+45\
+贵族死神手镯+45\
+贵族虹魔戒指+45 攻速+3\
+贵族虹魔戒指+45 攻速+3\
+贵族记忆项链+45 幸运+2\
+贵族天魔神甲+47 总攻击+53\
+贵族圣战头盔+45\
+贵族勋章[战]总攻击20　　<我要兑换/@duihuanmain1>　　<返回/@duihuanliebiao>\
+
+
+[@47mxshuxing]
+贵族龙牙魔法+47\
+贵族魔血手镯+45 Hp+100\
+贵族魔血手镯+45 Hp+100\
+贵族法神戒指+45\
+贵族法神戒指+45\
+贵族灯笼项链+45 幸运+2\
+贵族法神披风+47 总魔法+56\
+贵族法神头盔+45\
+贵族勋章[法]总魔法20　　<我要兑换/@duihuanmain1>　　<返回/@duihuanliebiao>\
+
+[@47zhshuxing]
+贵族霸者道术+47\
+贵族避邪手镯+45 敏捷+6\
+贵族避邪手镯+45 敏捷+6\
+贵族天尊戒指+45\
+贵族天尊戒指+45\
+贵族白色虎齿+45 幸运+2\
+贵族天尊道袍+47 总道术+56\
+贵族天尊头盔+45\
+贵族勋章[道]总道术20　　<我要兑换/@duihuanmain1>　　<返回/@duihuanliebiao>\
+
+
+[@37shuxing]
+【37战士套】  <【37法师套】/@37shuxing1>  <【37道士套】/@37shuxing2>\
+裁决之杖攻击+22\
+骑士手镯极品+30\
+骑士手镯极品+30\
+力量戒指极品+30\
+力量戒指极品+30\
+天魔神甲极品+30\
+黑铁头盔极品+30\
+绿色项链极品+30\
+荣誉勋章43号+6\
+
+[@37shuxing1]
+<【37战士套】/@37shuxing>  【37法师套】  <【37道士套】/@37shuxing2>\
+骨玉权杖魔法+22\
+龙之手镯极品+30\
+龙之手镯极品+30\
+紫碧螺  极品+30\
+紫碧螺  极品+30\
+法神披风极品+30\
+道士头盔极品+30\
+恶魔铃铛极品+30\
+荣誉勋章44号+6\
+
+[@37shuxing2]
+<【37战士套】/@37shuxing>  <【37法师套】/@37shuxing1>  【37道士套】\
+龙纹剑道术+22\
+三眼手镯极品+30\
+三眼手镯极品+30\
+泰坦戒指极品+30\
+泰坦戒指极品+30\
+天尊道袍极品+30\
+记忆头盔极品+30\
+灵魂项链极品+30\
+荣誉勋章45号+6\
+
+[@42shuxing]
+【42战士套】  <【42法师套】/@42shuxing1>  <【42道士套】/@42shuxing2>\
+屠龙攻击+32\
+圣战手镯极品+35\
+圣战手镯极品+35\
+圣战戒指极品+35\
+圣战戒指极品+35\
+天魔神甲极品+35\
+圣战头盔极品+35\
+圣战项链极品+35\
+荣誉勋章43号+9\
+
+[@42shuxing1]
+<【42战士套】/@42shuxing>  【42法师套】  <【42道士套】/@42shuxing2>\
+嗜魂法杖魔法+32\
+法神手镯极品+35\
+法神手镯极品+35\
+法神戒指极品+35\
+法神戒指极品+35\
+法神披风极品+35\
+法神头盔极品+35\
+法神项链极品+35\
+荣誉勋章44号+9\
+
+[@42shuxing2]
+<【42战士套】/@42shuxing>  <【42法师套】/@42shuxing1>  【42道士套】\
+逍遥扇道术+32\
+天尊手镯极品+35\
+天尊手镯极品+35\
+天尊戒指极品+35\
+天尊戒指极品+35\
+天尊道袍极品+35\
+天尊头盔极品+35\
+天尊项链极品+35\
+荣誉勋章45号+9\
+
+[@47shuxing]
+【47战士套】  <【47法师套】/@47shuxing1>  <【47道士套】/@47shuxing2>\
+精品屠龙攻击+40\
+精品圣战手镯极品+40\
+精品圣战手镯极品+40\
+精品圣战戒指极品+40\
+精品圣战戒指极品+40\
+精品天魔神甲极品+40\
+精品圣战头盔极品+40\
+精品圣战项链极品+40\
+荣誉勋章43号+12\
+
+[@47shuxing1]
+<【47战士套】/@47shuxing>  【47法师套】  <【47道士套】/@47shuxing2>\
+精品嗜魂法杖魔法+40\
+精品法神手镯极品+40\
+精品法神手镯极品+40\
+精品法神戒指极品+40\
+精品法神戒指极品+40\
+精品法神披风极品+40\
+精品法神头盔极品+40\
+精品法神项链极品+40\
+荣誉勋章44号+12\
+
+[@47shuxing2]
+<【47战士套】/@47shuxing>  <【47法师套】/@47shuxing1>  【47道士套】\
+精品逍遥扇道术+40\
+精品天尊手镯极品+40\
+精品天尊手镯极品+40\
+精品天尊戒指极品+40\
+精品天尊戒指极品+40\
+精品天尊道袍极品+40\
+精品天尊头盔极品+40\
+精品天尊项链极品+40\
+荣誉勋章45号+12\
+
+[@37zhuoyue]
+请一定正确选择自己的职业和性别，否则损失后果自负\
+<男战士/@nanzhan37cha>极品祖玛套共9件\
+<女战士/@nvzhan37cha>极品祖玛套共9件\
+<男法师/@nanfa37cha>极品祖玛套共9件\
+<女法师/@nvfa37cha>极品祖玛套共9件\
+<男道士/@nanda37cha>极品祖玛套共9件\
+<女道士/@nvda37cha>极品祖玛套共9件\
+
+[@42zhuoyue]
+请一定正确选择自己的职业和性别，否则损失后果自负\
+<男战士/@nanzhan42cha>极品赤月套共9件\
+<女战士/@nvzhan42cha>极品赤月套共9件\
+<男法师/@nanfa42cha>极品赤月套共9件\
+<女法师/@nvfa42cha>极品赤月套共9件\
+<男道士/@nanda42cha>极品赤月套共9件\
+<女道士/@nvda42cha>极品赤月套共9件\
+
+[@47zhuoyue]
+请一定正确选择自己的职业和性别，否则损失后果自负\
+<男战士/@nanzhan47cha>精品赤月套共9件\
+<女战士/@nvzhan47cha>精品赤月套共9件\
+<男法师/@nanfa47cha>精品赤月套共9件\
+<女法师/@nvfa47cha>精品赤月套共9件\
+<男道士/@nanda47cha>精品赤月套共9件\
+<女道士/@nvda47cha>精品赤月套共9件\
+
+[@47hongmo]
+请一定正确选择自己的职业和性别，否则损失后果自负\
+<男战组合/@nanhongmo47cha>贵族天魔+贵族怒斩+贵族圣战首饰+贵族勋章\ \
+<女战组合/@nvhongmo47cha>贵族宝甲+贵族怒斩+贵族圣战首饰+贵族勋章\
+攻击防御属性较好，另带<攻击速度>属性\
+[@47moxue]
+请一定正确选择自己的职业和性别，否则损失后果自负\
+<男法组合/@nanmoxue47cha>贵族披风+贵族龙牙+贵族首饰+贵族勋章\ \
+<女法组合/@nvmoxue47cha>贵族羽衣+贵族龙牙+贵族首饰+贵族勋章\
+魔法防御属性较好，另带<加血>属性\
+
+[@47daoshi]
+请一定正确选择自己的职业和性别，否则损失后果自负\
+<男道组合/@nandaoshi47cha>贵族道袍+贵族霸者+贵族首饰+贵族勋章\ \
+<女道组合/@nvdaoshi47cha>贵族天师+贵族霸者+贵族首饰+贵族勋章\
+魔法防御属性较好，另带<敏捷>属性\
+
+[@nanzhan37cha]
+#IF
+CHECKGAMEDIAMOND > 187
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanzhan37
+#elseact
+messagebox 元宝数量不足
+
+[@nanzhan37]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanzhan37a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanzhan37a]
+#if
+CHECKGAMEDIAMOND > 187
+#act
+GAMEDIAMOND - 188
+give 裁决之杖 1
+give 天魔神甲 1
+give 力量戒指 2
+give 骑士手镯 2
+give 绿色项链 1
+give 黑铁头盔 1
+give 荣誉勋章43号 1
+SendCenterMsg 254 0 [%s]使用金刚石188个，成功兑换一套极品+30装备！ 1
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+AutoTakeOnItem 裁决之杖 1
+AutoTakeOnItem 天魔神甲 0
+AutoTakeOnItem 荣誉勋章43号 2
+AutoTakeOnItem 骑士手镯 5
+AutoTakeOnItem 骑士手镯 6
+AutoTakeOnItem 力量戒指 7
+AutoTakeOnItem 力量戒指 8
+AutoTakeOnItem 绿色项链 3
+AutoTakeOnItem 黑铁头盔 4
+GmexEcute 改属性 0 2 30
+GmexEcute 改属性 1 0 22
+GmexEcute 改属性 4 2 30
+GmexEcute 改属性 3 2 30
+GmexEcute 改属性 2 2 6
+GmexEcute 改属性 5 2 30
+GmexEcute 改属性 6 2 30
+GmexEcute 改属性 7 2 30
+GmexEcute 改属性 8 2 30
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvzhan37cha]
+#IF
+CHECKGAMEDIAMOND > 187
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvzhan37
+#elseact
+messagebox 元宝数量不足
+
+[@nvzhan37]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvzhan37a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvzhan37a]
+#if
+CHECKGAMEDIAMOND > 187
+#act
+GAMEDIAMOND - 188
+give 裁决之杖 1
+give 圣战宝甲 1
+give 力量戒指 2
+give 骑士手镯 2
+give 绿色项链 1
+give 黑铁头盔 1
+give 荣誉勋章43号 1
+SendCenterMsg 254 0 [%s]使用金刚石188个，成功兑换一套极品+30装备！ 1
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+AutoTakeOnItem 裁决之杖 1
+AutoTakeOnItem 圣战宝甲 0
+AutoTakeOnItem 荣誉勋章43号 2
+AutoTakeOnItem 骑士手镯 5
+AutoTakeOnItem 骑士手镯 6
+AutoTakeOnItem 力量戒指 7
+AutoTakeOnItem 力量戒指 8
+AutoTakeOnItem 绿色项链 3
+AutoTakeOnItem 黑铁头盔 4
+GmexEcute 改属性 0 2 30
+GmexEcute 改属性 1 0 22
+GmexEcute 改属性 4 2 30
+GmexEcute 改属性 3 2 30
+GmexEcute 改属性 2 2 6
+GmexEcute 改属性 5 2 30
+GmexEcute 改属性 6 2 30
+GmexEcute 改属性 7 2 30
+GmexEcute 改属性 8 2 30
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+
+[@nanzhan42cha]
+#IF
+CHECKGAMEDIAMOND > 287
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanzhan42
+#elseact
+messagebox 元宝数量不足
+
+[@nanzhan42]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanzhan42a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanzhan42a]
+#if
+CHECKGAMEDIAMOND > 287
+#act
+GAMEDIAMOND - 288
+give 屠龙 1
+give 天魔神甲 1
+give 圣战戒指 2
+give 圣战手镯 2
+give 圣战项链 1
+give 圣战头盔 1
+give 荣誉勋章43号 1
+SendCenterMsg 254 0 [%s]使用金刚石288个，成功兑换一套极品+35装备！ 1
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+AutoTakeOnItem 屠龙 1
+AutoTakeOnItem 天魔神甲 0
+AutoTakeOnItem 荣誉勋章43号 2
+AutoTakeOnItem 圣战手镯 5
+AutoTakeOnItem 圣战手镯 6
+AutoTakeOnItem 圣战戒指 7
+AutoTakeOnItem 圣战戒指 8
+AutoTakeOnItem 圣战项链 3
+AutoTakeOnItem 圣战头盔 4
+GmexEcute 改属性 0 2 35
+GmexEcute 改属性 1 0 32
+GmexEcute 改属性 4 2 35
+GmexEcute 改属性 3 2 35
+GmexEcute 改属性 2 2 9
+GmexEcute 改属性 5 2 35
+GmexEcute 改属性 6 2 35
+GmexEcute 改属性 7 2 35
+GmexEcute 改属性 8 2 35
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvzhan42cha]
+#IF
+CHECKGAMEDIAMOND > 287
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvzhan42
+#elseact
+messagebox 元宝数量不足
+
+[@nvzhan42]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvzhan42a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvzhan42a]
+#if
+CHECKGAMEDIAMOND > 287
+#act
+GAMEDIAMOND - 288
+give 屠龙 1
+give 圣战宝甲 1
+give 圣战戒指 2
+give 圣战手镯 2
+give 圣战项链 1
+give 圣战头盔 1
+give 荣誉勋章43号 1
+SendCenterMsg 254 0 [%s]使用金刚石288个，成功兑换一套极品+35装备！ 1
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+AutoTakeOnItem 屠龙 1
+AutoTakeOnItem 圣战宝甲 0
+AutoTakeOnItem 荣誉勋章43号 2
+AutoTakeOnItem 圣战手镯 5
+AutoTakeOnItem 圣战手镯 6
+AutoTakeOnItem 圣战戒指 7
+AutoTakeOnItem 圣战戒指 8
+AutoTakeOnItem 圣战项链 3
+AutoTakeOnItem 圣战头盔 4
+GmexEcute 改属性 0 2 35
+GmexEcute 改属性 1 0 32
+GmexEcute 改属性 4 2 35
+GmexEcute 改属性 3 2 35
+GmexEcute 改属性 2 2 9
+GmexEcute 改属性 5 2 35
+GmexEcute 改属性 6 2 35
+GmexEcute 改属性 7 2 35
+GmexEcute 改属性 8 2 35
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nanzhan47cha]
+#IF
+CHECKGAMEDIAMOND > 387
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanzhan47
+#elseact
+messagebox 元宝数量不足
+
+[@nanzhan47]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanzhan47a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanzhan47a]
+#if
+CHECKGAMEDIAMOND > 387
+#act
+GAMEDIAMOND - 388
+give 精品屠龙 1
+give 精品天魔神甲 1
+give 精品圣战戒指 2
+give 精品圣战手镯 2
+give 精品圣战项链 1
+give 精品圣战头盔 1
+give 荣誉勋章43号 1
+SendCenterMsg 254 0 [%s]使用金刚石388个，成功兑换一套极品+40装备！ 1
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+AutoTakeOnItem 精品屠龙 1
+AutoTakeOnItem 精品天魔神甲 0
+AutoTakeOnItem 荣誉勋章43号 2
+AutoTakeOnItem 精品圣战手镯 5
+AutoTakeOnItem 精品圣战手镯 6
+AutoTakeOnItem 精品圣战戒指 7
+AutoTakeOnItem 精品圣战戒指 8
+AutoTakeOnItem 精品圣战项链 3
+AutoTakeOnItem 精品圣战头盔 4
+GmexEcute 改属性 0 2 40
+GmexEcute 改属性 1 0 42
+GmexEcute 改属性 4 2 40
+GmexEcute 改属性 3 2 40
+GmexEcute 改属性 2 2 12
+GmexEcute 改属性 5 2 40
+GmexEcute 改属性 6 2 40
+GmexEcute 改属性 7 2 40
+GmexEcute 改属性 8 2 40
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvzhan47cha]
+#IF
+CHECKGAMEDIAMOND > 387
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvzhan47
+#elseact
+messagebox 元宝数量不足
+
+[@nvzhan47]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvzhan47a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvzhan47a]
+#if
+CHECKGAMEDIAMOND > 387
+#act
+GAMEDIAMOND - 388
+give 精品屠龙 1
+give 精品圣战宝甲 1
+give 精品圣战戒指 2
+give 精品圣战手镯 2
+give 精品圣战项链 1
+give 精品圣战头盔 1
+give 荣誉勋章43号 1
+SendCenterMsg 254 0 [%s]使用金刚石388个，成功兑换一套极品+40装备！ 1
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+AutoTakeOnItem 精品屠龙 1
+AutoTakeOnItem 精品圣战宝甲 0
+AutoTakeOnItem 荣誉勋章43号 2
+AutoTakeOnItem 精品圣战手镯 5
+AutoTakeOnItem 精品圣战手镯 6
+AutoTakeOnItem 精品圣战戒指 7
+AutoTakeOnItem 精品圣战戒指 8
+AutoTakeOnItem 精品圣战项链 3
+AutoTakeOnItem 精品圣战头盔 4
+GmexEcute 改属性 0 2 40
+GmexEcute 改属性 1 0 42
+GmexEcute 改属性 4 2 40
+GmexEcute 改属性 3 2 40
+GmexEcute 改属性 2 2 12
+GmexEcute 改属性 5 2 40
+GmexEcute 改属性 6 2 40
+GmexEcute 改属性 7 2 40
+GmexEcute 改属性 8 2 40
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+
+[@nanfa37cha]
+#IF
+CHECKGAMEDIAMOND > 187
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanfa37
+#elseact
+messagebox 元宝数量不足
+
+[@nanfa37]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanfa37a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanfa37a]
+#if
+CHECKGAMEDIAMOND > 187
+#act
+GAMEDIAMOND - 188
+give 骨玉权杖 1
+give 法神披风 1
+give 紫碧螺 2
+give 龙之手镯 2
+give 恶魔铃铛 1
+give 道士头盔 1
+give 荣誉勋章44号 1
+SendCenterMsg 254 0 [%s]使用金刚石188个，成功兑换一套极品+30装备！ 1
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+AutoTakeOnItem 骨玉权杖 1
+AutoTakeOnItem 法神披风 0
+AutoTakeOnItem 荣誉勋章44号 2
+AutoTakeOnItem 龙之手镯 5
+AutoTakeOnItem 龙之手镯 6
+AutoTakeOnItem 紫碧螺 7
+AutoTakeOnItem 紫碧螺 8
+AutoTakeOnItem 恶魔铃铛 3
+AutoTakeOnItem 道士头盔 4
+GmexEcute 改属性 0 3 30
+GmexEcute 改属性 1 1 20
+GmexEcute 改属性 4 3 30
+GmexEcute 改属性 3 3 30
+GmexEcute 改属性 2 3 6
+GmexEcute 改属性 5 3 30
+GmexEcute 改属性 6 3 30
+GmexEcute 改属性 7 3 30
+GmexEcute 改属性 8 3 30
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvfa37cha]
+#IF
+CHECKGAMEDIAMOND > 187
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvfa37
+#elseact
+messagebox 元宝数量不足
+
+[@nvfa37]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvfa37a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvfa37a]
+#if
+CHECKGAMEDIAMOND > 187
+#act
+GAMEDIAMOND - 188
+give 骨玉权杖 1
+give 霓裳羽衣 1
+give 紫碧螺 2
+give 龙之手镯 2
+give 恶魔铃铛 1
+give 道士头盔 1
+give 荣誉勋章44号 1
+SendCenterMsg 254 0 [%s]使用金刚石188个，成功兑换一套极品+30装备！ 1
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+AutoTakeOnItem 骨玉权杖 1
+AutoTakeOnItem 霓裳羽衣 0
+AutoTakeOnItem 荣誉勋章44号 2
+AutoTakeOnItem 龙之手镯 5
+AutoTakeOnItem 龙之手镯 6
+AutoTakeOnItem 紫碧螺 7
+AutoTakeOnItem 紫碧螺 8
+AutoTakeOnItem 恶魔铃铛 3
+AutoTakeOnItem 道士头盔 4
+GmexEcute 改属性 0 3 30
+GmexEcute 改属性 1 1 20
+GmexEcute 改属性 4 3 30
+GmexEcute 改属性 3 3 30
+GmexEcute 改属性 2 3 6
+GmexEcute 改属性 5 3 30
+GmexEcute 改属性 6 3 30
+GmexEcute 改属性 7 3 30
+GmexEcute 改属性 8 3 30
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+
+
+[@nanfa42cha]
+#IF
+CHECKGAMEDIAMOND > 287
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanfa42
+#elseact
+messagebox 元宝数量不足
+
+[@nanfa42]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanfa42a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanfa42a]
+#if
+CHECKGAMEDIAMOND > 287
+#act
+GAMEDIAMOND - 288
+give 嗜魂法杖 1
+give 法神披风 1
+give 法神戒指 2
+give 法神手镯 2
+give 法神项链 1
+give 法神头盔 1
+give 荣誉勋章44号 1
+SendCenterMsg 254 0 [%s]使用金刚石288个，成功兑换一套极品+35装备！ 1
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+AutoTakeOnItem 嗜魂法杖 1
+AutoTakeOnItem 法神披风 0
+AutoTakeOnItem 荣誉勋章44号 2
+AutoTakeOnItem 法神手镯 5
+AutoTakeOnItem 法神手镯 6
+AutoTakeOnItem 法神戒指 7
+AutoTakeOnItem 法神戒指 8
+AutoTakeOnItem 法神项链 3
+AutoTakeOnItem 法神头盔 4
+GmexEcute 改属性 0 3 35
+GmexEcute 改属性 1 1 25
+GmexEcute 改属性 4 3 35
+GmexEcute 改属性 3 3 35
+GmexEcute 改属性 2 3 9
+GmexEcute 改属性 5 3 35
+GmexEcute 改属性 6 3 35
+GmexEcute 改属性 7 3 35
+GmexEcute 改属性 8 3 35
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvfa42cha]
+#IF
+CHECKGAMEDIAMOND > 287
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvfa42
+#elseact
+messagebox 元宝数量不足
+
+[@nvfa42]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvfa42a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvfa42a]
+#if
+CHECKGAMEDIAMOND > 287
+#act
+GAMEDIAMOND - 288
+give 嗜魂法杖 1
+give 霓裳羽衣 1
+give 法神戒指 2
+give 法神手镯 2
+give 法神项链 1
+give 法神头盔 1
+give 荣誉勋章44号 1
+SendCenterMsg 254 0 [%s]使用金刚石288个，成功兑换一套极品+35装备！ 1
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+AutoTakeOnItem 嗜魂法杖 1
+AutoTakeOnItem 霓裳羽衣 0
+AutoTakeOnItem 荣誉勋章44号 2
+AutoTakeOnItem 法神手镯 5
+AutoTakeOnItem 法神手镯 6
+AutoTakeOnItem 法神戒指 7
+AutoTakeOnItem 法神戒指 8
+AutoTakeOnItem 法神项链 3
+AutoTakeOnItem 法神头盔 4
+GmexEcute 改属性 0 3 35
+GmexEcute 改属性 1 1 25
+GmexEcute 改属性 4 3 35
+GmexEcute 改属性 3 3 35
+GmexEcute 改属性 2 3 9
+GmexEcute 改属性 5 3 35
+GmexEcute 改属性 6 3 35
+GmexEcute 改属性 7 3 35
+GmexEcute 改属性 8 3 35
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+
+[@nanfa47cha]
+#IF
+CHECKGAMEDIAMOND > 387
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanfa47
+#elseact
+messagebox 元宝数量不足
+
+[@nanfa47]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanfa47a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanfa47a]
+#if
+CHECKGAMEDIAMOND > 387
+#act
+GAMEDIAMOND - 388
+give 精品嗜魂法杖 1
+give 精品法神披风 1
+give 精品法神戒指 2
+give 精品法神手镯 2
+give 精品法神项链 1
+give 精品法神头盔 1
+give 荣誉勋章44号 1
+SendCenterMsg 254 0 [%s]使用金刚石388个，成功兑换一套极品+35装备！ 1
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+35装备
+AutoTakeOnItem 精品嗜魂法杖 1
+AutoTakeOnItem 精品法神披风 0
+AutoTakeOnItem 荣誉勋章44号 2
+AutoTakeOnItem 精品法神手镯 5
+AutoTakeOnItem 精品法神手镯 6
+AutoTakeOnItem 精品法神戒指 7
+AutoTakeOnItem 精品法神戒指 8
+AutoTakeOnItem 精品法神项链 3
+AutoTakeOnItem 精品法神头盔 4
+GmexEcute 改属性 0 3 40
+GmexEcute 改属性 1 1 30
+GmexEcute 改属性 4 3 40
+GmexEcute 改属性 3 3 40
+GmexEcute 改属性 2 3 12
+GmexEcute 改属性 5 3 40
+GmexEcute 改属性 6 3 40
+GmexEcute 改属性 7 3 40
+GmexEcute 改属性 8 3 40
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvfa47cha]
+#IF
+CHECKGAMEDIAMOND > 387
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvfa47
+#elseact
+messagebox 元宝数量不足
+
+[@nvfa47]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvfa47a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvfa47a]
+#if
+CHECKGAMEDIAMOND > 387
+#act
+GAMEDIAMOND - 388
+give 精品嗜魂法杖 1
+give 精品霓裳羽衣 1
+give 精品法神戒指 2
+give 精品法神手镯 2
+give 精品法神项链 1
+give 精品法神头盔 1
+give 荣誉勋章44号 1
+SendCenterMsg 254 0 [%s]使用金刚石388个，成功兑换一套极品+40装备！ 1
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+AutoTakeOnItem 精品嗜魂法杖 1
+AutoTakeOnItem 精品霓裳羽衣 0
+AutoTakeOnItem 荣誉勋章44号 2
+AutoTakeOnItem 精品法神手镯 5
+AutoTakeOnItem 精品法神手镯 6
+AutoTakeOnItem 精品法神戒指 7
+AutoTakeOnItem 精品法神戒指 8
+AutoTakeOnItem 精品法神项链 3
+AutoTakeOnItem 精品法神头盔 4
+GmexEcute 改属性 0 3 40
+GmexEcute 改属性 1 1 30
+GmexEcute 改属性 4 3 40
+GmexEcute 改属性 3 3 40
+GmexEcute 改属性 2 3 12
+GmexEcute 改属性 5 3 40
+GmexEcute 改属性 6 3 40
+GmexEcute 改属性 7 3 40
+GmexEcute 改属性 8 3 40
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+
+[@nanda37cha]
+#IF
+CHECKGAMEDIAMOND > 187
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanda37
+#elseact
+messagebox 元宝数量不足
+
+[@nanda37]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanda37a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanda37a]
+#if
+CHECKGAMEDIAMOND > 187
+#act
+GAMEDIAMOND - 188
+give 龙纹剑 1
+give 天尊道袍 1
+give 泰坦戒指 2
+give 三眼手镯 2
+give 灵魂项链 1
+give 记忆头盔 1
+give 荣誉勋章45号 1
+SendCenterMsg 254 0 [%s]使用金刚石188个，成功兑换一套极品+30装备！ 1
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+AutoTakeOnItem 龙纹剑 1
+AutoTakeOnItem 天尊道袍 0
+AutoTakeOnItem 荣誉勋章45号 2
+AutoTakeOnItem 三眼手镯 5
+AutoTakeOnItem 三眼手镯 6
+AutoTakeOnItem 泰坦戒指 7
+AutoTakeOnItem 泰坦戒指 8
+AutoTakeOnItem 灵魂项链 3
+AutoTakeOnItem 记忆头盔 4
+GmexEcute 改属性 0 4 30
+GmexEcute 改属性 1 2 22
+GmexEcute 改属性 4 4 30
+GmexEcute 改属性 3 4 30
+GmexEcute 改属性 2 4 6
+GmexEcute 改属性 5 4 30
+GmexEcute 改属性 6 4 30
+GmexEcute 改属性 7 4 30
+GmexEcute 改属性 8 4 30
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvda37cha]
+#IF
+CHECKGAMEDIAMOND > 187
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvda37
+#elseact
+messagebox 元宝数量不足
+
+[@nvda37]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvda37a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvda37a]
+#if
+CHECKGAMEDIAMOND > 187
+#act
+GAMEDIAMOND - 188
+give 龙纹剑 1
+give 天师长袍 1
+give 泰坦戒指 2
+give 三眼手镯 2
+give 灵魂项链 1
+give 记忆头盔 1
+give 荣誉勋章45号 1
+SendCenterMsg 254 0 [%s]使用金刚石188个，成功兑换一套极品+30装备！ 1
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+SENDMSG 0 [%s]使用金刚石188个，成功兑换一套极品+30装备
+AutoTakeOnItem 龙纹剑 1
+AutoTakeOnItem 天师长袍 0
+AutoTakeOnItem 荣誉勋章45号 2
+AutoTakeOnItem 三眼手镯 5
+AutoTakeOnItem 三眼手镯 6
+AutoTakeOnItem 泰坦戒指 7
+AutoTakeOnItem 泰坦戒指 8
+AutoTakeOnItem 灵魂项链 3
+AutoTakeOnItem 记忆头盔 4
+GmexEcute 改属性 0 4 30
+GmexEcute 改属性 1 2 22
+GmexEcute 改属性 4 4 30
+GmexEcute 改属性 3 4 30
+GmexEcute 改属性 2 4 6
+GmexEcute 改属性 5 4 30
+GmexEcute 改属性 6 4 30
+GmexEcute 改属性 7 4 30
+GmexEcute 改属性 8 4 30
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+
+[@nanda42cha]
+#IF
+CHECKGAMEDIAMOND > 287
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanda42
+#elseact
+messagebox 元宝数量不足
+
+[@nanda42]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanda42a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanda42a]
+#if
+CHECKGAMEDIAMOND > 287
+#act
+GAMEDIAMOND - 288
+give 逍遥扇 1
+give 天尊道袍 1
+give 天尊戒指 2
+give 天尊手镯 2
+give 天尊项链 1
+give 天尊头盔 1
+give 荣誉勋章45号 1
+SendCenterMsg 254 0 [%s]使用金刚石288个，成功兑换一套极品+35装备！ 1
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+AutoTakeOnItem 逍遥扇 1
+AutoTakeOnItem 天尊道袍 0
+AutoTakeOnItem 荣誉勋章45号 2
+AutoTakeOnItem 天尊手镯 5
+AutoTakeOnItem 天尊手镯 6
+AutoTakeOnItem 天尊戒指 7
+AutoTakeOnItem 天尊戒指 8
+AutoTakeOnItem 天尊项链 3
+AutoTakeOnItem 天尊头盔 4
+GmexEcute 改属性 0 4 35
+GmexEcute 改属性 1 2 27
+GmexEcute 改属性 4 4 35
+GmexEcute 改属性 3 4 35
+GmexEcute 改属性 2 4 9
+GmexEcute 改属性 5 4 35
+GmexEcute 改属性 6 4 35
+GmexEcute 改属性 7 4 35
+GmexEcute 改属性 8 4 35
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvda42cha]
+#IF
+CHECKGAMEDIAMOND > 287
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvda42
+#elseact
+messagebox 元宝数量不足
+
+[@nvda42]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvda42a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvda42a]
+#if
+CHECKGAMEDIAMOND > 287
+#act
+GAMEDIAMOND - 288
+give 逍遥扇 1
+give 天师长袍 1
+give 天尊戒指 2
+give 天尊手镯 2
+give 天尊项链 1
+give 天尊头盔 1
+give 荣誉勋章45号 1
+SendCenterMsg 254 0 [%s]使用金刚石288个，成功兑换一套极品+35装备！ 1
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+SENDMSG 0 [%s]使用金刚石288个，成功兑换一套极品+35装备
+AutoTakeOnItem 逍遥扇 1
+AutoTakeOnItem 天师长袍 0
+AutoTakeOnItem 荣誉勋章45号 2
+AutoTakeOnItem 天尊手镯 5
+AutoTakeOnItem 天尊手镯 6
+AutoTakeOnItem 天尊戒指 7
+AutoTakeOnItem 天尊戒指 8
+AutoTakeOnItem 天尊项链 3
+AutoTakeOnItem 天尊头盔 4
+GmexEcute 改属性 0 4 35
+GmexEcute 改属性 1 2 27
+GmexEcute 改属性 4 4 35
+GmexEcute 改属性 3 4 35
+GmexEcute 改属性 2 4 9
+GmexEcute 改属性 5 4 35
+GmexEcute 改属性 6 4 35
+GmexEcute 改属性 7 4 35
+GmexEcute 改属性 8 4 35
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nanda47cha]
+#IF
+CHECKGAMEDIAMOND > 387
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanda47
+#elseact
+messagebox 元宝数量不足
+
+[@nanda47]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanda47a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanda47a]
+#if
+CHECKGAMEDIAMOND > 387
+#act
+GAMEDIAMOND - 388
+give 精品逍遥扇 1
+give 精品天尊道袍 1
+give 精品天尊戒指 2
+give 精品天尊手镯 2
+give 精品天尊项链 1
+give 精品天尊头盔 1
+give 荣誉勋章45号 1
+SendCenterMsg 254 0 [%s]使用金刚石388个，成功兑换一套极品+40装备！ 1
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+AutoTakeOnItem 精品逍遥扇 1
+AutoTakeOnItem 精品天尊道袍 0
+AutoTakeOnItem 荣誉勋章45号 2
+AutoTakeOnItem 精品天尊手镯 5
+AutoTakeOnItem 精品天尊手镯 6
+AutoTakeOnItem 精品天尊戒指 7
+AutoTakeOnItem 精品天尊戒指 8
+AutoTakeOnItem 精品天尊项链 3
+AutoTakeOnItem 精品天尊头盔 4
+GmexEcute 改属性 0 4 40
+GmexEcute 改属性 1 2 32
+GmexEcute 改属性 4 4 40
+GmexEcute 改属性 3 4 40
+GmexEcute 改属性 2 4 12
+GmexEcute 改属性 5 4 40
+GmexEcute 改属性 6 4 40
+GmexEcute 改属性 7 4 40
+GmexEcute 改属性 8 4 40
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvda47cha]
+#IF
+CHECKGAMEDIAMOND > 387
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvda47
+#elseact
+messagebox 元宝数量不足
+
+[@nvda47]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvda47a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvda47a]
+#if
+CHECKGAMEDIAMOND > 387
+#act
+GAMEDIAMOND - 388
+give 精品逍遥扇 1
+give 精品天师长袍 1
+give 精品天尊戒指 2
+give 精品天尊手镯 2
+give 精品天尊项链 1
+give 精品天尊头盔 1
+give 荣誉勋章45号 1
+SendCenterMsg 254 0 [%s]使用金刚石388个，成功兑换一套极品+40装备！ 1
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+SENDMSG 0 [%s]使用金刚石388个，成功兑换一套极品+40装备
+AutoTakeOnItem 精品逍遥扇 1
+AutoTakeOnItem 精品天师长袍 0
+AutoTakeOnItem 荣誉勋章45号 2
+AutoTakeOnItem 精品天尊手镯 5
+AutoTakeOnItem 精品天尊手镯 6
+AutoTakeOnItem 精品天尊戒指 7
+AutoTakeOnItem 精品天尊戒指 8
+AutoTakeOnItem 精品天尊项链 3
+AutoTakeOnItem 精品天尊头盔 4
+GmexEcute 改属性 0 4 40
+GmexEcute 改属性 1 2 32
+GmexEcute 改属性 4 4 40
+GmexEcute 改属性 3 4 40
+GmexEcute 改属性 2 4 12
+GmexEcute 改属性 5 4 40
+GmexEcute 改属性 6 4 40
+GmexEcute 改属性 7 4 40
+GmexEcute 改属性 8 4 40
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+
+[@nanhongmo47cha]
+#IF
+CHECKGAMEGOLD > 34999999
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanhongmo47
+#elseact
+messagebox 元宝数量不足。
+
+[@nanhongmo47]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanhongmo47a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanhongmo47a]
+#if
+CHECKGAMEGOLD > 34999999
+#act
+gamegold - 35000000
+give 贵族怒斩 1
+give 贵族天魔神甲 1
+give 贵族虹魔戒指 2
+give 贵族死神手套 2
+give 贵族记忆项链 1
+give 贵族圣战头盔 1
+give 贵族勋章[战] 1
+SendCenterMsg 254 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装！ 1
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装
+AutoTakeOnItem 贵族勋章[战] 2
+AutoTakeOnItem 贵族死神手套 5
+AutoTakeOnItem 贵族死神手套 6
+AutoTakeOnItem 贵族虹魔戒指 7
+AutoTakeOnItem 贵族虹魔戒指 8
+AutoTakeOnItem 贵族记忆项链 3
+AutoTakeOnItem 贵族圣战头盔 4
+AutoTakeOnItem 贵族怒斩 1
+AutoTakeOnItem 贵族天魔神甲 0
+GmexEcute 改属性 0 2 47
+GmexEcute 改属性 1 0 48
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 2 45
+GmexEcute 改属性 3 2 45
+GmexEcute 改属性 2 2 15
+GmexEcute 改属性 5 2 45
+GmexEcute 改属性 6 2 45
+GmexEcute 改属性 7 2 45
+GmexEcute 改属性 8 2 45
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvhongmo47cha]
+#IF
+CHECKGAMEGOLD > 34999999
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvhongmo47
+#elseact
+messagebox 元宝数量不足。
+
+[@nvhongmo47]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvhongmo47a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvhongmo47a]
+#if
+CHECKGAMEGOLD > 34999999
+#act
+gamegold - 35000000
+give 贵族怒斩 1
+give 贵族圣战宝甲 1
+give 贵族虹魔戒指 2
+give 贵族死神手套 2
+give 贵族记忆项链 1
+give 贵族圣战头盔 1
+give 贵族勋章[战] 1
+SendCenterMsg 254 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装！ 1
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品战士组合装
+AutoTakeOnItem 贵族勋章[战] 2
+AutoTakeOnItem 贵族死神手套 5
+AutoTakeOnItem 贵族死神手套 6
+AutoTakeOnItem 贵族虹魔戒指 7
+AutoTakeOnItem 贵族虹魔戒指 8
+AutoTakeOnItem 贵族记忆项链 3
+AutoTakeOnItem 贵族圣战头盔 4
+AutoTakeOnItem 贵族怒斩 1
+AutoTakeOnItem 贵族圣战宝甲 0
+GmexEcute 改属性 0 2 47
+GmexEcute 改属性 1 0 48
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 2 45
+GmexEcute 改属性 3 2 45
+GmexEcute 改属性 2 2 15
+GmexEcute 改属性 5 2 45
+GmexEcute 改属性 6 2 45
+GmexEcute 改属性 7 2 45
+GmexEcute 改属性 8 2 45
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+
+[@nanmoxue47cha]
+#IF
+CHECKGAMEGOLD > 34999999
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanmoxue47
+#elseact
+messagebox 元宝数量不足。
+
+[@nanmoxue47]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanmoxue47a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanmoxue47a]
+#if
+CHECKGAMEGOLD > 34999999
+#act
+gamegold - 35000000
+give 贵族龙牙 1
+give 贵族法神披风 1
+give 贵族法神戒指 2
+give 贵族魔血手镯 2
+give 贵族灯笼 1
+give 贵族法神头盔 1
+give 贵族勋章[法] 1
+SendCenterMsg 254 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装！ 1
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装
+AutoTakeOnItem 贵族勋章[法] 2
+AutoTakeOnItem 贵族魔血手镯 5
+AutoTakeOnItem 贵族魔血手镯 6
+AutoTakeOnItem 贵族法神戒指 7
+AutoTakeOnItem 贵族法神戒指 8
+AutoTakeOnItem 贵族灯笼 3
+AutoTakeOnItem 贵族法神头盔 4
+AutoTakeOnItem 贵族龙牙 1
+AutoTakeOnItem 贵族法神披风 0
+GmexEcute 改属性 0 3 47
+GmexEcute 改属性 1 1 44
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 3 45
+GmexEcute 改属性 3 3 45
+GmexEcute 改属性 2 3 15
+GmexEcute 改属性 5 3 45
+GmexEcute 改属性 6 3 45
+GmexEcute 改属性 7 3 45
+GmexEcute 改属性 8 3 45
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvmoxue47cha]
+#IF
+CHECKGAMEGOLD > 34999999
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvmoxue47
+#elseact
+messagebox 元宝数量不足。
+
+[@nvmoxue47]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvmoxue47a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvmoxue47a]
+#if
+CHECKGAMEGOLD > 34999999
+#act
+gamegold - 35000000
+give 贵族龙牙 1
+give 贵族霓裳羽衣 1
+give 贵族法神戒指 2
+give 贵族魔血手镯 2
+give 贵族灯笼 1
+give 贵族法神头盔 1
+give 贵族勋章[法] 1
+SendCenterMsg 254 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装！ 1
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品法师组合装
+AutoTakeOnItem 贵族勋章[法] 2
+AutoTakeOnItem 贵族魔血手镯 5
+AutoTakeOnItem 贵族魔血手镯 6
+AutoTakeOnItem 贵族法神戒指 7
+AutoTakeOnItem 贵族法神戒指 8
+AutoTakeOnItem 贵族灯笼 3
+AutoTakeOnItem 贵族法神头盔 4
+AutoTakeOnItem 贵族龙牙 1
+AutoTakeOnItem 贵族霓裳羽衣 0
+GmexEcute 改属性 0 3 47
+GmexEcute 改属性 1 1 44
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 3 45
+GmexEcute 改属性 3 3 45
+GmexEcute 改属性 2 3 15
+GmexEcute 改属性 5 3 45
+GmexEcute 改属性 6 3 45
+GmexEcute 改属性 7 3 45
+GmexEcute 改属性 8 3 45
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nandaoshi47cha]
+#IF
+CHECKGAMEGOLD > 34999999
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nanmoxue48
+#elseact
+messagebox 元宝数量不足。
+
+[@nanmoxue48]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nanmoxue48a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nanmoxue48a]
+#if
+CHECKGAMEGOLD > 34999999
+#act
+gamegold - 35000000
+give 贵族霸者之刃 1
+give 贵族天尊道袍 1
+give 贵族天尊戒指 2
+give 贵族避邪手镯 2
+give 贵族白色虎齿 1
+give 贵族天尊头盔 1
+give 贵族勋章[道] 1
+SendCenterMsg 254 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装！ 1
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装
+AutoTakeOnItem 贵族勋章[道] 2
+AutoTakeOnItem 贵族避邪手镯 5
+AutoTakeOnItem 贵族避邪手镯 6
+AutoTakeOnItem 贵族天尊戒指 7
+AutoTakeOnItem 贵族天尊戒指 8
+AutoTakeOnItem 贵族白色虎齿 3
+AutoTakeOnItem 贵族天尊头盔 4
+AutoTakeOnItem 贵族霸者之刃 1
+AutoTakeOnItem 贵族天尊道袍 0
+GmexEcute 改属性 0 4 47
+GmexEcute 改属性 1 2 44
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 4 45
+GmexEcute 改属性 3 4 45
+GmexEcute 改属性 2 4 15
+GmexEcute 改属性 5 4 45
+GmexEcute 改属性 6 4 45
+GmexEcute 改属性 7 4 45
+GmexEcute 改属性 8 4 45
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+[@nvdaoshi47cha]
+#IF
+CHECKGAMEGOLD > 34999999
+#ACT
+TakeEx 0
+TakeEx 1
+TakeEx 2
+TakeEx 3
+TakeEx 4
+TakeEx 5
+TakeEx 6
+TakeEx 7
+TakeEx 8
+goto @nvmoxue49
+#elseact
+messagebox 元宝数量不足。
+
+[@nvmoxue49]
+#if
+CHECKBAGSIZE 46
+#act
+goto @nvmoxue49a
+#elsesay
+作弊行为已经被记录，再次发现立即封号。
+
+
+[@nvmoxue49a]
+#if
+CHECKGAMEGOLD > 34999999
+#act
+gamegold - 35000000
+give 贵族霸者之刃 1
+give 贵族天师长袍 1
+give 贵族天尊戒指 2
+give 贵族避邪手镯 2
+give 贵族白色虎齿 1
+give 贵族天尊头盔 1
+give 贵族勋章[道] 1
+SendCenterMsg 254 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装！ 1
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装
+SENDMSG 0 [%s]使用3500万元宝，成功兑换一套+45极品道士组合装
+AutoTakeOnItem 贵族勋章[道] 2
+AutoTakeOnItem 贵族避邪手镯 5
+AutoTakeOnItem 贵族避邪手镯 6
+AutoTakeOnItem 贵族天尊戒指 7
+AutoTakeOnItem 贵族天尊戒指 8
+AutoTakeOnItem 贵族白色虎齿 3
+AutoTakeOnItem 贵族天尊头盔 4
+AutoTakeOnItem 贵族霸者之刃 1
+AutoTakeOnItem 贵族天师长袍 0
+GmexEcute 改属性 0 4 47
+GmexEcute 改属性 1 2 44
+GmexEcute 改属性 1 5 3
+GmexEcute 改属性 4 4 45
+GmexEcute 改属性 3 4 45
+GmexEcute 改属性 2 4 15
+GmexEcute 改属性 5 4 45
+GmexEcute 改属性 6 4 45
+GmexEcute 改属性 7 4 45
+GmexEcute 改属性 8 4 45
+messagebox 恭喜你兑换成功！\诚挚建议：\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！\
+SENDMSG 7 恭喜你兑换成功！
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如果现在是开区2小时内，请不要佩戴高级装备，以免新人误会，谢谢！
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+goto @main
+#elseact
+messagebox 元宝数量不足。
+
+
+
+[@kaishidz]
+1、只能锻造精品赤月套装\
+2、有最高限制，不可无限锻造\
+能锻造出来的最好装备属性见：<极品+30属性精品套/@37shuxing>\\
+<我要锻造/@zumadz>\
+
+
+[@zumadz]
+<攻击/@zumaccgj>1点需要金刚石2个\
+<魔法/@zumaccmof>1点需要金刚石2个\
+<道术/@zumaccds>1点需要金刚石2个\
+<销毁武器减速度/@xiaohui1>一次性销毁全部减速度50W元宝\
+
+[@xiaohui1]
+不慎将武器锻造出减速度，我这里可以帮你销毁该属性。\
+但是需要一点费用：50万元宝销毁一次\
+不管你减速度多少，一次全部搞定\
+<请将你要修炼的武器拿在手上>\
+<我要销毁减速度/@xiaohui>
+
+[@xiaohui]
+#if
+CHECKGAMEGOLD > 499999
+#act
+gamegold - 500000
+GmexEcute 改属性 1 6 0
+SendCenterMsg 254 0 [%s]使用50W元宝，成功销毁武器减速度！ 1
+break
+#elseact
+messagebox 元宝数量不足。
+
+
+[@zumaccgj]
+请选择需要锻造的装备职业性别\
+<男战士/@nanzsccgj>\
+<女战士/@nvzsccgj>\
+
+
+[@nanzsccgj]
+男战士:请将需要锻造的物品装备在相应的位置，否则无法锻造。\
+<衣服/@tmccgj>  <武器/@tlccgj>  <勋章/@43ccgj>  <项链/@lsccgj>  <头盔/@ttccgj>\
+<左手镯/@qsccgj1>  <右手镯/@qsccgj2>  <左戒指/@llccgj1>  <右戒指/@llccgj2>\
+
+[@nvzsccgj]
+女战士:请将需要锻造的物品装备在相应的位置，否则无法锻造。\
+<衣服/@bjccgj>  <武器/@tlccgj>  <勋章/@43ccgj>  <项链/@lsccgj>  <头盔/@ttccgj>\
+<左手镯/@qsccgj1>  <右手镯/@qsccgj2>  <左戒指/@llccgj1>  <右戒指/@llccgj2>\
+
+[@tmccgj]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 0 89
+#elseact
+messagebox 5 元宝数量不足
+break
+#IF
+CompareText 精品天魔神甲 <$STR(S89)>
+#ACT
+goto @tmccgja
+#elseact
+messagebox 请穿精品天魔神甲，否则无法锻造。
+
+[@tmccgja]
+#IF
+CheckItemAddValue 0 2 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 0 2 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@tlccgj]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 1 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品屠龙 <$STR(S89)>
+#ACT
+goto @tlccgja
+#elseact
+messagebox 请穿精品屠龙，否则无法锻造。
+
+[@tlccgja]
+#IF
+CheckItemAddValue 1 0 < 22
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 1 0 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@lsccgj]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 3 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品圣战项链 <$STR(S89)>
+#ACT
+goto @lsccgja
+#elseact
+messagebox 请穿精品圣战项链，否则无法锻造。
+
+[@lsccgja]
+#IF
+CheckItemAddValue 3 2 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 3 2 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+
+[@43ccgj]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 2 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 荣誉勋章43号 <$STR(S89)>
+#ACT
+goto @43ccgja
+#elseact
+messagebox 请穿荣誉勋章43号，否则无法锻造。
+
+[@43ccgja]
+#IF
+CheckItemAddValue 2 2 < 6
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 2 2 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@ttccgj]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 4 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品圣战头盔 <$STR(S89)>
+#ACT
+goto @ttccgja
+#elseact
+messagebox 请穿精品圣战头盔，否则无法锻造。
+
+[@ttccgja]
+#IF
+CheckItemAddValue 4 2 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 4 2 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@qsccgj1]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 5 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品圣战手镯 <$STR(S89)>
+#ACT
+goto @qsccgj1a
+#elseact
+messagebox 请穿精品圣战手镯，否则无法锻造。
+
+[@qsccgj1a]
+#IF
+CheckItemAddValue 5 2 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 5 2 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@qsccgj2]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 6 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品圣战手镯 <$STR(S89)>
+#ACT
+goto @qsccgj2a
+#elseact
+messagebox 请穿精品圣战手镯，否则无法锻造。
+
+[@qsccgj2a]
+#IF
+CheckItemAddValue 6 2 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 6 2 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@llccgj1]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 7 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品圣战戒指 <$STR(S89)>
+#ACT
+goto @llccgj1a
+#elseact
+messagebox 请穿精品圣战戒指，否则无法锻造。
+
+[@llccgj1a]
+#IF
+CheckItemAddValue 7 2 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 7 2 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@llccgj2]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 8 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品圣战戒指 <$STR(S89)>
+#ACT
+goto @llccgj2a
+#elseact
+messagebox 请穿精品圣战戒指，否则无法锻造。
+
+[@llccgj2a]
+#IF
+CheckItemAddValue 8 2 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 8 2 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+
+[@bjccgj]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 0 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品圣战宝甲 <$STR(S89)>
+#ACT
+goto @bjccgja
+#elseact
+messagebox 请穿精品圣战宝甲，否则无法锻造。
+
+[@bjccgja]
+#IF
+CheckItemAddValue 0 2 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 0 2 0 1 0
+#ELSEACT
+SendMsg 5 锻造已满或者没穿装备，无法继续。
+
+[@zumaccmof]
+请选择需要锻造的装备职业性别\
+<男法师/@nanfsccmof>\
+<女法师/@nvfsccmof>\
+
+[@nanfsccmof]
+男法师:请将需要锻造的物品装备在相应的位置，否则无法锻造。\
+<衣服/@pfccmof>  <武器/@shccmof>  <勋章/@44ccmof>  <项链/@emccmof>  <头盔/@dtccmof>\
+<左手镯/@lsccmof1>  <右手镯/@lsccmof2>  <左戒指/@blccmof1>  <右戒指/@blccmof2>\
+
+[@nvfsccmof]
+女法师:请将需要锻造的物品装备在相应的位置，否则无法锻造。\
+<衣服/@yyccmof>  <武器/@shccmof>  <勋章/@44ccmof>  <项链/@emccmof>  <头盔/@dtccmof>\
+<左手镯/@lsccmof1>  <右手镯/@lsccmof2>  <左戒指/@blccmof1>  <右戒指/@blccmof2>\
+
+[@shccmof]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 1 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品嗜魂法杖 <$STR(S89)>
+#ACT
+goto @shccmofa
+#elseact
+messagebox 请穿精品嗜魂法杖，否则无法锻造。
+
+[@shccmofa]
+#IF
+CheckItemAddValue 1 1 < 20
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 1 1 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@emccmof]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 3 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品法神项链 <$STR(S89)>
+#ACT
+goto @emccmofa
+#elseact
+messagebox 请穿精品法神项链，否则无法锻造。
+
+[@emccmofa]
+#IF
+CheckItemAddValue 3 3 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 3 3 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+
+[@pfccmof]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 0 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品法神披风 <$STR(S89)>
+#ACT
+goto @pfccmofa
+#elseact
+messagebox 请穿精品法神披风，否则无法锻造。
+
+[@pfccmofa]
+#IF
+CheckItemAddValue 0 3 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 0 3 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@44ccmof]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 2 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 荣誉勋章44号 <$STR(S89)>
+#ACT
+goto @44ccmofa
+#elseact
+messagebox 请穿荣誉勋章44号，否则无法锻造。
+
+[@44ccmofa]
+#IF
+CheckItemAddValue 2 3 < 6
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 2 3 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@dtccmof]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 4 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品法神头盔 <$STR(S89)>
+#ACT
+goto @dtccmofa
+#elseact
+messagebox 请穿精品法神头盔，否则无法锻造。
+
+[@dtccmofa]
+#IF
+CheckItemAddValue 4 3 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 4 3 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@lsccmof1]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 5 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品法神手镯 <$STR(S89)>
+#ACT
+goto @lsccmof1a
+#elseact
+messagebox 请穿精品法神手镯，否则无法锻造。
+
+[@lsccmof1a]
+#IF
+CheckItemAddValue 5 3 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 5 3 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@lsccmof2]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 6 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品法神手镯 <$STR(S89)>
+#ACT
+goto @lsccmof2a
+#elseact
+messagebox 请穿精品法神手镯，否则无法锻造。
+
+[@lsccmof2a]
+#IF
+CheckItemAddValue 6 3 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 6 3 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@blccmof1]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 7 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品法神戒指 <$STR(S89)>
+#ACT
+goto @blccmof1a
+#elseact
+messagebox 请穿精品法神戒指，否则无法锻造。
+
+[@blccmof1a]
+#IF
+CheckItemAddValue 7 3 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 7 3 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@blccmof2]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 8 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品法神戒指 <$STR(S89)>
+#ACT
+goto @blccmof2a
+#elseact
+messagebox 请穿精品法神戒指，否则无法锻造。
+
+[@blccmof2a]
+#IF
+CheckItemAddValue 8 3 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 8 3 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+
+[@yyccmof]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 0 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品霓裳羽衣 <$STR(S89)>
+#ACT
+goto @yyccmofa
+#elseact
+messagebox 请穿精品霓裳羽衣，否则无法锻造。
+
+[@yyccmofa]
+#IF
+CheckItemAddValue 0 3 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 0 3 0 1 0
+#elseact
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@zumaccds]
+请选择需要锻造的装备职业性别\
+<男道士/@nandsccds>\
+<女道士/@nvdsccds>\
+
+
+[@nandsccds]
+男道士:请将需要锻造的物品装备在相应的位置，否则无法锻造。\
+<衣服/@dpccds>  <武器/@xyccds>  <勋章/@45ccds>  <项链/@lhccds>  <头盔/@jyccds>\
+<左手镯/@syccds1>  <右手镯/@syccds2>  <左戒指/@ttccds1>  <右戒指/@ttccds2>\
+
+[@nvdsccds]
+女道士:请将需要锻造的物品装备在相应的位置，否则无法锻造。\
+<衣服/@cpccds>  <武器/@xyccds>  <勋章/@45ccds>  <项链/@lhccds>  <头盔/@jyccds>\
+<左手镯/@syccds1>  <右手镯/@syccds2>  <左戒指/@ttccds1>  <右戒指/@ttccds2>\
+
+[@xyccds]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 1 89
+#elseact
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品逍遥扇 <$STR(S89)>
+#ACT
+goto @xyccdsa
+#elseact
+messagebox 请穿精品逍遥扇，否则无法锻造。
+
+[@xyccdsa]
+#IF
+CheckItemAddValue 1 2 < 22
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 1 2 0 1 0
+#ELSEACT
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@lhccds]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 3 89
+#ELSEACT
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品天尊项链 <$STR(S89)>
+#ACT
+goto @lhccdsa
+#ELSEACT
+messagebox 请穿精品天尊项链，否则无法锻造。
+
+[@lhccdsa]
+#IF
+CheckItemAddValue 3 4 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 3 4 0 1 0
+#ELSEACT
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@dpccds]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 0 89
+#ELSEACT
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品天尊道袍 <$STR(S89)>
+#ACT
+goto @dpccdsa
+#ELSEACT
+messagebox 请穿精品天尊道袍，否则无法锻造。
+
+[@dpccdsa]
+#IF
+CheckItemAddValue 0 4 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 0 4 0 1 0
+#ELSEACT
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@45ccds]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 2 89
+#ELSEACT
+messagebox 元宝数量不足
+break
+#IF
+CompareText 荣誉勋章45号 <$STR(S89)>
+#ACT
+goto @45ccdsa
+#ELSEACT
+messagebox 请穿荣誉勋章45号，否则无法锻造。
+
+[@45ccdsa]
+#IF
+CheckItemAddValue 2 4 < 6
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 2 4 0 1 0
+#ELSEACT
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@jyccds]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 4 89
+#ELSEACT
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品天尊头盔 <$STR(S89)>
+#ACT
+goto @jyccdsa
+#ELSEACT
+messagebox 请穿精品天尊头盔，否则无法锻造。
+
+[@jyccdsa]
+#IF
+CheckItemAddValue 4 4 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 4 4 0 1 0
+#ELSEACT
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@syccds1]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 5 89
+#ELSEACT
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品天尊手镯 <$STR(S89)>
+#ACT
+goto @syccds1a
+#ELSEACT
+messagebox 请穿精品天尊手镯，否则无法锻造。
+
+[@syccds1a]
+#IF
+CheckItemAddValue 5 4 < 30
+#ACT
+GAMEDIAMOND - 1
+UPGRADEITEMEX 5 4 0 1 0
+#ELSEACT
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@syccds2]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 6 89
+#ELSEACT
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品天尊手镯 <$STR(S89)>
+#ACT
+goto @syccds2a
+#ELSEACT
+messagebox 请穿精品天尊手镯，否则无法锻造。
+
+[@syccds2a]
+#IF
+CheckItemAddValue 6 4 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 6 4 0 1 0
+#ELSEACT
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@ttccds1]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 7 89
+#ELSEACT
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品天尊戒指 <$STR(S89)>
+#ACT
+goto @ttccds1a
+#ELSEACT
+messagebox 请穿精品天尊戒指，否则无法锻造。
+
+[@ttccds1a]
+#IF
+CheckItemAddValue 7 4 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 7 4 0 1 0
+#ELSEACT
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@ttccds2]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 8 89
+#ELSEACT
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品天尊戒指 <$STR(S89)>
+#ACT
+goto @ttccds2a
+#ELSEACT
+messagebox 请穿精品天尊戒指，否则无法锻造。
+
+[@ttccds2a]
+#IF
+CheckItemAddValue 8 4 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 8 4 0 1 0
+#ELSEACT
+messagebox 锻造已满或者没穿装备，无法继续。
+
+
+[@cpccds]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GetUserItemName 0 89
+#ELSEACT
+messagebox 元宝数量不足
+break
+#IF
+CompareText 精品天师长袍 <$STR(S89)>
+#ACT
+goto @cpccdsa
+#ELSEACT
+messagebox 请穿精品天师长袍，否则无法锻造。
+
+[@cpccdsa]
+#IF
+CheckItemAddValue 0 4 < 30
+#ACT
+GAMEDIAMOND - 2
+UPGRADEITEMEX 0 4 0 1 0
+#ELSEACT
+messagebox 锻造已满或者没穿装备，无法继续。
+
+[@sanjianduihuan]
+#IF
+CHECKSKILL 倚天辟地 > 0
+#ACT
+MOV S10 
+MOV S11 
+DELSKILL 倚天辟地
+SENDMSG 5 提示：【倚天辟地】技能已消失！
+
+
+#IF
+#SAY
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\ 
+　　　　　↓　　　　每件装备500W元宝　 　　　↓\
+　　　　　<战士散件/@zssj>　　　 <法师散件/@fssj>　　　 <道士散件/@dssj>\
+　　　　　↑　　　　　装备属性相同　　　　　　↑\
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\ 
+　　　　　　　　　　　　<返回/@main>
+
+
+
+[@zssj]
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+<贵族裁决/@gzcj>　　<贵族怒斩/@gznz>　　<贵族屠龙/@gztl>　　<贵族天魔/@gztm>　　<贵族宝甲/@gzbj>\  \
+<贵族记忆/@gzjy>　　<贵族勋章/@gzxzz>　　<贵族圣头/@gzst>　　<贵族死神/@gzss>　　<贵族圣戒/@gzsj>\   \
+<贵族圣手/@gzss1>　　<贵族圣链/@gzsl>　　<贵族力量/@gzll>　　<贵族骑士/@gzqs>　　<贵族黑头/@gzht>\   \
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+
+
+[@fssj]
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+<贵族龙牙/@gzly>　　<贵族法杖/@gzfz>　　<贵族披风/@gzpf>　　<贵族羽衣/@gzyy>　　<贵族勋章/@gzxzf>\  \
+<贵族碧螺/@gzbl>　　<贵族龙手/@gzls>　　<贵族灯笼/@gzdl>　　<魔血手镯/@gzfs>　　<贵族法头/@gzft>\   \
+　　　　　　<贵族法戒/@gzfj>　　<贵族法手/@gzfs1>　　<贵族法链/@gzfl>\   \
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+
+[@dssj]
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+<贵族霸者/@gzbz>　　<贵族扇子/@gzsz>　　<贵族道袍/@gzdp>　　<贵族长袍/@gzcp>　　<贵族勋章/@gzxzd>\  \
+<贵族泰坦/@gztt1>　　<贵族三眼/@gzsy>　　<贵族白虎/@gzbh>　　<辟邪手镯/@gzts>　　<贵族天头/@gztt>\  \
+　　　　　　<贵族天戒/@gztj>　　<贵族天手/@gzts1>　　<贵族天链/@gztl1>\   \
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+
+[@gzcj]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT 
+gamegold - 5000000
+give 贵族裁决 1
+AutoTakeOnItem 贵族裁决 1
+GmexEcute 改属性 1 0 48
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族裁决>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族裁决>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gznz]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族怒斩 1
+AutoTakeOnItem 贵族怒斩 1
+GmexEcute 改属性 1 0 48
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族怒斩>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族怒斩>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gztl]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族屠龙 1
+AutoTakeOnItem 贵族屠龙 1
+GmexEcute 改属性 1 0 48
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族屠龙>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族屠龙>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gztm]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族天魔神甲 1
+AutoTakeOnItem 贵族天魔神甲 0
+GmexEcute 改属性 0 2 47
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族天魔神甲>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族天魔神甲>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzbj]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族圣战宝甲 1
+AutoTakeOnItem 贵族圣战宝甲 0
+GmexEcute 改属性 0 2 47
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族圣战宝甲>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族圣战宝甲>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzxzz]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族勋章[战] 1
+AutoTakeOnItem 贵族勋章[战] 2
+GmexEcute 改属性 2 2 15
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族勋章[战]>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族勋章[战]>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzst]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族圣战头盔 1
+AutoTakeOnItem 贵族圣战头盔 4
+GmexEcute 改属性 4 2 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族圣战头盔>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族圣战头盔>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzht]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族黑铁头盔 1
+AutoTakeOnItem 贵族黑铁头盔 4
+GmexEcute 改属性 4 2 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族黑铁头盔>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族黑铁头盔>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzjy]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族记忆项链 1
+AutoTakeOnItem 贵族记忆项链 3
+GmexEcute 改属性 3 2 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族记忆项链>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族记忆项链>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzsl]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族圣战项链 1
+AutoTakeOnItem 贵族圣战项链 3
+GmexEcute 改属性 3 2 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族圣战项链>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族圣战项链>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzss]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族死神手套 1
+AutoTakeOnItem 贵族死神手套 5
+GmexEcute 改属性 5 2 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族死神手套>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族死神手套>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+
+[@gzss1]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族圣战手镯 1
+AutoTakeOnItem 贵族圣战手镯 5
+GmexEcute 改属性 5 2 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族圣战手镯>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族圣战手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzqs]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族骑士手镯 1
+AutoTakeOnItem 贵族骑士手镯 5
+GmexEcute 改属性 5 2 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族骑士手镯>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族骑士手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzsj]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族圣战戒指 1
+AutoTakeOnItem 贵族圣战戒指 7
+GmexEcute 改属性 7 2 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族圣战戒指>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族圣战戒指>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzll]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族力量戒指 1
+AutoTakeOnItem 贵族力量戒指 7
+GmexEcute 改属性 7 2 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族力量戒指>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族力量戒指>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzly]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族龙牙 1
+AutoTakeOnItem 贵族龙牙 1
+GmexEcute 改属性 1 1 44
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族龙牙>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族龙牙>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzfz]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族嗜魂法杖 1
+AutoTakeOnItem 贵族嗜魂法杖 1
+GmexEcute 改属性 1 1 44
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族嗜魂法杖>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族嗜魂法杖>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzpf]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族法神披风 1
+AutoTakeOnItem 贵族法神披风 0
+GmexEcute 改属性 0 3 47
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族法神披风>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族法神披风>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzyy]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族霓裳羽衣 1
+AutoTakeOnItem 贵族霓裳羽衣 0
+GmexEcute 改属性 0 3 47
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族霓裳羽衣>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族霓裳羽衣>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzxzf]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族勋章[法] 1
+AutoTakeOnItem 贵族勋章[法] 2
+GmexEcute 改属性 2 3 15
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族勋章[法]>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族勋章[法]>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzft]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族法神头盔 1
+AutoTakeOnItem 贵族法神头盔 4
+GmexEcute 改属性 4 3 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族法神头盔>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族法神头盔>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzdl]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族灯笼 1
+AutoTakeOnItem 贵族灯笼 3
+GmexEcute 改属性 3 3 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族灯笼>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族灯笼>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzfl]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族法神项链 1
+AutoTakeOnItem 贵族法神项链 3
+GmexEcute 改属性 3 3 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族法神项链>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族法神项链>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzfs]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族魔血手镯 1
+AutoTakeOnItem 贵族魔血手镯 5
+GmexEcute 改属性 5 3 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族魔血手镯>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族魔血手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzfs1]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族法神手镯 1
+AutoTakeOnItem 贵族法神手镯 5
+GmexEcute 改属性 5 3 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族法神手镯>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族法神手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzls]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族龙之手镯 1
+AutoTakeOnItem 贵族龙之手镯 5
+GmexEcute 改属性 5 3 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族龙之手镯>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族龙之手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzfj]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族法神戒指 1
+AutoTakeOnItem 贵族法神戒指 7
+GmexEcute 改属性 7 3 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族法神戒指>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族法神戒指>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzbl]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族紫碧螺 1
+AutoTakeOnItem 贵族紫碧螺 7
+GmexEcute 改属性 7 3 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族紫碧螺>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族紫碧螺>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzbz]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族霸者之刃 1
+AutoTakeOnItem 贵族霸者之刃 1
+GmexEcute 改属性 1 2 44
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族霸者之刃>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族霸者之刃>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzsz]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族逍遥扇 1
+AutoTakeOnItem 贵族逍遥扇 1
+GmexEcute 改属性 1 2 44
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族逍遥扇>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族逍遥扇>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzdp]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族天尊道袍 1
+AutoTakeOnItem 贵族天尊道袍 0
+GmexEcute 改属性 0 4 47
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族天尊道袍>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族天尊道袍>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzcp]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族天师长袍 1
+AutoTakeOnItem 贵族天师长袍 0
+GmexEcute 改属性 0 4 47
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族天师长袍>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族天师长袍>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzxzd]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族勋章[道] 1
+AutoTakeOnItem 贵族勋章[道] 2
+GmexEcute 改属性 2 4 15
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族勋章[道]>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族勋章[道]>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gztt]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族天尊头盔 1
+AutoTakeOnItem 贵族天尊头盔 4
+GmexEcute 改属性 4 4 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族天尊头盔>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族天尊头盔>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzbh]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族白色虎齿 1
+AutoTakeOnItem 贵族白色虎齿 3
+GmexEcute 改属性 3 4 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族白色虎齿>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族白色虎齿>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gztl1]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族天尊项链 1
+AutoTakeOnItem 贵族天尊项链 3
+GmexEcute 改属性 3 4 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族天尊项链>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族天尊项链>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzts]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族避邪手镯 1
+AutoTakeOnItem 贵族避邪手镯 5
+GmexEcute 改属性 5 4 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族避邪手镯>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族避邪手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzts1]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族天尊手镯 1
+AutoTakeOnItem 贵族天尊手镯 5
+GmexEcute 改属性 5 4 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族天尊手镯>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族天尊手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gzsy]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族三眼手镯 1
+AutoTakeOnItem 贵族三眼手镯 5
+GmexEcute 改属性 5 4 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族三眼手镯>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族三眼手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gztj]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族天尊戒指 1
+AutoTakeOnItem 贵族天尊戒指 7
+GmexEcute 改属性 7 4 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族天尊戒指>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族天尊戒指>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@gztt1]
+#if
+CHECKGAMEGOLD > 4999999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 5000000
+give 贵族泰坦戒指 1
+AutoTakeOnItem 贵族泰坦戒指 7
+GmexEcute 改属性 7 4 45
+sendmsg 0 玩家<%s>花费了500W元宝领取了<贵族泰坦戒指>
+SendCenterMsg 254 0 [%s]使用500W元宝，成功兑换<贵族泰坦戒指>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+
+
+[@25sanjianduihuan]
+#IF
+CHECKSKILL 倚天辟地 > 0
+#ACT
+MOV S10 
+MOV S11 
+DELSKILL 倚天辟地
+SENDMSG 5 提示：【倚天辟地】技能已消失！
+
+
+#IF
+#SAY
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\ 
+　　　　　↓　　　　每件装备50W元宝　 　　　↓\
+　　　　　<+25战士散件/@25zssj>　 <+25法师散件/@25fssj>　 <+25道士散件/@25dssj>\
+　　　　　↑　　　　　装备属性相同　　　　　　↑\
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\ 
+　　　　　　　　　　　　<返回/@main>
+
+
+
+[@25zssj]
+<★━━━━━━━━━加25战士散件━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+<贵族裁决/@25gzcj>　　<贵族怒斩/@25gznz>　　<贵族屠龙/@25gztl>　　<贵族天魔/@25gztm>　　<贵族宝甲/@25gzbj>\  \
+<贵族记忆/@25gzjy>　　<贵族勋章/@25gzxzz>　　<贵族圣头/@25gzst>　　<贵族死神/@25gzss>　　<贵族圣戒/@25gzsj>\   \
+<贵族圣手/@25gzss1>　　<贵族圣链/@25gzsl>　　<贵族力量/@25gzll>　　<贵族骑士/@25gzqs>　　<贵族黑头/@25gzht>\   \
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+
+
+[@25fssj]
+<★━━━━━━━━━加25法师散件━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+<贵族龙牙/@25gzly>　　<贵族法杖/@25gzfz>　　<贵族披风/@25gzpf>　　<贵族羽衣/@25gzyy>　　<贵族勋章/@25gzxzf>\  \
+<贵族碧螺/@25gzbl>　　<贵族龙手/@25gzls>　　<贵族灯笼/@25gzdl>　　<魔血手镯/@25gzfs>　　<贵族法头/@25gzft>\   \
+　　　　　　<贵族法戒/@25gzfj>　　<贵族法手/@25gzfs1>　　<贵族法链/@25gzfl>\   \
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+
+[@25dssj]
+<★━━━━━━━━━加25道士散件━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+<贵族霸者/@25gzbz>　　<贵族扇子/@25gzsz>　　<贵族道袍/@25gzdp>　　<贵族长袍/@25gzcp>　　<贵族勋章/@25gzxzd>\  \
+<贵族泰坦/@25gztt1>　　<贵族三眼/@25gzsy>　　<贵族白虎/@25gzbh>　　<辟邪手镯/@25gzts>　　<贵族天头/@25gztt>\  \
+　　　　　　<贵族天戒/@25gztj>　　<贵族天手/@25gzts1>　　<贵族天链/@25gztl1>\   \
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\  \
+
+[@25gzcj]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT 
+gamegold - 500000
+give 贵族裁决 1
+AutoTakeOnItem 贵族裁决 1
+GmexEcute 改属性 1 0 25
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族裁决>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族裁决>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gznz]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族怒斩 1
+AutoTakeOnItem 贵族怒斩 1
+GmexEcute 改属性 1 0 25
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族怒斩>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族怒斩>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gztl]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族屠龙 1
+AutoTakeOnItem 贵族屠龙 1
+GmexEcute 改属性 1 0 25
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族屠龙>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族屠龙>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gztm]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族天魔神甲 1
+AutoTakeOnItem 贵族天魔神甲 0
+GmexEcute 改属性 0 2 22
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族天魔神甲>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族天魔神甲>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzbj]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族圣战宝甲 1
+AutoTakeOnItem 贵族圣战宝甲 0
+GmexEcute 改属性 0 2 22
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族圣战宝甲>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族圣战宝甲>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzxzz]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族勋章[战] 1
+AutoTakeOnItem 贵族勋章[战] 2
+GmexEcute 改属性 2 2 5
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族勋章[战]>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族勋章[战]>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzst]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族圣战头盔 1
+AutoTakeOnItem 贵族圣战头盔 4
+GmexEcute 改属性 4 2 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族圣战头盔>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族圣战头盔>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzht]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族黑铁头盔 1
+AutoTakeOnItem 贵族黑铁头盔 4
+GmexEcute 改属性 4 2 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族黑铁头盔>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族黑铁头盔>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzjy]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族记忆项链 1
+AutoTakeOnItem 贵族记忆项链 3
+GmexEcute 改属性 3 2 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族记忆项链>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族记忆项链>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzsl]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族圣战项链 1
+AutoTakeOnItem 贵族圣战项链 3
+GmexEcute 改属性 3 2 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族圣战项链>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族圣战项链>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzss]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族死神手套 1
+AutoTakeOnItem 贵族死神手套 5
+GmexEcute 改属性 5 2 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族死神手套>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族死神手套>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+
+[@25gzss1]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族圣战手镯 1
+AutoTakeOnItem 贵族圣战手镯 5
+GmexEcute 改属性 5 2 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族圣战手镯>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族圣战手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzqs]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族骑士手镯 1
+AutoTakeOnItem 贵族骑士手镯 5
+GmexEcute 改属性 5 2 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族骑士手镯>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族骑士手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzsj]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族圣战戒指 1
+AutoTakeOnItem 贵族圣战戒指 7
+GmexEcute 改属性 7 2 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族圣战戒指>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族圣战戒指>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzll]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族力量戒指 1
+AutoTakeOnItem 贵族力量戒指 7
+GmexEcute 改属性 7 2 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族力量戒指>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族力量戒指>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzly]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族龙牙 1
+AutoTakeOnItem 贵族龙牙 1
+GmexEcute 改属性 1 1 25
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族龙牙>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族龙牙>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzfz]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族嗜魂法杖 1
+AutoTakeOnItem 贵族嗜魂法杖 1
+GmexEcute 改属性 1 1 25
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族嗜魂法杖>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族嗜魂法杖>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzpf]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族法神披风 1
+AutoTakeOnItem 贵族法神披风 0
+GmexEcute 改属性 0 3 27
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族法神披风>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族法神披风>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzyy]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族霓裳羽衣 1
+AutoTakeOnItem 贵族霓裳羽衣 0
+GmexEcute 改属性 0 3 27
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族霓裳羽衣>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族霓裳羽衣>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzxzf]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族勋章[法] 1
+AutoTakeOnItem 贵族勋章[法] 2
+GmexEcute 改属性 2 3 5
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族勋章[法]>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族勋章[法]>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzft]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族法神头盔 1
+AutoTakeOnItem 贵族法神头盔 4
+GmexEcute 改属性 4 3 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族法神头盔>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族法神头盔>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzdl]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族灯笼 1
+AutoTakeOnItem 贵族灯笼 3
+GmexEcute 改属性 3 3 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族灯笼>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族灯笼>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzfl]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族法神项链 1
+AutoTakeOnItem 贵族法神项链 3
+GmexEcute 改属性 3 3 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族法神项链>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族法神项链>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzfs]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族魔血手镯 1
+AutoTakeOnItem 贵族魔血手镯 5
+GmexEcute 改属性 5 3 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族魔血手镯>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族魔血手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzfs1]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族法神手镯 1
+AutoTakeOnItem 贵族法神手镯 5
+GmexEcute 改属性 5 3 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族法神手镯>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族法神手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzls]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族龙之手镯 1
+AutoTakeOnItem 贵族龙之手镯 5
+GmexEcute 改属性 5 3 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族龙之手镯>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族龙之手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzfj]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族法神戒指 1
+AutoTakeOnItem 贵族法神戒指 7
+GmexEcute 改属性 7 3 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族法神戒指>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族法神戒指>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzbl]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族紫碧螺 1
+AutoTakeOnItem 贵族紫碧螺 7
+GmexEcute 改属性 7 3 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族紫碧螺>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族紫碧螺>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzbz]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族霸者之刃 1
+AutoTakeOnItem 贵族霸者之刃 1
+GmexEcute 改属性 1 2 25
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族霸者之刃>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族霸者之刃>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzsz]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族逍遥扇 1
+AutoTakeOnItem 贵族逍遥扇 1
+GmexEcute 改属性 1 2 25
+GmexEcute 改属性 1 5 3
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族逍遥扇>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族逍遥扇>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzdp]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族天尊道袍 1
+AutoTakeOnItem 贵族天尊道袍 0
+GmexEcute 改属性 0 4 27
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族天尊道袍>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族天尊道袍>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzcp]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族天师长袍 1
+AutoTakeOnItem 贵族天师长袍 0
+GmexEcute 改属性 0 4 27
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族天师长袍>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族天师长袍>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzxzd]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族勋章[道] 1
+AutoTakeOnItem 贵族勋章[道] 2
+GmexEcute 改属性 2 4 5
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族勋章[道]>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族勋章[道]>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gztt]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族天尊头盔 1
+AutoTakeOnItem 贵族天尊头盔 4
+GmexEcute 改属性 4 4 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族天尊头盔>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族天尊头盔>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzbh]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族白色虎齿 1
+AutoTakeOnItem 贵族白色虎齿 3
+GmexEcute 改属性 3 4 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族白色虎齿>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族白色虎齿>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gztl1]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族天尊项链 1
+AutoTakeOnItem 贵族天尊项链 3
+GmexEcute 改属性 3 4 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族天尊项链>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族天尊项链>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzts]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族避邪手镯 1
+AutoTakeOnItem 贵族避邪手镯 5
+GmexEcute 改属性 5 4 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族避邪手镯>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族避邪手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzts1]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族天尊手镯 1
+AutoTakeOnItem 贵族天尊手镯 5
+GmexEcute 改属性 5 4 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族天尊手镯>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族天尊手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gzsy]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族三眼手镯 1
+AutoTakeOnItem 贵族三眼手镯 5
+GmexEcute 改属性 5 4 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族三眼手镯>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族三眼手镯>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gztj]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族天尊戒指 1
+AutoTakeOnItem 贵族天尊戒指 7
+GmexEcute 改属性 7 4 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族天尊戒指>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族天尊戒指>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@25gztt1]
+#if
+CHECKGAMEGOLD > 499999
+CHECKBAGSIZE  1
+#ACT
+gamegold - 500000
+give 贵族泰坦戒指 1
+AutoTakeOnItem 贵族泰坦戒指 7
+GmexEcute 改属性 7 4 25
+sendmsg 0 玩家<%s>花费了50W元宝领取了<贵族泰坦戒指>
+SendCenterMsg 254 0 [%s]使用50W元宝，成功兑换<贵族泰坦戒指>！ 1
+SENDMSG 7 诚挚建议：
+SENDMSG 7 如发现装备看不到，小退游戏即可。
+SENDMSG 7 提示：去装备升级那里点一下元素增加致命一击会使你战斗力大幅度提升！
+#elseact
+messagebox 元宝数量不足或者包袱没有空格。
+
+[@sbzyd]
+\   \
+<尊敬的玩家，你好！屠猪刀可以帮助你轻松砍砍猪冲顶级....../SCOLOR=250>\
+<本服冲级设置为2种模式砍猪。/SCOLOR=250><充值1元RMB免费领取屠猪刀../SCOLOR=253>\
+<安全区砍经验白野猪介绍如下：>不带屠猪刀砍猪.每刀10万经验,带\
+上屠猪刀每刀15万经验........\
+<行会安全砍经验红野猪介绍如下：>不带屠猪刀砍猪.每刀15万经验,带\
+上屠猪刀每刀20万经验..安全.放心.赶快拜大哥加入行会吧..\  \
+
+　<真的吗？管理没有坑我吧？/SCOLOR=243>　<我愿支付1元RMB免费领取屠猪刀/@打开充值>\
+
+
+
+[@打开充值]
+#IF
+#ACT
+OpenWebSite http://v72w7cmd.885kkmz.cn:8080/User/Group?mygroup=1641
+SendCenterMsg 254 0 [%s]快速进入充值平台，支付1RMB免费领取屠猪刀，疯狂升级咯！ 
+SENDMSG 0 [%s]快速进入充值平台，支付1RMB免费领取屠猪刀，疯狂升级咯！ 
+#SAY
+　\
+　\
+　\
+　　　　　　　<我已完成充值/@main>　<我要继续充值/@打开充值>\
+
+
+[@3倍屠猪刀]
+#if
+CHECKGAMEGOLD > 14999999
+#act
+gamegold - 15000000
+GIVE 屠猪刀 1
+SendCenterMsg 254 0 [%s]使用1500万元宝，成功兑换一把屠猪刀，疯狂升级咯！ 
+SENDMSG 0 [%s]使用1500万元宝，成功兑换一把屠猪刀，疯狂升级咯！ 
+#ELSESAY
+你都没有元宝还来兑换，你好意思呀？赶紧去充值吧！
+
+
+[@sssbzyd]
+<尊敬的玩家，你好！屠猪刀可以帮助你轻松砍砍猪冲顶级./SCOLOR=250>.\
+<本服冲级设置为2种模式砍猪../SCOLOR=250><充值30元RMB免费领取6倍屠猪刀../SCOLOR=253>\
+<安全区砍经验白野猪介绍如下：>不带6倍屠猪刀砍猪.每刀10万经验,带上\
+屠猪刀每刀60万经验...安全放心砍猪....\
+<行会安全砍经验红野猪介绍如下：>不带6倍屠猪刀砍猪.每刀20万经验,带\
+上屠猪刀每秒70万经验..安全.放心....赶快拜大哥加入行会吧..\  \
+
+<我愿支付30元RMB免费领取屠猪刀./@充值2>      <前往隔壁充值奖励NPC领取>\
+
+
+
+
+[@充值2]
+#IF
+#ACT
+OpenWebSite http://v72w7cmd.885kkmz.cn:8080/User/Group?mygroup=1641
+SendCenterMsg 254 0 [%s]快速进入充值平台，支付30元RMB免费领取6倍屠猪刀，疯狂升级咯！ 
+SENDMSG 0 [%s]快速进入充值平台，支付30元RMB免费领取6倍屠猪刀，疯狂升级咯！ 
+#SAY
+　\
+　　　　　　　<注意：一次性充30元才可能免费领取！！！！/@打开充值>\
+　\
+　　　　　　　<我已完成充值/@main>　<我要继续充值/@打开充值>\
+
+
+[@充值6倍屠猪刀]
+#if
+CHECKGAMEGIRD > 5
+#act
+GAMEGIRD - 6
+GIVE 6倍屠猪刀 1
+SendCenterMsg 254 0 [%s]一次性冲值30元，免费领取一把6倍屠猪刀，疯狂升级咯！ 
+SENDMSG 0 [%s]一次性冲值30元，免费领取一把6倍屠猪刀，疯狂升级咯！  
+#ELSESAY
+充值没有达到30块钱或者是点卡充值的，如果是点卡充值可能会有误差！
+
+

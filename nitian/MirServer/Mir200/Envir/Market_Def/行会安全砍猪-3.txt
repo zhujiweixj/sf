@@ -1,0 +1,156 @@
+(@@InPutString @@InPutInteger)
+[@main]
+#IF
+HAVEGUILD
+#SAY
+<--------------------安全砍猪·必争之地--------------------/SCOLOR=253>\
+{隶属行会：/SCOLOR=243}{<$STR(A110)>/SCOLOR=250}\
+{充值积分：/SCOLOR=243}{<$STR(G110)>分/SCOLOR=250}　|　{刷新时间：/SCOLOR=243}{<$STR(A100)>/SCOLOR=250}\
+{规则说明：/SCOLOR=243}{[充值排行最高]/SCOLOR=250}的行会所有成员可以进入安全砍猪\
+行会成员充值都增加行会充值积分(网银100元=240分，详细查看充值NPC)\
+{砍猪经验：/SCOLOR=243}安全砍猪和土药红野猪经验不同，每刀15万经验\
+<----提示：100积分以上才可以刷新排行（此数据合区不保留）----/SCOLOR=253>\
+{我的行会：/SCOLOR=243}<$GUILDNAME>　|　{我的行会积分：/SCOLOR=243}<$GUILDBUILDPOINT>分\
+<进入安全砍猪/@安全砍猪>　　<刷新充值排行/@刷新排行>　　<行会砍猪管理/@砍猪管理>　　<积分专享地图/@积分专属地图>\
+#ELSESAY
+<--------------------安全砍猪·必争之地--------------------/SCOLOR=253>\
+{隶属行会：/SCOLOR=243}{<$STR(A110)>/SCOLOR=250}\
+{充值积分：/SCOLOR=243}{<$STR(G110)>分/SCOLOR=250}　|　{刷新时间：/SCOLOR=243}{<$STR(A100)>/SCOLOR=250}\
+{规则说明：/SCOLOR=243}{[充值排行最高]/SCOLOR=250}的行会所有成员可以进入安全砍猪\
+行会成员充值都增加行会充值积分(网银100元=240分，详细查看充值NPC)\
+{砍猪经验：/SCOLOR=243}安全砍猪和土药红野猪经验不同，每刀15万经验\
+<----提示：100积分以上才可以刷新排行（此数据合区不保留）----/SCOLOR=253>\
+{我的行会：/SCOLOR=243}未加入行会　|　{我的行会积分：/SCOLOR=243}未加入行会\
+<进入安全砍猪/@安全砍猪>　　<刷新充值排行/@刷新排行>　　<行会砍猪管理/@砍猪管理>　　<积分专享地图/@积分专属地图>\
+
+
+[@积分专属地图]
+#IF
+CHECKOFGUILD <$STR(A110)>
+#say
+<恭喜你进入了行会积分第一专享地图，此地图刷新所有BOSS，爆率极高！/SCOLOR=254>\  \
+<刷新怪物/SCOLOR=243>：<本服所有BOSS /SCOLOR=250>\
+<危险指数/SCOLOR=243>：<极度威胁 /SCOLOR=250>\
+<此地图爆/SCOLOR=243>：<+贵族15.+贵族25.+贵族35.+贵族45.封印之石.逆天.断魂/SCOLOR=253>\
+<荣耀./SCOLOR=253><魔戒指环/SCOLOR=243> <命 等等物品.../SCOLOR=243> \  \
+
+<我要进入行会积分第一专享地图/@wyjr>    <算了我放弃/@exit>
+
+#ELSEsay
+你不是行会积分第一的成员，不能进入此地图，赶紧加入此行会吧！
+
+[@wyjr]
+#if
+CHECKOFGUILD <$STR(A110)>
+#act
+mapmove hhzxdt 80 28
+SendCenterMsg 250 0 玩家[%s]进入行会积分第一专享地图，里面爆神级装备，赶紧加入！ 1
+SendCenterMsg 250 0 玩家[%s]进入行会积分第一专享地图，里面爆神级装备，赶紧加入！ 1
+GuildNoticeMsg 255  22  玩家[%s]进入行会积分第一专享地图，里面爆神级装备，赶紧加入！
+GuildNoticeMsg 255  22  玩家[%s]进入行会积分第一专享地图，里面爆神级装备，赶紧加入！
+#ELSEACT
+messagebox 你还没加入行会积分第一行会？，赶紧找此行会的老大加入吧！
+break
+
+
+
+
+
+[@刷新排行]
+#IF
+HAVEGUILD
+#ACT
+GOTO @刷新1
+#ELSEACT
+messagebox 你还没加入行会，快去找个靠谱的老大吧！
+break
+
+[@刷新1]
+#IF
+CHECKGUILDBUILDPOINT < 100
+#ACT
+messagebox 刷新失败，行会充值积分必须大于100分才可以刷新排行榜！
+break
+
+#IF
+CHECKGUILDBUILDPOINT = <$STR(G110)>
+CHECKOFGUILD <$STR(A110)>
+#ACT
+messagebox 刷新失败，你的行会已经排行第一，且充值积分无变化！
+break
+
+#IF
+CHECKGUILDBUILDPOINT > <$STR(G110)>
+#ACT
+MOV A110 <$GUILDNAME>
+MOV A100 <$MONTH>-<$DAY>　<$HOUR>:<$MINUTE>
+MOV G110 <$GUILDBUILDPOINT>
+SendCenterMsg 250 0 『<$GUILDNAME>』行会的【<$USERNAME>】刷新了安全砍猪排行榜！ 1
+SendCenterMsg 250 0 『<$GUILDNAME>』行会的【<$USERNAME>】刷新了安全砍猪排行榜！ 1
+messagebox 刷新排行成功，您的行会成员可以进入安全砍猪！
+GMEXECUTE 开始提问 @移动安全砍猪
+goto @main
+#ELSEACT
+messagebox 刷新失败，本行会积分未超过最高排名行会！
+break
+
+[@安全砍猪]
+#IF
+HAVEGUILD
+#ACT
+GOTO @检查1
+#ELSEACT
+messagebox 你还没加入行会，快去找个靠谱的老大吧！
+break
+
+[@检查1]
+#IF
+CHECKOFGUILD <$STR(A110)>
+#ACT
+GOTO @检查2
+#ELSEACT
+messagebox 你的行会不是充值排行第一名，不能享受此特权！
+break
+
+[@检查2]
+#IF
+#ACT
+MAPMOVE 3 316 342
+GuildNoticeMsg 255  22  玩家[%s]进入了行会安全砍猪，享受五星级砍猪泡点服务！
+
+[@砍猪管理]
+#IF
+ISGUILDMASTER
+CHECKOFGUILD <$STR(A110)>
+#ACT
+#say
+　\
+　\
+您好，充值排名第一的行会掌门人可以随时将安全砍猪范围内的\
+玩家移动到土城，以合理利用资源。\
+请确保玩家角色名正确无误：<移动玩家/@@InPutString8>　<返　　回/@返回>
+
+#ELSEACT
+messagebox 充值排名第一所属行会的掌门人才可以使用！
+
+[@CALLInPutString8]
+#IF
+S8.CHECKOFFLINE
+#ACT
+GOTO @main
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S8.CHECKONLINE
+S8.CheckHumInRange 3 314 344 3
+#ACT
+S8.Mapmove 3 330 330
+S8.messagebox 您已经被掌门人移出安全砍猪地图！
+messagebox 操作成功！
+#ELSEACT
+messagebox 该玩家不在线或不在安全砍猪范围内，请确定名字正确无误！
+
+[@返回]
+#IF
+#ACT
+GOTO @main

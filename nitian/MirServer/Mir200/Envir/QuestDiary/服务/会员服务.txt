@@ -1,0 +1,45 @@
+[@会员]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\功能设置\会员名单.txt
+#ACT
+#SAY
+<Hot~> <[尊敬的贵族会员，你是本服的贵族会员，特此享受以下权限，请笑纳！]/SCOLOR=254> \
+<══════════════════════════════/SCOLOR=254>\ 
+<1.[免费泡点，此泡点地图为贵族会员专署的哦]/SCOLOR=253>\
+<此地图每秒增加50W经验，此地图可以大退挂机泡点/SCOLOR=250><→ /SCOLOR=250><我要进入/@进泡点>\ \
+<2.[免费领取领取1.1倍攻击]/SCOLOR=253><贵族会员登陆自动激活1.1倍 /SCOLOR=250>\ \
+<3.[免费进入贵族会员专署地图]/SCOLOR=253>\
+<此地图爆贵族和+25 +35 +45等装备/SCOLOR=250><→ /SCOLOR=250><进会员地图/@会员地图>\
+<4.[切记●●●合区数据不保留●●●]/SCOLOR=253>\
+<══════════════════════════════/SCOLOR=254>\
+#ELSESAY
+<══════════════════════════════/SCOLOR=254>\
+<1.[免费泡点，此泡点地图为贵族会员专署的哦]/SCOLOR=253>\
+<此地图每秒增加50W经验，此地图可以大退挂机泡点/SCOLOR=250>\
+<2.[免费领取领取1.1倍攻击]/SCOLOR=253><贵族会员登陆自动激活1.3倍 /SCOLOR=250>\
+<3.[免费进入贵族会员专署地图]/SCOLOR=253><此地图爆贵族和+25 +35 +45的等装备/SCOLOR=250>\ 
+<4.[我要如何加入贵族会员呢?很简单去商铺购买贵族会员卡,购买后直接双击就可以了]> \
+<5.[切记●●●合区数据不保留●●●]/SCOLOR=253>\
+<══════════════════════════════/SCOLOR=254>\
+
+[@进泡点]
+#IF
+CHECKLEVELEX < 151
+CHECKNAMELIST ..\QuestDiary\功能设置\会员名单.txt
+#ACT
+SetOnTimer 6 1
+MAPMOVE guizuhuiyuan
+GuildNoticeMsg 255 245 恭喜『<$USERNAME>』进入贵族会员免费泡点地图，每秒50W经验
+GuildNoticeMsg 255 245 恭喜『<$USERNAME>』进入贵族会员免费泡点地图，每秒50W经验
+SendCenterMsg 180 251 恭喜『<$USERNAME>』进入贵族会员免费泡点地图,如果你也想成为贵族会员，那就去商铺购买贵族会员卡吧!.. 1
+#ELSEACT
+MeSSageBox 你等级已经超过150级了,不能泡点了
+
+[@会员地图]
+#IF
+CHECKNAMELIST ..\QuestDiary\功能设置\会员名单.txt
+#ACT
+Mapmove guizuditu 15 16
+SENDMSG 0 恭喜玩家『<$USERNAME>』进入了会员地图，好好享受会员地图里面的BOSS给你带来的装备吧
+}

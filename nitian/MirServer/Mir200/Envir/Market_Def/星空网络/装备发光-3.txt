@@ -1,0 +1,94 @@
+[@main] 
+ ══════════<装备闪 光系统/AUTOCOLOR=254,251,168,191,250,70,245,249,253>═════════\ 
+ ╔--------╗　 <☆☆☆☆☆☆☆☆☆☆☆>　╔--------╗\ 
+ ┆<项    链/@3S>┆ 　 锤炼装备没有失败的可能 ┆<勋    章/@2S>┆\
+ ┆<左手手镯/@6S>┆ 　  您需要支付1000个元宝  ┆<右手手镯/@5S>┆\ 
+ ┆<左手戒指/@8S>┆ 　 请不要重复锤炼闪光物品 ┆<右手戒指/@7S>┆ \ 
+ ┆<毒符闪光/@9S>┆ 　 否者元宝照收不给予反还 ┆        ┆\
+ ╚--------╝　 <☆☆☆☆☆☆☆☆☆☆☆>　╚--------╝\ ═══════════<返回主菜单/@MAIN>═════════\
+[@2S]
+#IF 
+CHECKGAMEGOLD > 19 
+CHECKUSEITEM 2 
+#ACT 
+SETITEMSLIGHT 2 1 
+GAMEGOLD - 1000 
+SENDMSG 6 提示：我已经把【<$RIGHTHAND>】给你锤炼闪闪发光了赶紧观赏一下吧！
+break
+#ELSEACT MESSAGEBOX [错误信息]：你的元宝不足.或者你装备栏没该物品！ 
+break 
+
+[@3S] 
+#IF 
+CHECKGAMEGOLD > 19 
+CHECKUSEITEM 3 
+#ACT 
+SETITEMSLIGHT 3 1 
+GAMEGOLD - 1000 
+SENDMSG 6 提示：我已经把【<$NECKLACE>】给你锤炼闪闪发光了赶紧观赏一下吧！
+break 
+#ELSEACT MESSAGEBOX [错误信息]：你的元宝不足.或者你装备栏没该物品！ 
+break 
+
+[@5S]
+#IF 
+CHECKGAMEGOLD > 19 
+CHECKUSEITEM 5 
+#ACT 
+SETITEMSLIGHT 5 1 
+GAMEGOLD - 1000 
+SENDMSG 6 提示：我已经把【<$ARMRING_L>】给你锤炼闪闪发光了赶紧观赏一下吧！
+break 
+#ELSEACT MESSAGEBOX [错误信息]：你的元宝不足.或者你装备栏没该物品！ 
+break 
+
+[@6S] 
+#IF 
+CHECKGAMEGOLD > 19 
+CHECKUSEITEM 6 
+#ACT
+SETITEMSLIGHT 6 1 
+GAMEGOLD - 1000 
+SENDMSG 6 提示：我已经把【<$ARMRING_R>】给你锤炼闪闪发光了赶紧观赏一下吧！ 
+break 
+#ELSEACT MESSAGEBOX [错误信息]：你的元宝不足.或者你装备栏没该物品！ 
+break 
+
+[@7S] 
+#IF 
+CHECKGAMEGOLD > 19 
+CHECKUSEITEM 7 
+#ACT 
+SetItemsLight 7 1 
+GAMEGOLD - 1000 
+SENDMSG 6 提示：我已经把【<$RING_L>】给你锤炼闪闪发光了赶紧观赏一下吧！ 
+break 
+#ELSEACT MESSAGEBOX [错误信息]：你的元宝不足.或者你装备栏没该物品！ 
+break 
+
+[@8S] 
+#IF 
+CHECKGAMEGOLD > 19 
+CHECKUSEITEM 8 
+#ACT 
+SetItemsLight 8 1 
+GAMEGOLD - 1000 
+SENDMSG 6 提示：我已经把【<$RING_R>】给你锤炼闪闪发光了赶紧观赏一下吧！ 
+break 
+#ELSEACT MESSAGEBOX [错误信息]：你的元宝不足.或者你装备栏没该物品！ 
+break 
+
+[@9S] 
+#IF 
+CHECKGAMEGOLD > 19 
+CHECKUSEITEM 9 
+#ACT 
+SetItemsLight 9 1 
+GAMEGOLD - 1000 
+SENDMSG 6 提示：我已经把【<$BUJUK>】给你锤炼闪闪发光了赶紧观赏一下吧！
+break 
+#ELSEACT MESSAGEBOX [错误信息]：你的元宝不足.或者你装备栏没该物品！ 
+break 
+
+
+;-b--b--Q -Q---156 598018---

@@ -1,0 +1,916 @@
+[@main]
+
+<----------------------------------------------------------/SCOLOR=102>\
+　　　　　　<嫉恶如仇剑如蛟 ，除魔重任一肩挑/SCOLOR=253>\
+　　　　　　<纵横四海荡诸邪， 跨越千山斩群妖/SCOLOR=253>\
+<------------------------/SCOLOR=102><[返回土城]/@3><------------------------/SCOLOR=102>\
+<兑换说明：+55以上极品可免费兑换对应本服高级装备[威震全服]/SCOLOR=249>\
+<套装说明：衣服+武器触发全屏牛叉技能，套装各属性提升1.1倍！/SCOLOR=250>\
+<套装说明：HP+MP提升，戒指吸血超级强，项链、手镯高敏+高准！/SCOLOR=229>\
+　<兑换逆天圣战[战]/@战装备>　<兑换断魂法神[法]/@法装备>　<兑换荣耀天尊[道]/@道装备>\
+　　　　　　　　　　<三职业装备互换/@终极互换><New~/SCOLOR=250>
+
+
+[@终极互换]
+----------------------------------------------------------\
+1.本人可以将逆天圣战、断魂法神、荣耀天尊互换，每次500万元宝\
+2.需将要兑换的对应装备放在背包内，若操作失误后果自担。\
+--------<友情提示：装备兑换后极品属性、加星会消失！/SCOLOR=250>--------\
+　<逆天圣战[战]→断魂法神[法]/@zhf>　　<逆天圣战[战]→荣耀天尊[道]/@zhd>\
+　<断魂法神[法]→逆天圣战[战]/@fhz>　　<断魂法神[法]→荣耀天尊[道]/@fhd>\
+　<荣耀天尊[道]→逆天圣战[战]/@dhz>　　<荣耀天尊[道]→断魂法神[法]/@dhf>\
+　\
+　　　　　　　　　　　 <返回/@main> | <关闭/@exit>
+
+
+[@zhf]
+　\
+<兑换前请将对应装备放入背包，需要500万元宝，一格背包空位!/SCOLOR=253>\
+　\
+<逆天神斩[圣]→断魂神杖[圣]/@z1>　　　<逆天圣战盔[圣]→断魂法神盔[圣]/@z2>\
+<逆天圣战甲[圣]→断魂法神甲[圣]/@z3>　<逆天圣战袍[圣]→断魂法神袍[圣]/@z4>\
+<逆天圣战链[圣]→断魂法神链[圣]/@z5>　<逆天圣战镯[圣]→断魂法神镯[圣]/@z6>\
+<逆天圣战戒[圣]→断魂法神戒[圣]/@z7>　<逆天圣战章[圣]→断魂法神章[圣]/@z8>\
+　\
+　　　　　　　　　　　 <返回/@main> | <关闭/@exit>
+
+[@zhd]
+　\
+<兑换前请将对应装备放入背包，需要500万元宝，一格背包空位!/SCOLOR=253>\
+　\
+<逆天神斩[圣]→荣耀神扇[圣]/@z11>　　　<逆天圣战盔[圣]→荣耀天尊盔[圣]/@z22>\
+<逆天圣战甲[圣]→荣耀天尊甲[圣]/@z33>　<逆天圣战袍[圣]→荣耀天尊袍[圣]/@z44>\
+<逆天圣战链[圣]→荣耀天尊链[圣]/@z55>　<逆天圣战镯[圣]→荣耀天尊镯[圣]/@z66>\
+<逆天圣战戒[圣]→荣耀天尊戒[圣]/@z77>　<逆天圣战章[圣]→荣耀天尊章[圣]/@z88>\
+　\
+　　　　　　　　　　　 <返回/@main> | <关闭/@exit>
+
+[@fhz]
+　\
+<兑换前请将对应装备放入背包，需要500万元宝，一格背包空位!/SCOLOR=253>\
+　\
+<断魂神杖[圣]→逆天神斩[圣]/@f1>　　　<断魂法神盔[圣]→逆天圣战盔[圣]/@f2>\
+<断魂法神甲[圣]→逆天圣战甲[圣]/@f3>　<断魂法神袍[圣]→逆天圣战袍[圣]/@f4>\
+<断魂法神链[圣]→逆天圣战链[圣]/@f5>　<断魂法神镯[圣]→逆天圣战镯[圣]/@f6>\
+<断魂法神戒[圣]→逆天圣战戒[圣]/@f7>　<断魂法神章[圣]→逆天圣战章[圣]/@f8>\
+　\
+　　　　　　　　　　　 <返回/@main> | <关闭/@exit>
+
+[@fhd]
+　\
+<兑换前请将对应装备放入背包，需要500万元宝，一格背包空位!/SCOLOR=253>\
+　\
+<断魂神杖[圣]→荣耀神扇[圣]/@f11>　　　<断魂法神盔[圣]→荣耀天尊盔[圣]/@f22>\
+<断魂法神甲[圣]→荣耀天尊甲[圣]/@f33>　<断魂法神袍[圣]→荣耀天尊袍[圣]/@f44>\
+<断魂法神链[圣]→荣耀天尊链[圣]/@f55>　<断魂法神镯[圣]→荣耀天尊镯[圣]/@f66>\
+<断魂法神戒[圣]→荣耀天尊戒[圣]/@f77>　<断魂法神章[圣]→荣耀天尊章[圣]/@f88>\
+　\
+　　　　　　　　　　　 <返回/@main> | <关闭/@exit>
+
+[@dhz]
+　\
+<兑换前请将对应装备放入背包，需要500万元宝，一格背包空位!/SCOLOR=253>\
+　\
+<荣耀神扇[圣]→逆天神斩[圣]/@d1>　　　<荣耀天尊盔[圣]→逆天圣战盔[圣]/@d2>\
+<荣耀天尊甲[圣]→逆天圣战甲[圣]/@d3>　<荣耀天尊袍[圣]→逆天圣战袍[圣]/@d4>\
+<荣耀天尊链[圣]→逆天圣战链[圣]/@d5>　<荣耀天尊镯[圣]→逆天圣战镯[圣]/@d6>\
+<荣耀天尊戒[圣]→逆天圣战戒[圣]/@d7>　<荣耀天尊章[圣]→逆天圣战章[圣]/@d8>\
+　\
+　　　　　　　　　　　 <返回/@main> | <关闭/@exit>
+
+
+[@dhf]
+　\
+<兑换前请将对应装备放入背包，需要500万元宝，一格背包空位!/SCOLOR=253>\
+　\
+<荣耀神扇[圣]→断魂神杖[圣]/@d11>　　　<荣耀天尊盔[圣]→断魂法神章[圣]/@d22>\
+<荣耀天尊甲[圣]→断魂法神甲[圣]/@d33>　<荣耀天尊袍[圣]→断魂法神袍[圣]/@d44>\
+<荣耀天尊链[圣]→断魂法神链[圣]/@d55>　<荣耀天尊镯[圣]→断魂法神镯[圣]/@d66>\
+<荣耀天尊戒[圣]→断魂法神戒[圣]/@d77>　<荣耀天尊章[圣]→断魂法神章[圣]/@d88>\
+　\
+　　　　　　　　　　　 <返回/@main> | <关闭/@exit>
+
+
+[@z1]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天神斩[圣] 1
+#ACT
+take 逆天神斩[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂神杖[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z2]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战盔[圣] 1
+#ACT
+take 逆天圣战盔[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神盔[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z3]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战甲[圣] 1
+#ACT
+take 逆天圣战甲[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神甲[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z4]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战袍[圣] 1
+#ACT
+take 逆天圣战袍[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神袍[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z5]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战链[圣] 1
+#ACT
+take 逆天圣战链[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神链[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z6]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战镯[圣] 1
+#ACT
+take 逆天圣战镯[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神镯[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z7]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战戒[圣] 1
+#ACT
+take 逆天圣战戒[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神戒[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z8]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战章[圣] 1
+#ACT
+take 逆天圣战章[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神章[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@z11]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天神斩[圣] 1
+#ACT
+take 逆天神斩[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀神扇[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z22]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战盔[圣] 1
+#ACT
+take 逆天圣战盔[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊盔[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z33]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战甲[圣] 1
+#ACT
+take 逆天圣战甲[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊甲[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z44]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战袍[圣] 1
+#ACT
+take 逆天圣战袍[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊袍[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z55]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战链[圣] 1
+#ACT
+take 逆天圣战链[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊链[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z66]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战镯[圣] 1
+#ACT
+take 逆天圣战镯[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊镯[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z77]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战戒[圣] 1
+#ACT
+take 逆天圣战戒[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊戒[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@z88]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天圣战章[圣] 1
+#ACT
+take 逆天圣战章[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊章[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f1]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂神杖[圣] 1
+#ACT
+take 断魂神杖[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天神斩[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f2]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神盔[圣] 1
+#ACT
+take 断魂法神盔[圣] 1
+GAMEGOLD - 5000000
+GIVE 逆天圣战盔[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f3]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神甲[圣] 1
+#ACT
+take 断魂法神甲[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战甲[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f4]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神袍[圣] 1
+#ACT
+take 断魂法神袍[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战袍[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f5]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神链[圣] 1
+#ACT
+take 断魂法神链[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战链[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f6]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神镯[圣] 1
+#ACT
+take 断魂法神镯[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战镯[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f7]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神戒[圣] 1
+#ACT
+take 断魂法神戒[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战戒[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f8]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神章[圣] 1
+#ACT
+take 断魂法神章[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战章[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@f11]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂神杖[圣] 1
+#ACT
+take 断魂神杖[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀神扇[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f22]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神盔[圣] 1
+#ACT
+take 断魂法神盔[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊盔[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f33]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神甲[圣] 1
+#ACT
+take 断魂法神甲[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊甲[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f44]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神袍[圣] 1
+#ACT
+take 断魂法神袍[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊袍[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f55]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神链[圣] 1
+#ACT
+take 断魂法神链[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊链[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f66]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神镯[圣] 1
+#ACT
+take 断魂法神镯[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊镯[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f77]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神戒[圣] 1
+#ACT
+take 断魂法神戒[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊戒[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@f88]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 断魂法神章[圣] 1
+#ACT
+take 断魂法神章[圣] 1 
+GAMEGOLD - 5000000
+GIVE 荣耀天尊章[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@d1]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀神扇[圣] 1
+#ACT
+take 荣耀神扇[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天神斩[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d2]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊盔[圣] 1
+#ACT
+take 荣耀天尊盔[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战盔[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d3]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊甲[圣] 1
+#ACT
+take 荣耀天尊甲[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战甲[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d4]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊袍[圣] 1
+#ACT
+take 荣耀天尊袍[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战袍[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d5]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊链[圣] 1
+#ACT
+take 荣耀天尊链[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战链[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d6]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊镯[圣] 1
+#ACT
+take 荣耀天尊镯[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战镯[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d7]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊戒[圣] 1
+#ACT
+take 荣耀天尊戒[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战戒[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d8]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊章[圣] 1
+#ACT
+take 荣耀天尊章[圣] 1 
+GAMEGOLD - 5000000
+GIVE 逆天圣战章[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d11]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀神扇[圣] 1
+#ACT
+take 荣耀神扇[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂神杖[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d22]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊盔[圣] 1
+#ACT
+take 荣耀天尊盔[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神盔[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d33]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊甲[圣] 1
+#ACT
+take 荣耀天尊甲[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神甲[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d44]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊袍[圣] 1
+#ACT
+take 荣耀天尊袍[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神袍[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d55]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊链[圣] 1
+#ACT
+take 荣耀天尊链[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神链[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d66]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊镯[圣] 1
+#ACT
+take 荣耀天尊镯[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神镯[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d77]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊戒[圣] 1
+#ACT
+take 荣耀天尊戒[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神戒[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+[@d88]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 荣耀天尊章[圣] 1
+#ACT
+take 荣耀天尊章[圣] 1 
+GAMEGOLD - 5000000
+GIVE 断魂法神章[圣] 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+
+
+[@3]
+#IF
+#ACT
+MAPMOVE 3 330 330
+
+[@战装备]
+----------------------------------------------------------\
+1.请将对应+55以上攻击装备穿在身上 2.保证背包至少一格空位\
+3.兑换勋章需+20攻以上，兑换过程中不要下线，否则损失自行承担\
+----------------------------------------------------------\
+　<逆天圣战甲[圣]/@男战衣服>　　　　　　<逆天圣战袍[圣]/@女战衣服>\
+　<逆天神斩[圣]/@战武器>　　　　　　　<逆天圣战章[圣]/@战勋章>\
+　<逆天圣战链[圣]/@战项链>　　　　　　<逆天圣战盔[圣]/@战头盔>\
+　<逆天圣战镯[圣]（左）/@战手镯左>　　　<逆天圣战镯[圣]（右）/@战手镯右>\
+　<逆天圣战戒[圣]（左）/@战戒指左>　　　<逆天圣战戒[圣]（右）/@战戒指右>　　<返回/@main>\
+
+
+[@男战衣服]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换逆天圣战甲[圣]吗？ @男战衣服 @取消
+
+[@女战衣服]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换逆天圣战袍[圣]吗？ @女战衣服 @取消
+
+[@战武器]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换逆天神斩[圣]吗？ @战武器 @取消
+
+[@战勋章]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换逆天圣战章[圣]吗？ @战勋章 @取消
+
+[@战项链]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换逆天圣战链[圣]吗？ @战项链 @取消
+
+[@战头盔]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换逆天圣战盔[圣]吗？ @战头盔 @取消
+
+[@战手镯左]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换逆天圣战镯[圣]吗？ @战手镯左 @取消
+
+[@战手镯右]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换逆天圣战镯[圣]吗？ @战手镯右 @取消
+
+[@战戒指左]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换逆天圣战戒[圣]吗？ @战戒指左 @取消
+
+[@战戒指右]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换逆天圣战戒[圣]吗？ @战戒指右 @取消
+
+
+[@法装备]
+----------------------------------------------------------\
+1.请将对应+55以上魔法装备穿在身上 2.保证背包至少一格空位\
+3.兑换勋章需+20魔以上，兑换过程中不要下线，否则损失自行承担\
+----------------------------------------------------------\
+　<断魂法神甲[圣]/@男法衣服>　　　　　　<断魂法神袍[圣]/@女法衣服>\
+　<断魂神杖[圣]/@法武器>　　　　　　　<断魂法神章[圣]/@法勋章>\
+　<断魂法神链[圣]/@法项链>　　　　　　<断魂法神盔[圣]/@法头盔>\
+　<断魂法神镯[圣]（左）/@法手镯左>　　　<断魂法神镯[圣]（右）/@法手镯右>\
+　<断魂法神戒[圣]（左）/@法戒指左>　　　<断魂法神戒[圣]（右）/@法戒指右>　　<返回/@main>\
+
+[@男法衣服]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换断魂法神甲[圣]吗？ @男法衣服 @取消
+
+[@女法衣服]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换断魂法神袍[圣]吗？ @女法衣服 @取消
+
+[@法武器]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换断魂神杖[圣]吗？ @法武器 @取消
+
+[@法勋章]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换断魂法神章[圣]吗？ @法勋章 @取消
+
+[@法项链]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换断魂法神链[圣]吗？ @法项链 @取消
+
+[@法头盔]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换断魂法神盔[圣]吗？ @法头盔 @取消
+
+[@法手镯左]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换断魂法神镯[圣]吗？ @法手镯左 @取消
+
+[@法手镯右]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换断魂法神镯[圣]吗？ @法手镯右 @取消
+
+[@法戒指左]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换断魂法神戒[圣]吗？ @法戒指左 @取消
+
+[@法戒指右]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换断魂法神戒[圣]吗？ @法戒指右 @取消
+
+
+
+[@道装备]
+----------------------------------------------------------\
+1.请将对应+55以上道术装备穿在身上 2.保证背包至少一格空位\
+3.兑换勋章需+20道以上，兑换过程中不要下线，否则损失自行承担\
+----------------------------------------------------------\
+　<荣耀天尊甲[圣]/@男道衣服>　　　　　　<荣耀天尊袍[圣]/@女道衣服>\
+　<荣耀神扇[圣]/@道武器>　　　　　　　<荣耀天尊章[圣]/@道勋章>\
+　<荣耀天尊链[圣]/@道项链>　　　　　　<荣耀天尊盔[圣]/@道头盔>\
+　<荣耀天尊镯[圣]（左）/@道手镯左>　　　<荣耀天尊镯[圣]（右）/@道手镯右>\
+　<荣耀天尊戒[圣]（左）/@道戒指左>　　　<荣耀天尊戒[圣]（右）/@道戒指右>　　<返回/@main>\
+
+
+[@男道衣服]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换荣耀天尊甲[圣]吗？ @男道衣服 @取消
+
+[@女道衣服]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换荣耀天尊袍[圣]吗？ @女道衣服 @取消
+
+[@道武器]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换荣耀神扇[圣]吗？ @道武器 @取消
+
+[@道勋章]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换荣耀天尊章[圣]吗？ @道勋章 @取消
+
+[@道项链]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换荣耀天尊链[圣]吗？ @道项链 @取消
+
+[@道头盔]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换荣耀天尊盔[圣]吗？ @道头盔 @取消
+
+[@道手镯左]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换荣耀天尊镯[圣]吗？ @道手镯左 @取消
+
+[@道手镯右]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换荣耀天尊镯[圣]吗？ @道手镯右 @取消
+
+[@道戒指左]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换荣耀天尊戒[圣]吗？ @道戒指左 @取消
+
+[@道戒指右]
+#IF
+#ACT
+MESSAGEBOX 确定要兑换荣耀天尊戒[圣]吗？ @道戒指右 @取消
+

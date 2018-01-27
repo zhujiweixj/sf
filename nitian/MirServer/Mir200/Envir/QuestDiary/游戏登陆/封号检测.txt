@@ -1,0 +1,75 @@
+[@封号检测]
+{
+
+#IF
+CHECK [333] 0
+CHECKNAMELIST ..\QuestDiary\功能设置\七彩名称.txt
+#ACT
+DELNAMELIST ..\QuestDiary\功能设置\七彩名称.txt
+SET [333] 1
+
+
+#IF
+CHECK [333] 1
+#ACT
+SetIcon 0 39 -18 -6
+RENEWLEVEL 1 0 0
+SETRANKLEVELNAME  %s\┏--★-----★----★--┓\☆　大　　富　　豪　☆\┗--★-----★----★--┛\
+SendCenterMsg 253 0 [公告]：☆超级大富豪☆[%s]进入游戏！ 1 10
+
+
+#IF
+EQUAL A6 <$USERNAME>
+#ACT
+MOV S206 ╔┈┈┈┈┈┈┈╗\┊天下第一男战士┊\╚┈┈┈┈┈┈┈╝\
+SendCenterMsg 253 0 [公告]：天下第一男战士[%s]进入游戏！ 1 10
+PowerRate 110 60000
+SENDMSG 6 [提示]：你是天下第一，你获得了1.1倍战斗力的特权。
+SETRANKLEVELNAME  %s\<$STR(S206)>
+BREAK
+#IF
+EQUAL A18 <$USERNAME>
+#ACT
+MOV S206 ╔┈┈┈┈┈┈┈╗\┊天下第一女战士┊\╚┈┈┈┈┈┈┈╝\
+SendCenterMsg 253 0 [公告]：天下第一女战士[%s]进入游戏！ 1 10
+PowerRate 110 60000
+SENDMSG 6 [提示]：你是天下第一，你获得了1.1倍战斗力的特权。
+SETRANKLEVELNAME  %s\<$STR(S206)>
+BREAK
+#IF
+EQUAL A10 <$USERNAME>
+#ACT
+MOV S206 ╔┈┈┈┈┈┈┈╗\┊天下第一男法师┊\╚┈┈┈┈┈┈┈╝\
+SendCenterMsg 253 0 [公告]：天下第一男法师[%s]进入游戏！ 1 10
+PowerRate 110 60000
+SENDMSG 6 [提示]：你是天下第一，你获得了1.1倍战斗力的特权。
+SETRANKLEVELNAME  %s\<$STR(S206)>
+BREAK
+#IF
+EQUAL A22 <$USERNAME>
+#ACT
+MOV S206 ╔┈┈┈┈┈┈┈╗\┊天下第一女法师┊\╚┈┈┈┈┈┈┈╝\
+SendCenterMsg 253 0 [公告]：天下第一女法师[%s]进入游戏！ 1 10
+PowerRate 110 60000
+SENDMSG 6 [提示]：你是天下第一，你获得了1.1倍战斗力的特权。
+SETRANKLEVELNAME  %s\<$STR(S206)>
+BREAK
+#IF
+EQUAL A14 <$USERNAME>
+#ACT
+MOV S206 ╔┈┈┈┈┈┈┈╗\┊天下第一男道士┊\╚┈┈┈┈┈┈┈╝\
+SendCenterMsg 253 0 [公告]：天下第一男道士[%s]进入游戏！ 1 10
+PowerRate 110 60000
+SENDMSG 6 [提示]：你是天下第一，你获得了1.1倍战斗力的特权。
+SETRANKLEVELNAME  %s\<$STR(S206)>
+BREAK
+#IF
+EQUAL A26 <$USERNAME>
+#ACT
+MOV S206 ╔┈┈┈┈┈┈┈╗\┊天下第一女道士┊\╚┈┈┈┈┈┈┈╝\
+SendCenterMsg 253 0 [公告]：天下第一女道士[%s]进入游戏！ 1 10
+PowerRate 110 60000
+SENDMSG 6 [提示]：你是天下第一，你获得了1.1倍战斗力的特权。
+SETRANKLEVELNAME  %s\<$STR(S206)>
+BREAK
+}

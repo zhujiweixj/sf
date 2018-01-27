@@ -1,0 +1,33 @@
+;芝+麻+商+业+版+本+免+费+下+载w=w=w.5=s=9=8.c=o=m
+
+
+
+
+
+[@main]
+每天<上午9:05--晚上23:05/SCOLOR=250>每两个小时开一次奖\
+【幸运买马活动】，<1-9>个号码，买中翻<9倍>。\
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\ \ \ \
+ 
+<进入幸运买马地图/@JINRA>　　　<关闭/@EXIT>\ \
+
+前9期出的号码: {<$STR(G371)>/SCOLOR=250}   {<$STR(G372)>/SCOLOR=249}   {<$STR(G373)>/SCOLOR=253}   {<$STR(G374)>/SCOLOR=249}   {<$STR(G375)>/SCOLOR=253}   {<$STR(G376)>/SCOLOR=249}   {<$STR(G377)>/SCOLOR=253}   {<$STR(G378)>/SCOLOR=249}   {<$STR(G379)>/SCOLOR=253}
+
+[@JINRA]
+#IF
+#ACT
+KILLSLAVE
+give 回城卷 
+mapmove  dns001 26 26
+BREAK
+#ELSEACT
+BREAK
+
+
+
+
+
+
+
+
+

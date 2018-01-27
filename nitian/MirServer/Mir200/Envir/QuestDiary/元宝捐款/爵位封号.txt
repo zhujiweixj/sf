@@ -1,0 +1,65 @@
+[@爵位封号]
+{
+#IF
+gender man 
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第一排名.txt
+#ACT
+seticon 0 30 -35 -5
+SendCenterMsg 200 245 ═════皇■帝═════%s上线了,大家热烈欢呼吧.. 1
+BREAK
+
+#IF
+gender woman
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第一排名.txt
+#ACT
+seticon 0 31 -35 -5
+SendCenterMsg 200 245 [═════皇■后═════]%s上线了,大家热烈欢呼吧.. 1
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\变量数据\骰王名单.txt
+#ACT
+seticon 0 34 -35 -5
+SendCenterMsg 200 245 [═════骰■王═════]%s上线了,大家热烈欢呼吧.. 1
+
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第二排名.txt
+#ACT
+seticon 0 32 -35 -5
+SendCenterMsg 200 245 [═════丞■相═════]%s上线了,大家热烈欢呼吧.. 1
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第三排名.txt
+#ACT
+seticon 0 33 -35 -5
+SendCenterMsg 200 245 [═════将■军═════]%s上线了,大家热烈欢呼吧.. 1
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第四排名.txt
+#ACT
+SETRANKLEVELNAME %s\═════七■品═════
+SendCenterMsg 200 245 [═════七■品═════]%s上线了,大家热烈欢呼吧.. 1
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第五排名.txt
+#ACT
+SETRANKLEVELNAME %s\═════九■品═════
+SendCenterMsg 200 245 [═════九■品═════]%s上线了,大家热烈欢呼吧.. 1
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第六排名.txt
+#ACT
+SETRANKLEVELNAME %s\═════地■主═════
+BREAK
+
+#IF
+check [167] 1
+#ACT
+seticon 0 28 2 -5
+seticon 1 28 2 -5
+seticon 2 28 2 -5
+}

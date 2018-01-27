@@ -1,0 +1,290 @@
+[@main]
+#IF
+CheckRangeHumCount xm1 14 15 10 > 0
+#ACT
+MOV A21 <●/SCOLOR=249>
+
+#IF
+CheckRangeHumCount xm1 14 15 10 = 0
+#ACT
+MOV A21 <●/SCOLOR=250>
+
+#IF
+CheckRangeHumCount xm2 14 15 10 > 0
+#ACT
+MOV A22 <●/SCOLOR=249>
+
+#IF
+CheckRangeHumCount xm2 14 15 10 = 0
+#ACT
+MOV A22 <●/SCOLOR=250>
+
+#IF
+CheckRangeHumCount xm3 14 15 10 > 0
+#ACT
+MOV A23 <●/SCOLOR=249>
+
+#IF
+CheckRangeHumCount xm3 14 15 10 = 0
+#ACT
+MOV A23 <●/SCOLOR=250>
+
+#IF
+CheckRangeHumCount xm4 14 15 10 > 0
+#ACT
+MOV A24 <●/SCOLOR=249>
+
+#IF
+CheckRangeHumCount xm4 14 15 10 = 0
+#ACT
+MOV A24 <●/SCOLOR=250>
+
+#IF
+CheckRangeHumCount xm5 14 15 10 > 0
+#ACT
+MOV A25 <●/SCOLOR=249>
+
+#IF
+CheckRangeHumCount xm5 14 15 10 = 0
+#ACT
+MOV A25 <●/SCOLOR=250>
+
+#IF
+CheckRangeHumCount xm6 14 15 10 > 0
+#ACT
+MOV A26 <●/SCOLOR=249>
+
+#IF
+CheckRangeHumCount xm6 14 15 10 = 0
+#ACT
+MOV A26 <●/SCOLOR=250>
+
+#IF
+CheckRangeHumCount xm7 14 15 10 > 0
+#ACT
+MOV A27 <●/SCOLOR=249>
+
+#IF
+CheckRangeHumCount xm7 14 15 10 = 0
+#ACT
+MOV A27 <●/SCOLOR=250>
+
+#IF
+CheckRangeHumCount xm8 14 15 10 > 0
+#ACT
+MOV A28 <●/SCOLOR=249>
+
+#IF
+CheckRangeHumCount xm8 14 15 10 = 0
+#ACT
+MOV A28 <●/SCOLOR=250>
+
+#IF
+CheckRangeHumCount xm9 14 15 10 > 0
+#ACT
+MOV A29 <●/SCOLOR=249>
+
+#IF
+CheckRangeHumCount xm9 14 15 10 = 0
+#ACT
+MOV A29 <●/SCOLOR=250>
+
+#IF
+CheckRangeHumCount xm10 14 15 10 > 0
+#ACT
+MOV A30 <●/SCOLOR=249>
+
+#IF
+CheckRangeHumCount xm10 14 15 10 = 0
+#ACT
+MOV A30 <●/SCOLOR=250>
+
+#IF
+#ACT
+LOADVAR HUMAN 心魔标识 ..\QuestDiary\变量数据\心魔系统.txt
+
+#IF
+CHECKVAR HUMAN 心魔标识 < 3
+#SAY
+--------------------全球独家●挑战心魔--------------------\
+<人最大的敌人是自己，战胜自己才能无往不胜！你作好准备了吗？/SCOLOR=250>\
+----------------------------------------------------------\
+1.第一次1亿经验，第二次2亿经验，第三次3亿经验，每天限3次\
+2.限90级以上，挑战不成功可重来，本系统完全免费\
+3.本地图不准使用任何药品，死亡不爆装备\
+----------------------------------------------------------\
+　　　　　　　　　你已经成功挑战<$HUMAN(心魔标识)>次]\
+　　　　　　　　　　<开始挑战/@开始挑战1>　　<关闭/@exit>\
+　\
+房间状态：1号房<$STR(A21)>　2号房<$STR(A22)>　3号房<$STR(A23)>　4号房<$STR(A24)>　 5号房<$STR(A25)>\
+　　　　　6号房<$STR(A26)>　7号房<$STR(A27)>　8号房<$STR(A28)>　9号房<$STR(A29)>　10号房<$STR(A30)>\
+
+
+#IF
+CHECKVAR HUMAN 心魔标识 > 2
+#SAY
+--------------------全球独家●挑战心魔--------------------\
+<人最大的敌人是自己，战胜自己才能无往不胜！你作好准备了吗？/SCOLOR=250>\
+----------------------------------------------------------\
+1.第一次1亿经验，第二次2亿经验，第三次3亿经验，每天限3次\
+2.限90级以上，挑战不成功可重来，本系统完全免费\
+3.本地图不准使用任何药品，死亡不爆装备\
+----------------------------------------------------------\
+　　　　　　　您今天已经成功挑战3次了，请明天再来\
+　　　　　　　　　　　　<关闭/@exit>
+　\
+房间状态：1号房<$STR(A21)>　2号房<$STR(A22)>　3号房<$STR(A23)>　4号房<$STR(A24)>　 5号房<$STR(A25)>\
+　　　　　6号房<$STR(A26)>　7号房<$STR(A27)>　8号房<$STR(A28)>　9号房<$STR(A29)>　10号房<$STR(A30)>\
+
+
+
+[@开始挑战1]
+#IF
+CHECKLEVELEX < 90
+#ACT
+MESSAGEBOX 抱歉，需要90-160级才可以进入挑战心魔！
+break
+
+#IF
+CHECKLEVELEX > 160
+#ACT
+MESSAGEBOX 抱歉，需要90-160级才可以进入挑战心魔！
+break
+
+#IF
+#ACT
+HumanHP + 800000
+HumanMP + 800000
+;CHANGELEVEL + 1
+
+#IF
+CheckRangeHumCount xm1 14 15 10 < 1
+#ACT
+CLEARMAPMON xm1
+mapmove xm1 15 14
+goto @刷心魔
+#elseact
+goto @开始挑战2
+
+[@开始挑战2]
+#IF
+CheckRangeHumCount xm2 14 15 10 < 1
+#ACT
+CLEARMAPMON xm2
+mapmove xm2 15 14
+goto @刷心魔
+#elseact
+goto @开始挑战3
+
+[@开始挑战3]
+#IF
+CheckRangeHumCount xm3 14 15 10 < 1
+#ACT
+CLEARMAPMON xm3
+mapmove xm3 15 14
+goto @刷心魔
+#elseact
+goto @开始挑战4
+
+[@开始挑战4]
+#IF
+CheckRangeHumCount xm4 14 15 10 < 1
+#ACT
+CLEARMAPMON xm4
+mapmove xm4 15 14
+goto @刷心魔
+#elseact
+goto @开始挑战5
+
+[@开始挑战5]
+#IF
+CheckRangeHumCount xm5 14 15 10 < 1
+#ACT
+CLEARMAPMON xm5
+mapmove xm5 15 14
+goto @刷心魔
+#elseact
+goto @开始挑战6
+
+[@开始挑战6]
+#IF
+CheckRangeHumCount xm6 14 15 10 < 1
+#ACT
+CLEARMAPMON xm6
+mapmove xm6 15 14
+goto @刷心魔
+#elseact
+MESSAGEBOX 抱歉，所有房间都已爆满，请稍候再来！
+
+[@开始挑战7]
+#IF
+CheckRangeHumCount xm7 14 15 10 < 1
+#ACT
+CLEARMAPMON xm7
+mapmove xm7 15 14
+goto @刷心魔
+#elseact
+MESSAGEBOX 抱歉，所有房间都已爆满，请稍候再来！
+
+[@开始挑战8]
+#IF
+CheckRangeHumCount xm8 14 15 10 < 1
+#ACT
+CLEARMAPMON xm8
+mapmove xm8 15 14
+goto @刷心魔
+#elseact
+MESSAGEBOX 抱歉，所有房间都已爆满，请稍候再来！
+
+[@开始挑战9]
+#IF
+CheckRangeHumCount xm9 14 15 10 < 1
+#ACT
+CLEARMAPMON xm9
+mapmove xm9 15 14
+goto @刷心魔
+#elseact
+MESSAGEBOX 抱歉，所有房间都已爆满，请稍候再来！
+
+[@开始挑战10]
+#IF
+CheckRangeHumCount xm10 14 15 10 < 1
+#ACT
+CLEARMAPMON xm10
+mapmove xm10 15 14
+goto @刷心魔
+#elseact
+MESSAGEBOX 抱歉，所有房间都已爆满，请稍候再来！
+
+[@刷心魔]
+#IF
+CHECKVAR HUMAN 心魔标识 = 0
+#ACT
+RecallSelf 10
+GETCALLMOB <$USERNAME>
+;CHANGELEVEL - 1
+GuildNoticeMsg 251 233 [%s]开始挑战1级心魔，他能战胜自己获得1亿经验奖励吗，让我们拭目以待！
+
+
+#IF
+CHECKVAR HUMAN 心魔标识 = 1
+#ACT
+RecallSelf 10
+RecallSelf 10
+GETCALLMOB <$USERNAME>
+GETCALLMOB <$USERNAME>
+;CHANGELEVEL - 1
+GuildNoticeMsg 251 233 [%s]开始挑战2级心魔，他能战胜自己获得2亿经验奖励吗，让我们拭目以待！
+
+
+#IF
+CHECKVAR HUMAN 心魔标识 = 2
+#ACT
+RecallSelf 10
+RecallSelf 10
+RecallSelf 10
+GETCALLMOB <$USERNAME>
+GETCALLMOB <$USERNAME>
+GETCALLMOB <$USERNAME>
+;CHANGELEVEL - 1
+GuildNoticeMsg 251 233 [%s]开始挑战3级心魔，他能战胜自己获得3亿经验奖励吗，让我们拭目以待！

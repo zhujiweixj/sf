@@ -1,0 +1,160 @@
+[@main]
+#IF
+#ACT
+LOADVAR GLOBAL 开区天数 ..\QuestDiary\变量数据\系统变量.txt
+LOADVAR GLOBAL 攻沙奖励 ..\QuestDiary\变量数据\系统变量.txt
+LOADVAR GLOBAL 领取次数 ..\QuestDiary\变量数据\系统变量.txt
+#say
+　\
+<开区第二天晚上20点统一自动攻沙无需提交头像！../SCOLOR=244>\
+-----------------------------------------------------------　\
+首次沙城奖励：3000W元宝 老区奖励：1500W元宝\
+1.76独家微变中极品,一直被模仿,从未被超越!　\
+　\
+　　　┏━━━━━━━━┓┏━━━━━━━━┓\
+　　　┃<查询最近攻城时间/@aboutwar>┃┃  <领取沙城奖励/@领取>  ┃\
+　　　┗━━━━━━━━┛┗━━━━━━━━┛
+
+[@领取]
+<沙城主注意：奖励必须每晚10:00-10:15之间领取，过期不候！>\ \
+首任沙城奖励：3000W元宝     历任沙城奖励：1500W元宝　\ \
+<沙城争霸沙城主领元宝奖励/@沙城主领奖>\  \
+
+
+[@沙城主领奖]
+#IF
+ISCASTLEMASTER
+CHECKVAR GLOBAL 领取次数 < 1
+CHECKVAR GLOBAL 攻沙奖励 = 1
+#act
+goto @1
+#ELSESAY
+你不是沙城老大，或已经领取过奖励了！请在晚上22点-22:30点之间领取！
+
+[@1]
+#if
+CHECKVAR GLOBAL 开区天数 < 2
+#ACT
+goto @11
+#ELSEACT
+GOTO @111
+
+[@11]
+#IF
+CHECKVAR GLOBAL 领取次数 < 1
+#ACT
+GAMEGOLD + 15000000
+give 城主神剑 1
+give 城主战甲(男) 1
+give 城主战甲(女) 1
+GuildNoticeMsg 0  253  沙城主《%s》,已经成功领取首届沙城奖励1500W元宝!!! 
+GuildNoticeMsg 0  253  沙城主《%s》,已经成功领取首届沙城奖励1500W元宝!!! 
+GuildNoticeMsg 0  253  沙城主《%s》,已经成功领取首届沙城奖励1500W元宝!!! 
+GuildNoticeMsg 0  253  沙城主《%s》,已经成功领取首届沙城奖励1500W元宝!!! 
+CALCVAR GLOBAL 领取次数 + 1
+SAVEVAR GLOBAL 领取次数 ..\QuestDiary\变量数据\系统变量.txt
+#ELSEACT
+messagebox 已经领取过了，无法再领取！
+
+[@111]
+#IF
+CHECKVAR GLOBAL 领取次数 < 1
+#ACT
+GAMEGOLD + 15000000
+give 城主神剑 1
+give 城主战甲(男) 1
+give 城主战甲(女) 1
+GuildNoticeMsg 0  253  沙城主《%s》,已经成功领取历届沙城奖励1500W元宝!!! 
+GuildNoticeMsg 0  253  沙城主《%s》,已经成功领取历届沙城奖励1500W元宝!!! 
+GuildNoticeMsg 0  253  沙城主《%s》,已经成功领取历届沙城奖励1500W元宝!!! 
+GuildNoticeMsg 0  253  沙城主《%s》,已经成功领取历届沙城奖励1500W元宝!!! 
+CALCVAR GLOBAL 领取次数 + 1
+SAVEVAR GLOBAL 领取次数 ..\QuestDiary\变量数据\系统变量.txt
+#ELSEACT
+messagebox 已经领取过了,无法再领取！
+
+[@传送]
+<有钱能使鬼推磨!只要给钱,我就直接送你去攻打城堡/SCOLOR=253>\
+说明:<每个点收费不一样,请你选择自己想要的位置/SCOLOR=250>\
+　　　　　<英雄男儿赴战场,为国捐躯真英雄>\
+　　　【<沙城大门/@传送1>】<★———★/AUTOCOLOR=168,250,70,253>【<收费:111元宝/@传送1>】\
+　　　【<沙复活点/@传送2>】<★———★/AUTOCOLOR=168,250,70,253>【<收费:666元宝/@传送2>】\
+　　　【<皇宫左门/@传送3>】<★———★/AUTOCOLOR=168,250,70,253>【<收费:888元宝/@传送3>】\
+　　　【<皇宫右门/@传送4>】<★———★/AUTOCOLOR=168,250,70,253>【<收费:888元宝/@传送4>】\
+　　　【<直飞皇宫/@传送5>】<★———★/AUTOCOLOR=168,250,70,253>【<收费:10W元宝/@传送5>】\
+
+
+[@传送1]
+#IF
+CHECKGAMEGOLD > 110
+#ACT
+GAMEGOLD - 111
+mapmove 3 676 334
+give 回城卷 1
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+
+[@传送2]
+#IF
+CHECKGAMEGOLD > 665
+#ACT
+GAMEGOLD - 666
+mapmove 3 642 288
+give 回城卷 1
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+[@传送3]
+#IF
+CHECKGAMEGOLD > 887
+#ACT
+GAMEGOLD - 888
+mapmove 3 627 281
+give 回城卷 1
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+[@传送4]
+#IF
+CHECKGAMEGOLD > 887
+#ACT
+GAMEGOLD - 888
+mapmove 3 637 271
+give 回城卷 1
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+[@传送5]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+mapmove 0150
+give 回城卷 1
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+
+[@aboutwar]
+下一次战役记录在:\
+<$CASTLEWARDATE> , 20:00开始。\ \
+
+<详细情况./@listwar>\
+
+<关闭./@exit>\
+
+
+
+[@listwar]
+\ \ \
+<$LISTOFWAR>\ \
+<返回/@aboutwar>\
+
+[@WarStatus]
+占领行会:<$OWNERGUILD>\ \ 
+占领日期:<$CASTLECHANGEDATE>\ \ 
+占领天数:<$CASTLEGETDAYS>\ \
+行会掌门:<$LORD>\ \
+当前时间:<$DATETIME>\
+

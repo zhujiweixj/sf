@@ -1,0 +1,45 @@
+[@main]
+在游戏中是否有你的敌人，你很讨厌他，恨不得千刀万剐？\
+如果能叫游戏中的所有人见到他就杀一次，是不是能解你心头之恨？那就启用诅咒系统吧\
+诅咒玩家需要元宝数量：<450000个>---解除诅咒需要元宝数量：<400000个>\
+<不幸被诅咒将获得50000点的诅咒值、身背“倒霉蛋”特殊变色封号！>\
+<杀死被诅咒的倒霉蛋将有双倍机率爆取他身上的装备！/@@InPutString101>\
+<注意：被人诅咒后漂亮的封号就没了，但是属性保留，我想解除诅咒，点下面的解除诅咒吧>\  \
+<诅咒仇人/@@InPutString101>　　<解除诅咒/@解除>　　　　<元宝数量>:<$GAMEGOLD>　<罪恶点数>:<$PKPOINT>
+[@解除]
+#IF
+CHECKNAMELIST ..\QuestDiary\变量数据\被通缉的.txt
+CHECKGAMEGOLD > 399999
+#ACT
+GAMEGOLD - 400000
+CHANGEPKPOINT - 50000
+delnamelist ..\QuestDiary\变量数据\被通缉的.txt
+GMEXECUTE TestStatus 4 0
+kick
+SendCenterMsg 249 151  ぐ【诅咒】:倒霉蛋“『<$USERNAME>』”终于解除了自己身上的诅咒.从此可以重新做人了!
+MessageBox 赶紧小退下吧，终于不要带这个倒霉蛋的称号了
+#ELSEACT
+MessageBox [错误信息]:穷人？还是根本没有被诅咒？？
+[@CALLInPutString101]
+#IF
+S0.CHECKOFFLINE
+#ACT
+GOTO @main
+MessageBox [错误信息]:当前人物处于离线挂机状态！
+break
+#IF
+S0.CHECKONLINE
+CHECKGAMEGOLD > 499999
+#ACT
+GAMEGOLD - 450000
+ADDTEXTLIST .\QuestDiary\变量数据\被通缉的.txt <$STR(S0)>
+S0.SETRANKLEVELNAME %s\╔┄╗\★★★倒霉蛋★★★\╚┄╝
+S0.GMEXECUTE TestStatus 4 720000
+S0.CHANGEPKPOINT + 50000
+SendCenterMsg 249 151 ぐ【诅咒】:『<$USERNAME>』花费450000元宝诅咒了[<$STR(S0)>]，使其变成了全球公认的“倒霉蛋”!
+SendCenterMsg 249 151 ぐ【诅咒】:『<$USERNAME>』说：凡是杀死→[<$STR(S0)>]←将会有双倍机率暴出他身上的宝物!
+#Call [\游戏登陆\登陆设置.txt] @登陆脚本
+#ELSEACT
+MessageBox [错误信息]:元宝不足或者对方不在线！
+close
+

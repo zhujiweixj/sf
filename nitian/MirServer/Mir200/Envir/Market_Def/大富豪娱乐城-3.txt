@@ -1,0 +1,30 @@
+[@MAIN]
+#IF
+equal G76 1
+#ACT
+messagebox 抱歉，大富豪赌城暂未开放，请等待...
+#elseact
+GOTO @MAIN1
+break
+
+[@MAIN1]
+#say
+　\
+<╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗/SCOLOR=102>\
+<┆/SCOLOR=102>  服务  如因不可抗拒因素导致元宝被吃本服概不负责！  <┆/SCOLOR=102>\
+<┆/SCOLOR=102>  条款  本功能仅供玩家娱乐使用，禁止赌博！          <┆/SCOLOR=102>\
+<┆/SCOLOR=102>                                                    <┆/SCOLOR=102>\
+<┆/SCOLOR=102>                <同意/@duboxin1>    |    <拒绝/@exit>                   <┆/SCOLOR=102>\
+<├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┤/SCOLOR=102>\
+<┆/SCOLOR=102>        小赌可以怡情养性·大赌可发家致富            <┆/SCOLOR=102>\
+<╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝/SCOLOR=102>\
+
+[@duboxin1]
+#IF
+;CHECKLEVELEX > 100
+#ACT
+MAPMOVE cddou
+GuildNoticeMsg 0 249 大款[%S]进入了【大富豪娱乐城】压骰子、玩水果机，想要赢钱的赶快跟着进吧！
+BREAK
+#elseact
+MESSAGEBOX 为防止有些一夜赌的玩家赌博暂时只对100级以上玩家开放！

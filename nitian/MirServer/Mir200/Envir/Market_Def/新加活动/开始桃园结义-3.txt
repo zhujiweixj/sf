@@ -1,0 +1,98 @@
+(@@InPutString @@InPutInteger)
+[@main]
+#IF
+ISGROUPMASTER
+#ACT
+#SAY
+<★━━━━━━━━[本服独家━结义系统]━━━━━━━━★/AUTOCOLOR=168,250,70,253>\
+　　<【三人举酒结义，滴血为证，有难同当，有福同享】/SCOLOR=249>\
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\
+　　　　　　　　　<输入第一位盟友的名字/@@InPutString9><$STR(S9)>\
+　　　　　　　　　　　　　　↓\
+　　　　　　　　　<输入第二位盟友的名字/@@InPutString10><$STR(S10)>\
+　　　　　　　　　　　　　　↓\
+　　　　　　　　　　 <[点击开始结义]/@开始结义>
+
+#ELSEACT
+messagebox 操作失败，只有队长才可以操作！
+
+[@InPutString9]
+#IF
+EQUAL S9 <$STR(S10)>
+#ACT
+messagebox 输入的两名玩家名字不能相同！
+MOV S9 
+goto @main
+BREAK
+
+#IF
+EQUAL S9 <$USERNAME>
+#ACT
+messagebox 你见过和自己结盟的人吗？请重新输入！
+MOV S9 
+goto @main
+BREAK
+
+#IF
+CheckOnline <$STR(S9)>
+S9.ISONMAP 3
+#ACT
+messagebox 判断成功，准备与玩家<$STR(S9)>结盟！
+goto @main
+#ELSEACT
+messagebox 玩家<$STR(S9)>不在线或不在身边，请确保名字正确无误！
+MOV S9 
+goto @main
+
+[@InPutString10]
+#IF
+EQUAL S10 <$STR(S9)>
+#ACT
+messagebox 输入的两名玩家名字不能相同！
+MOV S10 
+goto @main
+BREAK
+
+#IF
+EQUAL S10 <$USERNAME>
+#ACT
+messagebox 你见过和自己结盟的人吗？请重新输入！
+MOV S10 
+goto @main
+BREAK
+
+#IF
+CheckOnline <$STR(S10)>
+S9.ISONMAP 3
+#ACT
+messagebox 判断成功，准备与玩家<$STR(S10)>结盟！
+goto @main
+#ELSEACT
+messagebox 玩家<$STR(S10)>不在线或不在身边，请确保名字正确无误！
+MOV S10 
+goto @main
+
+[@开始结义]
+#IF
+ISONMAP 3
+S9.ISONMAP 3
+S10.ISONMAP 3
+CheckGroupCount = 3
+#ACT
+CreateFile .\QuestDiary\结义名单\<$USERNAME>.txt
+AddTextList .\QuestDiary\结义名单\<$USERNAME>.txt <$STR(S9)>
+AddTextList .\QuestDiary\结义名单\<$USERNAME>.txt <$STR(S10)>
+CreateFile .\QuestDiary\结义名单\<$STR(S9)>.txt
+AddTextList .\QuestDiary\结义名单\<$STR(S9)>.txt <$USERNAME>
+AddTextList .\QuestDiary\结义名单\<$STR(S9)>.txt <$STR(S10)>
+CreateFile .\QuestDiary\结义名单\<$STR(S10)>.txt
+AddTextList .\QuestDiary\结义名单\<$STR(S10)>.txt <$USERNAME>
+AddTextList .\QuestDiary\结义名单\<$STR(S10)>.txt <$STR(S9)>
+GROUPMAPMOVE  3 330 330
+messagebox 恭喜结义成功，现在可以使用『至尊结义』技能了！
+S9.messagebox 恭喜结义成功，现在可以使用『至尊结义』技能了！
+S10.messagebox 恭喜结义成功，现在可以使用『至尊结义』技能了！
+MOV S9 
+MOV S10 
+#ELSEACT
+messagebox 操作失败，组队人数必须为3人且必须都在身边！

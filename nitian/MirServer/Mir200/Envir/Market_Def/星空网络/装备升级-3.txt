@@ -1,0 +1,6808 @@
+(@ReclaimItem )
+[@main]
+#SAY
+　\
+<╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗/SCOLOR=102>\
+<┆/SCOLOR=102>　我可以让你的装备更强大，当然你得有元宝才能办到！　<┆/SCOLOR=102>\
+<┆/SCOLOR=102>　　　　　　　　　　　　　　　　　　　　　　　　　　<┆/SCOLOR=102>\
+<┆/SCOLOR=102>　　　　　　　　　　　　　　　　　　　　　　　　　　<┆/SCOLOR=102>\
+<┆/SCOLOR=102>　　			    <Img:11:0><装备升级/@强化升级><Img:11:0>　　　　<┆/SCOLOR=102>\　　
+<┆/SCOLOR=102>    <Img:11:0><灵魂元素/@灵魂属性><Img:11:0>　　　　<┆/SCOLOR=102>\　　
+<┆/SCOLOR=102>    <Img:11:0><装备加星/@装备加星><Img:11:0>　      <┆/SCOLOR=102>\
+<┆/SCOLOR=102>　　　　　　　　　　　　　　　　　　　　　　　　　　<┆/SCOLOR=102>\
+<┆/SCOLOR=102>　　　　　　　　　　　　　　　　　　　　　　　　　　<┆/SCOLOR=102>\
+<╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝/SCOLOR=102>\
+
+
+
+[@装备加星]
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,70,253,250>\
+<┆◆如果你有强化石的话我这里可以为你的装备加上星级！！◆┆/SCOLOR=253> \
+<┆○装备加星需一个装备和强化石，幸运石可以增加成功几率○┆/SCOLOR=242> \
+<┆○强化宝石和幸运石可以在怪物身上获取或者在商城购买！○┆/SCOLOR=70> \
+<┆◆你也可以打开背包，点击显示元宝数量右边的旋涡处操作◆┆/SCOLOR=168> \
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\
+<商城只提供+5星以下普通强化石，超级强化石只能通过打怪获取/SCOLOR=250> \ \
+　　　　　　　　　　　　　<点这里装备加星/@点这里开始升级>　　<返回/@main>\ \
+<推荐：装备升级到+60以上再进行加星会使你的装备最大攻击化！>
+
+
+
+[@点这里开始升级]
+#IF
+#ACT
+OpenUpgradeDialog
+break
+
+[@强化升级]
+<Img:11:0>1:请把你要升级的装备带在装备栏内!\
+<Img:11:0>2:必须要有20万元宝才能对装备进行强化!\
+<Img:11:0>3:每种属性最高升级60点,成功率60%!\
+<Img:11:0>4:一定要在身上有20万元宝才能进行强化的\
+请选择你要升级的装备的类型:\
+;<◆腰带◆/@腰带> <◆靴子◆/@靴子>  <◆勋章◆/@勋章> \
+<◆衣服◆/@衣服> <◆武器◆/@武器> <◆头盔◆/@头盔> <◆项链◆/@项链>\ \
+<◆左手镯◆/@左手镯> <◆右手镯◆/@右手镯> <◆左戒指◆/@左戒指> <◆右戒指◆/@右戒指>  <返回/@main>\
+
+[@腰带]
+攻击: <点击升级/@腰带攻击B> [强化戒指1点属性点 需要20万元宝!]\ \
+魔法: <点击升级/@腰带魔法B> [强化戒指1点属性点 需要20万元宝!]\ \
+道术: <点击升级/@腰带道术B> [强化戒指1点属性点 需要20万元宝!]\ \
+<返回/@强化升级>
+
+[@腰带攻击B]
+#if
+CHECKUSEITEM 10
+CheckItemAddValue 10 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 10 2 2 1 0
+goto @腰带
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿腰带.或者已经升级超过60点了.不能再升！
+[@腰带魔法B]
+#if
+CHECKUSEITEM 10
+CheckItemAddValue 10 3 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 10 3 2 1 0
+goto @腰带
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿腰带.或者已经升级超过60点了.不能再升！
+[@腰带道术B]
+#if
+CHECKUSEITEM 10
+CheckItemAddValue 10 4 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 10 4 2 1 0
+goto @腰带
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿腰带.或者已经升级超过60点了.不能再升！
+
+[@靴子]
+攻击: <点击升级/@靴子攻击B> [强化戒指1点属性点 需要20万元宝!]\ \
+魔法: <点击升级/@靴子魔法B> [强化戒指1点属性点 需要20万元宝!]\ \
+道术: <点击升级/@靴子道术B> [强化戒指1点属性点 需要20万元宝!]\ \
+<返回/@强化升级>
+
+[@靴子攻击B]
+#if
+CHECKUSEITEM 11
+CheckItemAddValue 11 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 11 2 2 1 0
+goto @靴子
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿靴子.或者已经升级超过60点了.不能再升！
+[@靴子魔法B]
+#if
+CHECKUSEITEM 11
+CheckItemAddValue 11 3 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 11 3 2 1 0
+goto @靴子
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿靴子.或者已经升级超过60点了.不能再升！
+[@靴子道术B]
+#if
+CHECKUSEITEM 11
+CheckItemAddValue 11 4 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 11 4 2 1 0
+goto @靴子
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿靴子.或者已经升级超过60点了.不能再升！
+
+
+[@勋章]
+攻击: <点击升级/@勋章攻击B> [强化戒指1点属性点 需要20万元宝!]\ \
+魔法: <点击升级/@勋章魔法B> [强化戒指1点属性点 需要20万元宝!]\ \
+道术: <点击升级/@勋章道术B> [强化戒指1点属性点 需要20万元宝!]\ \
+<返回/@强化升级>
+
+[@勋章攻击B]
+#if
+CHECKUSEITEM 2
+CheckItemAddValue 2 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 2 2 2 1 0
+goto @勋章
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿勋章.或者已经升级超过60点了.不能再升！
+[@勋章魔法B]
+#if
+CHECKUSEITEM 2
+CheckItemAddValue 2 3 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 2 3 2 1 0
+goto @勋章
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿勋章.或者已经升级超过60点了.不能再升！
+[@勋章道术B]
+#if
+CHECKUSEITEM 2
+CheckItemAddValue 2 4 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 2 4 2 1 0
+goto @勋章
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿勋章.或者已经升级超过60点了.不能再升！
+
+
+[@左戒指]
+攻击: <点击升级/@戒指攻击B> [强化戒指1点属性点 需要20万元宝!]\ \
+魔法: <点击升级/@戒指魔法B> [强化戒指1点属性点 需要20万元宝!]\ \
+道术: <点击升级/@戒指道术B> [强化戒指1点属性点 需要20万元宝!]\ \
+<返回/@强化升级>
+
+[@戒指攻击B]
+#if
+CHECKUSEITEM 8
+CheckItemAddValue 8 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 8 2 2 1 0
+goto @左戒指
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿左戒指，必须带在左边.或者已经升级超过60点了.不能再升！
+[@戒指魔法B]
+#if
+CHECKUSEITEM 8
+CheckItemAddValue 8 3 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 8 3 2 1 0
+goto @左戒指
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿左戒指，必须带在左边.或者已经升级超过60点了.不能再升！
+[@戒指道术B]
+#if
+CHECKUSEITEM 8
+CheckItemAddValue 8 4 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 8 4 2 1 0
+goto @左戒指
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿左戒指，必须带在左边.或者已经升级超过60点了.不能再升！
+
+[@右戒指]
+攻击: <点击升级/@戒指攻击A> [强化戒指1点属性点 需要20万元宝!]\ \
+魔法: <点击升级/@戒指魔法A> [强化戒指1点属性点 需要20万元宝!]\ \
+道术: <点击升级/@戒指道术A> [强化戒指1点属性点 需要20万元宝!]\ \
+<返回/@强化升级>
+
+[@戒指攻击A]
+#if
+CHECKUSEITEM 7
+CheckItemAddValue 7 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 7 2 2 1 0
+goto @右戒指
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿右戒指，必须带在右边.或者已经升级超过60点了.不能再升！
+[@戒指魔法A]
+#if
+CHECKUSEITEM 7
+CheckItemAddValue 7 3 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 7 3 2 1 0
+goto @右戒指
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿右戒指，必须带在右边.或者已经升级超过60点了.不能再升！
+[@戒指道术A]
+#if
+CHECKUSEITEM 7
+CheckItemAddValue 7 4 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 7 4 2 1 0
+goto @右戒指
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿戒指，必须带在右边.或者已经升级超过60点了.不能再升！
+
+[@左手镯]
+攻击:<点击升级/@手镯攻击B> [强化手镯1点属性点 需要20万元宝!]\ \
+魔法:<点击升级/@手镯魔法B> [强化手镯1点属性点 需要20万元宝!]\ \
+道术:<点击升级/@手镯道术B> [强化手镯1点属性点 需要20万元宝!]\ \
+<返回/@强化升级>
+
+[@手镯攻击B]
+#if
+CHECKUSEITEM 6
+CheckItemAddValue 6 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 6 2 2 1 0
+goto @左手镯
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备，必须带在左边.或者已经升级超过60点了.不能再升！！
+
+[@手镯魔法B]
+#if
+CHECKUSEITEM 6
+CheckItemAddValue 6 3 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 6 3 2 1 0
+goto @左手镯
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备，必须带在左边.或者已经升级超过60点了.不能再升！！
+
+[@手镯道术B]
+#if
+CHECKUSEITEM 6
+CheckItemAddValue 6 4 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 6 4 2 1 0
+goto @左手镯
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备，必须带在左边.或者已经升级超过60点了.不能再升！！
+
+
+
+[@右手镯]
+攻击:<点击升级/@手镯攻击A> [强化手镯1点属性点 需要20万元宝!]\ \
+魔法:<点击升级/@手镯魔法A> [强化手镯1点属性点 需要20万元宝!]\ \
+道术:<点击升级/@手镯道术A> [强化手镯1点属性点 需要20万元宝!]\ \
+<返回/@强化升级>
+
+[@手镯攻击A]
+#if
+CHECKUSEITEM 5
+CheckItemAddValue 5 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 5 2 2 1 0
+goto @右手镯
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备，必须带在右边.或者已经升级超过60点了.不能再升！！
+
+[@手镯魔法A]
+#if
+CHECKUSEITEM 5
+CheckItemAddValue 5 3 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 5 3 2 1 0
+goto @右手镯
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备，必须带在右边.或者已经升级超过60点了.不能再升！！
+
+[@手镯道术A]
+#if
+CHECKUSEITEM 5
+CheckItemAddValue 5 4 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 5 4 2 1 0
+goto @右手镯
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备，必须带在右边.或者已经升级超过60点了.不能再升！！
+
+ 
+
+[@项链]
+攻击:<点击升级/@项链攻击> [强化项链1点属性点 需要20万元宝!]\ \
+魔法:<点击升级/@项链魔法> [强化项链1点属性点 需要20万元宝!]\ \
+道术:<点击升级/@项链道术> [强化项链1点属性点 需要20万元宝!]\ \
+<返回/@强化升级>
+
+ 
+
+[@项链道术]
+#IF
+CHECKUSEITEM 3
+CheckItemAddValue 3 4 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 3 4 2 1 0
+goto @项链
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@项链魔法]
+#IF
+CHECKUSEITEM 3
+CheckItemAddValue 3 3 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 3 3 2 1 0
+goto @项链
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@项链攻击]
+#IF
+CHECKUSEITEM 3
+CheckItemAddValue 3 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 3 2 2 1 0
+goto @项链
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+ 
+
+ 
+
+
+[@头盔]
+防御:<点击升级/@头盔防御> [强化头盔1点属性点 需要20万元宝!]\ \
+魔御:<点击升级/@头盔魔御> [强化头盔1点属性点 需要20万元宝!]\ \
+攻击:<点击升级/@头盔攻击> [强化头盔1点属性点 需要20万元宝!]\ \
+魔法:<点击升级/@头盔魔法> [强化头盔1点属性点 需要20万元宝!]\ \
+道术:<点击升级/@头盔道术> [强化头盔1点属性点 需要20万元宝!]         <返回/@强化升级>
+
+
+ 
+
+[@头盔道术]
+#IF
+CHECKUSEITEM 4
+CheckItemAddValue 4 4 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 4 4 2 1 0
+goto @头盔
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@头盔魔法]
+#IF
+CHECKUSEITEM 4
+CheckItemAddValue 4 3 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 4 3 2 1 0
+goto @头盔
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@头盔攻击]
+#IF
+CHECKUSEITEM 4
+CheckItemAddValue 4 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 4 2 2 1 0
+goto @头盔
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@头盔魔御]
+#IF
+CHECKUSEITEM 4
+CheckItemAddValue 4 1 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 4 1 2 1 0
+goto @头盔
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+[@头盔防御]
+#IF
+CHECKUSEITEM 4
+CheckItemAddValue 4 0 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 4 0 2 1 0
+goto @头盔
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+ 
+
+ 
+
+
+[@武器]
+攻击:<点击升级/@武器攻击> [强化武器1点属性点 需要20万元宝!]\ \
+魔法:<点击升级/@武器魔法> [强化武器1点属性点 需要20万元宝!]\ \
+道术:<点击升级/@武器道术> [强化武器1点属性点 需要20万元宝!]\ \
+<返回/@强化升级>
+
+ 
+
+[@武器道术]
+#IF
+CHECKUSEITEM 1
+CheckItemAddValue 1 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 1 2 2 1 0
+goto @武器
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@武器魔法]
+#IF
+CHECKUSEITEM 1
+CheckItemAddValue 1 1 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 1 1 2 1 0
+goto @武器
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@武器攻击]
+#IF
+CHECKUSEITEM 1
+CheckItemAddValue 1 0 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 1 0 2 1 0
+goto @武器
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+ 
+
+ 
+
+ 
+
+[@衣服]
+防御:<点击升级/@衣服防御> [强化衣服1点属性点 需要20万元宝!k]\ \
+魔御:<点击升级/@衣服魔御> [强化衣服1点属性点 需要20万元宝!]\ \
+攻击:<点击升级/@衣服攻击> [强化衣服1点属性点 需要20万元宝!]\ \
+魔法:<点击升级/@衣服魔法> [强化衣服1点属性点 需要20万元宝!]\ \
+道术:<点击升级/@衣服道术> [强化衣服1点属性点 需要20万元宝!]        <返回/@强化升级>
+
+
+ 
+
+[@衣服道术]
+#IF
+CHECKUSEITEM 0
+CheckItemAddValue 0 4 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 0 4 2 1 0
+goto @衣服
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@衣服魔法]
+#IF
+CHECKUSEITEM 0
+CheckItemAddValue 0 3 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 0 3 2 1 0
+goto @衣服
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@衣服攻击]
+#IF
+CHECKUSEITEM 0
+CheckItemAddValue 0 2 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 0 2 2 1 0
+goto @衣服
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@衣服魔御]
+#IF
+CHECKUSEITEM 0
+CheckItemAddValue 0 1 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 0 1 2 1 0
+goto @衣服
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+[@衣服防御]
+#IF
+CHECKUSEITEM 0
+CheckItemAddValue 0 0 < 60
+checkgamegold > 199999
+#ACT
+gamegold - 200000
+UPGRADEITEMEX 0 0 2 1 0
+goto @衣服
+#ELSEACT
+MESSAGEBOX 你身上没有元宝或未穿的装备.或者已经升级超过60点了.不能再升！
+
+
+[@灵魂属性]
+<Img:11:0>加灵魂属性每次需要元宝20000，您当前元宝数量为：<$GAMEGOLD>\
+<Img:11:0>淬炼有一定成功率，运气不好的话，之前淬炼的属性将可能消失。 \
+<Img:11:0>请问您要淬炼身上的哪件物品？ \
+╔════╦════╦════╦════╦════╗\
+║ <武  器/@WEAPON> ║ <盔  甲/@DRESSNEWPOWR> ║ <头  盔/@HELMET> ║ <勋  章/@RIGHTHAND> ║ <宝  石/@CHARM> ║\
+╠════╬════╬════╬════╬════╣\
+║ <左手镯/@RING_R> ║ <右手镯/@RING_L_NEWPOWR> ║ <左戒指/@ARMRING_R> ║ <右戒指/@ARMRING_L_NEWPOWR> ║ <项  链/@NECKLACE_NEWPOWR> ║\
+╠════╬════╬════╬════╩════╣\ 
+║ <腰  带/@BELT> ║ <护  符/@BUJUK> ║ <靴  子/@BOOTS> ║     <返     回/@main>    ║\
+╚════╩════╩════╩═════════╝\ \
+
+
+[@BOOTS]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 11
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @BOOTS_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@BOOTS_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 11 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @BOOTS_1
+BREAK
+#IF
+CheckNewItemValue 11 0 > 2
+CheckNewItemValue 11 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @BOOTS_1
+#ELSEACT
+MOV P0 0
+GOTO @BOOTS_1
+[@BOOTS_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 11 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @BOOTS_2
+BREAK
+#IF
+CheckNewItemValue 11 1 > 2
+CheckNewItemValue 11 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @BOOTS_2
+#ELSEACT
+MOV P1 0
+GOTO @BOOTS_2
+[@BOOTS_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 11 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @BOOTS_3
+BREAK
+#IF
+CheckNewItemValue 11 2 > 2
+CheckNewItemValue 11 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @BOOTS_3
+#ELSEACT
+MOV P2 0
+GOTO @BOOTS_3
+[@BOOTS_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 11 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @BOOTS_4
+BREAK
+#IF
+CheckNewItemValue 11 3 > 2
+CheckNewItemValue 11 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @BOOTS_4
+#ELSEACT
+MOV P3 0
+GOTO @BOOTS_4
+[@BOOTS_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 11 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @BOOTS_5
+BREAK
+#IF
+CheckNewItemValue 11 4 > 2
+CheckNewItemValue 11 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @BOOTS_5
+#ELSEACT
+MOV P4 0
+GOTO @BOOTS_5
+[@BOOTS_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 11 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @BOOTS_6
+BREAK
+#IF
+CheckNewItemValue 11 5 > 2
+CheckNewItemValue 11 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @BOOTS_6
+#ELSEACT
+MOV P5 0
+GOTO @BOOTS_6
+[@BOOTS_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 11 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @BOOTS_7
+BREAK
+#IF
+CheckNewItemValue 11 6 > 2
+CheckNewItemValue 11 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @BOOTS_7
+#ELSEACT
+MOV P6 0
+GOTO @BOOTS_7
+[@BOOTS_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 11 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @BOOTS_OK
+BREAK
+#IF
+CheckNewItemValue 11 7 > 2
+CheckNewItemValue 11 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @BOOTS_OK
+#ELSEACT
+MOV P7 0
+GOTO @BOOTS_OK
+
+[@BOOTS_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 11 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 11 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 11 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 11 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 11 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 11 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 11 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 11 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 11 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 11 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 11 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 11 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 11 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 11 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 11 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 11 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 11 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 11 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 11 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 11 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 11 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 11 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 11 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 11 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 11 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 11 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 11 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 11 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 11 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 11 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 11 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 11 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @BOOTS_OVER
+#ELSEACT
+GOTO @BOOTS_OVER
+[@BOOTS_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+
+
+[@BELT]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 10
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @BELT_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@BELT_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 10 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @BELT_1
+BREAK
+#IF
+CheckNewItemValue 10 0 > 2
+CheckNewItemValue 10 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @BELT_1
+#ELSEACT
+MOV P0 0
+GOTO @BELT_1
+[@BELT_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 10 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @BELT_2
+BREAK
+#IF
+CheckNewItemValue 10 1 > 2
+CheckNewItemValue 10 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @BELT_2
+#ELSEACT
+MOV P1 0
+GOTO @BELT_2
+[@BELT_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 10 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @BELT_3
+BREAK
+#IF
+CheckNewItemValue 10 2 > 2
+CheckNewItemValue 10 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @BELT_3
+#ELSEACT
+MOV P2 0
+GOTO @BELT_3
+[@BELT_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 10 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @BELT_4
+BREAK
+#IF
+CheckNewItemValue 10 3 > 2
+CheckNewItemValue 10 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @BELT_4
+#ELSEACT
+MOV P3 0
+GOTO @BELT_4
+[@BELT_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 10 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @BELT_5
+BREAK
+#IF
+CheckNewItemValue 10 4 > 2
+CheckNewItemValue 10 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @BELT_5
+#ELSEACT
+MOV P4 0
+GOTO @BELT_5
+[@BELT_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 10 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @BELT_6
+BREAK
+#IF
+CheckNewItemValue 10 5 > 2
+CheckNewItemValue 10 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @BELT_6
+#ELSEACT
+MOV P5 0
+GOTO @BELT_6
+[@BELT_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 10 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @BELT_7
+BREAK
+#IF
+CheckNewItemValue 10 6 > 2
+CheckNewItemValue 10 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @BELT_7
+#ELSEACT
+MOV P6 0
+GOTO @BELT_7
+[@BELT_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 10 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @BELT_OK
+BREAK
+#IF
+CheckNewItemValue 10 7 > 2
+CheckNewItemValue 10 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @BELT_OK
+#ELSEACT
+MOV P7 0
+GOTO @BELT_OK
+
+[@BELT_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 10 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 10 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 10 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 10 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 10 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 10 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 10 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 10 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 10 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 10 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 10 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 10 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 10 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 10 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 10 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 10 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 10 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 10 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 10 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 10 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 10 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 10 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 10 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 10 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 10 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 10 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 10 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 10 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 10 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 10 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 10 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 10 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @BELT_OVER
+#ELSEACT
+GOTO @BELT_OVER
+[@BELT_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+
+[@BUJUK]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 9
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @BUJUK_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@BUJUK_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 9 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @BUJUK_1
+BREAK
+#IF
+CheckNewItemValue 9 0 > 2
+CheckNewItemValue 9 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @BUJUK_1
+#ELSEACT
+MOV P0 0
+GOTO @BUJUK_1
+[@BUJUK_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 9 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @BUJUK_2
+BREAK
+#IF
+CheckNewItemValue 9 1 > 2
+CheckNewItemValue 9 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @BUJUK_2
+#ELSEACT
+MOV P1 0
+GOTO @BUJUK_2
+[@BUJUK_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 9 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @BUJUK_3
+BREAK
+#IF
+CheckNewItemValue 9 2 > 2
+CheckNewItemValue 9 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @BUJUK_3
+#ELSEACT
+MOV P2 0
+GOTO @BUJUK_3
+[@BUJUK_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 9 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @BUJUK_4
+BREAK
+#IF
+CheckNewItemValue 9 3 > 2
+CheckNewItemValue 9 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @BUJUK_4
+#ELSEACT
+MOV P3 0
+GOTO @BUJUK_4
+[@BUJUK_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 9 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @BUJUK_5
+BREAK
+#IF
+CheckNewItemValue 9 4 > 2
+CheckNewItemValue 9 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @BUJUK_5
+#ELSEACT
+MOV P4 0
+GOTO @BUJUK_5
+[@BUJUK_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 9 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @BUJUK_6
+BREAK
+#IF
+CheckNewItemValue 9 5 > 2
+CheckNewItemValue 9 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @BUJUK_6
+#ELSEACT
+MOV P5 0
+GOTO @BUJUK_6
+[@BUJUK_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 9 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @BUJUK_7
+BREAK
+#IF
+CheckNewItemValue 9 6 > 2
+CheckNewItemValue 9 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @BUJUK_7
+#ELSEACT
+MOV P6 0
+GOTO @BUJUK_7
+[@BUJUK_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 9 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @BUJUK_OK
+BREAK
+#IF
+CheckNewItemValue 9 7 > 2
+CheckNewItemValue 9 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @BUJUK_OK
+#ELSEACT
+MOV P7 0
+GOTO @BUJUK_OK
+
+[@BUJUK_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 9 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 9 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 9 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 9 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 9 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 9 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 9 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 9 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 9 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 9 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 9 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 9 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 9 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 9 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 9 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 9 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 9 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 9 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 9 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 9 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 9 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 9 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 9 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 9 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 9 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 9 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 9 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 9 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 9 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 9 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 9 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 9 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @BUJUK_OVER
+#ELSEACT
+GOTO @BUJUK_OVER
+[@BUJUK_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+
+[@ARMRING_R]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 8
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @ARMRING_R_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@ARMRING_R_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 8 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @ARMRING_R_1
+BREAK
+#IF
+CheckNewItemValue 8 0 > 2
+CheckNewItemValue 8 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @ARMRING_R_1
+#ELSEACT
+MOV P0 0
+GOTO @ARMRING_R_1
+[@ARMRING_R_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 8 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @ARMRING_R_2
+BREAK
+#IF
+CheckNewItemValue 8 1 > 2
+CheckNewItemValue 8 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @ARMRING_R_2
+#ELSEACT
+MOV P1 0
+GOTO @ARMRING_R_2
+[@ARMRING_R_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 8 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @ARMRING_R_3
+BREAK
+#IF
+CheckNewItemValue 8 2 > 2
+CheckNewItemValue 8 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @ARMRING_R_3
+#ELSEACT
+MOV P2 0
+GOTO @ARMRING_R_3
+[@ARMRING_R_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 8 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @ARMRING_R_4
+BREAK
+#IF
+CheckNewItemValue 8 3 > 2
+CheckNewItemValue 8 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @ARMRING_R_4
+#ELSEACT
+MOV P3 0
+GOTO @ARMRING_R_4
+[@ARMRING_R_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 8 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @ARMRING_R_5
+BREAK
+#IF
+CheckNewItemValue 8 4 > 2
+CheckNewItemValue 8 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @ARMRING_R_5
+#ELSEACT
+MOV P4 0
+GOTO @ARMRING_R_5
+[@ARMRING_R_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 8 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @ARMRING_R_6
+BREAK
+#IF
+CheckNewItemValue 8 5 > 2
+CheckNewItemValue 8 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @ARMRING_R_6
+#ELSEACT
+MOV P5 0
+GOTO @ARMRING_R_6
+[@ARMRING_R_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 8 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @ARMRING_R_7
+BREAK
+#IF
+CheckNewItemValue 8 6 > 2
+CheckNewItemValue 8 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @ARMRING_R_7
+#ELSEACT
+MOV P6 0
+GOTO @ARMRING_R_7
+[@ARMRING_R_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 8 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @ARMRING_R_OK
+BREAK
+#IF
+CheckNewItemValue 8 7 > 2
+CheckNewItemValue 8 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @ARMRING_R_OK
+#ELSEACT
+MOV P7 0
+GOTO @ARMRING_R_OK
+
+[@ARMRING_R_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 8 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 8 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 8 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 8 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 8 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 8 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 8 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 8 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 8 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 8 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 8 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 8 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 8 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 8 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 8 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 8 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 8 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 8 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 8 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 8 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 8 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 8 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 8 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 8 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 8 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 8 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 8 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 8 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 8 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 8 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 8 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 8 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @ARMRING_R_OVER
+#ELSEACT
+GOTO @ARMRING_R_OVER
+[@ARMRING_R_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+
+[@RING_R]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 6
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @RING_R_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@RING_R_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 6 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @RING_R_1
+BREAK
+#IF
+CheckNewItemValue 6 0 > 2
+CheckNewItemValue 6 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @RING_R_1
+#ELSEACT
+MOV P0 0
+GOTO @RING_R_1
+[@RING_R_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 6 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @RING_R_2
+BREAK
+#IF
+CheckNewItemValue 6 1 > 2
+CheckNewItemValue 6 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @RING_R_2
+#ELSEACT
+MOV P1 0
+GOTO @RING_R_2
+[@RING_R_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 6 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @RING_R_3
+BREAK
+#IF
+CheckNewItemValue 6 2 > 2
+CheckNewItemValue 6 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @RING_R_3
+#ELSEACT
+MOV P2 0
+GOTO @RING_R_3
+[@RING_R_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 6 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @RING_R_4
+BREAK
+#IF
+CheckNewItemValue 6 3 > 2
+CheckNewItemValue 6 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @RING_R_4
+#ELSEACT
+MOV P3 0
+GOTO @RING_R_4
+[@RING_R_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 6 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @RING_R_5
+BREAK
+#IF
+CheckNewItemValue 6 4 > 2
+CheckNewItemValue 6 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @RING_R_5
+#ELSEACT
+MOV P4 0
+GOTO @RING_R_5
+[@RING_R_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 6 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @RING_R_6
+BREAK
+#IF
+CheckNewItemValue 6 5 > 2
+CheckNewItemValue 6 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @RING_R_6
+#ELSEACT
+MOV P5 0
+GOTO @RING_R_6
+[@RING_R_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 6 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @RING_R_7
+BREAK
+#IF
+CheckNewItemValue 6 6 > 2
+CheckNewItemValue 6 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @RING_R_7
+#ELSEACT
+MOV P6 0
+GOTO @RING_R_7
+[@RING_R_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 6 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @RING_R_OK
+BREAK
+#IF
+CheckNewItemValue 6 7 > 2
+CheckNewItemValue 6 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @RING_R_OK
+#ELSEACT
+MOV P7 0
+GOTO @RING_R_OK
+
+[@RING_R_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 6 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 6 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 6 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 6 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 6 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 6 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 6 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 6 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 6 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 6 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 6 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 6 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 6 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 6 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 6 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 6 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 6 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 6 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 6 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 6 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 6 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 6 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 6 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 6 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 6 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 6 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 6 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 6 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 6 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 6 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 6 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 6 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @RING_R_OVER
+#ELSEACT
+GOTO @RING_R_OVER
+[@RING_R_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+
+[@CHARM]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 12
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @CHARM_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@CHARM_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 12 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @CHARM_1
+BREAK
+#IF
+CheckNewItemValue 12 0 > 2
+CheckNewItemValue 12 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @CHARM_1
+#ELSEACT
+MOV P0 0
+GOTO @CHARM_1
+[@CHARM_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 12 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @CHARM_2
+BREAK
+#IF
+CheckNewItemValue 12 1 > 2
+CheckNewItemValue 12 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @CHARM_2
+#ELSEACT
+MOV P1 0
+GOTO @CHARM_2
+[@CHARM_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 12 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @CHARM_3
+BREAK
+#IF
+CheckNewItemValue 12 2 > 2
+CheckNewItemValue 12 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @CHARM_3
+#ELSEACT
+MOV P2 0
+GOTO @CHARM_3
+[@CHARM_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 12 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @CHARM_4
+BREAK
+#IF
+CheckNewItemValue 12 3 > 2
+CheckNewItemValue 12 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @CHARM_4
+#ELSEACT
+MOV P3 0
+GOTO @CHARM_4
+[@CHARM_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 12 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @CHARM_5
+BREAK
+#IF
+CheckNewItemValue 12 4 > 2
+CheckNewItemValue 12 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @CHARM_5
+#ELSEACT
+MOV P4 0
+GOTO @CHARM_5
+[@CHARM_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 12 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @CHARM_6
+BREAK
+#IF
+CheckNewItemValue 12 5 > 2
+CheckNewItemValue 12 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @CHARM_6
+#ELSEACT
+MOV P5 0
+GOTO @CHARM_6
+[@CHARM_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 12 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @CHARM_7
+BREAK
+#IF
+CheckNewItemValue 12 6 > 2
+CheckNewItemValue 12 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @CHARM_7
+#ELSEACT
+MOV P6 0
+GOTO @CHARM_7
+[@CHARM_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 12 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @CHARM_OK
+BREAK
+#IF
+CheckNewItemValue 12 7 > 2
+CheckNewItemValue 12 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @CHARM_OK
+#ELSEACT
+MOV P7 0
+GOTO @CHARM_OK
+
+[@CHARM_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 12 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 12 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 12 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 12 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 12 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 12 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 12 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 12 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 12 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 12 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 12 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 12 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 12 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 12 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 12 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 12 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 12 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 12 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 12 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 12 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 12 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 12 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 12 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 12 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 12 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 12 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 12 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 12 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 12 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 12 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 12 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 12 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @CHARM_OVER
+#ELSEACT
+GOTO @CHARM_OVER
+[@CHARM_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+[@DRESSNEWPOWR]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 0
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @DRESSNEWPOWR_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@DRESSNEWPOWR_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 0 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @DRESSNEWPOWR_1
+BREAK
+#IF
+CheckNewItemValue 0 0 > 2
+CheckNewItemValue 0 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @DRESSNEWPOWR_1
+#ELSEACT
+MOV P0 0
+GOTO @DRESSNEWPOWR_1
+[@DRESSNEWPOWR_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 0 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @DRESSNEWPOWR_2
+BREAK
+#IF
+CheckNewItemValue 0 1 > 2
+CheckNewItemValue 0 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @DRESSNEWPOWR_2
+#ELSEACT
+MOV P1 0
+GOTO @DRESSNEWPOWR_2
+[@DRESSNEWPOWR_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 0 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @DRESSNEWPOWR_3
+BREAK
+#IF
+CheckNewItemValue 0 2 > 2
+CheckNewItemValue 0 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @DRESSNEWPOWR_3
+#ELSEACT
+MOV P2 0
+GOTO @DRESSNEWPOWR_3
+[@DRESSNEWPOWR_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 0 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @DRESSNEWPOWR_4
+BREAK
+#IF
+CheckNewItemValue 0 3 > 2
+CheckNewItemValue 0 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @DRESSNEWPOWR_4
+#ELSEACT
+MOV P3 0
+GOTO @DRESSNEWPOWR_4
+[@DRESSNEWPOWR_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 0 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @DRESSNEWPOWR_5
+BREAK
+#IF
+CheckNewItemValue 0 4 > 2
+CheckNewItemValue 0 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @DRESSNEWPOWR_5
+#ELSEACT
+MOV P4 0
+GOTO @DRESSNEWPOWR_5
+[@DRESSNEWPOWR_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 0 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @DRESSNEWPOWR_6
+BREAK
+#IF
+CheckNewItemValue 0 5 > 2
+CheckNewItemValue 0 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @DRESSNEWPOWR_6
+#ELSEACT
+MOV P5 0
+GOTO @DRESSNEWPOWR_6
+[@DRESSNEWPOWR_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 0 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @DRESSNEWPOWR_7
+BREAK
+#IF
+CheckNewItemValue 0 6 > 2
+CheckNewItemValue 0 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @DRESSNEWPOWR_7
+#ELSEACT
+MOV P6 0
+GOTO @DRESSNEWPOWR_7
+[@DRESSNEWPOWR_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 0 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @DRESSNEWPOWR_OK
+BREAK
+#IF
+CheckNewItemValue 0 7 > 2
+CheckNewItemValue 0 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @DRESSNEWPOWR_OK
+#ELSEACT
+MOV P7 0
+GOTO @DRESSNEWPOWR_OK
+
+[@DRESSNEWPOWR_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 0 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 0 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 0 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 0 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 0 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 0 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 0 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 0 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 0 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 0 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 0 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 0 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 0 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 0 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 0 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 0 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 0 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 0 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 0 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 0 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 0 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 0 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 0 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 0 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 0 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 0 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 0 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 0 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 0 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 0 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 0 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 0 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @DRESSNEWPOWR_OVER
+#ELSEACT
+GOTO @DRESSNEWPOWR_OVER
+[@DRESSNEWPOWR_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+[@RING_L_NEWPOWR]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 5
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @RING_L_NEWPOWR_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@RING_L_NEWPOWR_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 5 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @RING_L_NEWPOWR_1
+BREAK
+#IF
+CheckNewItemValue 5 0 > 2
+CheckNewItemValue 5 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @RING_L_NEWPOWR_1
+#ELSEACT
+MOV P0 0
+GOTO @RING_L_NEWPOWR_1
+[@RING_L_NEWPOWR_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 5 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @RING_L_NEWPOWR_2
+BREAK
+#IF
+CheckNewItemValue 5 1 > 2
+CheckNewItemValue 5 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @RING_L_NEWPOWR_2
+#ELSEACT
+MOV P1 0
+GOTO @RING_L_NEWPOWR_2
+[@RING_L_NEWPOWR_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 5 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @RING_L_NEWPOWR_3
+BREAK
+#IF
+CheckNewItemValue 5 2 > 2
+CheckNewItemValue 5 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @RING_L_NEWPOWR_3
+#ELSEACT
+MOV P2 0
+GOTO @RING_L_NEWPOWR_3
+[@RING_L_NEWPOWR_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 5 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @RING_L_NEWPOWR_4
+BREAK
+#IF
+CheckNewItemValue 5 3 > 2
+CheckNewItemValue 5 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @RING_L_NEWPOWR_4
+#ELSEACT
+MOV P3 0
+GOTO @RING_L_NEWPOWR_4
+[@RING_L_NEWPOWR_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 5 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @RING_L_NEWPOWR_5
+BREAK
+#IF
+CheckNewItemValue 5 4 > 2
+CheckNewItemValue 5 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @RING_L_NEWPOWR_5
+#ELSEACT
+MOV P4 0
+GOTO @RING_L_NEWPOWR_5
+[@RING_L_NEWPOWR_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 5 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @RING_L_NEWPOWR_6
+BREAK
+#IF
+CheckNewItemValue 5 5 > 2
+CheckNewItemValue 5 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @RING_L_NEWPOWR_6
+#ELSEACT
+MOV P5 0
+GOTO @RING_L_NEWPOWR_6
+[@RING_L_NEWPOWR_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 5 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @RING_L_NEWPOWR_7
+BREAK
+#IF
+CheckNewItemValue 5 6 > 2
+CheckNewItemValue 5 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @RING_L_NEWPOWR_7
+#ELSEACT
+MOV P6 0
+GOTO @RING_L_NEWPOWR_7
+[@RING_L_NEWPOWR_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 5 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @RING_L_NEWPOWR_OK
+BREAK
+#IF
+CheckNewItemValue 5 7 > 2
+CheckNewItemValue 5 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @RING_L_NEWPOWR_OK
+#ELSEACT
+MOV P7 0
+GOTO @RING_L_NEWPOWR_OK
+
+[@RING_L_NEWPOWR_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 5 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 5 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 5 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 5 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 5 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 5 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 5 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 5 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 5 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 5 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 5 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 5 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 5 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 5 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 5 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 5 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 5 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 5 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 5 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 5 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 5 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 5 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 5 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 5 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 5 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 5 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 5 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 5 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 5 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 5 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 5 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 5 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @RING_L_NEWPOWR_OVER
+#ELSEACT
+GOTO @RING_L_NEWPOWR_OVER
+[@RING_L_NEWPOWR_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+[@NECKLACE_NEWPOWR]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 3
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @NECKLACE_NEWPOWR_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@NECKLACE_NEWPOWR_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 3 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @NECKLACE_NEWPOWR_1
+BREAK
+#IF
+CheckNewItemValue 3 0 > 2
+CheckNewItemValue 3 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @NECKLACE_NEWPOWR_1
+#ELSEACT
+MOV P0 0
+GOTO @NECKLACE_NEWPOWR_1
+[@NECKLACE_NEWPOWR_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 3 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @NECKLACE_NEWPOWR_2
+BREAK
+#IF
+CheckNewItemValue 3 1 > 2
+CheckNewItemValue 3 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @NECKLACE_NEWPOWR_2
+#ELSEACT
+MOV P1 0
+GOTO @NECKLACE_NEWPOWR_2
+[@NECKLACE_NEWPOWR_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 3 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @NECKLACE_NEWPOWR_3
+BREAK
+#IF
+CheckNewItemValue 3 2 > 2
+CheckNewItemValue 3 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @NECKLACE_NEWPOWR_3
+#ELSEACT
+MOV P2 0
+GOTO @NECKLACE_NEWPOWR_3
+[@NECKLACE_NEWPOWR_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 3 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @NECKLACE_NEWPOWR_4
+BREAK
+#IF
+CheckNewItemValue 3 3 > 2
+CheckNewItemValue 3 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @NECKLACE_NEWPOWR_4
+#ELSEACT
+MOV P3 0
+GOTO @NECKLACE_NEWPOWR_4
+[@NECKLACE_NEWPOWR_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 3 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @NECKLACE_NEWPOWR_5
+BREAK
+#IF
+CheckNewItemValue 3 4 > 2
+CheckNewItemValue 3 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @NECKLACE_NEWPOWR_5
+#ELSEACT
+MOV P4 0
+GOTO @NECKLACE_NEWPOWR_5
+[@NECKLACE_NEWPOWR_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 3 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @NECKLACE_NEWPOWR_6
+BREAK
+#IF
+CheckNewItemValue 3 5 > 2
+CheckNewItemValue 3 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @NECKLACE_NEWPOWR_6
+#ELSEACT
+MOV P5 0
+GOTO @NECKLACE_NEWPOWR_6
+[@NECKLACE_NEWPOWR_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 3 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @NECKLACE_NEWPOWR_7
+BREAK
+#IF
+CheckNewItemValue 3 6 > 2
+CheckNewItemValue 3 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @NECKLACE_NEWPOWR_7
+#ELSEACT
+MOV P6 0
+GOTO @NECKLACE_NEWPOWR_7
+[@NECKLACE_NEWPOWR_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 3 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @NECKLACE_NEWPOWR_OK
+BREAK
+#IF
+CheckNewItemValue 3 7 > 2
+CheckNewItemValue 3 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @NECKLACE_NEWPOWR_OK
+#ELSEACT
+MOV P7 0
+GOTO @NECKLACE_NEWPOWR_OK
+
+[@NECKLACE_NEWPOWR_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 3 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 3 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 3 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 3 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 3 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 3 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 3 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 3 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 3 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 3 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 3 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 3 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 3 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 3 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 3 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 3 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 3 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 3 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 3 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 3 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 3 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 3 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 3 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 3 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 3 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 3 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 3 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 3 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 3 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 3 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 3 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 3 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @NECKLACE_NEWPOWR_OVER
+#ELSEACT
+GOTO @NECKLACE_NEWPOWR_OVER
+[@NECKLACE_NEWPOWR_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+[@ARMRING_L_NEWPOWR]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 7
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @ARMRING_L_NEWPOWR_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@ARMRING_L_NEWPOWR_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 7 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @ARMRING_L_NEWPOWR_1
+BREAK
+#IF
+CheckNewItemValue 7 0 > 2
+CheckNewItemValue 7 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @ARMRING_L_NEWPOWR_1
+#ELSEACT
+MOV P0 0
+GOTO @ARMRING_L_NEWPOWR_1
+[@ARMRING_L_NEWPOWR_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 7 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @ARMRING_L_NEWPOWR_2
+BREAK
+#IF
+CheckNewItemValue 7 1 > 2
+CheckNewItemValue 7 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @ARMRING_L_NEWPOWR_2
+#ELSEACT
+MOV P1 0
+GOTO @ARMRING_L_NEWPOWR_2
+[@ARMRING_L_NEWPOWR_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 7 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @ARMRING_L_NEWPOWR_3
+BREAK
+#IF
+CheckNewItemValue 7 2 > 2
+CheckNewItemValue 7 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @ARMRING_L_NEWPOWR_3
+#ELSEACT
+MOV P2 0
+GOTO @ARMRING_L_NEWPOWR_3
+[@ARMRING_L_NEWPOWR_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 7 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @ARMRING_L_NEWPOWR_4
+BREAK
+#IF
+CheckNewItemValue 7 3 > 2
+CheckNewItemValue 7 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @ARMRING_L_NEWPOWR_4
+#ELSEACT
+MOV P3 0
+GOTO @ARMRING_L_NEWPOWR_4
+[@ARMRING_L_NEWPOWR_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 7 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @ARMRING_L_NEWPOWR_5
+BREAK
+#IF
+CheckNewItemValue 7 4 > 2
+CheckNewItemValue 7 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @ARMRING_L_NEWPOWR_5
+#ELSEACT
+MOV P4 0
+GOTO @ARMRING_L_NEWPOWR_5
+[@ARMRING_L_NEWPOWR_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 7 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @ARMRING_L_NEWPOWR_6
+BREAK
+#IF
+CheckNewItemValue 7 5 > 2
+CheckNewItemValue 7 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @ARMRING_L_NEWPOWR_6
+#ELSEACT
+MOV P5 0
+GOTO @ARMRING_L_NEWPOWR_6
+[@ARMRING_L_NEWPOWR_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 7 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @ARMRING_L_NEWPOWR_7
+BREAK
+#IF
+CheckNewItemValue 7 6 > 2
+CheckNewItemValue 7 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @ARMRING_L_NEWPOWR_7
+#ELSEACT
+MOV P6 0
+GOTO @ARMRING_L_NEWPOWR_7
+[@ARMRING_L_NEWPOWR_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 7 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @ARMRING_L_NEWPOWR_OK
+BREAK
+#IF
+CheckNewItemValue 7 7 > 2
+CheckNewItemValue 7 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @ARMRING_L_NEWPOWR_OK
+#ELSEACT
+MOV P7 0
+GOTO @ARMRING_L_NEWPOWR_OK
+
+[@ARMRING_L_NEWPOWR_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+
+#IF
+RANDOM 4
+CheckNewItemValue 7 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 7 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 7 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 7 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 7 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 7 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 7 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 7 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 7 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 7 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 7 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 7 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 7 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 7 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 7 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 7 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 7 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 7 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 7 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 7 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 7 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 7 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 7 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 7 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 7 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 7 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 7 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 7 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 7 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 7 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 7 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 7 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @ARMRING_L_NEWPOWR_OVER
+#ELSEACT
+GOTO @ARMRING_L_NEWPOWR_OVER
+[@ARMRING_L_NEWPOWR_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+[@WEAPON]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 1
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @WEAPON_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@WEAPON_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 1 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @WEAPON_1
+BREAK
+#IF
+CheckNewItemValue 1 0 > 2
+CheckNewItemValue 1 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @WEAPON_1
+#ELSEACT
+MOV P0 0
+GOTO @WEAPON_1
+[@WEAPON_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 1 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @WEAPON_2
+BREAK
+#IF
+CheckNewItemValue 1 1 > 2
+CheckNewItemValue 1 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @WEAPON_2
+#ELSEACT
+MOV P1 0
+GOTO @WEAPON_2
+[@WEAPON_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 1 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @WEAPON_3
+BREAK
+#IF
+CheckNewItemValue 1 2 > 2
+CheckNewItemValue 1 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @WEAPON_3
+#ELSEACT
+MOV P2 0
+GOTO @WEAPON_3
+[@WEAPON_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 1 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @WEAPON_4
+BREAK
+#IF
+CheckNewItemValue 1 3 > 2
+CheckNewItemValue 1 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @WEAPON_4
+#ELSEACT
+MOV P3 0
+GOTO @WEAPON_4
+[@WEAPON_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 1 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @WEAPON_5
+BREAK
+#IF
+CheckNewItemValue 1 4 > 2
+CheckNewItemValue 1 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @WEAPON_5
+#ELSEACT
+MOV P4 0
+GOTO @WEAPON_5
+[@WEAPON_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 1 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @WEAPON_6
+BREAK
+#IF
+CheckNewItemValue 1 5 > 2
+CheckNewItemValue 1 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @WEAPON_6
+#ELSEACT
+MOV P5 0
+GOTO @WEAPON_6
+[@WEAPON_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 1 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @WEAPON_7
+BREAK
+#IF
+CheckNewItemValue 1 6 > 2
+CheckNewItemValue 1 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @WEAPON_7
+#ELSEACT
+MOV P6 0
+GOTO @WEAPON_7
+[@WEAPON_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 1 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @WEAPON_OK
+BREAK
+#IF
+CheckNewItemValue 1 7 > 2
+CheckNewItemValue 1 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @WEAPON_OK
+#ELSEACT
+MOV P7 0
+GOTO @WEAPON_OK
+
+[@WEAPON_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 1 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 1 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 1 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 1 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 1 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 1 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 1 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 1 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 1 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 1 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 1 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 1 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 1 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 1 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 1 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 1 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 1 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 1 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 1 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 1 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 1 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 1 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 1 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 1 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 1 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 1 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 1 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 1 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 1 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 1 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 1 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 1 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @WEAPON_OVER
+#ELSEACT
+GOTO @WEAPON_OVER
+[@WEAPON_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+
+[@HELMET]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 4
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @HELMET_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+
+[@HELMET_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 4 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @HELMET_1
+BREAK
+#IF
+CheckNewItemValue 4 0 > 2
+CheckNewItemValue 4 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @HELMET_1
+#ELSEACT
+MOV P0 0
+GOTO @HELMET_1
+[@HELMET_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 4 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @HELMET_2
+BREAK
+#IF
+CheckNewItemValue 4 1 > 2
+CheckNewItemValue 4 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @HELMET_2
+#ELSEACT
+MOV P1 0
+GOTO @HELMET_2
+[@HELMET_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 4 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @HELMET_3
+BREAK
+#IF
+CheckNewItemValue 4 2 > 2
+CheckNewItemValue 4 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @HELMET_3
+#ELSEACT
+MOV P2 0
+GOTO @HELMET_3
+[@HELMET_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 4 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @HELMET_4
+BREAK
+#IF
+CheckNewItemValue 4 3 > 2
+CheckNewItemValue 4 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @HELMET_4
+#ELSEACT
+MOV P3 0
+GOTO @HELMET_4
+[@HELMET_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 4 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @HELMET_5
+BREAK
+#IF
+CheckNewItemValue 4 4 > 2
+CheckNewItemValue 4 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @HELMET_5
+#ELSEACT
+MOV P4 0
+GOTO @HELMET_5
+[@HELMET_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 4 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @HELMET_6
+BREAK
+#IF
+CheckNewItemValue 4 5 > 2
+CheckNewItemValue 4 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @HELMET_6
+#ELSEACT
+MOV P5 0
+GOTO @HELMET_6
+[@HELMET_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 4 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @HELMET_7
+BREAK
+#IF
+CheckNewItemValue 4 6 > 2
+CheckNewItemValue 4 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @HELMET_7
+#ELSEACT
+MOV P6 0
+GOTO @HELMET_7
+[@HELMET_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 4 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @HELMET_OK
+BREAK
+#IF
+CheckNewItemValue 4 7 > 2
+CheckNewItemValue 4 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @HELMET_OK
+#ELSEACT
+MOV P7 0
+GOTO @HELMET_OK
+[@HELMET_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 4 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 4 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 4 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 4 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 4 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 4 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 4 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 4 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 4 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 4 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 4 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 4 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 4 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 4 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 4 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 4 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 4 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 4 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 4 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 4 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 4 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 4 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 4 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 4 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 4 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 4 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 4 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 4 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 4 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 4 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 4 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 4 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @HELMET_OVER
+#ELSEACT
+GOTO @HELMET_OVER
+[@HELMET_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+[@RIGHTHAND]
+#IF
+CHECKGAMEGOLD < 20000
+#ACT
+BREAK
+#SAY
+您的元宝不足。\ \ \
+<返回/@灵魂属性>
+#IF
+CHECKUSEITEM 2
+#ACT
+SET [100] 1
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+GAMEGOLD  - 20000
+GOTO @RIGHTHAND_0
+#ELSESAY
+请配戴好您需要淬炼的衣服.\ \ \ \
+<返回/@灵魂属性>
+[@RIGHTHAND_0]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 2 0 < 3
+#ACT
+MOVR P0 1 10
+GOTO @RIGHTHAND_1
+BREAK
+#IF
+CheckNewItemValue 2 0 > 2
+CheckNewItemValue 2 0 < 5
+#ACT
+MOVR P0 1 25
+GOTO @RIGHTHAND_1
+#ELSEACT
+MOV P0 0
+GOTO @RIGHTHAND_1
+[@RIGHTHAND_1]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 2 1 < 3
+#ACT
+MOVR P1 1 10
+GOTO @RIGHTHAND_2
+BREAK
+#IF
+CheckNewItemValue 2 1 > 2
+CheckNewItemValue 2 1 < 5
+#ACT
+MOVR P1 1 25
+GOTO @RIGHTHAND_2
+#ELSEACT
+MOV P1 0
+GOTO @RIGHTHAND_2
+[@RIGHTHAND_2]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 2 2 < 3
+#ACT
+MOVR P2 1 10
+GOTO @RIGHTHAND_3
+BREAK
+#IF
+CheckNewItemValue 2 2 > 2
+CheckNewItemValue 2 2 < 5
+#ACT
+MOVR P2 1 25
+GOTO @RIGHTHAND_3
+#ELSEACT
+MOV P2 0
+GOTO @RIGHTHAND_3
+[@RIGHTHAND_3]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 2 3 < 3
+#ACT
+MOVR P3 1 10
+GOTO @RIGHTHAND_4
+BREAK
+#IF
+CheckNewItemValue 2 3 > 2
+CheckNewItemValue 2 3 < 5
+#ACT
+MOVR P3 1 25
+GOTO @RIGHTHAND_4
+#ELSEACT
+MOV P3 0
+GOTO @RIGHTHAND_4
+[@RIGHTHAND_4]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 2 4 < 3
+#ACT
+MOVR P4 1 5
+GOTO @RIGHTHAND_5
+BREAK
+#IF
+CheckNewItemValue 2 4 > 2
+CheckNewItemValue 2 4 < 5
+#ACT
+MOVR P4 1 10
+GOTO @RIGHTHAND_5
+#ELSEACT
+MOV P4 0
+GOTO @RIGHTHAND_5
+[@RIGHTHAND_5]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 2 5 < 3
+#ACT
+MOVR P5 1 2
+GOTO @RIGHTHAND_6
+BREAK
+#IF
+CheckNewItemValue 2 5 > 2
+CheckNewItemValue 2 5 < 5
+#ACT
+MOVR P5 1 10
+GOTO @RIGHTHAND_6
+#ELSEACT
+MOV P5 0
+GOTO @RIGHTHAND_6
+[@RIGHTHAND_6]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 2 6 < 3
+#ACT
+MOVR P6 1 2
+GOTO @RIGHTHAND_7
+BREAK
+#IF
+CheckNewItemValue 2 6 > 2
+CheckNewItemValue 2 6 < 5
+#ACT
+MOVR P6 1 10
+GOTO @RIGHTHAND_7
+#ELSEACT
+MOV P6 0
+GOTO @RIGHTHAND_7
+[@RIGHTHAND_7]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+CheckNewItemValue 2 7 < 3
+#ACT
+MOVR P6 1 3
+GOTO @RIGHTHAND_OK
+BREAK
+#IF
+CheckNewItemValue 2 7 > 2
+CheckNewItemValue 2 7 < 5
+#ACT
+MOVR P6 1 10
+GOTO @RIGHTHAND_OK
+#ELSEACT
+MOV P7 0
+GOTO @RIGHTHAND_OK
+[@RIGHTHAND_OK]
+#IF
+CHECK [100] 0
+#ACT
+SENDMSG 5 警告:爱护游戏环境,请勿使用非法外挂.
+KICK
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 2 0 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 2 0 - 100
+MESSAGEBOX 淬炼失败！[致命一击]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 2 1 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 2 1 - 100
+MESSAGEBOX 淬炼失败！[攻击伤害]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 2 2 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 2 2 - 100
+MESSAGEBOX 淬炼失败！[物理减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 2 3 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 2 3 - 100
+MESSAGEBOX 淬炼失败！[魔法减伤]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 2 4 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 2 4 - 100
+MESSAGEBOX 淬炼失败！[忽视防御]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 2 5 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 2 5 - 100
+MESSAGEBOX 淬炼失败！[伤害反弹]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 2 6 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 2 6 - 100
+MESSAGEBOX 淬炼失败！[人物体质]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+RANDOM 4
+CheckNewItemValue 2 7 > 2
+#ACT
+SET [100] 0
+SetNewItemValue 2 7 - 100
+MESSAGEBOX 淬炼失败！[附加经验]已消失！\
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL P0 1
+CheckNewItemValue 2 0 < 5
+#ACT
+MOV N1 1
+MOVR P0 1 3
+SetNewItemValue 2 0 + <$STR(P0)>
+INC S7 [致命攻击]增加<$STR(P0)>%\
+INC S8 [致命攻击]增加<$STR(P0)>%；
+#IF
+EQUAL P1 1
+CheckNewItemValue 2 1 < 5
+#ACT
+MOV N1 1
+MOVR P1 1 3
+SetNewItemValue 2 1 + <$STR(P1)>
+INC S7 [攻击伤害]增加<$STR(P1)>%\
+INC S8 [攻击伤害]增加<$STR(P1)>%；
+#IF
+EQUAL P2 1
+CheckNewItemValue 2 2 < 5
+#ACT
+MOV N1 1
+MOVR P2 1 3
+SetNewItemValue 2 2 + <$STR(P2)>
+INC S7 [物理减伤]增加<$STR(P2)>%\
+INC S8 [物理减伤]增加<$STR(P2)>%；
+#IF
+EQUAL P3 1
+CheckNewItemValue 2 3 < 5
+#ACT
+MOV N1 1
+MOVR P3 1 3
+SetNewItemValue 2 3 + <$STR(P3)>
+INC S7 [魔法减伤]增加<$STR(P3)>%\
+INC S8 [魔法减伤]增加<$STR(P3)>%；
+#IF
+EQUAL P4 1
+CheckNewItemValue 2 4 < 5
+#ACT
+MOV N1 1
+MOVR P4 1 3
+SetNewItemValue 2 4 + <$STR(P4)>
+INC S7 [忽视防御]增加<$STR(P4)>%\
+INC S8 [忽视防御]增加<$STR(P4)>%；
+#IF
+EQUAL P5 1
+CheckNewItemValue 2 5 < 5
+#ACT
+MOV N1 1
+MOVR P5 1 3
+SetNewItemValue 2 5 + <$STR(P5)>
+INC S7 [伤害反弹]增加<$STR(P5)>%\
+INC S8 [伤害反弹]增加<$STR(P5)>%；
+#IF
+EQUAL P6 1
+CheckNewItemValue 2 6 < 5
+#ACT
+MOV N1 1
+MOVR P6 1 3
+SetNewItemValue 2 6 + <$STR(P6)>
+INC S7 [人物体质]增加<$STR(P6)>%\
+INC S8 [人物体质]增加<$STR(P6)>%；
+#IF
+EQUAL P7 1
+CheckNewItemValue 2 7 < 5
+#ACT
+MOV N1 1
+MOVR P7 1 3
+SetNewItemValue 2 7 + <$STR(P7)>
+INC S7 [附加经验]增加<$STR(P7)>%\
+INC S8 [附加经验]增加<$STR(P7)>%；
+GOTO @RIGHTHAND_OVER
+#ELSEACT
+GOTO @RIGHTHAND_OVER
+[@RIGHTHAND_OVER]
+#IF
+EQUAL N1 0
+#ACT
+SET [100] 0
+MESSAGEBOX 淬炼失败！您未获取到任何属性！
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+#IF
+EQUAL N1 1
+#ACT
+MESSAGEBOX 恭喜你，淬炼成功！\　\<$STR(S7)>
+
+SET [100] 0
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P5 0
+MOV P6 0
+MOV P7 0
+MOV N1 0
+MOV S7
+MOV S8
+BREAK
+;-b--b--Q -Q---156 598018---

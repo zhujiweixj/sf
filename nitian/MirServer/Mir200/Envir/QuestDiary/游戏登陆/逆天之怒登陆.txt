@@ -1,0 +1,9 @@
+{
+[@ÄæÌìµ÷Õû]
+#if
+check [167] 1
+#act
+ChangeModeEx 3 65535 1200
+ChangeModeEx 4 65535 800
+break
+}

@@ -1,0 +1,4163 @@
+萝卜数据;此脚为登录脚本，人物每次登录时都会执行此脚本，所有人物初始设置都可以放在此脚本中。
+;修改脚本内容，可用@ReloadManage命令重新加载该脚本，不须重启程序。
+[@Startup]
+;-------------------------------------------------------------------------------------
+;Warning: Do not privately modify, or peril
+;-------------------------------------------------------------------------------------
+#IF
+#act
+VAR Integer GLOBAL 开区天数
+VAR Integer GLOBAL 领取次数
+VAR Integer GLOBAL 攻沙奖励
+VAR Integer GLOBAL 开区小时
+VAR Integer GLOBAL 超级夺宝
+VAR Integer GLOBAL 终极必爆
+VAR Integer GLOBAL 魔戒指环
+VAR Integer GLOBAL 清空变量
+VAR Integer GLOBAL 大乱斗检测
+VAR Integer GLOBAL 大乱斗活动结束
+LOADVAR GLOBAL 大乱斗活动结束 ..\QuestDiary\子木名单专用\大乱斗检测数据.txt
+LOADVAR GLOBAL 大乱斗检测 ..\QuestDiary\子木名单专用\大乱斗检测数据.txt
+LOADVAR GLOBAL 魔戒指环 ..\QuestDiary\变量数据\系统变量.txt
+LOADVAR GLOBAL 终极必爆 ..\QuestDiary\变量数据\系统变量.txt
+LOADVAR GLOBAL 清空变量 ..\QuestDiary\变量数据\系统变量.txt
+LOADVAR GLOBAL 超级夺宝 ..\QuestDiary\变量数据\系统变量.txt
+LOADVAR GLOBAL 开区小时 ..\QuestDiary\变量数据\系统变量.txt
+LOADVAR GLOBAL 开区天数 ..\QuestDiary\变量数据\系统变量.txt
+LOADVAR GLOBAL 领取次数 ..\QuestDiary\变量数据\系统变量.txt
+LOADVAR GLOBAL 攻沙奖励 ..\QuestDiary\变量数据\系统变量.txt
+#CALL [\数据文件\清空变量.txt] @清除AG变量
+#CALL [\数据文件\开机刷怪.txt] @开始刷怪
+
+[@Login]
+#if
+CHECKLEVELEX > 0
+#act
+SET [95] 0
+
+#if
+EQUAL A440 <$USERNAME>
+#ACT
+POWERRATE 120 65535
+;物防上
+ChangeHumAbility 1 + 100
+;物防下
+ChangeHumAbility 2 + 100
+;魔御上
+ChangeHumAbility 3 + 100
+;魔御下
+ChangeHumAbility 4 + 100
+;攻击上
+ChangeHumAbility 5 + 100
+;攻击下
+ChangeHumAbility 6 + 100
+;魔法上
+ChangeHumAbility 7 + 100
+;魔法下
+ChangeHumAbility 8 + 100
+;道术上
+ChangeHumAbility 9 + 100
+;道术下
+ChangeHumAbility 10 + 100
+SETRANKLEVELNAME %s\◥■■■群■■■◤\◥■■雄■■◤\◥■ＰＫ■◤\◥王◤\☆★1.2倍伤害★☆\☆★全属性+100★☆\
+GuildNoticeMsg 56 255 系统：【群雄ＰＫ王】---『%s』上线了，伤害增加1.2倍，全属性+100!
+
+
+
+
+#IF
+CHECKITEMTYPE 4 16
+#ACT
+TakeEx 4
+MessageBox 身上异常装备已经取下，别作弊了！
+KICK
+
+
+#IF
+CHECKITEMTYPE 14 15
+#ACT
+TakeEx 14
+MessageBox 身上异常装备已经取下，别作弊了！
+KICK
+break
+#IF
+check [430] 5
+#ACT
+SET [430] 0
+#IF
+check [431] 5
+#ACT
+SET [431] 0
+
+
+#IF
+check [222] 1
+#ACT
+SET [222] 0
+#if
+CHECKLEVELEX > 0
+#act
+mov N0 60
+MOV N3 5
+#IF
+CHECKLEVELEX > 0
+#ACT
+SETONTIMER 15 1
+VAR Integer HUMAN JK
+VAR Integer HUMAN 一级镖标示
+VAR Integer HUMAN 二级镖标示
+VAR Integer HUMAN 三级镖标示
+VAR Integer HUMAN 神器时限
+VAR Integer HUMAN 入门装备时限
+VAR Integer HUMAN 心魔标识
+VAR Integer HUMAN 心魔卷轴
+VAR Integer HUMAN 外挂倒计时
+VAR Integer HUMAN 杀怪数量
+VAR Integer HUMAN 错误数量
+VAR Integer HUMAN 逆天神力
+LOADVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+LOADVAR HUMAN 杀怪数量 ..\QuestDiary\防脱机脚本\杀怪数量.txt
+LOADVAR HUMAN 错误数量 ..\QuestDiary\防脱机脚本\错误数量.txt
+LOADVAR HUMAN 心魔标识 ..\QuestDiary\变量数据\外挂系统.txt
+LOADVAR HUMAN 心魔标识 ..\QuestDiary\变量数据\心魔系统.txt
+LOADVAR HUMAN 心魔卷轴 ..\QuestDiary\变量数据\心魔系统.txt
+LOADVAR HUMAN 入门装备时限 ..\QuestDiary\变量数据\入门装备.txt
+LOADVAR HUMAN JK ..\QuestDiary\banbenku\元宝捐款.txt
+LOADVAR HUMAN 一级镖标示 ..\QuestDiary\变量数据\压镖次数.txt
+LOADVAR HUMAN 二级镖标示 ..\QuestDiary\变量数据\压镖次数.txt
+LOADVAR HUMAN 三级镖标示 ..\QuestDiary\变量数据\压镖次数.txt
+LOADVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+LOADVAR HUMAN 神器时限 ..\QuestDiary\变量数据\存钱.txt
+#CALL [\元宝捐款\元宝捐款数据.txt] @刷新
+#CALL [\元宝捐款\元宝捐款奖励.txt] @奖励
+#CALL [\游戏登陆\封号检测.txt] @封号检测
+#CALL [\元宝捐款\爵位封号.txt] @爵位封号
+#Call [\游戏登陆\登陆设置.txt] @登陆脚本
+#CALL [\游戏登陆\逆天之怒登陆.txt] @逆天调整
+#Call [\\Ecom\HBatVar.txt] @HBatVar
+;检测经验猪坐标
+#IF
+CheckInMapRange 3 352 332 2
+#ACT
+mapmove 3 333 333
+BREAK
+#IF
+CheckInMapRange 3 352 340 2
+#ACT
+mapmove 3 333 333
+BREAK
+#IF
+CheckInMapRange 3 334 335 2
+#ACT
+BREAK
+#IF
+CheckInMapRange 3 330 330 2
+#ACT
+mapmove 3 333 333
+BREAK
+#IF
+CheckInMapRange 3 330 334 2
+#ACT
+mapmove 3 333 333
+BREAK
+#IF
+CheckInMapRange 3 334 330 2
+#ACT
+mapmove 3 333 333
+BREAK
+#IF
+CheckInMapRange 3 352 336 2
+#ACT
+mapmove 3 333 333
+BREAK
+
+#IF
+CheckHumInRange 3 314 344 3
+#ACT
+Mapmove 3 330 330
+BREAK
+
+#IF
+CheckHumInRange 3 357 335 3
+#ACT
+Mapmove 3 330 330
+BREAK
+
+
+
+;===============
+
+;#IF
+;CHECKNAMELIST ..\QuestDiary\banbenku\四级烈火.txt
+;#ACT
+;SkillLevel 烈火剑法 = 4
+
+;#IF
+;CHECKNAMELIST ..\QuestDiary\banbenku\四级火符.txt
+;#ACT
+;SkillLevel 灵魂火符 = 4
+
+
+;#IF
+;CHECKNAMELIST ..\QuestDiary\banbenku\四级魔法盾.txt
+;#ACT
+;SkillLevel 四级魔法盾 = 4
+
+;#if
+;checkitemw 斗笠 1
+;#act
+;SETRANKLEVELNAME 神秘人\神秘人\　\　\　\　\　\　\　\　\　\　\　\%s
+
+[@PlayOffLine] 
+#IF 
+INSAFEZONE
+CHECKONLINEPLAYCOUNT < 1000
+#ACT 
+OFFLINE 14000 100
+
+
+
+[@刷新树妖]
+#if
+ISONMAP 3
+#say
+ \ \
+　　　　　　　　　　 <【/SCOLOR=229>全服触发系统<】/SCOLOR=229>\ \
+<╔═══════════════════════════╗/SCOLOR=59>\
+<‖/SCOLOR=59>　　　　　　　　<刺杀|招财树|/SCOLOR=249>　<我要前往/@zoulou>　　　　　　　　<‖/SCOLOR=59>\
+<╚═══════════════════════════╝/SCOLOR=59>\
+　　<温馨提醒：/SCOLOR=250><招财树是爆元宝最多的BOSS,每30分钟刷新!!/SCOLOR=253>
+
+
+
+[@zoulou]
+#if
+#act
+MapMove 3 354 340
+Close
+
+[@阎王爷]
+#if
+ISONMAP 3
+#say
+ \ \
+　　　　　　　　　　 <【/SCOLOR=229>全服触发系统<】/SCOLOR=229>\ \
+<╔═══════════════════════════╗/SCOLOR=59>\
+<‖/SCOLOR=59>　　　　　　　　<刺杀|阎王爷|/SCOLOR=249>　<我要前往/@zoulou2>　　　　　　　　<‖/SCOLOR=59>\
+<╚═══════════════════════════╝/SCOLOR=59>\
+　　<温馨提醒：/SCOLOR=250><每间隔一小时刷新一次！！/SCOLOR=253>
+
+#if
+CheckRangeMonCount SSJDC 18 23  100 < 3
+#ACT
+Param1 SSJDC
+Param2 18
+Param3 23
+MonGen 阎罗王8 1 1
+break
+
+
+[@zoulou2]
+#if
+#act
+mapmove SSJDC
+give 回城卷
+GuildNoticeMsg 0  253 玩家(%s)进入刺杀阎王爷活动地图，未进入玩家可从土城综合服务NPC进入！！！
+break
+
+[@刷阎罗王]
+#IF
+CheckRangeMonCount GMXZZ 15 15 20 < 1
+#ACT
+Param1 GMXZZ
+Param2 15
+Param3 15
+MonGen 阎罗王 1 1
+break
+
+
+
+
+[@OnTimer1]
+#IF
+ISONMAP @PD3
+CHECKLEVELEX < 180
+#ACT
+CHANGEEXP + 400000
+BREAK
+#ELSEACT
+GOTO @停止顶时器
+
+
+[@停止顶时器]
+#IF
+ISONMAP PD3
+#ACT
+SetOffTimer 1
+MAPMOVE 3 330 333
+SendMsg 5 你的等级不适合在这里，我得把你送回家咯
+BREAK
+#ELSEACT
+SetOffTimer 1
+
+[@OnTimer2]
+#IF
+ISONMAP PD4
+CHECKLEVELEX < 140
+#ACT
+CHANGEEXP + 6000000
+BREAK
+#ELSEACT
+GOTO @停止顶时器1
+
+
+[@停止顶时器1]
+#IF
+ISONMAP PD4
+#ACT
+SetOffTimer 2
+MAPMOVE 3 330 333
+SendMsg 5 你的等级不适合在这里，我得把你送回家咯
+BREAK
+#ELSEACT
+SetOffTimer 2
+
+[@OnTimer3]
+#IF
+ISONMAP hu1
+CHECKLEVELEX < 100
+#ACT
+CHANGEEXP + 200000
+BREAK
+
+#IF
+ISONMAP hu2
+CHECKLEVELEX < 100
+#ACT
+CHANGEEXP + 200000
+BREAK
+#ELSEACT
+GOTO @停止顶时器3
+
+
+[@停止顶时器3]
+#IF
+ISONMAP hu1
+#ACT
+SetOffTimer 3
+MAPMOVE 3 330 333
+SendMsg 5 你的等级不适合在这里，我得把你送回家咯
+BREAK
+#ELSEACT
+SetOffTimer 3
+
+[@OnTimer4]
+#IF
+CHECKCREDITPOINT > 0
+ISONMAP dilao
+#ACT
+CREDITPOINT - 1
+break
+#IF
+CHECKCREDITPOINT = 0
+ISONMAP dilao
+#ACT
+goto @加速
+#ELSEACT
+GOTO @停止顶时器4
+
+[@停止顶时器4]
+#IF
+CHECK [200] 1
+#ACT
+mapmove dilao 15 15
+MeSSageBox 作弊行为已被记录，如再发现永久封号处理！
+
+
+[@OnTimer14]
+#IF
+CHECKCREDITPOINT > 0
+ISONMAP dilao
+#ACT
+#ELSEACT
+GOTO @停止顶时器14
+
+[@停止顶时器14]
+#IF
+CHECK [205] 1
+#ACT
+mapmove dilao 15 15
+MeSSageBox 作弊行为已被记录，如再发现永久封号处理！
+
+[@OnTimer12]
+#IF
+CheckInMapRange 3 357 335 4
+#elseact
+SetOffTimer 12
+break
+
+#IF
+CHECKLEVELEX > 159
+CheckInMapRange 3 357 335 0
+#ACT
+CHANGEEXP + 10000
+gamegold + 10
+SENDMSG 6 提示：元宝+10！
+BREAK
+
+#IF
+CHECKLEVELEX < 160
+CheckInMapRange 3 357 335 0
+#ACT
+CHANGEEXP + 400000
+gamegold + 100
+SENDMSG 6 提示：元宝+100！
+BREAK
+
+[@加速]
+#IF
+CHECK [205] 1
+#ACT
+SET [205] 0
+MeSSageBox 可以出去了，如若再发现，系统将自动封号处理！
+mapmove 3 333 333
+SETRANKLEVELNAME  %s\状态:刑满释放...
+BREAK
+#ELSESAY
+
+
+;----------赌场脚本--------
+[@NewduboyxGame]
+#If
+check [65] 1
+checknamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+#ACT
+mov D0 <$STR(G72)>
+playdice 1 @cube_cds
+break
+
+#IF
+checknamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+#ACT
+mov D0 <$STR(G72)>
+playdice 1 @dutouzi_ll
+#SAY
+正在投骰子。。。\ \
+
+[@cube_cds]
+#IF
+check [65] 0
+#ACT
+goto @dutouzi_ll
+break
+
+;-------------------大中小开始--------
+#IF
+check [65] 1
+equal D0 6
+LARGE N89 0
+LARGE N78 2
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N78)>
+inc G73 <$STR(N78)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N78)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N78)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 5
+LARGE N89 0
+LARGE N78 2
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N78)>
+inc G73 <$STR(N78)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N78)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N78)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 4
+LARGE N90 0
+LARGE N79 2
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N79)>
+inc G73 <$STR(N79)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N79)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N79)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 3
+LARGE N90 0
+LARGE N79 2
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N79)>
+inc G73 <$STR(N79)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N79)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N79)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 2
+LARGE N91 0
+LARGE N80 2
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N80)>
+inc G73 <$STR(N80)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N80)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N80)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 1
+LARGE N91 0
+LARGE N80 2
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N80)>
+inc G73 <$STR(N80)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N80)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N80)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+;-------------------大中小结束--------
+;-------------------单双开始--------
+#IF
+check [65] 1
+equal D0 6
+LARGE N93 0
+LARGE N82 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N82)>
+inc G73 <$STR(N82)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N82)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N82)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 4
+LARGE N93 0
+LARGE N82 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N82)>
+inc G73 <$STR(N82)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N82)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N82)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 2
+LARGE N93 0
+LARGE N82 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N82)>
+inc G73 <$STR(N82)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N82)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N82)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 5
+LARGE N92 0
+LARGE N81 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N81)>
+inc G73 <$STR(N81)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N81)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N81)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 3
+LARGE N92 0
+LARGE N81 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N81)>
+inc G73 <$STR(N81)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N81)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N81)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 1
+LARGE N92 0
+LARGE N81 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N81)>
+inc G73 <$STR(N81)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N81)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N81)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+;-------------------单双结束--------
+;-------------------点数开始--------
+#IF
+check [65] 1
+equal D0 1
+LARGE N94 0
+LARGE N83 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N83)>
+inc G73 <$STR(N83)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N83)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N83)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 2
+LARGE N95 0
+LARGE N84 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N84)>
+inc G73 <$STR(N84)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N84)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N84)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 3
+LARGE N96 0
+LARGE N85 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N85)>
+inc G73 <$STR(N85)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N85)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N85)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+
+#IF
+check [65] 1
+equal D0 4
+LARGE N97 0
+LARGE N86 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N86)>
+inc G73 <$STR(N86)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N86)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N86)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+#IF
+check [65] 1
+equal D0 5
+LARGE N98 0
+LARGE N87 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N87)>
+inc G73 <$STR(N87)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N87)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N87)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+
+#IF
+check [65] 1
+equal D0 6
+LARGE N99 0
+LARGE N88 1
+#ACT
+CLEARDELAYGOTO
+GameGold + <$STR(N88)>
+inc G73 <$STR(N88)>
+SENDMSG 6 提示：骰子点数为：<$STR(D0)>点！恭喜你中奖，你获得了<$STR(N88)>元宝的奖励！
+GuildNoticeMsg 254 249 【<$USERNAME>】在地下赌场赢得<$STR(N88)>元宝，想要发财的快快行动！
+goto @dutouzi_cds-lk
+break
+
+;-------------------点数结束--------
+
+#ELSEACT
+CLEARDELAYGOTO
+Set [65] 0
+mov G71 0
+MOV G78 0
+MOV G79 0
+MOV G80 0
+MOV G81 0
+MOV G82 0
+MOV G83 0
+MOV G84 0
+MOV G85 0
+MOV G86 0
+MOV G87 0
+MOV G88 0
+MOV G89 0
+MOV G90 0
+MOV G91 0
+MOV G92 0
+MOV G93 0
+MOV G94 0
+MOV G95 0
+MOV G96 0
+MOV G97 0
+MOV G98 0
+MOV G99 0
+MOV N71 0
+MOV N78 0
+MOV N79 0
+MOV N80 0
+MOV N81 0
+MOV N82 0
+MOV N83 0
+MOV N84 0
+MOV N85 0
+MOV N86 0
+MOV N87 0
+MOV N88 0
+MOV N89 0
+MOV N90 0
+MOV N91 0
+MOV N92 0
+MOV N93 0
+MOV N94 0
+MOV N95 0
+MOV N96 0
+MOV N97 0
+MOV N98 0
+MOV N99 0
+GOTO @dushuol
+[@dushuol]
+#SAY
+很可惜...\
+骰子的点数是<$STR(D0)> 和你猜的点数不同.\ \ \
+<离 开/@exit>\
+
+[@dutouzi_cds-lk]
+#IF
+check [65] 1
+LARGE N78 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N78)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#IF
+check [65] 1
+LARGE N79 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N79)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#IF
+check [65] 1
+LARGE N80 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N80)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#IF
+check [65] 1
+LARGE N81 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N81)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#IF
+check [65] 1
+LARGE N82 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N82)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#IF
+check [65] 1
+LARGE N83 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N83)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#IF
+check [65] 1
+LARGE N84 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N84)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#IF
+check [65] 1
+LARGE N85 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N85)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#IF
+check [65] 1
+LARGE N86 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N86)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#IF
+check [65] 1
+LARGE N87 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N87)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#IF
+check [65] 1
+LARGE N88 G70
+#ACT
+CLEARDELAYGOTO
+;GuildNoticeMsg 254 249 提示：【<$USERNAME>】在地下赌场赢得<$STR(N88)>元宝，想要发财的快快行动！
+goto @dutouzi_ll
+break
+#ELSEACT
+CLEARDELAYGOTO
+goto @dutouzi_ll
+break
+
+[@dutouzi_ll]
+#ACT
+Set [65] 0
+mov G71 0
+MOV G78 0
+MOV G79 0
+MOV G80 0
+MOV G81 0
+MOV G82 0
+MOV G83 0
+MOV G84 0
+MOV G85 0
+MOV G86 0
+MOV G87 0
+MOV G88 0
+MOV G89 0
+MOV G90 0
+MOV G91 0
+MOV G92 0
+MOV G93 0
+MOV G94 0
+MOV G95 0
+MOV G96 0
+MOV G97 0
+MOV G98 0
+MOV G99 0
+MOV N71 0
+MOV N78 0
+MOV N79 0
+MOV N80 0
+MOV N81 0
+MOV N82 0
+MOV N83 0
+MOV N84 0
+MOV N85 0
+MOV N86 0
+MOV N87 0
+MOV N88 0
+MOV N89 0
+MOV N90 0
+MOV N91 0
+MOV N92 0
+MOV N93 0
+MOV N94 0
+MOV N95 0
+MOV N96 0
+MOV N97 0
+MOV N98 0
+MOV N99 0
+
+[@NewduboxyGame]
+#IF
+#ACT
+CLEARNAMELIST ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+break
+
+
+[@NewduboxyyGame]
+#IF
+#ACT
+Set [65] 0
+break
+
+
+[@激情派对询问]
+#if
+ISONMAP 3
+#say
+ \ \
+　　　　　　　　　　 <【/SCOLOR=229>全服触发系统<】/SCOLOR=229>\ \
+<╔═══════════════════════════╗/SCOLOR=59>\
+<‖/SCOLOR=59>　　　　　　　　<激情派对活动/SCOLOR=249>　　　　　<我要前往/@kaipaidui>        <‖/SCOLOR=59>\
+<╚═══════════════════════════╝/SCOLOR=59>\
+<提示:在激情派对NPC附近走动即可获得元宝!!原地不动或跑动都不能获得元宝!!>
+
+[@kaipaidui]
+#if
+#act
+MapMove 3 352 347
+Close
+
+
+
+[@宝盒作弊检测]
+#IF
+checkitem ★活动宝盒★ 1
+IsOnMap DBQB
+#ACt
+GuildNoticeMsg 56 151 ★夺宝奇兵：活动进行中，目前宝盒持有人为：『<$USERNAME>』！
+GuildNoticeMsg 56 151 ★获胜者100%获得【100万元宝+随机奖励】详情见土NPC“活动使者”！
+break
+
+#IF
+checkitem ★超级宝盒★ 1
+IsOnMap CJDB
+#ACt
+GuildNoticeMsg 56 151 ★超级夺宝：活动进行中，目前宝盒持有人为：『<$USERNAME>』！
+GuildNoticeMsg 56 151 ★获胜者将100%获得【500万元宝】详情见土NPC“活动使者”！
+break
+
+#IF
+checkitem ★活动宝盒★ 1
+#ACT
+take ★活动宝盒★ 1
+MESSAGEBOX 请勿作弊：宝盒必须在活动地图才能打开，现在系统自动收回！
+
+#IF
+checkitem ★超级宝盒★ 1
+#ACT
+take ★超级宝盒★ 1
+MESSAGEBOX 请勿作弊：宝盒必须在活动地图才能打开，现在系统自动收回！
+
+[@夺宝邀请]
+#IF
+ISONMAP dilao
+#ACT
+break
+
+#IF
+ISONMAP DBQB
+#ACT
+break
+
+#IF
+ISONMAP CJDB
+#ACT
+break
+
+#IF
+#SAY
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　　　<【夺宝奇兵】/SCOLOR=253>　←现在不进就没机会了\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+<　　　|夺|　　　　　　　　　　　　　　　　　　　|夺|/SCOLOR=254>\
+<　　　|宝| 　　每天12点，16点，20点，0点举行　  |宝|/SCOLOR=254>\
+<　　　|奇|　 火暴举行，奖品100万元宝+随机奖品　 |奇|/SCOLOR=254>\
+<　　　|兵|　　　　　（地图内不准吃药）　　　　　|兵|/SCOLOR=254>\
+　　活动介绍：<杀死教主获得宝盒，守护宝盒10分钟可得宝物！>\
+　　　　　　　『<现在就去/@goDBQB>』      『<暂时不去/@exit>』 \  \
+#ACT
+DelayCall 120000 @关闭窗口
+
+[@goDBQB]
+#IF
+#ACT
+MAPMOVE DBQB
+SetIcon 0 0
+SetIcon 1 0
+SetIcon 2 0
+SetIcon 3 0
+SENDMSG 0 [%s]进入了夺宝奇兵活动寻求激情，机会不等人，快快跟上吧！
+
+[@超宝邀请]
+
+#IF
+#SAY
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　<【新区超级夺宝】/SCOLOR=253>　←现在不进就没机会了\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+<　　　|超|　　　　　　　　　　　　　　　　　　　|超|/SCOLOR=254>\
+<　　　|级|　　 新区开区2小时举行,奖500万元宝　  |级|/SCOLOR=254>\
+<　　　|夺|　　　　 机不可失，时不在来　　　　 　|夺|/SCOLOR=254>\
+<　　　|兵|　　　　　（地图内不准吃药）　　　　　|兵|/SCOLOR=254>\
+　　活动介绍：<杀死教主获得宝盒，守护宝盒10分钟可得宝物！>\
+　　　　　　　『<现在就去/@goCJDB>』      『<暂时不去/@exit>』 \  \
+#ACT
+DelayCall 120000 @关闭窗口
+
+
+[@关闭窗口]
+#ACT
+Close
+break
+
+[@goCJDB]
+#IF
+#ACT
+MAPMOVE CJDB
+SetIcon 0 0
+SetIcon 1 0
+SetIcon 2 0
+SetIcon 3 0
+SENDMSG 0 [%s]进入了【新区超级夺宝】活动，获胜者100%获得500万元宝奖励，机会不等人，快快跟上吧，详情见土NPC“活动使者”！
+
+
+
+[@超级指环]
+
+
+#IF
+#SAY
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　<【新区必爆魔戒指环】/SCOLOR=253>　←现在不进就没机会了\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+<　　　|必|　　　　　　　　　　　　　　　　　　　|必|/SCOLOR=254>\
+<　　　|爆|　　 新区开区4小时举行,必爆魔戒指环   |爆|/SCOLOR=254>\
+<　　　|指|　　　　 机不可失，时不在来　　　　 　|指|/SCOLOR=254>\
+<　　　|环|　　　　　                  　　　　　|环|/SCOLOR=254>\
+　　活动介绍：<杀死魔戒指环教主，必爆魔戒指环一枚>\
+　　　　　　　『<现在就去/@gobbmo>』      『<暂时不去/@exit>』 \  \
+
+
+[@gobbmo]
+#IF
+#ACT
+MAPMOVE 3 405 330
+SENDMSG 0 [%s]加入了【新区魔戒指环】活动，杀死魔界指环教主必爆魔戒指环一枚，机会不等人，快快跟上吧！
+SENDMSG 0 [%s]加入了【新区魔戒指环】活动，杀死魔界指环教主必爆魔戒指环一枚，机会不等人，快快跟上吧！
+SENDMSG 0 [%s]加入了【新区魔戒指环】活动，杀死魔界指环教主必爆魔戒指环一枚，机会不等人，快快跟上吧！
+SENDMSG 0 [%s]加入了【新区魔戒指环】活动，杀死魔界指环教主必爆魔戒指环一枚，机会不等人，快快跟上吧！
+SENDMSG 0 [%s]加入了【新区魔戒指环】活动，杀死魔界指环教主必爆魔戒指环一枚，机会不等人，快快跟上吧！
+
+
+[@超级随机]
+
+#IF
+#SAY
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　<【新区必爆终极】/SCOLOR=253>　←现在不进就没机会了\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+<　　　|必|　　　　　　　　　　　　　　　　　　　|必|/SCOLOR=254>\
+<　　　|爆|　　 新区开区3小时举行,必爆终极卷 　  |爆|/SCOLOR=254>\
+<　　　|终|　　　　 机不可失，时不在来　　　　 　|终|/SCOLOR=254>\
+<　　　|极|　　　　　                  　　　　　|极|/SCOLOR=254>\
+　　活动介绍：<杀死BOSS获终极随机卷一张，双击卷得终极物品一件>\
+　　　　　　　『<现在就去/@gozzbb>』      『<暂时不去/@exit>』 \  \
+
+
+[@gozzbb]
+#IF
+#ACT
+MAPMOVE 3 271 332
+SENDMSG 0 [%s]加入了【新区必爆终极】活动，获胜者100%获得终极装备一件，机会不等人，快快跟上吧！
+SENDMSG 0 [%s]加入了【新区必爆终极】活动，获胜者100%获得终极装备一件，机会不等人，快快跟上吧！
+SENDMSG 0 [%s]加入了【新区必爆终极】活动，获胜者100%获得终极装备一件，机会不等人，快快跟上吧！
+SENDMSG 0 [%s]加入了【新区必爆终极】活动，获胜者100%获得终极装备一件，机会不等人，快快跟上吧！
+SENDMSG 0 [%s]加入了【新区必爆终极】活动，获胜者100%获得终极装备一件，机会不等人，快快跟上吧！
+
+
+[@极品发光go]
+#IF
+CHECKITEMADDVALUE 2 2 > 14
+#ACT
+SetItemsLight 2 2
+
+#IF
+CHECKITEMADDVALUE 2 3 > 14
+#ACT
+SetItemsLight 2 2
+
+#IF
+CHECKITEMADDVALUE 2 4 > 14
+#ACT
+SetItemsLight 2 2
+
+#IF
+CHECKITEMADDVALUE 3 2 > 44
+#ACT
+SetItemsLight 3 2
+
+#IF
+CHECKITEMADDVALUE 3 3 > 44
+#ACT
+SetItemsLight 3 2
+
+#IF
+CHECKITEMADDVALUE 3 4 > 44
+#ACT
+SetItemsLight 3 2
+
+
+#IF
+CHECKITEMADDVALUE 5 2 > 44
+#ACT
+SetItemsLight 5 2
+
+#IF
+CHECKITEMADDVALUE 5 3 > 44
+#ACT
+SetItemsLight 5 2
+#IF
+CHECKITEMADDVALUE 5 4 > 44
+#ACT
+SetItemsLight 5 2
+
+#IF
+CHECKITEMADDVALUE 6 2 > 44
+#ACT
+SetItemsLight 6 2
+
+#IF
+CHECKITEMADDVALUE 6 3 > 44
+#ACT
+SetItemsLight 6 2
+
+#IF
+CHECKITEMADDVALUE 6 4 > 44
+#ACT
+SetItemsLight 6 2
+
+#IF
+CHECKITEMADDVALUE 7 2 > 44
+#ACT
+SetItemsLight 7 2
+
+#IF
+CHECKITEMADDVALUE 7 3 > 44
+#ACT
+SetItemsLight 7 2
+
+#IF
+CHECKITEMADDVALUE 7 4 > 44
+#ACT
+SetItemsLight 7 2
+
+#IF
+CHECKITEMADDVALUE 8 2 > 44
+#ACT
+SetItemsLight 8 2
+
+#IF
+CHECKITEMADDVALUE 8 3 > 44
+#ACT
+SetItemsLight 8 2
+
+#IF
+CHECKITEMADDVALUE 8 4 > 44
+#ACT
+SetItemsLight 8 2
+
+#IF
+CHECKITEMADDVALUE 9 2 > 15
+#ACT
+SetItemsLight 9 2
+
+#IF
+CHECKITEMADDVALUE 9 3 > 15
+#ACT
+SetItemsLight 9 2
+
+#IF
+CHECKITEMADDVALUE 9 4 > 15
+#ACT
+SetItemsLight 9 2
+
+#IF
+CHECKITEMADDVALUE 12 2 > 15
+#ACT
+SetItemsLight 12 2
+
+#IF
+CHECKITEMADDVALUE 12 3 > 15
+#ACT
+SetItemsLight 12 2
+
+#IF
+CHECKITEMADDVALUE 12 4 > 15
+#ACT
+SetItemsLight 12 2
+
+#IF
+CHECKITEMADDVALUE 2 2 > 38
+#ACT
+SetItemsLight 2 1
+
+#IF
+CHECKITEMADDVALUE 2 3 > 38
+#ACT
+SetItemsLight 2 1
+
+#IF
+CHECKITEMADDVALUE 2 4 > 38
+#ACT
+SetItemsLight 2 1
+
+#IF
+CHECKITEMADDVALUE 3 2 > 73
+#ACT
+SetItemsLight 3 1
+
+#IF
+CHECKITEMADDVALUE 3 3 > 73
+#ACT
+SetItemsLight 3 1
+
+#IF
+CHECKITEMADDVALUE 3 4 > 73
+#ACT
+SetItemsLight 3 1
+
+
+#IF
+CHECKITEMADDVALUE 5 2 > 73
+#ACT
+SetItemsLight 5 1
+
+#IF
+CHECKITEMADDVALUE 5 3 > 73
+#ACT
+SetItemsLight 5 1
+
+#IF
+CHECKITEMADDVALUE 5 4 > 73
+#ACT
+SetItemsLight 5 1
+
+#IF
+CHECKITEMADDVALUE 6 2 > 73
+#ACT
+SetItemsLight 6 1
+
+#IF
+CHECKITEMADDVALUE 6 3 > 73
+#ACT
+SetItemsLight 6 1
+
+#IF
+CHECKITEMADDVALUE 6 4 > 73
+#ACT
+SetItemsLight 6 1
+
+#IF
+CHECKITEMADDVALUE 7 2 > 73
+#ACT
+SetItemsLight 7 1
+
+#IF
+CHECKITEMADDVALUE 7 3 > 73
+#ACT
+SetItemsLight 7 1
+
+#IF
+CHECKITEMADDVALUE 7 4 > 73
+#ACT
+SetItemsLight 7 1
+
+#IF
+CHECKITEMADDVALUE 8 2 > 73
+#ACT
+SetItemsLight 8 1
+
+#IF
+CHECKITEMADDVALUE 8 3 > 73
+#ACT
+SetItemsLight 8 1
+
+#IF
+CHECKITEMADDVALUE 8 4 > 73
+#ACT
+SetItemsLight 8 1
+
+#IF
+CHECKITEMADDVALUE 9 2 > 24
+#ACT
+SetItemsLight 9 1
+
+#IF
+CHECKITEMADDVALUE 9 3 > 24
+#ACT
+SetItemsLight 9 1
+
+#IF
+CHECKITEMADDVALUE 9 4 > 24
+#ACT
+SetItemsLight 9 1
+
+#IF
+CHECKITEMADDVALUE 12 2 > 24
+#ACT
+SetItemsLight 12 1
+
+#IF
+CHECKITEMADDVALUE 12 3 > 24
+#ACT
+SetItemsLight 12 1
+
+#IF
+CHECKITEMADDVALUE 12 4 > 24
+#ACT
+SetItemsLight 12 1
+
+[@抢庄开始]
+#IF
+LARGE N47 0
+#ACT
+SENDMSG 6 [赌庄胖妞]：现在开始抢庄了，庄家本钱必须超过100000元宝。
+SENDMSG 6 [赌庄胖妞]：现在开始抢庄了，庄家本钱必须超过100000元宝。
+BREAK
+
+[@移动庄家]
+#IF
+EQUAL A34 <$USERNAME>
+EQUAL G12 59
+#ACT
+MAPMOVE TXDGA 8 10
+BREAK
+#IF
+EQUAL A34 <$USERNAME>
+#ACT
+MAPMOVE TXDGA 5 11
+BREAK
+
+[@抢庄结束]
+#IF
+LARGE N47 0
+#ACT
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 [赌庄胖妞]：抢庄已结束。现在是下注时间，押定离手了。
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 庄家姓名：【<$STR(A34)>】　庄家本钱数：【<$STR(G29)>】
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+BREAK
+
+[@下注开始]
+#IF
+LARGE N47 0
+#ACT
+SENDMSG 6 [赌庄胖妞]：现在开始下注了，庄家本钱共有<$STR(G29)>个元宝。
+SENDMSG 6 [赌庄胖妞]：现在开始下注了，庄家本钱共有<$STR(G29)>个元宝。
+BREAK
+
+[@下注结束]
+#IF
+EQUAL N47 0
+#ACT
+BREAK
+
+#IF
+EQUAL N44 0
+#ACT
+BREAK
+
+#IF
+EQUAL N43 0
+#ACT
+BREAK
+
+#IF
+#ACT
+SENDMSG 7 [提示]：本局你下注【<$STR(N43)>】元宝押【<$STR(S33)>】
+SENDMSG 7 [提示]：本局你下注【<$STR(N43)>】元宝押【<$STR(S33)>】
+BREAK
+
+[@猜点开始]
+#IF
+EQUAL N44 1
+#ACT
+goto @坐庄摇骰子
+BREAK
+
+#IF
+LARGE N43 0
+#ACT
+goto @坐庄摇骰子
+BREAK
+
+[@坐庄摇骰子]
+#IF
+#ACT
+MOV D0 <$STR(G42)>
+MOV D1 <$STR(G43)>
+MOV D2 <$STR(G44)>
+PLAYDICE 3 @ZZNEW
+#SAY
+　\
+╔═══════════════╗你所拥有的元宝数：【<$GAMEGOLD>】\
+║┏━━━┓┏━━━┓┏━━━┓║\
+║┃●　●┃┃●　●┃┃●　●┃║庄家姓名：【<$STR(A34)>】\
+║┃●　●┃┃●　●┃┃●　●┃║\
+║┃●　●┃┃●　●┃┃●　●┃║庄家本钱数：【<$STR(G29)>】\
+║┗━━━┛┗━━━┛┗━━━┛║\
+╚═══════════════╝你下注【<$STR(N43)>】元宝押【<$STR(S33)>】\
+　\
+
+[@ZZNEW]
+#IF
+EQUAL G42 <$STR(G43)>
+EQUAL G42 <$STR(G44)>
+#ACT
+SENDMSG 7 [赌庄胖妞]：骰子掷出了【<$STR(G42)>】【<$STR(G43)>】【<$STR(G44)>】点【豹子】
+SENDMSG 7 [赌庄胖妞]：骰子掷出了【<$STR(G42)>】【<$STR(G43)>】【<$STR(G44)>】点【豹子】
+BREAK
+
+#IF
+SMALL G45 11
+#ACT
+SENDMSG 7 [赌庄胖妞]：骰子掷出了【<$STR(G42)>】【<$STR(G43)>】【<$STR(G44)>】点【小】
+SENDMSG 7 [赌庄胖妞]：骰子掷出了【<$STR(G42)>】【<$STR(G43)>】【<$STR(G44)>】点【小】
+BREAK
+
+#IF
+LARGE G45 10
+#ACT
+SENDMSG 7 [赌庄胖妞]：骰子掷出了【<$STR(G42)>】【<$STR(G43)>】【<$STR(G44)>】点【大】
+SENDMSG 7 [赌庄胖妞]：骰子掷出了【<$STR(G42)>】【<$STR(G43)>】【<$STR(G44)>】点【大】
+BREAK
+
+[@赌博结帐]
+#IF
+#ACT
+MOV N44 0
+
+#IF
+LARGE N47 0
+EQUAL A33 豹子
+EQUAL A34 <$USERNAME>
+#ACT
+INC G11 <$STR(G29)>
+GAMEGOLD + <$STR(G11)>
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】赢得了【<$STR(G11)>】个元宝。
+BREAK
+
+#IF
+LARGE N47 0
+EQUAL A33 大
+EQUAL A34 <$USERNAME>
+#ACT
+INC G29 <$STR(G14)>
+DEC G29 <$STR(G13)>
+GAMEGOLD + <$STR(G29)>
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】收回了【<$STR(G29)>】个元宝。
+BREAK
+#IF
+LARGE N47 0
+EQUAL A33 小
+EQUAL A34 <$USERNAME>
+#ACT
+INC G29 <$STR(G13)>
+DEC G29 <$STR(G14)>
+GAMEGOLD + <$STR(G29)>
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】收回了【<$STR(G29)>】个元宝。
+BREAK
+
+#IF
+LARGE N47 0
+EQUAL A33 豹子
+LARGE N43 0
+#ACT
+SENDMSG 6 庄家【<$STR(A34)>】掷出了【<$STR(A33)>】，你损失了【<$STR(N43)>】个元宝注金。
+MOV N43 0
+MOV S33 无
+BREAK
+#IF
+LARGE N47 0
+EQUAL A33 大
+EQUAL S33 大
+#ACT
+INC N43 <$STR(N43)>
+GAMEGOLD + <$STR(N43)>
+SENDMSG 6 庄家【<$STR(A34)>】掷出了【<$STR(A33)>】，你赢得了【<$STR(N43)>】个元宝注金。
+MOV N43 0
+MOV S33 无
+BREAK
+#IF
+LARGE N47 0
+EQUAL A33 小
+EQUAL S33 小
+#ACT
+INC N43 <$STR(N43)>
+GAMEGOLD + <$STR(N43)>
+SENDMSG 6 庄家【<$STR(A34)>】掷出了【<$STR(A33)>】，你赢得了【<$STR(N43)>】个元宝注金。
+MOV N43 0
+MOV S33 无
+BREAK
+#IF
+LARGE N47 0
+LARGE N43 0
+#ACT
+SENDMSG 6 庄家【<$STR(A34)>】掷出了【<$STR(A33)>】，你损失了【<$STR(N43)>】个元宝注金。
+MOV N43 0
+MOV S33 无
+BREAK
+
+[@赌博清零]
+#IF
+LARGE N47 0
+#ACT
+MOV N40 0
+MOV N41 0
+MOV N42 0
+MOV N43 0
+MOV N44 0
+MOV N45 0
+MOV S33 无
+BREAK
+
+[@身上神器]
+#IF
+#ACT
+GetUserItemName 1 21
+BREAK
+
+[@上古神器]
+#IF
+#ACT
+LOADVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+
+#IF
+EQUAL S21 上古神器[战]
+CHECKVAR HUMAN 神器时限 > 29
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+CALCVAR HUMAN 神器时限 = 0
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+goto @刷怪战
+seticon 0 0
+SENDMSG 5 提示：上古神器时限已到，被系统收回！
+
+#IF
+EQUAL S21 上古神器[道]
+CHECKVAR HUMAN 神器时限 > 29
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+CALCVAR HUMAN 神器时限 = 0
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+goto @刷怪道
+seticon 0 0
+SENDMSG 5 提示：上古神器时限已到，被系统收回！
+
+#IF
+EQUAL S21 上古神器[法]
+CHECKVAR HUMAN 神器时限 > 29
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+CALCVAR HUMAN 神器时限 = 0
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+goto @刷怪法
+seticon 0 0
+SENDMSG 5 提示：上古神器时限已到，被系统收回！
+
+#IF
+checkitem 上古神器[战] 1
+CHECKVAR HUMAN 神器时限 > 29
+#ACT
+take 上古神器[战] 10
+CALCVAR HUMAN 神器时限 = 0
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+goto @刷怪战
+seticon 0 0
+SENDMSG 5 提示：上古神器时限已到，被系统收回！
+
+#IF
+checkitem 上古神器[道] 1
+CHECKVAR HUMAN 神器时限 > 29
+#ACT
+take 上古神器[道] 10
+CALCVAR HUMAN 神器时限 = 0
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+goto @刷怪道
+seticon 0 0
+SENDMSG 5 提示：上古神器时限已到，被系统收回！
+
+#IF
+checkitem 上古神器[法] 1
+CHECKVAR HUMAN 神器时限 > 29
+#ACT
+take 上古神器[法] 10
+CALCVAR HUMAN 神器时限 = 0
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+goto @刷怪法
+seticon 0 0
+SENDMSG 5 提示：上古神器时限已到，被系统收回！
+
+
+#IF
+checkitem 上古神器[战] 1
+#ACT
+CALCVAR HUMAN 神器时限 + 1
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+;SENDMSG 5 提示：上古神器[战]已使用：<$HUMAN(神器时限)>分钟
+DEC G61 1
+SENDMSG 5 提示：上古神器[战]将在：<$STR(G61)>分钟后消失
+
+#IF
+small G61 0
+#ACT
+MOV G61 0
+
+#IF
+checkitem 上古神器[道] 1
+#ACT
+CALCVAR HUMAN 神器时限 + 1
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+;SENDMSG 5 提示：上古神器[道]已使用：<$HUMAN(神器时限)>分钟
+DEC G62 1
+SENDMSG 5 提示：上古神器[道]将在：<$STR(G62)>分钟后消失
+
+
+
+#IF
+checkitem 上古神器[法] 1
+#ACT
+CALCVAR HUMAN 神器时限 + 1
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+;SENDMSG 5 提示：上古神器[法]已使用：<$HUMAN(神器时限)>分钟
+DEC G63 1
+SENDMSG 5 提示：上古神器[法]将在：<$STR(G63)>分钟后消失
+
+
+
+#IF
+CHECKUSEITEM 1
+#ACT
+#ELSEACT
+BREAK
+
+#IF
+EQUAL S21 上古神器[战]
+#ACT
+CALCVAR HUMAN 神器时限 + 1
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+;SENDMSG 5 提示：<$STR(S21)>已使用：<$HUMAN(神器时限)>分钟
+DEC G61 1
+SENDMSG 5 提示：<$STR(S21)>将在：<$STR(G61)>分钟后消失
+
+#IF
+small G61 0
+#ACT
+MOV G61 0
+
+#IF
+EQUAL S21 上古神器[道]
+#ACT
+CALCVAR HUMAN 神器时限 + 1
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+;SENDMSG 5 提示：<$STR(S21)>已使用：<$HUMAN(神器时限)>分钟
+DEC G62 1
+SENDMSG 5 提示：<$STR(S21)>将在：<$STR(G62)>分钟后消失
+
+#IF
+small G62 0
+#ACT
+MOV G62 0
+
+#IF
+EQUAL S21 上古神器[法]
+#ACT
+CALCVAR HUMAN 神器时限 + 1
+SAVEVAR HUMAN 神器时限 ..\QuestDiary\变量数据\神器时限.txt
+;SENDMSG 5 提示：<$STR(S21)>已使用：<$HUMAN(神器时限)>分钟
+DEC G63 1
+SENDMSG 5 提示：<$STR(S21)>将在：<$STR(G63)>分钟后消失
+
+#IF
+small G63 0
+#ACT
+MOV G63 0
+
+[@刷怪战]
+#if
+EQUAL A51 
+#ACT
+break
+
+#if
+CheckMapSameMonCount sg1 上古教主-战 < 1
+#ACT
+Param1 sg1
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-战 1 1
+MOV A51 
+MOV G61 0
+SendCenterMsg 251 233 提示：[上古神器-战]拥有者[%s]时限已到，BOSS重新出现在神器地图！ 1
+GuildNoticeMsg 251 233 提示：[上古神器-战]拥有者[%s]时限已到，BOSS重新出现在神器地图！ 1
+GMEXECUTE 开始提问 @上古邀请战
+break
+
+[@刷怪道]
+#if
+EQUAL A52 
+#ACT
+break
+
+#if
+CheckMapSameMonCount sg2 上古教主-道 < 1
+#ACT
+Param1 sg2
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-道 1 1
+MOV A52 
+MOV G62 0
+SendCenterMsg 251 233 提示：[上古神器-道]拥有者[%s]时限已到，BOSS重新出现在神器地图！ 1
+GuildNoticeMsg 251 233 提示：[上古神器-道]拥有者[%s]时限已到，BOSS重新出现在神器地图！ 1
+GMEXECUTE 开始提问 @上古邀请道
+break
+
+[@刷怪法]
+#if
+EQUAL A53 
+#ACT
+break
+
+#if
+CheckMapSameMonCount sg3 上古教主-法 < 1
+#ACT
+Param1 sg3
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-法 1 1
+MOV A53 
+MOV G63 0
+SendCenterMsg 251 233 提示：[上古神器-法]拥有者[%s]时限已到，BOSS重新出现在神器地图！ 1
+GuildNoticeMsg 251 233 提示：[上古神器-法]拥有者[%s]时限已到，BOSS重新出现在神器地图！ 1
+GMEXECUTE 开始提问 @上古邀请法
+break
+
+[@上古邀请战]
+#IF
+ISONMAP 3
+CheckJob Warrior
+check [300] 0
+#SAY
+　　　　　　　　　　　　　　　　　　　　　　<[X]不再弹出/@上古提醒关闭>\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　<【上古神器器BOSS-[战]出现】/SCOLOR=253>　←现在去夺神器\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　\
+　\
+活动介绍：神器可使用30分钟，离线死亡神器消失，BOOS重新出现！\
+　　　　　　『<现在就去/@GOSGZ>』　　『<暂时不去/@exit>』\
+
+
+[@GOSGZ]
+#IF
+CheckJob Warrior
+#ACT
+MAPMOVE sg1 7 12
+give 回城卷
+GuildNoticeMsg 251 233 [%s]闯入[上古神器-战]挑战BOSS，他能获得全区唯一的神器吗，让我们拭目以待！
+break
+
+
+[@上古邀请道]
+#IF
+ISONMAP 3
+CheckJob Taoist
+check [300] 0
+#SAY
+　　　　　　　　　　　　　　　　　　　　　　<[X]不再弹出/@上古提醒关闭>\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　<【上古神器器BOSS-[道]出现】/SCOLOR=253>　←现在去夺神器\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　\
+　\
+活动介绍：神器可使用30分钟，离线死亡神器消失，BOOS重新出现！\
+　　　　　　『<现在就去/@GOSGD>』　　『<暂时不去/@exit>』\
+
+
+[@GOSGD]
+#IF
+CheckJob Taoist
+#ACT
+MAPMOVE sg2 7 12
+give 回城卷
+GuildNoticeMsg 251 233 [%s]闯入[上古神器-道]挑战BOSS，他能获得全区唯一的神器吗，让我们拭目以待！
+break
+
+[@上古邀请法]
+#IF
+ISONMAP 3
+CheckJob Wizard
+check [300] 0
+#SAY
+　　　　　　　　　　　　　　　　　　　　　　<[X]不再弹出/@上古提醒关闭>\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　　　　<【上古神器器BOSS-[法]出现】/SCOLOR=253>　←现在去夺神器\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/SCOLOR=250>\
+　\
+　\
+活动介绍：神器可使用30分钟，离线死亡神器消失，BOOS重新出现！\
+　　　　　　『<现在就去/@GOSGF>』　　『<暂时不去/@exit>』 \
+
+[@GOSGF]
+#IF
+CheckJob Wizard
+#ACT
+MAPMOVE sg3 7 12
+give 回城卷
+GuildNoticeMsg 251 233 [%s]闯入[上古神器-法]挑战BOSS，他能获得全区唯一的神器吗，让我们拭目以待！
+break
+
+[@上古提醒关闭]
+#IF
+#ACT
+SET [300] 1
+SENDMSG 5 关闭BOSS邀请成功，如需再次开启，请去土城找上古神器NPC！
+SENDMSG 5 关闭BOSS邀请成功，如需再次开启，请去土城找上古神器NPC！
+close
+
+
+[@移动安全砍猪]
+#IF
+CheckHumInRange 3 314 344 3
+CHECKOFGUILD <$STR(A110)>
+#ACT
+BREAK
+
+#IF
+CheckHumInRange 3 314 344 3
+#ACT
+Mapmove 3 330 330
+messagebox 很抱歉，您的行会充值排名已被超越，无法享受安全砍猪特权！
+BREAK
+
+[@踢挂机]
+#IF
+EQUAL D10 0
+CheckOffline
+#ACT
+KICK
+
+[@聚宝盒元宝]
+#IF
+equal D90 0
+#ACT
+BREAK
+
+#if
+checkitem 20元宝 1
+#ACT
+take 20元宝 1
+gamegold + 20
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加20个
+
+#if
+checkitem 50元宝 1
+#ACT
+take 50元宝 1
+gamegold + 50
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加50个
+
+#if
+checkitem 100元宝 1
+#ACT
+take 100元宝 1
+gamegold + 100
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加100个
+
+#if
+checkitem 500元宝 1
+#ACT
+take 500元宝 1
+gamegold + 500
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加500个
+
+#if
+checkitem 1000元宝 1
+#ACT
+take 1000元宝 1
+gamegold + 1000
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加1000个
+
+#if
+checkitem 2000元宝 1
+#ACT
+take 2000元宝 1
+gamegold + 2000
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加2000个
+
+#if
+checkitem 10000元宝 1
+#ACT
+take 10000元宝 1
+gamegold + 10000
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加10000个
+
+#if
+checkitem 50000元宝 1
+#ACT
+take 50000元宝 1
+gamegold + 50000
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加50000个
+
+#if
+checkitem 100000元宝 1
+#ACT
+take 100000元宝 1
+gamegold + 100000
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加100000个
+
+#if
+checkitem 500000元宝 1
+#ACT
+take 500000元宝 1
+gamegold + 500000
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加500000个
+
+#if
+checkitem 100万元宝 1
+#ACT
+take 100万元宝 1
+gamegold + 1000000
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加1000000个
+
+#if
+checkitem 500万元宝 1
+#ACT
+take 500万元宝 1
+gamegold + 5000000
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加5000000个
+
+#if
+checkitem 1000万元宝 1
+#ACT
+take 1000万元宝 1
+gamegold + 10000000
+SENDMSG 6 [聚宝盒]元宝自动加入背包，元宝增加10000000个
+
+;[@聚宝盒回收]
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+gamegold + 2000
+changeexp + 1500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加150W!
+
+#if
+checkitem 血饮 1
+#ACT
+take 血饮 1
+gamegold + 2000
+changeexp + 1500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加150W!
+
+
+#if
+checkitem 霸者之刃 1
+#ACT
+take 霸者之刃 1
+gamegold + 2000
+changeexp + 1500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加150W!
+
+
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+gamegold + 2000
+changeexp + 1500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加150W!
+
+
+#if
+checkitem 嗜魂法杖 1
+#ACT
+take 嗜魂法杖 1
+gamegold + 2000
+changeexp + 1500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加150W!
+
+
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+gamegold + 2000
+changeexp + 1500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加150W!
+
+
+#if
+checkitem 屠龙 1
+#ACT
+take 屠龙 1
+gamegold + 2000
+changeexp + 1500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加150W!
+
+
+
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 黑铁头盔 1
+#ACT
+take 黑铁头盔 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+ 
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+ 
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 阎罗手套 1
+#ACT
+take 阎罗手套 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+gamegold + 200
+changeexp + 300000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:200!经验增加30W!
+
+
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+gamegold + 1000
+changeexp + 500000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1000!经验增加50W!
+
+
+#if
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+gamegold + 1600
+changeexp + 880000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1600!经验增加88W
+
+
+#if
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+gamegold + 1600
+changeexp + 880000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1600!经验增加88W
+
+
+#if
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+gamegold + 1600
+changeexp + 880000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1600!经验增加88W
+
+
+#if
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+gamegold + 1600
+changeexp + 880000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1600!经验增加88W
+
+
+#if
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+gamegold + 1600
+changeexp + 880000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1600!经验增加88W
+
+
+#if
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+gamegold + 1600
+changeexp + 880000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:1600!经验增加88W
+
+#if
+equal S50 ×
+#ACT
+break
+
+#if
+equal S50 
+#ACT
+break
+
+#if
+checkitem 精品嗜魂法杖 1
+#ACT
+take 精品嗜魂法杖 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品逍遥扇 1
+#ACT
+take 精品逍遥扇 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品屠龙 1
+#ACT
+take 精品屠龙 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品天魔神甲 1
+#ACT
+take 精品天魔神甲 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品圣战宝甲 1
+#ACT
+take 精品圣战宝甲 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品法神披风 1
+#ACT
+take 精品法神披风 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品天师长袍 1
+#ACT
+take 精品天师长袍 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品天尊道袍 1
+#ACT
+take 精品天尊道袍 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品霓裳羽衣 1
+#ACT
+take 精品霓裳羽衣 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品圣战头盔 1
+#ACT
+take 精品圣战头盔 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品圣战项链 1
+#ACT
+take 精品圣战项链 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品圣战手镯 1
+#ACT
+take 精品圣战手镯 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品圣战戒指 1
+#ACT
+take 精品圣战戒指 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品法神头盔 1
+#ACT
+take 精品法神头盔 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品法神项链 1
+#ACT
+take 精品法神项链 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品法神手镯 1
+#ACT
+take 精品法神手镯 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品法神戒指 1
+#ACT
+take 精品法神戒指 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品天尊头盔 1
+#ACT
+take 精品天尊头盔 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品天尊项链 1
+#ACT
+take 精品天尊项链 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品天尊手镯 1
+#ACT
+take 精品天尊手镯 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+
+
+#if
+checkitem 精品天尊戒指 1
+#ACT
+take 精品天尊戒指 1
+gamegold + 2000
+changeexp + 3000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:2000!经验增加300W!
+break
+
+[@开启贵族回收]
+#if
+equal S51 ×
+#ACT
+break
+
+#if
+equal S51 
+#ACT
+break
+
+#if
+checkitem 贵族嗜魂法杖 1
+#ACT
+take 贵族嗜魂法杖 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族逍遥扇 1
+#ACT
+take 贵族逍遥扇 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族屠龙 1
+#ACT
+take 贵族屠龙 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+#if
+checkitem 贵族裁决 1
+#ACT
+take 贵族裁决 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+#if
+checkitem 贵族怒斩 1
+#ACT
+take 贵族怒斩 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族天魔神甲 1
+#ACT
+take 贵族天魔神甲 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族圣战宝甲 1
+#ACT
+take 贵族圣战宝甲 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族法神披风 1
+#ACT
+take 贵族法神披风 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族天师长袍 1
+#ACT
+take 贵族天师长袍 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族天尊道袍 1
+#ACT
+take 贵族天尊道袍 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族霓裳羽衣 1
+#ACT
+take 贵族霓裳羽衣 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族圣战头盔 1
+#ACT
+take 贵族圣战头盔 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族圣战项链 1
+#ACT
+take 贵族圣战项链 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族圣战手镯 1
+#ACT
+take 贵族圣战手镯 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族圣战戒指 1
+#ACT
+take 贵族圣战戒指 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族法神头盔 1
+#ACT
+take 贵族法神头盔 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族法神项链 1
+#ACT
+take 贵族法神项链 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族法神手镯 1
+#ACT
+take 贵族法神手镯 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族法神戒指 1
+#ACT
+take 贵族法神戒指 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族天尊头盔 1
+#ACT
+take 贵族天尊头盔 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族天尊项链 1
+#ACT
+take 贵族天尊项链 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族天尊手镯 1
+#ACT
+take 贵族天尊手镯 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族勋章[战] 1
+#ACT
+take 贵族勋章[战] 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族勋章[道] 1
+#ACT
+take 贵族勋章[道] 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+
+#if
+checkitem 贵族勋章[法] 1
+#ACT
+take 贵族勋章[法] 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+#if
+checkitem 贵族天尊戒指 1
+#ACT
+take 贵族天尊戒指 1
+gamegold + 4000
+changeexp + 5000000
+SENDMSG 6 [聚宝盒]自动回收成功,元宝增加:4000!经验增加500W!
+
+[@入门装备时限]
+#IF
+checkitem 入门套装[赠] 1
+CHECKVAR HUMAN 入门装备时限 > 0
+#ACT
+CALCVAR HUMAN 入门装备时限 - 1
+SAVEVAR HUMAN 入门装备时限 ..\QuestDiary\变量数据\入门装备.txt
+SENDMSG 6 独家福利：剩余[<$HUMAN(入门装备时限)>]分钟即可打开入门装备+15套装礼包！
+
+[@解封申请]
+#if
+ISADMIN
+#say
+　\
+=========================<解封申请/SCOLOR=249>=========================\
+　　　　　　{提示：[<$STR(A0)>]申请解除封禁状态，是否同意？/SCOLOR=250}\
+==========================================================\
+　　　　　　　　　<是/@解除确定>　　　　　　　　<否/@exit>
+
+
+
+[@解除确定]
+#IF
+#ACT
+MOV S3 <$STR(A0)>
+S3.goto @解除
+messagebox 操作成功！
+
+[@解除]
+#if
+#ACT
+DelTextList .\QuestDiary\功能设置\降一级.txt <$USERNAME>
+KICK
+#say
+　\
+=========================<严重警告/SCOLOR=249>=========================\
+　　　　　　　　　<已解除封禁，请重新登陆！/SCOLOR=250>\
+==========================================================\
+[@Login]
+#IF
+CHECKUSEITEM  4
+CHECKITEMTYPE 4 16
+#ACT
+SendCenterMsg 255 0 请在10秒内尽快取下非法装备,重新登陆游戏即可. 0 10
+SENDMSG 5 请在10秒内尽快取下非法装备,重新登陆游戏即可!
+DelayCall 10000 @JXDLQ_极限双头盔检测
+break
+
+#IF
+CHECKUSEITEM  14
+CHECKITEMTYPE 14 15
+#ACT
+SendCenterMsg 255 0 请在10秒内尽快取下非法装备,重新登陆游戏即可. 0 10
+SENDMSG 5 请在10秒内尽快取下非法装备,重新登陆游戏即可!
+DelayCall 10000 @JXDLQ_极限双头盔检测
+break
+#IF
+CHECKUSEITEM  4
+CHECKITEMTYPE 4 16
+#ACT
+SendCenterMsg 255 0 请在10秒内尽快取下非法装备,重新登陆游戏即可. 0 10
+SENDMSG 5 请在10秒内尽快取下非法装备,重新登陆游戏即可!
+DelayCall 10000 @RUNGATEDLQ非法装备踢下线_别跟我重名
+break
+
+
+#IF
+CHECKUSEITEM  14
+CHECKITEMTYPE 14 15
+#ACT
+SendCenterMsg 255 0 请在10秒内尽快取下非法装备,重新登陆游戏即可. 0 10
+SENDMSG 5 请在10秒内尽快取下非法装备,重新登陆游戏即可!
+DelayCall 10000 @RUNGATEDLQ非法装备踢下线_别跟我重名
+break
+
+
+#IF
+#ACT
+VAR Integer HUMAN 消费积分
+LOADVAR HUMAN 消费积分 ..\QuestDiary\充值积分\消费积分Save.txt
+VAR Integer HUMAN 元宝消费
+LOADVAR HUMAN 元宝消费 ..\QuestDiary\充值积分\元宝消费Save.txt
+
+
+[@OnTimer5]
+#IF
+ISONMAP huiyuan
+CHECKLEVELEX < 160
+CHECKGAMEGOLD > 99999
+#ACT
+CHANGEEXP + 100000000
+GAMEGOLD - 100000
+SendMsg 7 你当前还剩<$GAMEGOLD>个元宝
+BREAK
+#ELSEACT
+GOTO @停止顶时器1ABaa
+
+
+[@停止顶时器1ABaa]
+#IF
+ISONMAP huiyuan
+#ACT
+SetOffTimer 5
+MAPMOVE 3 330 333
+SendMsg 5 你的等级不适合在这里,或者你没有足够的元宝10W，你不是爆发户嘛，这点元宝都没有？我得把你送回家咯
+BREAK
+#ELSEACT
+SetOffTimer 5
+
+
+[@OnTimer6]
+#IF
+ISONMAP guizuhuiyuan
+CHECKLEVELEX < 151
+#ACT
+CHANGEEXP + 500000
+SendMsg 7 亲爱的贵族会员，每秒经验自动增加50W
+BREAK
+#ELSEACT
+GOTO @停止顶时器1AB11
+
+
+[@停止顶时器1AB11]
+#IF
+ISONMAP guizuhuiyuan
+#ACT
+SetOffTimer 6
+MAPMOVE 3 330 333
+SendMsg 5 你的等级不适合在这里,我得把你送回家咯
+BREAK
+#ELSEACT
+SetOffTimer 6
+
+[@ONTIMER15]
+#IF
+CHECKVAR HUMAN 错误数量 > 5
+#ACT
+SET [207] 1
+MESSAGEBOX 由于多此未通过防脱机验证,人物已被封停!
+kick
+break
+
+
+[@RUNGATEDLQ非法装备踢下线_别跟我重名]
+#IF
+#ACT
+SENDMSG 5 由于您佩戴了非法装备踢下线!
+KICK
+break
+
+
+
+[@进入买马]
+#IF
+#ACT
+CLOSEBIGDIALOGBOX
+DelayCall 50000 @关闭窗口
+#say
+<幸运买马活动马上开始了！赶紧进入幸运马场买定号码！/SCOLOR=250>\
+<幸运马场每2小时开启一次幸运号码，买中幸运筹码，/SCOLOR=253>\
+<将可得到9倍的元宝奖励，不限注无限买哦，百万大奖等着你。/SCOLOR=249>\
+<您是否愿意现在进入幸运买场/AUTOCOLOR=250,253,254>?\ \
+<现在进入/@进入马场1>        <等会再说/@exit>\
+
+
+[@关闭窗口]
+#IF
+#ACT
+CLOSE
+BREAK
+
+[@进入马场1]
+#IF
+IsOnMap kss
+#ACT
+MESSAGEBOX 你现在是犯人，哪都别想去，好好在这呆着吧！
+#ELSEACT
+goto @进入马场11
+
+[@进入马场11]
+#if
+#ACT
+mapmove dns001
+give 回城卷 1
+SendCenterMsg 250 0 玩家[%s]进入"幸运马场"，买定你心仪的号码，百万大奖等你来拿！
+BREAK
+
+
+
+
+
+
+
+
+
+;========================赌博系统======================
+[@RsetBan]
+#Act
+GameGold + <$Human(UbCap)>
+SendMsg 6 你的庄被抢啦！！取回坐庄本金[<$Human(UbCap)>]个元宝!
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+
+[@UBanEnd]
+#if
+CheckVar Human UbInn = <$GLOBAL(bInn)>
+#ElseAct
+Break
+
+#if
+CheckVar Global bBanName = <$USERNAME>
+#Act
+Goto @BanCal
+#ElseAct
+SendMsg 0 [提示]：〖<$USERNAME>〗本局你下注【<$Human(UbCap)>】元宝押【<$Human(Ubvs)>】
+Goto @UseCal
+
+[@BanCal]
+#if
+CheckVar Global bRes = 0
+#Act
+Goto @BanCal_0
+Break
+
+#if
+CheckVar Global bRes = 1
+#Act
+Goto @BanCal_1
+Break
+
+#if
+CheckVar Global bRes = 2
+#Act
+Goto @BanCal_2
+Break
+
+[@BanCal_0]
+#if
+CheckLevelEx > 0
+#Act
+Mov N99 <$Global(bBancap)>
+
+#if
+CheckVar Global bPb > 0
+#Act
+Inc N99 <$Global(bPb)>
+
+#if
+CheckVar Global bPs > 0
+#Act
+Inc N99 <$Global(bPs)>
+
+#If
+CheckLevelEx > 0
+#Say
+#Act
+GameGold + <$STR(N99)>
+Mov S0 【庄家】：
+Inc S0 <$USERNAME>
+Inc S0 　掷出【<$Global(bNu1)>、<$Global(bNu2)>、<$Global(bNu3)>】点
+Inc S0 【<$Global(bResStr)>】
+Inc S0 收回<$STR(N99)>个元宝
+CALCVAR Human UbMsg = <$STR(S0)>
+MOV D0 <$Global(bNu1)>
+MOV D1 <$Global(bNu2)>
+MOV D2 <$Global(bNu3)>
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+playdice 3 @BanMsg
+
+
+[@BanCal_1]
+#if
+CheckLevelEx > 0
+#Act
+Mov N99 <$Global(bBancap)>
+
+#if
+CheckVar Global bPs > 0
+#Act
+Inc N99 <$Global(bPs)>
+
+#if
+CheckVar Global bPb > 0
+#Act
+Dec N99 <$Global(bPb)>
+
+#If
+CheckLevelEx > 0
+#Say
+#Act
+GameGold + <$STR(N99)>
+Mov S0 【庄家】：
+Inc S0 <$USERNAME>
+Inc S0 　掷出【<$Global(bNu1)>、<$Global(bNu2)>、<$Global(bNu3)>】点
+Inc S0 【<$Global(bResStr)>】
+Inc S0 收回<$STR(N99)>个元宝
+CALCVAR Human UbMsg = <$STR(S0)>
+MOV D0 <$Global(bNu1)>
+MOV D1 <$Global(bNu2)>
+MOV D2 <$Global(bNu3)>
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+playdice 3 @BanMsg
+
+
+[@BanCal_2]
+#if
+CheckLevelEx > 0
+#Act
+Mov N99 <$Global(bBancap)>
+
+
+
+#if
+CheckVar Global bPb > 0
+#Act
+Inc N99 <$Global(bPb)>
+
+#if
+CheckVar Global bPs > 0
+#Act
+Dec N99 <$Global(bPs)>
+
+#If
+CheckLevelEx > 0
+#Say
+#Act
+GameGold + <$STR(N99)>
+Mov S0 【庄家】：
+Inc S0 <$USERNAME>
+Inc S0 　掷出【<$Global(bNu1)>、<$Global(bNu2)>、<$Global(bNu3)>】点
+Inc S0 【<$Global(bResStr)>】
+Inc S0 收回<$STR(N99)>个元宝
+CALCVAR Human UbMsg = <$STR(S0)>
+MOV D0 <$Global(bNu1)>
+MOV D1 <$Global(bNu2)>
+MOV D2 <$Global(bNu3)>
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+playdice 3 @BanMsg
+
+[@BanMsg]
+#Act
+SendMsg 0 <$Human(UbMsg)>
+
+[@UseCal]
+#if
+CheckVar Human Ubv = 0
+#Act
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+Break
+
+#if
+CheckVar Human Ubv = <$Global(bRes)>
+#Say
+#Act
+Mov N99 <$Human(UbCap)>
+Inc N99 <$STR(N99)>
+GameGold + <$STR(N99)>
+Mov S0 庄家【<$Global(bBanName)>】掷出了【<$Global(bResStr)>】，
+Inc S0 〖<$USERNAME>〗赢得了<$STR(N99)>个元宝注金。
+CALCVAR Human UbMsg = <$STR(S0)>
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+MOV D0 <$Global(bNu1)>
+MOV D1 <$Global(bNu2)>
+MOV D2 <$Global(bNu3)>
+playdice 3 @UseMsg_W
+#ElseAct
+Mov S0 庄家【<$Global(bBanName)>】掷出了【<$Global(bResStr)>】，
+Inc S0 〖<$USERNAME>〗损失了<$Human(UbCap)>个元宝注金。
+CALCVAR Human UbMsg = <$STR(S0)>
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+MOV D0 <$Global(bNu1)>
+MOV D1 <$Global(bNu2)>
+MOV D2 <$Global(bNu3)>
+playdice 3 @UseMsg_L
+
+[@UseMsg_W]
+#Act
+SendMsg 0 <$Human(UbMsg)>
+
+[@UseMsg_L]
+#Act
+SendMsg 0 <$Human(UbMsg)>
+
+
+[@OnTimer0]
+#if
+CheckVar Human UbInn > 0
+#ElseAct
+SetOffTimer 0
+Break
+
+#if
+CheckVar Human UbInn  = <$Global(bInn)>
+#Act
+SetOffTimer 0
+Break
+
+#if
+CheckVar Global bRvar = 2
+CheckVar Global bTime < 5
+#Act
+Break
+
+#if
+CheckVar Global bRvar = 3
+#Act
+Break
+
+#if
+CheckVar Human Ubv > 0
+#Act
+Goto @Ben_Log
+Break
+
+#if
+CheckVar Human Ubv = 0
+CheckVar Human Ubvs = 庄家
+#Act
+Goto @Ben_Log_K
+Break
+
+
+[@Ben_Log_K]
+#if
+CheckLevelEx > 0
+#Act
+Mov N99 <$Human(UbInn)>
+Dec N99 1
+GetListString .\QuestDiary\Ecom\Log\BatInn.txt <$STR(N99)> S60 N98
+CAlCVAR Human LogInn = <$STR(S60)>
+CAlCVAR Human LogCap = <$STR(N98)>
+GetListString .\QuestDiary\Ecom\Log\BatBnn.txt <$STR(N99)> S60 N98
+CAlCVAR Human LogPb = <$STR(S60)>
+CAlCVAR Human LogPs = <$STR(N98)>
+GetListString .\QuestDiary\Ecom\Log\BatNu.txt <$STR(N99)> S60 N98
+CAlCVAR Human LogNu = <$STR(S60)>
+CAlCVAR Human LogNuG = <$STR(N98)>
+GetListString .\QuestDiary\Ecom\Log\BatRes.txt <$STR(N99)> S60 N98
+CAlCVAR Human LogResStr = <$STR(S60)>
+CAlCVAR Human LogRes = <$STR(N98)>
+
+#if
+CheckVar Human UbInn = <$Human(LogInn)>
+#Act
+SendMsg 6 历史〖玩家抢庄结算〗
+SendMsg 6 第<$Human(UbInn)>局　庄家本金:<$Human(LogCap)>　压大:<$Human(LogPb)>　压小:<$Human(LogPs)>
+SendMsg 6 庄家掷出:<$Human(LogNu)><$Human(LogNuG)>点，<$Human(LogResStr)>
+SendMsg 6 你以<$Human(UbCap)>元宝【<$Human(Ubvs)>】
+Goto @Ben_Log_K_End
+#ElseAct
+AddTextList .\QuestDiary\Ecom\ErrLog.txt <$USERNAME>第<$Human(UbInn)>局数据对应出现错误<$Human(LogInn)>
+CAlCVAR Human LogInn = 0
+CAlCVAR Human LogCap = 0
+CAlCVAR Human LogPb = 0
+CAlCVAR Human LogPs = 0
+CAlCVAR Human LogNu = 0
+CAlCVAR Human LogNuG = 0
+CAlCVAR Human LogResStr = 0
+CAlCVAR Human LogRes = 0
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+SetOffTimer 0
+
+[@Ben_Log_K_End]
+#if
+CheckVar Human UbCap = <$Human(LogCap)>
+#ElseAct
+AddTextList .\QuestDiary\Ecom\ErrLog.txt 庄家<$USERNAME>第<$Human(UbInn)>局数据对应出现错误
+SetOffTimer 0
+Break
+
+#if
+CheckVar Human LogRes = 0
+#Act
+Goto @Ben_Log_K_End_0
+Break
+
+#if
+CheckVar Human LogRes = 1
+#Act
+Goto @Ben_Log_K_End_1
+Break
+
+#if
+CheckVar Human LogRes = 2
+#Act
+Goto @Ben_Log_K_End_2
+Break
+
+[@Ben_Log_K_End_0]
+#if
+CheckLevelEx > 0
+#Act
+Mov N99 <$Human(LogCap)>
+
+#if
+CheckVar Human LogPb > 0
+#Act
+Inc N99 <$Human(LogPb)>
+
+#if
+CheckVar Human LogPs > 0
+#Act
+Inc N99 <$Human(LogPs)>
+
+#if
+CheckLevelEx > 0
+#Act
+GameGold + <$STR(N99)>
+SendMsg 6 收回[<$STR(N99)>]个元宝！
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+CAlCVAR Human LogInn = 0
+CAlCVAR Human LogCap = 0
+CAlCVAR Human LogPb = 0
+CAlCVAR Human LogPs = 0
+CAlCVAR Human LogNu = 0
+CAlCVAR Human LogNuG = 0
+CAlCVAR Human LogResStr = 0
+CAlCVAR Human LogRes = 0
+SetOffTimer 0
+Break
+
+[@Ben_Log_K_End_1]
+#if
+CheckLevelEx > 0
+#Act
+Mov N99 <$Human(LogCap)>
+
+#if
+CheckVar Human LogPs > 0
+#Act
+Inc N99 <$Human(LogPs)>
+
+#if
+CheckVar Human LogPb > 0
+#Act
+Dec N99 <$Human(LogPb)>
+
+#if
+CheckLevelEx > 0
+#Act
+GameGold + <$STR(N99)>
+SendMsg 6 收回[<$STR(N99)>]个元宝！
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+CAlCVAR Human LogInn = 0
+CAlCVAR Human LogCap = 0
+CAlCVAR Human LogPb = 0
+CAlCVAR Human LogPs = 0
+CAlCVAR Human LogNu = 0
+CAlCVAR Human LogNuG = 0
+CAlCVAR Human LogResStr = 0
+CAlCVAR Human LogRes = 0
+SetOffTimer 0
+Break
+
+[@Ben_Log_K_End_2]
+#if
+CheckLevelEx > 0
+#Act
+Mov N99 <$Human(LogCap)>
+
+#if
+CheckVar Human LogPb > 0
+#Act
+Inc N99 <$Human(LogPb)>
+
+#if
+CheckVar Human LogPs > 0
+#Act
+Dec N99 <$Human(LogPs)>
+
+#if
+CheckLevelEx > 0
+#Act
+GameGold + <$STR(N99)>
+SendMsg 6 收回[<$STR(N99)>]个元宝！
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+CAlCVAR Human LogInn = 0
+CAlCVAR Human LogCap = 0
+CAlCVAR Human LogPb = 0
+CAlCVAR Human LogPs = 0
+CAlCVAR Human LogNu = 0
+CAlCVAR Human LogNuG = 0
+CAlCVAR Human LogResStr = 0
+CAlCVAR Human LogRes = 0
+SetOffTimer 0
+Break
+
+[@Ben_Log]
+#if
+CheckLevelEx > 0
+#Act
+Mov N99 <$Human(UbInn)>
+Dec N99 1
+GetListString .\QuestDiary\Ecom\Log\BatInn.txt <$STR(N99)> S60 N98
+CAlCVAR Human LogInn = <$STR(S60)>
+CAlCVAR Human LogCap = <$STR(N98)>
+GetListString .\QuestDiary\Ecom\Log\BatBnn.txt <$STR(N99)> S60 N98
+CAlCVAR Human LogPb = <$STR(S60)>
+CAlCVAR Human LogPs = <$STR(N98)>
+GetListString .\QuestDiary\Ecom\Log\BatNu.txt <$STR(N99)> S60 N98
+CAlCVAR Human LogNu = <$STR(S60)>
+CAlCVAR Human LogNuG = <$STR(N98)>
+GetListString .\QuestDiary\Ecom\Log\BatRes.txt <$STR(N99)> S60 N98
+CAlCVAR Human LogResStr = <$STR(S60)>
+CAlCVAR Human LogRes = <$STR(N98)>
+
+#if
+CheckVar Human UbInn = <$Human(LogInn)>
+#Act
+SendMsg 6 历史〖玩家抢庄结算〗
+SendMsg 6 第<$Human(UbInn)>局　庄家本金:<$Human(LogCap)>　压大:<$Human(LogPb)>　压小:<$Human(LogPs)>
+SendMsg 6 庄家掷出:<$Human(LogNu)><$Human(LogNuG)>点，<$Human(LogResStr)>
+SendMsg 6 你以<$Human(UbCap)>元宝【<$Human(Ubvs)>】
+Goto @Ben_Log_End
+#ElseAct
+AddTextList .\QuestDiary\Ecom\ErrLog.txt <$USERNAME>第<$Human(UbInn)>局数据对应出现错误
+CAlCVAR Human LogInn = 0
+CAlCVAR Human LogCap = 0
+CAlCVAR Human LogPb = 0
+CAlCVAR Human LogPs = 0
+CAlCVAR Human LogNu = 0
+CAlCVAR Human LogNuG = 0
+CAlCVAR Human LogResStr = 0
+CAlCVAR Human LogRes = 0
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+SetOffTimer 0
+
+[@Ben_Log_End]
+#if
+CheckVar Human Ubv = <$Human(LogRes)>
+#Act
+Mov N99 <$Human(UbCap)>
+Inc N99 <$STR(N99)>
+GameGold + <$STR(N99)>
+SendMsg 6 在<$Human(UbInn)>局,抢庄赌博中赢得元宝:<$STR(N99)>!!!
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+CAlCVAR Human LogInn = 0
+CAlCVAR Human LogCap = 0
+CAlCVAR Human LogPb = 0
+CAlCVAR Human LogPs = 0
+CAlCVAR Human LogNu = 0
+CAlCVAR Human LogNuG = 0
+CAlCVAR Human LogResStr = 0
+CAlCVAR Human LogRes = 0
+SetOffTimer 0
+#ElseAct
+SendMsg 6 很不幸!在<$Human(UbInn)>局,玩家抢庄活动..你血本无归...
+CAlCVAR Human UbInn = 0
+CAlCVAR Human UbCap = 0
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 无
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+CAlCVAR Human LogInn = 0
+CAlCVAR Human LogCap = 0
+CAlCVAR Human LogPb = 0
+CAlCVAR Human LogPs = 0
+CAlCVAR Human LogNu = 0
+CAlCVAR Human LogNuG = 0
+CAlCVAR Human LogResStr = 0
+CAlCVAR Human LogRes = 0
+SetOffTimer 0
+
+
+
+
+
+
+[@开始发奖]
+#if
+equal G360 9
+Checkitem 一百筹码⑨号 1
+#act
+TAKE 一百筹码⑨号 1
+GameGold + 900
+GuildNoticeMsg 0 253 恭喜〖%S〗买中9号马,中得900元宝大奖. 
+goto @开始发奖
+break
+
+#if
+equal G360 9
+Checkitem 一千筹码⑨号 1
+#act
+TAKE 一千筹码⑨号 1
+GameGold + 9000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中9号马,中得9000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 9
+Checkitem 一万筹码⑨号 1
+#act
+TAKE 一万筹码⑨号 1
+GameGold + 90000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中9号马,中得90000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 9
+Checkitem 十万筹码⑨号 1
+#act
+TAKE 十万筹码⑨号 1
+GameGold + 900000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中9号马,中得900000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 9
+Checkitem 百万筹码⑨号 1
+#act
+TAKE 百万筹码⑨号 1
+GameGold + 9000000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中9号马,中得9000000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 8
+Checkitem 一百筹码⑧号 1
+#act
+TAKE 一百筹码⑧号 1
+GameGold + 900
+GuildNoticeMsg 0 253 恭喜〖%S〗买中8号马,中得900元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 8
+Checkitem 一千筹码⑧号 1
+#act
+TAKE 一千筹码⑧号 1
+GameGold + 9000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中8号马,中得9000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 8
+Checkitem 一万筹码⑧号 1
+#act
+TAKE 一万筹码⑧号 1
+GameGold + 90000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中8号马,中得90000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 8
+Checkitem 十万筹码⑧号 1
+#act
+TAKE 十万筹码⑧号 1
+GameGold + 900000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中8号马,中得900000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 8
+Checkitem 百万筹码⑧号 1
+#act
+TAKE 百万筹码⑧号 1
+GameGold + 9000000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中8号马,中得9000000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 7
+Checkitem 一百筹码⑦号 1
+#act
+TAKE 一百筹码⑦号 1
+GameGold + 900
+GuildNoticeMsg 0 253 恭喜〖%S〗买中7号马,中得900元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 7
+Checkitem 一千筹码⑦号 1
+#act
+TAKE 一千筹码⑦号 1
+GameGold + 9000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中7号马,中得9000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 7
+Checkitem 一万筹码⑦号 1
+#act
+TAKE 一万筹码⑦号 1
+GameGold + 90000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中7号马,中得90000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 7
+Checkitem 十万筹码⑦号 1
+#act
+TAKE 十万筹码⑦号 1
+GameGold + 900000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中7号马,中得900000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 7
+Checkitem 百万筹码⑦号 1
+#act
+TAKE 百万筹码⑦号 1
+GameGold + 9000000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中7号马,中得9000000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 6
+Checkitem 一百筹码⑥号 1
+#act
+TAKE 一百筹码⑥号 1
+GameGold + 900
+GuildNoticeMsg 0 253 恭喜〖%S〗买中6号马,中得900元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 6
+Checkitem 一千筹码⑥号 1
+#act
+TAKE 一千筹码⑥号 1
+GameGold + 9000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中6号马,中得9000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 6
+Checkitem 一万筹码⑥号 1
+#act
+TAKE 一万筹码⑥号 1
+GameGold + 90000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中6号马,中得90000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 6
+Checkitem 十万筹码⑥号 1
+#act
+TAKE 十万筹码⑥号 1
+GameGold + 900000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中6号马,中得900000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 6
+Checkitem 百万筹码⑥号 1
+#act
+TAKE 百万筹码⑥号 1
+GameGold + 9000000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中6号马,中得9000000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 5
+Checkitem 一百筹码⑤号 1
+#act
+TAKE 一百筹码⑤号 1
+GameGold + 900
+GuildNoticeMsg 0 253 恭喜〖%S〗买中5号马,中得900元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 5
+Checkitem 一千筹码⑤号 1
+#act
+TAKE 一千筹码⑤号 1
+GameGold + 9000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中5号马,中得9000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 5
+Checkitem 一万筹码⑤号 1
+#act
+TAKE 一万筹码⑤号 1
+GameGold + 90000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中5号马,中得90000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 5
+Checkitem 十万筹码⑤号 1
+#act
+TAKE 十万筹码⑤号 1
+GameGold + 900000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中5号马,中得900000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 5
+Checkitem 百万筹码⑤号 1
+#act
+TAKE 百万筹码⑤号 1
+GameGold + 9000000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中5号马,中得9000000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 4
+Checkitem 一百筹码④号 1
+#act
+TAKE 一百筹码④号 1
+GameGold + 900
+GuildNoticeMsg 0 253 恭喜〖%S〗买中4号马,中得900元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 4
+Checkitem 一千筹码④号 1
+#act
+TAKE 一千筹码④号 1
+GameGold + 9000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中4号马,中得9000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 4
+Checkitem 一万筹码④号 1
+#act
+TAKE 一万筹码④号 1
+GameGold + 90000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中4号马,中得90000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 4
+Checkitem 十万筹码④号 1
+#act
+TAKE 十万筹码④号 1
+GameGold + 900000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中4号马,中得900000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 4
+Checkitem 百万筹码④号 1
+#act
+TAKE 百万筹码④号 1
+GameGold + 9000000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中4号马,中得9000000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 3
+Checkitem 一百筹码③号 1
+#act
+TAKE 一百筹码③号 1
+GameGold + 900
+GuildNoticeMsg 0 253 恭喜〖%S〗买中3号马,中得900元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 3
+Checkitem 一千筹码③号 1
+#act
+TAKE 一千筹码③号 1
+GameGold + 9000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中3号马,中得9000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 3
+Checkitem 一万筹码③号 1
+#act
+TAKE 一万筹码③号 1
+GameGold + 90000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中3号马,中得90000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 3
+Checkitem 十万筹码③号 1
+#act
+TAKE 十万筹码③号 1
+GameGold + 900000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中3号马,中得900000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 3
+Checkitem 百万筹码③号 1
+#act
+TAKE 百万筹码③号 1
+GameGold + 9000000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中3号马,中得9000000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 2
+Checkitem 一百筹码②号 1
+#act
+TAKE 一百筹码②号 1
+GameGold + 900
+GuildNoticeMsg 0 253 恭喜〖%S〗买中2号马,中得900元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 2
+Checkitem 一千筹码②号 1
+#act
+TAKE 一千筹码②号 1
+GameGold + 9000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中2号马,中得9000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 2
+Checkitem 一万筹码②号 1
+#act
+TAKE 一万筹码②号 1
+GameGold + 90000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中2号马,中得90000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 2
+Checkitem 十万筹码②号 1
+#act
+TAKE 十万筹码②号 1
+GameGold + 900000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中2号马,中得900000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 2
+Checkitem 百万筹码②号 1
+#act
+TAKE 百万筹码②号 1
+GameGold + 9000000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中2号马,中得9000000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 1
+Checkitem 一百筹码①号 1
+#act
+TAKE 一百筹码①号 1
+GameGold + 900
+GuildNoticeMsg 0 253 恭喜〖%S〗买中1号马,中得900元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 1
+Checkitem 一千筹码①号 1
+#act
+TAKE 一千筹码①号 1
+GameGold + 9000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中1号马,中得9000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 1
+Checkitem 一万筹码①号 1
+#act
+TAKE 一万筹码①号 1
+GameGold + 90000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中1号马,中得90000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 1
+Checkitem 十万筹码①号 1
+#act
+TAKE 十万筹码①号 1
+GameGold + 900000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中1号马,中得900000元宝大奖.
+goto @开始发奖
+break
+
+#if
+equal G360 1
+Checkitem 百万筹码①号 1
+#act
+TAKE 百万筹码①号 1
+GameGold + 9000000
+GuildNoticeMsg 0 253 恭喜〖%S〗买中1号马,中得9000000元宝大奖.
+goto @开始发奖
+break
+
+#if
+#act
+TAKE 百万筹码①号 40
+TAKE 百万筹码②号 40
+TAKE 百万筹码③号 40
+TAKE 百万筹码④号 40
+TAKE 百万筹码⑤号 40
+TAKE 百万筹码⑥号 40
+TAKE 百万筹码⑦号 40
+TAKE 百万筹码⑧号 40
+TAKE 百万筹码⑨号 40
+TAKE 十万筹码①号 40
+TAKE 十万筹码②号 40
+TAKE 十万筹码③号 40
+TAKE 十万筹码④号 40
+TAKE 十万筹码⑤号 40
+TAKE 十万筹码⑥号 40
+TAKE 十万筹码⑦号 40
+TAKE 十万筹码⑧号 40
+TAKE 十万筹码⑨号 40
+TAKE 一万筹码①号 40
+TAKE 一万筹码②号 40
+TAKE 一万筹码③号 40
+TAKE 一万筹码④号 40
+TAKE 一万筹码⑤号 40
+TAKE 一万筹码⑥号 40
+TAKE 一万筹码⑦号 40
+TAKE 一万筹码⑧号 40
+TAKE 一万筹码⑨号 40
+TAKE 一千筹码①号 40
+TAKE 一千筹码②号 40
+TAKE 一千筹码③号 40
+TAKE 一千筹码④号 40
+TAKE 一千筹码⑤号 40
+TAKE 一千筹码⑥号 40
+TAKE 一千筹码⑦号 40
+TAKE 一千筹码⑧号 40
+TAKE 一千筹码⑨号 40
+TAKE 一百筹码①号 40
+TAKE 一百筹码②号 40
+TAKE 一百筹码③号 40
+TAKE 一百筹码④号 40
+TAKE 一百筹码⑤号 40
+TAKE 一百筹码⑥号 40
+TAKE 一百筹码⑦号 40
+TAKE 一百筹码⑧号 40
+TAKE 一百筹码⑨号 40
+break
+
+
+[@OnTimer13]
+#IF
+CHECKGUILDAURAEPOINT < 1501
+#ACT
+GUILDAURAEPOINT + 100
+SENDMSG 6 提示：行会积分+1！
+BREAK
+
+[@开始检测群雄大乱斗]
+#IF
+EQUAL A440 <$USERNAME>
+CHECKVAR GLOBAL 大乱斗活动结束 = 1
+#ACT
+MOV A440  [等待新PK王中……]
+;物防上
+ChangeHumAbility 1 - 200
+;物防下
+ChangeHumAbility 2 - 200
+;魔御上
+ChangeHumAbility 3 - 200
+;魔御下
+ChangeHumAbility 4 - 200
+;攻击上
+ChangeHumAbility 5 - 200
+;攻击下
+ChangeHumAbility 6 - 200
+;魔法上
+ChangeHumAbility 7 - 200
+;魔法下
+ChangeHumAbility 8 - 200
+;道术上
+ChangeHumAbility 9 - 200
+;道术下
+ChangeHumAbility 10 - 200
+POWERRATE 130 65535
+SETRANKLEVELNAME %s\★★★上一界→群雄ＰＫ王★★★\（无属性加成）
+MESSAGEBOX 你的PK王称号及属性消失了，赶快参加活动争夺回来！
+
+
+#IF
+IsOnMap daluandou
+check [95] 0
+#ACT
+mapmove 3 333 333
+MESSAGEBOX 请勿通过非法途径停留在★群雄·大乱斗★地图！(包括原地复活)
+break
+
+#IF
+IsOnMap daluandou
+#ACT
+#ELSEACT
+SET [95] 0
+
+[@开始群雄大乱斗活动]
+#ACT
+OpenBigDialogBox
+#say
+　\ \
+　　 <★★★群雄·大乱斗★★★/SCOLOR=254>　<New~/SCOLOR=249>　　<（最新的ＰＫ活动，激情无限，奖励超爽）/SCOLOR=253>\　\
+
+　　　<【活动玩法】：在大乱斗区域互相PK,杀死一个人会获得20万元宝,/SCOLOR=250>　\ \
+
+　　　<【活动奖品】：活动结束时最后1个人将领取1.2倍攻击属性+100攻魔道双防(持续到下次活动开始)!/SCOLOR=151>　\
+　　　　　　　　　　<（若结束时地图内超过2人将无奖励！）/SCOLOR=151>　\ \
+
+　　　<【活动详细】：每天19.00活动开始进场,19.30点停止进场.20.20活动结束/SCOLOR=70>　\ \
+
+　　　<【进入条件】：每次进场需要50万元宝手续费.在19.00-19.30之间可重复进场！/SCOLOR=249>\ \
+
+　　　<【上次乱斗ＰＫ王得主】：/SCOLOR=249>　　　 [在下次活动开始时ＰＫ王将清空]\ \
+
+　　　　　　　　<进入【群雄·大乱斗】地图/@jinrudaluandou>　　
+
+#ACT
+MESSAGEBOX ★群雄·大乱斗★活动已开始,赶快一起参与吧！
+
+
+[@jinrudaluandou]
+#IF
+CHECKVAR GLOBAL 大乱斗活动结束 = 1
+checkgamegold > 499999
+check [95] 0
+#ACT
+GameGold - 500000
+SET [95] 1
+mapmove daluandou
+sendcentermsg 249 0 ★群雄·大乱斗★活动：[<$USERNAME>]进入了--群雄·大乱斗地图，等待你的挑战，快去砍了他可以获得20万元宝！ 1 3
+sendcentermsg 249 0 ★群雄·大乱斗★活动：[<$USERNAME>]进入了--群雄·大乱斗地图，等待你的挑战，快去砍了他可以获得20万元宝！ 1 3
+sendcentermsg 249 0 ★群雄·大乱斗★活动：[<$USERNAME>]进入了--群雄·大乱斗地图，等待你的挑战，快去砍了他可以获得20万元宝！ 1 3
+GuildNoticeMsg 249 0 ★群雄·大乱斗★活动：[<$USERNAME>]进入了--群雄·大乱斗地图，等待你的挑战，快去砍了他可以获得20万元宝！
+GuildNoticeMsg 249 0 ★群雄·大乱斗★活动：[<$USERNAME>]进入了--群雄·大乱斗地图，等待你的挑战，快去砍了他可以获得20万元宝！
+GuildNoticeMsg 249 0 ★群雄·大乱斗★活动：[<$USERNAME>]进入了--群雄·大乱斗地图，等待你的挑战，快去砍了他可以获得20万元宝！
+#ELSEACT
+MessageBox 进入失败！1.请按规定时间进场！2.你元宝不足50万
+[@群雄大乱斗活动结束]
+#IF
+IsOnMap daluandou
+check [95] 1
+#ACT
+MOV A440 <$USERNAME>
+POWERRATE 120 65535
+;物防上
+ChangeHumAbility 1 + 100
+;物防下
+ChangeHumAbility 2 + 100
+;魔御上
+ChangeHumAbility 3 + 100
+;魔御下
+ChangeHumAbility 4 + 100
+;攻击上
+ChangeHumAbility 5 + 100
+;攻击下
+ChangeHumAbility 6 + 100
+;魔法上
+ChangeHumAbility 7 + 100
+;魔法下
+ChangeHumAbility 8 + 100
+;道术上
+ChangeHumAbility 9 + 100
+;道术下
+ChangeHumAbility 10 + 100
+SETRANKLEVELNAME %s\◥■■■群■■■◤\◥■■雄■■◤\◥■ＰＫ■◤\◥王◤\☆★1.2倍伤害★☆\☆★全属性+100★☆\
+sendcentermsg 249 0 ★群雄·大乱斗★活动：恭喜[<$USERNAME>]成为新的★群雄·ＰＫ王★，有1.2倍伤害加成并有100的全属性加成！ 1 3
+sendcentermsg 249 0 ★群雄·大乱斗★活动：恭喜[<$USERNAME>]成为新的★群雄·ＰＫ王★，有1.2倍伤害加成并有100的全属性加成！ 1 3
+sendcentermsg 249 0 ★群雄·大乱斗★活动：恭喜[<$USERNAME>]成为新的★群雄·ＰＫ王★，有1.2倍伤害加成并有100的全属性加成！ 1 3
+GuildNoticeMsg 249 0 ★群雄·大乱斗★活动：恭喜[<$USERNAME>]成为新的★群雄·ＰＫ王★，有1.2倍伤害加成并有100的全属性加成！
+GuildNoticeMsg 249 0 ★群雄·大乱斗★活动：恭喜[<$USERNAME>]成为新的★群雄·ＰＫ王★，有1.2倍伤害加成并有100的全属性加成！
+GuildNoticeMsg 249 0 ★群雄·大乱斗★活动：恭喜[<$USERNAME>]成为新的★群雄·ＰＫ王★，有1.2倍伤害加成并有100的全属性加成！
+MoveMapPlay daluandou 3 333 333

@@ -1,0 +1,38 @@
+[@HBatVar]
+{
+#if
+CheckLevelEx > 0
+#Act
+Var integer Human UbInn 
+Var integer Human UbCap 
+Var integer Human Ubv 
+Var String Human Ubvs
+Var String Human UbMsg 
+
+Var integer Human LogInn
+Var integer Human LogCap
+Var integer Human LogPb
+Var integer Human LogPs
+Var String Human LogNu
+Var integer Human LogNuG
+Var String Human LogResStr
+Var String Human LogRes
+
+LOADVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+LOADVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+LOADVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+LOADVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+Delaygoto 1 @HBatVar_1
+
+[@HBatVar_1]
+#if
+CheckVar Human UbInn = 0
+#Act
+Break
+
+#if
+CheckVar Human UbInn < <$Global(bInn)>
+CheckVar Human UbCap > 0
+#Act
+SetOnTimer 0 1
+}

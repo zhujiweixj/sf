@@ -1,0 +1,1280 @@
+[@main]
+
+<----------------------------------------------------------/SCOLOR=102>\
+　　　　　 　<嫉恶如仇剑如蛟 ，除魔重任一肩挑/SCOLOR=253>\
+　　　　　 　<纵横四海荡诸邪， 跨越千山斩群妖/SCOLOR=253>\
+
+<------------/SCOLOR=102><兑换盘古装备手续费用每件2000万元宝/SCOLOR=254><------------/SCOLOR=102>\
+<兑换说明：+65以上极品可免费兑换对应本服高级装备[威震全服]/SCOLOR=249>\
+<套装说明：衣服+武器触发全屏牛叉技能，套装各属性提升1.2倍！/SCOLOR=250>\
+<套装说明：HP+MP提升，戒指吸血超级强，秒杀逆天.断魂.荣耀套/SCOLOR=229>\
+　<兑换盘古圣战[战]/@战装备1>　<兑换盘古法神[法]/@法装备2>　<兑换盘古天尊[道]/@道装备3>\
+　<注意:逆天、断魂、荣耀配带身上才能换，指定装备+65点攻击/SCOLOR=249>
+
+
+[@战装备1]
+----------------------------------------------------------\
+1.请将逆天装备对应+65以上攻击装备穿在身上 \
+2.保证背包至少一格空位..变量兑换.点击兑换时等待几秒钟..\
+3.兑换勋章需+20攻以上，兑换过程中不要下线，否则损失自行承担\
+4.必须是逆天装备才能兑换盘古圣战套.指定装备兑换,如不懂请咨询\
+客服....交你如何兑换....身上必须穿戴指定装备.逆天.\
+----------------------------------------------------------\
+　　　　　　<我要兑换超级盘古圣战套/@战装备4>      <返回/@main>\
+　
+
+
+
+[@法装备2]
+----------------------------------------------------------\
+1.请将逆天装备对应+65以上魔法装备穿在身上 \
+2.保证背包至少一格空位.变量兑换.点击兑换时等待几秒钟..\
+3.兑换勋章需+20魔法以上，兑换过程中不要下线，否则损失自行承担\
+4.必须是逆天装备才能兑换盘古法神套.指定装备兑换,如不懂请咨询\
+客服....交你如何兑换....身上必须穿戴指定装备.断魂.\
+----------------------------------------------------------\
+　　　　　　<我要兑换超级盘古法神套/@法装备5>      <返回/@main>\
+　
+
+
+
+[@道装备3]
+----------------------------------------------------------\
+1.请将逆天装备对应+65以上道术装备穿在身上 \
+2.保证背包至少一格空位.变量兑换.点击兑换时等待几秒钟..\
+3.兑换勋章需+20道术以上，兑换过程中不要下线，否则损失自行承担\
+4.必须是逆天装备才能兑换盘古天尊套.指定装备兑换,如不懂请咨询\
+客服....交你如何兑换....身上必须穿戴指定装备.荣耀.\
+----------------------------------------------------------\
+　　　　　　<我要兑换超级盘古天尊套/@道装备6>      <返回/@main>\
+
+
+
+[@战装备4]
+0.逆天神斩[圣]         →兑换→  <盘古开天[战]/@战武器1>\
+1.逆天圣战甲[圣]       →兑换→  <盘古战甲[战]/@男战衣服1>\
+2.逆天圣战袍[圣]       →兑换→  <盘古宝甲[战]/@女战衣服1>\
+3.逆天圣战章[圣]       →兑换→  <盘古战章[战]/@战勋章1>\
+4.逆天圣战链[圣]       →兑换→  <盘古项链[战]/@战项链1>\
+5.逆天圣战盔[圣]       →兑换→  <盘古头盔[战]/@战头盔1>\
+6.逆天圣战镯[圣]（左） →兑换→  <盘古手镯[战]（左）/@战手镯左1>\
+7.逆天圣战镯[圣]（右） →兑换→  <盘古手镯[战]（右）/@战手镯右1>\
+8.逆天圣战戒[圣]（左） →兑换→  <盘古战戒[战]（左）/@战戒指左1>\
+9.逆天圣战戒[圣]（右） →兑换→  <盘古战戒[战]（右）/@战戒指右1>   <返回/@main>\
+
+
+
+[@法装备5]
+0.断魂神杖[圣]         →兑换→  <盘古魔剑[魔]/@法武器2>\
+1.断魂法神甲[圣]       →兑换→  <盘古战甲[魔]/@男法衣服2>\
+2.断魂法神袍[圣]       →兑换→  <盘古宝甲[魔]/@女法衣服2>\
+3.断魂法神章[圣]       →兑换→  <盘古法章[魔]/@法勋章2>\
+4.断魂法神链[圣]       →兑换→  <盘古项链[魔]/@法项链2>\
+5.断魂法神盔[圣]       →兑换→  <盘古头盔[魔]/@法头盔2>\
+6.断魂法神镯[圣]（左） →兑换→  <盘古手镯[魔]（左）/@法手镯左2>\
+7.断魂法神镯[圣]（右） →兑换→  <盘古手镯[魔]（右）/@法手镯右2>\
+8.断魂法神戒[圣]（左） →兑换→  <盘古法戒[魔]（左）/@法戒指左2>\
+9.断魂法神戒[圣]（右） →兑换→  <盘古法戒[魔]（右）/@法戒指右2>   <返回/@main>\
+
+
+
+[@道装备6]
+0.荣耀神扇[圣]         →兑换→  <盘古神剑[道]/@道武器3>\
+1.荣耀天尊甲[圣]       →兑换→  <盘古战甲[道]/@男道衣服3>\
+2.荣耀天尊袍[圣]       →兑换→  <盘古宝甲[道]/@女道衣服3>\
+3.荣耀天尊章[圣]       →兑换→  <盘古天章[道]/@道勋章3>\
+4.荣耀天尊链[圣]       →兑换→  <盘古项链[道]/@道项链3>\
+5.荣耀天尊盔[圣]       →兑换→  <盘古头盔[道]/@道头盔3>\
+6.荣耀天尊镯[圣]（左） →兑换→  <盘古手镯[道]（左）/@道手镯左3>\
+7.荣耀天尊镯[圣]（右） →兑换→  <盘古手镯[道]（右）/@道手镯右3>\
+8.荣耀天尊戒[圣]（左） →兑换→  <盘古天戒[道]（左）/@道戒指左3>\
+9.荣耀天尊戒[圣]（右） →兑换→  <盘古天戒[道]（右）/@道戒指右3>   <返回/@main>\
+
+
+
+
+
+[@战武器1]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 1 20
+
+#if
+equal S20  逆天神斩[圣]
+#act
+delaygoto 1 @wqi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@wqi1]
+#IF
+CHECKITEMADDVALUE 1 0 > 64
+#act
+delaygoto 1 @wqi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】攻击点数不够！
+
+[@wqi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古开天[战] 1
+AutoTakeOnItem 盘古开天[战] 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古开天[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古开天[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古开天[战]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@男战衣服1]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 0 20
+
+#if
+equal S20  逆天圣战甲[圣]
+#act
+delaygoto 1 @yfni1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@yfni1]
+#IF
+CHECKITEMADDVALUE 0 2 > 64
+#act
+delaygoto 1 @yfni2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】攻击点数不够！
+
+[@yfni2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古战甲[战] 1
+AutoTakeOnItem 盘古战甲[战] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战甲[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战甲[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战甲[战]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@女战衣服1]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 0 20
+
+#if
+equal S20  逆天圣战袍[圣]
+#act
+delaygoto 1 @yfvi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@yfvi1]
+#IF
+CHECKITEMADDVALUE 0 2 > 64
+#act
+delaygoto 1 @yfvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】攻击点数不够！
+
+[@yfvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古宝甲[战] 1
+AutoTakeOnItem 盘古宝甲[战] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古宝甲[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古宝甲[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古宝甲[战]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@战勋章1]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 2 20
+
+#if
+equal S20  逆天圣战章[圣]
+#act
+delaygoto 1 @zxi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@zxi1]
+#IF
+CHECKITEMADDVALUE 2 2 > 19
+#act
+delaygoto 1 @zxvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】攻击点数不够！
+
+[@zxvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 2 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古战章[战] 1
+AutoTakeOnItem 盘古战章[战] 2
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战章[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战章[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战章[战]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@战项链1]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 3 20
+
+#if
+equal S20  逆天圣战链[圣]
+#act
+delaygoto 1 @zli1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@zli1]
+#IF
+CHECKITEMADDVALUE 3 2 > 64
+#act
+delaygoto 1 @zlvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】攻击点数不够！
+
+[@zlvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 3 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古项链[战] 1
+AutoTakeOnItem 盘古项链[战] 3
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古项链[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古项链[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古项链[战]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@战头盔1]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 4 20
+
+#if
+equal S20  逆天圣战盔[圣]
+#act
+delaygoto 1 @zti1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@zti1]
+#IF
+CHECKITEMADDVALUE 4 2 > 64
+#act
+delaygoto 1 @ztvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】攻击点数不够！
+
+[@ztvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 4 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古头盔[战] 1
+AutoTakeOnItem 盘古头盔[战] 4
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古头盔[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古头盔[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古头盔[战]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@战手镯右1]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 5 20
+
+#if
+equal S20  逆天圣战镯[圣]
+#act
+delaygoto 1 @zyi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@zyi1]
+#IF
+CHECKITEMADDVALUE 5 2 > 64
+#act
+delaygoto 1 @zyvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】攻击点数不够！
+
+[@zyvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 5 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古手镯[战] 1
+AutoTakeOnItem 盘古手镯[战] 5
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[战]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+
+[@战手镯左1]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 6 20
+
+#if
+equal S20  逆天圣战镯[圣]
+#act
+delaygoto 1 @zzi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@zzi1]
+#IF
+CHECKITEMADDVALUE 6 2 > 64
+#act
+delaygoto 1 @zzvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】攻击点数不够！
+
+[@zzvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 6 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古手镯[战] 1
+AutoTakeOnItem 盘古手镯[战] 6
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[战]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@战戒指右1]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 7 20
+
+#if
+equal S20  逆天圣战戒[圣]
+#act
+delaygoto 1 @zjyi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@zjyi1]
+#IF
+CHECKITEMADDVALUE 7 2 > 64
+#act
+delaygoto 1 @zjyvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】攻击点数不够！
+
+[@zjyvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 7 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古战戒[战] 1
+AutoTakeOnItem 盘古战戒[战] 7
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战戒[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战戒[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战戒[战]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@战戒指左1]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 8 20
+
+#if
+equal S20  逆天圣战戒[圣]
+#act
+delaygoto 1 @zjzi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@zjzi1]
+#IF
+CHECKITEMADDVALUE 8 2 > 64
+#act
+delaygoto 1 @zjzvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】攻击点数不够！
+
+[@zjzvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 8 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古战戒[战] 1
+AutoTakeOnItem 盘古战戒[战] 8
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战戒[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战戒[战]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战戒[战]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@法武器2]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 1 20
+
+#if
+equal S20  断魂神杖[圣]
+#act
+delaygoto 1 @fwqi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@fwqi1]
+#IF
+CHECKITEMADDVALUE 1 1 > 64
+#act
+delaygoto 1 @fwqi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@fwqi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古魔剑[魔] 1
+AutoTakeOnItem 盘古魔剑[魔] 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古魔剑[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古魔剑[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古魔剑[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@男法衣服2]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 0 20
+
+#if
+equal S20  断魂法神甲[圣]
+#act
+delaygoto 1 @fyfni1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@fyfni1]
+#IF
+CHECKITEMADDVALUE 0 3 > 64
+#act
+delaygoto 1 @fyfni2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@fyfni2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古战甲[魔] 1
+AutoTakeOnItem 盘古战甲[魔] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战甲[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战甲[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战甲[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@女法衣服2]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 0 20
+
+#if
+equal S20  断魂法神袍[圣]
+#act
+delaygoto 1 @fyfvi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@fyfvi1]
+#IF
+CHECKITEMADDVALUE 0 3 > 64
+#act
+delaygoto 1 @fyfvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@fyfvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古宝甲[魔] 1
+AutoTakeOnItem 盘古宝甲[魔] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古宝甲[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古宝甲[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古宝甲[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@法勋章2]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 2 20
+
+#if
+equal S20  断魂法神章[圣]
+#act
+delaygoto 1 @fzxi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@fzxi1]
+#IF
+CHECKITEMADDVALUE 2 3 > 19
+#act
+delaygoto 1 @fzxvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@fzxvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 2 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古法章[魔] 1
+AutoTakeOnItem 盘古法章[魔] 2
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法章[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法章[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法章[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@法项链2]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 3 20
+
+#if
+equal S20  断魂法神链[圣]
+#act
+delaygoto 1 @fzli1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@fzli1]
+#IF
+CHECKITEMADDVALUE 3 3 > 64
+#act
+delaygoto 1 @fzlvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@fzlvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 3 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古项链[魔] 1
+AutoTakeOnItem 盘古项链[魔] 3
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古项链[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古项链[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古项链[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@法头盔2]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 4 20
+
+#if
+equal S20  断魂法神盔[圣]
+#act
+delaygoto 1 @fzti1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@fzti1]
+#IF
+CHECKITEMADDVALUE 4 3 > 64
+#act
+delaygoto 1 @fztvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@fztvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 4 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古头盔[魔] 1
+AutoTakeOnItem 盘古头盔[魔] 4
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古头盔[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古头盔[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古头盔[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@法手镯右2]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 5 20
+
+#if
+equal S20  断魂法神镯[圣]
+#act
+delaygoto 1 @fzyi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@fzyi1]
+#IF
+CHECKITEMADDVALUE 5 3 > 64
+#act
+delaygoto 1 @fzyvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@fzyvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 5 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古手镯[魔] 1
+AutoTakeOnItem 盘古手镯[魔] 5
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+
+[@法手镯左2]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 6 20
+
+#if
+equal S20  断魂法神镯[圣]
+#act
+delaygoto 1 @fzzi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@fzzi1]
+#IF
+CHECKITEMADDVALUE 6 3 > 64
+#act
+delaygoto 1 @fzzvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@fzzvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 6 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古手镯[魔] 1
+AutoTakeOnItem 盘古手镯[魔] 6
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@法戒指右2]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 7 20
+
+#if
+equal S20  断魂法神戒[圣]
+#act
+delaygoto 1 @fzjyi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@fzjyi1]
+#IF
+CHECKITEMADDVALUE 7 3 > 64
+#act
+delaygoto 1 @fzjyvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@fzjyvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 7 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古法戒[魔] 1
+AutoTakeOnItem 盘古法戒[魔] 7
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@法戒指左2]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 8 20
+
+#if
+equal S20  断魂法神戒[圣]
+#act
+delaygoto 1 @fzjzi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@fzjzi1]
+#IF
+CHECKITEMADDVALUE 8 3 > 64
+#act
+delaygoto 1 @fzjzvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@fzjzvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 8 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古法戒[魔] 1
+AutoTakeOnItem 盘古法戒[魔] 8
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+
+[@道武器3]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 1 20
+
+#if
+equal S20  荣耀神扇[圣]
+#act
+delaygoto 1 @dwqi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@dwqi1]
+#IF
+CHECKITEMADDVALUE 1 2 > 64
+#act
+delaygoto 1 @dwqi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@dwqi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 1 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古神剑[道] 1
+AutoTakeOnItem 盘古神剑[道] 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古神剑[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古神剑[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古神剑[道]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@男道衣服3]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 0 20
+
+#if
+equal S20  荣耀天尊甲[圣]
+#act
+delaygoto 1 @dyfni1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@dyfni1]
+#IF
+CHECKITEMADDVALUE 0 4 > 64
+#act
+delaygoto 1 @dyfni2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@dyfni2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古战甲[道] 1
+AutoTakeOnItem 盘古战甲[道] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战甲[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战甲[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古战甲[道]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@女道衣服3]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 0 20
+
+#if
+equal S20  荣耀天尊袍[圣]
+#act
+delaygoto 1 @dyfvi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@dyfvi1]
+#IF
+CHECKITEMADDVALUE 0 4 > 64
+#act
+delaygoto 1 @dyfvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@dyfvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 0 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古宝甲[道] 1
+AutoTakeOnItem 盘古宝甲[道] 0
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古宝甲[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古宝甲[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古宝甲[道]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@道勋章3]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 2 20
+
+#if
+equal S20  荣耀天尊章[圣]
+#act
+delaygoto 1 @dzxi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+
+[@dzxi1]
+#IF
+CHECKITEMADDVALUE 2 4 > 19
+#act
+delaygoto 1 @dzxvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@dzxvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 2 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古天章[道] 1
+AutoTakeOnItem 盘古天章[道] 2
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古天章[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古天章[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古天章[道]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@道项链3]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 3 20
+
+#if
+equal S20  荣耀天尊链[圣]
+#act
+delaygoto 1 @dzli1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@dzli1]
+#IF
+CHECKITEMADDVALUE 3 4 > 64
+#act
+delaygoto 1 @dzlvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@dzlvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 3 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古项链[道] 1
+AutoTakeOnItem 盘古项链[道] 3
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古项链[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古项链[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古项链[道]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@道头盔3]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 4 20
+
+#if
+equal S20  荣耀天尊盔[圣]
+#act
+delaygoto 1 @dzti1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@dzti1]
+#IF
+CHECKITEMADDVALUE 4 4 > 64
+#act
+delaygoto 1 @dztvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@dztvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 4 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古头盔[道] 1
+AutoTakeOnItem 盘古头盔[道] 4
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古头盔[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古头盔[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古头盔[道]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@道手镯右3]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 5 20
+
+#if
+equal S20  荣耀天尊镯[圣]
+#act
+delaygoto 1 @dzyi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@dzyi1]
+#IF
+CHECKITEMADDVALUE 5 4 > 64
+#act
+delaygoto 1 @dzyvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@dzyvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 5 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古手镯[道] 1
+AutoTakeOnItem 盘古手镯[道] 5
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[道]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+
+[@道手镯左3]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 6 20
+
+#if
+equal S20  荣耀天尊镯[圣]
+#act
+delaygoto 1 @dzzi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@dzzi1]
+#IF
+CHECKITEMADDVALUE 6 4 > 64
+#act
+delaygoto 1 @dzzvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@dzzvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 6 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古手镯[道] 1
+AutoTakeOnItem 盘古手镯[道] 6
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[道]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古手镯[道]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@道戒指右3]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 7 20
+
+#if
+equal S20  荣耀天尊戒[圣]
+#act
+delaygoto 1 @dzjyi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@dzjyi1]
+#IF
+CHECKITEMADDVALUE 7 4 > 64
+#act
+delaygoto 1 @dzjyvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@dzjyvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 7 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古法戒[魔] 1
+AutoTakeOnItem 盘古法戒[魔] 7
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\
+
+
+[@道戒指左3]
+#if
+CHECKUSEITEM 0
+#act
+GetUserItemName 8 20
+
+#if
+equal S20  荣耀天尊戒[圣]
+#act
+delaygoto 1 @dzjzi1
+#ELSEact
+messagebox 你没有装备【<$STR(S20)>】！
+
+[@dzjzi1]
+#IF
+CHECKITEMADDVALUE 8 4 > 64
+#act
+delaygoto 1 @dzjzvi2
+#ELSEact
+messagebox 你装备【<$STR(S20)>】魔法点数不够！
+
+[@dzjzvi2]
+#IF
+CheckHumBag <$USERNAME> > 0
+checkgamegold > 19999999
+#ACT
+UPGRADEITEMEX 8 0 100 0 1
+GAMEGOLD - 20000000
+GIVE 盘古天戒[道] 1
+AutoTakeOnItem 盘古天戒[道] 8
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+SendCenterMsg 146 0 无敌的玩家[<$USERNAME>]在盘古圣品NPC出兑换了“盘古法戒[魔]”！ 1
+messagebox 恭喜您，兑换成功！
+BREAK
+#ELSEACT
+messagebox 背包里没有对应装备或者元宝不足！\

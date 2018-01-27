@@ -1,0 +1,495 @@
+[@领取附加]
+{
+#IF
+CheckAccountList ..\QuestDiary\HF附加\01.txt
+#ACT
+GAMEDIAMOND + 0
+GAMEPOINT + 0
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\HF附加\01.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0冲值点0抽奖数0灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\1.txt
+#ACT
+GAMEDIAMOND + 1
+GAMEPOINT + 1
+GAMEGIRD + 1
+DelAccountList ..\QuestDiary\HF附加\1.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1冲值点1抽奖数1灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\10.txt
+#ACT
+GAMEDIAMOND + 10
+GAMEPOINT + 10
+GAMEGIRD + 10
+DelAccountList ..\QuestDiary\HF附加\10.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了10冲值点10抽奖数10灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\100.txt
+#ACT
+GAMEDIAMOND + 100
+GAMEPOINT + 100
+GAMEGIRD + 100
+DelAccountList ..\QuestDiary\HF附加\100.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了100冲值点100抽奖数100灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\1000.txt
+#ACT
+GAMEDIAMOND + 1000
+GAMEPOINT + 1000
+GAMEGIRD + 1000
+DelAccountList ..\QuestDiary\HF附加\1000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1000冲值点1000抽奖数1000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\10000.txt
+#ACT
+GAMEDIAMOND + 10000
+GAMEPOINT + 10000
+GAMEGIRD + 10000
+DelAccountList ..\QuestDiary\HF附加\10000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了10000冲值点10000抽奖数10000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\02.txt
+#ACT
+GAMEDIAMOND + 0
+GAMEPOINT + 0
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\HF附加\02.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0冲值点0抽奖数0灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\2.txt
+#ACT
+GAMEDIAMOND + 2
+GAMEPOINT + 2
+GAMEGIRD + 2
+DelAccountList ..\QuestDiary\HF附加\2.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了2冲值点2抽奖数2灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\20.txt
+#ACT
+GAMEDIAMOND + 20
+GAMEPOINT + 20
+GAMEGIRD + 20
+DelAccountList ..\QuestDiary\HF附加\20.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了20冲值点20抽奖数20灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\200.txt
+#ACT
+GAMEDIAMOND + 200
+GAMEPOINT + 200
+GAMEGIRD + 200
+DelAccountList ..\QuestDiary\HF附加\200.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了200冲值点200抽奖数200灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\2000.txt
+#ACT
+GAMEDIAMOND + 2000
+GAMEPOINT + 2000
+GAMEGIRD + 2000
+DelAccountList ..\QuestDiary\HF附加\2000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了2000冲值点2000抽奖数2000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\20000.txt
+#ACT
+GAMEDIAMOND + 20000
+GAMEPOINT + 20000
+GAMEGIRD + 20000
+DelAccountList ..\QuestDiary\HF附加\20000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了20000冲值点20000抽奖数20000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\03.txt
+#ACT
+GAMEDIAMOND + 0
+GAMEPOINT + 0
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\HF附加\03.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0冲值点0抽奖数0灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\3.txt
+#ACT
+GAMEDIAMOND + 3
+GAMEPOINT + 3
+GAMEGIRD + 3
+DelAccountList ..\QuestDiary\HF附加\3.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了3冲值点3抽奖数3灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\30.txt
+#ACT
+GAMEDIAMOND + 30
+GAMEPOINT + 30
+GAMEGIRD + 30
+DelAccountList ..\QuestDiary\HF附加\30.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了30冲值点30抽奖数30灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\300.txt
+#ACT
+GAMEDIAMOND + 300
+GAMEPOINT + 300
+GAMEGIRD + 300
+DelAccountList ..\QuestDiary\HF附加\300.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了300冲值点300抽奖数300灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\3000.txt
+#ACT
+GAMEDIAMOND + 3000
+GAMEPOINT + 3000
+GAMEGIRD + 3000
+DelAccountList ..\QuestDiary\HF附加\3000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了3000冲值点3000抽奖数3000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\30000.txt
+#ACT
+GAMEDIAMOND + 30000
+GAMEPOINT + 30000
+GAMEGIRD + 30000
+DelAccountList ..\QuestDiary\HF附加\30000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了30000冲值点30000抽奖数30000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\04.txt
+#ACT
+GAMEDIAMOND + 0
+GAMEPOINT + 0
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\HF附加\04.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0冲值点0抽奖数0灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\4.txt
+#ACT
+GAMEDIAMOND + 4
+GAMEPOINT + 4
+GAMEGIRD + 4
+DelAccountList ..\QuestDiary\HF附加\4.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了4冲值点4抽奖数4灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\40.txt
+#ACT
+GAMEDIAMOND + 40
+GAMEPOINT + 40
+GAMEGIRD + 40
+DelAccountList ..\QuestDiary\HF附加\40.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了40冲值点40抽奖数40灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\400.txt
+#ACT
+GAMEDIAMOND + 400
+GAMEPOINT + 400
+GAMEGIRD + 400
+DelAccountList ..\QuestDiary\HF附加\400.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了400冲值点400抽奖数400灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\4000.txt
+#ACT
+GAMEDIAMOND + 4000
+GAMEPOINT + 4000
+GAMEGIRD + 4000
+DelAccountList ..\QuestDiary\HF附加\4000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了4000冲值点4000抽奖数4000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\40000.txt
+#ACT
+GAMEDIAMOND + 40000
+GAMEPOINT + 40000
+GAMEGIRD + 40000
+DelAccountList ..\QuestDiary\HF附加\40000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了40000冲值点40000抽奖数40000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\05.txt
+#ACT
+GAMEDIAMOND + 0
+GAMEPOINT + 0
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\HF附加\05.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0冲值点0抽奖数0灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\5.txt
+#ACT
+GAMEDIAMOND + 5
+GAMEPOINT + 5
+GAMEGIRD + 5
+DelAccountList ..\QuestDiary\HF附加\5.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了5冲值点5抽奖数5灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\50.txt
+#ACT
+GAMEDIAMOND + 50
+GAMEPOINT + 50
+GAMEGIRD + 50
+DelAccountList ..\QuestDiary\HF附加\50.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了50冲值点50抽奖数50灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\500.txt
+#ACT
+GAMEDIAMOND + 500
+GAMEPOINT + 500
+GAMEGIRD + 500
+DelAccountList ..\QuestDiary\HF附加\500.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了500冲值点500抽奖数500灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\5000.txt
+#ACT
+GAMEDIAMOND + 5000
+GAMEPOINT + 5000
+GAMEGIRD + 5000
+DelAccountList ..\QuestDiary\HF附加\5000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了5000冲值点5000抽奖数5000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\50000.txt
+#ACT
+GAMEDIAMOND + 50000
+GAMEPOINT + 50000
+GAMEGIRD + 50000
+DelAccountList ..\QuestDiary\HF附加\50000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了50000冲值点50000抽奖数50000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\06.txt
+#ACT
+GAMEDIAMOND + 0
+GAMEPOINT + 0
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\HF附加\06.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0冲值点0抽奖数0灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\6.txt
+#ACT
+GAMEDIAMOND + 6
+GAMEPOINT + 6
+GAMEGIRD + 6
+DelAccountList ..\QuestDiary\HF附加\6.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了6冲值点6抽奖数6灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\60.txt
+#ACT
+GAMEDIAMOND + 60
+GAMEPOINT + 60
+GAMEGIRD + 60
+DelAccountList ..\QuestDiary\HF附加\60.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了60冲值点60抽奖数60灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\600.txt
+#ACT
+GAMEDIAMOND + 600
+GAMEPOINT + 600
+GAMEGIRD + 600
+DelAccountList ..\QuestDiary\HF附加\600.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了600冲值点600抽奖数600灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\6000.txt
+#ACT
+GAMEDIAMOND + 6000
+GAMEPOINT + 6000
+GAMEGIRD + 6000
+DelAccountList ..\QuestDiary\HF附加\6000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了6000冲值点6000抽奖数6000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\60000.txt
+#ACT
+GAMEDIAMOND + 60000
+GAMEPOINT + 60000
+GAMEGIRD + 60000
+DelAccountList ..\QuestDiary\HF附加\60000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了60000冲值点60000抽奖数60000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\07.txt
+#ACT
+GAMEDIAMOND + 0
+GAMEPOINT + 0
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\HF附加\07.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0冲值点0抽奖数0灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\7.txt
+#ACT
+GAMEDIAMOND + 7
+GAMEPOINT + 7
+GAMEGIRD + 7
+DelAccountList ..\QuestDiary\HF附加\7.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了7冲值点7抽奖数7灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\70.txt
+#ACT
+GAMEDIAMOND + 70
+GAMEPOINT + 70
+GAMEGIRD + 70
+DelAccountList ..\QuestDiary\HF附加\70.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了70冲值点70抽奖数70灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\700.txt
+#ACT
+GAMEDIAMOND + 700
+GAMEPOINT + 700
+GAMEGIRD + 700
+DelAccountList ..\QuestDiary\HF附加\700.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了700冲值点700抽奖数700灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\7000.txt
+#ACT
+GAMEDIAMOND + 7000
+GAMEPOINT + 7000
+GAMEGIRD + 7000
+DelAccountList ..\QuestDiary\HF附加\7000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了7000冲值点7000抽奖数7000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\70000.txt
+#ACT
+GAMEDIAMOND + 70000
+GAMEPOINT + 70000
+GAMEGIRD + 70000
+DelAccountList ..\QuestDiary\HF附加\70000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了70000冲值点70000抽奖数70000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\08.txt
+#ACT
+GAMEDIAMOND + 0
+GAMEPOINT + 0
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\HF附加\08.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0冲值点0抽奖数0灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\8.txt
+#ACT
+GAMEDIAMOND + 8
+GAMEPOINT + 8
+GAMEGIRD + 8
+DelAccountList ..\QuestDiary\HF附加\8.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了8冲值点8抽奖数8灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\80.txt
+#ACT
+GAMEDIAMOND + 80
+GAMEPOINT + 80
+GAMEGIRD + 80
+DelAccountList ..\QuestDiary\HF附加\80.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了80冲值点80抽奖数80灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\800.txt
+#ACT
+GAMEDIAMOND + 800
+GAMEPOINT + 800
+GAMEGIRD + 800
+DelAccountList ..\QuestDiary\HF附加\800.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了800冲值点800抽奖数800灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\8000.txt
+#ACT
+GAMEDIAMOND + 8000
+GAMEPOINT + 8000
+GAMEGIRD + 8000
+DelAccountList ..\QuestDiary\HF附加\8000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了8000冲值点8000抽奖数8000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\80000.txt
+#ACT
+GAMEDIAMOND + 80000
+GAMEPOINT + 80000
+GAMEGIRD + 80000
+DelAccountList ..\QuestDiary\HF附加\80000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了80000冲值点80000抽奖数80000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\09.txt
+#ACT
+GAMEDIAMOND + 0
+GAMEPOINT + 0
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\HF附加\09.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0冲值点0抽奖数0灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\9.txt
+#ACT
+GAMEDIAMOND + 9
+GAMEPOINT + 9
+GAMEGIRD + 9
+DelAccountList ..\QuestDiary\HF附加\9.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了9冲值点9抽奖数9灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\90.txt
+#ACT
+GAMEDIAMOND + 90
+GAMEPOINT + 90
+GAMEGIRD + 90
+DelAccountList ..\QuestDiary\HF附加\90.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了90冲值点90抽奖数90灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\900.txt
+#ACT
+GAMEDIAMOND + 900
+GAMEPOINT + 900
+GAMEGIRD + 900
+DelAccountList ..\QuestDiary\HF附加\900.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了900冲值点900抽奖数900灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\9000.txt
+#ACT
+GAMEDIAMOND + 9000
+GAMEPOINT + 9000
+GAMEGIRD + 9000
+DelAccountList ..\QuestDiary\HF附加\9000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了9000冲值点9000抽奖数9000灵符。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\90000.txt
+#ACT
+GAMEDIAMOND + 90000
+GAMEPOINT + 90000
+GAMEGIRD + 90000
+DelAccountList ..\QuestDiary\HF附加\90000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了90000冲值点90000抽奖数90000灵符。
+goto @领取附加
+
+#ELSESAY
+请查看自己的<附加币>数量!\
+没有充值请按提示进行充值!\
+注意：请确认手机发送的代码和您的游戏帐号是否正确!\
+<退出/@exit>
+}

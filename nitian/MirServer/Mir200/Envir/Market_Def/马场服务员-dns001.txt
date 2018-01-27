@@ -1,0 +1,709 @@
+;芝+麻+商+业+版+本+免+费+下+载w=w=w.5=s=9=8.c=o=m
+
+
+
+
+
+[@main]
+每天<上午9:05--晚上23:05/SCOLOR=250>每两个小时开一次奖\
+【幸运买马活动】，<1-9个>号码，买中翻<9倍>。\
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\ \ \
+ 
+<购买筹码/@goumai>　　　<关闭/@EXIT>\ \ \
+
+前9期出的号码: {<$STR(G371)>/SCOLOR=250}   {<$STR(G372)>/SCOLOR=249}   {<$STR(G373)>/SCOLOR=253}   {<$STR(G374)>/SCOLOR=249}   {<$STR(G375)>/SCOLOR=253}   {<$STR(G376)>/SCOLOR=249}   {<$STR(G377)>/SCOLOR=253}   {<$STR(G378)>/SCOLOR=249}   {<$STR(G379)>/SCOLOR=253}
+
+
+[@goumai]
+请选择马号: \
+<①/@①main>     <②/@②main>     <③/@③main>\  \  
+<④/@④main>     <⑤/@⑤main>     <⑥/@⑥main>\  \    
+<⑦/@⑦main>     <⑧/@⑧main>     <⑨/@⑨main>\  \ 
+
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\
+ 
+<返回/@main>　　　<关闭/@EXIT>\
+
+
+[@①main]
+你选择的是<①号马>        请选择筹码:      \   \ 
+<一百筹码①号/@①一百>          <一千筹码①号/@①一千>          <一万筹码①号/@①一万>     \  \  
+<十万筹码①号/@①十万>          <百万筹码①号/@①百万>     \  \  \     
+
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\
+ 
+<返回/@main>　　　<关闭/@EXIT>\
+
+
+
+[@①一百]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 一百筹码①号
+goto @①main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@①一千]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+INC G361 1
+give 一千筹码①号
+goto @①main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@①一万]
+#IF
+CHECKGAMEGOLD > 9999
+#ACT
+GAMEGOLD - 10000
+INC G361 10
+give 一万筹码①号
+goto @①main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@①十万]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+INC G361 100
+give 十万筹码①号
+goto @①main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@①百万]
+#IF
+CHECKGAMEGOLD > 999999
+#ACT
+GAMEGOLD - 1000000
+INC G361 1000
+give 百万筹码①号
+goto @①main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@②main]
+你选择的是<②号马>        请选择筹码:      \   \ 
+<一百筹码②号/@②一百>          <一千筹码②号/@②一千>          <一万筹码②号/@②一万>     \  \  
+<十万筹码②号/@②十万>          <百万筹码②号/@②百万>     \  \  \     
+
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\
+ 
+<返回/@main>　　　<关闭/@EXIT>\
+
+
+
+[@②一百]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 一百筹码②号
+goto @②main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@②一千]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+INC G362 1
+give 一千筹码②号
+goto @②main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@②一万]
+#IF
+CHECKGAMEGOLD > 9999
+#ACT
+GAMEGOLD - 10000
+INC G362 10
+give 一万筹码②号
+goto @②main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@②十万]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+INC G362 100
+give 十万筹码②号
+goto @②main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@②百万]
+#IF
+CHECKGAMEGOLD > 999999
+#ACT
+GAMEGOLD - 1000000
+INC G362 1000
+give 百万筹码②号
+goto @②main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+
+[@③main]
+你选择的是<③号马>        请选择筹码:      \   \ 
+<一百筹码③号/@③一百>          <一千筹码③号/@③一千>          <一万筹码③号/@③一万>     \  \  
+<十万筹码③号/@③十万>          <百万筹码③号/@③百万>     \  \  \     
+
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\
+ 
+<返回/@main>　　　<关闭/@EXIT>\
+
+
+
+[@③一百]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 一百筹码③号
+goto @③main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@③一千]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+INC G363 1
+give 一千筹码③号
+goto @③main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@③一万]
+#IF
+CHECKGAMEGOLD > 9999
+#ACT
+GAMEGOLD - 10000
+INC G363 10
+give 一万筹码③号
+goto @③main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@③十万]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+INC G363 100
+give 十万筹码③号
+goto @③main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@③百万]
+#IF
+CHECKGAMEGOLD > 999999
+#ACT
+GAMEGOLD - 1000000
+INC G363 1000
+give 百万筹码③号
+goto @③main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@④main]
+你选择的是<④号马>        请选择筹码:      \   \ 
+<一百筹码④号/@④一百>          <一千筹码④号/@④一千>          <一万筹码④号/@④一万>     \  \  
+<十万筹码④号/@④十万>          <百万筹码④号/@④百万>     \  \  \     
+
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\
+ 
+<返回/@main>　　　<关闭/@EXIT>\
+
+
+
+[@④一百]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 一百筹码④号
+goto @④main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@④一千]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+INC G364 1
+give 一千筹码④号
+goto @④main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@④一万]
+#IF
+CHECKGAMEGOLD > 9999
+#ACT
+GAMEGOLD - 10000
+INC G364 10
+give 一万筹码④号
+goto @④main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@④十万]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+INC G364 100
+give 十万筹码④号
+goto @④main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@④百万]
+#IF
+CHECKGAMEGOLD > 999999
+#ACT
+GAMEGOLD - 1000000
+INC G364 1000
+give 百万筹码④号
+goto @④main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑤main]
+你选择的是<⑤号马>        请选择筹码:      \   \ 
+<一百筹码⑤号/@⑤一百>          <一千筹码⑤号/@⑤一千>          <一万筹码⑤号/@⑤一万>     \  \  
+<十万筹码⑤号/@⑤十万>          <百万筹码⑤号/@⑤百万>     \  \  \     
+
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\
+ 
+<返回/@main>　　　<关闭/@EXIT>\
+
+
+
+[@⑤一百]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 一百筹码⑤号
+goto @⑤main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑤一千]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+INC G365 1
+give 一千筹码⑤号
+goto @⑤main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑤一万]
+#IF
+CHECKGAMEGOLD > 9999
+#ACT
+GAMEGOLD - 10000
+INC G365 10
+give 一万筹码⑤号
+goto @⑤main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑤十万]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+INC G365 100
+give 十万筹码⑤号
+goto @⑤main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑤百万]
+#IF
+CHECKGAMEGOLD > 999999
+#ACT
+GAMEGOLD - 1000000
+INC G365 1000
+give 百万筹码⑤号
+goto @⑤main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑥main]
+你选择的是<⑥号马>        请选择筹码:      \   \ 
+<一百筹码⑥号/@⑥一百>          <一千筹码⑥号/@⑥一千>          <一万筹码⑥号/@⑥一万>     \  \  
+<十万筹码⑥号/@⑥十万>          <百万筹码⑥号/@⑥百万>     \  \  \     
+
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\
+ 
+<返回/@main>　　　<关闭/@EXIT>\
+
+
+
+[@⑥一百]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 一百筹码⑥号
+goto @⑥main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑥一千]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+INC G366 1
+give 一千筹码⑥号
+goto @⑥main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑥一万]
+#IF
+CHECKGAMEGOLD > 9999
+#ACT
+GAMEGOLD - 10000
+INC G366 10
+give 一万筹码⑥号
+goto @⑥main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑥十万]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+INC G366 100
+give 十万筹码⑥号
+goto @⑥main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑥百万]
+#IF
+CHECKGAMEGOLD > 999999
+#ACT
+GAMEGOLD - 1000000
+INC G366 1000
+give 百万筹码⑥号
+goto @⑥main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑦main]
+你选择的是<⑦号马>        请选择筹码:      \   \ 
+<一百筹码⑦号/@⑦一百>          <一千筹码⑦号/@⑦一千>          <一万筹码⑦号/@⑦一万>     \  \  
+<十万筹码⑦号/@⑦十万>          <百万筹码⑦号/@⑦百万>     \  \  \     
+
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\
+ 
+<返回/@main>　　　<关闭/@EXIT>\
+
+
+
+[@⑦一百]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 一百筹码⑦号
+goto @⑦main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑦一千]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+INC G367 1
+give 一千筹码⑦号
+goto @⑦main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑦一万]
+#IF
+CHECKGAMEGOLD > 9999
+#ACT
+GAMEGOLD - 10000
+INC G367 10
+give 一万筹码⑦号
+goto @⑦main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑦十万]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+INC G367 100
+give 十万筹码⑦号
+goto @⑦main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑦百万]
+#IF
+CHECKGAMEGOLD > 999999
+#ACT
+GAMEGOLD - 1000000
+INC G367 1000
+give 百万筹码⑦号
+goto @⑦main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑧main]
+你选择的是<⑧号马>        请选择筹码:      \   \ 
+<一百筹码⑧号/@⑧一百>          <一千筹码⑧号/@⑧一千>          <一万筹码⑧号/@⑧一万>     \  \  
+<十万筹码⑧号/@⑧十万>          <百万筹码⑧号/@⑧百万>     \  \  \     
+
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\
+ 
+<返回/@main>　　　<关闭/@EXIT>\
+
+
+
+[@⑧一百]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 一百筹码⑧号
+goto @⑧main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑧一千]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+INC G368 1
+give 一千筹码⑧号
+goto @⑧main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑧一万]
+#IF
+CHECKGAMEGOLD > 9999
+#ACT
+GAMEGOLD - 10000
+INC G368 10
+give 一万筹码⑧号
+goto @⑧main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑧十万]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+INC G368 100
+give 十万筹码⑧号
+goto @⑧main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑧百万]
+#IF
+CHECKGAMEGOLD > 999999
+#ACT
+GAMEGOLD - 1000000
+INC G368 1000
+give 百万筹码⑧号
+goto @⑧main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑨main]
+你选择的是<⑨号马>        请选择筹码:      \   \ 
+<一百筹码⑨号/@⑨一百>          <一千筹码⑨号/@⑨一千>          <一万筹码⑨号/@⑨一万>     \  \  
+<十万筹码⑨号/@⑨十万>          <百万筹码⑨号/@⑨百万>     \  \  \     
+
+<无限注，买中就有奖，900万大奖等着你来拿。/SCOLOR=253>\
+ 
+<返回/@main>　　　<关闭/@EXIT>\
+
+
+
+[@⑨一百]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 一百筹码⑨号
+goto @⑨main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑨一千]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+INC G369 1
+give 一千筹码⑨号
+goto @⑨main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑨一万]
+#IF
+CHECKGAMEGOLD > 9999
+#ACT
+GAMEGOLD - 10000
+INC G369 10
+give 一万筹码⑨号
+goto @⑨main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑨十万]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+INC G369 100
+give 十万筹码⑨号
+goto @⑨main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+[@⑨百万]
+#IF
+CHECKGAMEGOLD > 999999
+#ACT
+GAMEGOLD - 1000000
+INC G369 1000
+give 百万筹码⑨号
+goto @⑨main 
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你的元宝不足。请充值。
+BREAK
+
+
+
+
+
+
+

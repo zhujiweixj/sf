@@ -1,0 +1,65 @@
+[@main]
+#IF
+#act
+LOADVAR HUMAN 心魔标识 ..\QuestDiary\变量数据\心魔系统.txt
+
+#IF
+CHECKVAR HUMAN 心魔标识 < 3
+#SAY
+　\
+　\
+　　　　你是否能战胜自己？挑战成功3次将获得大量经验！\
+　　　提示：第一次1亿经验，第二次2亿经验，第三次3亿经验！\
+----------------------------------------------------------\
+　\
+　　　　　　　　　您今天已经挑战成功[<$HUMAN(心魔标识)>次]\
+　\
+　　　　　　　　<我做到了/@战胜自己>　　<返回土城/@返回土城>　　<关闭/@exit>
+
+
+
+[@战胜自己]
+#IF
+CheckMapMonCount xm4 > 0
+#act
+messagebox 抱歉，您还没有战胜自己的心魔！
+break
+
+#IF
+CHECKVAR HUMAN 心魔标识 = 2
+CheckMapMonCount xm4 < 1
+#ACT
+CALCVAR HUMAN 心魔标识 + 1
+SAVEVAR HUMAN  心魔标识 ..\QuestDiary\变量数据\心魔系统.txt
+CHANGEEXP + 300000000
+mapmove 3 330 330
+SendCenterMsg 146 0 【<$USERNAME>】成功打败了自己的心魔，获得<3亿经验>奖励！ 1
+MESSAGEBOX 恭喜你完成挑战，获得3亿经验，今天已经挑战成功[<$HUMAN(心魔标识)>次]！
+
+#IF
+CHECKVAR HUMAN 心魔标识 = 1
+CheckMapMonCount xm4 < 1
+#ACT
+CALCVAR HUMAN 心魔标识 + 1
+SAVEVAR HUMAN  心魔标识 ..\QuestDiary\变量数据\心魔系统.txt
+CHANGEEXP + 200000000
+mapmove 3 330 330
+SendCenterMsg 146 0 【<$USERNAME>】成功打败了自己的心魔，获得<2亿经验>奖励！ 1
+MESSAGEBOX 恭喜你完成挑战，获得2亿经验，今天已经挑战成功[<$HUMAN(心魔标识)>次]！
+
+#IF
+CHECKVAR HUMAN 心魔标识 = 0
+CheckMapMonCount xm4 < 1
+#ACT
+CALCVAR HUMAN 心魔标识 + 1
+SAVEVAR HUMAN  心魔标识 ..\QuestDiary\变量数据\心魔系统.txt
+CHANGEEXP + 100000000
+mapmove 3 330 330
+SendCenterMsg 146 0 【<$USERNAME>】成功打败了自己的心魔，获得<1亿经验>奖励！ 1
+MESSAGEBOX 恭喜你完成挑战，获得1亿经验，今天已经挑战成功[<$HUMAN(心魔标识)>次]！
+
+
+
+[@返回土城]
+#act
+mapmove 3 330 330 

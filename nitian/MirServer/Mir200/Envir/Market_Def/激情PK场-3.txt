@@ -1,0 +1,72 @@
+[@main]
+
+<  ~~●█〓██▄▄▄▄▄▄/SCOLOR=253><●●●●●●  /SCOLOR=253>这里是激情PK场\
+< ▄▄██████▄▄▃▂/SCOLOR=253>\
+< ██████████████        /SCOLOR=253>每个房间只允许2人\
+< ◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲◤/SCOLOR=254>\
+ ╔══════════════════════════╗\
+ ‖              以下地图不允许使用任何物品            ‖\
+ ┠══════════════════════════┨\
+ ‖ <激情①号/@ns1> ‖ <激情②号/@ns2> ‖<激情③号/@ns3>‖<激情④号/@ns4>‖<激情⑤号/@ns5>‖\
+ ╚══════════════════════════╝\\
+
+
+
+[@ns1]
+#if
+CHECKLEVELEX > 44
+CheckRangeHumCount 1pkhao 14 15  500 < 2
+#act
+mapmove 1pkhao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【激情①号】谁要PK赶快来找我吧！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、该房间有人，或等级不足45级！！
+
+[@ns2]
+#if
+CHECKLEVELEX > 44
+CheckRangeHumCount 2pkhao 14 15  500 < 2
+#act
+mapmove 2pkhao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【激情②号】谁要PK赶快来找我吧！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、该房间有人，或等级不足45级！！
+
+[@ns3]
+#if
+CHECKLEVELEX > 44
+CheckRangeHumCount 3pkhao 14 15  500 < 2
+#act
+mapmove 3pkhao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【激情③号】谁要PK赶快来找我吧！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、该房间有人，或等级不足45级！！
+
+
+[@ns4]
+#if
+CHECKLEVELEX > 44
+CheckRangeHumCount 4pkhao 14 15  500 < 2
+#act
+mapmove 4pkhao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【激情④号】谁要PK赶快来找我吧！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、该房间有人，或等级不足45级！！
+
+
+[@ns5]
+#if
+CHECKLEVELEX > 44
+CheckRangeHumCount 5pkhao 14 15  500 < 2
+#act
+mapmove 5pkhao
+give 回城卷 1
+SENDMSG 1 玩家【%s】进入了【激情⑤号】谁要PK赶快来找我吧！！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、该房间有人，或等级不足45级！！
+
+

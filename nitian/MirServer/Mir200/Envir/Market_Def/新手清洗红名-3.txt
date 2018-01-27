@@ -1,0 +1,24 @@
+[@main]
+#say
+　\
+本服为照顾新手，80级以下红名来我这里，都可以免费清洗红名\
+并送回去土城，您确定要清洗红名吗？\　\
+　　　　　　　　<我要清洗/@我要清洗>　|　<退出/@exit>
+
+[@我要清洗]
+#IF
+CHECKLEVELEX < 81
+#ACT
+GOTO @我要清洗1
+#ELSEACT
+MESSAGEBOX 你的等级高于80级，我也无法救你了...
+
+[@我要清洗1]
+#IF
+CHECKNAMELIST ..\QuestDiary\变量数据\被通缉的.txt
+#ACT
+MESSAGEBOX 你是别人诅咒的，不能给你清洗！麻烦你叫你朋友去诅咒别人NPC去帮你清洗吧
+#ELSEACT
+CHANGEPKPOINT = 0
+MAPMOVE 3 330 330
+MESSAGEBOX 你的罪孽已消除，勿再作恶!

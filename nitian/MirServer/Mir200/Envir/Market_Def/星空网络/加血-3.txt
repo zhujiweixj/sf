@@ -1,0 +1,72 @@
+[@main]
+<[我是最新推出的强化仙子，找我什么事情呢？]/SCOLOR=254> \
+<[我这里只负责屠魔腰带[生命]和屠魔靴子[生命]的合成]/SCOLOR=254> \
+<[屠魔腰带[生命]和屠魔靴子[生命]佩戴一起才能有隐藏HP+1000点的属性]/SCOLOR=254> \
+<[合成屠魔腰带[生命]需要1000W元宝：合成屠魔神靴[生命]需要2000W元宝]/SCOLOR=254> \
+<══════════════════════════════/SCOLOR=254>\
+------<[合成屠魔腰带[生命]]/SCOLOR=253><永久增加1000血量 /SCOLOR=250><→ /SCOLOR=250><点击合成/@字体44>-----\
+-------------<需要 强 化 生 命 这四个字+狂风腰带>------------\
+------<[合成屠魔神靴[生命]]/SCOLOR=253><永久增加1000血量 /SCOLOR=250><→ /SCOLOR=250><点击合成/@字体55>-----\
+-------------<需要 强 化 生 命 这四个字+狂风神靴>------------\
+<══════════════════════════════/SCOLOR=254>\
+
+[@字体44]
+#if
+CHECKGAMEGOLD > 9999999
+checkitem 狂风腰带 1
+CheckItem 强 1
+CheckItem 化 1
+CheckItem 生 1
+CheckItem 命 1
+#ACT
+goto @字体444
+#ELSEACT
+MessageBox 你字体根本不够，或者没有狂风腰带和1000W元宝，请检查背包物品
+break
+
+[@字体444]
+#if
+#act
+TAKE 强 1
+TAKE 化 1
+TAKE 生 1
+TAKE 命 1
+TAKE 狂风腰带 1
+GAMEGOLD - 10000000
+GIVE 屠魔腰带[生命] 1
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]成功合成了屠魔腰带[生命]，此物是稀罕之物，有神奇的属性★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]成功合成了屠魔腰带[生命]，此物是稀罕之物，有神奇的属性★★★★★
+break
+
+
+
+[@字体55]
+#if
+CHECKGAMEGOLD > 19999999
+checkitem 狂风神靴 1
+CheckItem 强 1
+CheckItem 化 1
+CheckItem 生 1
+CheckItem 命 1
+#ACT
+goto @字体555
+#ELSEACT
+MessageBox 你字体根本不够，或者没有狂风腰带和2000W元宝，请检查背包物品
+break
+
+[@字体555]
+#if
+#act
+TAKE 强 1
+TAKE 化 1
+TAKE 生 1
+TAKE 命 1
+TAKE 狂风神靴 1
+GAMEGOLD - 20000000
+GIVE 屠魔神靴[生命] 1
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]成功合成了屠魔神靴[生命]，此物是稀罕之物，有神奇的属性★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]成功合成了屠魔神靴[生命]，此物是稀罕之物，有神奇的属性★★★★★
+break
+
+
+

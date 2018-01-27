@@ -1,0 +1,133 @@
+[@main]
+\
+<Hot~> <[强悍生命最多只能强化到2级,无法重复强化]/SCOLOR=254> \
+<Hot~> <[血多攻高才是王道,但是强化生命每帐号只能强化一个角色]/SCOLOR=254> \
+<Hot~> <[强化生命一级需要六个字,分别为.[强.化.生.命.一.级]/SCOLOR=254> \
+<Hot~> <[强化生命二级需要六个字,分别为.[强.化.生.命.二.级]/SCOLOR=254> \
+<强化生命一级，这六个字分别在紫霞山庄，封印神殿地图爆出>\
+<══════════════════════════════/SCOLOR=254>\
+<[强化生命一级]/SCOLOR=253>< 永久增加 1000HP /SCOLOR=250><需要 2000万元宝> <→ /SCOLOR=250><点击强化/@领取装备8>  \
+<[强化生命二级]/SCOLOR=253>< 永久增加 1000HP /SCOLOR=250><需要 3000万元宝> <→ /SCOLOR=250><点击强化/@领取装备7>  \
+;<[强化生命三级]/SCOLOR=253>< 永久增加 3000HP /SCOLOR=250><需要 1000万元宝> <→ /SCOLOR=250><点击强化/@领取装备5>  \
+
+<══════════════════════════════/SCOLOR=254>\
+
+
+[@领取装备8]
+#if
+CHECK [76] 0
+checkitem 强 1
+checkitem 化 1
+checkitem 生 1
+checkitem 命 1
+checkitem 一 1
+checkitem 级 1
+CHECKGAMEGOLD > 19999999
+#ACT
+take 强 1
+take 化 1
+take 生 1
+take 命 1
+take 一 1
+take 级 1
+GAMEGOLD - 20000000
+goto @领取装备88
+#ELSEACT
+MessageBox 您已经激活过啦　或者你没有2000万元宝，条件不够！
+break
+
+[@领取装备88]
+#if
+checklevelex > 1
+#act
+SET [76] 1
+USEBONUSPOINT 6 + 1000
+SENDMSG 7 生命值上限增加1000点
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化生命一级人物生命永久增加1000点难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化生命一级人物生命永久增加1000点难道他是本F最牛B的人物★★★★★
+break
+
+
+
+[@领取装备7]
+#if
+CHECK [77] 0
+checkitem 强 1
+checkitem 化 1
+checkitem 生 1
+checkitem 命 1
+checkitem 二 1
+checkitem 级 1
+CHECKGAMEGOLD > 29999999
+#ACT
+take 强 1
+take 化 1
+take 生 1
+take 命 1
+take 二 1
+take 级 1
+GAMEGOLD - 30000000
+goto @领取装备77
+#ELSEACT
+MessageBox 您已经激活过啦　或者你没有3000万元宝，条件不够！
+break
+
+[@领取装备77]
+#if
+checklevelex > 1
+#act
+SET [77] 1
+USEBONUSPOINT 6 + 1000
+SENDMSG 7 生命值上限增加1000点
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化生命一级人物生命永久增加1000点难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化生命一级人物生命永久增加1000点难道他是本F最牛B的人物★★★★★
+break
+
+
+
+[@领取装备5]
+#if
+CHECK [75] 0
+CHECKGAMEGOLD > 9999999
+#ACT
+GAMEGOLD - 10000000
+goto @领取装备75
+#ELSEACT
+MessageBox 您已经激活过啦　或者你没有1000万元宝！
+break
+
+[@领取装备75]
+#if
+checklevelex > 1
+#act
+SET [75] 1
+USEBONUSPOINT 6 + 3000
+SENDMSG 7 生命值上限增加3000点
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化生命一级人物生命永久增加3000点难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化生命一级人物生命永久增加3000点难道他是本F最牛B的人物★★★★★
+break
+
+
+[@领取装备4]
+#if
+CHECK [74] 0
+CHECKGAMEGOLD > 1999999
+#ACT
+GAMEGOLD - 2000000
+goto @领取装备74
+#ELSEACT
+MessageBox 您已经激活过啦　或者你没有200万元宝！
+break
+
+[@领取装备74]
+#if
+checklevelex > 1
+#act
+SET [74] 1
+USEBONUSPOINT 6 + 50000
+SENDMSG 7 生命值上限增加50000点
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化生命一级人物生命永久增加50000点难道他是本F最牛B的人物★★★★★
+SendCenterMsg 249 151 ★★★★★恭喜！[%s]强化生命一级人物生命永久增加50000点难道他是本F最牛B的人物★★★★★
+break
+
+

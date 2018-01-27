@@ -1,0 +1,373 @@
+[@main]
+<你好！我是盘古伪使者，传说中的盘古神装你弄到手了？我可以为你解封。/SCOLOR=243>\\
+<解封神装需要：盘古残片1个（盘古残片只有此地图爆）、[伪]装备一件，手续费:8000W/SCOLOR=243>\\
+<盘古开天/@tls1a>  ┆<盘古镯[战]/@tls2a>┆<盘古链[战]/@tls3a>┆<盘古戒[战]/@tls4a>┆<盘古盔[战]/@tls5a>┆\
+<盘古章[战]/@tls6a>┆<盘古甲[战]/@tls7a>┆<盘古袍[战]/@tls8a>┆\
+<盘古魔剑/@sms1a>  ┆<盘古镯[法]/@sms2a>┆<盘古链[法]/@sms3a>┆<盘古戒[法]/@sms4a>┆<盘古盔[法]/@sms5a>┆\
+<盘古章[法]/@sms6a>┆<盘古甲[法]/@sms7a>┆<盘古袍[法]/@sms8a>┆\
+<盘古神剑/@rys1a>  ┆<盘古镯[道]/@rys2a>┆<盘古链[道]/@rys3a>┆<盘古戒[道]/@rys4a>┆<盘古盔[道]/@rys5a>┆\
+<盘古章[圣]/@rys6a>┆<盘古甲[道]/@rys7a>┆<盘古袍[道]/@rys8a>┆\
+<进入下一层地图坐标是30:12/SCOLOR=253>\\
+
+[@tls1a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古开天[战]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古开天[战]伪 1
+take 盘古残片 1
+give 盘古开天[战]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古开天[战]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@tls2a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古手镯[战]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古手镯[战]伪 1
+take 盘古残片 1
+give 盘古手镯[战]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古手镯[战]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@tls3a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古项链[战]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古项链[战]伪 1
+take 盘古残片 1
+give 盘古项链[战]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古项链[战]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@tls4a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古战戒[战]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古战戒[战]伪 1
+take 盘古残片 1
+give 盘古战戒[战]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古战戒[战]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@tls5a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古头盔[战]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古头盔[战]伪 1
+take 盘古残片 1
+give 盘古头盔[战]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古头盔[战]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@tls6a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古战章[战]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古战章[战]伪 1
+take 盘古残片 1
+give 盘古战章[战]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古战章[战]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@tls7a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古战甲[战]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古战甲[战]伪 1
+take 盘古残片 1
+give 盘古战甲[战]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古战甲[战]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@tls8a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古宝甲[战]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古宝甲[战]伪 1
+take 盘古残片 1
+give 盘古宝甲[战]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古宝甲[战]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+
+[@sms1a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古魔剑[魔]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古魔剑[魔]伪 1
+take 盘古残片 1
+give 盘古魔剑[魔]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古魔剑[魔]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@sms2a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古手镯[魔]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古手镯[魔]伪 1
+take 盘古残片 1
+give 盘古手镯[魔]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古手镯[魔]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@sms3a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古手镯[魔]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古手镯[魔]伪 1
+take 盘古残片 1
+give 盘古手镯[魔]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古手镯[魔]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@sms4a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古法戒[魔]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古法戒[魔]伪 1
+take 盘古残片 1
+give 盘古法戒[魔]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古法戒[魔]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@sms5a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古头盔[魔]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古头盔[魔]伪 1
+take 盘古残片 1
+give 盘古头盔[魔]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古头盔[魔]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@sms6a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古法章[魔]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古法章[魔]伪 1
+take 盘古残片 1
+give 盘古法章[魔]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古法章[魔]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@sms7a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古战甲[魔]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古战甲[魔]伪 1
+take 盘古残片 1
+give 盘古战甲[魔]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古战甲[魔]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@sms8a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古宝甲[魔]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古战甲[魔]伪 1
+take 盘古残片 1
+give 盘古宝甲[魔]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古宝甲[魔]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@rys1a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古神剑[道]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古神剑[道]伪 1
+take 盘古残片 1
+give 盘古神剑[道]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古神剑[道]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@rys2a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古手镯[道]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古手镯[道]伪 1
+take 盘古残片 1
+give 盘古手镯[道]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古手镯[道]伪◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@rys3a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古项链[道]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古项链[道]伪 1
+take 盘古残片 1
+give 盘古项链[道]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古项链[道]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@rys4a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古天戒[道]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古天戒[道]伪 1
+take 盘古残片 1
+give 盘古天戒[道]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古天戒[道]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@rys5a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古头盔[道]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古头盔[道]伪 1
+take 盘古残片 1
+give 盘古头盔[道]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古头盔[道]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@rys6a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古天章[道]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古天章[道]伪 1
+take 盘古残片 1
+give 盘古天章[道]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古天章[道]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@rys7a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古战甲[道]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古战甲[道]伪 1
+take 盘古残片 1
+give 盘古战甲[道]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古战甲[道]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@rys8a]
+#if
+checkitem 盘古残片 1
+checkitem 盘古宝甲[道]伪 1
+checkgamegold > 80000000
+#ACT
+GAMEGOLD - 80000000
+take 盘古宝甲[道]伪 1
+take 盘古残片 1
+give 盘古宝甲[道]  1
+SENDMSG 1 恭喜[%s]在盘古通道,成功解封◇盘古宝甲[道]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！

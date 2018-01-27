@@ -1,0 +1,371 @@
+[@main]
+<你好！我是龙王封印者，传说中的千年神装你弄到手了？我可以为你解封。/SCOLOR=250>\\
+<解封神装需要：封印之石1个+1000万元宝（封印之石任何地图都爆）、[封]印装备一件/SCOLOR=250>\\
+<逆天神斩/@tls1>  ┆<逆天镯[圣]/@tls2>┆<逆天链[圣]/@tls3>┆<逆天戒[圣]/@tls4>┆<逆天盔[圣]/@tls5>┆\
+<逆天章[圣]/@tls6>┆<逆天甲[圣]/@tls7>┆<逆天袍[圣]/@tls8>┆\
+<断魂神杖/@sms1>  ┆<断魂镯[圣]/@sms2>┆<断魂链[圣]/@sms3>┆<断魂戒[圣]/@sms4>┆<断魂盔[圣]/@sms5>┆\
+<断魂章[圣]/@sms6>┆<断魂甲[圣]/@sms7>┆<断魂袍[圣]/@sms8>┆\
+<荣耀神扇/@rys1>  ┆<荣耀镯[圣]/@rys2>┆<荣耀链[圣]/@rys3>┆<荣耀戒[圣]/@rys4>┆<荣耀盔[圣]/@rys5>┆\
+<荣耀章[圣]/@rys6>┆<荣耀甲[圣]/@rys7>┆<荣耀袍[圣]/@rys8>┆\
+
+[@tls1]
+#if
+checkitem 封印之石 1
+checkitem 逆天神斩[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 逆天神斩[封] 1
+take 封印之石 1
+give 逆天神斩[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇逆天神斩[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@tls2]
+#if
+checkitem 封印之石 1
+checkitem 逆天圣战镯[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 逆天圣战镯[封] 1
+take 封印之石 1
+give 逆天圣战镯[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇逆天圣战镯[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@tls3]
+#if
+checkitem 封印之石 1
+checkitem 逆天圣战链[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 逆天圣战链[封] 1
+take 封印之石 1
+give 逆天圣战链[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇逆天圣战链[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@tls4]
+#if
+checkitem 封印之石 1
+checkitem 逆天圣战戒[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 逆天圣战戒[封] 1
+take 封印之石 1
+give 逆天圣战戒[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇逆天圣战戒[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@tls5]
+#if
+checkitem 封印之石 1
+checkitem 逆天圣战盔[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 逆天圣战盔[封] 1
+take 封印之石 1
+give 逆天圣战盔[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇逆天圣战盔[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@tls6]
+#if
+checkitem 封印之石 1
+checkitem 逆天圣战章[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 逆天圣战章[封] 1
+take 封印之石 1
+give 逆天圣战章[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇逆天圣战章[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@tls7]
+#if
+checkitem 封印之石 1
+checkitem 逆天圣战甲[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 逆天圣战甲[封] 1
+take 封印之石 1
+give 逆天圣战甲[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇逆天圣战甲[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@tls8]
+#if
+checkitem 封印之石 1
+checkitem 逆天圣战袍[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 逆天圣战袍[封] 1
+take 封印之石 1
+give 逆天圣战袍[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇逆天圣战袍[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+
+[@sms1]
+#if
+checkitem 封印之石 1
+checkitem 断魂神杖[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 断魂神杖[封] 1
+take 封印之石 1
+give 断魂神杖[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇断魂神杖[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@sms2]
+#if
+checkitem 封印之石 1
+checkitem 断魂法神镯[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 断魂法神镯[封] 1
+take 封印之石 1
+give 断魂法神镯[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇断魂法神镯[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@sms3]
+#if
+checkitem 封印之石 1
+checkitem 断魂法神链[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 断魂法神链[封] 1
+take 封印之石 1
+give 断魂法神链[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇断魂法神链[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@sms4]
+#if
+checkitem 封印之石 1
+checkitem 断魂法神戒[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 断魂法神戒[封] 1
+take 封印之石 1
+give 断魂法神戒[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇断魂法神戒[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@sms5]
+#if
+checkitem 封印之石 1
+checkitem 断魂法神盔[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 断魂法神盔[封] 1
+take 封印之石 1
+give 断魂法神盔[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇断魂法神盔[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@sms6]
+#if
+checkitem 封印之石 1
+checkitem 断魂法神章[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 断魂法神章[封] 1
+take 封印之石 1
+give 断魂法神章[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇断魂法神章[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@sms7]
+#if
+checkitem 封印之石 1
+checkitem 断魂法神甲[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 断魂法神甲[封] 1
+take 封印之石 1
+give 断魂法神甲[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇断魂法神甲[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@sms8]
+#if
+checkitem 封印之石 1
+checkitem 断魂法神袍[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 断魂法神袍[封] 1
+take 封印之石 1
+give 断魂法神袍[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇断魂法神袍[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@rys1]
+#if
+checkitem 封印之石 1
+checkitem 荣耀神扇[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 荣耀神扇[封] 1
+take 封印之石 1
+give 荣耀神扇[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇荣耀神扇[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@rys2]
+#if
+checkitem 封印之石 1
+checkitem 荣耀天尊镯[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 荣耀天尊镯[封] 1
+take 封印之石 1
+give 荣耀天尊镯[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇荣耀天尊镯[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@rys3]
+#if
+checkitem 封印之石 1
+checkitem 荣耀天尊链[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 荣耀天尊链[封] 1
+take 封印之石 1
+give 荣耀天尊链[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇荣耀天尊链[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@rys4]
+#if
+checkitem 封印之石 1
+checkitem 荣耀天尊戒[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 荣耀天尊戒[封] 1
+take 封印之石 1
+give 荣耀天尊戒[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇荣耀天尊戒[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@rys5]
+#if
+checkitem 封印之石 1
+checkitem 荣耀天尊盔[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 荣耀天尊盔[封] 1
+take 封印之石 1
+give 荣耀天尊盔[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇荣耀天尊盔[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@rys6]
+#if
+checkitem 封印之石 1
+checkitem 荣耀天尊章[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 荣耀天尊章[封] 1
+take 封印之石 1
+give 荣耀天尊章[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇荣耀天尊章[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@rys7]
+#if
+checkitem 封印之石 1
+checkitem 荣耀天尊甲[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 荣耀天尊甲[封] 1
+take 封印之石 1
+give 荣耀天尊甲[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇荣耀天尊甲[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+
+[@rys8]
+#if
+checkitem 封印之石 1
+checkitem 荣耀天尊袍[封] 1
+CHECKGAMEGOLD > 9999999
+#ACT 
+GAMEGOLD - 10000000
+take 荣耀天尊袍[封] 1
+take 封印之石 1
+give 荣耀天尊袍[圣]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功解封◇荣耀天尊袍[圣]◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！

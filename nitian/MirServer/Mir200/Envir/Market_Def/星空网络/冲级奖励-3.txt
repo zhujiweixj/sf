@@ -1,0 +1,1064 @@
+[@main]
+#IF
+EQUAL G470 1
+#SAY
+达到等级领取<升级奖品/SCOLOR=250>，名额有限，注意背包<至少留3格空位/SCOLOR=250>！\
+<领取/@70>【60】奖品：<疗伤-礼包/AUTOCOLOR=244>  <领取/@150>【100】奖品：<护体-神盾/AUTOCOLOR=244>\
+<领取/@80>【65】奖品：<红名-清洗/AUTOCOLOR=244>  <领取/@160>【110】奖品：<聚宝盒+100万元宝/AUTOCOLOR=244>\
+<领取/@90>【70】奖品：<狂风-项链/AUTOCOLOR=244>  <领取/@230>【120】奖品：<狂风腰带/AUTOCOLOR=244>\
+<领取/@100>【75】奖品：<祝福油5个/AUTOCOLOR=244>  <领取/@250>【130】奖品：<狂风神靴/AUTOCOLOR=244>\
+<领取/@110>【80】奖品：<狂风-戒指/AUTOCOLOR=244>  <领取/@270>【140】奖品：<1000万元宝/AUTOCOLOR=244>\
+<领取/@120>【85】奖品：<三亿-经验/AUTOCOLOR=244>  <领取/@280>【150】奖品：<2000万元宝/AUTOCOLOR=244>\
+<领取/@130>【90】奖品：<传音(大)5/AUTOCOLOR=244>  <领取/@350>【160】奖品：<至尊斗笠/AUTOCOLOR=244>\
+<领取/@140>【95】奖品：<10万-元宝/AUTOCOLOR=244>  <163级系统自动送☆盘古守护☆，165系统自动送仙龙爪/AUTOCOLOR=244>\
+                                                  
+<如果你是非ＲＭＢ玩家，多花时间照样牛Ｘ！喜欢就支持本游戏哦亲！>\
+                                                                    
+#ELSEACT
+MOV G468 1000
+MOV G469 1000
+MOV G470 1
+MOV G471 1000
+MOV G472 1000
+MOV G473 1000
+MOV G474 1000
+MOV G475 1000
+MOV G476 1000
+MOV G477 1000
+MOV G478 1000
+MOV G479 1000
+MOV G485 1000
+MOV G486 1000
+MOV G487 1000
+MOV G488 1000
+MOV G490 1000
+MOV G491 1000
+MOV G492 1000
+MOV G493 1000
+MOV G494 1000
+MOV G495 1000
+MOV G496 1000
+MOV G497 1000
+MOV G498 1000
+MOV G499 1000
+goto @main
+
+
+
+
+
+[@350]
+#if
+CHECKLEVELEX > 159
+#act
+goto @350a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G472)>个剩余名额！<离开/@exit>\
+
+[@350a]
+#if
+check [472] 0
+#act
+goto @350b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+
+[@350b]
+#if
+CHECKLEVELEX > 159
+check [472] 0
+LARGE G472 0
+#act
+goto @350c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@350c]
+#if
+CHECKLEVELEX > 159
+check [472] 0
+LARGE G472 0
+#act
+give 至尊斗笠 1
+DEC G472 1
+SET [472] 1
+SendCenterMsg 254 0 《%s》顺利冲到160级并领取[至尊斗笠] 1！ 1 4
+SENDMSG 0 《%s》顺利冲到160级并领取[至尊斗笠]！
+SENDMSG 0 《%s》顺利冲到160级并领取[至尊斗笠]！
+SENDMSG 0 《%s》顺利冲到160级并领取[至尊斗笠]！
+
+[@280]
+#if
+CHECKLEVELEX > 149
+#act
+goto @280a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G473)>个剩余名额！<离开/@exit>\
+
+[@280a]
+#if
+check [473] 0
+#act
+goto @280b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@280b]
+#if
+CHECKLEVELEX > 149
+check [473] 0
+LARGE G473 0
+#act
+goto @280c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+
+
+[@280c]
+#if
+CHECKLEVELEX > 149
+check [473] 0
+LARGE G473 0
+#act
+give 2000万元宝 1
+DEC G473 1
+SET [473] 1
+SendCenterMsg 254 0 《%s》顺利冲到150级并领取[2000万元宝]！ 1 4
+SENDMSG 0 《%s》顺利冲到150级并领取[2000万元宝]！
+SENDMSG 0 《%s》顺利冲到150级并领取[2000万元宝]！
+SENDMSG 0 《%s》顺利冲到150级并领取[2000万元宝]！
+
+
+
+[@270]
+#if
+CHECKLEVELEX > 139
+#act
+goto @270a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G474)>个剩余名额！<离开/@exit>\
+
+[@270a]
+#if
+check [474] 0
+#act
+goto @270b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@270b]
+#if
+CHECKLEVELEX > 139
+check [474] 0
+LARGE G474 0
+#act
+goto @270c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@270c]
+#if
+CHECKLEVELEX > 139
+check [474] 0
+LARGE G474 0
+#act
+give 1000万元宝 1
+DEC G474 1
+SET [474] 1
+SendCenterMsg 254 0 《%s》顺利冲到140级并领取[1000万元宝]！ 1 4
+SENDMSG 0 《%s》顺利冲到140级并领取[1000万元宝]！
+SENDMSG 0 《%s》顺利冲到140级并领取[1000万元宝]！
+SENDMSG 0 《%s》顺利冲到140级并领取[1000万元宝]！
+
+
+
+
+
+[@260]
+#if
+CHECKLEVELEX > 259
+#act
+goto @260a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G475)>个剩余名额！<离开/@exit>\
+
+[@260a]
+#if
+check [475] 0
+#act
+goto @260b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@260b]
+#if
+CHECKLEVELEX > 259
+check [475] 0
+LARGE G475 0
+#act
+goto @260c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@260c]
+#if
+CHECKLEVELEX > 259
+check [475] 0
+LARGE G475 0
+#act
+give 乾坤狼∈麻痹 1
+DEC G475 1
+SET [475] 1
+SendCenterMsg 254 0 《%s》顺利冲到260级并领取[乾坤狼∈麻痹]，现在260级冲级奖励名额还剩<$STR(G475)>个！ 1 4
+SENDMSG 0 《%s》顺利冲到260级并领取[乾坤狼∈麻痹]，现在260级冲级奖励名额还剩<$STR(G475)>个！
+SENDMSG 0 《%s》顺利冲到260级并领取[乾坤狼∈麻痹]，现在260级冲级奖励名额还剩<$STR(G475)>个！
+SENDMSG 0 《%s》顺利冲到260级并领取[乾坤狼∈麻痹]，现在260级冲级奖励名额还剩<$STR(G475)>个！
+
+
+
+
+
+[@250]
+#if
+CHECKLEVELEX > 129
+#act
+goto @250a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G476)>个剩余名额！<离开/@exit>\
+
+[@250a]
+#if
+check [476] 0
+#act
+goto @250b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@250b]
+#if
+CHECKLEVELEX > 129
+check [476] 0
+LARGE G476 0
+#act
+goto @250c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@250c]
+#if
+CHECKLEVELEX > 129
+check [476] 0
+LARGE G476 0
+#act
+give 狂风神靴 1
+DEC G476 1
+SET [476] 1
+SendCenterMsg 254 0 《%s》顺利冲到130级并领取[狂风神靴]！ 1 4
+SENDMSG 0 《%s》顺利冲到130级并领取[狂风神靴]！
+
+
+
+
+
+
+[@230]
+#if
+CHECKLEVELEX > 119
+#act
+goto @230a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G478)>个剩余名额！<离开/@exit>\
+
+[@230a]
+#if
+check [477] 0
+#act
+goto @230b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@230b]
+#if
+CHECKLEVELEX > 119
+check [477] 0
+LARGE G477 0
+#act
+goto @230c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@230c]
+#if
+CHECKLEVELEX > 119
+check [477] 0
+LARGE G477 0
+#act
+give 狂风腰带 1
+DEC G477 1
+SET [477] 1
+SendCenterMsg 254 0 《%s》顺利冲到120级并领取[狂风腰带]！ 1 4
+SENDMSG 0 《%s》顺利冲到120级并领取[狂风腰带]！
+
+
+
+
+
+
+
+
+
+[@210]
+#if
+CHECKLEVELEX > 209
+#act
+goto @210a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G485)>个剩余名额！<离开/@exit>\
+
+[@210a]
+#if
+check [478] 0
+#act
+goto @210b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@210b]
+#if
+CHECKLEVELEX > 209
+check [478] 0
+LARGE G478 0
+#act
+goto @210c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@210c]
+#if
+CHECKLEVELEX > 209
+check [478] 0
+LARGE G478 0
+#act
+give 终极护身戒指 1
+DEC G478 1
+SET [478] 1
+SendCenterMsg 254 0 《%s》顺利冲到210级并领取[终极护身戒指]，现在210级冲级奖励名额还剩<$STR(G488)>个！ 1 4
+SENDMSG 0 《%s》顺利冲到210级并领取[终极护身戒指]，现在210级冲级奖励名额还剩<$STR(G478)>个！
+SENDMSG 0 《%s》顺利冲到210级并领取[终极护身戒指]，现在210级冲级奖励名额还剩<$STR(G478)>个！
+SENDMSG 0 《%s》顺利冲到210级并领取[终极护身戒指]，现在210级冲级奖励名额还剩<$STR(G478)>个！
+
+
+
+
+
+[@200]
+#if
+CHECKLEVELEX > 199
+#act
+goto @200a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G479)>个剩余名额！<离开/@exit>\
+
+[@200a]
+#if
+check [479] 0
+#act
+goto @200b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@200b]
+#if
+CHECKLEVELEX > 199
+check [479] 0
+LARGE G479 0
+#act
+goto @200c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@200c]
+#if
+CHECKLEVELEX > 199
+check [479] 0
+LARGE G479 0
+#act
+give 终极麻痹戒指 1
+DEC G479 1
+SET [479] 1
+SendCenterMsg 254 0 《%s》顺利冲到200级并领取[终极麻痹戒指]，现在200级冲级奖励名额还剩<$STR(G479)>个！ 1 4
+SENDMSG 0 《%s》顺利冲到200级并领取[终极麻痹戒指]，现在200级冲级奖励名额还剩<$STR(G479)>个！
+SENDMSG 0 《%s》顺利冲到200级并领取[终极麻痹戒指]，现在200级冲级奖励名额还剩<$STR(G479)>个！
+SENDMSG 0 《%s》顺利冲到200级并领取[终极麻痹戒指]，现在200级冲级奖励名额还剩<$STR(G479)>个！
+
+
+
+
+
+[@180]
+#if
+CHECKLEVELEX > 179
+#act
+goto @180a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G488)>个剩余名额！<离开/@exit>\
+
+[@180a]
+#if
+check [485] 0
+#act
+goto @180b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@180b]
+#if
+CHECKLEVELEX > 179
+check [485] 0
+LARGE G485 0
+#act
+goto @180c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@180c]
+#if
+CHECKLEVELEX > 179
+check [485] 0
+LARGE G485 0
+#act
+give 精品护身戒指 1
+DEC G485 1
+SET [485] 1
+SendCenterMsg 254 0 《%s》顺利冲到180级并领取[精品护身戒指]，现在180级冲级奖励名额还剩<$STR(G485)>个！ 1 4
+SENDMSG 0 《%s》顺利冲到180级并领取[精品护身戒指]，现在180级冲级奖励名额还剩<$STR(G485)>个！
+SENDMSG 0 《%s》顺利冲到180级并领取[精品护身戒指]，现在180级冲级奖励名额还剩<$STR(G485)>个！
+SENDMSG 0 《%s》顺利冲到180级并领取[精品护身戒指]，现在180级冲级奖励名额还剩<$STR(G485)>个！
+
+
+
+
+
+[@170]
+#if
+CHECKLEVELEX > 169
+#act
+goto @170a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G486)>个剩余名额！<离开/@exit>\
+
+[@170a]
+#if
+check [486] 0
+#act
+goto @170b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@170b]
+#if
+CHECKLEVELEX > 169
+check [486] 0
+LARGE G486 0
+#act
+goto @170c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@170c]
+#if
+CHECKLEVELEX > 169
+check [486] 0
+LARGE G486 0
+#act
+give 精品麻痹戒指 1
+DEC G486 1
+SET [486] 1
+SendCenterMsg 254 0 《%s》顺利冲到170级并领取[精品麻痹戒指]，现在170级冲级奖励名额还剩<$STR(G486)>个！ 1 4
+SENDMSG 0 《%s》顺利冲到170级并领取[精品麻痹戒指]，现在170级冲级奖励名额还剩<$STR(G486)>个！
+SENDMSG 0 《%s》顺利冲到170级并领取[精品麻痹戒指]，现在170级冲级奖励名额还剩<$STR(G486)>个！
+SENDMSG 0 《%s》顺利冲到170级并领取[精品麻痹戒指]，现在170级冲级奖励名额还剩<$STR(G486)>个！
+
+
+
+
+
+
+[@160]
+#if
+CHECKLEVELEX > 109
+#act
+goto @160a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G487)>个剩余名额！<离开/@exit>\
+
+[@160a]
+#if
+check [487] 0
+#act
+goto @160b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@160b]
+#if
+CHECKLEVELEX > 109
+check [487] 0
+LARGE G487 0
+#act
+goto @160c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@160c]
+#if
+CHECKLEVELEX > 109
+check [487] 0
+LARGE G487 0
+#act
+give 聚宝盒 1
+GIVE 100万元宝 1
+DEC G487 1
+SET [487] 1
+SendCenterMsg 254 0 《%s》顺利冲到110级并领取[聚宝盒]和100W元宝！ 1 4
+SENDMSG 0 《%s》顺利冲到110级并领取[聚宝盒]和100W元宝！
+
+
+
+[@150]
+#if
+CHECKLEVELEX > 99
+#act
+goto @150a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G488)>个剩余名额！<离开/@exit>\ \ \ \ \ \ \ \
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+< /@l50a>
+[@150a]
+#if
+check [488] 0
+#act
+goto @150b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@150b]
+#if
+CHECKLEVELEX > 99
+check [488] 0
+LARGE G488 0
+#act
+goto @150c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@150c]
+#if
+CHECKLEVELEX > 99
+check [488] 0
+LARGE G488 0
+#act
+give 护体神盾 1
+DEC G488 1
+SET [488] 1
+SendCenterMsg 254 0 《%s》顺利冲到100级并领取[护体神盾]！ 1 4
+SENDMSG 0 《%s》顺利冲到100级并领取[护体神盾]！
+
+
+
+[@140]
+#if
+CHECKLEVELEX > 94
+#act
+goto @140a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G490)>个剩余名额！<离开/@exit>\
+
+[@l50a]
+#IF
+CHECKLEVELEX = 70
+#SAY
+对不起，你等级没达到，无法领取物品\ \ \ \ \ \ \ \ \
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+< /@l40a>
+[@140a]
+#if
+check [490] 0
+#act
+goto @140b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@l40a]
+#IF
+CheckLevelEx > 1
+#ACT
+Movr M91 1 888
+DelayCall 3000 @l20a
+Break
+#say
+<赶紧升级吧！！……/SCOLOR=254>\
+[@140b]
+#if
+CHECKLEVELEX > 94
+check [490] 0
+LARGE G490 0
+#act
+goto @140c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@140c]
+#if
+CHECKLEVELEX > 94
+check [490] 0
+LARGE G490 0
+#act
+give 100000元宝 1
+DEC G490 1
+SET [490] 1
+SendCenterMsg 254 0 《%s》顺利冲到95级并领取[元宝]10万！ 1 4
+SENDMSG 0 《%s》顺利冲到95级并领取[元宝]10万！
+
+[@130]
+#if
+CHECKLEVELEX > 89
+#act
+goto @130a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G491)>个剩余名额！<离开/@exit>\
+
+[@130a]
+#if
+check [491] 0
+#act
+goto @130b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@130b]
+#if
+CHECKLEVELEX > 89
+check [491] 0
+LARGE G491 0
+#act
+goto @130c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@130c]
+#if
+CHECKLEVELEX > 89
+check [491] 0
+LARGE G491 0
+#act
+give 千里传音(大) 5
+DEC G491 1
+SET [491] 1
+SendCenterMsg 254 0 《%s》顺利冲到90级并领取[千里传音(大)]5个！ 1 4
+SENDMSG 0 《%s》顺利冲到90级并领取[千里传音(大)]5个！
+
+
+[@120]
+#if
+CHECKLEVELEX > 84
+#act
+goto @120a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G492)>个剩余名额！<离开/@exit>\
+
+[@l20a]
+#IF
+EQUAL M80 122
+#ACT
+Mov M91 0
+mov M76 166
+#say
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧！
+
+[@120a]
+#if
+check [492] 0
+#act
+goto @120b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@120b]
+#if
+CHECKLEVELEX > 84
+check [492] 0
+LARGE G492 0
+#act
+goto @120c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@120c]
+#if
+CHECKLEVELEX > 84
+check [492] 0
+LARGE G492 0
+#act
+CHANGEEXP + 300000000
+DEC G492 1
+SET [492] 1
+SendCenterMsg 254 0 《%s》顺利冲到85级并领取[3亿经验]！ 1 4
+SENDMSG 0 《%s》顺利冲到85级并领取[3亿经验]！
+
+
+[@110]
+#if
+CHECKLEVELEX > 79
+#act
+goto @110a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G493)>个剩余名额！<离开/@exit>\
+
+[@110a]
+#if
+check [493] 0
+#act
+goto @110b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@110b]
+#if
+CHECKLEVELEX > 79
+check [493] 0
+LARGE G493 0
+#act
+goto @110c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@110c]
+#if
+CHECKLEVELEX >  79
+check [493] 0
+LARGE G493 0
+#act
+give 狂风戒指(靴) 1
+DEC G493 1
+SET [493] 1
+SendCenterMsg 254 0 《%s》顺利冲到80级并领取[狂风戒指]！ 1 4
+SENDMSG 0 《%s》顺利冲到80级并领取[狂风戒指]！
+
+
+
+
+
+
+
+
+
+[@100]
+#if
+CHECKLEVELEX > 74
+#act
+goto @100a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G496)>个剩余名额！<离开/@exit>\
+
+[@100a]
+#if
+check [496] 0
+#act
+goto @100b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@100b]
+#if
+CHECKLEVELEX > 74
+check [496] 0
+LARGE G496 0
+#act
+goto @100c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@100c]
+#if
+CHECKLEVELEX > 74
+check [496] 0
+LARGE G496 0
+#act
+give 超级祝福油 5
+DEC G496 1
+SET [496] 1
+SendCenterMsg 254 0 《%s》顺利冲到75级并领取[超级祝福油5个]！ 1 4
+SENDMSG 0 《%s》顺利冲到75级并领取[超级祝福油5个]！
+
+
+
+
+
+
+[@90]
+#if
+CHECKLEVELEX > 69
+#act
+goto @90a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G497)>个剩余名额！<离开/@exit>\
+
+[@90a]
+#if
+check [497] 0
+#act
+goto @90b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@90b]
+#if
+CHECKLEVELEX > 69
+check [497] 0
+LARGE G497 0
+#act
+goto @90c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@90c]
+#if
+CHECKLEVELEX > 69
+check [497] 0
+LARGE G497 0
+#act
+give 狂风项链(带) 1
+DEC G497 1
+SET [497] 1
+SendCenterMsg 254 0 《%s》顺利冲到70级并领取[狂风项链]！ 1 4
+SENDMSG 0 《%s》顺利冲到70级并领取[狂风项链]！
+
+
+
+
+
+
+
+[@80]
+#if
+CHECKLEVELEX > 64
+#act
+goto @80a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G498)>个剩余名额！<离开/@exit>\
+
+[@80a]
+#if
+check [498] 0
+#act
+goto @80b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@80b]
+#if
+CHECKLEVELEX > 64
+check [498] 0
+LARGE G498 0
+#act
+goto @80c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@80c]
+#if
+CHECKLEVELEX > 64
+check [498] 0
+LARGE G498 0
+#act
+give 红名清洗卡 1
+DEC G498 1
+SET [498] 1
+SendCenterMsg 254 0 《%s》顺利冲到65级并领取[红名清洗卡]！ 1 4
+SENDMSG 0 《%s》顺利冲到65级并领取[红名清洗卡]！
+
+
+
+
+
+
+[@70]
+#if
+CHECKLEVELEX > 59
+#act
+goto @70a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(G499)>个剩余名额！<离开/@exit>\
+
+[@70a]
+#if
+check [499] 0
+#act
+goto @70b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@70b]
+#if
+CHECKLEVELEX > 59
+check [499] 0
+LARGE G499 0
+#act
+goto @70c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+
+[@70c]
+#if
+CHECKLEVELEX > 59
+check [499] 0
+LARGE G499 0
+#act
+give 疗伤大礼包 1
+DEC G499 1
+SET [499] 1
+SendCenterMsg 254 0 《%s》顺利冲到60级并领取[疗伤大礼包]1个！ 1 4
+SENDMSG 0 《%s》顺利冲到60级并领取[疗伤大礼包]1个！
+

@@ -1,0 +1,81 @@
+[@main]
+\ \
+是找人来激情？找我你就找对人了！(攻沙时间只能使用全服叫阵)\ \
+<2000元宝我就可以为你在全服叫阵一次！>  元宝数量:<$GAMEGOLD>个\
+<5000元宝我就可以为你放出行会支援令！>  <返回盟重/@盟重>\
+<10000元宝我就可以为你放出全服激情令！>  <关    闭/@EXIT>\ \	
+
+<发布个人叫阵/@叫阵> | <发布行会支援令/@行会> | <发布全服激情令/@全服>\
+
+
+[@叫阵]
+#IF
+checkgamegold > 1999
+#ACT
+gamegold - 2000
+GuildNoticeMsg 255 220 《∷『<$USERNAME>』站在元宝PK场一跺脚:“哪个不服的给我站出来！”，现在杀他可获得1W元宝奖励！有仇的快来报仇啊！
+GuildNoticeMsg 255 220 《∷『<$USERNAME>』站在元宝PK场一跺脚:“哪个不服的给我站出来！”，现在杀他可获得1W元宝奖励！有仇的快来报仇啊！
+GuildNoticeMsg 255 220 《∷『<$USERNAME>』站在元宝PK场一跺脚:“哪个不服的给我站出来！”，现在杀他可获得1W元宝奖励！有仇的快来报仇啊！
+goto @main
+BREAK
+#ELSEACT
+MESSAGEBOX 你有足够的元宝吗？还是您没有加入任何行会？
+BREAK
+                          
+
+
+[@行会]
+#if
+checkcastlewar 0
+#ACT
+MESSAGEBOX 攻沙时间不允许使用该功能！
+#ELSEACT
+GOTO @行会支援
+
+[@行会支援]
+#IF
+HaveGuild
+checkgamegold > 4999
+#ACT
+gamegold - 5000
+MOV A300 <$GUILDNAME>
+MOV A301 <$USERNAME>
+Gmexecute 开始提问 @行会支援令
+SENDMSG 7 行会支援令已放出，请等待你的援军！
+SENDMSG 7 行会支援令已放出，请等待你的援军！
+SENDMSG 7 行会支援令已放出，请等待你的援军！
+BREAK
+#ELSEACT
+MESSAGEBOX 你有足够的元宝吗？还是您没有加入任何行会？
+BREAK
+
+[@全服]
+#if
+checkcastlewar 0
+#ACT
+MESSAGEBOX 攻沙时间不允许使用该功能！
+#ELSEACT
+GOTO @全服邀请
+
+[@全服邀请]
+#IF
+checkgamegold > 9999
+#ACT
+gamegold - 10000
+MOV A300 <$GUILDNAME>
+MOV A301 <$USERNAME>
+Gmexecute 开始提问 @全服激情令
+SENDMSG 7 全服激情令已放出，请等待激情的降临！
+SENDMSG 7 全服激情令已放出，请等待激情的降临！
+SENDMSG 7 全服激情令已放出，请等待激情的降临！
+BREAK
+#ELSEACT
+MESSAGEBOX 你有足够的元宝吗？
+BREAK
+
+
+[@盟重]
+#IF
+#ACT
+mapmove 3 330 330 
+BREAK

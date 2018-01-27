@@ -1,0 +1,30 @@
+[@main]
+#IF
+hour 20 20
+min   1 30
+ISGUILDMASTER
+MapHumIsSameGuild 1
+#act
+goto @领奖
+break
+#ELSEACT
+messagebox 你现在不能领奖可能性有几种\1.行会争霸还没有结束哦请等到20:00-20:30点之间再来领取！\2.你没有行会或者此地图还有别个行会的人.\3.你不是行会老大.\
+
+
+
+[@领奖]
+#if
+#ACT
+Gmexecute 集体传送 9004  0159
+GAMEGOLD + 3888888
+mapmove 3 330 330
+GuildNoticeMsg 0  253 恭喜(%s)获得行会争霸的胜利，系统给予388万元宝！！！
+GuildNoticeMsg 0  253 恭喜(%s)获得行会争霸的胜利，系统给予388万元宝！！！
+GuildNoticeMsg 0  253 恭喜(%s)获得行会争霸的胜利，系统给予388万元宝！！！
+GuildNoticeMsg 0  253 恭喜(%s)获得行会争霸的胜利，系统给予388万元宝！！！
+GuildNoticeMsg 0  253 恭喜(%s)获得行会争霸的胜利，系统给予388万元宝！！！
+GuildNoticeMsg 0  253 恭喜(%s)获得行会争霸的胜利，系统给予388万元宝！！！
+GuildNoticeMsg 0  253 每晚7:30--8:00点准时开放!！！！
+
+
+

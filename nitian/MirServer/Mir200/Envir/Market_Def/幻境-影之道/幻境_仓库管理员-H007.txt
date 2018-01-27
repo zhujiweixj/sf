@@ -1,0 +1,4 @@
+
+(@storage @getback )
+[@main]
+#CALL [\\城市商人\保管员.txt] @保管员

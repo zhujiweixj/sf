@@ -1,0 +1,154 @@
+[@main]
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+<Img:11:0><新手级:新手天堂/@进入新手>：<限100级以下，每秒/SCOLOR=253><10W经验/SCOLOR=250><边打装备边泡点/SCOLOR=253>\
+…………………………………………………………………………\
+<Img:11:0><贵族泡点:闭关泡点/@闭关修炼>：<每秒6000元宝，每秒/SCOLOR=250>→<600W经验/SCOLOR=250><(小老板才进)/SCOLOR=253>\
+…………………………………………………………………………\
+<Img:11:0><爆发户:终极泡点/@爆发户修炼地图>：<每秒10W元宝，每秒/SCOLOR=253>→<1亿经验/SCOLOR=250><(爆发户才进)/SCOLOR=253>\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+<注：贵族闭关泡点，爆发户终极泡点，大退可离线泡点/SCOLOR=253>\
+<为了给大家提供长久稳定服务，特开通元宝泡点，感谢支持厚爱！/SCOLOR=250>\
+
+[@爆发户修炼地图]
+#IF
+CHECKGAMEGOLD > 99999
+CHECKLEVELEX < 161
+#ACT
+SetOnTimer 5 1
+MAP huiyuan
+GuildNoticeMsg 255 245 大老板【<$USERNAME>】已得到进入爆发户休息房修炼每秒1亿经验。
+GuildNoticeMsg 255 245 大老板【<$USERNAME>】已得到进入爆发户休息房修炼每秒1亿经验。
+SendCenterMsg 180 251 大老板【<$USERNAME>】进入了[爆发户修炼地图]看来是要冲顶级去了.. 1
+BREAK
+#say
+　　　　　　　　　　　元宝泡点说明\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+在本地图大退后可以离线泡点（前提是要有足够的元宝哦，亲）\
+在本地图大退后可以离线泡点（前提是要有足够的元宝哦，亲）\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+　\
+
+#elseact
+MESSAGEBOX 你等级太低或者元宝不够8W。别进去掺和了。
+
+
+
+
+[@经验卷]
+　\
+100000元宝兑换一个1亿经验卷并且只能在130级以下使用。\
+你确定要兑换吗？\
+<友情提示：兑换前请注意包袱空格，掉地上被人拣了不包补哦~/SCOLOR=250>\
+　\
+　　　　　　　<兑换1个/@换1个> | <兑换10个/@换10个> | <返回/@Main>\　\
+
+
+[@换1个]
+#IF
+CHECKGAMEGOLD > 99999
+CHECKBAGSIZE  1
+#ACT
+GAMEGOLD - 100000
+give 1亿经验卷 1
+GuildNoticeMsg 255 245 爆发户[%s]通过“泡点升级”NPC购买了1亿经验卷一个！
+#elseact
+MESSAGEBOX 失败！元宝或者背包空位不足！
+
+[@换10个]
+#IF
+CHECKGAMEGOLD > 999999
+#ACT
+GAMEGOLD - 1000000
+give 1亿经验卷 10
+GuildNoticeMsg 255 245 爆发户[%s]通过“泡点升级”NPC购买了1亿经验卷十个！
+#elseact
+MESSAGEBOX 失败！元宝或者背包空位不足！
+
+[@进入新手]
+#IF
+CHECKLEVELEX < 100
+#ACT
+SetOnTimer 3 1
+MAPMOVE hu1 81 83
+give 回城卷
+GuildNoticeMsg 255 245 小菜鸟[%s]进入了▄新手天堂▄边打怪边获得每秒{20万经验}
+BREAK
+#elseact
+MESSAGEBOX 你等级超过100级了，不再是新手了,所以不能进去掺和了。
+
+
+[@练级包厢]
+#SAY
+　\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+入场费5W元宝，每5万元宝可以刷10只白野猪，每只300W经验！\
+比闭关更省元宝的升级方式，进入前记得去商称买三倍经验勋章哦！\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+　　　　　<1号包厢/@进入1号>　<2号包厢/@进入2号>　<3号包厢/@进入3号>　<4号包厢/@进入4号>
+
+
+[@进入1号]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 50000
+MAP ljbx1
+give 回城卷
+GuildNoticeMsg 255 245 骨灰级玩家[%s]进入了练级包厢1号快速升级，你还在等什么？
+#elseact
+MESSAGEBOX 你连10万元宝都没有，我看还是别进去掺和了。
+
+[@进入2号]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 50000
+MAP ljbx2
+give 回城卷
+GuildNoticeMsg 255 245 骨灰级玩家[%s]进入了练级包厢2号快速升级，你还在等什么？
+#elseact
+MESSAGEBOX 你连10万元宝都没有，我看还是别进去掺和了。
+
+[@进入3号]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 50000
+MAP ljbx3
+give 回城卷
+GuildNoticeMsg 255 245 骨灰级玩家[%s]进入了练级包厢3号快速升级，你还在等什么？
+#elseact
+MESSAGEBOX 你连10万元宝都没有，我看还是别进去掺和了。
+
+[@进入4号]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 50000
+MAP ljbx4
+give 回城卷
+GuildNoticeMsg 255 245 骨灰级玩家[%s]进入了练级包厢4号快速升级，你还在等什么？
+#elseact
+MESSAGEBOX 你连10万元宝都没有，我看还是别进去掺和了。
+
+
+[@闭关修炼]
+#IF
+CHECKGAMEGOLD > 49999
+#ACT
+SetOnTimer 2 1
+MAP PD4
+give 回城卷
+GuildNoticeMsg 255 245 大老板[%s]已得到心法秘籍进入VIP休息房修炼每秒600万经验。
+GuildNoticeMsg 255 245 大老板[%s]已得到心法秘籍进入VIP休息房修炼每秒600万经验。
+BREAK
+#say
+　　　　　　　　　　　元宝泡点说明\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+在本地图大退后可以离线泡点（前提是要有足够的元宝哦，亲）\
+在本地图大退后可以离线泡点（前提是要有足够的元宝哦，亲）\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+　\
+
+#elseact
+MESSAGEBOX 你连5w元宝都没有，别进去掺和了。

@@ -1,0 +1,9 @@
+[@main]
+#IF
+CheckGuildMember <$GUILDNAME> 
+#say
+\ \
+您是『<$GUILDNAME>』的行会成员  \
+您的所属行会当前荣誉点为『<$GUILDAURAEPOINT>』
+\
+继续努力....1500分即可获胜,到时间未分胜负则积分清0停止加分！

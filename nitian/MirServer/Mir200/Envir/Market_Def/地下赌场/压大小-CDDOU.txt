@@ -1,0 +1,919 @@
+(@@InPutInteger @@InPutString )
+[@main]
+#IF
+ISADMIN
+#ACT
+MUL G1 <$STR(G101)> 100
+MUL G2 <$STR(G102)> 100
+#say
+　\
+控制点数：<【一】/@开1点> <【二点】/@开2点> <【三】/@开3点> <【四】/@开4点> <【五】/@开5点> <【六】/@开6点>\
+即将开出：【<$STR(G71)>点】(0表示未控制) | <【刷新】/@main> 剩余：<$STR(G77)>秒\
+　\
+水果机：　吃:<$STR(G1)> | 赔:<$STR(G2)>\
+猜点数：　吃:<$STR(G74)> | 赔:<$STR(G73)> | 共:<$STR(G75)>人参与\
+　　　　　<测试/@测试> | <刷新/@main> | <赌场开关/@开启赌城> | <返回盟重/@返回到盟重>\
+　\
+　\
+大：<$STR(G78)>人，<$STR(G89)>注\
+中：<$STR(G79)>人，<$STR(G90)>注\
+小：<$STR(G80)>人，<$STR(G91)>注\
+单：<$STR(G81)>人，<$STR(G92)>注\
+双：<$STR(G82)>人，<$STR(G93)>注\
+一：<$STR(G83)>人，<$STR(G94)>注\
+二：<$STR(G84)>人，<$STR(G95)>注\
+三：<$STR(G85)>人，<$STR(G96)>注\
+四：<$STR(G86)>人，<$STR(G97)>注\
+五：<$STR(G87)>人，<$STR(G98)>注\
+六：<$STR(G88)>人，<$STR(G99)>注\ 
+;<赌城管理/@赌城管理>
+#elseact
+GOTO @玩家
+break
+
+[@测试]
+#say
+　\
+　\
+赔率2倍：【<单/@单>】   【<双/@双>】\
+赔率3倍：【<大/@大>】   【<中/@中>】   【<小/@小>】\
+赔率6倍：【<一点/@一点>】 【<二点/@二点>】 【<三点/@三点>】 【<四点/@四点>】 【<五点/@五点>】 【<六点/@六点>】\ \
+离开局时间还剩下【<$STR(G77)>】秒，请抓紧时间下注！<刷新/@main>\
+<熟悉规则/@熟悉规则>　<下注情况/@查看下注情况>　<返回盟重/@返回到盟重>　<关闭窗口/@exit>
+
+[@开1点]
+#IF
+ISADMIN
+#ACT
+mov G71 1
+goto @main
+break
+#elseact
+messagebox 滚，给我滚！
+
+[@开2点]
+#IF
+ISADMIN
+#ACT
+mov G71 2
+goto @main
+break
+#elseact
+messagebox 滚，给我滚！
+
+[@开3点]
+#IF
+ISADMIN
+#ACT
+mov G71 3
+goto @main
+break
+#elseact
+messagebox 滚，给我滚！
+
+[@开4点]
+#IF
+ISADMIN
+#ACT
+mov G71 4
+goto @main
+break
+#elseact
+messagebox 滚，给我滚！
+
+[@开5点]
+#IF
+ISADMIN
+#ACT
+mov G71 5
+goto @main
+break
+#elseact
+messagebox 滚，给我滚！
+
+[@开6点]
+#IF
+ISADMIN
+#ACT
+mov G71 6
+goto @main
+break
+#elseact
+messagebox 滚，给我滚！
+
+[@玩家]
+#SAY
+亲爱的玩家：<$USERNAME>\
+<假如中奖的话，要扣掉5%佣金！/SCOLOR=22>　　<你拥有元宝数量：/SCOLOR=222><$GAMEGOLD>\
+请按下面提示下注： <(防作弊，下过注的玩家才显示投骰子情况)/SCOLOR=247>\
+赔率2倍：【<单/@单>】   【<双/@双>】\
+赔率3倍：【<大/@大>】   【<中/@中>】   【<小/@小>】\
+赔率6倍：【<一点/@一点>】 【<二点/@二点>】 【<三点/@三点>】 【<四点/@四点>】 【<五点/@五点>】 【<六点/@六点>】\ \
+离开局时间还剩下【<$STR(G77)>】秒，请抓紧时间下注！<刷新/@main>\
+<熟悉规则/@熟悉规则>　<下注情况/@查看下注情况>　<返回盟重/@返回到盟重>　<关闭窗口/@exit>
+
+
+[@清空赌场数据]
+#IF
+  ISADMIN
+#act
+MOV G73 0
+MOV G74 0
+MOV G75 0
+MOV G78 0
+MOV G79 0
+MOV G80 0
+MOV G81 0
+MOV G82 0
+MOV G83 0
+MOV G84 0
+MOV G85 0
+MOV G86 0
+MOV G87 0
+MOV G88 0
+MOV G89 0
+MOV G90 0
+MOV G91 0
+MOV G92 0
+MOV G93 0
+MOV G94 0
+MOV G95 0
+MOV G96 0
+MOV G97 0
+MOV G98 0
+MOV G99 0
+messagebox 清空赌场数据成功！
+
+[@开启赌城]
+#if
+equal G76 0
+#ACT
+#SAY
+　\
+赌城状况为：开启\ \
+<关闭赌城/@guanducn> | <返回/@main>
+#ELSESAY
+赌城状况为：关闭\ \
+<开启都城/@kaiducn> | <返回/@main>
+
+[@guanducn]
+#if
+ISADMIN
+#ACT
+mov G76 1
+#ACT
+SENDMSG 0 大富豪娱乐城已关闭，请各位玩家等待下次活动时间！
+SENDMSG 0 大富豪娱乐城已关闭，请各位玩家等待下次活动时间！
+SENDMSG 0 大富豪娱乐城已关闭，请各位玩家等待下次活动时间！
+SENDMSG 0 大富豪娱乐城已关闭，请各位玩家等待下次活动时间！
+SENDMSG 0 大富豪娱乐城已关闭，请各位玩家等待下次活动时间！
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@kaiducn]
+#if
+ISADMIN
+#ACT
+mov G76 0
+mov G77 60
+#ACT
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+SENDMSG 0  大富豪娱乐城开启，想赢元宝的快来土城！
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+
+[@熟悉规则]
+#IF
+#ACT
+messagebox 点击押大中小单双123456输入你想押下的元宝数量\等其他玩家赌注全部下好，由我摇动骰子！\中奖后玩家可获得相应赌注奖金，假如中奖的话，要扣掉5%佣金。\如果开出的点数和玩家下的点数不一致,赌注将不做返还\玩家获胜后系统自动把奖金增加到人物身上，\玩家游戏过程中不可强行退出,也不可以切换地图\不然会导致已投注及奖金无法返还,为了增加中奖率,\希望您记住每次开的数字研究后然后再慎重下赌注！\小赌怡情，娱乐为本，祝愿大家金玉满堂！
+[@查看下注情况]
+当前这局选择【<大>】的玩家一共有：<$STR(G78)>人，一共有：<$STR(G89)>注\
+当前这局选择【<中>】的玩家一共有：<$STR(G79)>人，一共有：<$STR(G90)>注\
+当前这局选择【<小>】的玩家一共有：<$STR(G80)>人，一共有：<$STR(G91)>注\
+当前这局选择【<单>】的玩家一共有：<$STR(G81)>人，一共有：<$STR(G92)>注\
+当前这局选择【<双>】的玩家一共有：<$STR(G82)>人，一共有：<$STR(G93)>注\
+当前这局选择【<一点>】的玩家一共有：<$STR(G83)>人，一共有：<$STR(G94)>注\
+当前这局选择【<二点>】的玩家一共有：<$STR(G84)>人，一共有：<$STR(G95)>注\
+当前这局选择【<三点>】的玩家一共有：<$STR(G85)>人，一共有：<$STR(G96)>注\
+　                                           <下一页/@查看下注情况1> <返回/@main>
+[@查看下注情况1]
+当前这局选择【<四点>】的玩家一共有：<$STR(G86)>人，一共有：<$STR(G97)>注\
+当前这局选择【<五点>】的玩家一共有：<$STR(G87)>人，一共有：<$STR(G98)>注\
+当前这局选择【<六点>】的玩家一共有：<$STR(G88)>人，一共有：<$STR(G99)>注\ \ \ \ \ \
+　                                           <上一页/@查看下注情况> <返回/@main>
+
+　
+[@返回到盟重]
+#IF
+#ACT
+mapmove 3 330 330
+break
+
+[@大]
+当前选择【<大>】的玩家一共有：<$STR(G78)>人\
+当前选择【<大>】的赌注一共有：<$STR(G89)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押大下注的元宝数量/@@InPutInteger89>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger89]
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger89
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger89]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N89)>
+LARGE N89 99999
+small N89 10000001
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N89)>
+mov N78 <$STR(N89)>
+mov P66 3
+MUL N78 <$STR(N78)> <$STR(P66)>
+MOV P78 <$STR(N78)>
+dec P78 <$STR(N89)>
+MUL P78 <$STR(P78)> 5
+DIV P78 <$STR(P78)> 100
+dec N78 <$STR(P78)>
+inc G78 1
+inc G89 <$STR(N89)>
+inc G75 1
+inc G74 <$STR(N89)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N89)>注【大】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N89)>注【大】，\
+赔率<$STR(P66)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N78)>的元宝\
+当前选择【<大>】的玩家一共有：<$STR(G78)>人\
+当前选择【<大>】的赌注一共有：<$STR(G89)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在100000-10000000之间，你可能元宝数量不足，或你\已经下过注！
+
+
+[@中]
+当前选择【<中>】的玩家一共有：<$STR(G79)>人\
+当前选择【<中>】的赌注一共有：<$STR(G90)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押中下注的元宝数量/@@InPutInteger90>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger90]
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger90
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger90]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N90)>
+small N90 10000001
+LARGE N90 99999
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N90)>
+mov N79 <$STR(N90)>
+mov P65 3
+MUL N79 <$STR(N79)> <$STR(P65)>
+MOV P79 <$STR(N79)>
+dec P79 <$STR(N90)>
+MUL P79 <$STR(P79)> 5
+DIV P79 <$STR(P79)> 100
+dec N79 <$STR(P79)>
+inc G79 1
+inc G90 <$STR(N90)>
+inc G75 1
+inc G74 <$STR(N90)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N90)>注【中】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N90)>注【中】，\
+赔率<$STR(P65)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N79)>的元宝\
+当前选择【<中>】的玩家一共有：<$STR(G79)>人\
+当前选择【<中>】的赌注一共有：<$STR(G90)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在2-1000之间，你可能元宝数量不足，或你\已经下过注！
+
+
+
+[@小]
+当前选择【<小>】的玩家一共有：<$STR(G80)>人\
+当前选择【<小>】的赌注一共有：<$STR(G91)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押小下注的元宝数量/@@InPutInteger91>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger91]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger91
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger91]
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N91)>
+small N91 10000001
+LARGE N91 99999
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N91)>
+mov N80 <$STR(N91)>
+mov P64 3
+MUL N80 <$STR(N80)> <$STR(P64)>
+MOV P80 <$STR(N80)>
+dec P80 <$STR(N91)>
+MUL P80 <$STR(P80)> 5
+DIV P80 <$STR(P80)> 100
+dec N80 <$STR(P80)>
+inc G80 1
+inc G91 <$STR(N91)>
+inc G75 1
+inc G74 <$STR(N91)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N91)>注【小】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N91)>注【小】，\
+赔率<$STR(P64)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N80)>的元宝\
+当前选择【<小>】的玩家一共有：<$STR(G80)>人\
+当前选择【<小>】的赌注一共有：<$STR(G91)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在100000-10000000之间，你可能元宝数量不足，或你\已经下过注！
+
+[@单]
+当前选择【<单>】的玩家一共有：<$STR(G81)>人\
+当前选择【<单>】的赌注一共有：<$STR(G92)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押单下注的元宝数量/@@InPutInteger92>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger92]
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger92
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger92]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N92)>
+LARGE N92 99999
+small N92 10000001
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N92)>
+mov N81 <$STR(N92)>
+mov P74 2
+MUL N81 <$STR(N81)> <$STR(P74)>
+MOV P81 <$STR(N92)>
+MUL P81 <$STR(P81)> 5
+DIV P81 <$STR(P81)> 100
+dec N81 <$STR(P81)>
+inc G81 1
+inc G92 <$STR(N92)>
+inc G75 1
+inc G74 <$STR(N92)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N92)>注【单】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N92)>注【单】，\
+赔率<$STR(P74)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N81)>的元宝\
+当前选择【<单>】的玩家一共有：<$STR(G81)>人\
+当前选择【<单>】的赌注一共有：<$STR(G92)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在100000-10000000之间，你可能元宝数量不足，或你\已经下过注！
+
+
+[@双]
+当前选择【<双>】的玩家一共有：<$STR(G82)>人\
+当前选择【<双>】的赌注一共有：<$STR(G93)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押双下注的元宝数量/@@InPutInteger93>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger93]
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger93
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger93]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N93)>
+small N93 10000001
+LARGE N93 99999
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N93)>
+mov N82 <$STR(N93)>
+mov P73 2
+MUL N82 <$STR(N82)> <$STR(P73)>
+MOV P82 <$STR(N93)>
+MUL P82 <$STR(P82)> 5
+DIV P82 <$STR(N82)> 100
+dec N82 <$STR(P82)>
+inc G82 1
+inc G93 <$STR(N93)>
+inc G75 1
+inc G74 <$STR(N93)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N93)>注【双】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N93)>注【双】，\
+赔率<$STR(P73)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N82)>的元宝\
+当前选择【<双>】的玩家一共有：<$STR(G82)>人\
+当前选择【<双>】的赌注一共有：<$STR(G93)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在100000-10000000之间，你可能元宝数量不足，或你\已经下过注！
+
+
+[@一点]
+当前选择【<一点>】的玩家一共有：<$STR(G83)>人\
+当前选择【<一点>】的赌注一共有：<$STR(G94)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押一点下注的元宝数量/@@InPutInteger94>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger94]
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger94
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger94]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N94)>
+small N94 10000001
+LARGE N94 99999
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N94)>
+mov N83 <$STR(N94)>
+mov P72 6
+MUL N83 <$STR(N83)> <$STR(P72)>
+MOV P83 <$STR(N83)>
+dec P83 <$STR(N94)>
+MUL P83 <$STR(P83)> 5
+DIV P83 <$STR(P83)> 100
+dec N83 <$STR(P83)>
+inc G83 1
+inc G94 <$STR(N94)>
+inc G75 1
+inc G74 <$STR(N94)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N94)>注【一点】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N94)>注【一点】，\
+赔率<$STR(P72)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N83)>的元宝\
+当前选择【<一点>】的玩家一共有：<$STR(G83)>人\
+当前选择【<一点>】的赌注一共有：<$STR(G94)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在100000-10000000之间，你可能元宝数量不足，或你\已经下过注！
+
+
+
+[@二点]
+当前选择【<二点>】的玩家一共有：<$STR(G84)>人\
+当前选择【<二点>】的赌注一共有：<$STR(G95)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押二点下注的元宝数量/@@InPutInteger95>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger95]
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger95
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger95]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N95)>
+small N95 10000001
+LARGE N95 99999
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N95)>
+mov N84 <$STR(N95)>
+mov P71 6
+MUL N84 <$STR(N84)> <$STR(P71)>
+MOV P84 <$STR(N84)>
+dec P84 <$STR(N95)>
+MUL P84 <$STR(P84)> 5
+DIV P84 <$STR(P84)> 100
+dec N84 <$STR(P84)>
+inc G84 1
+inc G95 <$STR(N95)>
+inc G75 1
+inc G74 <$STR(N95)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N95)>注【二点】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N95)>注【二点】，\
+赔率<$STR(P71)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N84)>的元宝\
+当前选择【<二点>】的玩家一共有：<$STR(G84)>人\
+当前选择【<二点>】的赌注一共有：<$STR(G95)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在100000-10000000之间，你可能元宝数量不足，或你\已经下过注！
+
+
+
+[@三点]
+当前选择【<三点>】的玩家一共有：<$STR(G85)>人\
+当前选择【<三点>】的赌注一共有：<$STR(G96)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押三点下注的元宝数量/@@InPutInteger96>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger96]
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger96
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger96]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N96)>
+small N96 10000001
+LARGE N96 99999
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N96)>
+mov N85 <$STR(N96)>
+mov P70 6
+MUL N85 <$STR(N85)> <$STR(P70)>
+MOV P85 <$STR(N85)>
+dec P85 <$STR(N96)>
+MUL P85 <$STR(P85)> 5
+DIV P85 <$STR(P85)> 100
+dec N85 <$STR(P85)>
+inc G85 1
+inc G96 <$STR(N96)>
+inc G75 1
+inc G74 <$STR(N96)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N96)>注【三点】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N96)>注【三点】，\
+赔率<$STR(P70)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N85)>的元宝\
+当前选择【<三点>】的玩家一共有：<$STR(G85)>人\
+当前选择【<三点>】的赌注一共有：<$STR(G96)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在100000-10000000之间，你可能元宝数量不足，或你\已经下过注！
+
+
+
+
+[@四点]
+当前选择【<四点>】的玩家一共有：<$STR(G86)>人\
+当前选择【<四点>】的赌注一共有：<$STR(G97)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押四点下注的元宝数量/@@InPutInteger97>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger97]
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger97
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger97]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N97)>
+small N97 10000001
+LARGE N97 99999
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N97)>
+mov N86 <$STR(N97)>
+mov P69 6
+MUL N86 <$STR(N86)> <$STR(P69)>
+MOV P86 <$STR(N86)>
+dec P86 <$STR(N97)>
+MUL P86 <$STR(P86)> 5
+DIV P86 <$STR(P86)> 100
+dec N86 <$STR(P86)>
+inc G86 1
+inc G97 <$STR(N97)>
+inc G75 1
+inc G74 <$STR(N97)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N97)>注【四点】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N97)>注【四点】，\
+赔率<$STR(P69)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N86)>的元宝\
+当前选择【<四点>】的玩家一共有：<$STR(G86)>人\
+当前选择【<四点>】的赌注一共有：<$STR(G97)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在100000-10000000之间，你可能元宝数量不足，或你\已经下过注！
+
+
+
+[@五点]
+当前选择【<五点>】的玩家一共有：<$STR(G87)>人\
+当前选择【<五点>】的赌注一共有：<$STR(G98)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押五点下注的元宝数量/@@InPutInteger98>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger98]
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger98
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger98]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N98)>
+small N98 10000001
+LARGE N98 99999
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N98)>
+mov N87 <$STR(N98)>
+mov P68 6
+MUL N87 <$STR(N87)> <$STR(P68)>
+MOV P87 <$STR(N87)>
+dec P87 <$STR(N98)>
+MUL P87 <$STR(P87)> 5
+DIV P87 <$STR(P87)> 100
+dec N87 <$STR(P87)>
+inc G87 1
+inc G98 <$STR(N98)>
+inc G75 1
+inc G74 <$STR(N98)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N98)>注【五点】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N98)>注【五点】，\
+赔率<$STR(P68)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N87)>的元宝\
+当前选择【<五点>】的玩家一共有：<$STR(G87)>人\
+当前选择【<五点>】的赌注一共有：<$STR(G98)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在100000-10000000之间，你可能元宝数量不足，或你\已经下过注！
+
+
+
+[@六点]
+当前选择【<六点>】的玩家一共有：<$STR(G88)>人\
+当前选择【<六点>】的赌注一共有：<$STR(G99)>注\
+你拥有元宝数量：<$GAMEGOLD>\ \
+<点击输入你要选择押六点下注的元宝数量/@@InPutInteger99>\ \ \
+
+　                                                    <返回/@main>
+[@InPutInteger99]
+#If
+CHECKGAMEGOLD > 99999
+#Act
+DelayGoto 1 ~InPutInteger99
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+
+[~InPutInteger99]
+#if
+LARGE G77 54
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#if
+small G77 2
+#Act
+MessageBox 现在是摇骰子时间，不能下注！
+break
+#If
+Check [65] 0
+CHECKGAMEGOLD > <$STR(N99)>
+small N99 10000001
+LARGE N99 99999
+#Act
+Set [65] 1
+CLEARDELAYGOTO
+GameGold - <$STR(N99)>
+mov N88 <$STR(N99)>
+mov P67 6
+MUL N88 <$STR(N88)> <$STR(P67)>
+MOV P88 <$STR(N88)>
+dec P88 <$STR(N99)>
+MUL P88 <$STR(P88)> 5
+DIV P88 <$STR(P88)> 100
+dec N88 <$STR(P88)>
+inc G88 1
+inc G99 <$STR(N99)>
+inc G75 1
+inc G74 <$STR(N99)>
+addnamelist ..\QuestDiary\猜点数\酒馆赌博数据.TXT
+SENDMSG 4 [%s]押了：<$STR(N99)>注【六点】，买定离手！
+#SAY
+恭喜你下注成功！\
+你押了：<$STR(N99)>注【六点】，\
+赔率<$STR(P67)>倍，假如中奖，扣掉5%佣金后，你还可以获得<$STR(N88)>的元宝\
+当前选择【<六点>】的玩家一共有：<$STR(G88)>人\
+当前选择【<六点>】的赌注一共有：<$STR(G99)>注\
+你剩余的元宝数量：<$GAMEGOLD>\
+<返回/@main>
+#ELSEsay
+下注的元宝数量应该在100000-10000000之间，你可能元宝数量不足，或你\已经下过注！
+
+[@测试]
+#if
+Check [65] 0
+#say
+65=0\
+G78：<$STR(G78)>|G79：<$STR(G79)>|G80：<$STR(G80)>|G81：<$STR(G81)>|G82：<$STR(G82)>|G83：<$STR(G83)>|G84：<$STR(G84)>|G85：<$STR(G85)>|G86：<$STR(G86)>|\ 
+G87：<$STR(G87)>|G88：<$STR(G88)>|G89：<$STR(G89)> G90：<$STR(G90)>|G91：<$STR(G91)>|G92：<$STR(G92)>|G93：<$STR(G93)>|G94：<$STR(G94)>|G95：<$STR(G95)>|\ 
+G96：<$STR(G96)>|G97：<$STR(G97)>|G98：<$STR(G98)>|G99：<$STR(G99)>|N71：<$STR(N71)>|N78：<$STR(N78)>|N79：<$STR(N79)>|N80：<$STR(N80)>|N81：<$STR(N81)>|\ 
+N82：<$STR(N82)>|N83：<$STR(N83)>|N84：<$STR(N84)>|N85：<$STR(N85)>|N86：<$STR(N86)>|N87：<$STR(N87)>|N88：<$STR(N78)>|N89：<$STR(N89)>|N90：<$STR(N90)>|\ 
+N91：<$STR(N91)>|N92：<$STR(N92)>|N93：<$STR(N93)>|N94：<$STR(N94)>|N95：<$STR(N95)>|N96：<$STR(N96)>|N97：<$STR(N97)>|N98：<$STR(N98)>|N99：<$STR(N99)>|\ 
+#if
+Check [65] 1
+#say
+65=1\
+N78：<$STR(G78)>|G79：<$STR(G79)>|G80：<$STR(G80)>|G81：<$STR(G81)>|G82：<$STR(G82)>|G83：<$STR(G83)>|G84：<$STR(G84)>|G85：<$STR(G85)>|G86：<$STR(G86)>|\ 
+G87：<$STR(G87)>|G88：<$STR(G78)>|G89：<$STR(G89)> G90：<$STR(G90)>|G91：<$STR(G91)>|G92：<$STR(G92)>|G93：<$STR(G93)>|G94：<$STR(G94)>|G95：<$STR(G95)>|\ 
+G96：<$STR(G96)>|G97：<$STR(G97)>|G98：<$STR(G98)>|G99：<$STR(G99)>|N71：<$STR(N71)>|N78：<$STR(N78)>|N79：<$STR(N79)>|N80：<$STR(N80)>|N81：<$STR(N81)>|\ 
+N82：<$STR(N82)>|N83：<$STR(N83)>|N84：<$STR(N84)>|N85：<$STR(N85)>|N86：<$STR(N86)>|N87：<$STR(N87)>|N88：<$STR(N78)>|N89：<$STR(N89)>|N90：<$STR(N90)>|\ 
+N91：<$STR(N91)>|N92：<$STR(N92)>|N93：<$STR(N93)>|N94：<$STR(N94)>|N95：<$STR(N95)>|N96：<$STR(N96)>|N97：<$STR(N97)>|N98：<$STR(N98)>|N99：<$STR(N99)>|\ 
+<65=0/@65=0>
+
+[@65=0]
+#act
+ set [65] 0
+ messagebox 65=0.
+ break
+
+
+

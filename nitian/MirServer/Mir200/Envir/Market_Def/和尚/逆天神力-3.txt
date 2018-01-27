@@ -1,0 +1,177 @@
+[@main]
+<什么叫逆天神力，就是为自己加准确和敏捷的一种神力！/AUTOCOLOR=81>\
+<如何获得逆天神力？充RMB都会得到相应的贡献值，贡献值可以转化成逆天神力/AUTOCOLOR=253>  \
+<如何转化？点击/AUTOCOLOR=125><了解如何激活逆天神力/@了解><，它会告诉你的/AUTOCOLOR=125>  \
+<效果如何？有了逆天神力老婆再也不用担心你不行了/AUTOCOLOR=250>  \
+<目前逆天神力开放五级想要了解可以进入查看/AUTOCOLOR=254> 当期贡献值为：<$CREDITPOINT>\ \
+满5级逆天神力可以免费领取一个<至尊指环/AUTOCOLOR=249>  <血量异常点击修正/@恢复>\ \
+<了解如何激活逆天神力/@了解>      <至尊指环领取/@领取>   你当前神力等级为：<$HUMAN(逆天神力)>
+
+[@领取]
+#if
+CHECK [164] 1
+#ACT 
+give 至尊指环 1
+#ELSESAY
+对不起你逆天神力不足5级，无法领取\
+或者你已领取过了
+
+[@恢复]
+#if
+CHECK [160] 1
+#ACT 
+USEBONUSPOINT 6 - 50
+USEBONUSPOINT 8 - 2
+USEBONUSPOINT 9 - 1
+CREDITPOINT + 20
+SET [160] 0
+CALCVAR HUMAN 逆天神力 - 1
+SAVEVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+
+#if
+CHECK [161] 1
+#ACT 
+USEBONUSPOINT 6 - 100
+USEBONUSPOINT 8 - 4
+USEBONUSPOINT 9 - 2
+CREDITPOINT + 50
+SET [161] 0
+CALCVAR HUMAN 逆天神力 - 1
+SAVEVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+
+#if
+CHECK [162] 1
+#ACT 
+USEBONUSPOINT 6 - 200
+USEBONUSPOINT 8 - 6
+USEBONUSPOINT 9 - 3
+CREDITPOINT + 80
+SET [162] 0
+CALCVAR HUMAN 逆天神力 - 1
+SAVEVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+
+#if
+CHECK [163] 1
+#ACT 
+USEBONUSPOINT 6 - 500
+USEBONUSPOINT 8 - 8
+USEBONUSPOINT 9 - 4
+CREDITPOINT + 150
+SET [163] 0
+CALCVAR HUMAN 逆天神力 - 1
+SAVEVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+
+#if
+CHECK [164] 1
+#ACT 
+USEBONUSPOINT 6 - 1150
+USEBONUSPOINT 8 - 10
+USEBONUSPOINT 9 - 5
+CREDITPOINT + 300
+SET [164] 0
+CALCVAR HUMAN 逆天神力 - 1
+SAVEVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+
+[@了解]
+<既然到了这里，肯定上想知道如何激活逆天神力，下面给你详细说明：/AUTOCOLOR=81>\ \
+<1级神力+2点准确+1点敏捷+50点血量，需要贡献值：20/AUTOCOLOR=253>     <激活1级神力/@1>\
+<1级神力+4点准确+2点敏捷+100点血量，需要贡献值：50/AUTOCOLOR=125>    <激活2级神力/@2>  \
+<1级神力+6点准确+3点敏捷+200点血量，需要贡献值：80/AUTOCOLOR=250>    <激活3级神力/@3>  \
+<1级神力+8点准确+4点敏捷+500点血量，需要贡献值：150/AUTOCOLOR=254>   <激活4级神力/@4> \
+<1级神力+10点准确+5点敏捷+1150点血量，需要贡献值：300/AUTOCOLOR=249> <激活5级神力/@5>  \
+<友情提示：只有激活1级逆天神力才能继续激活2级逆天神力，以此类推/AUTOCOLOR=249>\
+<返回/@main>
+
+[@1]
+#if
+CHECKCREDITPOINT > 19
+CHECK [160] 0
+#ACT 
+CREDITPOINT - 20
+USEBONUSPOINT 8 + 2
+USEBONUSPOINT 6 + 50
+USEBONUSPOINT 9 + 1
+SET [160] 1
+CALCVAR HUMAN 逆天神力 + 1
+SAVEVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+SENDMSG 5 恭喜您逆天神力一级！~！~！~ 
+SENDMSG 1 恭喜！%s获得"逆天神力一级"状态.如神,如魔.誓将毁灭一切!
+#ELSESAY
+对不起你贡献值不足，当期贡献值为：<$CREDITPOINT>！\
+或者你已激活1级逆天神力
+
+[@2]
+#if
+CHECKCREDITPOINT > 49
+CHECK [160] 1
+CHECK [161] 0
+#ACT 
+CREDITPOINT - 50
+USEBONUSPOINT 8 + 4
+USEBONUSPOINT 6 + 100
+USEBONUSPOINT 9 + 2
+CALCVAR HUMAN 逆天神力 + 1
+SAVEVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+SET [161] 1
+SENDMSG 5 恭喜您逆天神力一级！~！~！~ 
+SENDMSG 1 恭喜！%s获得"逆天神力一级"状态.如神,如魔.誓将毁灭一切!
+#ELSESAY
+对不起你贡献值不足，当期贡献值为：<$CREDITPOINT>！\
+或者你已激活2级逆天神力
+
+[@3]
+#if
+CHECKCREDITPOINT > 79
+CHECK [161] 1
+CHECK [162] 0
+#ACT 
+CREDITPOINT - 80
+USEBONUSPOINT 8 + 6
+USEBONUSPOINT 6 + 200
+USEBONUSPOINT 9 + 3
+CALCVAR HUMAN 逆天神力 + 1
+SAVEVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+SET [162] 1
+SENDMSG 5 恭喜您逆天神力一级！~！~！~ 
+SENDMSG 1 恭喜！%s获得"逆天神力一级"状态.如神,如魔.誓将毁灭一切!
+#ELSESAY
+对不起你贡献值不足，当期贡献值为：<$CREDITPOINT>！\
+或者你已激活3级逆天神力
+
+[@4]
+#if
+CHECKCREDITPOINT > 149
+CHECK [162] 1
+CHECK [163] 0
+#ACT 
+CREDITPOINT - 150
+USEBONUSPOINT 8 + 8
+USEBONUSPOINT 6 + 500
+USEBONUSPOINT 9 + 4
+CALCVAR HUMAN 逆天神力 + 1
+SAVEVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+SET [163] 1
+SENDMSG 5 恭喜您逆天神力一级！~！~！~ 
+SENDMSG 1 恭喜！%s获得"逆天神力一级"状态.如神,如魔.誓将毁灭一切!
+#ELSESAY
+对不起你贡献值不足，当期贡献值为：<$CREDITPOINT>！\
+或者你已激活4级逆天神力
+
+[@5]
+#if
+CHECKCREDITPOINT > 299
+CHECK [163] 1
+CHECK [164] 0
+#ACT 
+CREDITPOINT - 300
+USEBONUSPOINT 8 + 10
+USEBONUSPOINT 6 + 1150
+USEBONUSPOINT 9 + 5
+CALCVAR HUMAN 逆天神力 + 1
+SAVEVAR HUMAN 逆天神力 ..\QuestDiary\和尚\逆天神力数据.txt
+SET [164] 1
+SENDMSG 5 恭喜您逆天神力一级！~！~！~ 
+SENDMSG 1 恭喜！%s获得"逆天神力一级"状态.如神,如魔.誓将毁灭一切!
+#ELSESAY
+对不起你贡献值不足，当期贡献值为：<$CREDITPOINT>！\
+或者你已激活5级逆天神力

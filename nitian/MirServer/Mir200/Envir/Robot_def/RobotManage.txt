@@ -1,0 +1,1306 @@
+[@争分夺秒]
+#if
+#ACT
+mov G120 0
+mov G121 0
+
+[@贡献值]
+#if
+CheckMapSameMonCount xwj 财神 < 1
+#ACT
+Param1 xwj
+PARAM2 37
+PARAM3 37
+MonGen 财神 1 3
+SendCenterMsg 180 251 财神已经刷新，想要神一样的装备赶紧进入贡献值地图吧.. 1
+break
+
+
+
+
+[@群雄大乱斗检测]
+#if
+CHECKVAR GLOBAL 大乱斗检测 = 1
+#act
+Gmexecute 开始提问 @开始检测群雄大乱斗
+
+[@群雄大乱斗开始]
+#if
+#act
+mov G400 1
+CALCVAR GLOBAL 大乱斗检测 = 1
+SAVEVAR GLOBAL 大乱斗检测 ..\QuestDiary\子木名单专用\大乱斗检测数据.txt
+CALCVAR GLOBAL 大乱斗活动结束 = 1
+SAVEVAR GLOBAL 大乱斗活动结束 ..\QuestDiary\子木名单专用\大乱斗检测数据.txt
+SendCenterMsg 249 0 『★群雄·大乱斗★』活动已开始,杀人有元宝得，最后的勇士可获得超爽属性加成,30分钟后大门关闭! 赶快去-群雄·大乱斗活动NPC进入！ 1 5
+SendCenterMsg 249 0 『★群雄·大乱斗★』活动已开始,杀人有元宝得，最后的勇士可获得超爽属性加成,30分钟后大门关闭! 赶快去-群雄·大乱斗活动NPC进入！ 1 5
+SendCenterMsg 249 0 『★群雄·大乱斗★』活动已开始,杀人有元宝得，最后的勇士可获得超爽属性加成,30分钟后大门关闭! 赶快去-群雄·大乱斗活动NPC进入！ 1 5
+GuildNoticeMsg 249 0 『★群雄·大乱斗★』活动已开始,杀人有元宝得，最后的勇士可获得超爽属性加成,30分钟后大门关闭! 赶快去-群雄·大乱斗活动NPC进入！
+GuildNoticeMsg 249 0 『★群雄·大乱斗★』活动已开始,杀人有元宝得，最后的勇士可获得超爽属性加成,30分钟后大门关闭! 赶快去-群雄·大乱斗活动NPC进入！
+GuildNoticeMsg 249 0 『★群雄·大乱斗★』活动已开始,杀人有元宝得，最后的勇士可获得超爽属性加成,30分钟后大门关闭! 赶快去-群雄·大乱斗活动NPC进入！
+Gmexecute 开始提问 @开始群雄大乱斗活动
+
+[@群雄大乱斗停止]
+#act
+mov g400 0
+MOV A440  [等待新PK王中……]
+CALCVAR GLOBAL 大乱斗活动结束 = 2
+SAVEVAR GLOBAL 大乱斗活动结束 ..\QuestDiary\子木名单专用\大乱斗检测数据.txt
+SendCenterMsg 249 0 『★群雄·大乱斗★』活动大门已关闭,一起等待23.20最后的[乱斗ＰＫ王]诞生吧！！ 1 5
+SendCenterMsg 249 0 『★群雄·大乱斗★』活动大门已关闭,一起等待23.20最后的[乱斗ＰＫ王]诞生吧！！ 1 5
+GuildNoticeMsg 249 0 『★群雄·大乱斗★』活动大门已关闭,一起等待23.20最后的[乱斗ＰＫ王]诞生吧！！
+GuildNoticeMsg 249 0 『★群雄·大乱斗★』活动大门已关闭,一起等待23.20最后的[乱斗ＰＫ王]诞生吧！！
+
+[@群雄大乱斗结束]
+#IF
+checkhum daluandou 2
+#ACT
+MoveMapPlay daluandou 3 333 333
+sendcentermsg 249 0 ★群雄·大乱斗★活动：很可惜,本次活动到结束都还未分出最后的ＰＫ王，很遗憾本次并未产生新的ＰＫ王，期待下次活动吧！ 1 3
+sendcentermsg 249 0 ★群雄·大乱斗★活动：很可惜,本次活动到结束都还未分出最后的ＰＫ王，很遗憾本次并未产生新的ＰＫ王，期待下次活动吧！ 1 3
+GuildNoticeMsg 249 0 ★群雄·大乱斗★活动：很可惜,本次活动到结束都还未分出最后的ＰＫ王，很遗憾本次并未产生新的ＰＫ王，期待下次活动吧！
+GuildNoticeMsg 249 0 ★群雄·大乱斗★活动：很可惜,本次活动到结束都还未分出最后的ＰＫ王，很遗憾本次并未产生新的ＰＫ王，期待下次活动吧！
+CALCVAR GLOBAL 大乱斗检测 = 2
+SAVEVAR GLOBAL 大乱斗检测 ..\QuestDiary\子木名单专用\大乱斗检测数据.txt
+#ELSEACT
+Gmexecute 开始提问 @群雄大乱斗活动结束
+CALCVAR GLOBAL 大乱斗检测 = 2
+SAVEVAR GLOBAL 大乱斗检测 ..\QuestDiary\子木名单专用\大乱斗检测数据.txt
+
+
+[@3分钟刷新]
+#if
+CHECKITEMTYPE 14 15
+#act
+sendmsg 6 你斗笠(面纱)位置带什么头盔?再不取下来封号处理！
+sendmsg 6 你的行为已被记录！
+Gmexecute TestStatus 5 60
+SETRANKLEVELNAME  %s
+KICK
+BREAK
+;--w*w*w.g*m*0*0*5.c*o*m---　
+#if
+CHECKITEMTYPE 4 16
+#act
+sendmsg 6 你头盔位置带什么斗笠(面纱)?再不取下来封号处理！
+sendmsg 6 你的行为已被记录！
+Gmexecute TestStatus 5 60
+SETRANKLEVELNAME  %s
+KICK
+BREAK
+
+;--w*w*w.g*m*0*0*5.c*o*m---　
+[@刷恶魔广场怪]
+#if
+CheckMapSameMonCount EMGC02 穷期 < 1
+#ACT
+Param1 EMGC02
+PARAM2 84
+PARAM3 14
+MonGen 穷期 1 3
+Param1 EMGC02
+PARAM2 162
+PARAM3 27
+MonGen 神威天魔 1 3
+SendCenterMsg 180 251 穷期已经刷新，想要神一样的装备赶紧进入恶魔广场吧.. 1
+break
+
+;--w*w*w.g*m*0*0*5.c*o*m---　
+[@开启恶魔广场]
+#IF
+#ACT
+MOV G134 1
+SENDMSG 0 恶魔广场已经开启，想要参加的赶紧加入吧！
+SENDMSG 0 恶魔广场已经开启，想要参加的赶紧加入吧！
+SENDMSG 0 恶魔广场已经开启，想要参加的赶紧加入吧！
+SendCenterMsg 180 251 恶魔广场已经开启，想要参加的赶紧加入吧.. 1
+
+[@关闭恶魔广场]
+#IF
+#ACT
+MOV G134 0
+SENDMSG 0 恶魔广场已经关闭，想要参加的等待下一个点吧！
+SENDMSG 0 恶魔广场已经关闭，想要参加的等待下一个点吧！
+SENDMSG 0 恶魔广场已经关闭，想要参加的等待下一个点吧！
+SendCenterMsg 180 251 恶魔广场已经关闭，想要参加的等待下一个点吧.. 1
+
+;--w*w*w.g*m*0*0*5.c*o*m---　
+
+[@开启双倍砍猪]
+#IF
+#ACT
+MOV G133 1
+SENDMSG 0 下午双倍砍猪活动已经开启，想要参加的赶紧加入吧！
+SENDMSG 0 下午双倍砍猪活动已经开启，想要参加的赶紧加入吧！
+SENDMSG 0 下午双倍砍猪活动已经开启，想要参加的赶紧加入吧！
+SendCenterMsg 180 251 下午双倍砍猪活动已经开启，想要参加的赶紧加入吧.. 1
+
+[@关闭双倍砍猪]
+#IF
+#ACT
+MOV G133 0
+SENDMSG 0 下午双倍砍猪活动已经关闭，想要参加的等待明天吧！
+SENDMSG 0 下午双倍砍猪活动已经关闭，想要参加的等待明天吧！
+SENDMSG 0 下午双倍砍猪活动已经关闭，想要参加的等待明天吧！
+SendCenterMsg 180 251 下午双倍砍猪活动已经关闭，想要参加的等待明天吧.. 1
+
+
+[@逐日积分]
+#if
+CheckMapSameMonCount zhuri 逐日使者1 < 1
+#ACT
+Param1 zhuri
+PARAM2 15
+PARAM3 15
+MonGen 逐日使者1 1 3
+SendCenterMsg 180 251 逐日使者已经刷新，想要逐日积分的赶紧加入吧.. 1
+break
+
+[@入门级装备]
+#IF
+#ACT
+Gmexecute 开始提问 @入门装备时限
+
+
+[@刷终极]
+#if
+CheckMapSameMonCount xunbao1 [终极]我爆逆天 < 1
+#ACT
+Param1 xunbao1
+PARAM2 150
+PARAM3 150
+MonGen [终极]我爆逆天 1 200
+break
+
+
+[@刷终极1]
+#if
+CheckMapSameMonCount fengyin [终极]我爆逆天 < 1
+#ACT
+Param1 fengyin
+PARAM2 15
+PARAM3 15
+MonGen [终极]我爆逆天 1 3
+break
+
+
+[@白日门虎卫]
+#if
+CheckMapSameMonCount 1002 虎卫 < 5
+#ACT
+Param1 1002
+PARAM2 12
+PARAM3 15
+MonGen 虎卫 1 3
+break
+
+[@白日门鹰卫]
+#if
+CheckMapSameMonCount 11 鹰卫 < 5
+#ACT
+Param1 11
+PARAM2 284
+PARAM3 310
+MonGen 鹰卫 1 100
+break
+
+[@聚宝盒]
+#IF
+#ACT
+Gmexecute 开始提问 @聚宝盒元宝
+
+
+[@神器检测1]
+#IF
+EQUAL A51 
+#ACT
+BREAK
+
+#IF
+CheckOnline <$STR(A51)>
+#ACT
+#ELSEACT
+SENDMSG 0 提示：[上古神器-战]拥有者[<$STR(A51)>]已经离线，BOSS重新出现在神器地图！
+MOV A51 
+MOV G61 0
+#ELSEACT
+goto @神器刷怪1
+
+
+
+[@神器检测2]
+#IF
+EQUAL A52 
+#ACT
+BREAK
+
+#IF
+CheckOnline <$STR(A52)>
+#ACT
+#ELSEACT
+SENDMSG 0 提示：[上古神器-道]拥有者[<$STR(A52)>]已经离线，BOSS重新出现在神器地图！
+MOV A52 
+MOV G62 0
+#ELSEACT
+goto @神器刷怪2
+
+
+[@神器检测3]
+#IF
+EQUAL A53 
+#ACT
+BREAK
+
+#IF
+CheckOnline <$STR(A53)>
+#ACT
+#ELSEACT
+SENDMSG 0 提示：[上古神器-法]拥有者[<$STR(A53)>]已经离线，BOSS重新出现在神器地图！
+MOV A53 
+MOV G63 0
+#ELSEACT
+goto @神器刷怪3
+
+
+[@神器BOSS]
+#IF
+EQUAL A51 
+CheckMapSameMonCount sg1 上古教主-战 < 1
+#ACT
+Param1 sg1
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-战 1 1
+SENDMSG 0 提示：[上古神器-战]BOSS重新出现在神器地图！
+
+#IF
+EQUAL A52 
+CheckMapSameMonCount sg2 上古教主-道 < 1
+#ACT
+Param1 sg2
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-道 1 1
+SENDMSG 0 提示：[上古神器-道]BOSS重新出现在神器地图！
+
+#IF
+EQUAL A53 
+CheckMapSameMonCount sg3 上古教主-法 < 1
+#ACT
+Param1 sg3
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-法 1 1
+SENDMSG 0 提示：[上古神器-法]BOSS重新出现在神器地图！
+
+[@神器刷怪1]
+#IF
+CheckMapSameMonCount sg1 上古教主-战 < 1
+#ACT
+Param1 sg1
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-战 1 1
+
+[@神器刷怪2]
+#IF
+CheckMapSameMonCount sg2 上古教主-道 < 1
+#ACT
+Param1 sg2
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-道 1 1
+
+[@神器刷怪3]
+#IF
+CheckMapSameMonCount sg3 上古教主-法 < 1
+#ACT
+Param1 sg3
+PARAM2 32
+PARAM3 37
+MonGen 上古教主-法 1 1
+
+
+[@神器检测]
+#IF
+#ACT
+GMEXECUTE 开始提问 @身上神器
+GMEXECUTE 开始提问 @上古神器
+BREAK
+
+[@坐庄游戏A]
+#IF
+EQUAL G12 0
+#ACT
+GMEXECUTE 开始提问 @抢庄开始
+INC G12 1
+BREAK
+#IF
+EQUAL G12 60
+#ACT
+GMEXECUTE 开始提问 @抢庄结束
+INC G12 1
+BREAK
+#IF
+EQUAL G12 61
+#ACT
+GMEXECUTE 开始提问 @下注开始
+INC G12 1
+BREAK
+#IF
+EQUAL G12 117
+#ACT
+GMEXECUTE 开始提问 @下注结束
+INC G12 1
+BREAK
+
+#IF
+EQUAL G12 118
+#ACT
+MOVR G42 6
+inc G42 1
+MOVR G43 6
+inc G43 1
+MOVR G44 6
+inc G44 1
+MOV G45 <$STR(G42)>
+INC G45 <$STR(G43)>
+INC G45 <$STR(G44)>
+INC G12 1
+BREAK
+
+#IF
+EQUAL G12 119
+EQUAL G455 1
+#ACT
+MOV G42 2
+MOV G43 1
+MOV G44 3
+MOV G45 <$STR(G42)>
+INC G45 <$STR(G43)>
+INC G45 <$STR(G44)>
+MOV G455 0
+INC G12 1
+BREAK
+
+#IF
+EQUAL G12 120
+#ACT
+GMEXECUTE 开始提问 @猜点开始
+INC G12 1
+BREAK
+
+#IF
+EQUAL G12 126
+#ACT
+GMEXECUTE 开始提问 @赌博结帐
+INC G12 1
+BREAK
+#IF
+EQUAL G12 128
+#ACT
+GMEXECUTE 开始提问 @赌博清零
+MOV A33 无
+MOV G16 0
+MOV G17 0
+MOV G11 0
+MOV G13 0
+MOV G14 0
+MOV G29 0
+MOV G42 0
+MOV G43 0
+MOV G44 0
+MOV G45 0
+INC G12 1
+BREAK
+#IF
+EQUAL G12 130
+#ACT
+MOV A34 无
+MOV G12 0
+BREAK
+#IF
+#ACT
+INC G12 1
+BREAK
+
+[@坐庄游戏B]
+#IF
+#ACT
+MOV G18 0
+MOV G19 0
+MOV G15 130
+DEC G15 <$STR(G12)>
+MOV G11 <$STR(G13)>
+INC G11 <$STR(G14)>
+MOV G16 <$STR(G29)>
+INC G16 <$STR(G14)>
+DEC G16 <$STR(G13)>
+MOV G17 <$STR(G29)>
+INC G17 <$STR(G13)>
+DEC G17 <$STR(G14)>
+BREAK
+
+[@坐庄游戏C]
+#IF
+EQUAL G12 122
+EQUAL G42 <$STR(G43)>
+EQUAL G42 <$STR(G44)>
+#ACT
+MOV A33 豹子
+BREAK
+#IF
+EQUAL G12 122
+SMALL G45 11
+#ACT
+MOV A33 小
+BREAK
+#IF
+EQUAL G12 122
+LARGE G45 10
+#ACT
+MOV A33 大
+BREAK
+
+[@魔界指环]
+#if
+#ACT
+Gmexecute 开始提问 @超级指环
+Param1 3
+PARAM2 405
+PARAM3 330
+MonGen 魔戒指环教主 1 1
+SendCenterMsg 249 151  魔戒指环教主已出现在盟重(405:330)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  魔戒指环教主已出现在盟重(405:330)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  魔戒指环教主已出现在盟重(405:330)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  魔戒指环教主已出现在盟重(405:330)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  魔戒指环教主已出现在盟重(405:330)，请带上队伍将其击杀之！
+SENDMSG 0 【魔戒指环教主】：新区魔界指环活动开始，打死魔戒指环教主必爆一枚魔界指环!
+SENDMSG 0 【魔戒指环教主】：新区魔界指环活动开始，打死魔戒指环教主必爆一枚魔界指环!
+SENDMSG 0 【魔戒指环教主】：新区魔界指环活动开始，打死魔戒指环教主必爆一枚魔界指环!
+SENDMSG 0 【魔戒指环教主】：新区魔界指环活动开始，打死魔戒指环教主必爆一枚魔界指环!
+SENDMSG 0 【魔戒指环教主】：新区魔界指环活动开始，打死魔戒指环教主必爆一枚魔界指环!
+break
+
+
+[@随机爆终极]
+#if
+#ACT
+Gmexecute 开始提问 @超级随机
+Param1 3
+PARAM2 271
+PARAM3 332
+MonGen 终极必爆教主 1 1
+SAVEVAR GLOBAL 终极必爆 ..\QuestDiary\变量数据\系统变量.txt
+SendCenterMsg 249 151  终极必爆教主已出现在盟重(271:332)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  终极必爆教主已出现在盟重(271:332)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  终极必爆教主已出现在盟重(271:332)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  终极必爆教主已出现在盟重(271:332)，请带上队伍将其击杀之！
+SendCenterMsg 249 151  终极必爆教主已出现在盟重(271:332)，请带上队伍将其击杀之！
+SENDMSG 0 【终极必爆】：新区终极必爆活动开始，打死终极必爆教主必爆随机终极卷!
+SENDMSG 0 【终极必爆】：新区终极必爆活动开始，打死终极必爆教主必爆随机终极卷!
+SENDMSG 0 【终极必爆】：新区终极必爆活动开始，打死终极必爆教主必爆随机终极卷!
+SENDMSG 0 【终极必爆】：新区终极必爆活动开始，打死终极必爆教主必爆随机终极卷!
+SENDMSG 0 【终极必爆】：新区终极必爆活动开始，打死终极必爆教主必爆随机终极卷!
+break
+
+[@超级夺宝]
+#if
+CHECKVAR GLOBAL 超级夺宝 = 0
+CHECKVAR GLOBAL 开区小时 = 2
+#ACT
+Gmexecute 开始提问 @超宝邀请
+Param1 CJDB
+PARAM2 17
+PARAM3 20
+MonGen 夺宝教主2 1 1
+CALCVAR GLOBAL 超级夺宝 = 1
+SAVEVAR GLOBAL 超级夺宝 ..\QuestDiary\变量数据\系统变量.txt
+SENDMSG 0 【超级夺宝】：新区超级夺宝活动开始，胜者将获得500万元宝奖励!
+SENDMSG 0 【超级夺宝】：新区超级夺宝活动开始，胜者将获得500万元宝奖励!
+break
+
+[@夺宝奇兵]
+#if
+#ACT
+SENDMSG 0 【夺宝奇兵】：夺宝教主出现在活动地图，请速去消灭他夺得宝盒!
+SENDMSG 0 【夺宝奇兵】：夺宝教主出现在活动地图，请速去消灭他夺得宝盒!
+Gmexecute 开始提问 @夺宝邀请
+
+#if
+CheckMapSameMonCount DBQB 夺宝教主1 < 1
+#ACT
+Param1 DBQB
+PARAM2 20
+PARAM3 25
+MonGen 夺宝教主1 1 1
+break
+
+[@夺宝检测]
+#if
+#act
+Gmexecute 开始提问 @宝盒作弊检测
+
+[@记录小时]
+#act
+CALCVAR GLOBAL 开区小时 + 1
+SAVEVAR GLOBAL 开区小时 ..\QuestDiary\变量数据\系统变量.txt
+break
+
+[@赌场]
+#IF
+LARGE G71 0
+SMALL G71 7
+equal G77 0
+equal G76 0
+#ACT
+mov G72 <$STR(G71)>
+Gmexecute 开始提问  @Newduboyxgame
+mov G77 60
+break
+
+
+#IF
+equal G77 0
+equal G76 0
+#ACT
+movr G72 6
+inc G72 1
+Gmexecute 开始提问  @Newduboyxgame
+mov G77 60
+break
+
+#IF
+EQUAL G77 10
+equal G76 0
+#ACT
+SENDMSG 0 提示：大富豪娱乐城还有10秒种开始摇动骰子，要下注的玩家赶快下注！
+DEC G77 1
+break
+
+#IF
+equal G77 58
+equal G76 0
+#ACT
+Gmexecute 开始提问 @NewduboxyGame
+DEC G77 1
+break
+
+#IF
+equal G77 55
+equal G76 0
+#ACT
+Gmexecute 开始提问 @NewduboxyyGame
+DEC G77 1
+break
+
+#IF
+LARGE G77 0
+equal G76 0
+#ACT
+DEC G77 1
+break
+
+[@赌场喊话]
+#IF
+equal G76 0
+#ACT
+SENDMSG 0 提示：大富豪娱乐城火爆开放中，投骰子、水果机想赢钱的快来土城！
+break
+
+
+[@刷兔子]
+#ACT
+Param1 3
+Param2 500
+Param3 400
+MonGen 小白兔 40 450
+MonGen 小白兔1 40 450
+MonGen 白兔精 1 450
+SendCenterMsg 254 252 ぐ系统：可爱的白兔精带领手下们，携带大量财宝来到了盟重省，谁先找到归谁...
+SENDMSG 0 ぐ系统：可爱的白兔精带领手下们，携带大量财宝来到了盟重省，谁先找到归谁...
+
+
+[@树妖预告]
+#ACT
+SendCenterMsg 250 24 ★服务器特别通知:3分钟后招财树将出现在土药前. 1 5
+break
+
+[@万年树妖]
+#if
+CheckMapSameMonCount 3 招财树 < 1
+#ACT
+Param1 3
+Param2 358
+Param3 340
+MonGen 招财树 1 1
+SendCenterMsg 254 252 ぐ系统：盟重省[358,340]出现神奇的招财树!可爆元宝和大量装备!每30分钟刷新次! 1
+GuildNoticeMsg 150 0 ぐ系统：盟重省[358,340]出现神奇的招财树!可爆元宝和大量装备!每30分钟刷新次!!
+GMEXECUTE 开始提问 @刷新树妖
+break
+
+
+[@行会争霸]
+#IF
+#ACT
+GuildNoticeMsg 1 210   行会争霸大站正在进行中,胜利行会奖励3888888元宝!各大行会火速参加!
+GuildNoticeMsg 1 210   行会争霸大站正在进行中,胜利行会奖励3888888元宝!各大行会火速参加!
+
+[@阎王爷]
+#IF
+#ACT
+SENDMSG 0 携带大量宝物的阎罗王出现在生死决斗地图！
+SENDMSG 0 携带大量宝物的阎罗王出现在生死决斗地图！
+Gmexecute 开始提问 @阎王爷
+
+;——————————————————————————————————
+
+[@开区天数]
+#act
+CALCVAR GLOBAL 开区天数 + 1
+SAVEVAR GLOBAL 开区天数 ..\QuestDiary\变量数据\系统变量.txt
+
+[@清理沙奖励]
+#act
+CALCVAR GLOBAL 领取次数 = 0
+SAVEVAR GLOBAL 领取次数 ..\QuestDiary\变量数据\系统变量.txt
+;押镖清理
+CLEARNAMELIST ..\QuestDiary\变量数据\压镖次数.txt
+;心魔清理
+CLEARNAMELIST ..\QuestDiary\变量数据\心魔系统.txt
+SENDMSG 0 新的一天开始了，要激情更要注意身体，祝大家游戏愉快！
+SENDMSG 0 新的一天开始了，要激情更要注意身体，祝大家游戏愉快！
+SENDMSG 0 新的一天开始了，要激情更要注意身体，祝大家游戏愉快！
+
+
+[@奖励开启]
+#act
+CALCVAR GLOBAL 攻沙奖励 = 1
+SAVEVAR GLOBAL 攻沙奖励 ..\QuestDiary\变量数据\系统变量.txt
+[@奖励关闭]
+#act
+CALCVAR GLOBAL 攻沙奖励 = 0
+SAVEVAR GLOBAL 攻沙奖励 ..\QuestDiary\变量数据\系统变量.txt
+[@攻沙设置]
+#if
+CHECKVAR GLOBAL 开区天数 > 0
+#act
+AddAttackSabukAll 0
+SENDMSG 1 ぐ系统：集体攻城已经开启!--请提早建会!否则参加不了集体攻城!
+SENDMSG 1 ぐ系统：集体攻城已经开启!--每天19点50分开启全服大型攻城!
+SENDMSG 1 ぐ系统：集体攻城已经开启!--每个行会都可以攻城!无需提交头像
+[@攻沙喊话]
+#IF
+CHECKVAR GLOBAL 开区天数 > 0
+#ACT
+SENDMSG 1 ぐ系统：集体攻城已经开启!--请提早建会!否则参加不了集体攻城!
+SENDMSG 1 ぐ系统：集体攻城已经开启!--每天19点50分开启全服大型攻城!
+SENDMSG 1 ぐ系统：集体攻城已经开启!--每个行会都可以攻城!无需提交头像
+
+[@领取沙奖励]
+#IF
+CHECKVAR GLOBAL 开区天数 > 0
+#ACT
+SENDMSG 1 ぐ系统：拿沙奖励在土药“攻城情报”NPC处，请沙城主在15分钟内领取，过期不侯！
+SENDMSG 1 ぐ系统：拿沙奖励在土药“攻城情报”NPC处，请沙城主在15分钟内领取，过期不侯！
+SENDMSG 1 ぐ系统：拿沙奖励在土药“攻城情报”NPC处，请沙城主在15分钟内领取，过期不侯！
+SENDMSG 1 ぐ系统：拿沙奖励在土药“攻城情报”NPC处，请沙城主在15分钟内领取，过期不侯！
+
+[@说话]
+#IF
+CHECKONLINEPLAYCOUNT > 180
+CHECKVAR GLOBAL 开区小时 < 6
+#ACT
+break
+
+#IF
+#ACT
+SendCenterMsg 180 249 服务器长期稳定，在1.76基础上精心修订，增加很多新元素，极品0-30，散人好混 1
+SendCenterMsg 254 252 服务器里你所见到的每一个人都是活人,无一个死人!! 1
+
+[@说说话]
+#IF
+CHECKONLINEPLAYCOUNT > 180
+CHECKVAR GLOBAL 开区小时 < 6
+#ACT
+break
+
+#IF
+#ACT
+SendCenterMsg 180 249 本服务器唯一宗旨力争为玩家打造绿色游戏环境超爽游戏模式!
+SendCenterMsg 254 252 散人好混，可以免费通过“@回收”命令来远程回收装备.!! 1
+
+
+[@再说话1]
+#IF
+CHECKONLINEPLAYCOUNT > 180
+CHECKVAR GLOBAL 开区小时 < 6
+#ACT
+break
+
+#IF
+#ACT
+SendCenterMsg 254 252 如果有多余的装备可以到回收员那里回收元宝 1
+SendCenterMsg 254 252 本服务器顶级装备好暴，精品和贵族系列打大小BOSS都很容易暴 1
+
+[@再说话2]
+#IF
+CHECKONLINEPLAYCOUNT > 180
+CHECKVAR GLOBAL 开区小时 < 6
+#ACT
+break
+
+#IF
+#ACT
+SendCenterMsg 254 252 新区开加速者直接删号处理，请大家互相监督！共同打造绿色游戏环境！ 1
+SendCenterMsg 254 252 本服拒绝外挂和加速，如果发现一律降3级关小黑屋20小时，第二次永久封号！ 1
+
+[@再说话3]
+#IF
+CHECKONLINEPLAYCOUNT > 180
+CHECKVAR GLOBAL 开区小时 < 6
+#ACT
+break
+
+#IF
+#ACT
+SendCenterMsg 254 252 服务器里你所见到的每一个人都是活人,无一个死人.!! 1
+SendCenterMsg 254 252 有多余的祖玛级以上装备都可以回收元宝，回报丰厚！！ 1
+
+[@极品发光]
+#IF
+#ACT
+Gmexecute 开始提问 @极品发光go
+
+
+[@公告1]
+#IF
+CHECKONLINEPLAYCOUNT > 180
+CHECKVAR GLOBAL 开区小时 < 6
+#ACT
+break
+
+#ACT
+GuildNoticeMsg 0 151 ╔═╦════════════════════════════╗
+GuildNoticeMsg 0 151 ║公║　★法师福利：①白日门虎卫堂30分钟刷新《虎卫》一只！★　║
+GuildNoticeMsg 0 151 ║告║　　　②白日门野外刷新鹰卫(4小时刷新{全图})很牛逼哦 　　║
+GuildNoticeMsg 0 151 ╚═╩════════════════════════════╝
+break
+
+
+[@公告2]
+#IF
+CHECKONLINEPLAYCOUNT > 180
+CHECKVAR GLOBAL 开区小时 < 6
+#ACT
+break
+
+#ACT
+GuildNoticeMsg 0 151 ╔═╦════════════════════════════╗
+GuildNoticeMsg 0 151 ║★║活动多,PK爽,游戏耐玩,每日新区齐开绝对激情,阶段合区超耐玩║
+GuildNoticeMsg 0 151 ║特║本服为无GM无客服模式,若玩家相信冒充GM被骗,本服一律不负责║
+GuildNoticeMsg 0 151 ║别║本服无内服玩家,无客服,独家内挂版,公平,公正,长期,稳定开放║
+GuildNoticeMsg 0 151 ║公║本服若开内服接受你任何辱骂,反则骂本服等骂自己,怀疑你智商║
+GuildNoticeMsg 0 151 ║告║　§严打第三方外挂,一经发现严肃处理,珍惜帐号,远离外挂!　║
+GuildNoticeMsg 0 151 ║★║　§严打第三方外挂,一经发现严肃处理,珍惜帐号,远离外挂!　║
+GuildNoticeMsg 0 151 ╚═╩════════════════════════════╝
+break
+
+[@公告3]
+#IF
+CHECKONLINEPLAYCOUNT > 180
+CHECKVAR GLOBAL 开区小时 < 6
+#ACT
+break
+
+#ACT
+GuildNoticeMsg 0 151 ╔═╦════════════════════════════╗
+GuildNoticeMsg 0 151 ║公║　如果有多余的装备可以到回收员那里回收元宝(♂组玛级♂)　║
+GuildNoticeMsg 0 151 ║告║　　　★本服拒绝一切加速，请珍惜帐号不要使用外挂★　　　║
+GuildNoticeMsg 0 151 ╚═╩════════════════════════════╝
+break
+
+[@30分钟刷新]
+#ACT
+MOV G111 2
+ReadRandomStr .\QuestDiary\装备数据\随机物品.txt A44
+ReadRandomStr .\QuestDiary\装备数据\随机元宝.txt A55
+ReadRandomStr .\QuestDiary\装备数据\随机经验.txt A66
+GuildNoticeMsg 0 151 ╔══╦═══════════════════════════╗
+GuildNoticeMsg 0 151 ║皇榜║近年法玛战争连连不断,装备缺乏,法玛国王准备大量财宝赏劫║
+GuildNoticeMsg 0 151 ║告示║榜法玛勇士,勇士国抓紧时间劫皇傍.皇榜奖励属于你的了..　║
+GuildNoticeMsg 0 151 ╚══╩═══════════════════════════╝
+
+
+[@B_Time]
+#if
+Equal I98 0
+#Act
+Mov I98 1
+#Call [\\Ecom\GBatVar.txt] @GBatVar
+Break
+
+#if
+CheckVar Global bRvar = 0
+#Act
+CALCVAR GLOBAL bRvar = 1
+CALCVAR GLOBAL bTime = 50
+CALCVAR GLOBAL bInn + 1
+Break
+
+#if
+CheckVar Global bRvar = 1
+CheckVar Global bTime > 1
+#Act
+CAlCVAR Global bTime - 1
+Break
+
+#if
+CheckVar Global bRvar = 1
+CheckVar Global bTime = 1
+CheckVar Global bBanName = 无
+#Act
+CAlCVAR Global bRvar = 1
+CAlCVAR Global bTime = 50
+; 无人坐庄提示
+Break
+
+
+#if
+CheckVar Global bRvar = 1
+CheckVar Global bTime = 1
+#Act
+CAlCVAR Global bRvar = 2
+CAlCVAR Global bTime = 70
+GuildNoticeMsg 219 255  ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+GuildNoticeMsg 219 255  [赌庄胖妞]：抢庄已结束。现在是下注时间，押定离手了。
+GuildNoticeMsg 219 255  ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+GuildNoticeMsg 219 255  庄家姓名：【<$Global(bBanName)>】　庄家本钱数：【<$Global(bBancap)>】
+GuildNoticeMsg 219 255  ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+GuildNoticeMsg 219 255  [赌庄胖妞]：现在开始下注了，庄家本钱共有<$Global(bBancap)>个元宝。
+GuildNoticeMsg 219 255  [赌庄胖妞]：现在开始下注了，庄家本钱共有<$Global(bBancap)>个元宝。
+GuildNoticeMsg 219 255  [赌庄胖妞]：现在开始下注了，庄家本钱共有<$Global(bBancap)>个元宝。
+GuildNoticeMsg 219 255  [赌庄胖妞]：现在开始下注了，庄家本钱共有<$Global(bBancap)>个元宝。
+Break
+
+#IF
+CheckVar Global bRvar = 2
+CheckVar Global bTime > 1
+#Act
+CAlCVAR Global bTime - 1
+Break
+
+#IF
+CheckVar Global bRvar = 2
+CheckVar Global bTime = 1
+#Act
+GuildNoticeMsg 255 58 第<$Global(BInn)>局：庄家[<$Global(bBanName)>]　本金[<$Global(bBancap)>]元宝　押大[<$Global(bPb)>]元宝　押小[<$Global(bPs)>]元宝.
+GMEXECUTE 开始提问 @UBanEnd
+AddTextList .\QuestDiary\Ecom\Log\BatInn.txt <$Global(bInn)>:<$Global(bBancap)>
+AddTextList .\QuestDiary\Ecom\Log\BatBnn.txt <$Global(bPb)>:<$Global(bPs)>
+AddTextList .\QuestDiary\Ecom\Log\BatNu.txt 【<$Global(bNu1)>、<$Global(bNu2)>、<$Global(bNu3)>】:<$Global(bNuG)>
+AddTextList .\QuestDiary\Ecom\Log\BatRes.txt 【<$Global(bResStr)>】:<$Global(bRes)>
+CAlCVAR Global bRvar = 3
+CAlCVAR Global bTime = 5
+Break
+
+#if
+CheckVar Global bRvar = 3
+CheckVar Global bTime > 1
+#Act
+CAlCVAR Global bTime - 1
+Break
+
+#if
+CheckVar Global bRvar = 3
+CheckVar Global bTime = 1
+#Act
+CALCVAR GLOBAL bBanName = 无
+CALCVAR GLOBAL bBancap = 0
+CALCVAR GLOBAL bInn + 1
+CALCVAR GLOBAL bPb = 0
+CALCVAR GLOBAL bPs = 0
+CALCVAR GLOBAL bsPb = 0
+CALCVAR GLOBAL bsPs = 0
+CALCVAR GLOBAL bNu1 = 0
+CALCVAR GLOBAL bNu2 = 0
+CALCVAR GLOBAL bNu3 = 0
+CALCVAR GLOBAL bNuG = 0
+CALCVAR GLOBAL bRes = 0
+CALCVAR GLOBAL bResStr = 0
+CALCVAR Global bRvar = 1
+CALCVAR Global bTime = 50
+
+[@刷真假神殿]
+#if
+EQUAL G198 0
+#ACT
+MOV G198 1
+Param1 zjsd
+PARAM2 55
+PARAM3 55
+MonGen 我爆终极逆天 2 50
+Param1 zjsd
+PARAM2 55
+PARAM3 55
+MonGen 我爆终极逆天1 1 50
+SENDMSG 0 【真假神殿活动已开启】：赶紧前往，必爆神级装备，赶紧进入（坐标321：318）!
+SENDMSG 0 【真假神殿活动已开启】：赶紧前往，必爆神级装备，赶紧进入（坐标321：318）!
+SENDMSG 0 【真假神殿活动已开启】：赶紧前往，必爆神级装备，赶紧进入（坐标321：318）!
+SENDMSG 0 【真假神殿活动已开启】：赶紧前往，必爆神级装备，赶紧进入（坐标321：318）!
+SENDMSG 0 【真假神殿活动已开启】：赶紧前往，必爆神级装备，赶紧进入（坐标321：318）!
+break
+
+
+[@终止真假神殿]
+#if
+#ACT
+MOV G198 0
+MoveMapPlay zjsd 3 333 333
+SENDMSG 0 【真假神殿活动已关闭】：等待明天开放，尽情期待!
+SENDMSG 0 【真假神殿活动已关闭】：等待明天开放，尽情期待!
+SENDMSG 0 【真假神殿活动已关闭】：等待明天开放，尽情期待!
+SENDMSG 0 【真假神殿活动已关闭】：等待明天开放，尽情期待!
+SENDMSG 0 【真假神殿活动已关闭】：等待明天开放，尽情期待!
+break
+
+
+
+[@买马开始]
+#IF
+#ACT
+CLEARMAPMON dns001
+Gmexecute 开始提问 @进入买马
+SENDMSG 0 〖幸运买马〗：新的一轮马奖就要开始,5分钟后开出中奖号码,请大家赶快进入幸运马场买定号码.
+SENDMSG 0 〖幸运买马〗：新的一轮马奖就要开始,5分钟后开出中奖号码,请大家赶快进入幸运马场买定号码.
+SENDMSG 0 〖幸运买马〗：新的一轮马奖就要开始,5分钟后开出中奖号码,请大家赶快进入幸运马场买定号码.
+SENDMSG 0 〖幸运买马〗：新的一轮马奖就要开始,5分钟后开出中奖号码,请大家赶快进入幸运马场买定号码.
+SENDMSG 0 〖幸运买马〗：新的一轮马奖就要开始,5分钟后开出中奖号码,请大家赶快进入幸运马场买定号码.
+BREAK
+
+[@结束提示]
+#IF
+#ACT
+SENDMSG 0 〖幸运买马〗：还有2分钟开出中奖号码,还没有买的玩家抓紧时间,900万大奖等你来拿,速度搞快.
+SENDMSG 0 〖幸运买马〗：还有2分钟开出中奖号码,还没有买的玩家抓紧时间,900万大奖等你来拿,速度搞快.
+SENDMSG 0 〖幸运买马〗：还有2分钟开出中奖号码,还没有买的玩家抓紧时间,900万大奖等你来拿,速度搞快.
+SENDMSG 0 〖幸运买马〗：还有2分钟开出中奖号码,还没有买的玩家抓紧时间,900万大奖等你来拿,速度搞快.
+SENDMSG 0 〖幸运买马〗：还有2分钟开出中奖号码,还没有买的玩家抓紧时间,900万大奖等你来拿,速度搞快.
+BREAK
+
+[@买马结束]
+#if
+random 9
+#act
+mov G360 3
+goto @出号检测
+break
+#if
+random 8
+#act
+mov G360 8
+goto @出号检测
+break
+#if
+random 7
+#act
+mov G360 4
+goto @出号检测
+break
+#if
+random 6
+#act
+mov G360 7
+goto @出号检测
+break
+#if
+random 5
+#act
+mov G360 1
+goto @出号检测
+break
+#if
+random 4
+#act
+mov G360 5
+goto @出号检测
+break
+#if
+random 3
+#act
+mov G360 2
+goto @出号检测
+break
+#if
+random 2
+#act
+mov G360 9
+goto @出号检测
+break
+#if
+random 1
+#act
+mov G360 6
+goto @出号检测
+break
+
+
+
+
+
+[@出号检测]
+#IF
+equal G360 1
+LARGE G361 100
+#ACT
+goto @机率出号
+BREAK
+#IF
+equal G360 2
+LARGE G362 100
+#ACT
+goto @机率出号
+BREAK
+#IF
+equal G360 3
+LARGE G363 100
+#ACT
+goto @机率出号
+BREAK
+#IF
+equal G360 4
+LARGE G364 100
+#ACT
+goto @机率出号
+BREAK
+#IF
+equal G360 5
+LARGE G365 100
+#ACT
+goto @机率出号
+BREAK
+#IF
+equal G360 6
+LARGE G366 100
+#ACT
+goto @机率出号
+BREAK
+#IF
+equal G360 7
+LARGE G367 100
+#ACT
+goto @机率出号
+BREAK
+#IF
+equal G360 8
+LARGE G368 100
+#ACT
+goto @机率出号
+BREAK
+#IF
+equal G360 9
+LARGE G369 100
+#ACT
+goto @机率出号
+BREAK
+#IF
+#ACT
+goto @刷马
+SendCenterMsg 249 0 〖幸运买马〗：本期中奖的号码是〖<$STR(G360)>〗号马 1
+SendCenterMsg 249 0 〖幸运买马〗：本期中奖的号码是〖<$STR(G360)>〗号马 1
+SendCenterMsg 249 0 〖幸运买马〗：本期中奖的号码是〖<$STR(G360)>〗号马 1
+SendCenterMsg 249 0 〖幸运买马〗：本期中奖的号码是〖<$STR(G360)>〗号马 1
+SendCenterMsg 249 0 〖幸运买马〗：本期中奖的号码是〖<$STR(G360)>〗号马 1
+MOV G361 0
+MOV G362 0
+MOV G363 0
+MOV G364 0
+MOV G365 0
+MOV G366 0
+MOV G367 0
+MOV G368 0
+MOV G369 0
+Gmexecute 开始提问 @开始发奖
+MOV G379 <$STR(G378)>
+MOV G378 <$STR(G377)>
+MOV G377 <$STR(G376)>
+MOV G376 <$STR(G375)>
+MOV G375 <$STR(G374)>
+MOV G374 <$STR(G373)>
+MOV G373 <$STR(G372)>
+MOV G372 <$STR(G371)>
+MOV G371 <$STR(G360)>
+BREAK
+
+[@机率出号]
+#if
+random 3
+#act
+goto @刷马
+SendCenterMsg 249 0 〖幸运买马〗：本期中奖的号码是〖<$STR(G360)>〗号马 1
+SendCenterMsg 249 0 〖幸运买马〗：本期中奖的号码是〖<$STR(G360)>〗号马 1
+SendCenterMsg 249 0 〖幸运买马〗：本期中奖的号码是〖<$STR(G360)>〗号马 1
+SendCenterMsg 249 0 〖幸运买马〗：本期中奖的号码是〖<$STR(G360)>〗号马 1
+SendCenterMsg 249 0 〖幸运买马〗：本期中奖的号码是〖<$STR(G360)>〗号马 1
+MOV G361 0
+MOV G362 0
+MOV G363 0
+MOV G364 0
+MOV G365 0
+MOV G366 0
+MOV G367 0
+MOV G368 0
+MOV G369 0
+Gmexecute 开始提问 @开始发奖
+MOV G379 <$STR(G378)>
+MOV G378 <$STR(G377)>
+MOV G377 <$STR(G376)>
+MOV G376 <$STR(G375)>
+MOV G375 <$STR(G374)>
+MOV G374 <$STR(G373)>
+MOV G373 <$STR(G372)>
+MOV G372 <$STR(G371)>
+MOV G371 <$STR(G360)>
+break
+#if
+random 2
+#act
+mov G360 0
+goto @买马结束
+break
+#if
+random 1
+#act
+mov G360 0
+goto @买马结束
+break
+
+
+
+[@刷马]
+#if
+equal G360 1
+#act
+CLEARMAPMON dns001
+PARAM1 dns001
+PARAM2 35
+PARAM3 29
+MONGen 本期：①号马 1 0
+break
+#if
+equal G360 2
+#act
+CLEARMAPMON dns001
+PARAM1 dns001
+PARAM2 35
+PARAM3 29
+MONGen 本期：②号马 1 0
+break
+#if
+equal G360 3
+#act
+CLEARMAPMON dns001
+PARAM1 dns001
+PARAM2 35
+PARAM3 29
+MONGen 本期：③号马 1 0
+break
+#if
+equal G360 4
+#act
+CLEARMAPMON dns001
+PARAM1 dns001
+PARAM2 35
+PARAM3 29
+MONGen 本期：④号马 1 0
+break
+#if
+equal G360 5
+#act
+CLEARMAPMON dns001
+PARAM1 dns001
+PARAM2 35
+PARAM3 29
+MONGen 本期：⑤号马 1 0
+break
+#if
+equal G360 6
+#act
+CLEARMAPMON dns001
+PARAM1 dns001
+PARAM2 35
+PARAM3 29
+MONGen 本期：⑥号马 1 0
+break
+#if
+equal G360 7
+#act
+CLEARMAPMON dns001
+PARAM1 dns001
+PARAM2 35
+PARAM3 29
+MONGen 本期：⑦号马 1 0
+break
+#if
+equal G360 8
+#act
+CLEARMAPMON dns001
+PARAM1 dns001
+PARAM2 35
+PARAM3 29
+MONGen 本期：⑧号马 1 0
+break
+#if
+equal G360 9
+#act
+CLEARMAPMON dns001
+PARAM1 dns001
+PARAM2 35
+PARAM3 29
+MONGen 本期：⑨号马 1 0
+break
+
+[@开始发奖]
+#if
+#act
+Gmexecute 开始提问 @开始发奖
+break
+
+
+
+[@随机定点回收] 
+#if
+random 7
+#act
+mov G349 6
+break
+#if
+random 6
+#act
+mov G349 5
+break
+#if
+random 5
+#act
+mov G349 4
+break
+#if
+random 4
+#act
+mov G349 3
+break
+#if
+random 3
+#act
+mov G349 2
+break
+#if
+random 2
+#act
+mov G349 11
+break
+#if
+random 1
+#act
+mov G349 0
+break

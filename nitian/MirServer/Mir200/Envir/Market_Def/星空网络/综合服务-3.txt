@@ -1,0 +1,247 @@
+[@main]
+……………………………欢迎来到<$SERVERNAME>……………………………\
+<当前系统时间/SCOLOR=253>：<$MONTH>月<$DAY>日<$HOUR>:<$MINUTE>:<$SECOND>   <你进入游戏时间/SCOLOR=253>：<$LOGINLONG>\
+<当前等级/SCOLOR=254>：<$LEVEL>级   <当前PK点数/SCOLOR=254>：<$PKPOINT>点\
+<元宝数量/SCOLOR=254>：<$GAMEGOLD>个\　\
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,70,253,250>\
+┆◆<【变性转职】/@转职变性100>◆┆◆○<欢迎光临>○◆┆◆○<每日活动/@每日活动100>○◆┆\
+<★━━━━━━━◆○/AUTOCOLOR=168,70,250,253>━━━━━━━<●◇━━━━━━━━★/AUTOCOLOR=250,70,168,253>\
+
+
+
+[@每日活动100]
+<-----------------------/SCOLOR=254><全天活动安排/SCOLOR=253><-----------------------/SCOLOR=254>\ \
+<【杀阎王爷】/@阎王爷>　<每天1小时一次 刺杀活动,全服触发进行追杀大BOSS/SCOLOR=146>\ 
+<【行会争霸】/@行会进>　<每天 19:30-20:00 胜利行会可得3888888元宝/SCOLOR=146>\
+<【超级夺宝】/SCOLOR=253>　<只在新区开区2小时举行，100%奖500万元宝/SCOLOR=146>\
+<【夺宝奇兵】/SCOLOR=253>　<每天12、16、20、0点的05分，100万元宝+随机奖/SCOLOR=146>\
+<【土城兔子】/SCOLOR=253>　<每天0、4、8、12、16、20点的40分土城随机刷出/SCOLOR=146>\
+<【超级夺宝】和【夺宝奇兵】请留意弹出邀请，2分钟内不进就不能参加！/SCOLOR=250>\
+<【魔戒指环】和【必爆终极】请留意弹出邀请，前往坐标(405:330)(271:332)也可参加！/SCOLOR=250>\
+
+[@阎王爷]
+#if
+#act
+mapmove SSJDC
+give 回城卷
+GuildNoticeMsg 0  253 玩家(%s)进入刺杀阎王爷活动地图，未进入玩家可从土城综合服务NPC进入！！！
+break
+
+[@行会进]
+#IF
+hour 19 19
+min  30 59
+#act
+goto @ok
+break
+#elsesay
+
+\ \ 
+\ \
+
+每天晚上7:30--8:00点准时开放,开放30分钟\
+\ \
+获得行会争霸胜利者系统给予388万元宝奖励！\
+
+[@ok]
+#if
+#act
+Map 9004
+give 回城卷
+GuildNoticeMsg 1 210  [%s]进入了行会争霸地图,获得行会争霸胜利者系统给予3888888元宝奖励
+break
+
+
+[@转职变性100] 
+凡事要三思而后行\
+请一定阅读了相关内容后再决定\\
+<转职/@zhuanzhi>\\\
+<变性/@bianxing>
+
+
+[@zhuanzhi]
+作为战士您是否已经厌倦了烈火和半月呢？作为法师您是否不再喜\ 
+欢闪电和冰咆哮了呢？作为道士您是否不在只想做为别人的配角只\ 
+放宝宝和魔防了呢？OK！现在机会来了，为了满足您的要求，特提\ 
+供转职服务，当然天上是不会掉“馅饼”的，为了您PK的更爽，自\ 
+然您也得付出一定的代价.先看清楚下面的需知再做决定吧!\ \ 
+<转职必看/@readme1> <不转/@exit>\ 
+
+
+
+[@readme1] 
+一：转职后现有技能消失，并且全部学会新职业技能，\ 
+你犹如重生一般。\ \ 
+二：需要等级<55级>以上才可以转职，目前转职需要元宝<100万>个!\ 
+转职<不降低级别>。\ 
+好了祝好运，快去体验那完全不一样的职业给您带来的快感吧。\ \ 
+<转职/@zhzy> <不转/@exit>\ 
+
+[@zhzy] 
+#IF 
+CHECKLEVELex > 54
+CHECKGAMEGOLD > 999999
+#SAY 
+转职之前再次提醒你：转职后身上原有的技能将全部消失，\ 
+同时自动全部学习新职业技能 \ 
+请慎重考虑，未来只在一念之差！\ \ 
+<转职/@zhzy-3> <不转/@exit>\ 
+#ELSESAY 
+转职第一步：请确定您是否有55级，并且身上有足够的元宝。\ \ 
+
+<离 开/@exit> 
+
+
+
+[@zhzy-3] 
+#IF 
+CHECKLEVELex > 54
+CHECKGAMEGOLD > 999999
+#SAY 
+请选择合适的职业：\ \ 
+<武士/@warr> <魔法师/@wizard> <道士/@taos>\ 
+#ELSESAY 
+干吗？想作弊，快把元宝交出来，不然别想转职！\ 
+<离开/@exit> 
+
+
+
+[@warr]
+#IF 
+CHECKLEVELex > 54
+CHECKGAMEGOLD > 999999
+#ACT 
+GAMEGOLD - 1000000
+CLEARSKILL 
+CHANGEJOB Warrior 
+ADDSKILL 基本剑术 3 
+ADDSKILL 攻杀剑术 3 
+ADDSKILL 刺杀剑术 3 
+ADDSKILL 半月弯刀 3 
+ADDSKILL 野蛮冲撞 3 
+ADDSKILL 烈火剑法 3 
+ADDSKILL 护体神盾 3 
+sendmsg 0 玩家{<$USERNAME>}成功转职为一位伟大的战士！
+sendmsg 0 玩家{<$USERNAME>}成功转职为一位伟大的战士！
+sendmsg 0 玩家{<$USERNAME>}成功转职为一位伟大的战士！
+SENDMSG 5 您已成功转职，请小退后，再进入游戏！
+KICK
+
+[@wizard] 
+#IF 
+CHECKLEVELex > 54
+CHECKGAMEGOLD > 999999
+#ACT 
+GAMEGOLD - 1000000
+CLEARSKILL 
+CHANGEJOB Wizard 
+ADDSKILL 抗拒火环 3 
+ADDSKILL 诱惑之光 3 
+ADDSKILL 地狱火 3 
+ADDSKILL 雷电术 3 
+ADDSKILL 瞬息移动 3 
+ADDSKILL 爆裂火焰 3 
+ADDSKILL 大火球 3 
+ADDSKILL 火墙 3 
+ADDSKILL 疾光电影 3 
+ADDSKILL 地狱雷光 3 
+ADDSKILL 魔法盾 3 
+ADDSKILL 圣言术 3 
+ADDSKILL 冰咆哮 3 
+ADDSKILL 护体神盾 3 
+sendmsg 0 玩家{<$USERNAME>}成功转职为一位伟大的法师！
+sendmsg 0 玩家{<$USERNAME>}成功转职为一位伟大的法师！
+sendmsg 0 玩家{<$USERNAME>}成功转职为一位伟大的法师！
+SENDMSG 5 您已成功转职，请小退后，再进入游戏！
+KICK
+
+[@taos] 
+#IF 
+CHECKLEVELex > 54
+CHECKGAMEGOLD > 999999
+#ACT 
+GAMEGOLD - 1000000
+CLEARSKILL 
+CHANGEJOB Taoist 
+ADDSKILL 治愈术 3 
+ADDSKILL 精神力战法 3 
+ADDSKILL 施毒术 3 
+ADDSKILL 灵魂火符 3 
+ADDSKILL 隐身术 3 
+ADDSKILL 集体隐身术 3 
+ADDSKILL 幽灵盾 3 
+ADDSKILL 神圣战甲术 3 
+ADDSKILL 心灵启示 3 
+ADDSKILL 困魔咒 3 
+ADDSKILL 群体治疗术 3 
+ADDSKILL 召唤神兽 3 
+ADDSKILL 护体神盾 3 
+sendmsg 0 玩家{<$USERNAME>}成功转职为一位伟大的道士！
+sendmsg 0 玩家{<$USERNAME>}成功转职为一位伟大的道士！
+sendmsg 0 玩家{<$USERNAME>}成功转职为一位伟大的道士！
+SENDMSG 5 您已成功转职，请小退后，再进入游戏！
+KICK
+
+[@bianxing] 
+据说女人是水做的，男人是泥做的。\
+春哥，是水泥做的。\
+%￥……￥%……#￥￥@#￥%……&。。\
+不管怎么样，我还是给你一个机会重新做人。\
+当然，费用是<100万>元宝\
+<确定变性/@bianx-1>\
+
+<关闭/@exit> 
+
+[@bianx-1] 
+#if 
+checkmarry 已婚 
+#say 
+对不起，你是个有家室的人，凡事请以家庭为重！如果你一定要变性，请先离婚!!\ <关闭/@exit> 
+#ELSEACT 
+goto @main12 
+
+[@main12] 
+考虑好哦，幸福就在一念之差！\\
+<换性别/@ChangGender>   <关闭/@exit> \
+
+[@ChangGender] 
+#IF 
+gender man 
+#SAY 
+是不是做猛男没什么意思呀，想不想尝尝做淑女的滋味呀！！！\  
+<尝尝/@towoman>\  
+<返回/@main> 
+#ELSESAY 
+是不是做淑女挺累的，想不想尝尝做猛男的滋味呀！！！\  
+<尝尝/@toman><返回/@main> 
+
+[@toman] 
+#IF 
+CHECKGAMEGOLD > 999999 
+#ACT 
+GAMEGOLD - 1000000
+CHANGEGENDER 0 
+sendmsg 0 额滴神啊，玩家{<$USERNAME>}成功变性为男人！
+sendmsg 0 额滴神啊，玩家{<$USERNAME>}成功变性为男人！
+sendmsg 0 额滴神啊，玩家{<$USERNAME>}成功变性为男人！
+#SAY 
+呵呵，你已经变成一位猛男了。\  
+请下线在进来看看！\<返回/@main> 
+#ELSESAY 
+钱都没有，想做手术？我这不是慈善机构!!\ <离开/@exit> 
+
+
+[@towoman] 
+#IF 
+CHECKGAMEGOLD > 999999
+#ACT 
+GAMEGOLD - 1000000
+CHANGEGENDER 1
+sendmsg 0 额滴神啊，玩家{<$USERNAME>}成功变性为女人！
+sendmsg 0 额滴神啊，玩家{<$USERNAME>}成功变性为女人！
+sendmsg 0 额滴神啊，玩家{<$USERNAME>}成功变性为女人！
+#SAY 
+呵呵，你已经变成一位淑女了。\  
+请下线在进来看看！\<返回/@main> 
+#ELSESAY 
+钱都没有，想做手术？我这不是慈善机构!!\ <离开/@exit> 

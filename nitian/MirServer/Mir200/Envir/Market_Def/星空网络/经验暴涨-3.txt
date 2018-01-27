@@ -1,0 +1,40 @@
+[@main]
+祖传秘方研制了1亿经验卷\ 
+<5万元宝一个>\
+130级以前可用，经验暴涨！！\
+<请注意保留足够包裹空格>\
+<一次买20个/@jingyan1>\
+<一次买10个/@jingyan2>\
+<一次买1个/@jingyan3>\ \
+<该物品只有在130级以前才能使用,130级以后请前往泡点区>\
+
+[@jingyan1]
+#IF
+CHECKGAMEGOLD > 999999
+#act
+gamegold - 1000000
+give 1亿经验卷 20
+#ELSEACT
+MESSAGEBOX 你没有足够的元宝购买!
+BREAK
+
+[@jingyan2]
+#IF
+CHECKGAMEGOLD > 499999
+#act
+gamegold - 500000
+give 1亿经验卷 10
+#ELSEACT
+MESSAGEBOX 你没有足够的元宝购买!
+BREAK
+
+[@jingyan3]
+#IF
+CHECKGAMEGOLD > 49999
+#act
+gamegold - 50000
+give 1亿经验卷 1
+#ELSEACT
+MESSAGEBOX 你没有足够的元宝购买!
+BREAK
+;-b--b--Q -Q---156 598018---

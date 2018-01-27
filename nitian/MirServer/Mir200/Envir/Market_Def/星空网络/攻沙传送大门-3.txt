@@ -1,0 +1,85 @@
+[@main]
+　　　<有钱能使鬼推磨!只要给钱,我就直接送你去攻打城堡/SCOLOR=253>\
+　　　说明:<每个点收费不一样,请你选择自己想要的位置/SCOLOR=250>\
+　　　　　　【<沙城大门/@传送1>】<★——★/AUTOCOLOR=168,250,70,253>【<收费:111元宝/@传送1>】\
+　　　　　　【<沙复活点/@传送2>】<★——★/AUTOCOLOR=168,250,70,253>【<收费:666元宝/@传送2>】\
+　　　　　　【<皇宫左门/@传送3>】<★——★/AUTOCOLOR=168,250,70,253>【<收费:888元宝/@传送3>】\
+　　　　　　【<皇宫右门/@传送4>】<★——★/AUTOCOLOR=168,250,70,253>【<收费:888元宝/@传送4>】\
+　　　　　　【<直飞皇宫/@传送5>】<★——★/AUTOCOLOR=168,250,70,253>【<收费:10W元宝/@传送5>】\
+<10万火急激情ing→/AUTOCOLOR=168,250,70,253>【<秒加HP,MP直飞[复活]→收费--5W元宝/@传送6>】\
+<10万火急激情ing→/AUTOCOLOR=168,250,70,253>【<秒加HP,MP直飞[皇宫]→收费-20W元宝/@传送7>】\
+
+[@传送1]
+#IF
+CHECKGAMEGOLD > 110
+#ACT
+GAMEGOLD - 111
+mapmove 3 676 334
+give 回城卷 1
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+
+[@传送2]
+#IF
+CHECKGAMEGOLD > 665
+#ACT
+GAMEGOLD - 666
+mapmove 3 642 288
+give 回城卷 1
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+[@传送3]
+#IF
+CHECKGAMEGOLD > 887
+#ACT
+GAMEGOLD - 888
+mapmove 3 627 281
+give 回城卷 1
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+[@传送4]
+#IF
+CHECKGAMEGOLD > 887
+#ACT
+GAMEGOLD - 888
+mapmove 3 637 271
+give 回城卷 1
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+[@传送5]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+mapmove 0150
+give 回城卷 1
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+[@传送6]
+#IF
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+mapmove 3 642 288
+give 回城卷 1
+HumanHP + 800000
+HumanMP + 800000
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！
+
+[@传送7]
+#IF
+CHECKGAMEGOLD > 199999
+#ACT
+GAMEGOLD - 200000
+mapmove 0150
+give 回城卷 1
+HumanHP + 800000
+HumanMP + 800000
+#elseact
+MESSAGEBOX 【提示】:对不起、您元宝数量不够！

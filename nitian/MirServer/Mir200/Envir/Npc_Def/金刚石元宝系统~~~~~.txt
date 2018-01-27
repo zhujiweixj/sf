@@ -1,0 +1,3366 @@
+[@领取1] 
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j1.txt 
+#ACT 
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j1.txt 
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。 
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！
+ 
+goto @领取2
+goto @领取3
+goto @领取4
+goto @领取5
+goto @领取6
+goto @领取7
+goto @领取8
+goto @领取9
+goto @领取10
+goto @领取11
+goto @领取12
+goto @领取13
+goto @领取14
+goto @领取15
+goto @领取16
+goto @领取17
+goto @领取18
+goto @领取19
+goto @领取20
+goto @领取21
+goto @领取22
+goto @领取23
+goto @领取24
+goto @领取25
+goto @领取26
+goto @领取27
+goto @领取28
+goto @领取29
+goto @领取30
+goto @领取31
+goto @领取32
+goto @领取33
+goto @领取34
+goto @领取35
+goto @领取36
+goto @领取37
+goto @领取38
+goto @领取39
+goto @领取40
+goto @领取41
+goto @领取42
+goto @领取43
+goto @领取44
+goto @领取45
+goto @领取46
+goto @领取47
+goto @领取48
+goto @领取49
+goto @领取50
+goto @领取51
+goto @领取52
+goto @领取53
+goto @领取54
+goto @领取55
+goto @领取56
+goto @领取57
+goto @领取58
+goto @领取59
+goto @领取60
+goto @领取61
+goto @领取62
+goto @领取63
+goto @领取64
+goto @领取65
+goto @领取66
+goto @领取67
+goto @领取68
+goto @领取69
+goto @领取70
+goto @领取71
+goto @领取72
+goto @领取73
+goto @领取74
+goto @领取75
+goto @领取76
+goto @领取77
+goto @领取78
+goto @领取79
+goto @领取80
+goto @领取81
+goto @领取82
+goto @领取83
+goto @领取84
+goto @领取85
+goto @领取86
+goto @领取87
+goto @领取88
+goto @领取89
+goto @领取90
+goto @领取91
+goto @领取92
+goto @领取93
+goto @领取94
+goto @领取95
+goto @领取96
+goto @领取97
+goto @领取98
+goto @领取99
+goto @领取100
+goto @领取101
+goto @领取102
+goto @领取103
+goto @领取104
+goto @领取105
+goto @领取106
+goto @领取107
+goto @领取108
+goto @领取109
+goto @领取110
+goto @领取111
+goto @领取112
+goto @领取113
+goto @领取114
+goto @领取115
+goto @领取116
+goto @领取117
+goto @领取118
+goto @领取119
+goto @领取120
+goto @领取121
+goto @领取122
+goto @领取123
+goto @领取124
+goto @领取125
+goto @领取126
+goto @领取127
+goto @领取128
+goto @领取129
+goto @领取130
+goto @领取131
+goto @领取132
+goto @领取133
+goto @领取134
+goto @领取135
+goto @领取136
+goto @领取137
+goto @领取138
+goto @领取139
+goto @领取140
+goto @领取141
+goto @领取142
+goto @领取143
+goto @领取144
+goto @领取145
+goto @领取146
+goto @领取147
+goto @领取148
+goto @领取149
+goto @领取150
+goto @领取151
+goto @领取152
+goto @领取153
+goto @领取154
+goto @领取155
+goto @领取156
+goto @领取157
+goto @领取158
+goto @领取159
+goto @领取160
+goto @领取161
+goto @领取162
+goto @领取163
+goto @领取164
+goto @领取165
+goto @领取166
+goto @领取167
+goto @领取168
+goto @领取169
+goto @领取170
+goto @领取171
+goto @领取172
+goto @领取173
+goto @领取174
+goto @领取175
+goto @领取176
+goto @领取177
+goto @领取178
+goto @领取179
+goto @领取180
+goto @领取181
+goto @领取182
+goto @领取183
+goto @领取184
+goto @领取185
+goto @领取186
+goto @领取187
+goto @领取188
+goto @领取189
+goto @领取190
+goto @领取191
+goto @领取192
+goto @领取193
+goto @领取194
+goto @领取195
+goto @领取196
+goto @领取197
+goto @领取198
+goto @领取199
+goto @领取200
+goto @领取201
+goto @领取202
+goto @领取203
+goto @领取204
+goto @领取205
+goto @领取206
+goto @领取207
+goto @领取208
+goto @领取209
+goto @领取210
+goto @领取211
+goto @领取212
+goto @领取213
+goto @领取214
+goto @领取215
+goto @领取216
+goto @领取217
+goto @领取218
+goto @领取219
+goto @领取220
+goto @领取221
+goto @领取222
+goto @领取223
+goto @领取224
+goto @领取225
+goto @领取226
+goto @领取227
+goto @领取228
+goto @领取229
+goto @领取230
+goto @领取231
+goto @领取232
+goto @领取233
+goto @领取234
+goto @领取235
+goto @领取236
+goto @领取237
+goto @领取238
+goto @领取239
+goto @领取240
+goto @领取241
+goto @领取242
+goto @领取243
+goto @领取244
+goto @领取245
+goto @领取246
+goto @领取247
+goto @领取248
+goto @领取249
+goto @领取250
+goto @领取251
+goto @领取252
+goto @领取253
+goto @领取254
+goto @领取255
+goto @领取256
+goto @领取257
+goto @领取258
+goto @领取259
+goto @领取260
+goto @领取261
+goto @领取262
+goto @领取263
+goto @领取264
+goto @领取265
+goto @领取266
+goto @领取267
+goto @领取268
+goto @领取269
+goto @领取270
+goto @领取271
+goto @领取272
+goto @领取273
+goto @领取274
+goto @领取275
+goto @领取276
+goto @领取277
+goto @领取278
+goto @领取279
+goto @领取280
+goto @领取281
+goto @领取282
+goto @领取283
+goto @领取284
+goto @领取285
+goto @领取286
+goto @领取287
+goto @领取288
+goto @领取289
+goto @领取290
+goto @领取291
+goto @领取292
+goto @领取293
+goto @领取294
+goto @领取295
+goto @领取296
+goto @领取297
+goto @领取298
+goto @领取299
+goto @领取300
+
+#ElseACT 
+goto @领取2
+goto @领取3
+goto @领取4
+goto @领取5
+goto @领取6
+goto @领取7
+goto @领取8
+goto @领取9
+goto @领取10
+goto @领取11
+goto @领取12
+goto @领取13
+goto @领取14
+goto @领取15
+goto @领取16
+goto @领取17
+goto @领取18
+goto @领取19
+goto @领取20
+goto @领取21
+goto @领取22
+goto @领取23
+goto @领取24
+goto @领取25
+goto @领取26
+goto @领取27
+goto @领取28
+goto @领取29
+goto @领取30
+goto @领取31
+goto @领取32
+goto @领取33
+goto @领取34
+goto @领取35
+goto @领取36
+goto @领取37
+goto @领取38
+goto @领取39
+goto @领取40
+goto @领取41
+goto @领取42
+goto @领取43
+goto @领取44
+goto @领取45
+goto @领取46
+goto @领取47
+goto @领取48
+goto @领取49
+goto @领取50
+goto @领取51
+goto @领取52
+goto @领取53
+goto @领取54
+goto @领取55
+goto @领取56
+goto @领取57
+goto @领取58
+goto @领取59
+goto @领取60
+goto @领取61
+goto @领取62
+goto @领取63
+goto @领取64
+goto @领取65
+goto @领取66
+goto @领取67
+goto @领取68
+goto @领取69
+goto @领取70
+goto @领取71
+goto @领取72
+goto @领取73
+goto @领取74
+goto @领取75
+goto @领取76
+goto @领取77
+goto @领取78
+goto @领取79
+goto @领取80
+goto @领取81
+goto @领取82
+goto @领取83
+goto @领取84
+goto @领取85
+goto @领取86
+goto @领取87
+goto @领取88
+goto @领取89
+goto @领取90
+goto @领取91
+goto @领取92
+goto @领取93
+goto @领取94
+goto @领取95
+goto @领取96
+goto @领取97
+goto @领取98
+goto @领取99
+goto @领取100
+goto @领取101
+goto @领取102
+goto @领取103
+goto @领取104
+goto @领取105
+goto @领取106
+goto @领取107
+goto @领取108
+goto @领取109
+goto @领取110
+goto @领取111
+goto @领取112
+goto @领取113
+goto @领取114
+goto @领取115
+goto @领取116
+goto @领取117
+goto @领取118
+goto @领取119
+goto @领取120
+goto @领取121
+goto @领取122
+goto @领取123
+goto @领取124
+goto @领取125
+goto @领取126
+goto @领取127
+goto @领取128
+goto @领取129
+goto @领取130
+goto @领取131
+goto @领取132
+goto @领取133
+goto @领取134
+goto @领取135
+goto @领取136
+goto @领取137
+goto @领取138
+goto @领取139
+goto @领取140
+goto @领取141
+goto @领取142
+goto @领取143
+goto @领取144
+goto @领取145
+goto @领取146
+goto @领取147
+goto @领取148
+goto @领取149
+goto @领取150
+goto @领取151
+goto @领取152
+goto @领取153
+goto @领取154
+goto @领取155
+goto @领取156
+goto @领取157
+goto @领取158
+goto @领取159
+goto @领取160
+goto @领取161
+goto @领取162
+goto @领取163
+goto @领取164
+goto @领取165
+goto @领取166
+goto @领取167
+goto @领取168
+goto @领取169
+goto @领取170
+goto @领取171
+goto @领取172
+goto @领取173
+goto @领取174
+goto @领取175
+goto @领取176
+goto @领取177
+goto @领取178
+goto @领取179
+goto @领取180
+goto @领取181
+goto @领取182
+goto @领取183
+goto @领取184
+goto @领取185
+goto @领取186
+goto @领取187
+goto @领取188
+goto @领取189
+goto @领取190
+goto @领取191
+goto @领取192
+goto @领取193
+goto @领取194
+goto @领取195
+goto @领取196
+goto @领取197
+goto @领取198
+goto @领取199
+goto @领取200
+goto @领取201
+goto @领取202
+goto @领取203
+goto @领取204
+goto @领取205
+goto @领取206
+goto @领取207
+goto @领取208
+goto @领取209
+goto @领取210
+goto @领取211
+goto @领取212
+goto @领取213
+goto @领取214
+goto @领取215
+goto @领取216
+goto @领取217
+goto @领取218
+goto @领取219
+goto @领取220
+goto @领取221
+goto @领取222
+goto @领取223
+goto @领取224
+goto @领取225
+goto @领取226
+goto @领取227
+goto @领取228
+goto @领取229
+goto @领取230
+goto @领取231
+goto @领取232
+goto @领取233
+goto @领取234
+goto @领取235
+goto @领取236
+goto @领取237
+goto @领取238
+goto @领取239
+goto @领取240
+goto @领取241
+goto @领取242
+goto @领取243
+goto @领取244
+goto @领取245
+goto @领取246
+goto @领取247
+goto @领取248
+goto @领取249
+goto @领取250
+goto @领取251
+goto @领取252
+goto @领取253
+goto @领取254
+goto @领取255
+goto @领取256
+goto @领取257
+goto @领取258
+goto @领取259
+goto @领取260
+goto @领取261
+goto @领取262
+goto @领取263
+goto @领取264
+goto @领取265
+goto @领取266
+goto @领取267
+goto @领取268
+goto @领取269
+goto @领取270
+goto @领取271
+goto @领取272
+goto @领取273
+goto @领取274
+goto @领取275
+goto @领取276
+goto @领取277
+goto @领取278
+goto @领取279
+goto @领取280
+goto @领取281
+goto @领取282
+goto @领取283
+goto @领取284
+goto @领取285
+goto @领取286
+goto @领取287
+goto @领取288
+goto @领取289
+goto @领取290
+goto @领取291
+goto @领取292
+goto @领取293
+goto @领取294
+goto @领取295
+goto @领取296
+goto @领取297
+goto @领取298
+goto @领取299
+goto @领取300
+
+#Elsesay
+请查看自己的元宝数量!\
+没有充值请按提示进行充值!\
+如有任何充值问题,请登陆官方网站咨询\
+<返回/@main>\
+
+[@领取2]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j2.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j2.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取3]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j3.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j3.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取4]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j4.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j4.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取5]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j5.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j5.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取6]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j6.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j6.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取7]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j7.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j7.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取8]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j8.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j8.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取9]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j9.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j9.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取10]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j10.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j10.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取11]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j11.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j11.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取12]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j12.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j12.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取13]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j13.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j13.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取14]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j14.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j14.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取15]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j15.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j15.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取16]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j16.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j16.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取17]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j17.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j17.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取18]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j18.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j18.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取19]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j19.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j19.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取20]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j20.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j20.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取21]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j21.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j21.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取22]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j22.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j22.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取23]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j23.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j23.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取24]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j24.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j24.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取25]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j25.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j25.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取26]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j26.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j26.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取27]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j27.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j27.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取28]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j28.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j28.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取29]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j29.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j29.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取30]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j30.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j30.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取31]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j31.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j31.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取32]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j32.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j32.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取33]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j33.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j33.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取34]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j34.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j34.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取35]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j35.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j35.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取36]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j36.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j36.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取37]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j37.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j37.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取38]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j38.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j38.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取39]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j39.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j39.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取40]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j40.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j40.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取41]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j41.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j41.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取42]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j42.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j42.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取43]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j43.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j43.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取44]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j44.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j44.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取45]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j45.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j45.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取46]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j46.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j46.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取47]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j47.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j47.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取48]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j48.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j48.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取49]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j49.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j49.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+
+[@领取50]
+#IF 
+CHECKACCOUNTLIST 	yb/5j/5j50.txt 
+#ACT
+GAMEGOLD + 5000 
+DELACCOUNTLIST 	yb/5j/5j50.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用短信购买元宝功能,获得5000元宝。如果你也想要，请赶紧找元宝使者编辑短信获取元宝吧！ 
+[@领取51]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y1.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y1.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+
+[@领取52]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y2.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y2.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取53]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y3.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y3.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取54]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y4.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y4.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取55]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y5.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y5.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取56]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y6.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y6.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取57]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y7.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y7.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取58]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y8.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y8.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取59]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y9.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y9.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取60]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y10.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y10.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取61]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y11.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y11.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取62]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y12.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y12.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取63]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y13.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y13.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取64]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y14.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y14.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取65]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y15.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y15.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取66]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y16.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y16.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取67]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y17.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y17.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取68]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y18.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y18.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取69]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y19.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y19.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取70]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y20.txt 
+#ACT
+GAMEGOLD + 10000
+DELACCOUNTLIST 	yb/1y/1y20.txt
+GAMEDIAMOND + 1
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取71]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y21.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y21.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取72]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y22.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y22.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取73]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y23.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y23.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取74]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y24.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y24.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取75]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y25.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y25.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取76]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y26.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y26.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取77]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y27.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y27.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取78]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y28.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y28.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取79]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y29.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y29.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取80]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y30.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y30.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取81]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y31.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y31.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取82]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y32.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y32.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取83]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y33.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y33.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取84]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y34.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y34.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取85]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y35.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y35.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取86]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y36.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y36.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取87]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y37.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y37.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取88]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y38.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y38.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取89]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y39.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y39.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取90]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y40.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y40.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取91]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y41.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y41.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取92]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y42.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y42.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取93]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y43.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y43.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取94]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y44.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y44.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取95]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y45.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y45.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取96]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y46.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y46.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取97]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y47.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y47.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取98]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y48.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y48.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取99]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y49.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y49.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取100]
+#IF 
+CHECKACCOUNTLIST 	yb/1y/1y50.txt 
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+DELACCOUNTLIST 	yb/1y/1y50.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买10000元宝，系统自动奖励金刚石1个。
+[@领取101]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y1.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y1.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+
+[@领取102]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y2.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y2.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取103]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y3.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y3.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取104]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y4.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y4.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取105]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y5.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y5.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取106]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y6.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y6.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取107]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y7.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y7.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取108]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y8.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y8.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取109]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y9.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y9.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取110]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y10.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y10.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取111]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y11.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y11.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取112]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y12.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y12.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取113]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y13.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y13.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取114]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y14.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y14.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取115]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y15.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y15.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取116]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y16.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y16.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取117]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y17.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y17.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取118]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y18.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y18.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取119]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y19.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y19.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取120]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y20.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y20.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取121]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y21.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y21.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取122]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y22.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y22.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取123]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y23.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y23.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取124]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y24.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y24.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取125]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y25.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y25.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取126]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y26.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y26.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取127]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y27.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y27.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取128]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y28.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y28.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取129]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y29.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y29.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取130]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y30.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y30.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取131]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y31.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y31.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取132]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y32.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y32.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取133]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y33.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y33.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取134]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y34.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y34.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取135]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y35.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y35.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取136]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y36.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y36.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取137]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y37.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y37.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取138]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y38.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y38.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取139]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y39.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y39.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取140]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y40.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y40.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取141]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y41.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y41.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取142]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y42.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y42.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取143]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y43.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y43.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取144]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y44.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y44.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取145]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y45.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y45.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取146]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y46.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y46.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取147]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y47.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y47.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取148]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y48.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y48.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取149]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y49.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y49.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+[@领取150]
+#IF 
+CHECKACCOUNTLIST 	yb/2y/2y50.txt 
+#ACT
+GAMEGOLD + 20000 
+GAMEDIAMOND + 2
+DELACCOUNTLIST 	yb/2y/2y50.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买20000元宝，系统自动奖励金刚石2个。
+
+[@领取151]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y1.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y1.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+
+[@领取152]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y2.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y2.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取153]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y3.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y3.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取154]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y4.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y4.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取155]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y5.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y5.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取156]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y6.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y6.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取157]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y7.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y7.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取158]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y8.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y8.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取159]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y9.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y9.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取160]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y10.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y10.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取161]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y11.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y11.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取162]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y12.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y12.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取163]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y13.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y13.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取164]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y14.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y14.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取165]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y15.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y15.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取166]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y16.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y16.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取167]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y17.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y17.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取168]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y18.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y18.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取169]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y19.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y19.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取170]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y20.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y20.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取171]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y21.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y21.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取172]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y22.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y22.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取173]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y23.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y23.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取174]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y24.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y24.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取175]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y25.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y25.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取176]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y26.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y26.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取177]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y27.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y27.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取178]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y28.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y28.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取179]
+
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y29.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y29.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取180]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y30.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y30.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取181]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y31.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y31.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取182]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y32.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y32.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取183]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y33.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y33.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取184]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y34.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y34.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取185]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y35.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y35.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取186]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y36.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y36.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取187]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y37.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y37.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取188]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y38.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y38.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取189]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y39.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y39.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取190]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y40.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y40.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取191]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y41.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y41.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取192]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y42.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y42.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取193]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y43.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y43.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取194]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y44.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y44.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取195]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y45.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y45.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取196]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y46.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y46.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取197]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y47.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y47.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取198]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y48.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y48.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取199]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y49.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y49.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取200]
+#IF 
+CHECKACCOUNTLIST 	yb/5y/5y50.txt 
+#ACT
+GAMEGOLD + 50000 
+GAMEDIAMOND + 5
+DELACCOUNTLIST 	yb/5y/5y50.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买50000元宝，系统自动奖励金刚石5个。
+[@领取201]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y1.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y1.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+
+[@领取202]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y2.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y2.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取203]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y3.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y3.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取204]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y4.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y4.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取205]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y5.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y5.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取206]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y6.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y6.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取207]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y7.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y7.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取208]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y8.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y8.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取209]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y9.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y9.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取210]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y10.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y10.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取211]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y11.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y11.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取212]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y12.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y12.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取213]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y13.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y13.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取214]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y14.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y14.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取215]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y15.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y15.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取216]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y16.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y16.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取217]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y17.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y17.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取218]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y18.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y18.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取219]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y19.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y19.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取220]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y20.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y20.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取221]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y21.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y21.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取222]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y22.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y22.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取223]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y23.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y23.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取224]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y24.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y24.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取225]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y25.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y25.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取226]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y26.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y26.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取227]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y27.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y27.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取228]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y28.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y28.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取229]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y29.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y29.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取230]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y30.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y30.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取231]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y31.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y31.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取232]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y32.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y32.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取233]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y33.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y33.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取234]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y34.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y34.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取235]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y35.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y35.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取236]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y36.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y36.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取237]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y37.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y37.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取238]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y38.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y38.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取239]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y39.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y39.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取240]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y40.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y40.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取241]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y41.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y41.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取242]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y42.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y42.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取243]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y43.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y43.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取244]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y44.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y44.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取245]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y45.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y45.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取246]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y46.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y46.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取247]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y47.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y47.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取248]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y48.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y48.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取249]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y49.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y49.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+[@领取250]
+#IF 
+CHECKACCOUNTLIST 	yb/10y/10y50.txt 
+#ACT
+GAMEGOLD + 100000 
+GAMEDIAMOND + 10
+DELACCOUNTLIST 	yb/10y/10y50.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买100000元宝，系统自动奖励金刚石10个。
+
+
+[@领取251]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y1.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y1.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取252]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y2.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y2.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取253]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y3.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y3.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取254]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y4.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y4.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取255]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y5.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y5.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取256]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y6.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y6.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取257]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y7.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y7.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取258]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y8.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y8.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取259]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y9.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y9.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取260]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y10.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y10.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取261]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y11.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y11.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取262]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y12.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y12.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取263]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y13.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y13.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取264]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y14.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y14.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取265]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y15.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y15.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取266]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y16.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y16.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取267]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y17.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y17.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取268]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y18.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y18.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取269]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y19.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y19.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取270]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y20.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y20.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取271]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y21.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y21.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取272]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y22.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y22.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取273]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y23.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y23.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取274]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y24.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y24.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取275]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y25.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y25.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取276]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y26.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y26.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取277]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y27.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y27.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取278]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y28.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y28.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取279]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y29.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y29.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取280]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y30.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y30.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取281]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y31.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y31.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取282]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y32.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y32.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取283]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y33.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y33.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取284]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y34.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y34.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取285]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y35.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y35.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取286]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y36.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y36.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取287]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y37.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y37.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取288]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y38.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y38.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取289]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y39.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y39.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取290]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y40.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y40.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取291]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y41.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y41.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取292]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y42.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y42.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取293]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y43.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y43.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取294]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y44.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y44.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取295]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y45.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y45.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取296]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y46.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y46.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取297]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y47.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y47.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取298]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y48.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y48.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取299]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y49.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y49.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+[@领取300]
+#IF 
+CHECKACCOUNTLIST yb/100y/100y50.txt 
+#ACT
+GAMEGOLD + 1000000 
+GAMEDIAMOND + 100
+DELACCOUNTLIST yb/100y/100y50.txt
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个,系统自动奖励金刚石,当前金刚石<$GAMEDIAMOND>个。
+SENDMSG 1 ★恭喜玩家<$USERNAME>使用我服推出的在线支付自动冲值系统，购买1000000元宝，系统自动奖励金刚石100个。
+
+
+ 

@@ -1,0 +1,10 @@
+[@main]
+OH what wrong? who r u?i am  Z3F\
+............\
+\
+<B老不死的说什么鸟语快送我去沙皇宫/@传送>   <老子闪人先/@EXIT>
+[@传送]
+#IF
+#ACT
+MAPMOVE D701 167 130
+sendcentermsg 0 232 [<$username>]看四周没有人悄悄的溜进了沙巴克暗道 . 1 5

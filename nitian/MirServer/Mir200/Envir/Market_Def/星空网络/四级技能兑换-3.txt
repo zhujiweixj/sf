@@ -1,0 +1,79 @@
+[@main]
+欢迎光临<$SERVERNAME>.这里是拼字兑换四级技能书!\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+<Img:11:0>【四】【级】【烈】【火】【剑】【法】　<兑换四级烈火剑法/@烈火剑法>\
+<Img:11:0>【四】【级】【灵】【魂】【火】【符】　<兑换四级灵魂火符/@灵魂火符>\
+<Img:11:0>【四】【级】【魔】【法】【盾】　　　　<兑换四级魔法盾/@魔法盾>\
+<━━━━━━━━━━━━━━━━━━━━━━━━━━━━/AUTOCOLOR=168,250,70,253>\
+集齐所需的字放入背包可兑换四级技能书，材料只能靠打怪暴出！\
+　\
+　　　　　　　　<哇!可惜我还没凑齐呢/@exit>\
+
+[@烈火剑法]
+#if
+checkitem 四 1
+checkitem 级 1
+checkitem 烈 1
+checkitem 火 1
+checkitem 剑 1
+checkitem 法 1
+#ACT
+take 四 1
+take 级 1
+take 烈 1
+take 火 1
+take 剑 1
+take 法 1
+give 四级烈火剑法 1
+SENDMSG 1 惊天地！泣鬼神！恭喜『%s』凑齐了【四】【级】【烈】【火】【剑】【法】兑换了四级烈火剑法!
+SENDMSG 1 惊天地！泣鬼神！恭喜『%s』凑齐了【四】【级】【烈】【火】【剑】【法】兑换了四级烈火剑法!
+SENDMSG 1 惊天地！泣鬼神！恭喜『%s』凑齐了【四】【级】【烈】【火】【剑】【法】兑换了四级烈火剑法!
+#ELSEACT
+MESSAGEBOX 你的合成材料不足，快去打怪获得吧！
+
+
+[@灵魂火符]
+#if
+checkitem 四 1
+checkitem 级 1
+checkitem 灵 1
+checkitem 魂 1
+checkitem 火 1
+checkitem 符 1
+#ACT
+take 四 1
+take 级 1
+take 灵 1
+take 魂 1
+take 火 1
+take 符 1
+give 四级灵魂火符 1
+SENDMSG 1 惊天地！泣鬼神！恭喜『%s』凑齐了【四】【级】【灵】【魂】【火】【符】兑换了四级灵魂火符!
+SENDMSG 1 惊天地！泣鬼神！恭喜『%s』凑齐了【四】【级】【灵】【魂】【火】【符】兑换了四级灵魂火符!
+SENDMSG 1 惊天地！泣鬼神！恭喜『%s』凑齐了【四】【级】【灵】【魂】【火】【符】兑换了四级灵魂火符!
+#ELSEACT
+MESSAGEBOX 你的合成材料不足，快去打怪获得吧！
+
+
+[@魔法盾]
+#if
+checkitem 四 1
+checkitem 级 1
+checkitem 魔 1
+checkitem 法 1
+checkitem 盾 1
+#ACT
+take 四 1
+take 级 1
+take 魔 1
+take 法 1
+take 盾 1
+give 四级魔法盾 1
+SENDMSG 1 惊天地！泣鬼神！恭喜『%s』凑齐了【四】【级】【魔】【法】【盾】兑换了四级魔法盾!
+SENDMSG 1 惊天地！泣鬼神！恭喜『%s』凑齐了【四】【级】【魔】【法】【盾】兑换了四级魔法盾!
+SENDMSG 1 惊天地！泣鬼神！恭喜『%s』凑齐了【四】【级】【魔】【法】【盾】兑换了四级魔法盾!
+#ELSEACT
+MESSAGEBOX 你的合成材料不足，快去打怪获得吧！
+
+
+;-b--b--Q -Q---156 598018---

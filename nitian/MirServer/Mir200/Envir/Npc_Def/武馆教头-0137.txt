@@ -1,0 +1,320 @@
+[@main]
+38级后可以收20级以下的玩家为徒弟\
+徒弟出师等级为：36级\
+出师后,师傅可以获得5点声望\
+╔┄┄┄┄╗     ╔┄┄┄┄╗     ╔┄┄┄┄╗\
+┆<我要拜师/@master>┆     ┆<拜师条件/@tiaojian>┆   ┆<查询声望/@chshw>┆\
+╚┄┄┄┄╝     ╚┄┄┄┄╝     ╚┄┄┄┄╝ \
+╔┄┄┄┄╗     ╔┄┄┄┄╗     ╔┄┄┄┄╗\
+┆<离开师父/@离开师父>┆     ┆<开除徒弟/@离开徒弟>┆    ┆<换取勋章/@HQXZ>┆\
+╚┄┄┄┄╝     ╚┄┄┄┄╝     ╚┄┄┄┄╝ \
+
+[@master]
+想拜师呀，你要拜的师父来了没有？\
+与你师父面对面站好，开始拜师。\ \
+<准备好了/@agree>\
+<我知道了/@exit>\ \ 
+<返回/@main>
+[@agree]
+;检查是不是已经是别人的师父
+#if
+checkismaster
+#act
+break
+#say
+没事别来这玩！！！\ \
+<返回/@main>
+;检查是不是已经拜师了
+#if
+checkmaster
+#act 
+break
+#say
+你都都已经拜了别人为师，怎么还拜师！！！ \ \
+<返回/@main>
+;检查对面的人物是不是别人的徒弟
+#if
+checkposemaster
+#say
+你找了个什么人做师父，怎么现在还是别人的徒弟？\ \
+<返回/@main>
+#act
+break
+;检查二个有没站好位置
+#if
+checkposedir
+#elsesay
+你们二个面对面站好呀，不要乱动。\ \
+<返回/@main>
+#elseact
+break
+#if
+checklevel 28
+#say
+你都28多级了还要找师父？\ \
+<返回/@main>
+#act
+break
+;检查对方等级
+#if
+checkposelevel > 37
+#elsesay
+你找个什么师父呀，等级这么低？\ \
+<返回/@main>
+#elseact
+break
+#act
+master
+[@StartGetMaster]
+拜师仪式正式开始。\ \
+你是否确认拜师？\ \
+<确认/@RequestMaster>
+[@StartMaster]
+拜师仪式正式开始。\ \
+对方已经向你提出拜师请求。\ \
+[@RequestMaster]
+;检查所需物品
+#if 
+;checkitemw 力量戒指 1
+#elsesay
+你都没信物，怎么拜呀！！！\ \
+<返回/@main>
+#elseact
+break
+#if
+#act
+;takew 力量戒指 1
+master requestmaster
+[@WateMaster]
+你已向对方请求拜师，请耐心等待对方的答复。
+[@RevMaster]
+对方想拜你为师，你是否想收此人为徒？ \ \
+<同意/@ResposeMaster> \
+<不同意/@ResposeMasterFail>
+[@ResposeMaster]
+#if
+#act
+master responsemaster ok
+[@ResposeMasterFail]
+#if
+#act
+master responsemaster fail
+[@EndMaster]
+你们二个已经是师徒关系了。\ \
+<关闭/@exit>
+[@EndMasterFail]
+拜师失败！\ \
+<关闭/@exit>
+[@MasterDirErr]
+对方没站好位置
+[@MasterCheckDir]
+请站好位置\ \
+[@HumanTypeErr]
+此人不可以做你的师父。
+;==========================================
+;开始
+[@离开师父]
+#if
+checkgold  1000000
+havemaster
+#act
+take 金币 1000000
+unmaster requestunmaster force
+SENDMSG 4 [%s]已经和他的『师父』强行脱离师徒关系！
+#elsesay
+你不是别人的徒弟，或者你金币不够？\
+<确定/@exit>
+
+[@离开徒弟]
+#if
+checkgold  1000000
+havemaster
+#act
+take 金币 1000000
+unmaster requestunmaster force
+SENDMSG 4 [%s]已经和他的『徒弟』强行脱离师徒关系！
+#say
+你已经将你的徒弟逐出师门了。\
+<离开/@exit>
+#elsesay
+你不是别人的师傅，或者你金币不够？\
+<离开/@exit>
+;=======================================================
+[@UnMasterCheckDir]
+按正常出师步骤，必须二个人对面对站好位置，\
+如果人来不了你只能选择强行出师了。\ \
+<我要强行出师/@fUnMaster>\
+<返回/@main>
+;=======================================================
+;对面位置不是人物时显示的信息
+[@UnMasterTypeErr]
+你对面站了个什么东西，怎么不太象人来的。\ \
+<返回/@main>
+[@UnIsMaster]
+必须由徒弟发出请求！！！\ \
+<返回/@main>
+[@UnMasterError]
+不要来捣乱！！！\ \
+<返回/@main>
+;=======================================================
+;开始程序后，双方显示的信息
+[@StartUnMaster]
+出师仪式现在开始！！！\ \
+是否确定真的要脱离师徒关系？\ \
+<确定/@RequestUnMaster>
+[@WateUnMaster]
+出师仪式现在开始！！！\ \
+;=======================================================
+;发出请求
+[@RequestUnMaster]
+#if
+havemaster
+#act
+unmaster requestunmaster
+;=======================================================
+;回应请求
+[@ResposeUnMaster]
+#if
+havemaster
+#act
+unmaster responseunmaster
+;===============================================
+;请求后显示的信息
+[@WateUnMaster]
+你已向对方发出请求，请耐心等待对方的答复。
+;===============================================
+;请求后对方显示的信息
+[@RevUnMaster]
+对方向你请求，你是否答应？ \ \
+<我愿意/@RequestUnMaster>
+<返回/@main>
+;===============================================
+[@ExeMasterFail]
+你都没师父，跑来做什么？ \ \
+[返回/@main]
+;==============================================
+;完成后的提示信息
+[@UnMasterEnd]
+#IF
+#say
+从今以后，你们已经脱离了师徒关系！！！
+[@tiaojian]
+<1.>拜师时师徒必须面对面站好!请求提出必需由徒弟提出\
+徒弟等级只能在38级以下!!\
+<2.>徒弟36级出师,师傅可以得到十点声望值+十点属性\
+<3.>强行解除师徒关系的需要一百万金币!\
+<4.>出师后38级可以当别人的师傅!\
+;-------------------------------------------------
+[@chshw]
+#IF
+#ACT
+messagebox 您的声望指数是:<$CREDITPOINT>
+;-----------------------------------------------------------------------------------
+[@grxx]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+\   <$GAMEGOLDNAME>:   <$GAMEGOLD>\
+\   <ＰＫ点数值>: <$PKPOINT>\
+\   <您的等级>: <$LEVEL>         <当前经验值>: <$EXP>\
+\   <您的能量>: <$HUNGER>          <最大经验值>: <$MAXEXP>\
+\   <人物名称>: <$USERNAME>\
+\   <当前时间>: <$DATETIME>\
+╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝
+
+
+[@HQXZ]
+#IF
+#SAY
+5  点声望可以换取20号以上勋章\
+15 点声望可以换取30号以上勋章\
+50 点声望可以换取40号以上勋章\
+<23号勋章/@xz1>　<24号勋章/@xz2>　<25号勋章/@xz3>　\
+<33号勋章/@xz4>　<34号勋章/@xz5>　<35号勋章/@xz6>　\
+<43号勋章/@xz7>　<44号勋章/@xz8>　<45号勋章/@xz9>　\
+
+[@xz1]
+#IF
+CHECKCREDITPOINT > 4
+#act
+give 荣誉勋章23号 1
+CREDITPOINT - 5
+#elseact
+messagebox 您的声望指数是:<$CREDITPOINT>
+
+[@xz2]
+#IF
+CHECKCREDITPOINT > 4
+#act
+give 荣誉勋章24号 1
+CREDITPOINT - 5
+#elseact
+messagebox 您的声望指数是:<$CREDITPOINT>
+[@xz3]
+#IF
+CHECKCREDITPOINT > 4
+#act
+CREDITPOINT - 5
+give 荣誉勋章25号 1
+#elseact
+messagebox 您的声望指数是:<$CREDITPOINT>
+
+
+
+
+[@xz4]
+#IF
+CHECKCREDITPOINT > 9
+#act
+CREDITPOINT - 15
+give 荣誉勋章33号 1
+#elseact
+messagebox 您的声望指数是:<$CREDITPOINT>
+
+[@xz5]
+#IF
+CHECKCREDITPOINT > 9
+#act
+CREDITPOINT - 15
+give 荣誉勋章33号 1
+#elseact
+messagebox 您的声望指数是:<$CREDITPOINT>
+
+[@xz6]
+#IF
+CHECKCREDITPOINT > 9
+#act
+CREDITPOINT - 15
+give 荣誉勋章35号 1
+#elseact
+messagebox 您的声望指数是:<$CREDITPOINT>
+
+
+[@xz7]
+#IF
+CHECKCREDITPOINT > 29
+#act
+CREDITPOINT - 50
+give 荣誉勋章43号 1
+#elseact
+messagebox 您的声望指数是:<$CREDITPOINT>
+
+
+
+[@xz8]
+#IF
+CHECKCREDITPOINT > 29
+#act
+CREDITPOINT - 50
+give 荣誉勋章44号 1
+#elseact
+messagebox 您的声望指数是:<$CREDITPOINT>
+
+
+
+[@xz9]
+#IF
+CHECKCREDITPOINT > 29
+#act
+CREDITPOINT - 50
+give 荣誉勋章45号 1
+#elseact
+messagebox 您的声望指数是:<$CREDITPOINT>

@@ -1,0 +1,420 @@
+[@副本]
+{
+#IF
+CHECKMAPHUMANCOUNT fuben3  = 0
+#ACT
+mov A120 空闲
+#ELSEACT
+MOV A120 有人
+
+#IF
+CHECKMAPHUMANCOUNT fuben3a  = 0
+#ACT
+mov A121 空闲
+#ELSEACT
+MOV A121 有人
+
+#IF
+CHECKMAPHUMANCOUNT fuben4  = 0
+#ACT
+mov A122 空闲
+#ELSEACT
+MOV A122 有人
+
+#IF
+CHECKMAPHUMANCOUNT fuben4a  = 0
+#ACT
+mov A123 空闲
+#ELSEACT
+MOV A123 有人
+#IF
+CHECKMAPHUMANCOUNT fuben4b  = 0
+#ACT
+mov A124 空闲
+#ELSEACT
+MOV A124 有人
+
+#IF 
+ISGROUPMASTER
+#ACT 
+#SAY
+\
+ \ \
+　　　<【/SCOLOR=229><副本模式:/SCOLOR=250> <团队模式.><】/SCOLOR=229>　<【/SCOLOR=69><查询奖励/@爆率><】/SCOLOR=69>　<【/SCOLOR=69><购买钥匙/@购买钥匙><】/SCOLOR=69>\
+　　　<【/SCOLOR=229><进入条件:/SCOLOR=250> <队长携带钥匙(最多2人)><】/SCOLOR=229>\
+<╔═══════════════════════════╗/SCOLOR=59>\
+<‖/SCOLOR=59>　<副本|难度|/SCOLOR=249>　<王者级/@副本1>　　<副本状态/SCOLOR=253>: <1> {[<$STR(A120)>]/SCOLOR=250}  <2> {[<$STR(A121)>]/SCOLOR=250}  <‖/SCOLOR=59>\
+<╚═══════════════════════════╝/SCOLOR=59>\
+<╔═══════════════════════════╗/SCOLOR=59>\
+<‖/SCOLOR=59>　<副本|难度|/SCOLOR=249>　<深渊级/@副本2>　　<状态/SCOLOR=253>: <1>{[<$STR(A122)>]/SCOLOR=250} <2>{[<$STR(A123)>]/SCOLOR=250} <3>{[<$STR(A124)>]/SCOLOR=250} <‖/SCOLOR=59>\ 
+<╚═══════════════════════════╝/SCOLOR=59>\ \
+　　　　  　　　  　<副本钥匙各大BOSS均会爆出/AUTOCOLOR=69>\
+<【副本地图】玩家必争之地可组队进入[通关后可获大量经验和乾坤袋]/AUTOCOLOR=249>\
+
+#ELSESAY
+\
+ \ \
+　　　<【/SCOLOR=229><副本模式:/SCOLOR=250> <单人模式.><】/SCOLOR=229>　<【/SCOLOR=69><查询奖励/@爆率><】/SCOLOR=69>　<【/SCOLOR=69><购买钥匙/@购买钥匙><】/SCOLOR=69>\
+　　　<【/SCOLOR=229><进入条件:/SCOLOR=250> <单人携带钥匙即可进入><】/SCOLOR=229>\
+<╔═══════════════════════════╗/SCOLOR=59>\
+<‖/SCOLOR=59>　<副本|难度|/SCOLOR=249>　<王者级/@副本1a>　　<副本状态/SCOLOR=253>: <1> {[<$STR(A120)>]/SCOLOR=250}  <2> {[<$STR(A121)>]/SCOLOR=250}  <‖/SCOLOR=59>\
+<╚═══════════════════════════╝/SCOLOR=59>\
+<╔═══════════════════════════╗/SCOLOR=59>\
+<‖/SCOLOR=59>　<副本|难度|/SCOLOR=249>　<深渊级/@副本2a>　　<状态/SCOLOR=253>: <1>{[<$STR(A122)>]/SCOLOR=250} <2>{[<$STR(A123)>]/SCOLOR=250} <3>{[<$STR(A124)>]/SCOLOR=250} <‖/SCOLOR=59>\
+<╚═══════════════════════════╝/SCOLOR=59>\ \
+　　　　  　　　  　<副本钥匙各大BOSS均会爆出/AUTOCOLOR=69>\
+<【副本地图】玩家必争之地可组队进入[通关后可获大量经验和乾坤袋]/AUTOCOLOR=249>\
+
+
+[@购买钥匙]
+\ \
+<王者级钥匙5个金刚石/SCOLOR=250> | <深渊级钥匙10个金刚石/SCOLOR=253>\
+副本钥匙各大BOSS处也有爆，你确定要兑换吗？\　\
+<兑换王者钥匙/@换王者> | <兑换深渊钥匙/@换深渊>\　\
+<返回/@副本>
+
+[@换王者]
+#IF
+CHECKGAMEDIAMOND > 4
+CHECKBAGSIZE  1
+#ACT
+GAMEDIAMOND - 5
+GIVE 王者级副本钥匙 1
+SENDMSG 7 兑换成功!
+#elseact
+messagebox 金刚石数量不足或者包袱没有空格。
+
+[@换深渊]
+#IF
+CHECKGAMEDIAMOND > 9
+CHECKBAGSIZE  1
+#ACT
+GAMEDIAMOND - 10
+GIVE 深渊级副本钥匙 1
+SENDMSG 7 兑换成功!
+#elseact
+messagebox 金刚石数量不足或者包袱没有空格。
+
+[@爆率]
+\ \
+王者级副本\ 
+<奖励乾坤袋1个/SCOLOR=250>、<1亿经验奖励/SCOLOR=253> \
+深渊级副本\
+<奖励乾坤袋1个/SCOLOR=250>、<2亿经验奖励/SCOLOR=253> \
+<提示:开启乾坤袋可获得合成诅咒装备材料./SCOLOR=249>\
+<提示:副本里的怪物非常凶猛,如果实力不行,最好组队前往!/SCOLOR=249>\
+ \
+<返回/@副本>
+
+;======================判断组队人数开始
+[@副本1]
+#IF
+CheckGroupCount = 1
+checkitem 王者级副本钥匙 1
+#ACT
+GOTO @副本1a
+BREAK
+
+#IF
+CheckGroupCount = 2
+CHECKMAPHUMANCOUNT fuben3 = 0
+checkitem 王者级副本钥匙 1
+#ACT
+take 王者级副本钥匙 1
+GOTO @王者组队2人
+BREAK
+
+#IF
+CheckGroupCount = 2
+CHECKMAPHUMANCOUNT fuben3a = 0
+checkitem 王者级副本钥匙 1
+#ACT
+take 王者级副本钥匙 1
+GOTO @王者组队2人a
+BREAK
+
+#IF
+CheckGroupCount > 2
+#ACT
+messagebox 组队模式最多支持2人，请重组队伍！
+BREAK
+
+
+#ELSEACT
+SENDMSG 6 [副本提示]1：请您携带 王者级副本钥匙 在点击进入.
+SENDMSG 6 [副本提示]2：王者级副本人数已满.请耐心等待他人出来后在进入.
+SENDMSG 6 副本钥匙可以在 各大BOSS身上掉落.或在商城购买！
+GOTO @main
+BREAK
+
+;=================================判断人数刷怪
+[@王者组队2人]
+#IF
+#ACT
+MONCLEAR fuben3  
+MONGENEX fuben3 66 62 夜荼 15 8
+MONGENEX fuben3 66 62 夜啸 15 8
+MONGENEX fuben3 66 62 夜魔 15 8
+MONGENEX fuben3 66 62 冷血屠夫 15 10
+MONGENEX fuben3 66 62 残忍屠夫 15 10
+MONGENEX fuben3 66 62 [杀戮]神罚统领 15 2
+MONGENEX fuben3 66 62 [领主]神罚统帅 15 2
+GroupMapMove fuben3 66 62
+GIVE 回城卷 1
+;SendCenterMsg 246 0 您在本副本试练时间还剩%d. 0 180 @fuben
+;SetOnTimer 21 1
+GuildNoticeMsg 151 0 『%s』带队进入了王者级[副本].他能成功清理所有怪物并开启冒险宝箱么？敬请期待.
+SendCenterMsg 0 223  [副本公告]:玩家[%s].带队闯入王者副本.你也想来？去土找副本使者吧... 1 10
+CLOSE
+BREAK
+
+[@王者组队2人a]
+#IF
+#ACT
+MONCLEAR fuben3a  
+MONGENEX fuben3a 66 62 夜荼 15 8
+MONGENEX fuben3a 66 62 夜啸 15 8
+MONGENEX fuben3a 66 62 夜魔 15 8
+MONGENEX fuben3a 66 62 冷血屠夫 15 10
+MONGENEX fuben3a 66 62 残忍屠夫 15 10
+MONGENEX fuben3a 66 62 [杀戮]神罚统领 15 2
+MONGENEX fuben3a 66 62 [领主]神罚统帅 15 2
+GroupMapMove fuben3a 66 62
+GIVE 回城卷 1
+;SendCenterMsg 246 0 您在本副本试练时间还剩%d. 0 180 @fuben
+;SetOnTimer 21 1
+GuildNoticeMsg 151 0 『%s』带队进入了王者级[副本].他能成功清理所有怪物并开启冒险宝箱么？敬请期待.
+SendCenterMsg 0 223  [副本公告]:玩家[%s].带队闯入王者副本.你也想来？去土找副本使者吧... 1 10
+CLOSE
+BREAK
+
+;======================判断组队人数开始
+[@副本2]
+#IF
+CheckGroupCount = 1
+checkitem 深渊级副本钥匙 1
+#ACT
+GOTO @副本2a
+BREAK
+
+#IF
+CheckGroupCount = 2
+CHECKMAPHUMANCOUNT fuben4 = 0
+checkitem 深渊级副本钥匙 1
+#ACT
+take 深渊级副本钥匙 1
+GOTO @深渊组队2人
+BREAK
+#IF
+CheckGroupCount = 2
+CHECKMAPHUMANCOUNT fuben4a = 0
+checkitem 深渊级副本钥匙 1
+#ACT
+take 深渊级副本钥匙 1
+GOTO @深渊组队2人a
+BREAK
+#IF
+CheckGroupCount = 2
+CHECKMAPHUMANCOUNT fuben4b = 0
+checkitem 深渊级副本钥匙 1
+#ACT
+take 深渊级副本钥匙 1
+GOTO @深渊组队2人b
+BREAK
+#IF
+CheckGroupCount > 2
+#ACT
+messagebox 组队模式最多支持2人，请重组队伍！
+BREAK
+
+;=================================判断人数刷怪
+
+[@深渊组队2人]
+#IF
+#ACT
+MONCLEAR fuben4  
+MONGENEX fuben4 66 62 月刃 15 8
+MONGENEX fuben4 66 62 灵刃 15 8
+MONGENEX fuben4 66 62 仓刃 15 8
+MONGENEX fuben4 66 62 午夜暗羽 15 10
+MONGENEX fuben4 66 62 黄昏暗羽 15 10
+MONGENEX fuben4 66 62 [杀戮]虚无鬼影 15 2
+MONGENEX fuben4 66 62 [领主]吞噬虚空 15 2
+GroupMapMove fuben4 66 62
+GIVE 回城卷 1
+;SendCenterMsg 246 0 您在本副本试练时间还剩%d. 0 180 @fuben
+;SetOnTimer 21 1
+GuildNoticeMsg 151 0 『%s』带队进入了深渊级[副本].他能成功清理所有怪物并开启冒险宝箱么？敬请期待.
+SendCenterMsg 0 223  [副本公告]:玩家[%s].带队闯入深渊副本.你也想来？去土找副本使者吧... 1 10
+CLOSE
+BREAK
+
+[@深渊组队2人a]
+#IF
+#ACT
+MONCLEAR fuben4a  
+MONGENEX fuben4a 66 62 月刃 15 8
+MONGENEX fuben4a 66 62 灵刃 15 8
+MONGENEX fuben4a 66 62 仓刃 15 8
+MONGENEX fuben4a 66 62 午夜暗羽 15 10
+MONGENEX fuben4a 66 62 黄昏暗羽 15 10
+MONGENEX fuben4a 66 62 [杀戮]虚无鬼影 15 2
+MONGENEX fuben4a 66 62 [领主]吞噬虚空 15 2
+GroupMapMove fuben4a 66 62
+GIVE 回城卷 1
+;SendCenterMsg 246 0 您在本副本试练时间还剩%d. 0 180 @fuben
+;SetOnTimer 21 1
+GuildNoticeMsg 151 0 『%s』带队进入了深渊级[副本].他能成功清理所有怪物并开启冒险宝箱么？敬请期待.
+SendCenterMsg 0 223  [副本公告]:玩家[%s].带队闯入深渊副本.你也想来？去土找副本使者吧... 1 10
+CLOSE
+BREAK
+
+[@深渊组队2人b]
+#IF
+#ACT
+MONCLEAR fuben4b  
+MONGENEX fuben4b 66 62 月刃 15 8
+MONGENEX fuben4b 66 62 灵刃 15 8
+MONGENEX fuben4b 66 62 仓刃 15 8
+MONGENEX fuben4b 66 62 午夜暗羽 15 10
+MONGENEX fuben4b 66 62 黄昏暗羽 15 10
+MONGENEX fuben4b 66 62 [杀戮]虚无鬼影 15 2
+MONGENEX fuben4b 66 62 [领主]吞噬虚空 15 2
+GroupMapMove fuben4b 66 62
+GIVE 回城卷 1
+;SendCenterMsg 246 0 您在本副本试练时间还剩%d. 0 180 @fuben
+;SetOnTimer 21 1
+GuildNoticeMsg 151 0 『%s』带队进入了深渊级[副本].他能成功清理所有怪物并开启冒险宝箱么？敬请期待.
+SendCenterMsg 0 223  [副本公告]:玩家[%s].带队闯入深渊副本.你也想来？去土找副本使者吧... 1 10
+CLOSE
+BREAK
+
+
+
+[@副本1a]
+#IF
+CHECKMAPHUMANCOUNT fuben3 = 0
+checkitem 王者级副本钥匙 1
+#ACT
+take 王者级副本钥匙 1
+MONCLEAR fuben3  
+MONGENEX fuben3 66 62 夜荼 15 6
+MONGENEX fuben3 66 62 夜啸 15 6
+MONGENEX fuben3 66 62 夜魔 15 6
+MONGENEX fuben3 66 62 冷血屠夫 15 8
+MONGENEX fuben3 66 62 残忍屠夫 15 8
+MONGENEX fuben3 66 62 [杀戮]神罚统领 15 1
+MONGENEX fuben3 66 62 [领主]神罚统帅 15 1
+mapmove fuben3 66 62
+GIVE 回城卷 1
+;SendCenterMsg 246 0 您在本副本试练时间还剩%d. 0 180 @fuben
+;SetOnTimer 21 1
+GuildNoticeMsg 151 0 『%s』单独进入了王者级[副本].他能成功清理所有怪物并开启冒险宝箱么？敬请期待.
+SendCenterMsg 0 223  [副本公告]:玩家[%s].单独闯入王者副本.你也想来？去土找副本使者吧... 1 10 
+CLOSE
+BREAK
+
+#IF
+CHECKMAPHUMANCOUNT fuben3a = 0
+checkitem 王者级副本钥匙 1
+#ACT
+take 王者级副本钥匙 1
+MONCLEAR fuben3a  
+MONGENEX fuben3a 66 62 夜荼 15 6
+MONGENEX fuben3a 66 62 夜啸 15 6
+MONGENEX fuben3a 66 62 夜魔 15 6
+MONGENEX fuben3a 66 62 冷血屠夫 15 8
+MONGENEX fuben3a 66 62 残忍屠夫 15 8
+MONGENEX fuben3a 66 62 [杀戮]神罚统领 15 1
+MONGENEX fuben3a 66 62 [领主]神罚统帅 15 1
+mapmove fuben3a 66 62
+GIVE 回城卷 1
+;SendCenterMsg 246 0 您在本副本试练时间还剩%d. 0 180 @fuben
+;SetOnTimer 22 1
+GuildNoticeMsg 151 0 『%s』单独进入了王者级[副本].他能成功清理所有怪物并开启冒险宝箱么？敬请期待.
+SendCenterMsg 0 223  [副本公告]:玩家[%s].单独闯入王者副本.你也想来？去土找副本使者吧... 1 10 
+CLOSE
+BREAK
+#ELSEACT
+SENDMSG 6 [副本提示]1：请您携带 王者级副本钥匙 在点击进入.
+SENDMSG 6 [副本提示]2：王者级副本人数已满.请耐心等待他人出来后在进入.
+SENDMSG 6 副本钥匙可以在 各大BOSS身上掉落.或在商城购买！
+GOTO @main
+BREAK
+
+[@副本2a]
+#IF
+CHECKMAPHUMANCOUNT fuben4 = 0
+checkitem 深渊级副本钥匙 1
+#ACT
+take 深渊级副本钥匙 1
+MONCLEAR fuben4  
+MONGENEX fuben4 66 62 月刃 15 6
+MONGENEX fuben4 66 62 灵刃 15 6
+MONGENEX fuben4 66 62 仓刃 15 6
+MONGENEX fuben4 66 62 午夜暗羽 15 8
+MONGENEX fuben4 66 62 黄昏暗羽 15 8
+MONGENEX fuben4 66 62 [杀戮]虚无鬼影 15 1
+MONGENEX fuben4 66 62 [领主]吞噬虚空 15 1
+mapmove fuben4 66 62
+GIVE 回城卷 1
+;SendCenterMsg 246 0 您在本副本试练时间还剩%d. 0 180 @fuben
+;SetOnTimer 23 1
+GuildNoticeMsg 151 0 『%s』单独进入了深渊级[副本].他能成功清理所有怪物并开启冒险宝箱么？敬请期待.
+SendCenterMsg 0 223  [副本公告]:玩家[%s].单独闯入深渊副本.你也想来？去土找副本使者吧... 1 10 
+CLOSE
+BREAK
+
+#IF
+CHECKMAPHUMANCOUNT fuben4a = 0
+checkitem 深渊级副本钥匙 1
+#ACT
+take 深渊级副本钥匙 1
+MONCLEAR fuben4a  
+MONGENEX fuben4a 66 62 月刃 15 6
+MONGENEX fuben4a 66 62 灵刃 15 6
+MONGENEX fuben4a 66 62 仓刃 15 6
+MONGENEX fuben4a 66 62 午夜暗羽 15 8
+MONGENEX fuben4a 66 62 黄昏暗羽 15 8
+MONGENEX fuben4a 66 62 [杀戮]虚无鬼影 15 1
+MONGENEX fuben4a 66 62 [领主]吞噬虚空 15 1
+mapmove fuben4a 66 62
+GIVE 回城卷 1
+;SendCenterMsg 246 0 您在本副本试练时间还剩%d. 0 180 @fuben
+;SetOnTimer 24 1
+GuildNoticeMsg 151 0 『%s』单独进入了深渊级[副本].他能成功清理所有怪物并开启冒险宝箱么？敬请期待.
+SendCenterMsg 0 223  [副本公告]:玩家[%s].单独闯入深渊副本.你也想来？去土找副本使者吧... 1 10 
+CLOSE
+BREAK
+
+#IF
+CHECKMAPHUMANCOUNT fuben4b = 0
+checkitem 深渊级副本钥匙 1
+#ACT
+take 深渊级副本钥匙 1
+MONCLEAR fuben4b  
+MONGENEX fuben4b 66 62 月刃 15 6
+MONGENEX fuben4b 66 62 灵刃 15 6
+MONGENEX fuben4b 66 62 仓刃 15 6
+MONGENEX fuben4b 66 62 午夜暗羽 15 8
+MONGENEX fuben4b 66 62 黄昏暗羽 15 8
+MONGENEX fuben4b 66 62 [杀戮]虚无鬼影 15 1
+MONGENEX fuben4b 66 62 [领主]吞噬虚空 15 1
+mapmove fuben4b 66 62
+GIVE 回城卷 1
+;SendCenterMsg 246 0 您在本副本试练时间还剩%d. 0 180 @fuben
+;SetOnTimer 25 1
+GuildNoticeMsg 151 0 『%s』单独进入了深渊级[副本].他能成功清理所有怪物并开启冒险宝箱么？敬请期待.
+SendCenterMsg 0 223  [副本公告]:玩家[%s].单独闯入深渊副本.你也想来？去土找副本使者吧... 1 10 
+CLOSE
+BREAK
+#ELSEACT
+SENDMSG 6 [副本提示]1：请您携带 深渊级副本钥匙 在点击进入.
+SENDMSG 6 [副本提示]2：深渊级副本人数已满.请耐心等待他人出来后在进入.
+SENDMSG 6 副本钥匙可以在 各大BOSS身上掉落.或在商城购买！
+GOTO @main
+BREAK
+
+
+}
+

@@ -1,0 +1,159 @@
+[@main]
+<------------------------------------------------------------/SCOLOR=253>\
+<鲜花勋章为二合一手续费10万元宝，各大地图可爆/SCOLOR=250>\
+<┏━━━━━━━┓/SCOLOR=253>   <┏━━━━━━━┓/SCOLOR=253>   <┏━━━━━━━┓/SCOLOR=253>\
+<┃/SCOLOR=253><勋/SCOLOR=250><┃/SCOLOR=253><【勋章+1】/@合成1><┃/SCOLOR=253>   <┃/SCOLOR=253><勋/SCOLOR=250><┃/SCOLOR=253><【勋章+4】/@合成4><┃/SCOLOR=253>   <┃/SCOLOR=253><勋/SCOLOR=250><┃/SCOLOR=253><【勋章+7】/@合成7><┃/SCOLOR=253>\
+<┃/SCOLOR=253><章/SCOLOR=250><┣┅┅┅┅┅┫/SCOLOR=253>   <┃/SCOLOR=253><章/SCOLOR=250><┣┅┅┅┅┅┫/SCOLOR=253>   <┃/SCOLOR=253><章/SCOLOR=250><┣┅┅┅┅┅┫/SCOLOR=253>\   
+<┃/SCOLOR=253><合/SCOLOR=250><┃/SCOLOR=253><【勋章+2】/@合成2><┃/SCOLOR=253>   <┃/SCOLOR=253><合/SCOLOR=250><┃/SCOLOR=253><【勋章+5】/@合成5><┃/SCOLOR=253>   <┃/SCOLOR=253><合/SCOLOR=250><┃/SCOLOR=253><【勋章+8】/@合成8><┃/SCOLOR=253>\
+<┃/SCOLOR=253><成/SCOLOR=250><┣┅┅┅┅┅┫/SCOLOR=253>   <┃/SCOLOR=253><成/SCOLOR=250><┣┅┅┅┅┅┫/SCOLOR=253>   <┃/SCOLOR=253><成/SCOLOR=250><┣┅┅┅┅┅┫/SCOLOR=253>\
+<┃/SCOLOR=253><类/SCOLOR=250><┃/SCOLOR=253><【勋章+3】/@合成3><┃/SCOLOR=253>   <┃/SCOLOR=253><类/SCOLOR=250><┃/SCOLOR=253><【勋章+6】/@合成6><┃/SCOLOR=253>   <┃/SCOLOR=253><类/SCOLOR=250><┃/SCOLOR=253><【勋章+9】/@合成9><┃/SCOLOR=253>\
+<┗━━━━━━━┛/SCOLOR=253>   <┗━━━━━━━┛/SCOLOR=253>   <┗━━━━━━━┛/SCOLOR=253>\
+
+
+[@合成9]
+#IF
+checkitem 鲜花勋章+8 2
+CHECKGAMEGOLD > 99999
+#ACT 
+GAMEGOLD - 100000
+Take 鲜花勋章+8 2
+give 鲜花勋章+9 1
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SendCenterMsg 180 251 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了.. 1
+#ELSEACT
+MESSAGEBOX 看清楚条件在来！！
+BREAK
+
+[@合成8]
+#IF
+checkitem 鲜花勋章+7 2
+CHECKGAMEGOLD > 99999
+#ACT 
+GAMEGOLD - 100000
+Take 鲜花勋章+7 2
+give 鲜花勋章+8 1
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SendCenterMsg 180 251 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了.. 1
+#ELSEACT
+MESSAGEBOX 看清楚条件在来！！
+BREAK
+
+[@合成7]
+#IF
+checkitem 鲜花勋章+6 2
+CHECKGAMEGOLD > 99999
+#ACT 
+GAMEGOLD - 100000
+Take 鲜花勋章+6 2
+give 鲜花勋章+7 1
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SendCenterMsg 180 251 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了.. 1
+#ELSEACT
+MESSAGEBOX 看清楚条件在来！！
+BREAK
+
+[@合成6]
+#IF
+checkitem 鲜花勋章+5 2
+CHECKGAMEGOLD > 99999
+#ACT 
+GAMEGOLD - 100000
+Take 鲜花勋章+5 2
+give 鲜花勋章+6 1
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SendCenterMsg 180 251 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了.. 1
+#ELSEACT
+MESSAGEBOX 看清楚条件在来！！
+BREAK
+
+[@合成5]
+#IF
+checkitem 鲜花勋章+4 2
+CHECKGAMEGOLD > 99999
+#ACT 
+GAMEGOLD - 100000
+Take 鲜花勋章+4 2
+give 鲜花勋章+5 1
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SendCenterMsg 180 251 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了.. 1
+#ELSEACT
+MESSAGEBOX 看清楚条件在来！！
+BREAK
+
+
+[@合成4]
+#IF
+checkitem 鲜花勋章+3 2
+CHECKGAMEGOLD > 99999
+#ACT 
+GAMEGOLD - 100000
+Take 鲜花勋章+3 2
+give 鲜花勋章+4 1
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SendCenterMsg 180 251 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了.. 1
+#ELSEACT
+MESSAGEBOX 看清楚条件在来！！
+BREAK
+
+
+
+[@合成1]
+#IF
+checkitem 鲜花勋章 2
+CHECKGAMEGOLD > 99999
+#ACT 
+GAMEGOLD - 100000
+Take 鲜花勋章 2
+give 鲜花勋章+1 1
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SendCenterMsg 180 251 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了.. 1
+#ELSEACT
+MESSAGEBOX 看清楚条件在来！！
+BREAK
+
+[@合成2]
+#IF
+checkitem 鲜花勋章+1 2
+CHECKGAMEGOLD > 99999
+#ACT 
+GAMEGOLD - 100000
+Take 鲜花勋章+1 2
+give 鲜花勋章+2 1
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SendCenterMsg 180 251 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了.. 1
+#ELSEACT
+MESSAGEBOX 看清楚条件在来！！
+BREAK
+
+[@合成3]
+#IF
+checkitem 鲜花勋章+2 2
+CHECKGAMEGOLD > 99999
+#ACT 
+GAMEGOLD - 100000
+Take 鲜花勋章+2 2
+give 鲜花勋章+3 1
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SENDMSG 0 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了
+SendCenterMsg 180 251 玩家【<$USERNAME>】用两个低级勋章在勋章合成使者处合成高级神器勋章，这简直太帅了.. 1
+#ELSEACT
+MESSAGEBOX 看清楚条件在来！！
+BREAK
+
+
+
+
+
+
+
+
+
+

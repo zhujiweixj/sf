@@ -1,0 +1,122 @@
+(@@InPutString )
+[@main]
+#if
+checkvar human LoginPassWord =
+#say
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在检测你没有输入密码，请点击下面的设置密码设\
+置。密码可以为数字、字母、汉字、特殊字符，但必须是小写！！\
+请玩家不要将二次密码设置成与登陆密码一致！\
+设置好之后请不要泄漏给任何人。<玩家一定要设置好2级密码>\ \
+<密码设置/@@InPutString50>　　　　　　　　　　　　　<暂不设置/@exit>
+#elsesay
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在正在进行<密码修改>操作，请点击下面的修改密码\
+设置。密码可以为数字、字母、汉字、特殊字符，但必须是小写！\
+请玩家不要将二次密码设置成与登陆密码一致！\
+设置好之后请不要泄漏给任何人。\
+修改密码必须先验证"原二级密码"后方可修改.\
+<修改密码/@main1>　　　　　　　　　　　　　<暂不设置/@exit>
+
+[@main1]
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在正在进行<验证密码>操作，请点击下面的验证密码\
+验证。密码可以为数字、字母、汉字、特殊字符，但必须是小写！\
+请玩家不要将二次密码设置成与登陆密码一致！\
+设置好之后请不要泄漏给任何人。\
+点击下方的验证密码进入原密码验证.\
+<验证密码/@@InPutString52>　　　　　　　　　　　　　<暂不设置/@exit>
+
+[@CallInPutString52]
+#if
+checkvar HUMAN LoginPassWord = <$STR(S52)>
+#say
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在正在进行<验证密码>操作，请点击下面的验证密码\
+验证。密码可以为数字、字母、汉字、特殊字符，但必须是小写！\
+请玩家不要将二次密码设置成与登陆密码一致！\
+设置好之后请不要泄漏给任何人。\
+原密码验证通过，请输入新密码.<网吧用户可清空常用IP防止同网吧盗号>。\
+<输入新密码/@@InPutString53>　　　<清空常用IP/@清空常用IP>　　　<暂不设置/@exit>
+#act
+CALCVAR HUMAN LoginPassWordStatus = 1
+break
+#elseact
+CALCVAR HUMAN LoginPassWordStatus = 0
+CALCVAR HUMAN LoginPassWordNum + 1
+SAVEVAR HUMAN LoginPassWordNum ..\QuestDiary\LoginPassWord.txt
+#elsesay
+对不起，密码验证失败。\
+您已经累积输入密码错误<$HUMAN(LoginPassWordNum)>次。\
+累积输入错误5次后，每输错一次密码就将踢您下线。\
+更改密码可以清空此数值。\
+<返回./@main1>\
+<退出./@exit>
+
+#if
+checkvar human LoginPassWordNum > 4
+#act
+kick
+messagebox 对不起，您已经累积输入密码错误<$HUMAN(LoginPassWordNum)>次。\系统自动踢您下线，以后每次登陆均只有一次输入密码的机会。\更改密码可以清空此数值。
+break
+
+[@清空常用IP]
+#if
+checkvar HUMAN LoginPassWordStatus = 1
+#act
+clearnamelist ..\QuestDiary\BindIPList\<$USERNAME>.txt
+messagebox 恭喜您成功清除常用IP，下次登陆时需要输入二级密码验证登陆。
+break
+#elsesay
+对不起，原密码验证状态为失败，不能清空常用IP。\
+<返回./@main>\
+<退出./@exit>
+
+[@CallInPutString53]
+#if
+checkvar HUMAN LoginPassWordStatus = 1
+#act
+CALCVAR HUMAN LoginPassWordStatus = 0
+CALCVAR HUMAN LoginPassWord = <$STR(S53)>
+SAVEVAR HUMAN LoginPassWord ..\QuestDiary\LoginPassWord.txt
+CALCVAR HUMAN LoginPassWordNum = 0
+SAVEVAR HUMAN LoginPassWordNum ..\QuestDiary\LoginPassWord.txt
+SENDMSG 6 您成功设置了二级密码：<$STR(S53)>，请牢记此密码。
+break
+#say
+恭喜您成功修改了二级登陆密码。\
+当前密码为：<$STR(S53)>\
+密码输入错误次数清零。\
+<返回./@main>\
+<退出./@exit>
+#elsesay
+对不起，原密码验证状态为失败，不能进行新密码设置。\
+<返回./@main>\
+<退出./@exit>
+
+[@CallInPutString50]
+#if
+checkvar HUMAN LoginPassWord =
+#act
+addiplist ..\QuestDiary\BindIPList\<$USERNAME>.txt
+CALCVAR HUMAN LoginPassWord = <$STR(S50)>
+SAVEVAR HUMAN LoginPassWord ..\QuestDiary\LoginPassWord.txt
+CALCVAR HUMAN LoginPassWordStatus = 0
+SAVEVAR HUMAN LoginPassWordStatus ..\QuestDiary\LoginPassWord.txt
+CALCVAR HUMAN LoginPassWordNum = 0
+SAVEVAR HUMAN LoginPassWordNum ..\QuestDiary\LoginPassWord.txt
+SENDMSG 6 您成功设置了二级密码：<$STR(S50)>，请牢记此密码。
+break
+#say
+恭喜您成功设置二级密码。\
+当前密码为：<$STR(S50)>\
+<返回./@main>\
+<退出./@exit>
+#elsesay
+对不起，您已经设置过二级密码，请点击修改密码进行修改。\
+<返回./@main>\
+<退出./@exit>

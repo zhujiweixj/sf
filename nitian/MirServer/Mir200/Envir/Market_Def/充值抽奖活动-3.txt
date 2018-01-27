@@ -1,0 +1,629 @@
+[@main]
+#ACT
+OpenBigDialogBox
+#SAY
+　　　　　　　　　　　　　　　　　　<Img:1632:3:0:0><Img:1630:3:0:0><Img:1631:3:0:0><Img:1634:3:0:0>\
+　\
+{∽-----------------------------------/SCOLOR=67}{充值活动①/SCOLOR=215}{-----------------------------------∽/SCOLOR=67}\
+1.{单次/SCOLOR=151}充值满{100万元宝/SCOLOR=151}额外获得{“充值幸运大抽奖”/SCOLOR=151}机会{1次/SCOLOR=151}，例：网银单次充50元获得1500\
+  万元宝+抽奖机会10次，以此类推，多充多送！\
+2.{100%中奖/SCOLOR=151}！奖品随机为：终极武器、+25装备、+45装备、至尊字体、四级技能书、超级强化\
+  石、元宝、聚宝盒、限量攻击神水、行会积分卷、经验卷等。\
+{∽-----------------------------------/SCOLOR=67}{充值活动②/SCOLOR=253}{-----------------------------------∽/SCOLOR=67}\
+1.{单次/SCOLOR=151}充值满{300元/SCOLOR=151}额外赠送超级强化石{15个/SCOLOR=151}\
+2.{单次/SCOLOR=151}充值满{500元/SCOLOR=151}额外赠送超级强化石{25个/SCOLOR=151}\
+3.{单次/SCOLOR=151}充值满{1000元/SCOLOR=151}额外赠送超级强化石{50个/SCOLOR=151}\\
+{∽-----------------------------------/SCOLOR=67}{注意事项√/SCOLOR=243}{-----------------------------------∽/SCOLOR=67}\
+1.{活动①可与活动②同享，与平台充值赠送活动同享/SCOLOR=215}\
+2.{充值即可获得抽奖机会和超级强化石/SCOLOR=215}\
+{∽-----------------------------------/SCOLOR=67}{奖品专区↓/SCOLOR=146}{-----------------------------------∽/SCOLOR=67}\\
+{★★★★★/SCOLOR=253}幸运抽奖次数：{<$GAMEDIAMOND>/SCOLOR=215} 游戏点<[抽奖]/@抽奖>{★★★★★/SCOLOR=253}超级强化石[赠]：{<$GAMEPOINT>/SCOLOR=215} 游戏点　<[领取]/@领取>\\
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　<Img:64:3:0:-5> <关　闭/@关闭窗口>\
+
+[@抽奖]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃　　　　　　　　　　　　　　　　　　　　　　　　　┃0%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在抽奖中，请勿关闭！\
+#act
+DelayCall 100 @抽奖1
+
+[@抽奖1]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃■■■■■　　　　　　　　　　　　　　　　　　　　┃20%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在抽奖中，请勿关闭！\
+#act
+DelayCall 100 @抽奖2
+
+[@抽奖2]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃■■■■■■■■■■　　　　　　　　　　　　　　　┃40%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在抽奖中，请勿关闭！\
+#act
+DelayCall 100 @抽奖3
+
+[@抽奖3]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃■■■■■■■■■■■■■■■　　　　　　　　　　┃60%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在抽奖中，请勿关闭！\
+#act
+DelayCall 100 @抽奖4
+
+[@抽奖4]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃■■■■■■■■■■■■■■■■■■■■　　　　　┃80%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在抽奖中，请勿关闭！\
+#act
+DelayCall 100 @抽奖5
+
+[@抽奖5]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃■■■■■■■■■■■■■■■■■■■■■■■■■┃100%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在抽奖中，请勿关闭！\
+#act
+DelayCall 100 @抽奖go
+
+[@领取]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃　　　　　　　　　　　　　　　　　　　　　　　　　┃0%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在领取中，请勿关闭！\
+#act
+DelayCall 100 @领取1
+
+[@领取1]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃■■■■■　　　　　　　　　　　　　　　　　　　　┃20%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在领取中，请勿关闭！\
+#act
+DelayCall 100 @领取2
+
+[@领取2]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃■■■■■■■■■■　　　　　　　　　　　　　　　┃40%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在领取中，请勿关闭！\
+#act
+DelayCall 100 @领取3
+
+[@领取3]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃■■■■■■■■■■■■■■■　　　　　　　　　　┃60%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在领取中，请勿关闭！\
+#act
+DelayCall 100 @领取4
+
+[@领取4]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃■■■■■■■■■■■■■■■■■■■■　　　　　┃80%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在领取中，请勿关闭！\
+#act
+DelayCall 100 @领取5
+
+[@领取5]
+#say
+　\
+　\
+　\
+　\
+　　　　　　┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+　　　　　　┃■■■■■■■■■■■■■■■■■■■■■■■■■┃100%\
+　　　　　　┗━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+　　　　　　　　　　　　　　正在领取中，请勿关闭！\
+#act
+DelayCall 100 @领取go
+
+[@领取go]
+#IF
+CheckHumBag <$USERNAME> < 1
+#act
+MESSAGEBOX 亲，现在不能给您，因为您的背包没有空位了！
+goto @main
+BREAK
+
+#IF
+CHECKGAMEPOINT > 19
+#act
+GAMEPOINT - 20
+give 超级强化石 1
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”NPC领取超级强化石1个！
+goto @main
+#elseact
+MESSAGEBOX 亲，您不符合赠送条件哦，快去网站充值吧！
+goto @main
+
+[@抽奖go]
+#IF
+CheckHumBag <$USERNAME> < 1
+#act
+MESSAGEBOX 亲，现在不能给您，因为您的背包没有空位了！
+goto @main
+BREAK
+
+#IF
+CHECKGAMEDIAMOND > 4
+#act
+GAMEDIAMOND - 5
+goto @抽奖go1
+#elseact
+MESSAGEBOX 亲，您不符合赠送条件哦，快去网站充值吧！
+goto @main
+
+[@抽奖go1]
+#if
+random 4000
+#act
+give 终极武器[随机] 1
+MessageBox 【充值★活动】恭喜您获得：终极武器[随机]！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得【终极武器[随机]】1个！
+break
+
+
+#if
+random 2500
+#act
+give 至尊字体-绿 1
+MessageBox 【充值★活动】恭喜您获得：至尊字体-绿！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[至尊字体-绿]1个！
+goto @main
+break
+
+#if
+random 2500
+#act
+give 至尊字体-紫 1
+MessageBox 【充值★活动】恭喜您获得：至尊字体-紫！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[至尊字体-紫]1个！
+goto @main
+break
+
+#if
+random 2500
+#act
+give 至尊字体-橙 1
+MessageBox 【充值★活动】恭喜您获得：至尊字体-橙！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[至尊字体-橙]1个！
+goto @main
+break
+
+#if
+random 2500
+#act
+give 至尊字体-蓝 1
+MessageBox 【充值★活动】恭喜您获得：至尊字体-蓝！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[至尊字体-蓝]1个！
+goto @main
+break
+
+#if
+random 1500
+#act
+give +45装备[随机] 1
+MessageBox 【充值★活动】恭喜您获得：+45装备[随机]！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得【+45装备[随机]】1个！
+break
+
+#if
+random 5000
+#act
+give 500万元宝 1
+MessageBox 【充值★活动】恭喜您获得：500万元宝！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[500万元宝]1个！
+goto @main
+break
+
+#if
+random 1000
+#act
+give +45装备[随机] 1
+MessageBox 【充值★活动】恭喜您获得：+45装备[随机]！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得【+45装备[随机]】1个！
+goto @main
+break
+
+#if
+random 600
+#act
+give 四级烈火剑法 1
+MessageBox 【充值★活动】恭喜您获得：四级烈火剑法！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[四级烈火剑法]1个！
+goto @main
+break
+
+#if
+random 550
+#act
+give 四级魔法盾 1
+MessageBox 【充值★活动】恭喜您获得：四级魔法盾！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[四级魔法盾]1个！
+goto @main
+break
+
+#if
+random 500
+#act
+give 四级灵魂火符 1
+MessageBox 【充值★活动】恭喜您获得：四级灵魂火符！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[四级灵魂火符]1个！
+goto @main
+break
+
+
+#if
+random 300
+#act
+give 聚宝盒 1
+MessageBox 【充值★活动】恭喜您获得：聚宝盒！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[聚宝盒1个！
+goto @main
+break
+
+#if
+random 2000
+#act
+give 100万元宝 1
+MessageBox 【充值★活动】恭喜您获得：100万元宝！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[100万元宝]1个！
+goto @main
+break
+
+
+#if
+random 150
+#act
+give +25装备[随机] 1
+MessageBox 【充值★活动】恭喜您获得：+25装备[随机]！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得【+25装备[随机]】1个！
+goto @main
+break
+
+#if
+random 150
+#act
+give 500000元宝 1
+MessageBox 【充值★活动】恭喜您获得：500000元宝！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[500000元宝]1个！
+goto @main
+break
+
+
+#if
+random 120
+#act
+give 限量攻击神水L2 1
+MessageBox 【充值★活动】恭喜您获得：限量攻击神水L2！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[限量攻击神水L2]1个！
+goto @main
+break
+
+#if
+random 110
+#act
+give 限量道力神水L2 1
+MessageBox 【充值★活动】恭喜您获得：限量道力神水L2！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[限量道力神水L2]1个！
+goto @main
+break
+
+#if
+random 100
+#act
+give 限量魔力神水L2 1
+MessageBox 【充值★活动】恭喜您获得：限量魔力神水L2！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[限量魔力神水L2]1个！
+goto @main
+break
+
+#if
+random 80
+#act
+give 超级强化石 1
+MessageBox 【充值★活动】恭喜您获得：超级强化石！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[超级强化石]1个！
+goto @main
+break
+
+#if
+random 40
+#act
+give 100000元宝 1
+MessageBox 【充值★活动】恭喜您获得：100000元宝！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[100000元宝]1个！
+goto @main
+break
+
+#if
+random 35
+#act
+give 1亿经验卷 1
+MessageBox 【充值★活动】恭喜您获得：1亿经验卷！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[1亿经验卷]1个！
+goto @main
+break
+
+#if
+random 30
+#act
+give 行会积分卷15 1
+MessageBox 【充值★活动】恭喜您获得：行会积分卷15！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[行会积分卷15]1个！
+goto @main
+break
+
+#if
+random 30
+#act
+give 限量攻击神水L1 1
+MessageBox 【充值★活动】恭喜您获得：限量攻击神水L1！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[限量攻击神水L1]1个！
+goto @main
+break
+
+#if
+random 30
+#act
+give 限量道力神水L1 1
+MessageBox 【充值★活动】恭喜您获得：限量道力神水L1！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[限量道力神水L1]1个！
+goto @main
+break
+
+#if
+random 30
+#act
+give 限量魔力神水L1 1
+MessageBox 【充值★活动】恭喜您获得：限量魔力神水L1！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[限量魔力神水L1]1个！
+goto @main
+break
+
+#if
+random 25
+#act
+give 行会积分卷10 1
+MessageBox 【充值★活动】恭喜您获得：行会积分卷10！
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得[行会积分卷10]1个！
+goto @main
+break
+
+#if
+random 25
+#act
+give 5000W经验卷 1
+MessageBox 【充值★活动】恭喜您获得：5000W经验卷！
+goto @main
+break
+
+#if
+random 25
+#act
+give 50000元宝 1
+MessageBox 【充值★活动】恭喜您获得：50000元宝！
+goto @main
+break
+
+#if
+random 20
+#act
+give 行会积分卷5 1
+MessageBox 【充值★活动】恭喜您获得：行会积分卷5！
+goto @main
+break
+
+#if
+random 10
+#act
+give 超级攻击神水 1
+MessageBox 【充值★活动】恭喜您获得：超级攻击神水！
+goto @main
+break
+
+#if
+random 10
+#act
+give 超级魔力神水 1
+MessageBox 【充值★活动】恭喜您获得：超级魔力神水！
+goto @main
+break
+
+#if
+random 10
+#act
+give 超级道力神水 1
+MessageBox 【充值★活动】恭喜您获得：超级道力神水！
+goto @main
+break
+
+#if
+random 10
+#act
+give 千里传音(大) 1
+MessageBox 【充值★活动】恭喜您获得：千里传音(大)！
+goto @main
+break
+
+#if
+random 10
+#act
+give 强化石 1
+MessageBox 【充值★活动】恭喜您获得：强化石！
+goto @main
+break
+
+#if
+random 10
+#act
+give 庆典蛋糕 1
+MessageBox 【充值★活动】恭喜您获得：庆典蛋糕！
+goto @main
+break
+
+#if
+random 5
+#act
+give 超级祝福油 1
+MessageBox 【充值★活动】恭喜您获得：超级祝福油！
+goto @main
+break
+
+#if
+random 5
+#act
+give 个性发型 1
+MessageBox 【充值★活动】恭喜您获得：个性发型！
+goto @main
+break
+
+#if
+random 5
+#act
+give 祝福油 1
+MessageBox 【充值★活动】恭喜您获得：祝福油！
+goto @main
+break
+
+#if
+random 5
+#act
+give 疗伤药包 1
+MessageBox 【充值★活动】恭喜您获得：疗伤药包！
+goto @main
+break
+
+#if
+random 5
+#act
+give 疗伤大礼包 1
+MessageBox 【充值★活动】恭喜您获得：疗伤大礼包！
+goto @main
+break
+
+#if
+random 5
+#act
+give 红名清洗卡 1
+MessageBox 【充值★活动】恭喜您获得：红名清洗卡！
+goto @main
+break
+
+#if
+random 5
+#act
+give BOSS卷 1
+MessageBox 【充值★活动】恭喜您获得：BOSS卷！
+goto @main
+break
+
+#if
+random 5
+#act
+give 超级攻击神水 1
+MessageBox 【充值★活动】恭喜您获得：超级攻击神水！
+goto @main
+break
+
+#if
+random 5
+#act
+give 超级道力神水 1
+MessageBox 【充值★活动】恭喜您获得：超级道力神水！
+goto @main
+break
+
+#if
+random 5
+#act
+give 超级魔力神水 1
+MessageBox 【充值★活动】恭喜您获得：超级魔力神水！
+goto @main
+break
+
+#if
+random 5
+#act
+give 祝福罐 1
+MessageBox 【充值★活动】恭喜您获得：祝福罐！
+goto @main
+break
+
+#if
+random 5
+#act
+give 移动仓库卷 1
+MessageBox 【充值★活动】恭喜您获得：移动仓库卷！
+goto @main
+break
+
+#if
+#act
+goto @抽奖go1
+
+
+[@关闭窗口]
+#ACT
+closeBigDialogBox
+close
+

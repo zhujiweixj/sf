@@ -1,0 +1,65 @@
+[@抽奖]
+{
+#IF
+#ACT
+INC G497 1
+goto @抽奖11
+
+[@抽奖11]
+#if
+random 200
+#act
+GetRandomText .\QuestDiary\清风制作\抽奖奖励\战神奖励.txt S19
+give <$STR(S19)> 1
+MessageBox 恭喜您获得：<$STR(S19)>一件！！！！
+sendmsg 0 恭喜玩家:<$USERNAME>开启乾坤袋获得物品:<$STR(S19)>
+break
+#if
+random 140
+#act
+GetRandomText .\QuestDiary\清风制作\抽奖奖励\雷霆奖励.txt S19
+give <$STR(S19)> 1
+MessageBox 恭喜您获得：<$STR(S19)>一件！！！！
+sendmsg 0 恭喜玩家:<$USERNAME>开启乾坤袋获得物品:<$STR(S19)>
+break
+#if
+random 120
+#act
+GetRandomText .\QuestDiary\清风制作\抽奖奖励\圣战奖励.txt S19
+give <$STR(S19)> 1
+MessageBox 恭喜您获得：<$STR(S19)>一件！！！！
+sendmsg 0 恭喜玩家:<$USERNAME>开启乾坤袋获得物品:<$STR(S19)>
+break
+#if
+random 100
+#act
+GetRandomText .\QuestDiary\清风制作\抽奖奖励\经验奖励.txt S19
+CHANGEEXP + <$STR(S19)>
+MessageBox 恭喜您获得：<$STR(S19)>经验！！！！
+sendmsg 0 恭喜玩家:<$USERNAME>开启乾坤袋获得经验:<$STR(S19)>
+break
+#if
+random 60
+#act
+GetRandomText .\QuestDiary\清风制作\抽奖奖励\祖玛奖励.txt S19
+give <$STR(S19)> 1
+MessageBox 恭喜您获得：<$STR(S19)>一件！！！！
+break
+#if
+random 45
+#act
+GetRandomText .\QuestDiary\清风制作\抽奖奖励\金币奖励.txt S19
+give <$STR(S19)>
+MessageBox 恭喜您获得：<$STR(S19)>一件！！！！
+break
+#if
+random 30
+#act
+GetRandomText .\QuestDiary\清风制作\抽奖奖励\沃玛奖励.txt S19
+give <$STR(S19)> 1
+MessageBox 恭喜您获得：<$STR(S19)>一件！！！！
+break
+#if
+#act
+goto @抽奖11
+}

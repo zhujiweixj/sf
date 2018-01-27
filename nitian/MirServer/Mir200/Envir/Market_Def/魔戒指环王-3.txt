@@ -1,0 +1,64 @@
+[@main]
+\
+<----------------------------------------------------------/SCOLOR=254>\
+<你好！我是指环王，传说中的千年环戒你弄到手了？我可以为你打/SCOLOR=250>\
+<造出/SCOLOR=250><逆天指环/SCOLOR=253><可强化+20星.暗藏死亡不爆属性.绝对牛B........../SCOLOR=250>\
+<----------------------------------------------------------/SCOLOR=254>\
+<合/SCOLOR=250><逆天指环/SCOLOR=253><需要/SCOLOR=250><5个魔戒指环.5个封印之石.加1000万元宝...../SCOLOR=253>\ 
+<----------------------------------------------------------/SCOLOR=254>\ 
+　　　　　　　　<我要合逆天指环/@tls1>  \
+<-------------指定装备属性清零.需花费500万元宝-------------/SCOLOR=254>\ 
+　		                 <清洗逆天指环/@tls2>　
+
+[@tls1]
+#if
+CHECKGAMEGOLD > 9999999
+checkitem 封印之石 5
+checkitem 魔戒指环 5
+#ACT
+take 魔戒指环 5
+take 封印之石 5
+GAMEGOLD - 10000000
+give 逆天指环  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功打造出◇逆天指环◇!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品,请看仔细再来合！
+
+[@tls2]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 逆天指环 1
+#ACT
+take 逆天指环 1
+GAMEGOLD - 5000000
+give 逆天指环  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功把+20星装备属性清零.可重新砸星!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+[@tls3]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 屠魔腰带[生命] 1
+#ACT
+take 屠魔腰带[生命] 1
+GAMEGOLD - 5000000
+give 屠魔腰带[生命]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功把+20星装备属性清零.可重新砸星!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+
+[@tls4]
+#if
+CHECKGAMEGOLD > 4999999
+checkitem 屠魔神靴[生命] 1
+#ACT
+take 屠魔神靴[生命] 1
+GAMEGOLD - 5000000
+give 屠魔神靴[生命]  1
+SENDMSG 1 恭喜[%s]在天仙楼宝阁,成功把+20星装备属性清零.可重新砸星!!!
+#ELSEACT
+MESSAGEBOX 缺少合成物品！
+
+

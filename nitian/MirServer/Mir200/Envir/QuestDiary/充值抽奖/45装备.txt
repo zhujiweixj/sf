@@ -1,0 +1,219 @@
+{
+[@45装备]
+#if
+random 21
+#act
+give 贵族圣战头盔 1
+AutoTakeOnItem 贵族圣战头盔 4
+GmexEcute 改属性 4 2 45
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族圣战头盔>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族圣战头盔>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族圣战戒指 1
+AutoTakeOnItem 贵族圣战戒指 7
+GmexEcute 改属性 7 2 45
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族圣战戒指>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族圣战戒指>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族圣战手镯 1
+AutoTakeOnItem 贵族圣战手镯 5
+GmexEcute 改属性 5 2 45
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族圣战手镯>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族圣战手镯>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族勋章[战] 1
+AutoTakeOnItem 贵族勋章[战] 2
+GmexEcute 改属性 2 2 15
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族勋章[战]>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族勋章[战]>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族怒斩 1
+AutoTakeOnItem 贵族怒斩 1
+GmexEcute 改属性 1 0 48
+GmexEcute 改属性 1 5 3
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族怒斩>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族怒斩>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族天魔神甲 1
+AutoTakeOnItem 贵族天魔神甲 0
+GmexEcute 改属性 0 2 47
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族天魔神甲>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族天魔神甲>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族圣战宝甲 1
+AutoTakeOnItem 贵族圣战宝甲 0
+GmexEcute 改属性 0 2 47
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族圣战宝甲>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族圣战宝甲>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族法神头盔 1
+AutoTakeOnItem 贵族法神头盔 4
+GmexEcute 改属性 4 3 45
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族法神头盔>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族法神头盔>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族法神戒指 1
+AutoTakeOnItem 贵族法神戒指 7
+GmexEcute 改属性 7 3 45
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族法神戒指>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族法神戒指>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族法神手镯 1
+AutoTakeOnItem 贵族法神手镯 5
+GmexEcute 改属性 5 3 45
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族法神手镯>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族法神手镯>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族勋章[法] 1
+AutoTakeOnItem 贵族勋章[法] 2
+GmexEcute 改属性 2 3 15
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族勋章[法]>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族勋章[法]>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族龙牙 1
+AutoTakeOnItem 贵族龙牙 1
+GmexEcute 改属性 1 1 45
+GmexEcute 改属性 1 5 3
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族龙牙>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族龙牙>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族法神披风 1
+AutoTakeOnItem 贵族法神披风 0
+GmexEcute 改属性 0 3 47
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族法神披风>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族法神披风>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族霓裳羽衣 1
+AutoTakeOnItem 贵族霓裳羽衣 0
+GmexEcute 改属性 0 3 47
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族霓裳羽衣>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族霓裳羽衣>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族天尊头盔 1
+AutoTakeOnItem 贵族天尊头盔 4
+GmexEcute 改属性 4 4 45
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族天尊头盔>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族天尊头盔>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族天尊戒指 1
+AutoTakeOnItem 贵族天尊戒指 7
+GmexEcute 改属性 7 4 45
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族天尊戒指>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族天尊戒指>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族天尊手镯 1
+AutoTakeOnItem 贵族天尊手镯 5
+GmexEcute 改属性 5 4 45
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族天尊手镯>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族天尊手镯>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族勋章[道] 1
+AutoTakeOnItem 贵族勋章[道] 2
+GmexEcute 改属性 2 4 15
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族勋章[道]>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族勋章[道]>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族逍遥扇 1
+AutoTakeOnItem 贵族逍遥扇 1
+GmexEcute 改属性 1 2 44
+GmexEcute 改属性 1 5 3
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族逍遥扇>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族逍遥扇>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族天尊道袍 1
+AutoTakeOnItem 贵族天尊道袍 0
+GmexEcute 改属性 0 4 47
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族天尊道袍>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族天尊道袍>1个！已经自动替您穿上！
+break
+
+#if
+random 21
+#act
+give 贵族天师长袍 1
+AutoTakeOnItem 贵族天师长袍 0
+GmexEcute 改属性 0 4 47
+GuildNoticeMsg 251 80 【充值★活动】玩家[%S]通过“充值抽奖活动”获得+45<贵族天师长袍>1个！
+MessageBox 【充值★活动】恭喜您获得：+45<贵族天师长袍>1个！已经自动替您穿上！
+break
+
+#if
+#act
+goto @45装备
+}

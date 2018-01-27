@@ -1,0 +1,76 @@
+[@奖励]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第一排名.txt
+#ACT
+PowerRate 120 60000
+SENDMSG 5 您是元宝捐款第一名,攻击力增加20%
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第二排名.txt
+#ACT
+PowerRate 110 60000
+SENDMSG 5 您是元宝捐款第二名,攻击力增加10%
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\变量数据\骰王名单.txt
+#ACT
+PowerRate 120 60000
+seticon 0 34 -20 0
+SENDMSG 5 您是至尊骰王,攻击力增加20%
+
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第三排名.txt
+#ACT
+ChangeHumAbility 6 + 40
+ChangeHumAbility 8 + 40
+ChangeHumAbility 10 + 40
+ChangeHumAbility 5 + 40
+ChangeHumAbility 7 + 40
+ChangeHumAbility 9 + 40
+SENDMSG 5 您是元宝捐款第三名,奖励攻魔道+(40-40)
+BREAK
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第四排名.txt
+#ACT
+ChangeHumAbility 6 + 30
+ChangeHumAbility 8 + 30
+ChangeHumAbility 10 + 30
+ChangeHumAbility 5 + 30
+ChangeHumAbility 7 + 30
+ChangeHumAbility 9 + 30
+SENDMSG 5 您是元宝捐款第四名,奖励攻魔道+(30-30)
+BREAK
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第五排名.txt
+#ACT
+ChangeHumAbility 6 + 20
+ChangeHumAbility 8 + 20
+ChangeHumAbility 10 + 20
+ChangeHumAbility 5 + 20
+ChangeHumAbility 7 + 20
+ChangeHumAbility 9 + 20
+SENDMSG 5 您是元宝捐款第五名,奖励攻魔道+(20-20)
+BREAK
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝捐款\第六排名.txt
+#ACT
+ChangeHumAbility 6 + 10
+ChangeHumAbility 8 + 10
+ChangeHumAbility 10 + 10
+ChangeHumAbility 5 + 10
+ChangeHumAbility 7 + 10
+ChangeHumAbility 9 + 10
+SENDMSG 5 您是元宝捐款第六名,奖励攻魔道+(10-10)
+BREAK
+#ELSEACT
+BREAK
+}

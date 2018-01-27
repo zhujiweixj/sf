@@ -1,0 +1,98 @@
+[@main]
+#IF
+#ACT
+OpenBigDialogBox
+MOV S11 <$STR(A51)>
+MOV S12 <$STR(A52)>
+MOV S13 <$STR(A53)>
+SetStringBlank S11 18 0
+SetStringBlank S12 18 0
+SetStringBlank S13 18 0
+
+#IF
+check [300] 0
+#SAY
+　\
+<★━━━━━━━━[上古神器━全区唯一]━━━━━━━━★/AUTOCOLOR=168,250,70,253>\ 
+<★本服独家推出三大神器系统，用实力证明你才是真正的强者★/SCOLOR=243>\
+1.神器BOSS-100%爆出神器，拥有者死亡/下线/挂机/神器消失，\
+2.神器使用时限：30分钟，神器消失同时，神器BOSS再次复活。\
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\ 
+　　　　　BOSS提醒：[√开启]　←　<点击关闭邀请窗口/@关闭邀请>\
+　\
+　　[<挑战神器-战/@战>]　　[<挑战神器-法/@法>]　　[<挑战神器-道/@道>]\
+
+　\
+　\
+<Img:11:0><[上古神器-战]持有人：/SCOLOR=249><$STR(S11)>  剩余[<$STR(G61)>]分钟\
+<Img:11:0><[上古神器-法]持有人：/SCOLOR=151><$STR(S13)>  剩余[<$STR(G63)>]分钟\
+<Img:11:0><[上古神器-道]持有人：/SCOLOR=253><$STR(S12)>  剩余[<$STR(G62)>]分钟\
+
+
+#IF
+check [300] 1
+#SAY
+<★━━━━━━━━[上古神器━全区唯一]━━━━━━━━★/AUTOCOLOR=168,250,70,253>\ 
+<★本服独家推出三大神器系统，用实力证明你才是真正的强者★/SCOLOR=243>\
+1.神器BOSS-100%爆出神器，拥有者死亡/下线/挂机/神器消失，\
+2.神器使用时限：30分钟，神器消失同时，神器BOSS再次复活。\
+<★━━━━━━━━━━━━━━━━━━━━━━━━━━★/AUTOCOLOR=168,250,70,253>\ 
+　　　　　BOSS提醒：[×关闭]　←　<点击开启邀请窗口/@开启邀请>\
+　\
+　　[<挑战神器-战/@战>]　　[<挑战神器-法/@法>]　　[<挑战神器-道/@道>]\
+　\
+　\
+<Img:11:0><[上古神器-战]持有人：/SCOLOR=249><$STR(S11)>  剩余[<$STR(G61)>]分钟\
+<Img:11:0><[上古神器-法]持有人：/SCOLOR=151><$STR(S13)>  剩余[<$STR(G63)>]分钟\
+<Img:11:0><[上古神器-道]持有人：/SCOLOR=253><$STR(S12)>  剩余[<$STR(G62)>]分钟\
+
+[@开启邀请]
+#IF
+#ACT
+SET [300] 0
+messagebox 开启BOSS邀请成功，BOSS出现后第一时间弹出邀请提示！
+goto @main
+#ELSEACT
+messagebox  未知错误，请联系管理员！
+
+
+[@关闭邀请]
+#IF
+#ACT
+SET [300] 1
+messagebox 关闭BOSS邀请成功，您将不会收到BOSS邀请提示！
+goto @main
+#ELSEACT
+messagebox  未知错误，请联系管理员！
+
+[@战]
+#IF
+CheckJob Warrior
+#ACT
+MAPMOVE sg1 7 12
+give 回城卷
+GuildNoticeMsg 251 233 [%s]闯入[上古神器-战]挑战BOSS，他能获得全区唯一的神器吗，让我们拭目以待！
+#ELSEACT
+messagebox 不能进入非自己职业的地图！
+
+
+[@道]
+#IF
+CheckJob Taoist
+#ACT
+MAPMOVE sg2 7 12
+give 回城卷
+GuildNoticeMsg 251 233 [%s]闯入[上古神器-道]挑战BOSS，他能获得全区唯一的神器吗，让我们拭目以待！
+#ELSEACT
+messagebox 不能进入非自己职业的地图！
+
+[@法]
+#IF
+CheckJob Wizard
+#ACT
+MAPMOVE sg3 7 12
+give 回城卷
+GuildNoticeMsg 251 233 [%s]闯入[上古神器-法]挑战BOSS，他能获得全区唯一的神器吗，让我们拭目以待！
+#ELSEACT
+messagebox 不能进入非自己职业的地图！
+;-b--b--Q -Q---156 598018---

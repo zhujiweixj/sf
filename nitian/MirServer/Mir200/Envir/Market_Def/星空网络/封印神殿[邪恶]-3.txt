@@ -1,0 +1,69 @@
+(@buy @sell @repair @s_repair )
+[@main]
+<亲.欢迎来到逆天神殿/SCOLOR=250><本地图不限等级,满足以下条件方可进入...../SCOLOR=254>\ 
+<此地图爆:/SCOLOR=250><+贵族15.+贵族25.+贵族35.+贵族45.封印之石.逆天.断魂/SCOLOR=253>\
+<荣耀./SCOLOR=253><魔戒指环/SCOLOR=243><等等.../SCOLOR=253><BOSS怪物：阿凡达[灭世].火姣龙王[灭世]../SCOLOR=251>\  
+<火灵鸟[灭世].魔王将军[灭世].炎龙神帝[灭世],小怪全爆终级..../SCOLOR=251>\  
+　　　<进入条件需满足以下，否则就算让你进去了也是送死/SCOLOR=250>\
+　　　<≮战士≯/SCOLOR=250>需要支付15万元宝，攻击力达到680点以上\
+　　　<≮法师≯/SCOLOR=250>需要支付15万元宝，魔法力达到640点以上\
+　　　<≮道士≯/SCOLOR=250>需要支付15万元宝，道术力达到630点以上\  
+　　　　　　　　　　　　　　　　　　　　　　<进入逆天神殿..../@PK点击>　\
+
+[@PK点击]
+请一定正确选择自己的职业，才能进入地图！\  \
+切记，需要攻击力680以上才可进入！<战士点击进入/@战士>\  \
+
+切记，需要法师640以上才可进入！<法师点击进入/@魔法师>\  \
+
+切记，需要道术630以上才可进入！<道士点击进入/@道士>\  \
+
+
+
+
+[@战士]
+#IF
+CHECKDC > 10 > 680
+CHECKGAMEGOLD > 149999
+#act
+GAMEGOLD - 150000
+#ACT
+mapmove fythd 38 92
+give 回城卷 1
+GuildNoticeMsg 245 225  【%s】进入封印神殿[邪恶]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+SendCenterMsg 253 0 玩家【<$USERNAME>】进入封印神殿[邪恶]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+break
+#ELSEACT
+MESSAGEBOX 对不起，你攻击力不够680，否则进去也是送死！
+
+
+
+[@魔法师]
+#IF
+CHECKMC > 9 > 640
+CHECKGAMEGOLD > 149999
+#act
+GAMEGOLD - 150000
+#ACT
+mapmove fythd 38 92
+give 回城卷 1
+GuildNoticeMsg 245 225  【%s】进入封印神殿[邪恶]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+SendCenterMsg 253 0 玩家【<$USERNAME>】进入封印神殿[邪恶]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+break
+#ELSEACT
+MESSAGEBOX 对不起，你魔法力不够640，否则进去也是送死！
+
+
+[@道士]
+#IF
+CHECKSC > 10 > 630
+CHECKGAMEGOLD > 149999
+#act
+GAMEGOLD - 150000
+#ACT
+mapmove fythd 38 92
+give 回城卷 1
+GuildNoticeMsg 245 225  【%s】进入封印神殿[邪恶]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+SendCenterMsg 253 0 玩家【<$USERNAME>】进入封印神殿[邪恶]开始和BOSS火拼了，终极怪物狂爆终极！要去的快进~
+#ELSEACT
+MESSAGEBOX 对不起，你道力不够630，否则进去也是送死！

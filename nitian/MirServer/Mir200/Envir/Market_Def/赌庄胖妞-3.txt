@@ -1,0 +1,598 @@
+(@@InPutInteger)
+[@Main]
+#If
+ISADMIN
+#Act
+Goto @Admin_Main
+#ElseAct
+Goto @Main_Run
+
+[@Admin_Main]
+　\ \
+<进入作弊界面/@XXX_Main>\ \
+<进入游戏界面/@Main_Run>\ \
+
+[@XXX_Main]
+当前点数: [<$GLobal(bNu1)>,<$GLobal(bNu2)>,<$GLobal(bNu3)>]<$GLobal(bNuG)>点<$GLobal(bResStr)>\ \
+修改点数1: <1/@D0_1>   <2/@D0_2>   <3/@D0_3>   <4/@D0_4>   <5/@D0_5>   <6/@D0_6>  \ 
+修改点数2: <1/@D1_1>   <2/@D1_2>   <3/@D1_3>   <4/@D1_4>   <5/@D1_5>   <6/@D1_6>  \ 
+修改点数3: <1/@D2_1>   <2/@D2_2>   <3/@D2_3>   <4/@D2_4>   <5/@D2_5>   <6/@D2_6>  \ 
+
+[@D2_1]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu3 = 1
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D2_2]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu3 = 2
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D2_3]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu3 = 3
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D2_4]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu3 = 4
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D2_5]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu3 = 5
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D2_6]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu3 = 6
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D1_1]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu2 = 1
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D1_2]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu2 = 2
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D1_3]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu2 = 3
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D1_4]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu2 = 4
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D1_5]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu2 = 5
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D1_6]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu2 = 6
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D0_1]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu1 = 1
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D0_2]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu1 = 2
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D0_3]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu1 = 3
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D0_4]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu1 = 4
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D0_5]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu1 = 5
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@D0_6]
+#if
+CheckVar Global bRvar = 2
+#Act
+CAlCVAR Global bNu1 = 6
+Goto @XXX_OhNo
+#ElseAct
+MessAgeBox 作弊必需要下注时间进行！
+
+[@XXX_OhNo]
+#if
+CheckLevelEx > 0
+#Act
+CAlCVAR Global bNuG = <$GLobal(bNu1)>
+CAlCVAR Global bNuG + <$GLobal(bNu2)>
+CAlCVAR Global bNuG + <$GLobal(bNu3)>
+
+#if
+CheckVar Global bNu1 = <$GLobal(bNu2)>
+CheckVar Global bNu1 = <$GLobal(bNu3)>
+#Act
+CAlCVAR Global bRes = 0
+CAlCVAR Global bResStr = 豹子
+Goto @XXX_Main
+Break
+
+#if
+CheckVar Global bNuG > 10
+#Act
+CAlCVAR Global bRes = 1
+CAlCVAR Global bResStr = 大
+Goto @XXX_Main
+Break
+#ElseAct
+CAlCVAR Global bRes = 2
+CAlCVAR Global bResStr = 小
+Goto @XXX_Main
+Break
+
+
+
+[@Main_Run]
+#if
+CheckHumInRange 3 325 340  7
+#Act
+Goto @Main_Sat
+
+[@Main_Sat]
+#if
+CheckVar Human UbInn > 0
+CheckVar Human UbInn < <$Global(BInn)>
+#Act
+MessAgeBox 你有历史赌博未清算，稍后系统将自动清算，然后小退下才可以再次赌博!
+Break
+
+
+#if
+CheckVar Global bRvar = 1
+#ACT
+CloseBigDialogBox
+#Say 
+<欢迎光临，这里是抢庄赌场，你所拥有的元宝：【/SCOLOR=150><$GAMEGOLD><】/SCOLOR=150>\
+<庄家姓名：【/SCOLOR=150><$Global(bBanName)><】　庄家本钱数：【/SCOLOR=150><$Global(bBancap)><】/SCOLOR=150>\
+<╔┈┈┈┈╗╔┈┈┈┈╗╔┈┈┈┈╗ 当前状态:/SCOLOR=150> <抢庄时间/SCOLOR=56>\
+<┊/SCOLOR=150><开始抢庄/@@InPutInteger40><┊┊/SCOLOR=150><下注押大/SCOLOR=250><┊┊/SCOLOR=150><下注押小/SCOLOR=250><┊ 剩余时间: /SCOLOR=150><$Global(bTime)><秒/SCOLOR=150>\\
+<╚┈┈┈┈╝╚┈┈┈┈╝╚┈┈┈┈╝ 当前局数: 第/SCOLOR=150><$Global(BInn)><局/SCOLOR=150>\
+<押大总金额：/SCOLOR=254>< 【/SCOLOR=150><$Global(bPb)><】   共可押大总金额：【/SCOLOR=150><$Global(bsPb)><】/SCOLOR=150>\
+<押小总金额：/SCOLOR=254>< 【/SCOLOR=150><$Global(bPs)><】   共可押小总金额：【/SCOLOR=150><$Global(bsPs)><】/SCOLOR=150>\ 
+<你的下注情况：你下注【/SCOLOR=150><$Human(UbCap)><】元宝押【/SCOLOR=150><$Human(Ubvs)><】/SCOLOR=150>   \ 
+<重要赌博提示：从此不怕掉线，从此不怕黑单！/AUTOCOLOR=254,168,191,250,70,245,249,253>< 【/SCOLOR=150><点击关闭窗口/@CloseBat><】/SCOLOR=150>\
+\ \
+<╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗/AUTOCOLOR=151>\
+<┆/SCOLOR=151><赌博时间内掉线,上线后均按照输赢补发元宝,绝对不黑单！/SCOLOR=253><┆/SCOLOR=151>\
+<┆/SCOLOR=151><请放心大胆赌博,如发现补还元宝数目不对的,请找管理员！/SCOLOR=253><┆/SCOLOR=151>\
+<╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝/AUTOCOLOR=151>\
+#Act
+Delaygoto 1 @Main_Run
+Break
+
+#if
+CheckVar Global bRvar = 2
+#ACT
+CloseBigDialogBox
+#Say
+<欢迎光临，这里是抢庄赌场，你所拥有的元宝：【/SCOLOR=150><$GAMEGOLD><】/SCOLOR=150>\
+<庄家姓名：【/SCOLOR=150><$Global(bBanName)><】　庄家本钱数：【/SCOLOR=150><$Global(bBancap)><】/SCOLOR=150>\
+<╔┈┈┈┈╗╔┈┈┈┈╗╔┈┈┈┈╗ 当前状态: /SCOLOR=150><下注时间/SCOLOR=56>\
+<┊/SCOLOR=150><开始抢庄/SCOLOR=250><┊┊/SCOLOR=150><下注押大/@@InPutInteger41><┊┊/SCOLOR=150><下注押小/@@InPutInteger42><┊ 剩余时间: /SCOLOR=150><$Global(bTime)><秒/SCOLOR=150>\\
+<╚┈┈┈┈╝╚┈┈┈┈╝╚┈┈┈┈╝ 当前局数: 第/SCOLOR=150><$Global(BInn)><局/SCOLOR=150>\
+<押大总金额：/SCOLOR=254>< 【/SCOLOR=150><$Global(bPb)><】   共可押大总金额：【/SCOLOR=150><$Global(bsPb)><】/SCOLOR=150>\
+<押小总金额：/SCOLOR=254>< 【/SCOLOR=150><$Global(bPs)><】   共可押小总金额：【/SCOLOR=150><$Global(bsPs)><】/SCOLOR=150>\ 
+<你的下注情况：你下注【/SCOLOR=150><$Human(UbCap)><】元宝押【/SCOLOR=150><$Human(Ubvs)><】 /SCOLOR=150>  \ 
+<重要赌博提示：从此不怕掉线，从此不怕黑单！/AUTOCOLOR=254,168,191,250,70,245,249,253>< 【/SCOLOR=150><点击关闭窗口/@CloseBat><】/SCOLOR=150>\
+\ \
+<╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗/AUTOCOLOR=151>\
+<┆/SCOLOR=151><赌博时间内掉线,上线后均按照输赢补发元宝,绝对不黑单！/SCOLOR=253><┆/SCOLOR=151>\
+<┆/SCOLOR=151><请放心大胆赌博,如发现补还元宝数目不对的,请找管理员！/SCOLOR=253><┆/SCOLOR=151>\
+<╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝/AUTOCOLOR=151>\
+#Act
+Delaygoto 1 @Main_Run
+Break
+
+
+#if
+CheckVar Global bRvar = 3
+#Say
+欢迎光临，这里是抢庄赌场，你所拥有的元宝：【<$GAMEGOLD>】\
+庄家姓名：【<$Global(bBanName)>】　庄家本钱数：【<$Global(bBancap)>】\
+╔┈┈┈┈╗╔┈┈┈┈╗╔┈┈┈┈╗ 当前状态: <开骰时间/SCOLOR=56>\
+┊<开始抢庄/SCOLOR=250>┊┊<下注押大/SCOLOR=250>┊┊<下注押小/SCOLOR=250>┊ 剩余时间: <$Global(bTime)>秒\\
+╚┈┈┈┈╝╚┈┈┈┈╝╚┈┈┈┈╝ 当前局数: 第<$Global(BInn)>局\
+<押大总金额：/SCOLOR=254> 【<$Global(bPb)>】   共可押大总金额：【<$Global(bsPb)>】\
+<押小总金额：/SCOLOR=254> 【<$Global(bPs)>】   共可押小总金额：【<$Global(bsPs)>】\
+你的下注情况：你下注【<$Human(UbCap)>】元宝押【<$Human(Ubvs)>】 \ 
+<重要赌博提示：从此不怕掉线，从此不怕黑单！/AUTOCOLOR=254,168,191,250,70,245,249,253>< 【/SCOLOR=150><点击关闭窗口/@CloseBat><】/SCOLOR=150>\
+\ \
+<╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗/AUTOCOLOR=151>\
+<┆/SCOLOR=151><赌博时间内掉线,上线后均按照输赢补发元宝,绝对不黑单！/SCOLOR=253><┆/SCOLOR=151>\
+<┆/SCOLOR=151><请放心大胆赌博,如发现补还元宝数目不对的,请找管理员！/SCOLOR=253><┆/SCOLOR=151>\
+<╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝/AUTOCOLOR=151>\
+#Act
+Delaygoto 1 @Main_Run
+Break
+
+
+[@@InPutInteger42]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger42
+[~InPutInteger42]
+#If
+CheckVar Global bRvar = 2
+#ElseAct
+MessAgeBox [提示]：现在并非下注时间！
+Mov N42 0
+Goto @Main_Run
+Break
+
+#if
+CheckVar Global bBanName = <$USERNAME>
+#Act
+MessAgeBox [提示]：庄家是无法下注的。
+Mov N42 0
+Goto @Main_Run
+Break
+
+
+#if
+CheckVar Human Ubv = 0
+#ElseAct
+MessAgeBox [提示]：你己经下注，无法重复下注!
+Mov N42 0
+Goto @Main_Run
+Break
+
+
+#if
+small N42 100
+#Act
+MessAgeBox [提示]：每次至少下注100元宝！
+Mov N42 0
+Goto @Main_Run
+Break
+
+#if
+CheckGameGold < <$STR(N42)>
+#Act
+MessAgeBox [提示]：你没有这么多元宝！
+Mov N42 0
+Goto @Main_Run
+Break
+
+#if
+CheckVar Global bsPs < <$STR(N42)>
+#Act
+MessAgeBox [提示]：现在不能压这么多元宝下注压小!
+Mov N42 0
+Goto @Main_Run
+Break
+#ElseAct
+GameGold - <$STR(N42)>
+CAlCVAR Global bPs + <$STR(N42)>
+CAlCVAR Global bsPb + <$STR(N42)>
+CAlCVAR Global bsPs - <$STR(N42)>
+
+CAlCVAR Human UbInn = <$Global(bInn)>
+CAlCVAR Human UbCap = <$STR(N42)>
+CAlCVAR Human Ubv = 2
+CAlCVAR Human Ubvs = 小
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+SendMSG 4 %s使用<$Human(UbCap)>个元宝下注押小。
+Mov N42 0
+Goto @Main_Run
+Break
+
+
+[@@InPutInteger41]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger41
+[~InPutInteger41]
+#If
+CheckVar Global bRvar = 2
+#ElseAct
+MessAgeBox [提示]：现在并非下注时间！
+Mov N41 0
+Goto @Main_Run
+Break
+
+#if
+CheckVar Global bBanName = <$USERNAME>
+#Act
+MessAgeBox [提示]：庄家是无法下注的。
+Mov N41 0
+Goto @Main_Run
+Break
+
+
+#if
+CheckVar Human Ubv = 0
+#ElseAct
+MessAgeBox [提示]：你己经下注，无法重复下注!
+Mov N41 0
+Goto @Main_Run
+Break
+
+
+#if
+small N41 100
+#Act
+MessAgeBox [提示]：每次至少下注100元宝！
+Mov N41 0
+Goto @Main_Run
+Break
+
+#if
+CheckGameGold < <$STR(N41)>
+#Act
+MessAgeBox [提示]：你没有这么多元宝！
+Mov N41 0
+Goto @Main_Run
+Break
+
+#if
+CheckVar Global bsPb < <$STR(N41)>
+#Act
+MessAgeBox [提示]：现在不能压这么多元宝下注压大!
+Mov N41 0
+Goto @Main_Run
+Break
+#ElseAct
+GameGold - <$STR(N41)>
+CAlCVAR Global bPb + <$STR(N41)>
+CAlCVAR Global bsPb - <$STR(N41)>
+CAlCVAR Global bsPs + <$STR(N41)>
+CAlCVAR Human UbInn = <$Global(bInn)>
+CAlCVAR Human UbCap = <$STR(N41)>
+CAlCVAR Human Ubv = 1
+CAlCVAR Human Ubvs = 大
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+SendMSG 4 %s使用<$Human(UbCap)>个元宝下注押大。
+Mov N41 0
+Goto @Main_Run
+Break
+
+
+[@@InPutInteger40]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger40
+
+[~InPutInteger40]
+#if
+Small N40 10000
+#Act
+MessAgeBox [提示]：请输入10000以上的数值！
+Mov N40 0
+Goto @Main_Run
+Break
+
+#if
+LARGE N40 100000000
+#Act
+MessAgeBox [提示]：请输入1亿以下的数值！
+Mov N40 0
+Goto @Main_Run
+Break
+
+#if
+CheckGameGold < <$STR(N40)>
+#Act
+MessAgeBox 你没有足够的元宝！
+Mov N40 0
+Goto @Main_Run
+Break
+
+#If
+CheckVar Global bRvar = 1
+#ElseAct
+MessAgeBox [提示]：抢庄时间已经结束。请等待开局！
+Mov N40 0
+Goto @Main_Run
+Break
+
+#if
+CheckVar Global bBanName = <$USERNAME>
+#Act
+MessAgeBox [提示]：你目前已经是庄家，无法重复坐庄。
+Mov N40 0
+Goto @Main_Run
+Break
+
+#if
+CheckVar Human Ubv = 0
+#ElseAct
+MessAgeBox [提示]：未知错误，引发无法抢庄，请联系管理员
+Mov N40 0
+Goto @Main_Run
+Break
+
+#if
+CheckVar Global bBancap < <$STR(N40)>
+#ElseAct
+MessAgeBox [提示]：你必须出多于现庄家本金才能抢庄。
+Mov N40 0
+Goto @Main_Run
+Break
+
+#if
+CheckVar Global bBanName = 无
+#Act
+GameGold - <$STR(N40)>
+CAlCVAR Global bBanName = <$USERNAME>
+CAlCVAR Global bBancap = <$STR(N40)>
+CAlCVAR Global bsPb = <$STR(N40)>
+CAlCVAR Global bsPs = <$STR(N40)>
+CAlCVAR Human UbInn = <$Global(bInn)>
+CAlCVAR Human UbCap = <$STR(N40)>
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 庄家
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+SendMSG 4 %s使用<$Human(UbCap)>个元宝坐庄。
+SendMSG 1 [赌庄胖妞]：玩家【%s】使用【<$Human(UbCap)>】个元宝坐庄。
+Mov N40 0
+Goto @GenNu
+Break
+#ElseAct
+HCall <$Global(bBanName)> @RsetBan
+GameGold - <$STR(N40)>
+CAlCVAR Global bBanName = <$USERNAME>
+CAlCVAR Global bBancap = <$STR(N40)>
+CAlCVAR Global bsPb = <$STR(N40)>
+CAlCVAR Global bsPs = <$STR(N40)>
+CAlCVAR Human UbInn = <$Global(bInn)>
+CAlCVAR Human UbCap = <$STR(N40)>
+CAlCVAR Human Ubv = 0
+CAlCVAR Human Ubvs = 庄家
+SAVEVAR HUMAN UbInn ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN UbCap ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubv ..\QuestDiary\Ecom\HVarSave.txt
+SAVEVAR HUMAN Ubvs ..\QuestDiary\Ecom\HVarSave.txt
+SendMSG 4 %s使用<$Human(UbCap)>个元宝坐庄。
+SendMSG 1 [赌庄胖妞]：玩家【%s】使用【<$Human(UbCap)>】个元宝坐庄。
+Mov N40 0
+Goto @Main_Run
+Break
+
+
+
+[@GenNu]
+#if
+CheckLevelEx > 0
+#Act
+ClearDelayGoto 1
+GetRandomText .\QuestDiary\Ecom\RanNu.txt S7
+MOV D0 <$STR(S7)>
+GetRandomText .\QuestDiary\Ecom\RanNu.txt S8
+MOV D1 <$STR(S8)>
+GetRandomText .\QuestDiary\Ecom\RanNu.txt S9
+MOV D2 <$STR(S9)>
+CAlCVAR Global bNu1 = <$STR(D0)>
+CAlCVAR Global bNu2 = <$STR(D1)>
+CAlCVAR Global bNu3 = <$STR(D2)>
+CAlCVAR Global bNuG = <$STR(D0)>
+CAlCVAR Global bNuG + <$STR(D1)>
+CAlCVAR Global bNuG + <$STR(D2)>
+
+#if
+CheckVar Global bNu1 = <$GLobal(bNu2)>
+CheckVar Global bNu1 = <$GLobal(bNu3)>
+#Act
+CAlCVAR Global bRes = 0
+CAlCVAR Global bResStr = 豹子
+Goto @Main_Run
+Break
+
+#if
+CheckVar Global bNuG > 10
+#Act
+CAlCVAR Global bRes = 1
+CAlCVAR Global bResStr = 大
+Goto @Main_Run
+Break
+#ElseAct
+CAlCVAR Global bRes = 2
+CAlCVAR Global bResStr = 小
+Goto @Main_Run
+Break
+
+[@CloseBat]
+#Act
+ClearDelayGoto 1
+Close

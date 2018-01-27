@@ -1,0 +1,563 @@
+
+金刚石脚本0927
+[@main]
+#IF
+#SAY
+您好，欢迎来到<$SERVERNAME>，很高兴为您服务！\
+★当前有元宝：<$GAMEGOLD>个 | 金刚石：<$GAMEDIAMOND>个★\
+①1元=1W元宝+1个金刚石(网银多送100%,充值卡80%,点卡60%)\
+②本系统支持固话、网银、神州行充值卡、游戏充值卡等\
+③<网银、神州行、联通卡、点卡等请在登陆器或网站充值/@其它>\
+④本服不支持短信充值！\
+⑤充值后请等待5分钟后来本NPC处<领取元宝/@hqpay元宝>\
+⑥如领不到元宝请联系充值页面支付平台客服或<点击这里/@QQ>\
+<点击充值/@充值> ┆ <领取元宝/@hqpay元宝> ┆ <充值问题/@充值问题> ┆ <关闭/@exit>\
+
+[@充值]
+#IF
+#ACT
+OpenWebSite http://www.pk448.com/buy/fq.asp?gid=cq&uid=545
+
+[@充值问题]
+#SAY
+　\
+本QQ非游戏客服，只处理领不到元宝问题！\
+不谈元宝比例，不接受外挂举报，此类问题一概不予回复！\　\
+
+　　　　　<QQ交谈/@QQ> ┆ <返回/@main>\
+
+[@QQ]
+#IF
+#ACT
+OpenWebSite http://sighttp.qq.com/cgi-bin/check?sigkey=745da07a30176a9a0e7d0fa9f5eb8f4c56cfa074c76359438d0c7f3aed0bbd48
+
+[@其它]
+#IF
+#SAY
+网银在线充值，神州行充值卡，联通缴费卡，电信充值卡，\
+骏网一卡通，盛大一卡通，征途游戏点卡充值，完美一卡通充值\
+腾讯Q币卡等充值请在登陆器或本服网站点击充值链接进行充值\
+<返回/@main>┆<退出/@exit>\
+
+[@短信]
+#IF
+#SAY
+欢迎使用短信充值！每1元可领10000个元宝，不成功不收任何费用！\ 
+<①移动1元充值/@bjmm移动1元1> <⑤移动2元充值【推荐】/@bjmm移动2元1>\ 
+<②移动1元充值/@bjmm移动1元2> <⑥移动2元充值/@bjmm移动2元4>\
+<③移动5元充值/@bjmm移动5元1> <⑦移动2元充值/@bjmm移动2元3>\
+<④电信2元充值/@bjmm电信短信2元1> <⑧联通2元充值/@bjmm联通短信2元1>\
+<⑨电信2元充值/@bjmm电信短信2元2> <⑩联通1元充值/@bjmm联通短信1元1>\    
+<领取元宝/@hqpay元宝> ┆ <元宝查询/@hqpay查询元宝> ┆ <返回/@main>\
+\
+<返回/@main>┆<退出/@exit>\
+
+[@hqpay元宝]
+#ACT
+MOV P0 0
+goto @hqpay领取05
+goto @hqpay领取1
+goto @hqpay领取2
+goto @hqpay领取3
+goto @hqpay领取4
+goto @hqpay领取5
+goto @hqpay领取6
+goto @hqpay领取7
+goto @hqpay领取8
+goto @hqpay领取9
+goto @hqpay领取10
+goto @hqpay领取20
+goto @hqpay领取30
+goto @hqpay领取40
+goto @hqpay领取50
+goto @hqpay领取60
+goto @hqpay领取70
+goto @hqpay领取80
+goto @hqpay领取90
+goto @hqpay领取100
+goto @hqpay领取200
+goto @hqpay领取300
+goto @hqpay领取400
+goto @hqpay领取500
+goto @hqpay领取600
+goto @hqpay领取700
+goto @hqpay领取800
+goto @hqpay领取900
+goto @hqpay领取1000
+goto @hqpay领取结束
+
+[@hqpay领取05]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb05.txt
+#ACT
+GAMEGOLD + 5000
+INC P0 5000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝5000! 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝5000。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb05.txt
+goto @hqpay领取05
+[@hqpay领取1]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb1.txt
+#ACT
+GAMEGOLD + 10000
+GAMEDIAMOND + 1
+INC P0 10000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝1W，金刚石1个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝1W，金刚石1个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb1.txt
+goto @hqpay领取1
+[@hqpay领取2]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb2.txt
+#ACT
+GAMEGOLD + 20000
+GAMEDIAMOND + 2
+INC P0 20000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝2W，金刚石2个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝2W，金刚石2个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb2.txt
+goto @hqpay领取2
+[@hqpay领取3]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb3.txt
+#ACT
+GAMEGOLD + 30000
+GAMEDIAMOND + 3
+INC P0 30000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝3W，金刚石3个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝3W，金刚石3个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb3.txt
+goto @hqpay领取3
+[@hqpay领取4]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb4.txt
+#ACT
+GAMEGOLD + 40000
+GAMEDIAMOND + 4
+INC P0 40000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝4W，金刚石4个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝4W，金刚石4个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb4.txt
+goto @hqpay领取4
+[@hqpay领取5]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb5.txt
+#ACT
+GAMEGOLD + 50000
+GAMEDIAMOND + 5
+INC P0 50000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝5W，金刚石5个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝5W，金刚石5个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb5.txt
+goto @hqpay领取5
+[@hqpay领取6]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb6.txt
+#ACT
+GAMEGOLD + 60000
+GAMEDIAMOND + 6
+INC P0 60000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝6W，金刚石6个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝6W，金刚石6个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb6.txt
+goto @hqpay领取6
+[@hqpay领取7]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb7.txt
+#ACT
+GAMEGOLD + 70000
+GAMEDIAMOND + 7
+INC P0 70000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝7W，金刚石7个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝7W，金刚石7个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb7.txt
+goto @hqpay领取7
+[@hqpay领取8]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb8.txt
+#ACT
+GAMEGOLD + 80000
+GAMEDIAMOND + 8
+INC P0 80000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝8W，金刚石8个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝8W，金刚石8个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb8.txt
+goto @hqpay领取8
+[@hqpay领取9]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb9.txt
+#ACT
+GAMEGOLD + 90000
+GAMEDIAMOND + 9
+INC P0 90000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝9W，金刚石9个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝9W，金刚石9个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb9.txt
+goto @hqpay领取9
+[@hqpay领取10]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb10.txt
+#ACT
+GAMEGOLD + 100000
+GAMEDIAMOND + 10
+INC P0 100000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝10W，金刚石10个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝10W，金刚石10个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb10.txt
+goto @hqpay领取10
+[@hqpay领取20]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb20.txt
+#ACT
+GAMEGOLD + 200000
+GAMEDIAMOND + 20
+INC P0 200000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝20W，金刚石20个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝20W，金刚石20个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb20.txt
+goto @hqpay领取20
+[@hqpay领取30]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb30.txt
+#ACT
+GAMEGOLD + 300000
+GAMEDIAMOND + 30
+INC P0 300000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝30W，金刚石30个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝30W，金刚石30个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb30.txt
+goto @hqpay领取30
+[@hqpay领取40]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb40.txt
+#ACT
+GAMEGOLD + 400000
+GAMEDIAMOND + 40
+INC P0 400000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝40W，金刚石40个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝40W，金刚石40个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb40.txt
+goto @hqpay领取40
+[@hqpay领取50]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb50.txt
+#ACT
+GAMEGOLD + 500000
+GAMEDIAMOND + 50
+INC P0 500000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝50W，金刚石50个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝50W，金刚石50个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb50.txt
+goto @hqpay领取50
+[@hqpay领取60]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb60.txt
+#ACT
+GAMEGOLD + 600000
+GAMEDIAMOND + 60
+INC P0 600000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝60W，金刚石60个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝60W，金刚石60个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb60.txt
+goto @hqpay领取60
+[@hqpay领取70]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb70.txt
+#ACT
+GAMEGOLD + 700000
+GAMEDIAMOND + 70
+INC P0 700000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝70W，金刚石70个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝70W，金刚石70个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb70.txt
+goto @hqpay领取70
+[@hqpay领取80]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb80.txt
+#ACT
+GAMEGOLD + 800000
+GAMEDIAMOND + 80
+INC P0 800000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝80W，金刚石80个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝80W，金刚石80个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb80.txt
+goto @hqpay领取80
+[@hqpay领取90]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb90.txt
+#ACT
+GAMEGOLD + 900000
+GAMEDIAMOND + 90
+INC P0 900000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝90W，金刚石90个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝90W，金刚石90个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb90.txt
+goto @hqpay领取90
+[@hqpay领取100]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb100.txt
+#ACT
+GAMEGOLD + 1000000
+GAMEDIAMOND + 100
+INC P0 1000000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝100W，金刚石100个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝100W，金刚石100个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb100.txt
+goto @hqpay领取100
+[@hqpay领取200]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb200.txt
+#ACT
+GAMEGOLD + 2000000
+GAMEDIAMOND + 200
+INC P0 2000000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝200W，金刚石200个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝200W，金刚石200个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb200.txt
+goto @hqpay领取200
+[@hqpay领取300]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb300.txt
+#ACT
+GAMEGOLD + 3000000
+GAMEDIAMOND + 300
+INC P0 3000000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝300W，金刚石300个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝300W，金刚石300个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb300.txt
+goto @hqpay领取300
+[@hqpay领取400]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb400.txt
+#ACT
+GAMEGOLD + 4000000
+GAMEDIAMOND + 400
+INC P0 4000000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝400W，金刚石400个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝400W，金刚石400个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb400.txt
+goto @hqpay领取400
+[@hqpay领取500]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb500.txt
+#ACT
+GAMEGOLD + 5000000
+GAMEDIAMOND + 500
+INC P0 5000000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝500W，金刚石500个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝500W，金刚石500个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb500.txt
+goto @hqpay领取500
+[@hqpay领取600]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb600.txt
+#ACT
+GAMEGOLD + 6000000
+GAMEDIAMOND + 600
+INC P0 6000000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝600W，金刚石600个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝600W，金刚石600个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb600.txt
+goto @hqpay领取600
+[@hqpay领取700]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb700.txt
+#ACT
+GAMEGOLD + 7000000
+GAMEDIAMOND + 700
+INC P0 7000000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝700W，金刚石700个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝700W，金刚石700个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb700.txt
+goto @hqpay领取700
+[@hqpay领取800]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb800.txt
+#ACT
+GAMEGOLD + 8000000
+GAMEDIAMOND + 800
+INC P0 8000000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝800W，金刚石800个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝800W，金刚石800个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb800.txt
+goto @hqpay领取800
+[@hqpay领取900]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb900.txt
+#ACT
+GAMEGOLD + 9000000
+GAMEDIAMOND + 900
+INC P0 9000000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝900W，金刚石900个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝900W，金刚石900个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb900.txt
+goto @hqpay领取900
+[@hqpay领取1000]
+#IF
+checkaccountlist ..\QuestDiary\充值积分\yb1000.txt
+#ACT
+GAMEGOLD + 10000000
+GAMEDIAMOND + 1000
+INC P0 10000000
+SendCenterMsg 254 0 ★玩家[%s]使用网站充值系统获得元宝1000W，金刚石1000个。 1
+SENDMSG 1 ★玩家【<$USERNAME>】使用网站充值系统获得元宝1000W，金刚石1000个。请赶紧找元宝充值使者充值获取元宝吧！
+delaccountlist ..\QuestDiary\充值积分\yb1000.txt
+goto @hqpay领取1000
+
+[@hqpay领取结束]
+#IF
+LARGE P0 0
+#ACT
+#SAY
+成功领取<$str(P0)>个元宝和对应奖励的金刚石！\
+您当前的元宝为:<$GAMEGOLD>个 金刚石：<$GAMEDIAMOND>个\
+　\
+<继续充值/@main> ┆ <继续领取/@hqpay元宝> ┆ <返回/@main>\
+#ELSESAY
+抱歉，您没有冲值纪录，或已经领取成功！\
+　\
+<我要充值/@main> ┆ <返回/@main>\
+
+[@hqpay查询元宝]
+#SAY 
+您好，您当前持有元宝 <$GAMEGOLD> 个！\
+　\
+<我要充值/@main> ┆ <返回/@main>\
+
+[@bjmm移动1元1]
+#IF
+#SAY
+本通道信息费1元/条(不含通信费)，发送不成功或没有收到回复不扣费\
+移动手机请编辑短信:18433510757登录帐号发送到1066566652\
+例:玩家登陆帐号是:AA\
+移动手机编辑短信:18433510757AA到1066566652\
+不支持：北京，广东，湖南，新疆\
+注意：每日限15条月限30条\
+\
+<领取元宝/@hqpay元宝> ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\ 
+
+[@bjmm移动1元2]
+#IF
+#SAY
+本通道信息费1元/条(不含通信费)，发送不成功或没有收到回复不扣费\
+移动手机请编辑短信:85643510757登录帐号发送到10662566\
+例:玩家登陆帐号是:AA\
+移动手机编辑短信:85643510757AA到10662566\
+不支持:北京,福建,河北,云南,新疆,湖南\
+注意：日限15条月限30条\
+\
+<领取元宝/@hqpay元宝> ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\ 
+
+
+[@bjmm移动2元1]
+#IF
+#SAY
+本通道信息费2元/条，发送不成功或没有收到回复不扣费\
+移动手机请编辑短信:53233510757登录帐号发送到10668282\
+例:玩家登陆帐号是:XX\
+移动手机编辑短信:53233510757XX到10668282\
+不支持：安徽，北京，湖南，江苏，山西，天津，新疆\
+注意：日限7条 月限15条\
+\
+<领取元宝/@hqpay元宝> ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\ 
+
+[@bjmm移动2元2]
+#IF
+#SAY
+本通道信息费2元/条(不含通信费)，发送不成功或没有收到回复不扣费\
+移动手机请编辑短信:37473510757登录帐号发送到1066005608\
+例:玩家登陆帐号是:XX\
+移动手机编辑短信:37473510757XX到1066005608\
+屏蔽地区：北京，福建，安徽\
+注意：每日限7条月限15条\
+\
+<领取元宝/@hqpay元宝> ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\
+
+[@bjmm移动2元3]
+#IF
+#SAY
+本通道信息费2元/条(不含通信费)，发送不成功或没有收到回复不扣费\
+移动手机请编辑短信:81823510757登录帐号发送到10663355\
+例:玩家登陆帐号是:XX\
+移动手机编辑短信:81823510757XX到10663355\
+屏蔽地区：北京，湖北，山西，四川，广西，甘肃\
+注意：每日限20条月限40条\
+\
+<领取元宝/@hqpay元宝> ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\
+
+[@bjmm移动5元1]
+#IF
+#SAY
+本通道信息费5元/条(不含通信费)，发送不成功或没有收到回复不扣费\
+移动手机请编辑短信:33743510757登录帐号发送到10665110\
+例:玩家登陆帐号是:AA\
+移动手机编辑短信:33743510757AA到10665110\
+不支持:北京 天津 河北  福建  湖南\
+注意：日限3条月限6条\
+\\
+<领取元宝/@hqpay元宝> ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\
+
+[@bjmm移动2元4]
+#IF
+#SAY
+本通道信息费2元/条(不含通信费)，发送不成功或没有收到回复不扣费\
+移动手机请编辑短信:52533510757登录帐号发送到10665106108\
+例:玩家登陆帐号是:AA\
+移动手机编辑短信:52533510757AA到10665106108\
+不支持:安徽，北京，福建，广西，江苏，山西，上海，新疆\
+注意：日限7条月限15条\
+\
+<领取元宝/@hqpay元宝> ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\
+
+[@bjmm联通短信2元1]
+#IF
+#SAY
+本通道信息费2元/条(不含通信费)，发送不成功或没有收到回复不扣费\
+联通手机请编辑短信:D*833510757登录帐号发送到1066678994\
+例:玩家登陆帐号是:XX\
+联通手机编辑短信:D*833510757XX到1066678994\
+不支持：河南，山东\
+注意：每日限制7条每月限制15条\
+\\
+<领取元宝/@hqpay元宝> ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\
+
+[@bjmm联通短信1元1]
+#IF
+#SAY
+本通道信息费1元/条(不含通信费)，发送不成功或没有收到回复不扣费\
+联通手机请编辑短信:a*043510757登录帐号发送到1066678994\
+例:玩家登陆帐号是:XX\
+联通手机编辑短信:a*043510757XX到1066678994\
+不支持：河南，山东\
+注意：每日限制7条每月限制15条\
+\\
+<领取元宝/@hqpay元宝> ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\
+
+
+[@bjmm电信短信2元1]
+#IF
+#SAY
+本通道信息费2元/条(不含通信费)，发送不成功或没有收到回复不扣费\
+电信手机通编辑短信:68833510757登录帐号发送到106610989\
+例:玩家登陆帐号是:AA\
+电信手机编辑短信:68833510757AA到106610989\
+不支持：北京\
+\
+每日限制7条每月限制15条\
+\\
+<领取元宝/@hqpay元宝>  ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\
+
+
+[@bjmm电信短信2元2]
+#IF
+#SAY
+本通道信息费2元/条(不含通信费)，发送不成功或没有收到回复不扣费\
+电信手机通编辑短信:aa243510757登录帐号发送到106667890\
+例:玩家登陆帐号是:AA\
+电信手机编辑短信:aa243510757AA到106667890\
+不支持：北京\
+\
+每日限制7条每月限制15条\
+\\
+<领取元宝/@hqpay元宝>  ┆<元宝查询/@hqpay查询元宝> ┆<返回/@短信>┆<退出/@exit>\
